@@ -27,6 +27,67 @@ def ways_in_bbox(south, west, north, east):
     )
 
 
+def relation_geom(relation_id):
+    """Overpass QL to pull a route/circuit relation with full member geometry.
+
+    A `type=route` (or `type=circuit`) relation is OSM's blessed *continuous
+    lap*: it orders every way of the racing surface, including public-road
+    sections (e.g. the Mulsanne straight, D338) that aren't tagged
+    highway=raceway. This is the authoritative centerline source.
+    """
+    return (
+        f'[out:json][timeout:120];'
+        f'relation({int(relation_id)});'
+        f'out geom;'
+    )
+
+
+def relation_centerline(relation_data):
+    """Chain a route-relation's member ways into one ordered centerline.
+
+    `relation_data` is an Overpass `out geom` result whose first element is the
+    relation. Member ways carry their own ordered `geometry`; we orient each way
+    so it chains end-to-end onto the previous one (the relation lists them in
+    lap order but each way may be stored in either direction), then concatenate.
+
+    The first way is oriented using the second so the whole loop runs one way.
+    Returns [[lon, lat], ...] forming a closed loop, or None if unavailable.
+    This is the real surface — every chicane and kink preserved.
+    """
+    els = relation_data.get("elements", [])
+    rel = next((e for e in els if e.get("type") == "relation"), None)
+    if rel is None:
+        return None
+    segs = []
+    for m in rel.get("members", []):
+        if m.get("type") != "way":
+            continue
+        g = m.get("geometry")
+        if not g or len(g) < 2:
+            continue
+        segs.append([[p["lon"], p["lat"]] for p in g])
+    if len(segs) < 2:
+        return None
+
+    # Orient the first segment against the second so direction is consistent.
+    s0, s1 = segs[0], segs[1]
+    if (min(haversine(s0[0], s1[0]), haversine(s0[0], s1[-1]))
+            < min(haversine(s0[-1], s1[0]), haversine(s0[-1], s1[-1]))):
+        segs[0] = s0[::-1]
+
+    loop = list(segs[0])
+    for s in segs[1:]:
+        # flip s if its tail is nearer the current end than its head
+        if haversine(loop[-1], s[-1]) < haversine(loop[-1], s[0]):
+            s = s[::-1]
+        # avoid duplicating the shared node between consecutive ways
+        if haversine(loop[-1], s[0]) < 1.0:
+            loop.extend(s[1:])
+        else:
+            loop.extend(s)
+    return loop
+
+
 def haversine(a, b):
     """Metres between two [lon,lat] points."""
     lon1, lat1, lon2, lat2 = map(math.radians, [a[0], a[1], b[0], b[1]])
@@ -130,6 +191,101 @@ def trace_loop(elements, corners):
 
 def loop_length_m(loop):
     return sum(haversine(loop[i], loop[i + 1]) for i in range(len(loop) - 1))
+
+
+def arc_lengths(loop):
+    """Cumulative arc length (metres) along a polyline. Returns (cum, total)."""
+    cum = [0.0]
+    for a, b in zip(loop, loop[1:]):
+        cum.append(cum[-1] + haversine(a, b))
+    return cum, cum[-1]
+
+
+def nearest_fraction(loop, cum, total, pt):
+    """Lap fraction (0..1) of the centerline vertex nearest to `pt`."""
+    best, bi = float("inf"), 0
+    for i, p in enumerate(loop):
+        d = haversine(pt, p)
+        if d < best:
+            best, bi = d, i
+    return (cum[bi] / total) if total else 0.0, best
+
+
+def point_at_fraction(loop, cum, total, frac):
+    """Interpolated [lon, lat] at lap fraction `frac` (0..1) along the loop."""
+    if not total:
+        return list(loop[0])
+    target = (frac % 1.0) * total
+    for i in range(1, len(cum)):
+        if cum[i] >= target:
+            seg = (cum[i] - cum[i - 1]) or 1e-9
+            t = (target - cum[i - 1]) / seg
+            a, b = loop[i - 1], loop[i]
+            return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]
+    return list(loop[-1])
+
+
+def align_markers_to_centerline(loop, matched):
+    """Map lap-fraction markers onto a centerline using matched corners as
+    control points.
+
+    `matched` is a list of (marker, [lon,lat]) for corners whose real location
+    is known. We learn how lap-marker (from Lovely) corresponds to centerline
+    arc-fraction, automatically resolving the centerline's arbitrary start node
+    and travel direction. Returns a callable `place(marker) -> [lon, lat]` plus
+    the (possibly reversed) oriented loop so the outline is drawn the same way.
+
+    This is what lets an *unlocated* corner (e.g. Le Mans Indianapolis, which has
+    no highway=raceway way of its own) be placed exactly on the real track by its
+    lap fraction.
+    """
+    cum, total = arc_lengths(loop)
+    ctrl = []
+    for marker, loc in matched:
+        cf, _ = nearest_fraction(loop, cum, total, loc)
+        ctrl.append((marker, cf))
+    ctrl.sort(key=lambda x: x[0])
+    if len(ctrl) < 2:
+        # not enough anchors to align; place by raw fraction
+        return (lambda m: point_at_fraction(loop, cum, total, m)), loop
+
+    # Determine travel direction: sum wrapped deltas of centerline fraction as
+    # marker increases. Negative -> centerline runs opposite the lap; reverse.
+    def wrap_half(d):
+        return (d + 0.5) % 1.0 - 0.5
+
+    drift = sum(wrap_half(ctrl[i + 1][1] - ctrl[i][1]) for i in range(len(ctrl) - 1))
+    if drift < 0:
+        loop = loop[::-1]
+        cum, total = arc_lengths(loop)
+        ctrl = [(m, 1.0 - cf) for m, cf in ctrl]
+        ctrl.sort(key=lambda x: x[0])
+
+    # Unwrap centerline fractions to a monotonic increasing sequence.
+    markers = [c[0] for c in ctrl]
+    cfs = [c[1] for c in ctrl]
+    un = [cfs[0]]
+    for i in range(1, len(cfs)):
+        d = cfs[i] - cfs[i - 1]
+        if d < 0:
+            d += 1.0
+        un.append(un[-1] + d)
+
+    def place(marker):
+        # piecewise-linear interpolate marker -> unwrapped centerline fraction,
+        # extrapolating with the edge slope at the ends.
+        if marker <= markers[0]:
+            i = 0
+        elif marker >= markers[-1]:
+            i = len(markers) - 2
+        else:
+            i = max(j for j in range(len(markers) - 1) if markers[j] <= marker)
+        m0, m1 = markers[i], markers[i + 1]
+        f0, f1 = un[i], un[i + 1]
+        t = (marker - m0) / ((m1 - m0) or 1e-9)
+        return point_at_fraction(loop, cum, total, f0 + t * (f1 - f0))
+
+    return place, loop
 
 
 

@@ -19,7 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import sources  # noqa: E402
 from lib.config import TRACKS, load_source, track_dir  # noqa: E402
-from lib.osm import ways_in_bbox  # noqa: E402
+from lib.osm import ways_in_bbox, relation_geom  # noqa: E402
 
 
 def import_track(slug: str) -> None:
@@ -33,7 +33,7 @@ def import_track(slug: str) -> None:
         sources.write_raw(tdir, f"lovely-{key}.json", data)
         print(f"  lovely[{key}] <- {path} ({len(data.get('turn', []))} turns)")
 
-    # 2. OSM via Overpass bbox
+    # 2. OSM via Overpass bbox (named raceway ways -> corner coordinates)
     osm = src.get("osm")
     if osm and "bbox" in osm:
         s, w, n, e = osm["bbox"]
@@ -41,6 +41,18 @@ def import_track(slug: str) -> None:
         sources.write_raw(tdir, "osm.json", data)
         ways = [x for x in data.get("elements", []) if x.get("type") == "way"]
         print(f"  osm <- bbox {osm['bbox']} ({len(ways)} raceway ways)")
+
+    # 3. OSM route relation (the official continuous lap -> true centerline).
+    #    Optional: tracks without a mapped relation fall back to bbox tracing.
+    if osm and osm.get("relation"):
+        rid = osm["relation"]
+        rel = sources.overpass(relation_geom(rid))
+        sources.write_raw(tdir, "osm-relation.json", rel)
+        rel_el = next((e for e in rel.get("elements", [])
+                       if e.get("type") == "relation"), None)
+        nways = len([m for m in (rel_el or {}).get("members", [])
+                     if m.get("type") == "way"]) if rel_el else 0
+        print(f"  osm relation <- {rid} ({nways} member ways)")
 
     print(f"[{slug}] raw/ updated.")
 

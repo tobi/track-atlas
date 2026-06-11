@@ -30,7 +30,10 @@ from lib.config import TRACKS, load_source, track_dir  # noqa: E402
 from lib.lovely import (  # noqa: E402
     corners_from_lovely, pit_from_lovely, sectors_from_lovely, straights_from_lovely,
 )
-from lib.osm import centroid, named_corner_ways, normalize  # noqa: E402
+from lib.osm import (  # noqa: E402
+    centroid, named_corner_ways, normalize,
+    relation_centerline, align_markers_to_centerline,
+)
 
 
 def _osm_corner_index(osm: dict) -> dict:
@@ -150,17 +153,44 @@ def generate_track(slug: str) -> dict:
                 for k in ("complex", "direction", "scale"):
                     if k in o:
                         c[k] = o[k]
-        # Build an ordered corner-trace outline: matched corners sorted by lap
-        # fraction give a faithful (if coarse) geographic loop. A precise
-        # stitched centerline from OSM ways is a documented TODO.
+        # --- Build the outline + place every corner on the real track ---
+        # Prefer the OSM route relation centerline (the official continuous lap,
+        # public-road sections and all). With it we can (a) draw the true track
+        # surface and (b) place corners that have NO highway=raceway way of their
+        # own (e.g. Le Mans Indianapolis) by their lap fraction. Falls back to
+        # the coarse matched-corner trace when no relation is mapped.
         outline_path = f"layers/{lid}.geojson"
-        traced = sorted(
-            (c for c in corners if "location" in c and "marker" in c),
-            key=lambda c: c["marker"],
-        )
-        outline_coords = [c["location"] for c in traced]
-        if len(outline_coords) >= 3:
-            outline_coords.append(outline_coords[0])  # close the loop
+        rel_file = raw / "osm-relation.json"
+        centerline = None
+        if rel_file.exists():
+            try:
+                centerline = relation_centerline(json.loads(rel_file.read_text()))
+            except Exception:
+                centerline = None
+
+        outline_coords = None
+        if centerline and len(centerline) >= 8:
+            matched_pts = [(c["marker"], c["location"]) for c in corners
+                           if "location" in c and "marker" in c]
+            place, oriented = align_markers_to_centerline(centerline, matched_pts)
+            # Place corners that never matched an OSM way, by lap fraction.
+            for c in corners:
+                if "location" not in c and "marker" in c:
+                    p = place(c["marker"])
+                    c["location"] = [round(p[0], 6), round(p[1], 6)]
+                    c["location_source"] = "centerline"
+            outline_coords = [[round(x, 6), round(y, 6)] for x, y in oriented]
+            if outline_coords[0] != outline_coords[-1]:
+                outline_coords.append(outline_coords[0])  # close the loop
+        else:
+            # Coarse fallback: ordered matched corners as a rough loop.
+            traced = sorted(
+                (c for c in corners if "location" in c and "marker" in c),
+                key=lambda c: c["marker"],
+            )
+            outline_coords = [c["location"] for c in traced]
+            if len(outline_coords) >= 3:
+                outline_coords.append(outline_coords[0])  # close the loop
         default_layer = layout.get("name_default", src.get("name_default", "colloquial"))
         gj = _layer_geojson(lid, corners, outline_coords or None, default_layer)
         (tdir / outline_path).write_text(json.dumps(gj, ensure_ascii=False, indent=2))
