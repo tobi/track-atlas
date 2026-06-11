@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+
+# NOTE: tracks/*/raw/ is intentionally committed — raw source downloads are
+# kept as reproducibility artifacts (generate.py builds from them offline).

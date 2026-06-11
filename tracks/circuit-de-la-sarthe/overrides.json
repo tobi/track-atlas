@@ -1,0 +1,22 @@
+{
+  "_comment": "Curated naming layers Lovely/OSM lack. official = circuit/ACO naming, colloquial = what drivers say. complex groups multi-corner sections. Keyed by layout id -> corners -> corner number.",
+  "24h": {
+    "corners": {
+      "1": { "colloquial": "Dunlop Curve", "official": "Courbe Dunlop" },
+      "2": { "colloquial": "Dunlop Chicane", "official": "Chicane Dunlop", "complex": "Dunlop" },
+      "4": { "colloquial": "Esses de la Forêt", "official": "Esses de la Forêt" },
+      "6": { "colloquial": "Tertre Rouge", "official": "Virage du Tertre Rouge" },
+      "7": { "colloquial": "Mulsanne Chicane 1", "official": "Chicane Daytona", "complex": "Mulsanne Straight Chicanes" },
+      "8": { "colloquial": "Mulsanne Chicane 2", "official": "Chicane Michelin", "complex": "Mulsanne Straight Chicanes" },
+      "9": { "colloquial": "Mulsanne", "official": "Virage de Mulsanne" },
+      "11": { "colloquial": "Indianapolis", "official": "Virage d'Indianapolis", "complex": "Indianapolis / Arnage" },
+      "12": { "colloquial": "Arnage", "official": "Virage d'Arnage", "complex": "Indianapolis / Arnage" },
+      "14": { "colloquial": "Porsche Curves", "official": "Virage Porsche", "complex": "Porsche Curves" },
+      "15": { "colloquial": "Porsche Curves", "official": "Virage du Pont", "complex": "Porsche Curves" },
+      "16": { "colloquial": "Karting", "official": "Virage du Karting", "complex": "Porsche Curves" },
+      "17": { "colloquial": "Corvette", "official": "Virage du Corvette", "complex": "Porsche Curves" },
+      "18": { "colloquial": "Ford Chicane", "official": "Chicane Ford", "complex": "Ford Chicanes" },
+      "20": { "colloquial": "Ford Chicane", "official": "Chicane du Raccordement", "complex": "Ford Chicanes" }
+    }
+  }
+}

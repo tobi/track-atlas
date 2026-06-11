@@ -1,0 +1,429 @@
+{
+  "slug": "circuit-de-la-sarthe",
+  "name": "Circuit de la Sarthe",
+  "aka": [
+    "La Sarthe",
+    "Circuit des 24 Heures du Mans",
+    "Le Mans"
+  ],
+  "country": "FR",
+  "location": {
+    "lat": 47.95,
+    "lon": 0.2247,
+    "locality": "Le Mans",
+    "region": "Pays de la Loire",
+    "timezone": "Europe/Paris"
+  },
+  "layouts": [
+    {
+      "id": "24h",
+      "name": "Circuit des 24 Heures",
+      "aka": [
+        "Grand Prix Endurance Circuit"
+      ],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/24h.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Dunlop Curve",
+            "official": "Courbe Dunlop"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.05,
+          "start": 0.02,
+          "end": 0.06,
+          "location": [
+            0.210987,
+            47.956831
+          ]
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Dunlop Chicane",
+            "official": "Chicane Dunlop"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.06,
+          "start": 0.06,
+          "end": 0.06,
+          "location": [
+            0.210987,
+            47.956831
+          ],
+          "complex": "Dunlop"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.07,
+          "start": 0.06,
+          "end": 0.07
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Esses de la Forêt",
+            "official": "Esses de la Forêt"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.11,
+          "start": 0.1,
+          "end": 0.11,
+          "location": [
+            0.21752,
+            47.960039
+          ]
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.12,
+          "start": 0.11,
+          "end": 0.12
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Tertre Rouge",
+            "official": "Virage du Tertre Rouge"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.14,
+          "start": 0.14,
+          "end": 0.15,
+          "location": [
+            0.221069,
+            47.961497
+          ]
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Mulsanne Chicane 1",
+            "official": "Chicane Daytona"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.3,
+          "start": 0.29,
+          "end": 0.32,
+          "location": [
+            0.23313,
+            47.944242
+          ],
+          "complex": "Mulsanne Straight Chicanes"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Mulsanne Chicane 2",
+            "official": "Chicane Michelin"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.45,
+          "start": 0.44,
+          "end": 0.46,
+          "location": [
+            0.241897,
+            47.927817
+          ],
+          "complex": "Mulsanne Straight Chicanes"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Mulsanne",
+            "official": "Virage de Mulsanne"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.57,
+          "start": 0.56,
+          "end": 0.57,
+          "location": [
+            0.243504,
+            47.914042
+          ]
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.7,
+          "start": 0.7,
+          "end": 0.71
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Indianapolis",
+            "official": "Virage d'Indianapolis"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.72,
+          "start": 0.72,
+          "end": 0.73,
+          "complex": "Indianapolis / Arnage"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Arnage",
+            "official": "Virage d'Arnage"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.74,
+          "start": 0.74,
+          "end": 0.75,
+          "location": [
+            0.215615,
+            47.92148
+          ],
+          "complex": "Indianapolis / Arnage"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.82,
+          "start": 0.82,
+          "end": 0.83
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Porsche Curves",
+            "official": "Virage Porsche"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.85,
+          "start": 0.84,
+          "end": 0.85,
+          "location": [
+            0.209169,
+            47.933028
+          ],
+          "complex": "Porsche Curves"
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "Porsche Curves",
+            "official": "Virage du Pont"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.87,
+          "start": 0.86,
+          "end": 0.88,
+          "location": [
+            0.210624,
+            47.935503
+          ],
+          "complex": "Porsche Curves"
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16",
+            "colloquial": "Karting",
+            "official": "Virage du Karting"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.89,
+          "start": 0.88,
+          "end": 0.9,
+          "location": [
+            0.209249,
+            47.938097
+          ],
+          "complex": "Porsche Curves"
+        },
+        {
+          "number": 17,
+          "names": {
+            "numbered": "Turn 17",
+            "colloquial": "Corvette",
+            "official": "Virage du Corvette"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.91,
+          "start": 0.91,
+          "end": 0.92,
+          "location": [
+            0.210424,
+            47.939855
+          ],
+          "complex": "Porsche Curves"
+        },
+        {
+          "number": 18,
+          "names": {
+            "numbered": "Turn 18",
+            "colloquial": "Ford Chicane",
+            "official": "Chicane Ford"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.97,
+          "start": 0.97,
+          "end": 0.97,
+          "location": [
+            0.208476,
+            47.947064
+          ],
+          "complex": "Ford Chicanes"
+        },
+        {
+          "number": 19,
+          "names": {
+            "numbered": "Turn 19"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.98,
+          "start": 0.97,
+          "end": 0.98
+        },
+        {
+          "number": 20,
+          "names": {
+            "numbered": "Turn 20",
+            "colloquial": "Ford Chicane",
+            "official": "Chicane du Raccordement"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.98,
+          "start": 0.98,
+          "end": 0.98,
+          "location": [
+            0.20753,
+            47.948222
+          ],
+          "complex": "Ford Chicanes"
+        },
+        {
+          "number": 21,
+          "names": {
+            "numbered": "Turn 21"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.99,
+          "start": 0.98,
+          "end": 0.99
+        }
+      ],
+      "straights": [
+        {
+          "name": "Main Straight",
+          "start": 0.99,
+          "end": 0.02
+        },
+        {
+          "name": "Hunaudières",
+          "start": 0.16,
+          "end": 0.029
+        },
+        {
+          "name": "Hunaudières",
+          "start": 0.32,
+          "end": 0.043
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Sector 1",
+          "marker": 0.14
+        },
+        {
+          "name": "Sector 2",
+          "marker": 0.57
+        },
+        {
+          "name": "Sector 3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.99,
+        "exit": 0.03
+      },
+      "length_m": 13626,
+      "direction": "clockwise",
+      "active_years": "2018-"
+    }
+  ],
+  "wikidata": "Q270760",
+  "provenance": {
+    "generated_at": "2026-06-11T11:32:38.548748+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 14,
+      "total": 21
+    }
+  }
+}

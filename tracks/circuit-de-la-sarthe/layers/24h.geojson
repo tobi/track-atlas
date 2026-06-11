@@ -1,0 +1,399 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "outline",
+        "layout": "24h"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0.210987,
+            47.956831
+          ],
+          [
+            0.210987,
+            47.956831
+          ],
+          [
+            0.21752,
+            47.960039
+          ],
+          [
+            0.221069,
+            47.961497
+          ],
+          [
+            0.23313,
+            47.944242
+          ],
+          [
+            0.241897,
+            47.927817
+          ],
+          [
+            0.243504,
+            47.914042
+          ],
+          [
+            0.215615,
+            47.92148
+          ],
+          [
+            0.209169,
+            47.933028
+          ],
+          [
+            0.210624,
+            47.935503
+          ],
+          [
+            0.209249,
+            47.938097
+          ],
+          [
+            0.210424,
+            47.939855
+          ],
+          [
+            0.208476,
+            47.947064
+          ],
+          [
+            0.20753,
+            47.948222
+          ],
+          [
+            0.210987,
+            47.956831
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 1,
+        "display": "Dunlop Curve",
+        "names": {
+          "numbered": "Turn 1",
+          "colloquial": "Dunlop Curve",
+          "official": "Courbe Dunlop"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.210987,
+          47.956831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 2,
+        "display": "Dunlop Chicane",
+        "names": {
+          "numbered": "Turn 2",
+          "colloquial": "Dunlop Chicane",
+          "official": "Chicane Dunlop"
+        },
+        "complex": "Dunlop",
+        "direction": "left",
+        "scale": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.210987,
+          47.956831
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 4,
+        "display": "Esses de la Forêt",
+        "names": {
+          "numbered": "Turn 4",
+          "colloquial": "Esses de la Forêt",
+          "official": "Esses de la Forêt"
+        },
+        "complex": null,
+        "direction": "left",
+        "scale": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.21752,
+          47.960039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 6,
+        "display": "Tertre Rouge",
+        "names": {
+          "numbered": "Turn 6",
+          "colloquial": "Tertre Rouge",
+          "official": "Virage du Tertre Rouge"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.221069,
+          47.961497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 7,
+        "display": "Mulsanne Chicane 1",
+        "names": {
+          "numbered": "Turn 7",
+          "colloquial": "Mulsanne Chicane 1",
+          "official": "Chicane Daytona"
+        },
+        "complex": "Mulsanne Straight Chicanes",
+        "direction": "right",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.23313,
+          47.944242
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 8,
+        "display": "Mulsanne Chicane 2",
+        "names": {
+          "numbered": "Turn 8",
+          "colloquial": "Mulsanne Chicane 2",
+          "official": "Chicane Michelin"
+        },
+        "complex": "Mulsanne Straight Chicanes",
+        "direction": "left",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.241897,
+          47.927817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 9,
+        "display": "Mulsanne",
+        "names": {
+          "numbered": "Turn 9",
+          "colloquial": "Mulsanne",
+          "official": "Virage de Mulsanne"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.243504,
+          47.914042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 12,
+        "display": "Arnage",
+        "names": {
+          "numbered": "Turn 12",
+          "colloquial": "Arnage",
+          "official": "Virage d'Arnage"
+        },
+        "complex": "Indianapolis / Arnage",
+        "direction": "right",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.215615,
+          47.92148
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 14,
+        "display": "Porsche Curves",
+        "names": {
+          "numbered": "Turn 14",
+          "colloquial": "Porsche Curves",
+          "official": "Virage Porsche"
+        },
+        "complex": "Porsche Curves",
+        "direction": "right",
+        "scale": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.209169,
+          47.933028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 15,
+        "display": "Porsche Curves",
+        "names": {
+          "numbered": "Turn 15",
+          "colloquial": "Porsche Curves",
+          "official": "Virage du Pont"
+        },
+        "complex": "Porsche Curves",
+        "direction": "left",
+        "scale": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.210624,
+          47.935503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 16,
+        "display": "Karting",
+        "names": {
+          "numbered": "Turn 16",
+          "colloquial": "Karting",
+          "official": "Virage du Karting"
+        },
+        "complex": "Porsche Curves",
+        "direction": "right",
+        "scale": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.209249,
+          47.938097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 17,
+        "display": "Corvette",
+        "names": {
+          "numbered": "Turn 17",
+          "colloquial": "Corvette",
+          "official": "Virage du Corvette"
+        },
+        "complex": "Porsche Curves",
+        "direction": "left",
+        "scale": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.210424,
+          47.939855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 18,
+        "display": "Ford Chicane",
+        "names": {
+          "numbered": "Turn 18",
+          "colloquial": "Ford Chicane",
+          "official": "Chicane Ford"
+        },
+        "complex": "Ford Chicanes",
+        "direction": "left",
+        "scale": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.208476,
+          47.947064
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 20,
+        "display": "Ford Chicane",
+        "names": {
+          "numbered": "Turn 20",
+          "colloquial": "Ford Chicane",
+          "official": "Chicane du Raccordement"
+        },
+        "complex": "Ford Chicanes",
+        "direction": "left",
+        "scale": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.20753,
+          47.948222
+        ]
+      }
+    }
+  ]
+}

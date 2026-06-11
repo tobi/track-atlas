@@ -1,0 +1,507 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "outline",
+        "layout": "gp"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.019308,
+            52.071256
+          ],
+          [
+            -1.016393,
+            52.071268
+          ],
+          [
+            -1.013289,
+            52.072477
+          ],
+          [
+            -1.012127,
+            52.071651
+          ],
+          [
+            -1.0115,
+            52.072893
+          ],
+          [
+            -1.019094,
+            52.077114
+          ],
+          [
+            -1.021126,
+            52.07604
+          ],
+          [
+            -1.01946,
+            52.078259
+          ],
+          [
+            -1.011674,
+            52.078666
+          ],
+          [
+            -1.009814,
+            52.073813
+          ],
+          [
+            -1.009814,
+            52.073813
+          ],
+          [
+            -1.009968,
+            52.072063
+          ],
+          [
+            -1.009968,
+            52.072063
+          ],
+          [
+            -1.009468,
+            52.070864
+          ],
+          [
+            -1.017885,
+            52.0637
+          ],
+          [
+            -1.022305,
+            52.066484
+          ],
+          [
+            -1.022305,
+            52.066484
+          ],
+          [
+            -1.023776,
+            52.066903
+          ],
+          [
+            -1.019308,
+            52.071256
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 1,
+        "display": "Abbey",
+        "names": {
+          "numbered": "Turn 1",
+          "colloquial": "Abbey",
+          "official": "Abbey"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.019308,
+          52.071256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 2,
+        "display": "Farm Curve",
+        "names": {
+          "numbered": "Turn 2",
+          "colloquial": "Farm Curve",
+          "official": "Farm Curve"
+        },
+        "complex": "Abbey / Farm",
+        "direction": "left",
+        "scale": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.016393,
+          52.071268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 3,
+        "display": "Village",
+        "names": {
+          "numbered": "Turn 3",
+          "colloquial": "Village",
+          "official": "Village"
+        },
+        "complex": "Village / The Loop / Aintree",
+        "direction": "right",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.013289,
+          52.072477
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 4,
+        "display": "The Loop",
+        "names": {
+          "numbered": "Turn 4",
+          "colloquial": "The Loop",
+          "official": "The Loop"
+        },
+        "complex": "Village / The Loop / Aintree",
+        "direction": "left",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.012127,
+          52.071651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 5,
+        "display": "Aintree",
+        "names": {
+          "numbered": "Turn 5",
+          "colloquial": "Aintree",
+          "official": "Aintree"
+        },
+        "complex": "Village / The Loop / Aintree",
+        "direction": "left",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0115,
+          52.072893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 6,
+        "display": "Brooklands",
+        "names": {
+          "numbered": "Turn 6",
+          "colloquial": "Brooklands",
+          "official": "Brooklands"
+        },
+        "complex": null,
+        "direction": "left",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.019094,
+          52.077114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 7,
+        "display": "Luffield",
+        "names": {
+          "numbered": "Turn 7",
+          "colloquial": "Luffield",
+          "official": "Luffield"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.021126,
+          52.07604
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 8,
+        "display": "Woodcote",
+        "names": {
+          "numbered": "Turn 8",
+          "colloquial": "Woodcote",
+          "official": "Woodcote"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.01946,
+          52.078259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 9,
+        "display": "Copse",
+        "names": {
+          "numbered": "Turn 9",
+          "colloquial": "Copse",
+          "official": "Copse"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.011674,
+          52.078666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 10,
+        "display": "Maggots",
+        "names": {
+          "numbered": "Turn 10",
+          "colloquial": "Maggots",
+          "official": "Maggotts"
+        },
+        "complex": "Maggotts / Becketts / Chapel",
+        "direction": "left",
+        "scale": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.009814,
+          52.073813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 11,
+        "display": "Maggots",
+        "names": {
+          "numbered": "Turn 11",
+          "colloquial": "Maggots",
+          "official": "Maggotts"
+        },
+        "complex": "Maggotts / Becketts / Chapel",
+        "direction": "right",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.009814,
+          52.073813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 12,
+        "display": "Becketts",
+        "names": {
+          "numbered": "Turn 12",
+          "colloquial": "Becketts",
+          "official": "Becketts"
+        },
+        "complex": "Maggotts / Becketts / Chapel",
+        "direction": "left",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.009968,
+          52.072063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 13,
+        "display": "Becketts",
+        "names": {
+          "numbered": "Turn 13",
+          "colloquial": "Becketts",
+          "official": "Becketts"
+        },
+        "complex": "Maggotts / Becketts / Chapel",
+        "direction": "right",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.009968,
+          52.072063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 14,
+        "display": "Chapel Curve",
+        "names": {
+          "numbered": "Turn 14",
+          "colloquial": "Chapel Curve",
+          "official": "Chapel"
+        },
+        "complex": "Maggotts / Becketts / Chapel",
+        "direction": "left",
+        "scale": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.009468,
+          52.070864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 15,
+        "display": "Stowe",
+        "names": {
+          "numbered": "Turn 15",
+          "colloquial": "Stowe",
+          "official": "Stowe"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 3
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.017885,
+          52.0637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 16,
+        "display": "Vale Chicane",
+        "names": {
+          "numbered": "Turn 16",
+          "colloquial": "Vale Chicane",
+          "official": "Vale"
+        },
+        "complex": "Vale",
+        "direction": "left",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.022305,
+          52.066484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 17,
+        "display": "Vale Chicane",
+        "names": {
+          "numbered": "Turn 17",
+          "colloquial": "Vale Chicane",
+          "official": "Vale"
+        },
+        "complex": "Vale",
+        "direction": "right",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.022305,
+          52.066484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 18,
+        "display": "Club",
+        "names": {
+          "numbered": "Turn 18",
+          "colloquial": "Club",
+          "official": "Club"
+        },
+        "complex": null,
+        "direction": "right",
+        "scale": 2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.023776,
+          52.066903
+        ]
+      }
+    }
+  ]
+}

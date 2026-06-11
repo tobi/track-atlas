@@ -1,0 +1,225 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/tobi/track-atlas/schema/track.schema.json",
+  "title": "Track",
+  "description": "Clean, source-agnostic metadata for a single racing circuit. One file per track at tracks/<slug>/track.json. Geometry lives in sibling layers/*.geojson and is linked by id.",
+  "type": "object",
+  "required": ["slug", "name", "location", "layouts"],
+  "additionalProperties": false,
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Stable folder/identifier. Lowercase, hyphen-separated."
+    },
+    "name": { "type": "string", "description": "Official circuit name." },
+    "aka": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Alternative / colloquial circuit names (e.g. 'La Sarthe')."
+    },
+    "country": { "type": "string", "description": "ISO 3166-1 alpha-2 code." },
+    "location": {
+      "type": "object",
+      "required": ["lat", "lon"],
+      "additionalProperties": false,
+      "properties": {
+        "lat": { "type": "number" },
+        "lon": { "type": "number" },
+        "locality": { "type": "string" },
+        "region": { "type": "string" },
+        "timezone": { "type": "string" }
+      },
+      "description": "Geographic centroid of the circuit."
+    },
+    "wikidata": { "type": "string", "pattern": "^Q[0-9]+$" },
+    "layouts": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/layout" }
+    },
+    "provenance": { "$ref": "#/definitions/provenance" }
+  },
+  "definitions": {
+    "layout": {
+      "type": "object",
+      "required": ["id", "name", "geometry"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Layout identifier unique within the track (e.g. '24h', 'bugatti')."
+        },
+        "name": { "type": "string" },
+        "aka": { "type": "array", "items": { "type": "string" } },
+        "length_m": { "type": "number", "description": "Lap length in metres." },
+        "direction": {
+          "type": "string",
+          "enum": ["clockwise", "anticlockwise"],
+          "description": "Racing direction."
+        },
+        "active_years": {
+          "type": "string",
+          "description": "Free-form, e.g. '1990-' or '1972,1979-1989'."
+        },
+        "geometry": {
+          "type": "object",
+          "required": ["outline"],
+          "additionalProperties": false,
+          "properties": {
+            "outline": {
+              "type": "string",
+              "description": "Path (relative to track dir) to the GeoJSON LineString of the racing line / centerline for this layout."
+            },
+            "crs": { "type": "string", "default": "EPSG:4326" }
+          }
+        },
+        "start_finish": { "$ref": "#/definitions/point_ref" },
+        "name_default": {
+          "type": "string",
+          "enum": ["colloquial", "official", "numbered"],
+          "default": "colloquial",
+          "description": "Which naming layer best represents how this track's corners are usually referred to. Consumers use this to pick a display name, falling back through colloquial -> official -> numbered when the chosen layer is absent for a corner."
+        },
+        "corners": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/corner" }
+        },
+        "straights": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/straight" }
+        },
+        "sectors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "marker"],
+            "properties": {
+              "name": { "type": "string" },
+              "marker": { "type": "number", "description": "Lap fraction [0,1] of the sector boundary." }
+            }
+          }
+        },
+        "pit": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "entry": { "type": "number", "description": "Lap fraction [0,1]." },
+            "exit": { "type": "number", "description": "Lap fraction [0,1]." }
+          }
+        },
+        "marshal_posts": {
+          "type": "array",
+          "description": "Optional. Marshal / flag post locations.",
+          "items": { "$ref": "#/definitions/point_ref" }
+        },
+        "access_points": {
+          "type": "array",
+          "description": "Optional. Track exit/access/escape-road points.",
+          "items": { "$ref": "#/definitions/point_ref" }
+        }
+      }
+    },
+    "corner": {
+      "type": "object",
+      "required": ["number", "names"],
+      "additionalProperties": false,
+      "properties": {
+        "number": { "type": "integer", "description": "Sequential corner number on the lap." },
+        "names": {
+          "type": "object",
+          "description": "Parallel naming layers. 'numbered' always exists (naive 'Turn N' for everything that bends). 'official' and 'colloquial' are present only when known. Consumers should resolve a display name via the layout's name_default, falling back to colloquial -> official -> numbered.",
+          "additionalProperties": false,
+          "properties": {
+            "numbered": {
+              "type": "string",
+              "description": "Naive numbering, always present (e.g. 'Turn 1'). For multi-apex complexes, 'Turn 14a' style is allowed."
+            },
+            "official": {
+              "type": "string",
+              "description": "Official corner name from the circuit/governing body, when one exists."
+            },
+            "colloquial": {
+              "type": "string",
+              "description": "What drivers/fans actually call it. Often the best display name."
+            }
+          },
+          "required": ["numbered"]
+        },
+        "complex": {
+          "type": "string",
+          "description": "Name of the multi-corner complex this turn belongs to (e.g. 'Porsche Curves', 'Maggotts/Becketts'). Several numbered corners can share one complex."
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["left", "right"],
+          "description": "Turn direction."
+        },
+        "scale": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Severity 1-6 (1 = hairpin, 6 = barely a kink). From Lovely."
+        },
+        "marker": { "type": "number", "description": "Lap fraction [0,1] at the apex." },
+        "start": { "type": "number", "description": "Lap fraction [0,1] where the corner begins." },
+        "end": { "type": "number", "description": "Lap fraction [0,1] where the corner ends." },
+        "location": {
+          "$ref": "#/definitions/lonlat",
+          "description": "Apex coordinate, when resolvable from geometry."
+        }
+      }
+    },
+    "straight": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "aka": { "type": "array", "items": { "type": "string" } },
+        "start": { "type": "number", "description": "Lap fraction [0,1]." },
+        "end": { "type": "number", "description": "Lap fraction [0,1]." }
+      }
+    },
+    "point_ref": {
+      "type": "object",
+      "required": ["location"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "location": { "$ref": "#/definitions/lonlat" },
+        "marker": { "type": "number" }
+      }
+    },
+    "lonlat": {
+      "type": "array",
+      "description": "[longitude, latitude] per GeoJSON axis order.",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "number" }
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Where each part of the data came from and when.",
+      "additionalProperties": true,
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string" },
+              "license": { "type": "string" },
+              "retrieved": { "type": "string" },
+              "provides": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

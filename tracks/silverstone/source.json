@@ -1,0 +1,31 @@
+{
+  "slug": "silverstone",
+  "name": "Silverstone Circuit",
+  "aka": ["Silverstone", "The Home of British Motor Racing"],
+  "country": "GB",
+  "wikidata": "Q180969",
+  "location": {
+    "lat": 52.0733,
+    "lon": -1.0147,
+    "locality": "Silverstone, Northamptonshire",
+    "region": "England",
+    "timezone": "Europe/London"
+  },
+  "lovely": {
+    "gp": "f12025/silverstone.json"
+  },
+  "osm": {
+    "bbox": [52.064, -1.034, 52.082, -0.997]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": ["Arena GP"],
+      "length_m": 5891,
+      "direction": "clockwise",
+      "active_years": "2011-",
+      "lovely": "gp"
+    }
+  ]
+}

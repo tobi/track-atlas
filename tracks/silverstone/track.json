@@ -1,0 +1,401 @@
+{
+  "slug": "silverstone",
+  "name": "Silverstone Circuit",
+  "aka": [
+    "Silverstone",
+    "The Home of British Motor Racing"
+  ],
+  "country": "GB",
+  "location": {
+    "lat": 52.0733,
+    "lon": -1.0147,
+    "locality": "Silverstone, Northamptonshire",
+    "region": "England",
+    "timezone": "Europe/London"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [
+        "Arena GP"
+      ],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Abbey",
+            "official": "Abbey"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.0726,
+          "start": 0.0667,
+          "end": 0.0838,
+          "location": [
+            -1.019308,
+            52.071256
+          ]
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Farm Curve",
+            "official": "Farm Curve"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.1071,
+          "start": 0.099,
+          "end": 0.1201,
+          "location": [
+            -1.016393,
+            52.071268
+          ],
+          "complex": "Abbey / Farm"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Village",
+            "official": "Village"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.1553,
+          "start": 0.1502,
+          "end": 0.1588,
+          "location": [
+            -1.013289,
+            52.072477
+          ],
+          "complex": "Village / The Loop / Aintree"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "The Loop",
+            "official": "The Loop"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.1816,
+          "start": 0.1751,
+          "end": 0.1852,
+          "location": [
+            -1.012127,
+            52.071651
+          ],
+          "complex": "Village / The Loop / Aintree"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Aintree",
+            "official": "Aintree"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.2151,
+          "start": 0.2107,
+          "end": 0.2185,
+          "location": [
+            -1.0115,
+            52.072893
+          ],
+          "complex": "Village / The Loop / Aintree"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Brooklands",
+            "official": "Brooklands"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.3401,
+          "start": 0.3256,
+          "end": 0.3481,
+          "location": [
+            -1.019094,
+            52.077114
+          ]
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Luffield",
+            "official": "Luffield"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.379,
+          "start": 0.3583,
+          "end": 0.3909,
+          "location": [
+            -1.021126,
+            52.07604
+          ]
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Woodcote",
+            "official": "Woodcote"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.4376,
+          "start": 0.4116,
+          "end": 0.4491,
+          "location": [
+            -1.01946,
+            52.078259
+          ]
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Copse",
+            "official": "Copse"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.5271,
+          "start": 0.5182,
+          "end": 0.5421,
+          "location": [
+            -1.011674,
+            52.078666
+          ]
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Maggots",
+            "official": "Maggotts"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.6181,
+          "start": 0.6116,
+          "end": 0.6255,
+          "location": [
+            -1.009814,
+            52.073813
+          ],
+          "complex": "Maggotts / Becketts / Chapel"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Maggots",
+            "official": "Maggotts"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.6345,
+          "start": 0.6295,
+          "end": 0.6395,
+          "location": [
+            -1.009814,
+            52.073813
+          ],
+          "complex": "Maggotts / Becketts / Chapel"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Becketts",
+            "official": "Becketts"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.6629,
+          "start": 0.6511,
+          "end": 0.6695,
+          "location": [
+            -1.009968,
+            52.072063
+          ],
+          "complex": "Maggotts / Becketts / Chapel"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Becketts",
+            "official": "Becketts"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.6877,
+          "start": 0.6755,
+          "end": 0.6966,
+          "location": [
+            -1.009968,
+            52.072063
+          ],
+          "complex": "Maggotts / Becketts / Chapel"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Chapel Curve",
+            "official": "Chapel"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.7138,
+          "start": 0.7078,
+          "end": 0.719,
+          "location": [
+            -1.009468,
+            52.070864
+          ],
+          "complex": "Maggotts / Becketts / Chapel"
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "Stowe",
+            "official": "Stowe"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.8632,
+          "start": 0.8467,
+          "end": 0.878,
+          "location": [
+            -1.017885,
+            52.0637
+          ]
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16",
+            "colloquial": "Vale Chicane",
+            "official": "Vale"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.9403,
+          "start": 0.937,
+          "end": 0.9436,
+          "location": [
+            -1.022305,
+            52.066484
+          ],
+          "complex": "Vale"
+        },
+        {
+          "number": 17,
+          "names": {
+            "numbered": "Turn 17",
+            "colloquial": "Vale Chicane",
+            "official": "Vale"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.953,
+          "start": 0.9479,
+          "end": 0.9566,
+          "location": [
+            -1.022305,
+            52.066484
+          ],
+          "complex": "Vale"
+        },
+        {
+          "number": 18,
+          "names": {
+            "numbered": "Turn 18",
+            "colloquial": "Club",
+            "official": "Club"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.9832,
+          "start": 0.9798,
+          "end": 0.9855,
+          "location": [
+            -1.023776,
+            52.066903
+          ]
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.3079
+        },
+        {
+          "name": "2",
+          "marker": 0.729
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9066,
+        "exit": 0.108
+      },
+      "length_m": 5891,
+      "direction": "clockwise",
+      "active_years": "2011-"
+    }
+  ],
+  "wikidata": "Q180969",
+  "provenance": {
+    "generated_at": "2026-06-11T11:32:38.550543+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 18,
+      "total": 18
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "circuit-de-la-sarthe",
+  "name": "Circuit de la Sarthe",
+  "aka": ["La Sarthe", "Circuit des 24 Heures du Mans", "Le Mans"],
+  "country": "FR",
+  "wikidata": "Q270760",
+  "location": {
+    "lat": 47.95,
+    "lon": 0.2247,
+    "locality": "Le Mans",
+    "region": "Pays de la Loire",
+    "timezone": "Europe/Paris"
+  },
+  "lovely": {
+    "24h": "lmu/circuit-de-la-sarthe.json"
+  },
+  "osm": {
+    "bbox": [47.90, 0.15, 47.98, 0.28]
+  },
+  "layouts": [
+    {
+      "id": "24h",
+      "name": "Circuit des 24 Heures",
+      "aka": ["Grand Prix Endurance Circuit"],
+      "length_m": 13626,
+      "direction": "clockwise",
+      "active_years": "2018-",
+      "lovely": "24h"
+    }
+  ]
+}
