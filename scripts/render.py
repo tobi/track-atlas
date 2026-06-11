@@ -24,7 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS, load_source, track_dir  # noqa: E402
-from lib.osm import way_coords, trace_loop, loop_length_m  # noqa: E402
+from lib.osm import way_coords, trace_loop, loop_length_m, relation_centerline  # noqa: E402
 
 # Ways that aren't part of the main circuit surface we want to draw.
 DROP_WAY = re.compile(
@@ -87,13 +87,24 @@ def build_svg(slug: str, layout_id: str | None) -> str:
     panel_x_left = MARGIN + 470  # right edge of the title text band (top-left)
 
     # --- gather geometry ---
-    # Primary: stitch the real OSM raceway geometry into a continuous loop,
-    # ordered by lap fraction. This keeps actual chicane/corner shapes. Falls
-    # back to a smooth spline through corner apexes only if tracing fails.
+    # Priority for the silhouette:
+    #   1. The OSM route relation centerline (raw/osm-relation.json) — the
+    #      official continuous lap, every chicane and public-road section
+    #      included. This is the real track.
+    #   2. Stitched named raceway ways (trace_loop) — ordered by lap fraction.
+    #   3. A smooth spline through corner apexes — last-resort fallback.
     corners = [c for c in layout.get("corners", []) if "location" in c]
     corners_ordered = sorted(corners, key=lambda c: c["number"])
 
-    traced = trace_loop(osm.get("elements", []), layout.get("corners", []))
+    traced = None
+    rel_path = tdir / "raw" / "osm-relation.json"
+    if rel_path.exists():
+        try:
+            traced = relation_centerline(json.loads(rel_path.read_text()))
+        except Exception:
+            traced = None
+    if not traced or len(traced) < 8:
+        traced = trace_loop(osm.get("elements", []), layout.get("corners", []))
     use_real = traced is not None and len(traced) >= 8
 
     all_lonlat = list(traced) if use_real else []
@@ -203,7 +214,8 @@ def build_svg(slug: str, layout_id: str | None) -> str:
                    f'fill="#0a0c12" text-anchor="middle">{c["number"]}</text>')
 
     # Build label set: one entry per complex (anchored at its mid corner) plus
-    # one per solo corner.
+    # one per *named* solo corner. Unnamed corners (only a "Turn N" fallback)
+    # keep their numbered dot but get no text label, to avoid clutter.
     seen_complex = {}
     labels = []  # dict: dot(x,y), text, side, desired_y
     for c in corners:
@@ -217,6 +229,9 @@ def build_svg(slug: str, layout_id: str | None) -> str:
             px, py = dot_pos[mid["number"]]
             text = comp
         else:
+            names = c.get("names", {})
+            if not (names.get("colloquial") or names.get("official")):
+                continue  # unnamed corner -> dot only, no label
             px, py = dot_pos[c["number"]]
             text = resolve(c)
         vx, vy = px - cx, py - cy
