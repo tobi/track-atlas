@@ -24,7 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS, load_source, track_dir  # noqa: E402
-from lib.osm import way_coords  # noqa: E402
+from lib.osm import way_coords, trace_loop, loop_length_m  # noqa: E402
 
 # Ways that aren't part of the main circuit surface we want to draw.
 DROP_WAY = re.compile(
@@ -87,17 +87,24 @@ def build_svg(slug: str, layout_id: str | None) -> str:
     panel_x_left = MARGIN + 470  # right edge of the title text band (top-left)
 
     # --- gather geometry ---
-    # Outline = smooth closed spline through the corners in LAP ORDER. This is
-    # fully data-driven (corner coordinates only) and sidesteps the fact that an
-    # OSM bbox contains overlapping sub-circuits / pit lanes that physically
-    # share corners with the main loop and can't be cleanly filtered.
+    # Primary: stitch the real OSM raceway geometry into a continuous loop,
+    # ordered by lap fraction. This keeps actual chicane/corner shapes. Falls
+    # back to a smooth spline through corner apexes only if tracing fails.
     corners = [c for c in layout.get("corners", []) if "location" in c]
     corners_ordered = sorted(corners, key=lambda c: c["number"])
 
-    all_xy = []
-    all_xy += project([c["location"] for c in corners], lat0)
+    traced = trace_loop(osm.get("elements", []), layout.get("corners", []))
+    use_real = traced is not None and len(traced) >= 8
+
+    all_lonlat = list(traced) if use_real else []
+    all_lonlat += [c["location"] for c in corners]
+    all_xy = project(all_lonlat, lat0)
     tf = fit_transform(all_xy, W, H, MARGIN, panel_w=470)
 
+    if use_real:
+        outline_xy = [tf(*p) for p in project(traced, lat0)]
+    else:
+        outline_xy = [tf(*p) for p in project([c["location"] for c in corners_ordered], lat0)]
     loop_pts = [tf(*p) for p in project([c["location"] for c in corners_ordered], lat0)]
 
     # centroid for radial label placement
@@ -131,9 +138,9 @@ def build_svg(slug: str, layout_id: str | None) -> str:
     for gy in range(0, H, 56):
         svg.append(f'<line x1="0" y1="{gy}" x2="{W}" y2="{gy}" stroke="#ffffff" stroke-opacity="0.025"/>')
 
-    # --- track ribbon: smooth closed Catmull-Rom spline through corners ---
+    # --- track ribbon ---
     def catmull_rom_closed(pts):
-        """Return an SVG path string: closed smooth curve through pts."""
+        """Closed smooth curve through pts (fallback when no real geometry)."""
         n = len(pts)
         if n < 3:
             return "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
@@ -151,19 +158,24 @@ def build_svg(slug: str, layout_id: str | None) -> str:
         d.append("Z")
         return " ".join(d)
 
-    loop_d = catmull_rom_closed(loop_pts)
+    if use_real:
+        # Real OSM geometry: draw as a polyline (preserves chicanes), close it.
+        loop_d = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in outline_xy) + " Z"
+    else:
+        loop_d = catmull_rom_closed(loop_pts)
+
     # outer dark casing
     svg.append(f'<path d="{loop_d}" fill="none" stroke="#000000" stroke-opacity="0.5" '
-               f'stroke-width="22" stroke-linejoin="round"/>')
+               f'stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>')
     # asphalt
     svg.append(f'<path d="{loop_d}" fill="none" stroke="#39404f" '
-               f'stroke-width="16" stroke-linejoin="round"/>')
+               f'stroke-width="8.5" stroke-linejoin="round" stroke-linecap="round"/>')
     # bright racing line
     svg.append(f'<path d="{loop_d}" fill="none" stroke="#e7edf8" '
-               f'stroke-width="3.5" stroke-linejoin="round"/>')
+               f'stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>')
     # accent centerline glow
-    svg.append(f'<path d="{loop_d}" fill="none" stroke="{accent}" stroke-opacity="0.5" '
-               f'stroke-width="1.5" stroke-linejoin="round" filter="url(#glow)"/>')
+    svg.append(f'<path d="{loop_d}" fill="none" stroke="{accent}" stroke-opacity="0.55" '
+               f'stroke-width="1.2" stroke-linejoin="round" filter="url(#glow)"/>')
 
     # --- start/finish ---
     sf = None
