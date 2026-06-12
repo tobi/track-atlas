@@ -1,0 +1,85 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Turn 1",
+        "official": "Turn 1",
+        "direction": "left",
+        "scale": 2
+      },
+      "2": {
+        "colloquial": "Turn 2",
+        "official": "Turn 2",
+        "direction": "left",
+        "scale": 3
+      },
+      "3": {
+        "colloquial": "International Horseshoe",
+        "official": "International Horseshoe",
+        "direction": "right",
+        "scale": 1
+      },
+      "4": {
+        "colloquial": "The Kink",
+        "official": "Turn 4 (Kink)",
+        "direction": "left",
+        "scale": 5
+      },
+      "5": {
+        "colloquial": "West Horseshoe",
+        "official": "West Horseshoe",
+        "direction": "left",
+        "scale": 2
+      },
+      "6": {
+        "colloquial": "NASCAR 1",
+        "official": "Turn 6 (NASCAR Turn 1)",
+        "direction": "left",
+        "scale": 5
+      },
+      "7": {
+        "colloquial": "NASCAR 2",
+        "official": "Turn 7 (NASCAR Turn 2)",
+        "direction": "left",
+        "scale": 5,
+        "error": "marker 0.451 then long gap to T8 at 0.67 is expected (backstretch), but T7's coordinate sits in the infield region near the West Horseshoe exit rather than on the oval banking — looks misplaced"
+      },
+      "8": {
+        "colloquial": "Bus Stop entry",
+        "official": "Turn 8",
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "left",
+        "scale": 4
+      },
+      "9": {
+        "colloquial": "Bus Stop",
+        "official": "Turn 9",
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "right",
+        "scale": 3
+      },
+      "10": {
+        "colloquial": "Bus Stop",
+        "official": "Turn 10",
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "right",
+        "scale": 3
+      },
+      "11": {
+        "colloquial": "Bus Stop exit",
+        "official": "Turn 11",
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "left",
+        "scale": 4
+      },
+      "12": {
+        "colloquial": "NASCAR 3",
+        "official": "Turn 12 (NASCAR Turns 3-4)",
+        "direction": "left",
+        "scale": 5,
+        "error": "Turn 12 covers both NASCAR 3 and NASCAR 4 banking — a single marker at 0.81 under-represents roughly a quarter mile of continuous banked cornering; consider a second point for NASCAR 4 around 0.87"
+      }
+    },
+    "errors_summary": "Metadata says 'clockwise' but the Daytona road course runs counter-clockwise (NASCAR oval direction); the GeoJSON outline also appears mirrored north-south versus the real circuit (infield turns plotted north of the oval), which would make a CCW track render as clockwise — directions given here are real-world. T7 coordinate looks misplaced in the infield instead of on the NASCAR 2 banking."
+  }
+}
