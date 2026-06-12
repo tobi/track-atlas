@@ -1356,11 +1356,12 @@
         "display": "Horseshoe",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "Horseshoe"
+          "colloquial": "Horseshoe",
+          "official": "Turn 1"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 1
       },
       "geometry": {
         "type": "Point",
@@ -1378,11 +1379,12 @@
         "display": "Turn 2",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "Turn 2"
+          "colloquial": "Turn 2",
+          "official": "Turn 2"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1397,14 +1399,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Nascar Bend",
+        "display": "NASCAR",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Nascar Bend"
+          "colloquial": "NASCAR",
+          "official": "Turn 3"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1422,11 +1425,12 @@
         "display": "Left Hook",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "Left Hook"
+          "colloquial": "Left Hook",
+          "official": "Turn 4"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1441,14 +1445,15 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Turn 4b",
+        "display": "Climbing Esses",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Turn 4b"
+          "colloquial": "Climbing Esses",
+          "official": "Turn 5"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Climbing Esses",
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1463,14 +1468,15 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "Turn 5a",
+        "display": "Climbing Esses",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Turn 5a"
+          "colloquial": "Climbing Esses",
+          "official": "Turn 6"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Climbing Esses",
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1488,11 +1494,12 @@
         "display": "Snake",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Snake"
+          "colloquial": "Snake",
+          "official": "Turn 7"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1507,14 +1514,15 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Turn 7",
+        "display": "Spiral",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Turn 7"
+          "colloquial": "Spiral",
+          "official": "Turn 8"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1529,14 +1537,15 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "Turn 8a",
+        "display": "Spiral",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Turn 8a"
+          "colloquial": "Spiral",
+          "official": "Turn 9"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1551,14 +1560,15 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "Turn 8b",
+        "display": "Spiral",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "Turn 8b"
+          "colloquial": "Spiral",
+          "official": "Turn 10"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1573,14 +1583,15 @@
       "properties": {
         "role": "corner",
         "number": 11,
-        "display": "Turn 9",
+        "display": "Spiral",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "Turn 9"
+          "colloquial": "Spiral",
+          "official": "Turn 11"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1598,11 +1609,12 @@
         "display": "South Bend",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "South Bend"
+          "colloquial": "South Bend",
+          "official": "Turn 12"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1620,11 +1632,12 @@
         "display": "Oak Tree",
         "names": {
           "numbered": "Turn 13",
-          "colloquial": "Oak Tree"
+          "colloquial": "Oak Tree",
+          "official": "Turn 13"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1642,11 +1655,12 @@
         "display": "Roller Coaster",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "Roller Coaster"
+          "colloquial": "Roller Coaster",
+          "official": "Turn 14"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -1664,11 +1678,12 @@
         "display": "Hog Pen",
         "names": {
           "numbered": "Turn 15",
-          "colloquial": "Hog Pen"
+          "colloquial": "Hog Pen",
+          "official": "Turn 15"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1683,14 +1698,15 @@
       "properties": {
         "role": "corner",
         "number": 16,
-        "display": "Turn 18",
+        "display": "Turn 17",
         "names": {
           "numbered": "Turn 16",
-          "colloquial": "Turn 18"
+          "colloquial": "Turn 17",
+          "official": "Turn 17"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",

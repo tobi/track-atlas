@@ -27,7 +27,8 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "Horseshoe"
+            "colloquial": "Horseshoe",
+            "official": "Turn 1"
           },
           "start": 0.05,
           "end": 0.113,
@@ -35,17 +36,22 @@
           "location": [
             -79.202601,
             36.568253
-          ]
+          ],
+          "direction": "right",
+          "scale": 1
         },
         {
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "Turn 2"
+            "colloquial": "Turn 2",
+            "official": "Turn 2"
           },
           "start": 0.12,
           "end": 0.148,
           "marker": 0.134,
+          "direction": "left",
+          "scale": 4,
           "location": [
             -79.204972,
             36.568268
@@ -56,7 +62,8 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Nascar Bend"
+            "colloquial": "NASCAR",
+            "official": "Turn 3"
           },
           "start": 0.149,
           "end": 0.18,
@@ -64,13 +71,16 @@
           "location": [
             -79.206343,
             36.567732
-          ]
+          ],
+          "direction": "right",
+          "scale": 3
         },
         {
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "Left Hook"
+            "colloquial": "Left Hook",
+            "official": "Turn 4"
           },
           "start": 0.181,
           "end": 0.206,
@@ -78,17 +88,23 @@
           "location": [
             -79.205713,
             36.566107
-          ]
+          ],
+          "direction": "left",
+          "scale": 2
         },
         {
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Turn 4b"
+            "colloquial": "Climbing Esses",
+            "official": "Turn 5"
           },
           "start": 0.207,
           "end": 0.225,
           "marker": 0.216,
+          "complex": "Climbing Esses",
+          "direction": "right",
+          "scale": 4,
           "location": [
             -79.204968,
             36.566178
@@ -99,11 +115,15 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "Turn 5a"
+            "colloquial": "Climbing Esses",
+            "official": "Turn 6"
           },
           "start": 0.226,
           "end": 0.243,
           "marker": 0.2345,
+          "complex": "Climbing Esses",
+          "direction": "left",
+          "scale": 4,
           "location": [
             -79.204484,
             36.565846
@@ -114,7 +134,8 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Snake"
+            "colloquial": "Snake",
+            "official": "Turn 7"
           },
           "start": 0.244,
           "end": 0.308,
@@ -122,17 +143,22 @@
           "location": [
             -79.20439,
             36.564724
-          ]
+          ],
+          "direction": "left",
+          "scale": 2
         },
         {
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Turn 7"
+            "colloquial": "Spiral",
+            "official": "Turn 8"
           },
           "start": 0.347,
           "end": 0.367,
           "marker": 0.357,
+          "direction": "right",
+          "scale": 2,
           "location": [
             -79.204816,
             36.560403
@@ -143,11 +169,14 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "Turn 8a"
+            "colloquial": "Spiral",
+            "official": "Turn 9"
           },
           "start": 0.368,
           "end": 0.386,
           "marker": 0.377,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -79.204798,
             36.559318
@@ -158,11 +187,14 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "Turn 8b"
+            "colloquial": "Spiral",
+            "official": "Turn 10"
           },
           "start": 0.387,
           "end": 0.404,
           "marker": 0.3955,
+          "direction": "right",
+          "scale": 3,
           "location": [
             -79.204664,
             36.558326
@@ -173,11 +205,14 @@
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "Turn 9"
+            "colloquial": "Spiral",
+            "official": "Turn 11"
           },
           "start": 0.405,
           "end": 0.43,
           "marker": 0.4175,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -79.204623,
             36.557144
@@ -188,7 +223,8 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "South Bend"
+            "colloquial": "South Bend",
+            "official": "Turn 12"
           },
           "start": 0.44,
           "end": 0.477,
@@ -196,17 +232,22 @@
           "location": [
             -79.205345,
             36.554972
-          ]
+          ],
+          "direction": "right",
+          "scale": 3
         },
         {
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "Oak Tree"
+            "colloquial": "Oak Tree",
+            "official": "Turn 13"
           },
           "start": 0.502,
           "end": 0.55,
           "marker": 0.526,
+          "direction": "left",
+          "scale": 4,
           "location": [
             -79.204656,
             36.552044
@@ -217,7 +258,8 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "Roller Coaster"
+            "colloquial": "Roller Coaster",
+            "official": "Turn 14"
           },
           "start": 0.748,
           "end": 0.83,
@@ -225,13 +267,16 @@
           "location": [
             -79.211855,
             36.562472
-          ]
+          ],
+          "direction": "right",
+          "scale": 5
         },
         {
           "number": 15,
           "names": {
             "numbered": "Turn 15",
-            "colloquial": "Hog Pen"
+            "colloquial": "Hog Pen",
+            "official": "Turn 15"
           },
           "start": 0.831,
           "end": 0.9,
@@ -239,17 +284,22 @@
           "location": [
             -79.212499,
             36.565757
-          ]
+          ],
+          "direction": "left",
+          "scale": 2
         },
         {
           "number": 16,
           "names": {
             "numbered": "Turn 16",
-            "colloquial": "Turn 18"
+            "colloquial": "Turn 17",
+            "official": "Turn 17"
           },
           "start": 0.049,
           "end": 0.118,
           "marker": 0.0835,
+          "direction": "right",
+          "scale": 5,
           "location": [
             -79.202444,
             36.568033
@@ -317,7 +367,7 @@
     "imsa_data": "virginia-international-raceway"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:50.352406+00:00",
+    "generated_at": "2026-06-12T21:34:56.438843+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
