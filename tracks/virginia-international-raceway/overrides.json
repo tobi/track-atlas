@@ -1,0 +1,106 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Horseshoe",
+        "official": "Turn 1",
+        "direction": "right",
+        "scale": 1
+      },
+      "2": {
+        "colloquial": "Turn 2",
+        "official": "Turn 2",
+        "direction": "left",
+        "scale": 4
+      },
+      "3": {
+        "colloquial": "NASCAR",
+        "official": "Turn 3",
+        "direction": "right",
+        "scale": 3
+      },
+      "4": {
+        "colloquial": "Left Hook",
+        "official": "Turn 4",
+        "direction": "left",
+        "scale": 2
+      },
+      "5": {
+        "colloquial": "Climbing Esses",
+        "official": "Turn 5",
+        "complex": "Climbing Esses",
+        "direction": "right",
+        "scale": 4
+      },
+      "6": {
+        "colloquial": "Climbing Esses",
+        "official": "Turn 6",
+        "complex": "Climbing Esses",
+        "direction": "left",
+        "scale": 4
+      },
+      "7": {
+        "colloquial": "Snake",
+        "official": "Turn 7",
+        "direction": "left",
+        "scale": 2
+      },
+      "8": {
+        "colloquial": "Spiral",
+        "official": "Turn 8",
+        "direction": "right",
+        "scale": 2
+      },
+      "9": {
+        "colloquial": "Spiral",
+        "official": "Turn 9",
+        "direction": "left",
+        "scale": 3
+      },
+      "10": {
+        "colloquial": "Spiral",
+        "official": "Turn 10",
+        "direction": "right",
+        "scale": 3
+      },
+      "11": {
+        "colloquial": "Spiral",
+        "official": "Turn 11",
+        "direction": "left",
+        "scale": 3
+      },
+      "12": {
+        "colloquial": "South Bend",
+        "official": "Turn 12",
+        "direction": "right",
+        "scale": 3
+      },
+      "13": {
+        "colloquial": "Oak Tree",
+        "official": "Turn 13",
+        "direction": "left",
+        "scale": 4
+      },
+      "14": {
+        "colloquial": "Roller Coaster",
+        "official": "Turn 14",
+        "direction": "right",
+        "scale": 5
+      },
+      "15": {
+        "colloquial": "Hog Pen",
+        "official": "Turn 15",
+        "direction": "left",
+        "scale": 2
+      },
+      "16": {
+        "colloquial": "Turn 17",
+        "official": "Turn 17",
+        "direction": "right",
+        "scale": 5,
+        "error": "marker 0.0835 appears before T1 marker 0.0815 — should be ~0.98+ as final corner before start/finish"
+      }
+    },
+    "errors_summary": "Turn 16 marker (0.0835) overlaps with T1 (0.0815), should be ~0.98 as final corner; turns 5-6 are collectively 'Climbing Esses'; turns 8-11 form 'Spiral' descent complex but each has distinct apex"
+  }
+}
