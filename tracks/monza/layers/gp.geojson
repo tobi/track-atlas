@@ -1729,14 +1729,15 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "Variante del Rettifilo",
+        "display": "First Chicane",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "Variante del Rettifilo"
+          "colloquial": "First Chicane",
+          "official": "Variante del Rettifilo"
         },
-        "complex": null,
+        "complex": "Variante del Rettifilo",
         "direction": "right",
-        "scale": 4
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1751,13 +1752,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "Turn 2",
+        "display": "First Chicane",
         "names": {
-          "numbered": "Turn 2"
+          "numbered": "Turn 2",
+          "official": "Variante del Rettifilo",
+          "colloquial": "First Chicane"
         },
-        "complex": null,
+        "complex": "Variante del Rettifilo",
         "direction": "left",
-        "scale": 3
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1775,7 +1778,8 @@
         "display": "Curva Grande",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Curva Grande"
+          "colloquial": "Curva Grande",
+          "official": "Curva Grande"
         },
         "complex": null,
         "direction": "right",
@@ -1794,14 +1798,15 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "Variante della Roggia",
+        "display": "Roggia",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "Variante della Roggia"
+          "colloquial": "Roggia",
+          "official": "Variante della Roggia"
         },
-        "complex": null,
-        "direction": "left",
-        "scale": 4
+        "complex": "Variante della Roggia",
+        "direction": "right",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1816,13 +1821,15 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Turn 5",
+        "display": "Roggia",
         "names": {
-          "numbered": "Turn 5"
+          "numbered": "Turn 5",
+          "official": "Variante della Roggia",
+          "colloquial": "Roggia"
         },
-        "complex": null,
-        "direction": "right",
-        "scale": 4
+        "complex": "Variante della Roggia",
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1837,10 +1844,11 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "Curve di Lesmo",
+        "display": "Lesmo 1",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Curve di Lesmo"
+          "colloquial": "Lesmo 1",
+          "official": "Lesmo 1"
         },
         "complex": null,
         "direction": "right",
@@ -1859,13 +1867,15 @@
       "properties": {
         "role": "corner",
         "number": 7,
-        "display": "Turn 7",
+        "display": "Lesmo 2",
         "names": {
-          "numbered": "Turn 7"
+          "numbered": "Turn 7",
+          "official": "Lesmo 2",
+          "colloquial": "Lesmo 2"
         },
         "complex": null,
         "direction": "right",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1880,14 +1890,15 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Variante Ascari",
+        "display": "Ascari",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Variante Ascari"
+          "colloquial": "Ascari",
+          "official": "Variante Ascari"
         },
-        "complex": null,
-        "direction": "left",
-        "scale": 5
+        "complex": "Variante Ascari",
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1902,13 +1913,15 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "Turn 9",
+        "display": "Ascari",
         "names": {
-          "numbered": "Turn 9"
+          "numbered": "Turn 9",
+          "official": "Variante Ascari",
+          "colloquial": "Ascari"
         },
-        "complex": null,
-        "direction": "right",
-        "scale": 5
+        "complex": "Variante Ascari",
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1923,13 +1936,15 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "Turn 10",
+        "display": "Ascari",
         "names": {
-          "numbered": "Turn 10"
+          "numbered": "Turn 10",
+          "official": "Variante Ascari",
+          "colloquial": "Ascari"
         },
-        "complex": null,
+        "complex": "Variante Ascari",
         "direction": "left",
-        "scale": 5
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1944,10 +1959,11 @@
       "properties": {
         "role": "corner",
         "number": 11,
-        "display": "Curva Parabolica",
+        "display": "Parabolica",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "Curva Parabolica"
+          "colloquial": "Parabolica",
+          "official": "Curva Parabolica"
         },
         "complex": null,
         "direction": "right",
