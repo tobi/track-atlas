@@ -164,7 +164,7 @@ def call_model(prompt: str, model: str) -> str:
     client = anthropic.Anthropic(api_key=api_key)
     msg = client.messages.create(
         model=model,
-        max_tokens=8192,
+        max_tokens=16000,
         system=SYSTEM,
         messages=[{"role": "user", "content": prompt}],
     )
