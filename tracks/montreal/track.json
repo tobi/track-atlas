@@ -27,13 +27,15 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "Senna 'S'"
+            "colloquial": "Senna S",
+            "official": "Turn 1"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 2,
           "marker": 0.0596,
           "start": 0.0575,
           "end": 0.0629,
+          "complex": "Senna S",
           "location": [
             -73.523398,
             45.502372
@@ -44,13 +46,15 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "Senna 'S'"
+            "colloquial": "Senna S",
+            "official": "Turn 2"
           },
-          "direction": "right",
-          "scale": 1,
+          "direction": "left",
+          "scale": 2,
           "marker": 0.0758,
           "start": 0.0704,
           "end": 0.0948,
+          "complex": "Senna S",
           "location": [
             -73.523211,
             45.501751
@@ -61,9 +65,10 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "T3"
+            "colloquial": "Turn 3",
+            "official": "Turn 3"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 2,
           "marker": 0.1699,
           "start": 0.167,
@@ -78,9 +83,10 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "T4"
+            "colloquial": "Turn 4",
+            "official": "Turn 4"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 3,
           "marker": 0.1821,
           "start": 0.1804,
@@ -112,9 +118,10 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "T6"
+            "colloquial": "Turn 6",
+            "official": "Turn 6"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 2,
           "marker": 0.2914,
           "start": 0.2854,
@@ -129,9 +136,10 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "T7"
+            "colloquial": "Turn 7",
+            "official": "Turn 7"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 3,
           "marker": 0.3053,
           "start": 0.3003,
@@ -146,10 +154,11 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Pont de la Concorde"
+            "colloquial": "Hairpin",
+            "official": "Turn 8"
           },
-          "direction": "right",
-          "scale": 2,
+          "direction": "left",
+          "scale": 1,
           "marker": 0.464,
           "start": 0.462,
           "end": 0.4661,
@@ -163,9 +172,10 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "T9"
+            "colloquial": "Turn 9",
+            "official": "Turn 9"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 3,
           "marker": 0.4735,
           "start": 0.4695,
@@ -180,9 +190,10 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "The Hairpin"
+            "colloquial": "Hairpin",
+            "official": "L'Epingle"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 1,
           "marker": 0.6228,
           "start": 0.6145,
@@ -197,9 +208,10 @@
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "T11"
+            "colloquial": "Turn 11",
+            "official": "Turn 11"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 5,
           "marker": 0.6471,
           "start": 0.6429,
@@ -214,9 +226,10 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "T12"
+            "colloquial": "Turn 12",
+            "official": "Turn 12"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 6,
           "marker": 0.7353,
           "start": 0.7296,
@@ -231,13 +244,15 @@
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "T13"
+            "colloquial": "Wall of Champions",
+            "official": "Turn 13"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 2,
           "marker": 0.897,
           "start": 0.8943,
           "end": 0.8998,
+          "complex": "Wall of Champions",
           "location": [
             -73.524796,
             45.508516
@@ -248,13 +263,15 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "T14"
+            "colloquial": "Wall of Champions",
+            "official": "Turn 14"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 2,
           "marker": 0.904,
           "start": 0.8998,
           "end": 0.9071,
+          "complex": "Wall of Champions",
           "location": [
             -73.524715,
             45.508247
@@ -299,7 +316,7 @@
     "imsa_data": "montreal"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:25:04.429954+00:00",
+    "generated_at": "2026-06-12T21:31:31.850820+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
