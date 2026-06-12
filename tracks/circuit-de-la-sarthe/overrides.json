@@ -2,21 +2,157 @@
   "_comment": "Curated naming layers Lovely/OSM lack. official = circuit/ACO naming, colloquial = what drivers say. complex groups multi-corner sections. Keyed by layout id -> corners -> corner number.",
   "24h": {
     "corners": {
-      "1": { "colloquial": "Dunlop Curve", "official": "Courbe Dunlop" },
-      "2": { "colloquial": "Dunlop Chicane", "official": "Chicane Dunlop", "complex": "Dunlop" },
-      "4": { "colloquial": "Esses de la Forêt", "official": "Esses de la Forêt" },
-      "6": { "colloquial": "Tertre Rouge", "official": "Virage du Tertre Rouge" },
-      "7": { "colloquial": "Mulsanne Chicane 1", "official": "Chicane Daytona", "complex": "Mulsanne Straight Chicanes" },
-      "8": { "colloquial": "Mulsanne Chicane 2", "official": "Chicane Michelin", "complex": "Mulsanne Straight Chicanes" },
-      "9": { "colloquial": "Mulsanne", "official": "Virage de Mulsanne" },
-      "11": { "colloquial": "Indianapolis", "official": "Virage d'Indianapolis" },
-      "12": { "colloquial": "Arnage", "official": "Virage d'Arnage" },
-      "14": { "colloquial": "Porsche Curves", "official": "Virage Porsche", "complex": "Porsche Curves" },
-      "15": { "colloquial": "Porsche Curves", "official": "Virage du Pont", "complex": "Porsche Curves" },
-      "16": { "colloquial": "Karting", "official": "Virage du Karting", "complex": "Porsche Curves" },
-      "17": { "colloquial": "Corvette", "official": "Virage du Corvette", "complex": "Porsche Curves" },
-      "18": { "colloquial": "Ford Chicane", "official": "Chicane Ford", "complex": "Ford Chicanes" },
-      "20": { "colloquial": "Ford Chicane", "official": "Chicane du Raccordement", "complex": "Ford Chicanes" }
-    }
+      "1": {
+        "colloquial": "Dunlop Curve",
+        "official": "Courbe Dunlop",
+        "direction": "right",
+        "scale": 5,
+        "error": "location is identical to corner 2 (0.210987, 47.956831) — Dunlop Curve apex should be earlier, near ~0.2095, 47.9558; marker 0.05 looks right but the coordinate was copied from the chicane"
+      },
+      "2": {
+        "colloquial": "Dunlop Chicane",
+        "official": "Chicane Dunlop",
+        "complex": "Dunlop Chicane",
+        "direction": "left",
+        "scale": 4
+      },
+      "4": {
+        "colloquial": "Esses de la Forêt",
+        "official": "Esses de la Forêt",
+        "complex": "Esses de la Forêt",
+        "direction": "left",
+        "scale": 4,
+        "error": "T4 carries the Esses name but complex was null — T4 and T5 together are the Esses de la Forêt"
+      },
+      "6": {
+        "colloquial": "Tertre Rouge",
+        "official": "Virage du Tertre Rouge"
+      },
+      "7": {
+        "colloquial": "First Chicane",
+        "official": "Chicane Daytona",
+        "complex": "Mulsanne Straight Chicanes",
+        "direction": "right",
+        "scale": 2,
+        "error": "complex 'Mulsanne Straight Chicanes' is invalid — the two chicanes are ~2 km apart and never spoken of as one unit (drivers say 'first chicane' / 'second chicane'); also this right-left chicane is represented by a single corner entry"
+      },
+      "8": {
+        "colloquial": "Second Chicane",
+        "official": "Chicane Michelin",
+        "complex": "Mulsanne Straight Chicanes",
+        "direction": "left",
+        "scale": 2,
+        "error": "complex 'Mulsanne Straight Chicanes' should be removed (not a contiguous complex); this left-right chicane is represented by a single corner entry"
+      },
+      "9": {
+        "colloquial": "Mulsanne",
+        "official": "Virage de Mulsanne",
+        "direction": "right",
+        "scale": 1,
+        "error": "scale 2 is too generous — Mulsanne Corner is the slowest point on the lap (~1st/2nd gear, ~100° tightening right), should be scale 1"
+      },
+      "11": {
+        "colloquial": "Indianapolis",
+        "official": "Virage d'Indianapolis",
+        "complex": "Indianapolis",
+        "direction": "left",
+        "scale": 3,
+        "error": "scale 4 slightly high — the left at Indianapolis is a 2nd/3rd-gear banked left, scale 3 fits better; complex should pair with T10"
+      },
+      "12": {
+        "colloquial": "Arnage",
+        "official": "Virage d'Arnage",
+        "direction": "right",
+        "scale": 2,
+        "error": "scale 3 too high — Arnage is a slow 1st/2nd-gear right-hander, scale 2"
+      },
+      "14": {
+        "colloquial": "Porsche Curves",
+        "official": "Virage Porsche",
+        "complex": "Porsche Curves",
+        "direction": "right",
+        "scale": 5
+      },
+      "15": {
+        "colloquial": "Porsche Curves",
+        "official": "Virage du Pont",
+        "complex": "Porsche Curves",
+        "direction": "left",
+        "scale": 5
+      },
+      "16": {
+        "colloquial": "Karting",
+        "official": "Virage du Karting",
+        "complex": "Porsche Curves",
+        "direction": "right",
+        "scale": 4,
+        "error": "scale 5 slightly high — Karting is the tightening right where the Porsche Curves slow down, scale 4 fits better"
+      },
+      "17": {
+        "colloquial": "Corvette",
+        "official": "Virage Corvette",
+        "complex": "Porsche Curves",
+        "direction": "left",
+        "scale": 4,
+        "error": "official name should be 'Virage Corvette', not 'Virage du Corvette'; scale 4 rather than 5 — it's the slowest part of the Porsche Curves sequence"
+      },
+      "18": {
+        "colloquial": "Ford Chicane",
+        "official": "Chicane Ford",
+        "complex": "Ford Chicanes",
+        "direction": "left",
+        "scale": 3,
+        "error": "scale 4 slightly high — first Ford chicane is a 2nd/3rd-gear flick, scale 3"
+      },
+      "20": {
+        "colloquial": "Ford Chicane",
+        "official": "Chicane du Raccordement",
+        "complex": "Ford Chicanes",
+        "direction": "left",
+        "scale": 3,
+        "error": "marker 0.98 duplicates T19's marker and the coordinate (0.20753, 47.948222) is essentially identical to T19's (0.207512, 47.948214) — second Ford chicane apex should be further north, near ~0.2078, 47.9489"
+      },
+      "3": {
+        "colloquial": "Dunlop Chicane",
+        "official": "Chicane Dunlop",
+        "complex": "Dunlop Chicane",
+        "direction": "right",
+        "scale": 4,
+        "error": "T3 is the second element of the Dunlop Chicane but was left unnamed and unassigned to the complex"
+      },
+      "5": {
+        "colloquial": "Esses de la Forêt",
+        "official": "Esses de la Forêt",
+        "complex": "Esses de la Forêt",
+        "direction": "right",
+        "scale": 4,
+        "error": "second element of the Esses left unnamed"
+      },
+      "10": {
+        "colloquial": "Indianapolis",
+        "official": "Virage d'Indianapolis",
+        "complex": "Indianapolis",
+        "direction": "right",
+        "scale": 5,
+        "error": "T10 is the fast right entry kink of Indianapolis — it should be named and grouped with T11, not left as an anonymous corner"
+      },
+      "19": {
+        "colloquial": "Ford Chicane",
+        "official": "Chicane Ford",
+        "complex": "Ford Chicanes",
+        "direction": "right",
+        "scale": 3,
+        "error": "T19 is the exit of the first Ford chicane — should be named and assigned to the Ford Chicanes complex, not left anonymous"
+      },
+      "21": {
+        "colloquial": "Ford Chicane",
+        "official": "Virage du Raccordement",
+        "complex": "Ford Chicanes",
+        "direction": "right",
+        "scale": 3,
+        "error": "T21 is the final right of the second Ford chicane (the Raccordement) — should be named and assigned to the Ford Chicanes complex"
+      }
+    },
+    "errors_summary": "Directions all verified correct against geometry; main issues: T1 coordinate duplicated from T2, T20 coordinate/marker duplicated from T19, chicane partner corners (T3, T5, T19, T21) left unnamed and outside their complexes, the two Mulsanne chicanes wrongly grouped as one complex despite being ~2 km apart (and each modelled as a single corner instead of two), and Mulsanne Corner severity overrated at 2 instead of 1."
   }
 }

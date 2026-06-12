@@ -60,18 +60,21 @@
             0.210987,
             47.956831
           ],
-          "complex": "Dunlop"
+          "complex": "Dunlop Chicane"
         },
         {
           "number": 3,
           "names": {
-            "numbered": "Turn 3"
+            "numbered": "Turn 3",
+            "official": "Chicane Dunlop",
+            "colloquial": "Dunlop Chicane"
           },
           "direction": "right",
           "scale": 4,
           "marker": 0.07,
           "start": 0.06,
           "end": 0.07,
+          "complex": "Dunlop Chicane",
           "location": [
             0.212049,
             47.957606
@@ -93,18 +96,22 @@
           "location": [
             0.21752,
             47.960039
-          ]
+          ],
+          "complex": "Esses de la Forêt"
         },
         {
           "number": 5,
           "names": {
-            "numbered": "Turn 5"
+            "numbered": "Turn 5",
+            "official": "Esses de la Forêt",
+            "colloquial": "Esses de la Forêt"
           },
           "direction": "right",
           "scale": 4,
           "marker": 0.12,
           "start": 0.11,
           "end": 0.12,
+          "complex": "Esses de la Forêt",
           "location": [
             0.218226,
             47.960862
@@ -132,7 +139,7 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Mulsanne Chicane 1",
+            "colloquial": "First Chicane",
             "official": "Chicane Daytona"
           },
           "direction": "right",
@@ -150,7 +157,7 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Mulsanne Chicane 2",
+            "colloquial": "Second Chicane",
             "official": "Chicane Michelin"
           },
           "direction": "left",
@@ -172,7 +179,7 @@
             "official": "Virage de Mulsanne"
           },
           "direction": "right",
-          "scale": 2,
+          "scale": 1,
           "marker": 0.57,
           "start": 0.56,
           "end": 0.57,
@@ -184,13 +191,16 @@
         {
           "number": 10,
           "names": {
-            "numbered": "Turn 10"
+            "numbered": "Turn 10",
+            "official": "Virage d'Indianapolis",
+            "colloquial": "Indianapolis"
           },
           "direction": "right",
           "scale": 5,
           "marker": 0.7,
           "start": 0.7,
           "end": 0.71,
+          "complex": "Indianapolis",
           "location": [
             0.221308,
             47.920315
@@ -205,10 +215,11 @@
             "official": "Virage d'Indianapolis"
           },
           "direction": "left",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.72,
           "start": 0.72,
           "end": 0.73,
+          "complex": "Indianapolis",
           "location": [
             0.219262,
             47.92235
@@ -223,7 +234,7 @@
             "official": "Virage d'Arnage"
           },
           "direction": "right",
-          "scale": 3,
+          "scale": 2,
           "marker": 0.74,
           "start": 0.74,
           "end": 0.75,
@@ -292,7 +303,7 @@
             "official": "Virage du Karting"
           },
           "direction": "right",
-          "scale": 5,
+          "scale": 4,
           "marker": 0.89,
           "start": 0.88,
           "end": 0.9,
@@ -307,10 +318,10 @@
           "names": {
             "numbered": "Turn 17",
             "colloquial": "Corvette",
-            "official": "Virage du Corvette"
+            "official": "Virage Corvette"
           },
           "direction": "left",
-          "scale": 5,
+          "scale": 4,
           "marker": 0.91,
           "start": 0.91,
           "end": 0.92,
@@ -328,7 +339,7 @@
             "official": "Chicane Ford"
           },
           "direction": "left",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.97,
           "start": 0.97,
           "end": 0.97,
@@ -341,13 +352,16 @@
         {
           "number": 19,
           "names": {
-            "numbered": "Turn 19"
+            "numbered": "Turn 19",
+            "official": "Chicane Ford",
+            "colloquial": "Ford Chicane"
           },
           "direction": "right",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.98,
           "start": 0.97,
           "end": 0.98,
+          "complex": "Ford Chicanes",
           "location": [
             0.207512,
             47.948214
@@ -362,7 +376,7 @@
             "official": "Chicane du Raccordement"
           },
           "direction": "left",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.98,
           "start": 0.98,
           "end": 0.98,
@@ -375,13 +389,16 @@
         {
           "number": 21,
           "names": {
-            "numbered": "Turn 21"
+            "numbered": "Turn 21",
+            "official": "Virage du Raccordement",
+            "colloquial": "Ford Chicane"
           },
           "direction": "right",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.99,
           "start": 0.98,
           "end": 0.99,
+          "complex": "Ford Chicanes",
           "location": [
             0.207527,
             47.949562
@@ -444,7 +461,7 @@
     "imsa_data": "le-mans"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:43.377945+00:00",
+    "generated_at": "2026-06-12T20:32:30.684492+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
