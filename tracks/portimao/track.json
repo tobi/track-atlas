@@ -33,7 +33,12 @@
           "scale": 4,
           "marker": 0.09,
           "start": 0.07,
-          "end": 0.1
+          "end": 0.1,
+          "location": [
+            -8.636576,
+            37.232973
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 2,
@@ -44,7 +49,12 @@
           "scale": 6,
           "marker": 0.12,
           "start": 0.11,
-          "end": 0.13
+          "end": 0.13,
+          "location": [
+            -8.636227,
+            37.232859
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 3,
@@ -56,7 +66,12 @@
           "scale": 1,
           "marker": 0.16,
           "start": 0.15,
-          "end": 0.17
+          "end": 0.17,
+          "location": [
+            -8.634872,
+            37.232141
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 4,
@@ -67,7 +82,12 @@
           "scale": 4,
           "marker": 0.19,
           "start": 0.18,
-          "end": 0.21
+          "end": 0.21,
+          "location": [
+            -8.634298,
+            37.231643
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 5,
@@ -79,7 +99,12 @@
           "scale": 1,
           "marker": 0.31,
           "start": 0.3,
-          "end": 0.32
+          "end": 0.32,
+          "location": [
+            -8.63447,
+            37.232748
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 6,
@@ -90,7 +115,12 @@
           "scale": 6,
           "marker": 0.37,
           "start": 0.35,
-          "end": 0.38
+          "end": 0.38,
+          "location": [
+            -8.634927,
+            37.234077
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 7,
@@ -101,7 +131,12 @@
           "scale": 5,
           "marker": 0.42,
           "start": 0.4,
-          "end": 0.43
+          "end": 0.43,
+          "location": [
+            -8.635515,
+            37.233031
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 8,
@@ -113,7 +148,12 @@
           "scale": 2,
           "marker": 0.45,
           "start": 0.44,
-          "end": 0.46
+          "end": 0.46,
+          "location": [
+            -8.636745,
+            37.233592
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 9,
@@ -125,7 +165,12 @@
           "scale": 5,
           "marker": 0.53,
           "start": 0.51,
-          "end": 0.54
+          "end": 0.54,
+          "location": [
+            -8.634723,
+            37.235457
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 10,
@@ -137,7 +182,12 @@
           "scale": 6,
           "marker": 0.58,
           "start": 0.57,
-          "end": 0.59
+          "end": 0.59,
+          "location": [
+            -8.634536,
+            37.233473
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 11,
@@ -148,7 +198,12 @@
           "scale": 3,
           "marker": 0.6,
           "start": 0.59,
-          "end": 0.61
+          "end": 0.61,
+          "location": [
+            -8.634472,
+            37.232679
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 12,
@@ -159,7 +214,12 @@
           "scale": 5,
           "marker": 0.65,
           "start": 0.62,
-          "end": 0.66
+          "end": 0.66,
+          "location": [
+            -8.636285,
+            37.233072
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 13,
@@ -170,7 +230,12 @@
           "scale": 1,
           "marker": 0.69,
           "start": 0.68,
-          "end": 0.7
+          "end": 0.7,
+          "location": [
+            -8.637019,
+            37.233656
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 14,
@@ -182,7 +247,12 @@
           "scale": 2,
           "marker": 0.74,
           "start": 0.72,
-          "end": 0.77
+          "end": 0.77,
+          "location": [
+            -8.635992,
+            37.233224
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 15,
@@ -194,7 +264,12 @@
           "scale": 5,
           "marker": 0.83,
           "start": 0.8,
-          "end": 0.88
+          "end": 0.88,
+          "location": [
+            -8.635214,
+            37.235157
+          ],
+          "location_source": "centerline"
         }
       ],
       "straights": [
@@ -227,6 +302,13 @@
         "entry": 0.93,
         "exit": 0.03
       },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -8.633875,
+          37.230439
+        ]
+      },
       "length_m": 4653,
       "direction": "clockwise"
     }
@@ -239,7 +321,7 @@
     "imsa_data": "portimao"
   },
   "provenance": {
-    "generated_at": "2026-06-12T13:50:44.981187+00:00",
+    "generated_at": "2026-06-12T14:08:20.178370+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

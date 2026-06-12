@@ -186,6 +186,17 @@ def generate_track(slug: str) -> dict:
             try:
                 centerline = relation_centerline(json.loads(rel_file.read_text()),
                                                  expected_m=layout.get("length_m"))
+                # A relation can describe a DIFFERENT layout (Bahrain's circuit
+                # relation is the 6.3 km endurance loop, not the 5.4 km GP).
+                # If it's >10% off the declared length, fall through to stitch.
+                decl = layout.get("length_m")
+                if centerline and decl:
+                    from lib.osm import loop_length_m
+                    L = loop_length_m(centerline)
+                    if abs(L - decl) / decl > 0.10:
+                        print(f"[{slug}] relation centerline {L:,.0f} m is "
+                              f">10% off declared {decl:,.0f} m -- ignoring relation")
+                        centerline = None
             except Exception:
                 centerline = None
 
@@ -227,7 +238,8 @@ def generate_track(slug: str) -> dict:
             # Spatial-stitch fallback: chain the bbox raceway ways into a
             # closed loop (works when ways are named after the circuit, not
             # corners -- Fuji, Miami, Losail, Jeddah, Laguna Seca).
-            stitched = stitch_circuit_ways(osm.get("elements", []))
+            stitched = stitch_circuit_ways(osm.get("elements", []),
+                                           expected_m=layout.get("length_m"))
             if stitched and len(stitched) >= 8:
                 stitched = densify(orient_loop(stitched, layout.get("direction")))
                 matched_pts = [(c["marker"], c["location"]) for c in corners
