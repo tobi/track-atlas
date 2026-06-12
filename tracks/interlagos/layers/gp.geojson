@@ -1453,7 +1453,7 @@
         "names": {
           "numbered": "Turn 1",
           "colloquial": "Senna S",
-          "official": "Descida do S"
+          "official": "Descida do S do Senna"
         },
         "complex": "Senna S",
         "direction": "left",
@@ -1541,9 +1541,11 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Turn 5",
+        "display": "Descida do Lago",
         "names": {
-          "numbered": "Turn 5"
+          "numbered": "Turn 5",
+          "official": "Descida do Lago",
+          "colloquial": "Descida do Lago"
         },
         "complex": "Descida do Lago",
         "direction": "left",
@@ -1570,7 +1572,7 @@
         },
         "complex": null,
         "direction": "right",
-        "scale": 3
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1589,10 +1591,10 @@
         "names": {
           "numbered": "Turn 7",
           "colloquial": "Laranjinha",
-          "official": "Laranja"
+          "official": "Laranjinha"
         },
         "complex": null,
-        "direction": "right",
+        "direction": "left",
         "scale": 2
       },
       "geometry": {
@@ -1608,12 +1610,14 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Turn 8",
+        "display": "Pinheirinho",
         "names": {
-          "numbered": "Turn 8"
+          "numbered": "Turn 8",
+          "official": "Pinheirinho",
+          "colloquial": "Pinheirinho"
         },
         "complex": null,
-        "direction": "right",
+        "direction": "left",
         "scale": 4
       },
       "geometry": {
@@ -1698,10 +1702,10 @@
       "properties": {
         "role": "corner",
         "number": 12,
-        "display": "Junção",
+        "display": "Juncao",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "Junção",
+          "colloquial": "Juncao",
           "official": "Junção"
         },
         "complex": null,
@@ -1721,9 +1725,11 @@
       "properties": {
         "role": "corner",
         "number": 13,
-        "display": "Turn 13",
+        "display": "Juncao",
         "names": {
-          "numbered": "Turn 13"
+          "numbered": "Turn 13",
+          "official": "Junção",
+          "colloquial": "Juncao"
         },
         "complex": null,
         "direction": "left",
@@ -1772,8 +1778,8 @@
           "official": "Arquibancadas"
         },
         "complex": null,
-        "direction": "left",
-        "scale": 5
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",

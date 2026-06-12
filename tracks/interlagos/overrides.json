@@ -3,7 +3,7 @@
     "corners": {
       "1": {
         "colloquial": "Senna S",
-        "official": "Descida do S",
+        "official": "Descida do S do Senna",
         "complex": "Senna S",
         "direction": "left",
         "scale": 2,
@@ -33,26 +33,30 @@
       "5": {
         "complex": "Descida do Lago",
         "direction": "left",
-        "scale": 5
+        "scale": 5,
+        "colloquial": "Descida do Lago",
+        "official": "Descida do Lago"
       },
       "6": {
         "colloquial": "Ferradura",
         "official": "Ferradura",
         "direction": "right",
-        "scale": 3,
-        "error": "scale 5 wrong — Ferradura ('horseshoe') is a braking, medium-speed right that tightens on exit, scale 3"
+        "scale": 2,
+        "error": "scale should be 2 not 3 - this is a slow hairpin-like corner, not medium speed"
       },
       "7": {
         "colloquial": "Laranjinha",
-        "official": "Laranja",
-        "direction": "right",
+        "official": "Laranjinha",
+        "direction": "left",
         "scale": 2,
-        "error": "scale 5 wrong — Laranjinha is the tight slow right at the end of the Ferradura horseshoe, 2nd/3rd gear, scale 2"
+        "error": "direction should be left not right - the corner turns left after Ferradura"
       },
       "8": {
-        "direction": "right",
+        "direction": "left",
         "scale": 4,
-        "error": "scale 5 slightly high — the downhill right before Pinheirinho is a genuine direction change (~100°), scale 4"
+        "error": "this corner is often labeled as part of Pinheirinho complex - T8 is the kink before the main Pinheirinho left at T9",
+        "colloquial": "Pinheirinho",
+        "official": "Pinheirinho"
       },
       "9": {
         "colloquial": "Pinheirinho",
@@ -76,7 +80,7 @@
         "error": "scale 5 slightly high — Mergulho is a fast committed left but loaded and downhill, scale 4"
       },
       "12": {
-        "colloquial": "Junção",
+        "colloquial": "Juncao",
         "official": "Junção",
         "direction": "left",
         "scale": 2,
@@ -84,7 +88,10 @@
       },
       "13": {
         "direction": "left",
-        "scale": 6
+        "scale": 6,
+        "colloquial": "Juncao",
+        "official": "Junção",
+        "error": "this is typically considered part of the Juncao complex with T12, not a separate corner - it's a minor kink on exit of T12"
       },
       "14": {
         "colloquial": "Subida dos Boxes",
@@ -95,11 +102,11 @@
       "15": {
         "colloquial": "Arquibancadas",
         "official": "Arquibancadas",
-        "direction": "left",
-        "scale": 5,
-        "error": "scale 6 slightly low — Arquibancadas is a long sustained flat-out left onto the pit straight, more a scale 5 sweep than a deflection"
+        "direction": "right",
+        "scale": 4,
+        "error": "direction should be right not left - this corner turns right before the main straight"
       }
     },
-    "errors_summary": "Numbering, markers, directions and locations all check out against the outline, but severity scales in the infield are badly inflated — T6, T7, T9 and T10 (Ferradura, Laranjinha, Pinheirinho, Bico de Pato) are marked 5-6 when they are medium-to-slow corners (scales 2-3)."
+    "errors_summary": "T7 direction wrong (should be left), T6 scale should be 2, T15 direction wrong (should be right), T8 naming unclear, T13 questionable as separate corner"
   }
 }
