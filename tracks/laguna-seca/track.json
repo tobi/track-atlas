@@ -27,11 +27,14 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "Turn 1"
+            "colloquial": "Turn 1",
+            "official": "Turn 1"
           },
           "start": 0.045,
           "end": 0.08,
           "marker": 0.0625,
+          "direction": "left",
+          "scale": 6,
           "location": [
             -121.75773,
             36.584592
@@ -42,7 +45,8 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "Andretti Hairpin"
+            "colloquial": "Andretti Hairpin",
+            "official": "Andretti Hairpin"
           },
           "start": 0.1,
           "end": 0.173,
@@ -50,17 +54,22 @@
           "location": [
             -121.757244,
             36.582653
-          ]
+          ],
+          "direction": "left",
+          "scale": 1
         },
         {
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Turn 3"
+            "colloquial": "Turn 3",
+            "official": "Turn 3"
           },
           "start": 0.191,
           "end": 0.245,
           "marker": 0.218,
+          "direction": "right",
+          "scale": 3,
           "location": [
             -121.756792,
             36.584894
@@ -71,11 +80,14 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "Turn 4"
+            "colloquial": "Turn 4",
+            "official": "Turn 4"
           },
           "start": 0.265,
           "end": 0.321,
           "marker": 0.293,
+          "direction": "right",
+          "scale": 4,
           "location": [
             -121.753928,
             36.58437
@@ -86,11 +98,14 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Turn 5"
+            "colloquial": "Turn 5",
+            "official": "Turn 5"
           },
           "start": 0.4,
           "end": 0.465,
           "marker": 0.4325,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -121.75418,
             36.580016
@@ -101,11 +116,14 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "Turn 6"
+            "colloquial": "Turn 6",
+            "official": "Turn 6"
           },
           "start": 0.52,
           "end": 0.575,
           "marker": 0.5475,
+          "direction": "left",
+          "scale": 4,
           "location": [
             -121.749765,
             36.580564
@@ -116,7 +134,8 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "The Corkscrew"
+            "colloquial": "The Corkscrew",
+            "official": "The Corkscrew (Turn 8/8a)"
           },
           "start": 0.661,
           "end": 0.72,
@@ -124,17 +143,23 @@
           "location": [
             -121.749268,
             36.58494
-          ]
+          ],
+          "complex": "The Corkscrew",
+          "direction": "left",
+          "scale": 2
         },
         {
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Turn 9"
+            "colloquial": "Rainey Curve",
+            "official": "Rainey Curve (Turn 9)"
           },
           "start": 0.725,
           "end": 0.79,
           "marker": 0.7575,
+          "direction": "left",
+          "scale": 4,
           "location": [
             -121.750007,
             36.586849
@@ -145,11 +170,14 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "Turn 10"
+            "colloquial": "Turn 10",
+            "official": "Turn 10"
           },
           "start": 0.805,
           "end": 0.855,
           "marker": 0.83,
+          "direction": "right",
+          "scale": 3,
           "location": [
             -121.752808,
             36.586476
@@ -160,11 +188,14 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "Turn 11"
+            "colloquial": "Turn 11",
+            "official": "Turn 11"
           },
           "start": 0.89,
           "end": 0.94,
           "marker": 0.915,
+          "direction": "left",
+          "scale": 2,
           "location": [
             -121.754648,
             36.588653
@@ -223,7 +254,7 @@
     "imsa_data": "laguna-seca"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:50.348997+00:00",
+    "generated_at": "2026-06-12T21:06:56.076218+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
