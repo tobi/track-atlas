@@ -27,7 +27,8 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "1st"
+            "colloquial": "First Corner",
+            "official": "TGR Corner"
           },
           "direction": "right",
           "scale": 1,
@@ -60,10 +61,11 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Coca Cola"
+            "colloquial": "Coca-Cola",
+            "official": "Coca-Cola Corner"
           },
           "direction": "left",
-          "scale": 5,
+          "scale": 4,
           "marker": 0.29,
           "start": 0.28,
           "end": 0.3,
@@ -77,13 +79,15 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "100 R"
+            "colloquial": "100R",
+            "official": "100R"
           },
           "direction": "right",
           "scale": 4,
           "marker": 0.34,
           "start": 0.31,
           "end": 0.37,
+          "complex": "100R",
           "location": [
             138.93155,
             35.369812
@@ -93,13 +97,16 @@
         {
           "number": 5,
           "names": {
-            "numbered": "Turn 5"
+            "numbered": "Turn 5",
+            "official": "100R",
+            "colloquial": "100R exit"
           },
           "direction": "right",
           "scale": 5,
           "marker": 0.39,
           "start": 0.37,
           "end": 0.41,
+          "complex": "100R",
           "location": [
             138.929489,
             35.369313
@@ -110,7 +117,8 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "Hairpin"
+            "colloquial": "Hairpin",
+            "official": "Hairpin Corner (75R)"
           },
           "direction": "left",
           "scale": 1,
@@ -159,10 +167,11 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "300 R"
+            "colloquial": "300R",
+            "official": "300R"
           },
           "direction": "right",
-          "scale": 6,
+          "scale": 5,
           "marker": 0.56,
           "start": 0.54,
           "end": 0.58,
@@ -176,13 +185,15 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "Dunlop"
+            "colloquial": "Dunlop",
+            "official": "Dunlop Corner"
           },
           "direction": "right",
           "scale": 1,
           "marker": 0.63,
           "start": 0.62,
           "end": 0.63,
+          "complex": "Dunlop Chicane",
           "location": [
             138.923682,
             35.365291
@@ -199,6 +210,7 @@
           "marker": 0.64,
           "start": 0.63,
           "end": 0.65,
+          "complex": "Dunlop Chicane",
           "location": [
             138.923196,
             35.365253
@@ -225,7 +237,8 @@
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "13th"
+            "colloquial": "13th Corner",
+            "official": "GR Supra Corner"
           },
           "direction": "right",
           "scale": 3,
@@ -241,13 +254,15 @@
         {
           "number": 14,
           "names": {
-            "numbered": "Turn 14"
+            "numbered": "Turn 14",
+            "official": "Netz Corner"
           },
           "direction": "left",
-          "scale": 5,
+          "scale": 4,
           "marker": 0.72,
           "start": 0.71,
           "end": 0.74,
+          "complex": "Netz",
           "location": [
             138.922914,
             35.36724
@@ -258,13 +273,15 @@
           "number": 15,
           "names": {
             "numbered": "Turn 15",
-            "colloquial": "Netz"
+            "colloquial": "Netz",
+            "official": "Netz Corner"
           },
           "direction": "left",
-          "scale": 1,
+          "scale": 2,
           "marker": 0.75,
           "start": 0.74,
           "end": 0.76,
+          "complex": "Netz",
           "location": [
             138.922174,
             35.367952
@@ -275,7 +292,8 @@
           "number": 16,
           "names": {
             "numbered": "Turn 16",
-            "colloquial": "Panasonic"
+            "colloquial": "Panasonic",
+            "official": "Panasonic Corner"
           },
           "direction": "right",
           "scale": 1,
@@ -332,7 +350,7 @@
     "imsa_data": "fuji"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:50.373735+00:00",
+    "generated_at": "2026-06-12T20:50:24.769442+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

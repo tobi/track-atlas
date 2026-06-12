@@ -1325,10 +1325,11 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "1st",
+        "display": "First Corner",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "1st"
+          "colloquial": "First Corner",
+          "official": "TGR Corner"
         },
         "complex": null,
         "direction": "right",
@@ -1368,14 +1369,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Coca Cola",
+        "display": "Coca-Cola",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Coca Cola"
+          "colloquial": "Coca-Cola",
+          "official": "Coca-Cola Corner"
         },
         "complex": null,
         "direction": "left",
-        "scale": 5
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1390,12 +1392,13 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "100 R",
+        "display": "100R",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "100 R"
+          "colloquial": "100R",
+          "official": "100R"
         },
-        "complex": null,
+        "complex": "100R",
         "direction": "right",
         "scale": 4
       },
@@ -1412,11 +1415,13 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Turn 5",
+        "display": "100R exit",
         "names": {
-          "numbered": "Turn 5"
+          "numbered": "Turn 5",
+          "official": "100R",
+          "colloquial": "100R exit"
         },
-        "complex": null,
+        "complex": "100R",
         "direction": "right",
         "scale": 5
       },
@@ -1436,7 +1441,8 @@
         "display": "Hairpin",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Hairpin"
+          "colloquial": "Hairpin",
+          "official": "Hairpin Corner (75R)"
         },
         "complex": null,
         "direction": "left",
@@ -1497,14 +1503,15 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "300 R",
+        "display": "300R",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "300 R"
+          "colloquial": "300R",
+          "official": "300R"
         },
         "complex": null,
         "direction": "right",
-        "scale": 6
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -1522,9 +1529,10 @@
         "display": "Dunlop",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "Dunlop"
+          "colloquial": "Dunlop",
+          "official": "Dunlop Corner"
         },
-        "complex": null,
+        "complex": "Dunlop Chicane",
         "direction": "right",
         "scale": 1
       },
@@ -1545,7 +1553,7 @@
         "names": {
           "numbered": "Turn 11"
         },
-        "complex": null,
+        "complex": "Dunlop Chicane",
         "direction": "left",
         "scale": 2
       },
@@ -1583,10 +1591,11 @@
       "properties": {
         "role": "corner",
         "number": 13,
-        "display": "13th",
+        "display": "13th Corner",
         "names": {
           "numbered": "Turn 13",
-          "colloquial": "13th"
+          "colloquial": "13th Corner",
+          "official": "GR Supra Corner"
         },
         "complex": null,
         "direction": "right",
@@ -1605,13 +1614,14 @@
       "properties": {
         "role": "corner",
         "number": 14,
-        "display": "Turn 14",
+        "display": "Netz Corner",
         "names": {
-          "numbered": "Turn 14"
+          "numbered": "Turn 14",
+          "official": "Netz Corner"
         },
-        "complex": null,
+        "complex": "Netz",
         "direction": "left",
-        "scale": 5
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1629,11 +1639,12 @@
         "display": "Netz",
         "names": {
           "numbered": "Turn 15",
-          "colloquial": "Netz"
+          "colloquial": "Netz",
+          "official": "Netz Corner"
         },
-        "complex": null,
+        "complex": "Netz",
         "direction": "left",
-        "scale": 1
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1651,7 +1662,8 @@
         "display": "Panasonic",
         "names": {
           "numbered": "Turn 16",
-          "colloquial": "Panasonic"
+          "colloquial": "Panasonic",
+          "official": "Panasonic Corner"
         },
         "complex": null,
         "direction": "right",
