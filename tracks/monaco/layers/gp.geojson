@@ -1760,7 +1760,8 @@
         "display": "Sainte Devote",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "Sainte Devote"
+          "colloquial": "Sainte Devote",
+          "official": "Sainte Dévote"
         },
         "complex": null,
         "direction": "right",
@@ -1782,11 +1783,12 @@
         "display": "Beau Rivage",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "Beau Rivage"
+          "colloquial": "Beau Rivage",
+          "official": "Beau Rivage"
         },
         "complex": null,
         "direction": "left",
-        "scale": 5
+        "scale": 6
       },
       "geometry": {
         "type": "Point",
@@ -1804,10 +1806,11 @@
         "display": "Massenet",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Massenet"
+          "colloquial": "Massenet",
+          "official": "Massenet"
         },
         "complex": null,
-        "direction": "left",
+        "direction": "right",
         "scale": 3
       },
       "geometry": {
@@ -1826,7 +1829,8 @@
         "display": "Casino",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "Casino"
+          "colloquial": "Casino",
+          "official": "Casino Square"
         },
         "complex": null,
         "direction": "right",
@@ -1845,10 +1849,11 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Mirabeau Haute",
+        "display": "Mirabeau",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Mirabeau Haute"
+          "colloquial": "Mirabeau",
+          "official": "Mirabeau"
         },
         "complex": null,
         "direction": "right",
@@ -1867,13 +1872,14 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "Grand Hotel Hairpin",
+        "display": "Fairmont Hairpin",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Grand Hotel Hairpin"
+          "colloquial": "Fairmont Hairpin",
+          "official": "Grand Hotel Hairpin"
         },
         "complex": null,
-        "direction": "left",
+        "direction": "right",
         "scale": 1
       },
       "geometry": {
@@ -1889,14 +1895,15 @@
       "properties": {
         "role": "corner",
         "number": 7,
-        "display": "Mirabeau Bas",
+        "display": "Portier",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Mirabeau Bas"
+          "colloquial": "Portier",
+          "official": "Portier"
         },
         "complex": null,
-        "direction": "right",
-        "scale": 2
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1914,7 +1921,8 @@
         "display": "Portier",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Portier"
+          "colloquial": "Portier",
+          "official": "Portier"
         },
         "complex": null,
         "direction": "right",
@@ -1936,7 +1944,8 @@
         "display": "Tunnel",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Tunnel"
+          "colloquial": "Tunnel",
+          "official": "Tunnel Entry"
         },
         "complex": null,
         "direction": "right",
@@ -1958,10 +1967,11 @@
         "display": "Nouvelle Chicane",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "Nouvelle Chicane"
+          "colloquial": "Nouvelle Chicane",
+          "official": "Nouvelle Chicane"
         },
-        "complex": null,
-        "direction": "left",
+        "complex": "Nouvelle Chicane",
+        "direction": "right",
         "scale": 2
       },
       "geometry": {
@@ -1980,10 +1990,11 @@
         "display": "Nouvelle Chicane",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "Nouvelle Chicane"
+          "colloquial": "Nouvelle Chicane",
+          "official": "Nouvelle Chicane"
         },
-        "complex": null,
-        "direction": "right",
+        "complex": "Nouvelle Chicane",
+        "direction": "left",
         "scale": 2
       },
       "geometry": {
@@ -2002,11 +2013,12 @@
         "display": "Tabac",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "Tabac"
+          "colloquial": "Tabac",
+          "official": "Tabac"
         },
         "complex": null,
         "direction": "left",
-        "scale": 2
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2021,12 +2033,13 @@
       "properties": {
         "role": "corner",
         "number": 13,
-        "display": "Virage Louis Chiron",
+        "display": "Swimming Pool",
         "names": {
           "numbered": "Turn 13",
-          "colloquial": "Virage Louis Chiron"
+          "colloquial": "Swimming Pool",
+          "official": "Louis Chiron"
         },
-        "complex": null,
+        "complex": "Swimming Pool",
         "direction": "left",
         "scale": 3
       },
@@ -2043,12 +2056,13 @@
       "properties": {
         "role": "corner",
         "number": 14,
-        "display": "Pool",
+        "display": "Swimming Pool",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "Pool"
+          "colloquial": "Swimming Pool",
+          "official": "Swimming Pool"
         },
-        "complex": null,
+        "complex": "Swimming Pool",
         "direction": "right",
         "scale": 2
       },
@@ -2065,13 +2079,14 @@
       "properties": {
         "role": "corner",
         "number": 15,
-        "display": "Pool",
+        "display": "Swimming Pool",
         "names": {
           "numbered": "Turn 15",
-          "colloquial": "Pool"
+          "colloquial": "Swimming Pool",
+          "official": "Swimming Pool"
         },
-        "complex": null,
-        "direction": "right",
+        "complex": "Swimming Pool",
+        "direction": "left",
         "scale": 2
       },
       "geometry": {
@@ -2087,14 +2102,15 @@
       "properties": {
         "role": "corner",
         "number": 16,
-        "display": "Pool",
+        "display": "Swimming Pool",
         "names": {
           "numbered": "Turn 16",
-          "colloquial": "Pool"
+          "colloquial": "Swimming Pool",
+          "official": "Swimming Pool"
         },
-        "complex": null,
-        "direction": "left",
-        "scale": 2
+        "complex": "Swimming Pool",
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2109,14 +2125,15 @@
       "properties": {
         "role": "corner",
         "number": 17,
-        "display": "La Rascasse",
+        "display": "Rascasse",
         "names": {
           "numbered": "Turn 17",
-          "colloquial": "La Rascasse"
+          "colloquial": "Rascasse",
+          "official": "La Rascasse"
         },
         "complex": null,
-        "direction": "right",
-        "scale": 2
+        "direction": "left",
+        "scale": 1
       },
       "geometry": {
         "type": "Point",
@@ -2131,14 +2148,15 @@
       "properties": {
         "role": "corner",
         "number": 18,
-        "display": "Anthony Noghues",
+        "display": "Anthony Noghes",
         "names": {
           "numbered": "Turn 18",
-          "colloquial": "Anthony Noghues"
+          "colloquial": "Anthony Noghes",
+          "official": "Virage Anthony Noghès"
         },
         "complex": null,
         "direction": "right",
-        "scale": 2
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2153,14 +2171,15 @@
       "properties": {
         "role": "corner",
         "number": 19,
-        "display": "Anthony Noghues",
+        "display": "Anthony Noghes",
         "names": {
           "numbered": "Turn 19",
-          "colloquial": "Anthony Noghues"
+          "colloquial": "Anthony Noghes",
+          "official": "Virage Anthony Noghès"
         },
         "complex": null,
-        "direction": "right",
-        "scale": 3
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",

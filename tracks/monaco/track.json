@@ -27,7 +27,8 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "Sainte Devote"
+            "colloquial": "Sainte Devote",
+            "official": "Sainte Dévote"
           },
           "direction": "right",
           "scale": 2,
@@ -44,10 +45,11 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "Beau Rivage"
+            "colloquial": "Beau Rivage",
+            "official": "Beau Rivage"
           },
           "direction": "left",
-          "scale": 5,
+          "scale": 6,
           "marker": 0.1559,
           "start": 0.1513,
           "end": 0.1606,
@@ -61,9 +63,10 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Massenet"
+            "colloquial": "Massenet",
+            "official": "Massenet"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 3,
           "marker": 0.2318,
           "start": 0.2036,
@@ -78,7 +81,8 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "Casino"
+            "colloquial": "Casino",
+            "official": "Casino Square"
           },
           "direction": "right",
           "scale": 3,
@@ -95,7 +99,8 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Mirabeau Haute"
+            "colloquial": "Mirabeau",
+            "official": "Mirabeau"
           },
           "direction": "right",
           "scale": 2,
@@ -112,9 +117,10 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "Grand Hotel Hairpin"
+            "colloquial": "Fairmont Hairpin",
+            "official": "Grand Hotel Hairpin"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 1,
           "marker": 0.3817,
           "start": 0.3741,
@@ -129,10 +135,11 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Mirabeau Bas"
+            "colloquial": "Portier",
+            "official": "Portier"
           },
-          "direction": "right",
-          "scale": 2,
+          "direction": "left",
+          "scale": 3,
           "marker": 0.4062,
           "start": 0.4015,
           "end": 0.411,
@@ -146,7 +153,8 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Portier"
+            "colloquial": "Portier",
+            "official": "Portier"
           },
           "direction": "right",
           "scale": 2,
@@ -163,7 +171,8 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "Tunnel"
+            "colloquial": "Tunnel",
+            "official": "Tunnel Entry"
           },
           "direction": "right",
           "scale": 5,
@@ -180,13 +189,15 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "Nouvelle Chicane"
+            "colloquial": "Nouvelle Chicane",
+            "official": "Nouvelle Chicane"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 2,
           "marker": 0.6322,
           "start": 0.63,
           "end": 0.635,
+          "complex": "Nouvelle Chicane",
           "location": [
             7.422,
             43.733053
@@ -197,13 +208,15 @@
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "Nouvelle Chicane"
+            "colloquial": "Nouvelle Chicane",
+            "official": "Nouvelle Chicane"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 2,
           "marker": 0.6377,
           "start": 0.635,
           "end": 0.6511,
+          "complex": "Nouvelle Chicane",
           "location": [
             7.422121,
             43.732914
@@ -214,10 +227,11 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "Tabac"
+            "colloquial": "Tabac",
+            "official": "Tabac"
           },
           "direction": "left",
-          "scale": 2,
+          "scale": 3,
           "marker": 0.7176,
           "start": 0.7142,
           "end": 0.735,
@@ -231,13 +245,15 @@
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "Virage Louis Chiron"
+            "colloquial": "Swimming Pool",
+            "official": "Louis Chiron"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.7634,
           "start": 0.7611,
           "end": 0.769,
+          "complex": "Swimming Pool",
           "location": [
             7.422378,
             43.734438
@@ -248,13 +264,15 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "Pool"
+            "colloquial": "Swimming Pool",
+            "official": "Swimming Pool"
           },
           "direction": "right",
           "scale": 2,
           "marker": 0.7766,
           "start": 0.769,
           "end": 0.7845,
+          "complex": "Swimming Pool",
           "location": [
             7.422279,
             43.734826
@@ -265,13 +283,15 @@
           "number": 15,
           "names": {
             "numbered": "Turn 15",
-            "colloquial": "Pool"
+            "colloquial": "Swimming Pool",
+            "official": "Swimming Pool"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 2,
           "marker": 0.8115,
           "start": 0.808,
           "end": 0.8173,
+          "complex": "Swimming Pool",
           "location": [
             7.421769,
             43.735741
@@ -282,13 +302,15 @@
           "number": 16,
           "names": {
             "numbered": "Turn 16",
-            "colloquial": "Pool"
+            "colloquial": "Swimming Pool",
+            "official": "Swimming Pool"
           },
-          "direction": "left",
-          "scale": 2,
+          "direction": "right",
+          "scale": 3,
           "marker": 0.8237,
           "start": 0.8173,
           "end": 0.8318,
+          "complex": "Swimming Pool",
           "location": [
             7.421813,
             43.736103
@@ -299,10 +321,11 @@
           "number": 17,
           "names": {
             "numbered": "Turn 17",
-            "colloquial": "La Rascasse"
+            "colloquial": "Rascasse",
+            "official": "La Rascasse"
           },
-          "direction": "right",
-          "scale": 2,
+          "direction": "left",
+          "scale": 1,
           "marker": 0.883,
           "start": 0.8753,
           "end": 0.8847,
@@ -316,10 +339,11 @@
           "number": 18,
           "names": {
             "numbered": "Turn 18",
-            "colloquial": "Anthony Noghues"
+            "colloquial": "Anthony Noghes",
+            "official": "Virage Anthony Noghès"
           },
           "direction": "right",
-          "scale": 2,
+          "scale": 3,
           "marker": 0.9086,
           "start": 0.8943,
           "end": 0.9121,
@@ -333,10 +357,11 @@
           "number": 19,
           "names": {
             "numbered": "Turn 19",
-            "colloquial": "Anthony Noghues"
+            "colloquial": "Anthony Noghes",
+            "official": "Virage Anthony Noghès"
           },
-          "direction": "right",
-          "scale": 3,
+          "direction": "left",
+          "scale": 4,
           "marker": 0.9165,
           "start": 0.9121,
           "end": 0.9208,
@@ -381,7 +406,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-12T14:25:04.428252+00:00",
+    "generated_at": "2026-06-12T21:31:14.106149+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
