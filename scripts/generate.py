@@ -33,6 +33,8 @@ from lib.lovely import (  # noqa: E402
 from lib.osm import (  # noqa: E402
     centroid, named_corner_ways, normalize,
     relation_centerline, align_markers_to_centerline,
+    stitch_circuit_ways, orient_loop, pit_lane_centroid, rotate_loop_to,
+    densify,
 )
 
 
@@ -192,6 +194,7 @@ def generate_track(slug: str) -> dict:
         pit_points = {}       # {"pit_entry"/"pit_exit": {marker, location}}
         pit = pit_from_lovely(lovely)
         if centerline and len(centerline) >= 8:
+            centerline = densify(centerline)
             matched_pts = [(c["marker"], c["location"]) for c in corners
                            if "location" in c and "marker" in c]
             place, oriented = align_markers_to_centerline(centerline, matched_pts)
@@ -221,14 +224,52 @@ def generate_track(slug: str) -> dict:
             if outline_coords[0] != outline_coords[-1]:
                 outline_coords.append(outline_coords[0])  # close the loop
         else:
-            # Coarse fallback: ordered matched corners as a rough loop.
-            traced = sorted(
-                (c for c in corners if "location" in c and "marker" in c),
-                key=lambda c: c["marker"],
-            )
-            outline_coords = [c["location"] for c in traced]
-            if len(outline_coords) >= 3:
-                outline_coords.append(outline_coords[0])  # close the loop
+            # Spatial-stitch fallback: chain the bbox raceway ways into a
+            # closed loop (works when ways are named after the circuit, not
+            # corners -- Fuji, Miami, Losail, Jeddah, Laguna Seca).
+            stitched = stitch_circuit_ways(osm.get("elements", []))
+            if stitched and len(stitched) >= 8:
+                stitched = densify(orient_loop(stitched, layout.get("direction")))
+                matched_pts = [(c["marker"], c["location"]) for c in corners
+                               if "location" in c and "marker" in c]
+                if len(matched_pts) >= 2:
+                    place, oriented = align_markers_to_centerline(stitched, matched_pts)
+                else:
+                    # No named-corner anchors: anchor lap origin at the pit
+                    # lane (it flanks the start/finish straight) and place
+                    # corners by raw lap fraction.
+                    anchor = pit_lane_centroid(osm.get("elements", []))
+                    oriented = rotate_loop_to(stitched, anchor) if anchor else stitched
+                    from lib.osm import arc_lengths, point_at_fraction
+                    cum, total = arc_lengths(oriented + [oriented[0]])
+                    closed = oriented + [oriented[0]]
+                    place = lambda m: point_at_fraction(closed, cum, total, m)  # noqa: E731
+                for c in corners:
+                    if "location" not in c and "marker" in c:
+                        p = place(c["marker"])
+                        c["location"] = [round(p[0], 6), round(p[1], 6)]
+                        c["location_source"] = "centerline"
+                p = place(0.0)
+                sf_point = {"marker": 0.0,
+                            "location": [round(p[0], 6), round(p[1], 6)]}
+                for key, role in (("entry", "pit_entry"), ("exit", "pit_exit")):
+                    m = (pit or {}).get(key)
+                    if m is not None:
+                        p = place(m)
+                        pit_points[role] = {"marker": m,
+                                            "location": [round(p[0], 6), round(p[1], 6)]}
+                outline_coords = [[round(x, 6), round(y, 6)] for x, y in oriented]
+                if outline_coords[0] != outline_coords[-1]:
+                    outline_coords.append(outline_coords[0])
+            else:
+                # Last resort: ordered matched corners as a rough loop.
+                traced = sorted(
+                    (c for c in corners if "location" in c and "marker" in c),
+                    key=lambda c: c["marker"],
+                )
+                outline_coords = [c["location"] for c in traced]
+                if len(outline_coords) >= 3:
+                    outline_coords.append(outline_coords[0])  # close the loop
         default_layer = layout.get("name_default", src.get("name_default", "colloquial"))
         gj = _layer_geojson(lid, corners, outline_coords or None, default_layer,
                             start_finish=sf_point, pit_points=pit_points)

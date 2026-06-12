@@ -31,7 +31,12 @@
           },
           "start": 0.08,
           "end": 0.118,
-          "marker": 0.099
+          "marker": 0.099,
+          "location": [
+            -87.991263,
+            43.791694
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 2,
@@ -41,7 +46,12 @@
           },
           "start": 0.155,
           "end": 0.19,
-          "marker": 0.1725
+          "marker": 0.1725,
+          "location": [
+            -87.995394,
+            43.793064
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 3,
@@ -65,7 +75,12 @@
           },
           "start": 0.335,
           "end": 0.37,
-          "marker": 0.3525
+          "marker": 0.3525,
+          "location": [
+            -87.99373,
+            43.801851
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 5,
@@ -75,7 +90,12 @@
           },
           "start": 0.39,
           "end": 0.415,
-          "marker": 0.4025
+          "marker": 0.4025,
+          "location": [
+            -87.996206,
+            43.801168
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 6,
@@ -85,7 +105,12 @@
           },
           "start": 0.43,
           "end": 0.45,
-          "marker": 0.44
+          "marker": 0.44,
+          "location": [
+            -87.996235,
+            43.799484
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 7,
@@ -95,7 +120,12 @@
           },
           "start": 0.484,
           "end": 0.515,
-          "marker": 0.4995
+          "marker": 0.4995,
+          "location": [
+            -87.999113,
+            43.79776
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 8,
@@ -161,7 +191,12 @@
           },
           "start": 0.824,
           "end": 0.855,
-          "marker": 0.8395
+          "marker": 0.8395,
+          "location": [
+            -87.993869,
+            43.80374
+          ],
+          "location_source": "centerline"
         },
         {
           "number": 13,
@@ -171,7 +206,12 @@
           },
           "start": 0.871,
           "end": 0.91,
-          "marker": 0.8905
+          "marker": 0.8905,
+          "location": [
+            -87.989808,
+            43.803796
+          ],
+          "location_source": "centerline"
         }
       ],
       "straights": [
@@ -216,6 +256,13 @@
         "entry": 0.925,
         "exit": 0.056
       },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -87.989602,
+          43.796982
+        ]
+      },
       "length_m": 6514,
       "direction": "clockwise"
     }
@@ -227,7 +274,7 @@
     "imsa_data": "road-america"
   },
   "provenance": {
-    "generated_at": "2026-06-12T12:41:28.529233+00:00",
+    "generated_at": "2026-06-12T13:50:44.944888+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
