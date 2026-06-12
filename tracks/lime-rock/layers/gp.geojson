@@ -564,11 +564,12 @@
         "display": "Big Bend",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "Big Bend"
+          "colloquial": "Big Bend",
+          "official": "Big Bend"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -583,14 +584,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "Esses",
+        "display": "The Left-Hander",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "Esses"
+          "colloquial": "The Left-Hander",
+          "official": "Left Hander"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Esses",
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -605,14 +607,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Uphill",
+        "display": "The Uphill",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Uphill"
+          "colloquial": "The Uphill",
+          "official": "Uphill"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -630,11 +633,12 @@
         "display": "West Bend",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "West Bend"
+          "colloquial": "West Bend",
+          "official": "West Bend"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -649,14 +653,15 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Diving Turn",
+        "display": "The Downhill",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Diving Turn"
+          "colloquial": "The Downhill",
+          "official": "Diving Turn"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",

@@ -1,0 +1,39 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Big Bend",
+        "official": "Big Bend",
+        "direction": "right",
+        "scale": 3
+      },
+      "2": {
+        "colloquial": "The Left-Hander",
+        "official": "Left Hander",
+        "complex": "Esses",
+        "direction": "left",
+        "scale": 3,
+        "error": "The Esses is actually a two-element sequence (Left-Hander then Right-Hander at the start of No Name Straight) but is recorded as a single corner; the marker 0.309 / coordinate sits between the two apexes rather than on either"
+      },
+      "3": {
+        "colloquial": "The Uphill",
+        "official": "Uphill",
+        "direction": "right",
+        "scale": 4
+      },
+      "4": {
+        "colloquial": "West Bend",
+        "official": "West Bend",
+        "direction": "right",
+        "scale": 4
+      },
+      "5": {
+        "colloquial": "The Downhill",
+        "official": "Diving Turn",
+        "direction": "right",
+        "scale": 5
+      }
+    },
+    "errors_summary": "Data is largely clean; only structural note is that 'Esses' (T2) compresses the classic Left-Hander/Right-Hander pair into a single corner entry, with its coordinate placed between the two apexes"
+  }
+}
