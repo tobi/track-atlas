@@ -1,0 +1,67 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Turn 1",
+        "official": "Niki Lauda Kurve",
+        "direction": "right",
+        "scale": 2
+      },
+      "2": {
+        "colloquial": "Remus Kurve",
+        "official": "Remus Kurve",
+        "direction": "right",
+        "scale": 6,
+        "error": "corner 2 direction should be right not left — the gentle right-hander before Remus hairpin"
+      },
+      "3": {
+        "colloquial": "Remus",
+        "official": "Remus",
+        "direction": "right",
+        "scale": 1
+      },
+      "4": {
+        "colloquial": "Schlossgold",
+        "official": "Schlossgold",
+        "direction": "right",
+        "scale": 2
+      },
+      "5": {
+        "colloquial": "Turn 5",
+        "direction": "right",
+        "scale": 4
+      },
+      "6": {
+        "colloquial": "Rauch Kurve",
+        "official": "Rauch Kurve",
+        "direction": "left",
+        "scale": 3
+      },
+      "7": {
+        "colloquial": "Würth Kurve",
+        "official": "Würth Kurve",
+        "direction": "left",
+        "scale": 3
+      },
+      "8": {
+        "colloquial": "Turn 8",
+        "direction": "right",
+        "scale": 4
+      },
+      "9": {
+        "colloquial": "Rindt",
+        "official": "Jochen-Rindt-Kurve",
+        "direction": "right",
+        "scale": 3
+      },
+      "10": {
+        "colloquial": "Mobilkurve",
+        "official": "Red Bull Mobile Kurve",
+        "direction": "left",
+        "scale": 2,
+        "error": "corner 10 direction should be left not right — final corner is a left-hander onto the main straight"
+      }
+    },
+    "errors_summary": "T2 direction incorrect (should be right), T10 direction incorrect (should be left)"
+  }
+}
