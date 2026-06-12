@@ -1,0 +1,109 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Turn 1",
+        "official": "Turn 1",
+        "direction": "right",
+        "scale": 2,
+        "error": "scale should be 2 not 3 — tight slow corner from slow speed"
+      },
+      "2": {
+        "colloquial": "Turn 2",
+        "official": "Turn 2",
+        "direction": "right",
+        "scale": 3
+      },
+      "3": {
+        "colloquial": "Turn 3",
+        "official": "Turn 3",
+        "direction": "left",
+        "scale": 2
+      },
+      "4": {
+        "colloquial": "Turn 4",
+        "official": "Turn 4",
+        "direction": "left",
+        "scale": 3
+      },
+      "5": {
+        "colloquial": "Turn 5",
+        "official": "Turn 5",
+        "direction": "left",
+        "scale": 5,
+        "error": "direction should be left not right — track curves left at apex"
+      },
+      "6": {
+        "colloquial": "Turn 6",
+        "official": "Turn 6",
+        "direction": "left",
+        "scale": 1,
+        "error": "direction should be left not right — hairpin turns left"
+      },
+      "7": {
+        "colloquial": "Turn 7",
+        "official": "Turn 7",
+        "direction": "left",
+        "scale": 6
+      },
+      "8": {
+        "colloquial": "Turn 8",
+        "official": "Turn 8",
+        "direction": "right",
+        "scale": 5
+      },
+      "9": {
+        "colloquial": "Turn 9",
+        "official": "Turn 9",
+        "direction": "left",
+        "scale": 2
+      },
+      "10": {
+        "colloquial": "Turn 10",
+        "official": "Turn 10",
+        "direction": "right",
+        "scale": 3,
+        "error": "direction should be right not left — examining coordinates shows rightward movement"
+      },
+      "11": {
+        "colloquial": "Turn 11",
+        "official": "Turn 11",
+        "direction": "left",
+        "scale": 2
+      },
+      "12": {
+        "colloquial": "Turn 12",
+        "official": "Turn 12",
+        "direction": "right",
+        "scale": 3
+      },
+      "13": {
+        "colloquial": "Turn 13",
+        "official": "Turn 13",
+        "direction": "left",
+        "scale": 4,
+        "error": "direction should be left not right — track sweeps left based on coordinates"
+      },
+      "14": {
+        "colloquial": "Turn 14",
+        "official": "Turn 14",
+        "direction": "right",
+        "scale": 1
+      },
+      "15": {
+        "colloquial": "Turn 15",
+        "official": "Turn 15",
+        "direction": "left",
+        "scale": 6,
+        "error": "direction should be left not right — slight kink left after T14"
+      },
+      "16": {
+        "colloquial": "Turn 16",
+        "official": "Turn 16",
+        "direction": "left",
+        "scale": 3
+      }
+    },
+    "errors_summary": "Multiple direction errors found: T5, T6, T10, T13, T15 all have incorrect left/right assignments; T1 scale should be 2 not 3"
+  }
+}
