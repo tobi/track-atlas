@@ -27,11 +27,14 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "Turn 1"
+            "colloquial": "Turn 1",
+            "official": "Turn 1"
           },
           "start": 0.049,
           "end": 0.155,
           "marker": 0.102,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -83.810386,
             34.147383
@@ -42,11 +45,14 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "Turn 2"
+            "colloquial": "Turn 2",
+            "official": "Turn 2"
           },
           "start": 0.156,
           "end": 0.195,
           "marker": 0.1755,
+          "direction": "right",
+          "scale": 3,
           "location": [
             -83.812073,
             34.145136
@@ -57,11 +63,14 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Turn 3"
+            "colloquial": "Turn 3",
+            "official": "Turn 3"
           },
           "start": 0.196,
           "end": 0.213,
           "marker": 0.2045,
+          "direction": "left",
+          "scale": 4,
           "location": [
             -83.813153,
             34.144607
@@ -72,11 +81,14 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "Turn 4"
+            "colloquial": "Turn 4",
+            "official": "Turn 4"
           },
           "start": 0.214,
           "end": 0.249,
           "marker": 0.2315,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -83.813616,
             34.143706
@@ -87,7 +99,8 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "The Esses"
+            "colloquial": "Turn 5",
+            "official": "Turn 5"
           },
           "start": 0.26,
           "end": 0.332,
@@ -95,17 +108,22 @@
           "location": [
             -83.815164,
             34.1422
-          ]
+          ],
+          "direction": "right",
+          "scale": 4
         },
         {
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "Turn 5"
+            "colloquial": "Turn 6",
+            "official": "Turn 6"
           },
           "start": 0.333,
           "end": 0.373,
           "marker": 0.353,
+          "direction": "left",
+          "scale": 5,
           "location": [
             -83.816486,
             34.140382
@@ -116,11 +134,14 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Turn 6"
+            "colloquial": "Turn 7",
+            "official": "Turn 7"
           },
           "start": 0.466,
           "end": 0.505,
           "marker": 0.4855,
+          "direction": "right",
+          "scale": 1,
           "location": [
             -83.817594,
             34.136174
@@ -131,11 +152,14 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Turn 7"
+            "colloquial": "Turn 8",
+            "official": "Turn 8"
           },
           "start": 0.515,
           "end": 0.545,
           "marker": 0.53,
+          "direction": "left",
+          "scale": 2,
           "location": [
             -83.818287,
             34.137201
@@ -146,11 +170,14 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "Turn 8"
+            "colloquial": "Turn 9",
+            "official": "Turn 9"
           },
           "start": 0.56,
           "end": 0.63,
           "marker": 0.595,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -83.81813,
             34.139574
@@ -161,11 +188,15 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "Turn 9"
+            "colloquial": "Turn 10",
+            "official": "Turn 10"
           },
           "start": 0.729,
           "end": 0.79,
           "marker": 0.7595,
+          "complex": "Turn 10",
+          "direction": "right",
+          "scale": 3,
           "location": [
             -83.818645,
             34.145579
@@ -176,11 +207,15 @@
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "Turn 10A"
+            "colloquial": "Turn 10A",
+            "official": "Turn 10A"
           },
           "start": 0.825,
           "end": 0.866,
           "marker": 0.8455,
+          "complex": "Turn 10",
+          "direction": "left",
+          "scale": 3,
           "location": [
             -83.818091,
             34.148531
@@ -191,11 +226,15 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "Turn 10B"
+            "colloquial": "Turn 10B",
+            "official": "Turn 10B"
           },
           "start": 0.867,
           "end": 0.897,
           "marker": 0.882,
+          "complex": "Turn 10",
+          "direction": "left",
+          "scale": 4,
           "location": [
             -83.817775,
             34.149715
@@ -206,11 +245,14 @@
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "Turn 11"
+            "colloquial": "Turn 11",
+            "official": "Turn 11"
           },
           "start": 0.908,
           "end": 0.941,
           "marker": 0.9245,
+          "direction": "right",
+          "scale": 2,
           "location": [
             -83.816275,
             34.150609
@@ -221,11 +263,14 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "Turn 12"
+            "colloquial": "Turn 12",
+            "official": "Turn 12"
           },
           "start": 0.959,
           "end": 1.0,
           "marker": 0.9795,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -83.814034,
             34.15028
@@ -274,7 +319,7 @@
     "imsa_data": "road-atlanta"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:50.304989+00:00",
+    "generated_at": "2026-06-12T21:33:25.450271+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
