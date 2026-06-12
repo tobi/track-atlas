@@ -1,0 +1,105 @@
+{
+  "gp": {
+    "corners": {
+      "3": {
+        "colloquial": "Eau Rouge",
+        "official": "Eau Rouge",
+        "complex": "Eau Rouge-Raidillon",
+        "direction": "left",
+        "scale": 5
+      },
+      "4": {
+        "colloquial": "Eau Rouge-Raidillon",
+        "complex": "Eau Rouge-Raidillon",
+        "direction": "right",
+        "scale": 5,
+        "error": "This kink is typically not called Turn 4 - it's the transition within Eau Rouge-Raidillon complex"
+      },
+      "5": {
+        "colloquial": "Raidillon",
+        "official": "Raidillon",
+        "complex": "Eau Rouge-Raidillon",
+        "direction": "left",
+        "scale": 5
+      },
+      "7": {
+        "colloquial": "Les Combes",
+        "official": "Les Combes",
+        "direction": "right",
+        "scale": 3,
+        "error": "scale should be 3 not 4 - Les Combes is a medium-speed corner, not fast"
+      },
+      "8": {
+        "colloquial": "Les Combes",
+        "official": "Les Combes",
+        "direction": "left",
+        "scale": 3,
+        "error": "scale should be 3 not 4 - second part of Les Combes switchback is medium speed"
+      },
+      "9": {
+        "colloquial": "Malmedy",
+        "official": "Malmedy",
+        "direction": "right",
+        "scale": 4
+      },
+      "11": {
+        "colloquial": "Rivage",
+        "official": "Rivage",
+        "direction": "left",
+        "scale": 4
+      },
+      "13": {
+        "colloquial": "Les Fagnes",
+        "official": "Les Fagnes",
+        "complex": "Fagnes-Stavelot",
+        "direction": "right",
+        "scale": 5,
+        "error": "scale should be 5 not 4 - Les Fagnes is a fast sweeper"
+      },
+      "14": {
+        "colloquial": "Stavelot",
+        "official": "Stavelot",
+        "complex": "Fagnes-Stavelot",
+        "direction": "left",
+        "scale": 5,
+        "error": "scale should be 5 not 4 - Stavelot is taken flat or near-flat in modern cars"
+      },
+      "15": {
+        "colloquial": "Paul Frère",
+        "official": "Paul Frère",
+        "direction": "right",
+        "scale": 3,
+        "error": "commonly called Paul Frère not Campus - Campus was the old name before 2022 rename"
+      },
+      "16": {
+        "colloquial": "Campus",
+        "official": "Campus",
+        "direction": "left",
+        "scale": 3,
+        "error": "direction should be left not right, and scale should be 3 not 4 - this is the left-hander after Paul Frère; also Stavelot label appears misplaced"
+      },
+      "17": {
+        "colloquial": "Stavelot",
+        "official": "Stavelot",
+        "direction": "left",
+        "scale": 1,
+        "error": "This appears to be the actual Stavelot corner (tight left hairpin), not corner 16"
+      },
+      "19": {
+        "colloquial": "Bus Stop Chicane",
+        "official": "Chicane",
+        "complex": "Bus Stop",
+        "direction": "right",
+        "scale": 1
+      },
+      "20": {
+        "colloquial": "Bus Stop Chicane",
+        "official": "Chicane",
+        "complex": "Bus Stop",
+        "direction": "left",
+        "scale": 1
+      }
+    },
+    "errors_summary": "Corner numbering/naming confusion in Fagnes-Stavelot-Campus section (T13-17); T16 direction wrong; T4 questionable as distinct corner; scale ratings too low for several fast corners"
+  }
+}

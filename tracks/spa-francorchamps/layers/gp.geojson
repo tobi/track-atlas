@@ -1887,9 +1887,10 @@
         "display": "Eau Rouge",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Eau Rouge"
+          "colloquial": "Eau Rouge",
+          "official": "Eau Rouge"
         },
-        "complex": null,
+        "complex": "Eau Rouge-Raidillon",
         "direction": "left",
         "scale": 5
       },
@@ -1906,11 +1907,12 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "Turn 4",
+        "display": "Eau Rouge-Raidillon",
         "names": {
-          "numbered": "Turn 4"
+          "numbered": "Turn 4",
+          "colloquial": "Eau Rouge-Raidillon"
         },
-        "complex": null,
+        "complex": "Eau Rouge-Raidillon",
         "direction": "right",
         "scale": 5
       },
@@ -1930,9 +1932,10 @@
         "display": "Raidillon",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Raidillon"
+          "colloquial": "Raidillon",
+          "official": "Raidillon"
         },
-        "complex": null,
+        "complex": "Eau Rouge-Raidillon",
         "direction": "left",
         "scale": 5
       },
@@ -1973,11 +1976,12 @@
         "display": "Les Combes",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Les Combes"
+          "colloquial": "Les Combes",
+          "official": "Les Combes"
         },
         "complex": null,
         "direction": "right",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1992,13 +1996,15 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Turn 8",
+        "display": "Les Combes",
         "names": {
-          "numbered": "Turn 8"
+          "numbered": "Turn 8",
+          "official": "Les Combes",
+          "colloquial": "Les Combes"
         },
         "complex": null,
         "direction": "left",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2013,9 +2019,11 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "Turn 9",
+        "display": "Malmedy",
         "names": {
-          "numbered": "Turn 9"
+          "numbered": "Turn 9",
+          "official": "Malmedy",
+          "colloquial": "Malmedy"
         },
         "complex": null,
         "direction": "right",
@@ -2056,9 +2064,11 @@
       "properties": {
         "role": "corner",
         "number": 11,
-        "display": "Turn 11",
+        "display": "Rivage",
         "names": {
-          "numbered": "Turn 11"
+          "numbered": "Turn 11",
+          "official": "Rivage",
+          "colloquial": "Rivage"
         },
         "complex": null,
         "direction": "left",
@@ -2099,13 +2109,15 @@
       "properties": {
         "role": "corner",
         "number": 13,
-        "display": "Turn 13",
+        "display": "Les Fagnes",
         "names": {
-          "numbered": "Turn 13"
+          "numbered": "Turn 13",
+          "official": "Les Fagnes",
+          "colloquial": "Les Fagnes"
         },
-        "complex": null,
+        "complex": "Fagnes-Stavelot",
         "direction": "right",
-        "scale": 4
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -2120,13 +2132,15 @@
       "properties": {
         "role": "corner",
         "number": 14,
-        "display": "Turn 14",
+        "display": "Stavelot",
         "names": {
-          "numbered": "Turn 14"
+          "numbered": "Turn 14",
+          "official": "Stavelot",
+          "colloquial": "Stavelot"
         },
-        "complex": null,
+        "complex": "Fagnes-Stavelot",
         "direction": "left",
-        "scale": 4
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -2141,10 +2155,11 @@
       "properties": {
         "role": "corner",
         "number": 15,
-        "display": "Campus",
+        "display": "Paul Frère",
         "names": {
           "numbered": "Turn 15",
-          "colloquial": "Campus"
+          "colloquial": "Paul Frère",
+          "official": "Paul Frère"
         },
         "complex": null,
         "direction": "right",
@@ -2163,14 +2178,15 @@
       "properties": {
         "role": "corner",
         "number": 16,
-        "display": "Stavelot",
+        "display": "Campus",
         "names": {
           "numbered": "Turn 16",
-          "colloquial": "Stavelot"
+          "colloquial": "Campus",
+          "official": "Campus"
         },
         "complex": null,
-        "direction": "right",
-        "scale": 4
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2185,9 +2201,11 @@
       "properties": {
         "role": "corner",
         "number": 17,
-        "display": "Turn 17",
+        "display": "Stavelot",
         "names": {
-          "numbered": "Turn 17"
+          "numbered": "Turn 17",
+          "official": "Stavelot",
+          "colloquial": "Stavelot"
         },
         "complex": null,
         "direction": "left",
@@ -2228,12 +2246,13 @@
       "properties": {
         "role": "corner",
         "number": 19,
-        "display": "Chicane",
+        "display": "Bus Stop Chicane",
         "names": {
           "numbered": "Turn 19",
-          "colloquial": "Chicane"
+          "colloquial": "Bus Stop Chicane",
+          "official": "Chicane"
         },
-        "complex": null,
+        "complex": "Bus Stop",
         "direction": "right",
         "scale": 1
       },
@@ -2250,11 +2269,13 @@
       "properties": {
         "role": "corner",
         "number": 20,
-        "display": "Turn 20",
+        "display": "Bus Stop Chicane",
         "names": {
-          "numbered": "Turn 20"
+          "numbered": "Turn 20",
+          "official": "Chicane",
+          "colloquial": "Bus Stop Chicane"
         },
-        "complex": null,
+        "complex": "Bus Stop",
         "direction": "left",
         "scale": 1
       },
