@@ -27,7 +27,8 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "Big Bend"
+            "colloquial": "Big Bend",
+            "official": "Big Bend"
           },
           "start": 0.077,
           "end": 0.219,
@@ -35,17 +36,23 @@
           "location": [
             -73.378531,
             41.926531
-          ]
+          ],
+          "direction": "right",
+          "scale": 3
         },
         {
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "Esses"
+            "colloquial": "The Left-Hander",
+            "official": "Left Hander"
           },
           "start": 0.234,
           "end": 0.384,
           "marker": 0.309,
+          "complex": "Esses",
+          "direction": "left",
+          "scale": 3,
           "location": [
             -73.381503,
             41.926017
@@ -56,11 +63,14 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Uphill"
+            "colloquial": "The Uphill",
+            "official": "Uphill"
           },
           "start": 0.48,
           "end": 0.58,
           "marker": 0.53,
+          "direction": "right",
+          "scale": 4,
           "location": [
             -73.386607,
             41.92546
@@ -71,7 +81,8 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "West Bend"
+            "colloquial": "West Bend",
+            "official": "West Bend"
           },
           "start": 0.649,
           "end": 0.735,
@@ -79,13 +90,16 @@
           "location": [
             -73.388488,
             41.928175
-          ]
+          ],
+          "direction": "right",
+          "scale": 4
         },
         {
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Diving Turn"
+            "colloquial": "The Downhill",
+            "official": "Diving Turn"
           },
           "start": 0.788,
           "end": 0.858,
@@ -93,7 +107,9 @@
           "location": [
             -73.385901,
             41.929933
-          ]
+          ],
+          "direction": "right",
+          "scale": 5
         }
       ],
       "straights": [
@@ -163,7 +179,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:50.357946+00:00",
+    "generated_at": "2026-06-12T21:08:49.722665+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
