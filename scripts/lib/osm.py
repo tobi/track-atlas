@@ -311,16 +311,19 @@ STITCH_DROP = re.compile(
 )
 
 
-def stitch_circuit_ways(elements, drop=STITCH_DROP):
+def stitch_circuit_ways(elements, drop=STITCH_DROP, expected_m=None):
     """Spatially chain bbox raceway ways into one closed lap.
 
     For circuits whose OSM ways are named after the CIRCUIT (Fuji Speedway,
     Miami International Autodrome...) rather than corners, the name-based
-    trace finds nothing. Here we ignore names entirely: drop obvious non-lap
-    ways (pit, kart, drift...), start from the longest segment, and greedily
-    append whichever remaining way has an endpoint nearest the current tail
-    (within 60 m), flipping as needed. Spatially separate sub-circuits never
-    attach. Returns a closed [[lon,lat],...] loop or None.
+    trace finds nothing. Here we mostly ignore names: drop obvious non-lap
+    ways (pit, kart, drift...), then greedily chain segments end-to-end
+    (attaching at head or tail, flipping as needed).
+
+    The greedy chain depends heavily on the seed segment and unnamed service
+    roads can contaminate it, so we try several seeds and score each result:
+    closure gap (must be < 300 m) + deviation from expected_m when given.
+    Best-scoring closed chain wins. Returns [[lon,lat],...] or None.
     """
     cands = []
     for el in elements:
@@ -335,26 +338,54 @@ def stitch_circuit_ways(elements, drop=STITCH_DROP):
     if not cands:
         return None
     cands.sort(key=lambda c: -loop_length_m(c))
-    loop = list(cands.pop(0))
-    GAP = 60.0
-    while cands:
-        bestd, bestidx, bestflip = GAP, None, False
-        for idx, c in enumerate(cands):
-            d0 = haversine(loop[-1], c[0])
-            d1 = haversine(loop[-1], c[-1])
-            if d0 < bestd:
-                bestd, bestidx, bestflip = d0, idx, False
-            if d1 < bestd:
-                bestd, bestidx, bestflip = d1, idx, True
-        if bestidx is None:
-            break
-        c = cands.pop(bestidx)
-        if bestflip:
-            c = c[::-1]
-        loop.extend(c[1:] if haversine(loop[-1], c[0]) < 1.0 else c)
-    if haversine(loop[0], loop[-1]) > 150:
-        return None  # never closed -- not a usable lap
-    return loop
+
+    def grow(seed_idx, pool):
+        loop = list(pool[seed_idx])
+        rest = [c for i, c in enumerate(pool) if i != seed_idx]
+        GAP = 120.0
+        while rest:
+            best = (GAP, None, False, "tail")
+            for idx, c in enumerate(rest):
+                for flip in (False, True):
+                    cc = c[::-1] if flip else c
+                    dt = haversine(loop[-1], cc[0])
+                    dh = haversine(loop[0], cc[-1])
+                    if dt < best[0]:
+                        best = (dt, idx, flip, "tail")
+                    if dh < best[0]:
+                        best = (dh, idx, flip, "head")
+            if best[1] is None:
+                break
+            _, idx, flip, where = best
+            c = rest.pop(idx)
+            if flip:
+                c = c[::-1]
+            if where == "tail":
+                loop.extend(c[1:] if haversine(loop[-1], c[0]) < 1.0 else c)
+            else:
+                loop = (c[:-1] if haversine(loop[0], c[-1]) < 1.0 else c) + loop
+        return loop
+
+    best_loop, best_score = None, float("inf")
+    chains = []
+    for seed in range(min(8, len(cands))):
+        chains.append(grow(seed, cands))
+        chains.append(list(cands[seed]))  # a single way can BE the whole lap
+    for loop in chains:
+        gap = haversine(loop[0], loop[-1])
+        if gap > 300:
+            continue
+        length = loop_length_m(loop) + gap
+        # a tiny fragment closes trivially -- reject chains that are nowhere
+        # near the expected lap length
+        if expected_m and not (0.6 * expected_m <= length <= 1.5 * expected_m):
+            continue
+        score = gap
+        if expected_m:
+            score += abs(length - expected_m)
+        if score < best_score:
+            best_loop, best_score = loop, score
+    return best_loop
 
 
 def orient_loop(loop, direction):
