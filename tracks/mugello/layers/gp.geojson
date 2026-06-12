@@ -2852,11 +2852,12 @@
         "display": "San Donato",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "San Donato"
+          "colloquial": "San Donato",
+          "official": "San Donato"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 1
       },
       "geometry": {
         "type": "Point",
@@ -2874,11 +2875,12 @@
         "display": "Luco",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "Luco"
+          "colloquial": "Luco",
+          "official": "Luco"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -2893,14 +2895,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Poggiosecco",
+        "display": "Poggio Secco",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Poggiosecco"
+          "colloquial": "Poggio Secco",
+          "official": "Poggio Secco"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -2918,11 +2921,12 @@
         "display": "Materassi",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "Materassi"
+          "colloquial": "Materassi",
+          "official": "Materassi"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2940,11 +2944,12 @@
         "display": "Borgo San Lorenzo",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Borgo San Lorenzo"
+          "colloquial": "Borgo San Lorenzo",
+          "official": "Borgo San Lorenzo"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -2962,11 +2967,12 @@
         "display": "Casanova",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Casanova"
+          "colloquial": "Casanova",
+          "official": "Casanova-Savelli"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -2984,11 +2990,12 @@
         "display": "Savelli",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Savelli"
+          "colloquial": "Savelli",
+          "official": "Casanova-Savelli"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -3006,11 +3013,12 @@
         "display": "Arrabbiata 1",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Arrabbiata 1"
+          "colloquial": "Arrabbiata 1",
+          "official": "Arrabbiata 1"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Arrabbiata",
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -3028,11 +3036,12 @@
         "display": "Arrabbiata 2",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Arrabbiata 2"
+          "colloquial": "Arrabbiata 2",
+          "official": "Arrabbiata 2"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Arrabbiata",
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -3050,11 +3059,12 @@
         "display": "Scarperia",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "Scarperia"
+          "colloquial": "Scarperia",
+          "official": "Scarperia"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -3072,11 +3082,12 @@
         "display": "Palagio",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "Palagio"
+          "colloquial": "Palagio",
+          "official": "Palagio"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -3094,11 +3105,12 @@
         "display": "Correntaio",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "Correntaio"
+          "colloquial": "Correntaio",
+          "official": "Correntaio"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -3116,11 +3128,12 @@
         "display": "Biondetti 1",
         "names": {
           "numbered": "Turn 13",
-          "colloquial": "Biondetti 1"
+          "colloquial": "Biondetti 1",
+          "official": "Biondetti 1"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Biondetti",
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -3138,11 +3151,12 @@
         "display": "Biondetti 2",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "Biondetti 2"
+          "colloquial": "Biondetti 2",
+          "official": "Biondetti 2"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Biondetti",
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -3160,11 +3174,12 @@
         "display": "Bucine",
         "names": {
           "numbered": "Turn 15",
-          "colloquial": "Bucine"
+          "colloquial": "Bucine",
+          "official": "Bucine"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
