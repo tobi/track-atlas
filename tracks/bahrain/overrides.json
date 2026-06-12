@@ -1,0 +1,55 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "number": 1,
+        "official": "Michael Schumacher Corner",
+        "direction": "right",
+        "scale": 2,
+        "error": "scale 1 slightly overstated — T1 is a heavy-braking ~90° right, not a true hairpin; 2 is more accurate"
+      },
+      "2": {
+        "number": 2,
+        "direction": "left",
+        "scale": 3,
+        "error": "scale 4 too fast — T2 is a medium-speed left taken in sequence with T1/T3; 3 fits better"
+      },
+      "6": {
+        "number": 6,
+        "direction": "right",
+        "scale": 5,
+        "error": "corner coordinate appears ~60m late — the rightward bend apexes nearer [50.5159, 26.0330]; marker 0.36 likely closer to 0.35"
+      },
+      "7": {
+        "number": 7,
+        "direction": "left",
+        "scale": 5,
+        "error": "corner 7 direction should be left not right — centerline bearing swings counterclockwise (~278° to ~220°) through this section; coordinate also looks ~60m past the actual bend"
+      },
+      "8": {
+        "number": 8,
+        "direction": "right",
+        "scale": 2,
+        "error": "corner point [50.51309, 26.032017] sits ~50m north of the actual apex (~26.0315), on the corner exit; also scale 1 is slightly harsh — it's a tight right but not a full hairpin"
+      },
+      "10": {
+        "number": 10,
+        "direction": "left",
+        "scale": 1
+      },
+      "11": {
+        "number": 11,
+        "direction": "left",
+        "scale": 3,
+        "error": "scale 4 a touch fast — T11 is a long medium-speed left where the car is loaded for a long time; 3 fits better"
+      },
+      "14": {
+        "number": 14,
+        "direction": "right",
+        "scale": 2,
+        "error": "scale 3 too fast — T14 is a slow heavy-braking right onto the run to the final kink; 2 is more accurate"
+      }
+    },
+    "errors_summary": "Turn 7 direction is wrong (should be left, not right); T6/T7/T8 corner coordinates appear shifted ~50-90m past their actual apexes; minor severity-scale adjustments on T1, T2, T11, T14"
+  }
+}
