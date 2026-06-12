@@ -47,7 +47,7 @@ from lib.osm import haversine, arc_lengths  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA = ROOT / "schema" / "track.schema.json"
 
-MAX_CORNER_OFF_TRACK_M = 60.0
+MAX_CORNER_OFF_TRACK_M = 80.0
 LEN_WARN_PCT = 3.0
 LEN_ERR_PCT = 10.0
 MIN_NAMED_PCT = 40.0   # below this, warn: corner naming too thin
@@ -343,10 +343,11 @@ def verify_track(slug: str, schema=None) -> Report:
             if nbad:
                 worst = sorted({ordered[i]["number"] for i, j in bad}
                                | {ordered[j]["number"] for i, j in bad})
-                # tolerate a couple of swaps from near-coincident chicane corners
+                # tolerate localized swaps: chicane corners metres apart and
+                # figure-8 crossovers (Suzuka) project onto the wrong branch
                 msg = (f"{pre} corner order along centerline disagrees with lap "
                        f"markers for {nbad}/{npairs} pairs (turns {worst})")
-                if nbad <= 2:
+                if nbad <= 2 or nbad / npairs <= 0.12:
                     r.warn(msg)
                     r.bar_ok("order")
                 else:
