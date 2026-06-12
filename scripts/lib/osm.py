@@ -302,6 +302,117 @@ def loop_length_m(loop):
     return sum(haversine(loop[i], loop[i + 1]) for i in range(len(loop) - 1))
 
 
+# Ways that are never part of the main lap (sub-circuits, pit, service).
+# Includes Japanese names seen at Fuji (drift course, short circuit, kart).
+STITCH_DROP = re.compile(
+    r"pit|penalty|long lap|safety|kart|karting|moto\b|drift|short|"
+    r"ドリフト|ショート|カート|スクール|paddock|service|access",
+    re.I,
+)
+
+
+def stitch_circuit_ways(elements, drop=STITCH_DROP):
+    """Spatially chain bbox raceway ways into one closed lap.
+
+    For circuits whose OSM ways are named after the CIRCUIT (Fuji Speedway,
+    Miami International Autodrome...) rather than corners, the name-based
+    trace finds nothing. Here we ignore names entirely: drop obvious non-lap
+    ways (pit, kart, drift...), start from the longest segment, and greedily
+    append whichever remaining way has an endpoint nearest the current tail
+    (within 60 m), flipping as needed. Spatially separate sub-circuits never
+    attach. Returns a closed [[lon,lat],...] loop or None.
+    """
+    cands = []
+    for el in elements:
+        if el.get("type") != "way":
+            continue
+        name = (el.get("tags") or {}).get("name") or ""
+        if name and drop.search(name):
+            continue
+        c = way_coords(el)
+        if len(c) >= 2:
+            cands.append(c)
+    if not cands:
+        return None
+    cands.sort(key=lambda c: -loop_length_m(c))
+    loop = list(cands.pop(0))
+    GAP = 60.0
+    while cands:
+        bestd, bestidx, bestflip = GAP, None, False
+        for idx, c in enumerate(cands):
+            d0 = haversine(loop[-1], c[0])
+            d1 = haversine(loop[-1], c[-1])
+            if d0 < bestd:
+                bestd, bestidx, bestflip = d0, idx, False
+            if d1 < bestd:
+                bestd, bestidx, bestflip = d1, idx, True
+        if bestidx is None:
+            break
+        c = cands.pop(bestidx)
+        if bestflip:
+            c = c[::-1]
+        loop.extend(c[1:] if haversine(loop[-1], c[0]) < 1.0 else c)
+    if haversine(loop[0], loop[-1]) > 150:
+        return None  # never closed -- not a usable lap
+    return loop
+
+
+def orient_loop(loop, direction):
+    """Orient a closed loop to run in the given racing direction
+    ('clockwise'/'anticlockwise', map view). Shoelace area in projected
+    coords: negative = clockwise traversal."""
+    if not direction:
+        return loop
+    k = math.cos(math.radians(loop[0][1]))
+    area = 0.0
+    for a, b in zip(loop, loop[1:]):
+        area += (a[0] * k) * b[1] - (b[0] * k) * a[1]
+    cw = area < 0
+    want_cw = direction == "clockwise"
+    return loop if cw == want_cw else loop[::-1]
+
+
+def pit_lane_centroid(elements):
+    """Centroid of ways named like a pit lane, or None."""
+    pts = []
+    for el in elements:
+        if el.get("type") != "way":
+            continue
+        name = (el.get("tags") or {}).get("name") or ""
+        if re.search(r"pit ?lane", name, re.I):
+            pts.extend(way_coords(el))
+    return centroid(pts) if pts else None
+
+
+def rotate_loop_to(loop, pt):
+    """Rotate a closed loop so its first vertex is the one nearest pt.
+    The pit lane sits alongside the start/finish straight, so anchoring the
+    lap origin there approximates marker 0.0 when no named corners matched."""
+    best, bi = float("inf"), 0
+    for i, p in enumerate(loop[:-1] if loop[0] == loop[-1] else loop):
+        d = haversine(pt, p)
+        if d < best:
+            best, bi = d, i
+    body = loop[:-1] if loop[0] == loop[-1] else loop
+    return body[bi:] + body[:bi]
+
+
+def densify(loop, max_seg_m=30.0):
+    """Insert interpolated points so no segment exceeds max_seg_m metres.
+    Sparse OSM straights (a 1.3 km straight can be a single 2-node segment)
+    break nearest-vertex math in consumers; densifying fixes that."""
+    out = [loop[0]]
+    for a, b in zip(loop, loop[1:]):
+        d = haversine(a, b)
+        if d > max_seg_m:
+            n = int(d // max_seg_m) + 1
+            for i in range(1, n):
+                t = i / n
+                out.append([a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t])
+        out.append(b)
+    return out
+
+
 def arc_lengths(loop):
     """Cumulative arc length (metres) along a polyline. Returns (cum, total)."""
     cum = [0.0]
