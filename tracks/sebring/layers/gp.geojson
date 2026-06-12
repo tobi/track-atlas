@@ -1317,9 +1317,11 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "Turn 1",
+        "display": "Tower Turn",
         "names": {
-          "numbered": "Turn 1"
+          "numbered": "Turn 1",
+          "official": "Turn 1",
+          "colloquial": "Tower Turn"
         },
         "complex": null,
         "direction": "left",
@@ -1359,13 +1361,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Turn 3",
+        "display": "Bend",
         "names": {
-          "numbered": "Turn 3"
+          "numbered": "Turn 3",
+          "official": "Turn 3",
+          "colloquial": "Bend"
         },
         "complex": null,
         "direction": "left",
-        "scale": 3
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1401,13 +1405,15 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Turn 5",
+        "display": "Warehouse",
         "names": {
-          "numbered": "Turn 5"
+          "numbered": "Turn 5",
+          "official": "Turn 5",
+          "colloquial": "Warehouse"
         },
         "complex": null,
         "direction": "left",
-        "scale": 3
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1466,9 +1472,11 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Turn 8",
+        "display": "Bishop Bend",
         "names": {
-          "numbered": "Turn 8"
+          "numbered": "Turn 8",
+          "official": "Turn 8",
+          "colloquial": "Bishop Bend"
         },
         "complex": null,
         "direction": "right",
@@ -1487,10 +1495,11 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "Fangio",
+        "display": "Cunningham",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Fangio"
+          "colloquial": "Cunningham",
+          "official": "Turn 9"
         },
         "complex": null,
         "direction": "left",
@@ -1509,9 +1518,11 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "Turn 10",
+        "display": "Gendebien",
         "names": {
-          "numbered": "Turn 10"
+          "numbered": "Turn 10",
+          "official": "Turn 10",
+          "colloquial": "Gendebien"
         },
         "complex": null,
         "direction": "right",
@@ -1598,11 +1609,12 @@
         "display": "Bishop",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "Bishop"
+          "colloquial": "Bishop",
+          "official": "Turn 14"
         },
         "complex": null,
         "direction": "left",
-        "scale": 5
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1617,9 +1629,11 @@
       "properties": {
         "role": "corner",
         "number": 15,
-        "display": "Turn 15",
+        "display": "Coca-Cola",
         "names": {
-          "numbered": "Turn 15"
+          "numbered": "Turn 15",
+          "official": "Turn 15",
+          "colloquial": "Coca-Cola"
         },
         "complex": null,
         "direction": "right",

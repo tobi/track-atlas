@@ -1,0 +1,59 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Tower Turn",
+        "official": "Turn 1",
+        "direction": "left",
+        "scale": 3
+      },
+      "3": {
+        "colloquial": "Bend",
+        "official": "Turn 3",
+        "direction": "left",
+        "scale": 4,
+        "error": "scale should be 4 not 3 - this is a medium-fast corner, not a slow corner"
+      },
+      "5": {
+        "colloquial": "Warehouse",
+        "official": "Turn 5",
+        "direction": "left",
+        "scale": 2,
+        "error": "scale should be 2 not 3 - this is a slower corner leading into Big Bend"
+      },
+      "8": {
+        "colloquial": "Bishop Bend",
+        "official": "Turn 8",
+        "direction": "right",
+        "scale": 6
+      },
+      "9": {
+        "colloquial": "Cunningham",
+        "official": "Turn 9",
+        "direction": "left",
+        "scale": 6,
+        "error": "colloquial name should be 'Cunningham' not 'Fangio' - drivers commonly call this Cunningham"
+      },
+      "10": {
+        "colloquial": "Gendebien",
+        "official": "Turn 10",
+        "direction": "right",
+        "scale": 3
+      },
+      "14": {
+        "colloquial": "Bishop",
+        "official": "Turn 14",
+        "direction": "left",
+        "scale": 4,
+        "error": "scale should be 4 not 5 - this is a medium-speed corner, not fast"
+      },
+      "15": {
+        "colloquial": "Coca-Cola",
+        "official": "Turn 15",
+        "direction": "right",
+        "scale": 4
+      }
+    },
+    "errors_summary": "Turn 9 colloquial name incorrect (should be Cunningham not Fangio); scale values for turns 3, 5, and 14 appear slightly off"
+  }
+}
