@@ -1383,14 +1383,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "Variante Tamburello",
+        "display": "Tamburello",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "Variante Tamburello"
+          "colloquial": "Tamburello",
+          "official": "Variante Tamburello"
         },
-        "complex": null,
+        "complex": "Tamburello",
         "direction": "left",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1405,13 +1406,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Turn 3",
+        "display": "Tamburello",
         "names": {
-          "numbered": "Turn 3"
+          "numbered": "Turn 3",
+          "official": "Variante Tamburello",
+          "colloquial": "Tamburello"
         },
-        "complex": null,
+        "complex": "Tamburello",
         "direction": "right",
-        "scale": 5
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1426,13 +1429,15 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "Turn 4",
+        "display": "Tamburello",
         "names": {
-          "numbered": "Turn 4"
+          "numbered": "Turn 4",
+          "official": "Variante Tamburello",
+          "colloquial": "Tamburello"
         },
-        "complex": null,
+        "complex": "Tamburello",
         "direction": "left",
-        "scale": 5
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1447,12 +1452,13 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Variante Villeneuve",
+        "display": "Villeneuve",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Variante Villeneuve"
+          "colloquial": "Villeneuve",
+          "official": "Variante Villeneuve"
         },
-        "complex": null,
+        "complex": "Villeneuve",
         "direction": "left",
         "scale": 5
       },
@@ -1469,13 +1475,15 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "Turn 6",
+        "display": "Villeneuve",
         "names": {
-          "numbered": "Turn 6"
+          "numbered": "Turn 6",
+          "official": "Variante Villeneuve",
+          "colloquial": "Villeneuve"
         },
-        "complex": null,
+        "complex": "Villeneuve",
         "direction": "right",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1493,7 +1501,8 @@
         "display": "Tosa",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Tosa"
+          "colloquial": "Tosa",
+          "official": "Tosa"
         },
         "complex": null,
         "direction": "left",
@@ -1536,7 +1545,8 @@
         "display": "Piratella",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Piratella"
+          "colloquial": "Piratella",
+          "official": "Piratella"
         },
         "complex": null,
         "direction": "left",
@@ -1576,13 +1586,15 @@
       "properties": {
         "role": "corner",
         "number": 11,
-        "display": "Turn 11",
+        "display": "Acque Minerali 1",
         "names": {
-          "numbered": "Turn 11"
+          "numbered": "Turn 11",
+          "official": "Acque Minerali",
+          "colloquial": "Acque Minerali 1"
         },
-        "complex": null,
+        "complex": "Acque Minerali",
         "direction": "right",
-        "scale": 6
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1597,14 +1609,15 @@
       "properties": {
         "role": "corner",
         "number": 12,
-        "display": "Acque Minerali",
+        "display": "Acque Minerali 2",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "Acque Minerali"
+          "colloquial": "Acque Minerali 2",
+          "official": "Acque Minerali"
         },
-        "complex": null,
+        "complex": "Acque Minerali",
         "direction": "right",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1643,11 +1656,12 @@
         "display": "Variante Alta",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "Variante Alta"
+          "colloquial": "Variante Alta",
+          "official": "Variante Alta"
         },
-        "complex": null,
+        "complex": "Variante Alta",
         "direction": "right",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1662,11 +1676,13 @@
       "properties": {
         "role": "corner",
         "number": 15,
-        "display": "Turn 15",
+        "display": "Variante Alta",
         "names": {
-          "numbered": "Turn 15"
+          "numbered": "Turn 15",
+          "official": "Variante Alta",
+          "colloquial": "Variante Alta"
         },
-        "complex": null,
+        "complex": "Variante Alta",
         "direction": "left",
         "scale": 3
       },
@@ -1704,12 +1720,13 @@
       "properties": {
         "role": "corner",
         "number": 17,
-        "display": "Rivazza",
+        "display": "Rivazza 1",
         "names": {
           "numbered": "Turn 17",
-          "colloquial": "Rivazza"
+          "colloquial": "Rivazza 1",
+          "official": "Rivazza"
         },
-        "complex": null,
+        "complex": "Rivazza",
         "direction": "left",
         "scale": 3
       },
@@ -1726,11 +1743,13 @@
       "properties": {
         "role": "corner",
         "number": 18,
-        "display": "Turn 18",
+        "display": "Rivazza 2",
         "names": {
-          "numbered": "Turn 18"
+          "numbered": "Turn 18",
+          "official": "Rivazza",
+          "colloquial": "Rivazza 2"
         },
-        "complex": null,
+        "complex": "Rivazza",
         "direction": "left",
         "scale": 3
       },
@@ -1747,9 +1766,11 @@
       "properties": {
         "role": "corner",
         "number": 19,
-        "display": "Turn 19",
+        "display": "Variante Bassa",
         "names": {
-          "numbered": "Turn 19"
+          "numbered": "Turn 19",
+          "official": "Variante Bassa",
+          "colloquial": "Variante Bassa"
         },
         "complex": null,
         "direction": "right",

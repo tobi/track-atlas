@@ -43,28 +43,33 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "Variante Tamburello"
+            "colloquial": "Tamburello",
+            "official": "Variante Tamburello"
           },
           "direction": "left",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.14,
           "start": 0.13,
           "end": 0.15,
           "location": [
             11.706544,
             44.342959
-          ]
+          ],
+          "complex": "Tamburello"
         },
         {
           "number": 3,
           "names": {
-            "numbered": "Turn 3"
+            "numbered": "Turn 3",
+            "official": "Variante Tamburello",
+            "colloquial": "Tamburello"
           },
           "direction": "right",
-          "scale": 5,
+          "scale": 3,
           "marker": 0.15,
           "start": 0.15,
           "end": 0.16,
+          "complex": "Tamburello",
           "location": [
             11.706256,
             44.342687
@@ -74,13 +79,16 @@
         {
           "number": 4,
           "names": {
-            "numbered": "Turn 4"
+            "numbered": "Turn 4",
+            "official": "Variante Tamburello",
+            "colloquial": "Tamburello"
           },
           "direction": "left",
-          "scale": 5,
+          "scale": 4,
           "marker": 0.18,
           "start": 0.17,
           "end": 0.19,
+          "complex": "Tamburello",
           "location": [
             11.705678,
             44.341663
@@ -91,7 +99,8 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Variante Villeneuve"
+            "colloquial": "Villeneuve",
+            "official": "Variante Villeneuve"
           },
           "direction": "left",
           "scale": 5,
@@ -101,18 +110,22 @@
           "location": [
             11.704516,
             44.338551
-          ]
+          ],
+          "complex": "Villeneuve"
         },
         {
           "number": 6,
           "names": {
-            "numbered": "Turn 6"
+            "numbered": "Turn 6",
+            "official": "Variante Villeneuve",
+            "colloquial": "Villeneuve"
           },
           "direction": "right",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.29,
           "start": 0.28,
           "end": 0.3,
+          "complex": "Villeneuve",
           "location": [
             11.70382,
             44.338034
@@ -123,7 +136,8 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Tosa"
+            "colloquial": "Tosa",
+            "official": "Tosa"
           },
           "direction": "left",
           "scale": 1,
@@ -155,7 +169,8 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "Piratella"
+            "colloquial": "Piratella",
+            "official": "Piratella"
           },
           "direction": "left",
           "scale": 4,
@@ -186,13 +201,16 @@
         {
           "number": 11,
           "names": {
-            "numbered": "Turn 11"
+            "numbered": "Turn 11",
+            "official": "Acque Minerali",
+            "colloquial": "Acque Minerali 1"
           },
           "direction": "right",
-          "scale": 6,
+          "scale": 4,
           "marker": 0.55,
           "start": 0.54,
           "end": 0.57,
+          "complex": "Acque Minerali",
           "location": [
             11.710169,
             44.340205
@@ -203,17 +221,19 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "Acque Minerali"
+            "colloquial": "Acque Minerali 2",
+            "official": "Acque Minerali"
           },
           "direction": "right",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.58,
           "start": 0.57,
           "end": 0.59,
           "location": [
             11.710874,
             44.340848
-          ]
+          ],
+          "complex": "Acque Minerali"
         },
         {
           "number": 13,
@@ -235,13 +255,15 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "Variante Alta"
+            "colloquial": "Variante Alta",
+            "official": "Variante Alta"
           },
           "direction": "right",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.68,
           "start": 0.67,
           "end": 0.69,
+          "complex": "Variante Alta",
           "location": [
             11.717421,
             44.340472
@@ -251,13 +273,16 @@
         {
           "number": 15,
           "names": {
-            "numbered": "Turn 15"
+            "numbered": "Turn 15",
+            "official": "Variante Alta",
+            "colloquial": "Variante Alta"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.69,
           "start": 0.69,
           "end": 0.7,
+          "complex": "Variante Alta",
           "location": [
             11.718054,
             44.340652
@@ -284,7 +309,8 @@
           "number": 17,
           "names": {
             "numbered": "Turn 17",
-            "colloquial": "Rivazza"
+            "colloquial": "Rivazza 1",
+            "official": "Rivazza"
           },
           "direction": "left",
           "scale": 3,
@@ -294,18 +320,22 @@
           "location": [
             11.724513,
             44.344963
-          ]
+          ],
+          "complex": "Rivazza"
         },
         {
           "number": 18,
           "names": {
-            "numbered": "Turn 18"
+            "numbered": "Turn 18",
+            "official": "Rivazza",
+            "colloquial": "Rivazza 2"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.87,
           "start": 0.86,
           "end": 0.88,
+          "complex": "Rivazza",
           "location": [
             11.723269,
             44.344785
@@ -315,7 +345,9 @@
         {
           "number": 19,
           "names": {
-            "numbered": "Turn 19"
+            "numbered": "Turn 19",
+            "official": "Variante Bassa",
+            "colloquial": "Variante Bassa"
           },
           "direction": "right",
           "scale": 6,
@@ -374,7 +406,7 @@
     "imsa_data": "imola"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:50.365175+00:00",
+    "generated_at": "2026-06-12T20:55:35.430804+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
