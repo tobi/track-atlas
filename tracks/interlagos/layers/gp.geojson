@@ -1449,14 +1449,15 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "Senna 'S'",
+        "display": "Senna S",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "Senna 'S'"
+          "colloquial": "Senna S",
+          "official": "Descida do S"
         },
-        "complex": null,
+        "complex": "Senna S",
         "direction": "left",
-        "scale": 3
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1471,13 +1472,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "Turn 2",
+        "display": "Senna S",
         "names": {
-          "numbered": "Turn 2"
+          "numbered": "Turn 2",
+          "official": "Senna S",
+          "colloquial": "Senna S"
         },
-        "complex": null,
+        "complex": "Senna S",
         "direction": "right",
-        "scale": 4
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1495,7 +1498,8 @@
         "display": "Curva do Sol",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Curva do Sol"
+          "colloquial": "Curva do Sol",
+          "official": "Curva do Sol"
         },
         "complex": null,
         "direction": "left",
@@ -1517,9 +1521,10 @@
         "display": "Descida do Lago",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "Descida do Lago"
+          "colloquial": "Descida do Lago",
+          "official": "Descida do Lago"
         },
-        "complex": null,
+        "complex": "Descida do Lago",
         "direction": "left",
         "scale": 4
       },
@@ -1540,7 +1545,7 @@
         "names": {
           "numbered": "Turn 5"
         },
-        "complex": null,
+        "complex": "Descida do Lago",
         "direction": "left",
         "scale": 5
       },
@@ -1560,11 +1565,12 @@
         "display": "Ferradura",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Ferradura"
+          "colloquial": "Ferradura",
+          "official": "Ferradura"
         },
         "complex": null,
         "direction": "right",
-        "scale": 5
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1582,11 +1588,12 @@
         "display": "Laranjinha",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Laranjinha"
+          "colloquial": "Laranjinha",
+          "official": "Laranja"
         },
         "complex": null,
         "direction": "right",
-        "scale": 5
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1607,7 +1614,7 @@
         },
         "complex": null,
         "direction": "right",
-        "scale": 5
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1625,11 +1632,12 @@
         "display": "Pinheirinho",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Pinheirinho"
+          "colloquial": "Pinheirinho",
+          "official": "Pinheirinho"
         },
         "complex": null,
         "direction": "left",
-        "scale": 6
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1647,11 +1655,12 @@
         "display": "Bico de Pato",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "Bico de Pato"
+          "colloquial": "Bico de Pato",
+          "official": "Bico de Pato"
         },
         "complex": null,
         "direction": "right",
-        "scale": 6
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1669,11 +1678,12 @@
         "display": "Mergulho",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "Mergulho"
+          "colloquial": "Mergulho",
+          "official": "Mergulho"
         },
         "complex": null,
         "direction": "left",
-        "scale": 5
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1691,11 +1701,12 @@
         "display": "Junção",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "Junção"
+          "colloquial": "Junção",
+          "official": "Junção"
         },
         "complex": null,
         "direction": "left",
-        "scale": 3
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1734,7 +1745,8 @@
         "display": "Subida dos Boxes",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "Subida dos Boxes"
+          "colloquial": "Subida dos Boxes",
+          "official": "Subida dos Boxes"
         },
         "complex": null,
         "direction": "left",
@@ -1756,11 +1768,12 @@
         "display": "Arquibancadas",
         "names": {
           "numbered": "Turn 15",
-          "colloquial": "Arquibancadas"
+          "colloquial": "Arquibancadas",
+          "official": "Arquibancadas"
         },
         "complex": null,
         "direction": "left",
-        "scale": 6
+        "scale": 5
       },
       "geometry": {
         "type": "Point",

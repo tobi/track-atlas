@@ -1,0 +1,105 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Senna S",
+        "official": "Descida do S",
+        "complex": "Senna S",
+        "direction": "left",
+        "scale": 2,
+        "error": "scale 3 too generous — T1 is a heavy-braking 2nd-gear left at the top of the Senna S, scale 2"
+      },
+      "2": {
+        "colloquial": "Senna S",
+        "official": "Senna S",
+        "complex": "Senna S",
+        "direction": "right",
+        "scale": 3,
+        "error": "scale 4 slightly high — the right-hand exit of the Senna S is a medium-speed compromise corner, scale 3"
+      },
+      "3": {
+        "colloquial": "Curva do Sol",
+        "official": "Curva do Sol",
+        "direction": "left",
+        "scale": 4
+      },
+      "4": {
+        "colloquial": "Descida do Lago",
+        "official": "Descida do Lago",
+        "complex": "Descida do Lago",
+        "direction": "left",
+        "scale": 4
+      },
+      "5": {
+        "complex": "Descida do Lago",
+        "direction": "left",
+        "scale": 5
+      },
+      "6": {
+        "colloquial": "Ferradura",
+        "official": "Ferradura",
+        "direction": "right",
+        "scale": 3,
+        "error": "scale 5 wrong — Ferradura ('horseshoe') is a braking, medium-speed right that tightens on exit, scale 3"
+      },
+      "7": {
+        "colloquial": "Laranjinha",
+        "official": "Laranja",
+        "direction": "right",
+        "scale": 2,
+        "error": "scale 5 wrong — Laranjinha is the tight slow right at the end of the Ferradura horseshoe, 2nd/3rd gear, scale 2"
+      },
+      "8": {
+        "direction": "right",
+        "scale": 4,
+        "error": "scale 5 slightly high — the downhill right before Pinheirinho is a genuine direction change (~100°), scale 4"
+      },
+      "9": {
+        "colloquial": "Pinheirinho",
+        "official": "Pinheirinho",
+        "direction": "left",
+        "scale": 3,
+        "error": "scale 6 wrong — Pinheirinho is a proper medium-speed 90°+ left, not a kink; scale 3"
+      },
+      "10": {
+        "colloquial": "Bico de Pato",
+        "official": "Bico de Pato",
+        "direction": "right",
+        "scale": 2,
+        "error": "scale 6 badly wrong — Bico de Pato is a near-hairpin right and one of the slowest corners on the lap, scale 2"
+      },
+      "11": {
+        "colloquial": "Mergulho",
+        "official": "Mergulho",
+        "direction": "left",
+        "scale": 4,
+        "error": "scale 5 slightly high — Mergulho is a fast committed left but loaded and downhill, scale 4"
+      },
+      "12": {
+        "colloquial": "Junção",
+        "official": "Junção",
+        "direction": "left",
+        "scale": 2,
+        "error": "scale 3 slightly generous — Junção is a slow 2nd/3rd-gear left that sets up the entire climb to the line, scale 2"
+      },
+      "13": {
+        "direction": "left",
+        "scale": 6
+      },
+      "14": {
+        "colloquial": "Subida dos Boxes",
+        "official": "Subida dos Boxes",
+        "direction": "left",
+        "scale": 6
+      },
+      "15": {
+        "colloquial": "Arquibancadas",
+        "official": "Arquibancadas",
+        "direction": "left",
+        "scale": 5,
+        "error": "scale 6 slightly low — Arquibancadas is a long sustained flat-out left onto the pit straight, more a scale 5 sweep than a deflection"
+      }
+    },
+    "errors_summary": "Numbering, markers, directions and locations all check out against the outline, but severity scales in the infield are badly inflated — T6, T7, T9 and T10 (Ferradura, Laranjinha, Pinheirinho, Bico de Pato) are marked 5-6 when they are medium-to-slow corners (scales 2-3)."
+  }
+}
