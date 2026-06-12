@@ -1137,14 +1137,15 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "The 90",
+        "display": "Turn 1",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "The 90"
+          "colloquial": "Turn 1",
+          "official": "Turn 1"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1159,14 +1160,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "Esses",
+        "display": "The Esses",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "Esses"
+          "colloquial": "The Esses",
+          "official": "Turn 2"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Esses",
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1181,14 +1183,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Inner Loop",
+        "display": "The Esses",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Inner Loop"
+          "colloquial": "The Esses",
+          "official": "Turn 3"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Esses",
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1203,14 +1206,15 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "Outer Loop",
+        "display": "The Esses",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "Outer Loop"
+          "colloquial": "The Esses",
+          "official": "Turn 4"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Esses",
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1225,14 +1229,15 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Chute",
+        "display": "The Esses",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Chute"
+          "colloquial": "The Esses",
+          "official": "Turn 5"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Esses",
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1247,14 +1252,15 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "Toe",
+        "display": "The Loop",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Toe"
+          "colloquial": "The Loop",
+          "official": "Turn 6"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Loop",
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1269,14 +1275,15 @@
       "properties": {
         "role": "corner",
         "number": 7,
-        "display": "Heel",
+        "display": "The Loop",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Heel"
+          "colloquial": "The Loop",
+          "official": "Turn 7"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Loop",
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1291,14 +1298,15 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Turn 9",
+        "display": "The Bus Stop",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Turn 9"
+          "colloquial": "The Bus Stop",
+          "official": "Turn 8"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Bus Stop",
+        "direction": "right",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1313,14 +1321,15 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "Turn 10",
+        "display": "The Bus Stop",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Turn 10"
+          "colloquial": "The Bus Stop",
+          "official": "Turn 9"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "The Bus Stop",
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1335,14 +1344,15 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "Turn 11",
+        "display": "Turn 10",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "Turn 11"
+          "colloquial": "Turn 10",
+          "official": "Turn 10"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
