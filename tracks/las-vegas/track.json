@@ -61,7 +61,8 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "T3"
+            "colloquial": "T3",
+            "official": "Turn 3"
           },
           "direction": "right",
           "scale": 3,
@@ -112,13 +113,15 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "T6"
+            "colloquial": "T6",
+            "official": "Turn 6"
           },
           "direction": "left",
           "scale": 4,
           "marker": 0.3045,
           "start": 0.2828,
           "end": 0.3242,
+          "complex": "Sphere section",
           "location": [
             -115.160304,
             36.119952
@@ -129,13 +132,15 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "T7"
+            "colloquial": "T7",
+            "official": "Turn 7"
           },
           "direction": "left",
-          "scale": 1,
+          "scale": 2,
           "marker": 0.3317,
           "start": 0.328,
           "end": 0.3346,
+          "complex": "Sphere section",
           "location": [
             -115.160744,
             36.121129
@@ -146,13 +151,15 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "T8"
+            "colloquial": "T8",
+            "official": "Turn 8"
           },
           "direction": "right",
           "scale": 2,
           "marker": 0.3393,
           "start": 0.3354,
           "end": 0.3471,
+          "complex": "Sphere section",
           "location": [
             -115.160604,
             36.121532
@@ -163,13 +170,15 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "T9"
+            "colloquial": "T9",
+            "official": "Turn 9"
           },
           "direction": "left",
           "scale": 2,
           "marker": 0.3624,
           "start": 0.3566,
           "end": 0.3669,
+          "complex": "Sphere section",
           "location": [
             -115.161088,
             36.122247
@@ -214,7 +223,8 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "T12"
+            "colloquial": "Strip entry",
+            "official": "Turn 12"
           },
           "direction": "left",
           "scale": 2,
@@ -231,10 +241,11 @@
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "T13"
+            "colloquial": "T13",
+            "official": "Turn 13"
           },
           "direction": "left",
-          "scale": 5,
+          "scale": 6,
           "marker": 0.656,
           "start": 0.6273,
           "end": 0.678,
@@ -248,7 +259,8 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "T14"
+            "colloquial": "End of the Strip",
+            "official": "Turn 14"
           },
           "direction": "left",
           "scale": 2,
@@ -265,10 +277,11 @@
           "number": 15,
           "names": {
             "numbered": "Turn 15",
-            "colloquial": "T15"
+            "colloquial": "T15",
+            "official": "Turn 15"
           },
           "direction": "right",
-          "scale": 3,
+          "scale": 5,
           "marker": 0.846,
           "start": 0.8442,
           "end": 0.8481,
@@ -282,10 +295,11 @@
           "number": 16,
           "names": {
             "numbered": "Turn 16",
-            "colloquial": "T16"
+            "colloquial": "T16",
+            "official": "Turn 16"
           },
           "direction": "left",
-          "scale": 3,
+          "scale": 5,
           "marker": 0.8576,
           "start": 0.8552,
           "end": 0.8607,
@@ -347,7 +361,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-12T14:25:04.445718+00:00",
+    "generated_at": "2026-06-12T21:08:12.728521+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

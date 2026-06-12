@@ -1,0 +1,68 @@
+{
+  "gp": {
+    "corners": {
+      "3": {
+        "official": "Turn 3",
+        "direction": "right",
+        "scale": 3,
+        "error": "T3 marker 0.9007 is implausible — it places the corner between T16 (0.8576) and T17 (0.9831), and the coordinate [-115.168115, 36.107953] sits on the Harmon Avenue straight at the end of the lap. T3 belongs in the opening sequence between T2 (0.0685) and T4 (0.1078); marker should be ~0.088 with a coordinate near [-115.1632, 36.1105]"
+      },
+      "6": {
+        "official": "Turn 6",
+        "complex": "Sphere section",
+        "direction": "left",
+        "scale": 4
+      },
+      "7": {
+        "official": "Turn 7",
+        "complex": "Sphere section",
+        "direction": "left",
+        "scale": 2,
+        "error": "scale 1 (hairpin) looks too severe — T7 is a slow-medium left in the Sphere wiggle, ~2 is more appropriate"
+      },
+      "8": {
+        "official": "Turn 8",
+        "complex": "Sphere section",
+        "direction": "right",
+        "scale": 2
+      },
+      "9": {
+        "official": "Turn 9",
+        "complex": "Sphere section",
+        "direction": "left",
+        "scale": 2
+      },
+      "12": {
+        "colloquial": "Strip entry",
+        "official": "Turn 12",
+        "direction": "left",
+        "scale": 2
+      },
+      "13": {
+        "official": "Turn 13",
+        "direction": "left",
+        "scale": 6,
+        "error": "scale 5 is slightly strong — this is a flat-out curvature of the Strip straight rather than a real corner; 6 (barely a deflection) fits better"
+      },
+      "14": {
+        "colloquial": "End of the Strip",
+        "official": "Turn 14",
+        "direction": "left",
+        "scale": 2
+      },
+      "15": {
+        "official": "Turn 15",
+        "direction": "right",
+        "scale": 5,
+        "error": "scale 3 looks too severe — outline geometry through T15 is nearly straight; it is a fast right kink on exit of T14, scale ~5"
+      },
+      "16": {
+        "official": "Turn 16",
+        "direction": "left",
+        "scale": 5,
+        "error": "scale 3 looks too severe — like T15 this is a flat kink onto the Harmon Avenue straight, scale ~5"
+      }
+    },
+    "errors_summary": "T3 has corrupt data: marker 0.9007 and coordinate place it on the Harmon Ave straight near the end of the lap instead of in the T2-T4 opening sequence (expected marker ~0.088). T7 severity overstated (not a hairpin), and T13/T15/T16 are flat kinks rather than scale 3-5 corners. Circuit has no official corner names; numbered names are correct."
+  }
+}
