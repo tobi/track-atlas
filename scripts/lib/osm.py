@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import math
 import re
+import sys
 
 # Way names that are infrastructure, not corners.
 NON_CORNER = re.compile(
@@ -305,8 +306,8 @@ def loop_length_m(loop):
 # Ways that are never part of the main lap (sub-circuits, pit, service).
 # Includes Japanese names seen at Fuji (drift course, short circuit, kart).
 STITCH_DROP = re.compile(
-    r"pit|penalty|long lap|safety|kart|karting|moto\b|drift|short|"
-    r"ドリフト|ショート|カート|スクール|paddock|service|access",
+    r"pit|penalty|long lap|safety|kart|karting|moto\b|motorcycle|drift|short|"
+    r"club course|school|oval|ドリフト|ショート|カート|スクール|paddock|service|access",
     re.I,
 )
 
@@ -339,52 +340,96 @@ def stitch_circuit_ways(elements, drop=STITCH_DROP, expected_m=None):
         return None
     cands.sort(key=lambda c: -loop_length_m(c))
 
+    # Street circuits (Jeddah, Miami) tag every lap way with the circuit name
+    # while unnamed service roads pollute the bbox. If one name dominates,
+    # also try a pool restricted to that name (preferred).
+    names = {}
+    for el in elements:
+        if el.get("type") != "way":
+            continue
+        nm = (el.get("tags") or {}).get("name") or ""
+        if nm and not drop.search(nm):
+            names[nm] = names.get(nm, 0) + 1
+    pools = [cands]
+    if names:
+        top = max(names, key=names.get)
+        if names[top] >= 3:
+            named_pool = []
+            for el in elements:
+                if el.get("type") != "way":
+                    continue
+                if ((el.get("tags") or {}).get("name") or "") != top:
+                    continue
+                c = way_coords(el)
+                if len(c) >= 2:
+                    named_pool.append(c)
+            named_pool.sort(key=lambda c: -loop_length_m(c))
+            pools.insert(0, named_pool)
+
     def grow(seed_idx, pool):
-        loop = list(pool[seed_idx])
-        rest = [c for i, c in enumerate(pool) if i != seed_idx]
-        GAP = 120.0
-        while rest:
-            best = (GAP, None, False, "tail")
-            for idx, c in enumerate(rest):
+        """Bounded DFS over segment chains, preferring tight joins, returning
+        the best closed loop reachable from the seed. Greedy alone dead-ends
+        on street circuits where alternate layouts branch off the lap. A node
+        budget keeps worst-case runtime sane on way-fragmented tracks."""
+        seed = pool[seed_idx]
+        best = {"loop": None, "score": float("inf")}
+        budget = {"n": 20000}
+        sys.setrecursionlimit(10000)
+
+        def consider(loop):
+            gap = haversine(loop[0], loop[-1])
+            if gap > 300:
+                return
+            length = loop_length_m(loop) + gap
+            if expected_m and not (0.6 * expected_m <= length <= 1.5 * expected_m):
+                return
+            score = gap + (abs(length - expected_m) if expected_m else 0)
+            if score < best["score"]:
+                best["loop"], best["score"] = list(loop), score
+
+        def dfs(loop, used, depth, branch):
+            if budget["n"] <= 0:
+                return
+            budget["n"] -= 1
+            consider(loop)
+            if depth > len(pool):
+                return
+            if expected_m and loop_length_m(loop) > 1.6 * expected_m:
+                return  # overgrown -- no closed lap down this path
+            # candidate continuations at the tail, tightest joins first
+            conts = []
+            for idx, c in enumerate(pool):
+                if idx in used:
+                    continue
                 for flip in (False, True):
                     cc = c[::-1] if flip else c
-                    dt = haversine(loop[-1], cc[0])
-                    dh = haversine(loop[0], cc[-1])
-                    if dt < best[0]:
-                        best = (dt, idx, flip, "tail")
-                    if dh < best[0]:
-                        best = (dh, idx, flip, "head")
-            if best[1] is None:
-                break
-            _, idx, flip, where = best
-            c = rest.pop(idx)
-            if flip:
-                c = c[::-1]
-            if where == "tail":
-                loop.extend(c[1:] if haversine(loop[-1], c[0]) < 1.0 else c)
-            else:
-                loop = (c[:-1] if haversine(loop[0], c[-1]) < 1.0 else c) + loop
-        return loop
+                    d = haversine(loop[-1], cc[0])
+                    if d < 120.0:
+                        conts.append((d, idx, flip))
+            conts.sort()
+            for d, idx, flip in conts[:branch]:
+                c = pool[idx][::-1] if flip else pool[idx]
+                added = c[1:] if d < 1.0 else c
+                loop.extend(added)
+                used.add(idx)
+                # full branching near the seed, greedy deeper in
+                dfs(loop, used, depth + 1, branch if depth < 6 else 1)
+                used.discard(idx)
+                del loop[len(loop) - len(added):]
+
+        dfs(list(seed), {seed_idx}, 0, 3)
+        return best["loop"], best["score"]
 
     best_loop, best_score = None, float("inf")
-    chains = []
-    for seed in range(min(8, len(cands))):
-        chains.append(grow(seed, cands))
-        chains.append(list(cands[seed]))  # a single way can BE the whole lap
-    for loop in chains:
-        gap = haversine(loop[0], loop[-1])
-        if gap > 300:
+    for pool in pools:
+        if not pool:
             continue
-        length = loop_length_m(loop) + gap
-        # a tiny fragment closes trivially -- reject chains that are nowhere
-        # near the expected lap length
-        if expected_m and not (0.6 * expected_m <= length <= 1.5 * expected_m):
-            continue
-        score = gap
-        if expected_m:
-            score += abs(length - expected_m)
-        if score < best_score:
-            best_loop, best_score = loop, score
+        for seed in range(min(8, len(pool))):
+            loop, score = grow(seed, pool)
+            if loop is not None and score < best_score:
+                best_loop, best_score = loop, score
+        if best_loop is not None:
+            break  # name-filtered pool produced a lap; don't dilute with noise
     return best_loop
 
 
@@ -500,17 +545,26 @@ def align_markers_to_centerline(loop, matched):
         # not enough anchors to align; place by raw fraction
         return (lambda m: point_at_fraction(loop, cum, total, m)), loop
 
-    # Determine travel direction: sum wrapped deltas of centerline fraction as
-    # marker increases. Negative -> centerline runs opposite the lap; reverse.
+    # Determine travel direction by trying BOTH orientations and keeping the
+    # one whose anchors are best explained by a constant lap offset
+    # (cf ≈ marker + c). A drift/vote heuristic is fragile with few, noisy,
+    # or wrap-ambiguous anchors (Sebring: 3 anchors spanning 0.5 lap).
     def wrap_half(d):
         return (d + 0.5) % 1.0 - 0.5
 
-    drift = sum(wrap_half(ctrl[i + 1][1] - ctrl[i][1]) for i in range(len(ctrl) - 1))
-    if drift < 0:
+    def fit_residual(ctrl_pts):
+        # best circular offset = circular mean of (cf - marker)
+        diffs = [(cf - m) % 1.0 for m, cf in ctrl_pts]
+        x = sum(math.cos(2 * math.pi * d) for d in diffs)
+        y = sum(math.sin(2 * math.pi * d) for d in diffs)
+        c = math.atan2(y, x) / (2 * math.pi) % 1.0
+        return sum(abs(wrap_half(cf - m - c)) for m, cf in ctrl_pts)
+
+    ctrl_rev = sorted([(m, 1.0 - cf) for m, cf in ctrl], key=lambda x: x[0])
+    if fit_residual(ctrl_rev) < fit_residual(ctrl):
         loop = loop[::-1]
         cum, total = arc_lengths(loop)
-        ctrl = [(m, 1.0 - cf) for m, cf in ctrl]
-        ctrl.sort(key=lambda x: x[0])
+        ctrl = ctrl_rev
 
     # Unwrap centerline fractions to a monotonic increasing sequence.
     markers = [c[0] for c in ctrl]
