@@ -1,0 +1,73 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Elf",
+        "official": "Elf",
+        "direction": "right",
+        "scale": 3,
+        "error": "scale 2 slightly understates it — T1 is a medium-speed right taken in 3rd/4th gear, scale 3 is more accurate"
+      },
+      "3": {
+        "colloquial": "Renault",
+        "official": "Renault",
+        "direction": "right",
+        "scale": 5
+      },
+      "4": {
+        "colloquial": "Repsol",
+        "official": "Repsol",
+        "direction": "right",
+        "scale": 4
+      },
+      "5": {
+        "colloquial": "Seat",
+        "official": "Seat",
+        "direction": "left",
+        "scale": 2,
+        "error": "scale 1 overstates it — T5 is a slow downhill left but not a true hairpin, scale 2 fits better"
+      },
+      "7": {
+        "colloquial": "Würth",
+        "official": "Würth",
+        "direction": "left",
+        "scale": 2,
+        "error": "colloquial field contains two names ('Würth, TV3') — should be a single name; 'Würth' is the established sponsor name for T7"
+      },
+      "9": {
+        "colloquial": "Campsa",
+        "official": "Campsa",
+        "direction": "right",
+        "scale": 4,
+        "error": "scale 3 understates it — Campsa is a fast, blind, crested right-hander taken near flat, scale 4"
+      },
+      "10": {
+        "colloquial": "La Caixa",
+        "official": "La Caixa",
+        "direction": "left",
+        "scale": 1
+      },
+      "12": {
+        "colloquial": "Banc Sabadell",
+        "official": "Banc de Sabadell",
+        "direction": "right",
+        "scale": 3
+      },
+      "13": {
+        "colloquial": "Europcar",
+        "official": "Europcar",
+        "direction": "right",
+        "scale": 2,
+        "error": "scale 3 slightly high — T13 is a slow right onto the run to the final corner, scale 2 fits better"
+      },
+      "14": {
+        "colloquial": "New Holland",
+        "official": "New Holland",
+        "direction": "right",
+        "scale": 4,
+        "error": "colloquial 'Catalunya' is wrong — the final corner (former T16, renumbered T14 after the 2023 chicane removal) is named New Holland; it is also a fast right onto the main straight, scale 4 not 3"
+      }
+    },
+    "errors_summary": "Corner count (14) correctly reflects the post-2023 chicane-removal layout, but T14 is misnamed 'Catalunya' instead of New Holland; minor scale corrections at T1, T5, T9, T13, T14 and a dual-name cleanup at T7"
+  }
+}
