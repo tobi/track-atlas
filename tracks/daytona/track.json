@@ -27,9 +27,12 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "T1"
+            "colloquial": "Turn 1",
+            "official": "Turn 1"
           },
           "marker": 0.085,
+          "direction": "left",
+          "scale": 2,
           "location": [
             -81.062861,
             29.19005
@@ -40,9 +43,12 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "T2"
+            "colloquial": "Turn 2",
+            "official": "Turn 2"
           },
           "marker": 0.115,
+          "direction": "left",
+          "scale": 3,
           "location": [
             -81.064075,
             29.191157
@@ -53,9 +59,12 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "T3"
+            "colloquial": "International Horseshoe",
+            "official": "International Horseshoe"
           },
           "marker": 0.169,
+          "direction": "right",
+          "scale": 1,
           "location": [
             -81.067145,
             29.191174
@@ -66,9 +75,12 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "T4"
+            "colloquial": "The Kink",
+            "official": "Turn 4 (Kink)"
           },
           "marker": 0.255,
+          "direction": "left",
+          "scale": 5,
           "location": [
             -81.071475,
             29.188818
@@ -79,9 +91,12 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "T5"
+            "colloquial": "West Horseshoe",
+            "official": "West Horseshoe"
           },
           "marker": 0.309,
+          "direction": "left",
+          "scale": 2,
           "location": [
             -81.07345,
             29.186669
@@ -92,9 +107,12 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "T6"
+            "colloquial": "NASCAR 1",
+            "official": "Turn 6 (NASCAR Turn 1)"
           },
           "marker": 0.376,
+          "direction": "left",
+          "scale": 5,
           "location": [
             -81.07304,
             29.183833
@@ -105,9 +123,12 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "T7"
+            "colloquial": "NASCAR 2",
+            "official": "Turn 7 (NASCAR Turn 2)"
           },
           "marker": 0.451,
+          "direction": "left",
+          "scale": 5,
           "location": [
             -81.069865,
             29.186424
@@ -118,9 +139,13 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "T8"
+            "colloquial": "Bus Stop entry",
+            "official": "Turn 8"
           },
           "marker": 0.67,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "left",
+          "scale": 4,
           "location": [
             -81.073854,
             29.183109
@@ -131,9 +156,13 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "T9"
+            "colloquial": "Bus Stop",
+            "official": "Turn 9"
           },
           "marker": 0.68,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "right",
+          "scale": 3,
           "location": [
             -81.074385,
             29.182881
@@ -144,9 +173,13 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "T10"
+            "colloquial": "Bus Stop",
+            "official": "Turn 10"
           },
           "marker": 0.692,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "right",
+          "scale": 3,
           "location": [
             -81.074762,
             29.182381
@@ -157,9 +190,13 @@
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "T11"
+            "colloquial": "Bus Stop exit",
+            "official": "Turn 11"
           },
           "marker": 0.703,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "left",
+          "scale": 4,
           "location": [
             -81.074865,
             29.181819
@@ -170,9 +207,12 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "T12"
+            "colloquial": "NASCAR 3",
+            "official": "Turn 12 (NASCAR Turns 3-4)"
           },
           "marker": 0.81,
+          "direction": "left",
+          "scale": 5,
           "location": [
             -81.070888,
             29.17875
@@ -222,7 +262,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:43.388729+00:00",
+    "generated_at": "2026-06-12T20:48:59.472524+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

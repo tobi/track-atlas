@@ -1437,14 +1437,15 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "T1",
+        "display": "Turn 1",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "T1"
+          "colloquial": "Turn 1",
+          "official": "Turn 1"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1459,14 +1460,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "T2",
+        "display": "Turn 2",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "T2"
+          "colloquial": "Turn 2",
+          "official": "Turn 2"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1481,14 +1483,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "T3",
+        "display": "International Horseshoe",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "T3"
+          "colloquial": "International Horseshoe",
+          "official": "International Horseshoe"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 1
       },
       "geometry": {
         "type": "Point",
@@ -1503,14 +1506,15 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "T4",
+        "display": "The Kink",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "T4"
+          "colloquial": "The Kink",
+          "official": "Turn 4 (Kink)"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -1525,14 +1529,15 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "T5",
+        "display": "West Horseshoe",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "T5"
+          "colloquial": "West Horseshoe",
+          "official": "West Horseshoe"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1547,14 +1552,15 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "T6",
+        "display": "NASCAR 1",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "T6"
+          "colloquial": "NASCAR 1",
+          "official": "Turn 6 (NASCAR Turn 1)"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -1569,14 +1575,15 @@
       "properties": {
         "role": "corner",
         "number": 7,
-        "display": "T7",
+        "display": "NASCAR 2",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "T7"
+          "colloquial": "NASCAR 2",
+          "official": "Turn 7 (NASCAR Turn 2)"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -1591,14 +1598,15 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "T8",
+        "display": "Bus Stop entry",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "T8"
+          "colloquial": "Bus Stop entry",
+          "official": "Turn 8"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1613,14 +1621,15 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "T9",
+        "display": "Bus Stop",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "T9"
+          "colloquial": "Bus Stop",
+          "official": "Turn 9"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1635,14 +1644,15 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "T10",
+        "display": "Bus Stop",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "T10"
+          "colloquial": "Bus Stop",
+          "official": "Turn 10"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1657,14 +1667,15 @@
       "properties": {
         "role": "corner",
         "number": 11,
-        "display": "T11",
+        "display": "Bus Stop exit",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "T11"
+          "colloquial": "Bus Stop exit",
+          "official": "Turn 11"
         },
-        "complex": null,
-        "direction": null,
-        "scale": null
+        "complex": "Bus Stop (Le Mans Chicane)",
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -1679,14 +1690,15 @@
       "properties": {
         "role": "corner",
         "number": 12,
-        "display": "T12",
+        "display": "NASCAR 3",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "T12"
+          "colloquial": "NASCAR 3",
+          "official": "Turn 12 (NASCAR Turns 3-4)"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
