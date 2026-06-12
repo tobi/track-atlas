@@ -26,7 +26,9 @@
         {
           "number": 1,
           "names": {
-            "numbered": "Turn 1"
+            "numbered": "Turn 1",
+            "official": "Turn 1",
+            "colloquial": "Tower Turn"
           },
           "direction": "left",
           "scale": 3,
@@ -58,10 +60,12 @@
         {
           "number": 3,
           "names": {
-            "numbered": "Turn 3"
+            "numbered": "Turn 3",
+            "official": "Turn 3",
+            "colloquial": "Bend"
           },
           "direction": "left",
-          "scale": 3,
+          "scale": 4,
           "marker": 0.16,
           "start": 0.15,
           "end": 0.17,
@@ -90,10 +94,12 @@
         {
           "number": 5,
           "names": {
-            "numbered": "Turn 5"
+            "numbered": "Turn 5",
+            "official": "Turn 5",
+            "colloquial": "Warehouse"
           },
           "direction": "left",
-          "scale": 3,
+          "scale": 2,
           "marker": 0.19,
           "start": 0.18,
           "end": 0.2,
@@ -139,7 +145,9 @@
         {
           "number": 8,
           "names": {
-            "numbered": "Turn 8"
+            "numbered": "Turn 8",
+            "official": "Turn 8",
+            "colloquial": "Bishop Bend"
           },
           "direction": "right",
           "scale": 6,
@@ -156,7 +164,8 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "Fangio"
+            "colloquial": "Cunningham",
+            "official": "Turn 9"
           },
           "direction": "left",
           "scale": 6,
@@ -171,7 +180,9 @@
         {
           "number": 10,
           "names": {
-            "numbered": "Turn 10"
+            "numbered": "Turn 10",
+            "official": "Turn 10",
+            "colloquial": "Gendebien"
           },
           "direction": "right",
           "scale": 3,
@@ -238,10 +249,11 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "Bishop"
+            "colloquial": "Bishop",
+            "official": "Turn 14"
           },
           "direction": "left",
-          "scale": 5,
+          "scale": 4,
           "marker": 0.63,
           "start": 0.62,
           "end": 0.64,
@@ -254,7 +266,9 @@
         {
           "number": 15,
           "names": {
-            "numbered": "Turn 15"
+            "numbered": "Turn 15",
+            "official": "Turn 15",
+            "colloquial": "Coca-Cola"
           },
           "direction": "right",
           "scale": 4,
@@ -350,7 +364,7 @@
     "imsa_data": "sebring"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:43.391123+00:00",
+    "generated_at": "2026-06-12T21:33:37.955396+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
