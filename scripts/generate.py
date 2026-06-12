@@ -182,7 +182,8 @@ def generate_track(slug: str) -> dict:
         centerline = None
         if rel_file.exists():
             try:
-                centerline = relation_centerline(json.loads(rel_file.read_text()))
+                centerline = relation_centerline(json.loads(rel_file.read_text()),
+                                                 expected_m=layout.get("length_m"))
             except Exception:
                 centerline = None
 

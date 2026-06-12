@@ -1,0 +1,236 @@
+{
+  "slug": "long-beach",
+  "name": "Long Beach Street Circuit",
+  "aka": [
+    "Long Beach"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 33.7598,
+    "lon": -118.189,
+    "locality": "Long Beach, California",
+    "region": "California",
+    "timezone": "America/Los_Angeles"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Street Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "T1"
+          },
+          "marker": 0.223,
+          "location": [
+            -118.187684,
+            33.762052
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "T2"
+          },
+          "marker": 0.283,
+          "location": [
+            -118.18975,
+            33.761808
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "T3"
+          },
+          "marker": 0.295,
+          "location": [
+            -118.190161,
+            33.761887
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "T4"
+          },
+          "marker": 0.331,
+          "location": [
+            -118.191326,
+            33.762305
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "T5"
+          },
+          "marker": 0.378,
+          "location": [
+            -118.192811,
+            33.762915
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "T6"
+          },
+          "marker": 0.505,
+          "location": [
+            -118.196262,
+            33.763098
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "T7"
+          },
+          "marker": 0.536,
+          "location": [
+            -118.19716,
+            33.763607
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "T8"
+          },
+          "marker": 0.602,
+          "location": [
+            -118.196225,
+            33.764753
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "T9"
+          },
+          "marker": 0.801,
+          "location": [
+            -118.192365,
+            33.765396
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "T10"
+          },
+          "marker": 0.842,
+          "location": [
+            -118.191446,
+            33.765841
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "T11"
+          },
+          "marker": 0.882,
+          "location": [
+            -118.190037,
+            33.76588
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.312
+        },
+        {
+          "name": "2",
+          "marker": 0.455
+        },
+        {
+          "name": "3",
+          "marker": 0.726
+        },
+        {
+          "name": "4",
+          "marker": 1
+        }
+      ],
+      "pit": {},
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -118.185888,
+          33.765664
+        ]
+      },
+      "length_m": 3167,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "long-beach"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.534651+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 11
+    }
+  }
+}

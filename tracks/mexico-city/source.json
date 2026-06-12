@@ -1,0 +1,39 @@
+{
+  "slug": "mexico-city",
+  "name": "Autodromo Hermanos Rodriguez",
+  "aka": [
+    "Mexico City"
+  ],
+  "country": "MX",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 19.4042,
+    "lon": -99.0907,
+    "locality": "Mexico City",
+    "region": "CDMX",
+    "timezone": "America/Mexico_City"
+  },
+  "osm": {
+    "bbox": [
+      19.3742,
+      -99.1207,
+      19.4342,
+      -99.0607
+    ],
+    "relation": 16251935
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4304,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/mexico.json"
+  }
+}

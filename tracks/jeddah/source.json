@@ -1,0 +1,38 @@
+{
+  "slug": "jeddah",
+  "name": "Jeddah Corniche Circuit",
+  "aka": [
+    "Jeddah"
+  ],
+  "country": "SA",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 21.6319,
+    "lon": 39.1044,
+    "locality": "Jeddah",
+    "region": "Makkah",
+    "timezone": "Asia/Riyadh"
+  },
+  "osm": {
+    "bbox": [
+      21.6019,
+      39.0744,
+      21.6619,
+      39.1344
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 6174,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/jeddah.json"
+  }
+}

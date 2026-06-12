@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "outline",
+        "layout": "gp"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -83.815164,
+            34.1422
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 5,
+        "display": "The Esses",
+        "names": {
+          "numbered": "Turn 5",
+          "colloquial": "The Esses"
+        },
+        "complex": null,
+        "direction": null,
+        "scale": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.815164,
+          34.1422
+        ]
+      }
+    }
+  ]
+}

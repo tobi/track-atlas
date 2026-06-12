@@ -1,0 +1,378 @@
+{
+  "slug": "mexico-city",
+  "name": "Autodromo Hermanos Rodriguez",
+  "aka": [
+    "Mexico City"
+  ],
+  "country": "MX",
+  "location": {
+    "lat": 19.4042,
+    "lon": -99.0907,
+    "locality": "Mexico City",
+    "region": "CDMX",
+    "timezone": "America/Mexico_City"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Esses Moisés Solana"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.2839,
+          "start": 0.277,
+          "end": 0.2878,
+          "location": [
+            -99.085859,
+            19.405174
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Esses Moisés Solana"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.3045,
+          "start": 0.2999,
+          "end": 0.3071,
+          "location": [
+            -99.08502,
+            19.405064
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Esses Moisés Solana"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.3165,
+          "start": 0.3128,
+          "end": 0.3194,
+          "location": [
+            -99.084534,
+            19.404987
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Ese del Lago"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.4804,
+          "start": 0.4744,
+          "end": 0.483,
+          "location": [
+            -99.084905,
+            19.40013
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Ese del Lago"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.4968,
+          "start": 0.4935,
+          "end": 0.5011,
+          "location": [
+            -99.085251,
+            19.399584
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Horquilla"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.5312,
+          "start": 0.5253,
+          "end": 0.5382,
+          "location": [
+            -99.086025,
+            19.398468
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Esses"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.6092,
+          "start": 0.6034,
+          "end": 0.6143,
+          "location": [
+            -99.086821,
+            19.397737
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Esses"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.6328,
+          "start": 0.6243,
+          "end": 0.6414,
+          "location": [
+            -99.086694,
+            19.398644
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Esses"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.6553,
+          "start": 0.6448,
+          "end": 0.6648,
+          "location": [
+            -99.086573,
+            19.399509
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "T10"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.6995,
+          "start": 0.6869,
+          "end": 0.7094,
+          "location": [
+            -99.087441,
+            19.40081
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "T11"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.7173,
+          "start": 0.7118,
+          "end": 0.7257,
+          "location": [
+            -99.087851,
+            19.401359
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "T12"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.8515,
+          "start": 0.8476,
+          "end": 0.8547,
+          "location": [
+            -99.092534,
+            19.40341
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Foro Sol"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.8953,
+          "start": 0.8872,
+          "end": 0.8986,
+          "location": [
+            -99.094316,
+            19.403654
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "T14"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.9063,
+          "start": 0.9024,
+          "end": 0.9111,
+          "location": [
+            -99.094764,
+            19.403715
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "T15"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.9144,
+          "start": 0.9111,
+          "end": 0.9192,
+          "location": [
+            -99.095022,
+            19.403863
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16",
+            "colloquial": "T16"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.9359,
+          "start": 0.9299,
+          "end": 0.9415,
+          "location": [
+            -99.095071,
+            19.404696
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 17,
+          "names": {
+            "numbered": "Turn 17",
+            "colloquial": "Peraltada"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.948,
+          "start": 0.9415,
+          "end": 0.9834,
+          "location": [
+            -99.09515,
+            19.405158
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.4502
+        },
+        {
+          "name": "2",
+          "marker": 0.7939
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9533,
+        "exit": 0.1372
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -99.09687,
+          19.405394
+        ]
+      },
+      "length_m": 4304,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.594163+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 17
+    }
+  }
+}

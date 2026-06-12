@@ -1,0 +1,41 @@
+{
+  "slug": "road-america",
+  "name": "Road America",
+  "aka": [
+    "Elkhart Lake"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 43.7918,
+    "lon": -87.9897,
+    "locality": "Elkhart Lake, Wisconsin",
+    "region": "Wisconsin",
+    "timezone": "America/Chicago"
+  },
+  "osm": {
+    "bbox": [
+      43.7618,
+      -88.0197,
+      43.8218,
+      -87.9597
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "length_m": 6514,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "road-america"
+  },
+  "lovely": {
+    "gp": "iracing/roadamerica-full.json"
+  }
+}

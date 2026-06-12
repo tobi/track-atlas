@@ -1,0 +1,44 @@
+{
+  "slug": "imola",
+  "name": "Autodromo Enzo e Dino Ferrari",
+  "aka": [
+    "Imola"
+  ],
+  "country": "IT",
+  "series": [
+    "wec",
+    "elms",
+    "f1"
+  ],
+  "location": {
+    "lat": 44.338,
+    "lon": 11.708,
+    "locality": "Imola",
+    "region": "Emilia-Romagna",
+    "timezone": "Europe/Rome"
+  },
+  "osm": {
+    "bbox": [
+      44.308,
+      11.678,
+      44.368,
+      11.738
+    ],
+    "relation": 9291096
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4909,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "imola"
+  },
+  "lovely": {
+    "gp": "lmu/autodromo-enzo-e-dino-ferrari.json"
+  }
+}

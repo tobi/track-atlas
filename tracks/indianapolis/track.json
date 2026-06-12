@@ -1,0 +1,307 @@
+{
+  "slug": "indianapolis",
+  "name": "Indianapolis Motor Speedway",
+  "aka": [
+    "IMS",
+    "The Brickyard"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 39.795,
+    "lon": -86.2346,
+    "locality": "Speedway, Indiana",
+    "region": "Indiana",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Road Course",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Turn 1"
+          },
+          "start": 0.15,
+          "end": 0.183,
+          "marker": 0.1665,
+          "location": [
+            -86.238912,
+            39.799011
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Turn 2"
+          },
+          "start": 0.184,
+          "end": 0.209,
+          "marker": 0.1965,
+          "location": [
+            -86.237714,
+            39.799343
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Turn 3"
+          },
+          "start": 0.21,
+          "end": 0.254,
+          "marker": 0.232,
+          "location": [
+            -86.237501,
+            39.800556
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Turn 4"
+          },
+          "start": 0.255,
+          "end": 0.3,
+          "marker": 0.2775,
+          "location": [
+            -86.235757,
+            39.801118
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Turn 5"
+          },
+          "start": 0.309,
+          "end": 0.326,
+          "marker": 0.3175,
+          "location": [
+            -86.235443,
+            39.799783
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Turn 6"
+          },
+          "start": 0.327,
+          "end": 0.351,
+          "marker": 0.339,
+          "location": [
+            -86.235016,
+            39.799161
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Turn 7"
+          },
+          "start": 0.51,
+          "end": 0.549,
+          "marker": 0.5295,
+          "location": [
+            -86.234919,
+            39.792461
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Turn 8"
+          },
+          "start": 0.55,
+          "end": 0.579,
+          "marker": 0.5645,
+          "location": [
+            -86.233546,
+            39.792248
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Turn 9"
+          },
+          "start": 0.58,
+          "end": 0.604,
+          "marker": 0.592,
+          "location": [
+            -86.232719,
+            39.791617
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Turn 10"
+          },
+          "start": 0.605,
+          "end": 0.655,
+          "marker": 0.63,
+          "location": [
+            -86.231112,
+            39.791393
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Turn 11"
+          },
+          "start": 0.675,
+          "end": 0.733,
+          "marker": 0.704,
+          "location": [
+            -86.231569,
+            39.788887
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Turn 12"
+          },
+          "start": 0.77,
+          "end": 0.805,
+          "marker": 0.7875,
+          "location": [
+            -86.235121,
+            39.788172
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Turn 13"
+          },
+          "start": 0.81,
+          "end": 0.843,
+          "marker": 0.8265,
+          "location": [
+            -86.235361,
+            39.789429
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Turn 14"
+          },
+          "start": 0.85,
+          "end": 0.934,
+          "marker": 0.892,
+          "location": [
+            -86.238078,
+            39.789495
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.261
+        },
+        {
+          "name": "2",
+          "marker": 0.505
+        },
+        {
+          "name": "3",
+          "marker": 0.662
+        },
+        {
+          "name": "4",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.833,
+        "exit": 0.107
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -86.238847,
+          39.793157
+        ]
+      },
+      "length_m": 3925,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "indianapolis"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.536493+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 14
+    }
+  }
+}

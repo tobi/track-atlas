@@ -1,0 +1,39 @@
+{
+  "slug": "baku",
+  "name": "Baku City Circuit",
+  "aka": [
+    "Baku"
+  ],
+  "country": "AZ",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 40.3725,
+    "lon": 49.8533,
+    "locality": "Baku",
+    "region": "Baku",
+    "timezone": "Asia/Baku"
+  },
+  "osm": {
+    "bbox": [
+      40.3425,
+      49.8233,
+      40.4025,
+      49.8833
+    ],
+    "relation": 11266687
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 6003,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/baku-azerbaijan.json"
+  }
+}

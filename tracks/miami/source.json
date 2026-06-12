@@ -1,0 +1,41 @@
+{
+  "slug": "miami",
+  "name": "Miami International Autodrome",
+  "aka": [
+    "Miami"
+  ],
+  "country": "US",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 25.958,
+    "lon": -80.2389,
+    "locality": "Miami Gardens, Florida",
+    "region": "Florida",
+    "timezone": "America/New_York"
+  },
+  "osm": {
+    "bbox": [
+      25.928,
+      -80.2689,
+      25.988,
+      -80.2089
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5412,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "miami"
+  },
+  "lovely": {
+    "gp": "f12025/miami.json"
+  }
+}

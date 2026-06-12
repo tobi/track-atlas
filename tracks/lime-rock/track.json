@@ -1,0 +1,194 @@
+{
+  "slug": "lime-rock",
+  "name": "Lime Rock Park",
+  "aka": [
+    "Lime Rock"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 41.9277,
+    "lon": -73.3836,
+    "locality": "Lakeville, Connecticut",
+    "region": "Connecticut",
+    "timezone": "America/New_York"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Classic",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Big Bend"
+          },
+          "start": 0.077,
+          "end": 0.219,
+          "marker": 0.148,
+          "location": [
+            -73.378531,
+            41.926531
+          ]
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Esses"
+          },
+          "start": 0.234,
+          "end": 0.384,
+          "marker": 0.309,
+          "location": [
+            -73.380261,
+            41.928354
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Uphill"
+          },
+          "start": 0.48,
+          "end": 0.58,
+          "marker": 0.53,
+          "location": [
+            -73.385446,
+            41.930044
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "West Bend"
+          },
+          "start": 0.649,
+          "end": 0.735,
+          "marker": 0.692,
+          "location": [
+            -73.388488,
+            41.928175
+          ]
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Diving Turn"
+          },
+          "start": 0.788,
+          "end": 0.858,
+          "marker": 0.823,
+          "location": [
+            -73.385901,
+            41.929933
+          ]
+        }
+      ],
+      "straights": [
+        {
+          "name": "Sam Posey Straight",
+          "start": 0.001,
+          "end": 0.076
+        },
+        {
+          "name": "No Name Straight",
+          "start": 0.385,
+          "end": 0.479
+        },
+        {
+          "name": "Back Straight",
+          "start": 0.581,
+          "end": 0.648
+        },
+        {
+          "name": "Downhill",
+          "start": 0.736,
+          "end": 0.787
+        },
+        {
+          "name": "Sam Posey Straight",
+          "start": 0.859,
+          "end": 1
+        }
+      ],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.23
+        },
+        {
+          "name": "2",
+          "marker": 0.476
+        },
+        {
+          "name": "3",
+          "marker": 0.63
+        },
+        {
+          "name": "4",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9,
+        "exit": 0.046
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -73.380817,
+          41.928536
+        ]
+      },
+      "length_m": 2462,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "lime-rock"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.537756+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 3,
+      "total": 5
+    }
+  }
+}

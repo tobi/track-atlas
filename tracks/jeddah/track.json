@@ -1,0 +1,406 @@
+{
+  "slug": "jeddah",
+  "name": "Jeddah Corniche Circuit",
+  "aka": [
+    "Jeddah"
+  ],
+  "country": "SA",
+  "location": {
+    "lat": 21.6319,
+    "lon": 39.1044,
+    "locality": "Jeddah",
+    "region": "Makkah",
+    "timezone": "Asia/Riyadh"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "T1"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.0829,
+          "start": 0.0801,
+          "end": 0.0858
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "T2"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.0907,
+          "start": 0.0877,
+          "end": 0.0969
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "T3"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.1158,
+          "start": 0.1096,
+          "end": 0.1212
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "T4"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.1665,
+          "start": 0.1636,
+          "end": 0.1692
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "T5"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.1812,
+          "start": 0.1699,
+          "end": 0.2018
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "T6"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.2139,
+          "start": 0.2044,
+          "end": 0.218
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "T7"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.2287,
+          "start": 0.225,
+          "end": 0.2329
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "T8"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.2398,
+          "start": 0.236,
+          "end": 0.2453
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "T9"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.2667,
+          "start": 0.2575,
+          "end": 0.2727
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "T10"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.2808,
+          "start": 0.2768,
+          "end": 0.2885
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "T11"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.2984,
+          "start": 0.2899,
+          "end": 0.3059
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "T12"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.3135,
+          "start": 0.3059,
+          "end": 0.3352
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "T13"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.3991,
+          "start": 0.3833,
+          "end": 0.4282
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "T14"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.4644,
+          "start": 0.4345,
+          "end": 0.4787
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "T15"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.4885,
+          "start": 0.4787,
+          "end": 0.4979
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16",
+            "colloquial": "T16"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.5064,
+          "start": 0.4999,
+          "end": 0.5112
+        },
+        {
+          "number": 17,
+          "names": {
+            "numbered": "Turn 17",
+            "colloquial": "T17"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.5187,
+          "start": 0.512,
+          "end": 0.5281
+        },
+        {
+          "number": 18,
+          "names": {
+            "numbered": "Turn 18",
+            "colloquial": "T18"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.5373,
+          "start": 0.5281,
+          "end": 0.5584
+        },
+        {
+          "number": 19,
+          "names": {
+            "numbered": "Turn 19",
+            "colloquial": "T19"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.5879,
+          "start": 0.5722,
+          "end": 0.5969
+        },
+        {
+          "number": 20,
+          "names": {
+            "numbered": "Turn 20",
+            "colloquial": "T20"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.6236,
+          "start": 0.5982,
+          "end": 0.6309
+        },
+        {
+          "number": 21,
+          "names": {
+            "numbered": "Turn 21",
+            "colloquial": "T21"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.6571,
+          "start": 0.6324,
+          "end": 0.6884
+        },
+        {
+          "number": 22,
+          "names": {
+            "numbered": "Turn 22",
+            "colloquial": "T22"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.702,
+          "start": 0.6959,
+          "end": 0.7071
+        },
+        {
+          "number": 23,
+          "names": {
+            "numbered": "Turn 23",
+            "colloquial": "T23"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.7124,
+          "start": 0.7079,
+          "end": 0.7208
+        },
+        {
+          "number": 24,
+          "names": {
+            "numbered": "Turn 24",
+            "colloquial": "T24"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.7372,
+          "start": 0.7322,
+          "end": 0.741
+        },
+        {
+          "number": 25,
+          "names": {
+            "numbered": "Turn 25",
+            "colloquial": "T25"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.7829,
+          "start": 0.7638,
+          "end": 0.7995
+        },
+        {
+          "number": 26,
+          "names": {
+            "numbered": "Turn 26",
+            "colloquial": "T26"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.8487,
+          "start": 0.8188,
+          "end": 0.875
+        },
+        {
+          "number": 27,
+          "names": {
+            "numbered": "Turn 27",
+            "colloquial": "T27"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.907,
+          "start": 0.8976,
+          "end": 0.9145
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.3417
+        },
+        {
+          "name": "2",
+          "marker": 0.6761
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9543,
+        "exit": 0.093
+      },
+      "length_m": 6174,
+      "direction": "anticlockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.577749+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 27
+    }
+  }
+}

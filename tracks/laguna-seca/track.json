@@ -1,0 +1,207 @@
+{
+  "slug": "laguna-seca",
+  "name": "WeatherTech Raceway Laguna Seca",
+  "aka": [
+    "Laguna Seca"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 36.5842,
+    "lon": -121.7517,
+    "locality": "Monterey, California",
+    "region": "California",
+    "timezone": "America/Los_Angeles"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Turn 1"
+          },
+          "start": 0.045,
+          "end": 0.08,
+          "marker": 0.0625
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Andretti Hairpin"
+          },
+          "start": 0.1,
+          "end": 0.173,
+          "marker": 0.1365,
+          "location": [
+            -121.757244,
+            36.582653
+          ]
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Turn 3"
+          },
+          "start": 0.191,
+          "end": 0.245,
+          "marker": 0.218
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Turn 4"
+          },
+          "start": 0.265,
+          "end": 0.321,
+          "marker": 0.293
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Turn 5"
+          },
+          "start": 0.4,
+          "end": 0.465,
+          "marker": 0.4325
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Turn 6"
+          },
+          "start": 0.52,
+          "end": 0.575,
+          "marker": 0.5475
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "The Corkscrew"
+          },
+          "start": 0.661,
+          "end": 0.72,
+          "marker": 0.6905,
+          "location": [
+            -121.749268,
+            36.58494
+          ]
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Turn 9"
+          },
+          "start": 0.725,
+          "end": 0.79,
+          "marker": 0.7575
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Turn 10"
+          },
+          "start": 0.805,
+          "end": 0.855,
+          "marker": 0.83
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Turn 11"
+          },
+          "start": 0.89,
+          "end": 0.94,
+          "marker": 0.915
+        }
+      ],
+      "straights": [
+        {
+          "name": "Rahal Straight",
+          "start": 0.576,
+          "end": 0.66
+        }
+      ],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.184
+        },
+        {
+          "name": "2",
+          "marker": 0.377
+        },
+        {
+          "name": "3",
+          "marker": 0.643
+        },
+        {
+          "name": "4",
+          "marker": 0.804
+        },
+        {
+          "name": "5",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.87,
+        "exit": 0.154
+      },
+      "length_m": 3602,
+      "direction": "anticlockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "laguna-seca"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.530490+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 2,
+      "total": 10
+    }
+  }
+}

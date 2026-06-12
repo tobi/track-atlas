@@ -1,0 +1,278 @@
+{
+  "slug": "paul-ricard",
+  "name": "Circuit Paul Ricard",
+  "aka": [
+    "Le Castellet"
+  ],
+  "country": "FR",
+  "location": {
+    "lat": 43.2503,
+    "lon": 5.7883,
+    "locality": "Le Castellet",
+    "region": "Provence-Alpes-Cote d'Azur",
+    "timezone": "Europe/Paris"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "S de la Verrerie"
+          },
+          "marker": 0.1,
+          "start": 0.98,
+          "end": 0.12,
+          "location": [
+            5.785492,
+            43.254774
+          ]
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "S de la Verrerie"
+          },
+          "marker": 0.133,
+          "start": 0.12,
+          "end": 0.15,
+          "location": [
+            5.785492,
+            43.254774
+          ]
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Virage de L'Hotel"
+          },
+          "marker": 0.228,
+          "start": 0.21,
+          "end": 0.234,
+          "location": [
+            5.779604,
+            43.257176
+          ]
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "4"
+          },
+          "marker": 0.243,
+          "location": [
+            5.779249,
+            43.257629
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Virage du Camp"
+          },
+          "marker": 0.263,
+          "start": 0.25,
+          "end": 0.27,
+          "location": [
+            5.778235,
+            43.257679
+          ]
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "6"
+          },
+          "marker": 0.287,
+          "location": [
+            5.778315,
+            43.258114
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Virage de la Sainte-Beaume"
+          },
+          "marker": 0.327,
+          "start": 0.31,
+          "end": 0.347,
+          "location": [
+            5.779015,
+            43.258494
+          ]
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Courde de Signes"
+          },
+          "marker": 0.673,
+          "start": 0.645,
+          "end": 0.708,
+          "location": [
+            5.802878,
+            43.251066
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Double Droite De Beausset"
+          },
+          "marker": 0.758,
+          "start": 0.722,
+          "end": 0.8,
+          "location": [
+            5.802503,
+            43.247489
+          ]
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Virage de Bendor"
+          },
+          "marker": 0.826,
+          "start": 0.81,
+          "end": 0.846,
+          "location": [
+            5.802504,
+            43.250045
+          ]
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Courbe du Garbalan"
+          },
+          "marker": 0.866,
+          "start": 0.848,
+          "end": 0.895,
+          "location": [
+            5.799961,
+            43.249739
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Virage de la Tour"
+          },
+          "marker": 0.913,
+          "start": 0.9,
+          "end": 0.934,
+          "location": [
+            5.797138,
+            43.25075
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Virage du Pont"
+          },
+          "marker": 0.944,
+          "start": 0.936,
+          "end": 0.958,
+          "location": [
+            5.796218,
+            43.249556
+          ]
+        }
+      ],
+      "straights": [
+        {
+          "name": "Ligne Droit du Mistral",
+          "start": 0.35,
+          "end": 0.64
+        }
+      ],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.263
+        },
+        {
+          "name": "2",
+          "marker": 0.597
+        },
+        {
+          "name": "3",
+          "marker": 1
+        }
+      ],
+      "pit": {},
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          5.792374,
+          43.251564
+        ]
+      },
+      "length_m": 5770,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "elms"
+  ],
+  "external_ids": {
+    "imsa_data": "paul-ricard"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.563264+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 8,
+      "total": 13
+    }
+  }
+}

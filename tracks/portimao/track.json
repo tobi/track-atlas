@@ -1,0 +1,270 @@
+{
+  "slug": "portimao",
+  "name": "Autodromo Internacional do Algarve",
+  "aka": [
+    "Portimao"
+  ],
+  "country": "PT",
+  "location": {
+    "lat": 37.2304,
+    "lon": -8.6279,
+    "locality": "Portimao",
+    "region": "Algarve",
+    "timezone": "Europe/Lisbon"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Primeira"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.09,
+          "start": 0.07,
+          "end": 0.1
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.12,
+          "start": 0.11,
+          "end": 0.13
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Lagos"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.16,
+          "start": 0.15,
+          "end": 0.17
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.19,
+          "start": 0.18,
+          "end": 0.21
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Torre Vip"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.31,
+          "start": 0.3,
+          "end": 0.32
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.37,
+          "start": 0.35,
+          "end": 0.38
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.42,
+          "start": 0.4,
+          "end": 0.43
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Samsung"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.45,
+          "start": 0.44,
+          "end": 0.46
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Craig Jones"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.53,
+          "start": 0.51,
+          "end": 0.54
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Portimão"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.58,
+          "start": 0.57,
+          "end": 0.59
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.6,
+          "start": 0.59,
+          "end": 0.61
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.65,
+          "start": 0.62,
+          "end": 0.66
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.69,
+          "start": 0.68,
+          "end": 0.7
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Sagres"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.74,
+          "start": 0.72,
+          "end": 0.77
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "Galp"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.83,
+          "start": 0.8,
+          "end": 0.88
+        }
+      ],
+      "straights": [
+        {
+          "name": "Main Straight",
+          "start": 0.88,
+          "end": 0.07
+        },
+        {
+          "name": "Back Straight",
+          "start": 0.2,
+          "end": 0.3
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Sector 1",
+          "marker": 0.21
+        },
+        {
+          "name": "Sector 2",
+          "marker": 0.56
+        },
+        {
+          "name": "Sector 3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.93,
+        "exit": 0.03
+      },
+      "length_m": 4653,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "wec",
+    "elms"
+  ],
+  "external_ids": {
+    "imsa_data": "portimao"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.556766+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 15
+    }
+  }
+}

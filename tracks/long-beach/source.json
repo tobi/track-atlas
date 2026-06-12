@@ -1,0 +1,42 @@
+{
+  "slug": "long-beach",
+  "name": "Long Beach Street Circuit",
+  "aka": [
+    "Long Beach"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 33.7598,
+    "lon": -118.189,
+    "locality": "Long Beach, California",
+    "region": "California",
+    "timezone": "America/Los_Angeles"
+  },
+  "osm": {
+    "bbox": [
+      33.7298,
+      -118.219,
+      33.7898,
+      -118.159
+    ],
+    "relation": 18052024
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Street Circuit",
+      "length_m": 3167,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "long-beach"
+  },
+  "lovely": {
+    "gp": "iracing/longbeach.json"
+  }
+}

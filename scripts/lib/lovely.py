@@ -32,6 +32,12 @@ def corners_from_lovely(lovely: dict) -> list[dict]:
         for k in ("marker", "start", "end"):
             if t.get(k) is not None:
                 c[k] = t[k]
+        # Some sims (iRacing) give start/end lap fractions but no apex marker.
+        # Synthesize it as the cyclic midpoint so corners can still be placed
+        # on the centerline by lap fraction.
+        if "marker" not in c and "start" in c and "end" in c:
+            span = (c["end"] - c["start"]) % 1.0
+            c["marker"] = round((c["start"] + span / 2.0) % 1.0, 6)
         out.append(c)
     return out
 

@@ -1,0 +1,412 @@
+{
+  "slug": "monaco",
+  "name": "Circuit de Monaco",
+  "aka": [
+    "Monte Carlo"
+  ],
+  "country": "MC",
+  "location": {
+    "lat": 43.7347,
+    "lon": 7.4206,
+    "locality": "Monte Carlo",
+    "region": "Monaco",
+    "timezone": "Europe/Monaco"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Sainte Devote"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.0663,
+          "start": 0.0905,
+          "end": 0.0711,
+          "location": [
+            7.429926,
+            43.739184
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Beau Rivage"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.1559,
+          "start": 0.1513,
+          "end": 0.1606,
+          "location": [
+            7.429354,
+            43.740891
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Massenet"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.2318,
+          "start": 0.2036,
+          "end": 0.254,
+          "location": [
+            7.428563,
+            43.740951
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Casino"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.269,
+          "start": 0.2665,
+          "end": 0.2836,
+          "location": [
+            7.427647,
+            43.740059
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Mirabeau Haute"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.3427,
+          "start": 0.3359,
+          "end": 0.3526,
+          "location": [
+            7.427646,
+            43.738186
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Grand Hotel Hairpin"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.3817,
+          "start": 0.3741,
+          "end": 0.3874,
+          "location": [
+            7.426153,
+            43.737821
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Mirabeau Bas"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.4062,
+          "start": 0.4015,
+          "end": 0.411,
+          "location": [
+            7.425223,
+            43.737538
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Portier"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.4333,
+          "start": 0.4298,
+          "end": 0.4378,
+          "location": [
+            7.424137,
+            43.737371
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Tunnel"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.5267,
+          "start": 0.5047,
+          "end": 0.5438,
+          "location": [
+            7.421255,
+            43.736116
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Nouvelle Chicane"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.6322,
+          "start": 0.63,
+          "end": 0.635,
+          "location": [
+            7.422,
+            43.733053
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Nouvelle Chicane"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.6377,
+          "start": 0.635,
+          "end": 0.6511,
+          "location": [
+            7.422121,
+            43.732914
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Tabac"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.7176,
+          "start": 0.7142,
+          "end": 0.735,
+          "location": [
+            7.422547,
+            43.73322
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Virage Louis Chiron"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.7634,
+          "start": 0.7611,
+          "end": 0.769,
+          "location": [
+            7.422378,
+            43.734438
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Pool"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.7766,
+          "start": 0.769,
+          "end": 0.7845,
+          "location": [
+            7.422279,
+            43.734826
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "Pool"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.8115,
+          "start": 0.808,
+          "end": 0.8173,
+          "location": [
+            7.421769,
+            43.735741
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16",
+            "colloquial": "Pool"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.8237,
+          "start": 0.8173,
+          "end": 0.8318,
+          "location": [
+            7.421813,
+            43.736103
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 17,
+          "names": {
+            "numbered": "Turn 17",
+            "colloquial": "La Rascasse"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.883,
+          "start": 0.8753,
+          "end": 0.8847,
+          "location": [
+            7.423626,
+            43.736931
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 18,
+          "names": {
+            "numbered": "Turn 18",
+            "colloquial": "Anthony Noghues"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.9086,
+          "start": 0.8943,
+          "end": 0.9121,
+          "location": [
+            7.424673,
+            43.737034
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 19,
+          "names": {
+            "numbered": "Turn 19",
+            "colloquial": "Anthony Noghues"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.9165,
+          "start": 0.9121,
+          "end": 0.9208,
+          "location": [
+            7.424996,
+            43.737062
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.3195
+        },
+        {
+          "name": "2",
+          "marker": 0.7442
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.8871,
+        "exit": 0.0797
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          7.428037,
+          43.737802
+        ]
+      },
+      "length_m": 3337,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.581072+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 19
+    }
+  }
+}

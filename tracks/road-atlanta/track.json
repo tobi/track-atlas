@@ -1,0 +1,233 @@
+{
+  "slug": "road-atlanta",
+  "name": "Michelin Raceway Road Atlanta",
+  "aka": [
+    "Road Atlanta"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 34.1413,
+    "lon": -83.8173,
+    "locality": "Braselton, Georgia",
+    "region": "Georgia",
+    "timezone": "America/New_York"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Turn 1"
+          },
+          "start": 0.049,
+          "end": 0.155,
+          "marker": 0.102
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Turn 2"
+          },
+          "start": 0.156,
+          "end": 0.195,
+          "marker": 0.1755
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Turn 3"
+          },
+          "start": 0.196,
+          "end": 0.213,
+          "marker": 0.2045
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Turn 4"
+          },
+          "start": 0.214,
+          "end": 0.249,
+          "marker": 0.2315
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "The Esses"
+          },
+          "start": 0.26,
+          "end": 0.332,
+          "marker": 0.296,
+          "location": [
+            -83.815164,
+            34.1422
+          ]
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Turn 5"
+          },
+          "start": 0.333,
+          "end": 0.373,
+          "marker": 0.353
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Turn 6"
+          },
+          "start": 0.466,
+          "end": 0.505,
+          "marker": 0.4855
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Turn 7"
+          },
+          "start": 0.515,
+          "end": 0.545,
+          "marker": 0.53
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Turn 8"
+          },
+          "start": 0.56,
+          "end": 0.63,
+          "marker": 0.595
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Turn 9"
+          },
+          "start": 0.729,
+          "end": 0.79,
+          "marker": 0.7595
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Turn 10A"
+          },
+          "start": 0.825,
+          "end": 0.866,
+          "marker": 0.8455
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Turn 10B"
+          },
+          "start": 0.867,
+          "end": 0.897,
+          "marker": 0.882
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Turn 11"
+          },
+          "start": 0.908,
+          "end": 0.941,
+          "marker": 0.9245
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Turn 12"
+          },
+          "start": 0.959,
+          "end": 1.0,
+          "marker": 0.9795
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.168
+        },
+        {
+          "name": "2",
+          "marker": 0.443
+        },
+        {
+          "name": "3",
+          "marker": 0.787
+        },
+        {
+          "name": "4",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.94,
+        "exit": 0.131
+      },
+      "length_m": 4088,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "road-atlanta"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.529953+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 1,
+      "total": 14
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "red-bull-ring",
+  "name": "Red Bull Ring",
+  "aka": [
+    "Spielberg",
+    "A1-Ring"
+  ],
+  "country": "AT",
+  "series": [
+    "elms",
+    "f1"
+  ],
+  "location": {
+    "lat": 47.2185,
+    "lon": 14.7588,
+    "locality": "Spielberg",
+    "region": "Styria",
+    "timezone": "Europe/Vienna"
+  },
+  "osm": {
+    "bbox": [
+      47.1885,
+      14.7288,
+      47.2485,
+      14.7888
+    ],
+    "relation": 5309181
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4318,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "red-bull-ring"
+  },
+  "lovely": {
+    "gp": "f12025/austria.json"
+  }
+}

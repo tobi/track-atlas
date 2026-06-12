@@ -1,0 +1,42 @@
+{
+  "slug": "yas-marina",
+  "name": "Yas Marina Circuit",
+  "aka": [
+    "Abu Dhabi"
+  ],
+  "country": "AE",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 24.4672,
+    "lon": 54.6031,
+    "locality": "Abu Dhabi",
+    "region": "Abu Dhabi",
+    "timezone": "Asia/Dubai"
+  },
+  "osm": {
+    "bbox": [
+      24.4372,
+      54.5731,
+      24.4972,
+      54.6331
+    ],
+    "relation": 11378665
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5281,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "yas-marina"
+  },
+  "lovely": {
+    "gp": "f12025/abu-dhabi.json"
+  }
+}

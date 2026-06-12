@@ -1,0 +1,253 @@
+{
+  "slug": "daytona",
+  "name": "Daytona International Speedway",
+  "aka": [
+    "Daytona"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 29.1851,
+    "lon": -81.0707,
+    "locality": "Daytona Beach, Florida",
+    "region": "Florida",
+    "timezone": "America/New_York"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Road Course",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "T1"
+          },
+          "marker": 0.085,
+          "location": [
+            -81.062861,
+            29.19005
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "T2"
+          },
+          "marker": 0.115,
+          "location": [
+            -81.064075,
+            29.191157
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "T3"
+          },
+          "marker": 0.169,
+          "location": [
+            -81.067145,
+            29.191174
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "T4"
+          },
+          "marker": 0.255,
+          "location": [
+            -81.071475,
+            29.188818
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "T5"
+          },
+          "marker": 0.309,
+          "location": [
+            -81.07345,
+            29.186669
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "T6"
+          },
+          "marker": 0.376,
+          "location": [
+            -81.07304,
+            29.183833
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "T7"
+          },
+          "marker": 0.451,
+          "location": [
+            -81.069865,
+            29.186424
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "T8"
+          },
+          "marker": 0.67,
+          "location": [
+            -81.073854,
+            29.183109
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "T9"
+          },
+          "marker": 0.68,
+          "location": [
+            -81.074385,
+            29.182881
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "T10"
+          },
+          "marker": 0.692,
+          "location": [
+            -81.074762,
+            29.182381
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "T11"
+          },
+          "marker": 0.703,
+          "location": [
+            -81.074865,
+            29.181819
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "T12"
+          },
+          "marker": 0.81,
+          "location": [
+            -81.070888,
+            29.17875
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.14
+        },
+        {
+          "name": "2",
+          "marker": 0.272
+        },
+        {
+          "name": "3",
+          "marker": 0.355
+        },
+        {
+          "name": "4",
+          "marker": 0.63
+        },
+        {
+          "name": "5",
+          "marker": 1
+        }
+      ],
+      "pit": {},
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -81.063994,
+          29.186052
+        ]
+      },
+      "length_m": 5729,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "daytona"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.524291+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 12
+    }
+  }
+}

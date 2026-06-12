@@ -1,0 +1,43 @@
+{
+  "slug": "portimao",
+  "name": "Autodromo Internacional do Algarve",
+  "aka": [
+    "Portimao"
+  ],
+  "country": "PT",
+  "series": [
+    "wec",
+    "elms"
+  ],
+  "location": {
+    "lat": 37.2304,
+    "lon": -8.6279,
+    "locality": "Portimao",
+    "region": "Algarve",
+    "timezone": "Europe/Lisbon"
+  },
+  "osm": {
+    "bbox": [
+      37.2004,
+      -8.6579,
+      37.2604,
+      -8.5979
+    ],
+    "relation": 7509968
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4653,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "portimao"
+  },
+  "lovely": {
+    "gp": "lmu/algarve-international-circuit.json"
+  }
+}

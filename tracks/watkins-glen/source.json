@@ -1,0 +1,42 @@
+{
+  "slug": "watkins-glen",
+  "name": "Watkins Glen International",
+  "aka": [
+    "The Glen"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 42.3369,
+    "lon": -76.9272,
+    "locality": "Watkins Glen, New York",
+    "region": "New York",
+    "timezone": "America/New_York"
+  },
+  "osm": {
+    "bbox": [
+      42.3069,
+      -76.9572,
+      42.3669,
+      -76.8972
+    ],
+    "relation": 4872324
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course (Boot)",
+      "length_m": 5435,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "watkins-glen"
+  },
+  "lovely": {
+    "gp": "iracing/watkinsglen-2021-fullcourse.json"
+  }
+}

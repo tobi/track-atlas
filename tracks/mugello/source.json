@@ -1,0 +1,42 @@
+{
+  "slug": "mugello",
+  "name": "Autodromo Internazionale del Mugello",
+  "aka": [
+    "Mugello"
+  ],
+  "country": "IT",
+  "series": [
+    "elms"
+  ],
+  "location": {
+    "lat": 43.9918,
+    "lon": 11.3698,
+    "locality": "Scarperia e San Piero",
+    "region": "Tuscany",
+    "timezone": "Europe/Rome"
+  },
+  "osm": {
+    "bbox": [
+      43.9618,
+      11.3398,
+      44.0218,
+      11.3998
+    ],
+    "relation": 8487163
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5245,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "mugello"
+  },
+  "lovely": {
+    "gp": "iracing/mugello-gp.json"
+  }
+}

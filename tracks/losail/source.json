@@ -1,0 +1,43 @@
+{
+  "slug": "losail",
+  "name": "Lusail International Circuit",
+  "aka": [
+    "Losail",
+    "Qatar"
+  ],
+  "country": "QA",
+  "series": [
+    "wec",
+    "f1"
+  ],
+  "location": {
+    "lat": 25.4873,
+    "lon": 51.4525,
+    "locality": "Lusail",
+    "region": "Al Daayen",
+    "timezone": "Asia/Qatar"
+  },
+  "osm": {
+    "bbox": [
+      25.4573,
+      51.4225,
+      25.5173,
+      51.4825
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5419,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "losail"
+  },
+  "lovely": {
+    "gp": "lmu/lusail-international-circuit.json"
+  }
+}

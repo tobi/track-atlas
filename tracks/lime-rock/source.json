@@ -1,0 +1,42 @@
+{
+  "slug": "lime-rock",
+  "name": "Lime Rock Park",
+  "aka": [
+    "Lime Rock"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 41.9277,
+    "lon": -73.3836,
+    "locality": "Lakeville, Connecticut",
+    "region": "Connecticut",
+    "timezone": "America/New_York"
+  },
+  "osm": {
+    "bbox": [
+      41.8977,
+      -73.4136,
+      41.9577,
+      -73.3536
+    ],
+    "relation": 6429257
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Classic",
+      "length_m": 2462,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "lime-rock"
+  },
+  "lovely": {
+    "gp": "iracing/limerock-2019-classic.json"
+  }
+}
