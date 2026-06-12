@@ -27,7 +27,8 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "First Corner"
+            "colloquial": "Turn 1",
+            "official": "First Corner"
           },
           "direction": "right",
           "scale": 3,
@@ -44,7 +45,8 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "First Corner"
+            "colloquial": "Turn 2",
+            "official": "Second Corner"
           },
           "direction": "right",
           "scale": 4,
@@ -61,13 +63,15 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Snake/S Curves"
+            "colloquial": "S Curves",
+            "official": "S Curves"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.1928,
           "start": 0.1854,
           "end": 0.1979,
+          "complex": "S Curves",
           "location": [
             136.533096,
             34.844666
@@ -78,13 +82,15 @@
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "Snake/S Curves"
+            "colloquial": "S Curves",
+            "official": "S Curves"
           },
           "direction": "right",
           "scale": 3,
           "marker": 0.2113,
           "start": 0.2044,
           "end": 0.2188,
+          "complex": "S Curves",
           "location": [
             136.533959,
             34.845323
@@ -95,13 +101,15 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Snake/S Curves"
+            "colloquial": "S Curves",
+            "official": "S Curves"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.2376,
           "start": 0.2304,
           "end": 0.2481,
+          "complex": "S Curves",
           "location": [
             136.535284,
             34.845674
@@ -112,13 +120,15 @@
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "Snake/S Curves"
+            "colloquial": "S Curves",
+            "official": "S Curves"
           },
           "direction": "right",
           "scale": 4,
           "marker": 0.2682,
           "start": 0.2554,
           "end": 0.2821,
+          "complex": "S Curves",
           "location": [
             136.537063,
             34.846031
@@ -129,7 +139,8 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Snake/S Curves"
+            "colloquial": "Dunlop",
+            "official": "Dunlop Curve"
           },
           "direction": "left",
           "scale": 4,
@@ -146,13 +157,15 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Degner Curve"
+            "colloquial": "Degner 1",
+            "official": "Degner Curve 1"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 3,
           "marker": 0.396,
           "start": 0.3934,
           "end": 0.3985,
+          "complex": "Degner",
           "location": [
             136.542494,
             34.841136
@@ -163,13 +176,15 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "T9"
+            "colloquial": "Degner 2",
+            "official": "Degner Curve 2"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 2,
           "marker": 0.4241,
           "start": 0.4197,
           "end": 0.4275,
+          "complex": "Degner",
           "location": [
             136.543416,
             34.839914
@@ -180,9 +195,10 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "T10"
+            "colloquial": "Turn 10",
+            "official": "Turn 10"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 4,
           "marker": 0.4809,
           "start": 0.4732,
@@ -197,7 +213,8 @@
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "Hairpin"
+            "colloquial": "Hairpin",
+            "official": "Hairpin"
           },
           "direction": "left",
           "scale": 1,
@@ -214,7 +231,8 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "T12"
+            "colloquial": "Turn 12",
+            "official": "Turn 12"
           },
           "direction": "right",
           "scale": 5,
@@ -231,13 +249,15 @@
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "Spoon Curve"
+            "colloquial": "Spoon",
+            "official": "Spoon Curve"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.6574,
           "start": 0.6513,
           "end": 0.667,
+          "complex": "Spoon",
           "location": [
             136.534271,
             34.844747
@@ -248,13 +268,15 @@
           "number": 14,
           "names": {
             "numbered": "Turn 14",
-            "colloquial": "Spoon Curve"
+            "colloquial": "Spoon",
+            "official": "Spoon Curve"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.6861,
           "start": 0.6772,
           "end": 0.7064,
+          "complex": "Spoon",
           "location": [
             136.533013,
             34.843673
@@ -265,10 +287,11 @@
           "number": 15,
           "names": {
             "numbered": "Turn 15",
-            "colloquial": "130R"
+            "colloquial": "130R",
+            "official": "130R"
           },
           "direction": "left",
-          "scale": 4,
+          "scale": 5,
           "marker": 0.8577,
           "start": 0.8521,
           "end": 0.8857,
@@ -281,13 +304,15 @@
           "number": 16,
           "names": {
             "numbered": "Turn 16",
-            "colloquial": "Casio Triangle"
+            "colloquial": "Casio Triangle",
+            "official": "Casio Triangle"
           },
           "direction": "right",
           "scale": 2,
           "marker": 0.9301,
           "start": 0.9196,
           "end": 0.9317,
+          "complex": "Casio Triangle",
           "location": [
             136.524368,
             34.847006
@@ -298,13 +323,15 @@
           "number": 17,
           "names": {
             "numbered": "Turn 17",
-            "colloquial": "Casio Triangle"
+            "colloquial": "Casio Triangle",
+            "official": "Casio Triangle"
           },
           "direction": "left",
           "scale": 2,
           "marker": 0.939,
           "start": 0.9363,
           "end": 0.9424,
+          "complex": "Casio Triangle",
           "location": [
             136.524145,
             34.847433
@@ -315,7 +342,8 @@
           "number": 18,
           "names": {
             "numbered": "Turn 18",
-            "colloquial": "Last Curve"
+            "colloquial": "Chicane",
+            "official": "Chicane"
           },
           "direction": "right",
           "scale": 3,
@@ -363,7 +391,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-12T14:25:01.449890+00:00",
+    "generated_at": "2026-06-12T21:34:40.568847+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

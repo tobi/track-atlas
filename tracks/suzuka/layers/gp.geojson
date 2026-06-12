@@ -1453,10 +1453,11 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "First Corner",
+        "display": "Turn 1",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "First Corner"
+          "colloquial": "Turn 1",
+          "official": "First Corner"
         },
         "complex": null,
         "direction": "right",
@@ -1475,10 +1476,11 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "First Corner",
+        "display": "Turn 2",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "First Corner"
+          "colloquial": "Turn 2",
+          "official": "Second Corner"
         },
         "complex": null,
         "direction": "right",
@@ -1497,12 +1499,13 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Snake/S Curves",
+        "display": "S Curves",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Snake/S Curves"
+          "colloquial": "S Curves",
+          "official": "S Curves"
         },
-        "complex": null,
+        "complex": "S Curves",
         "direction": "left",
         "scale": 3
       },
@@ -1519,12 +1522,13 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "Snake/S Curves",
+        "display": "S Curves",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "Snake/S Curves"
+          "colloquial": "S Curves",
+          "official": "S Curves"
         },
-        "complex": null,
+        "complex": "S Curves",
         "direction": "right",
         "scale": 3
       },
@@ -1541,12 +1545,13 @@
       "properties": {
         "role": "corner",
         "number": 5,
-        "display": "Snake/S Curves",
+        "display": "S Curves",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Snake/S Curves"
+          "colloquial": "S Curves",
+          "official": "S Curves"
         },
-        "complex": null,
+        "complex": "S Curves",
         "direction": "left",
         "scale": 3
       },
@@ -1563,12 +1568,13 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "Snake/S Curves",
+        "display": "S Curves",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "Snake/S Curves"
+          "colloquial": "S Curves",
+          "official": "S Curves"
         },
-        "complex": null,
+        "complex": "S Curves",
         "direction": "right",
         "scale": 4
       },
@@ -1585,10 +1591,11 @@
       "properties": {
         "role": "corner",
         "number": 7,
-        "display": "Snake/S Curves",
+        "display": "Dunlop",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Snake/S Curves"
+          "colloquial": "Dunlop",
+          "official": "Dunlop Curve"
         },
         "complex": null,
         "direction": "left",
@@ -1607,13 +1614,14 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Degner Curve",
+        "display": "Degner 1",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Degner Curve"
+          "colloquial": "Degner 1",
+          "official": "Degner Curve 1"
         },
-        "complex": null,
-        "direction": "right",
+        "complex": "Degner",
+        "direction": "left",
         "scale": 3
       },
       "geometry": {
@@ -1629,13 +1637,14 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "T9",
+        "display": "Degner 2",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "T9"
+          "colloquial": "Degner 2",
+          "official": "Degner Curve 2"
         },
-        "complex": null,
-        "direction": "right",
+        "complex": "Degner",
+        "direction": "left",
         "scale": 2
       },
       "geometry": {
@@ -1651,13 +1660,14 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "T10",
+        "display": "Turn 10",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "T10"
+          "colloquial": "Turn 10",
+          "official": "Turn 10"
         },
         "complex": null,
-        "direction": "right",
+        "direction": "left",
         "scale": 4
       },
       "geometry": {
@@ -1676,7 +1686,8 @@
         "display": "Hairpin",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "Hairpin"
+          "colloquial": "Hairpin",
+          "official": "Hairpin"
         },
         "complex": null,
         "direction": "left",
@@ -1695,10 +1706,11 @@
       "properties": {
         "role": "corner",
         "number": 12,
-        "display": "T12",
+        "display": "Turn 12",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "T12"
+          "colloquial": "Turn 12",
+          "official": "Turn 12"
         },
         "complex": null,
         "direction": "right",
@@ -1717,12 +1729,13 @@
       "properties": {
         "role": "corner",
         "number": 13,
-        "display": "Spoon Curve",
+        "display": "Spoon",
         "names": {
           "numbered": "Turn 13",
-          "colloquial": "Spoon Curve"
+          "colloquial": "Spoon",
+          "official": "Spoon Curve"
         },
-        "complex": null,
+        "complex": "Spoon",
         "direction": "left",
         "scale": 3
       },
@@ -1739,12 +1752,13 @@
       "properties": {
         "role": "corner",
         "number": 14,
-        "display": "Spoon Curve",
+        "display": "Spoon",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "Spoon Curve"
+          "colloquial": "Spoon",
+          "official": "Spoon Curve"
         },
-        "complex": null,
+        "complex": "Spoon",
         "direction": "left",
         "scale": 3
       },
@@ -1764,11 +1778,12 @@
         "display": "130R",
         "names": {
           "numbered": "Turn 15",
-          "colloquial": "130R"
+          "colloquial": "130R",
+          "official": "130R"
         },
         "complex": null,
         "direction": "left",
-        "scale": 4
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -1786,9 +1801,10 @@
         "display": "Casio Triangle",
         "names": {
           "numbered": "Turn 16",
-          "colloquial": "Casio Triangle"
+          "colloquial": "Casio Triangle",
+          "official": "Casio Triangle"
         },
-        "complex": null,
+        "complex": "Casio Triangle",
         "direction": "right",
         "scale": 2
       },
@@ -1808,9 +1824,10 @@
         "display": "Casio Triangle",
         "names": {
           "numbered": "Turn 17",
-          "colloquial": "Casio Triangle"
+          "colloquial": "Casio Triangle",
+          "official": "Casio Triangle"
         },
-        "complex": null,
+        "complex": "Casio Triangle",
         "direction": "left",
         "scale": 2
       },
@@ -1827,10 +1844,11 @@
       "properties": {
         "role": "corner",
         "number": 18,
-        "display": "Last Curve",
+        "display": "Chicane",
         "names": {
           "numbered": "Turn 18",
-          "colloquial": "Last Curve"
+          "colloquial": "Chicane",
+          "official": "Chicane"
         },
         "complex": null,
         "direction": "right",
