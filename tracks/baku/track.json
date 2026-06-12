@@ -27,9 +27,10 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "T1"
+            "colloquial": "Turn 1",
+            "official": "Turn 1"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 2,
           "marker": 0.0532,
           "start": 0.0495,
@@ -44,10 +45,11 @@
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "T2"
+            "colloquial": "Turn 2",
+            "official": "Turn 2"
           },
-          "direction": "left",
-          "scale": 2,
+          "direction": "right",
+          "scale": 3,
           "marker": 0.1103,
           "start": 0.109,
           "end": 0.1119,
@@ -61,10 +63,11 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "T3"
+            "colloquial": "Turn 3",
+            "official": "Turn 3"
           },
-          "direction": "left",
-          "scale": 2,
+          "direction": "right",
+          "scale": 4,
           "marker": 0.2552,
           "start": 0.2537,
           "end": 0.2562,
@@ -129,9 +132,10 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "T7"
+            "colloquial": "Turn 7",
+            "official": "Turn 7"
           },
-          "direction": "right",
+          "direction": "left",
           "scale": 2,
           "marker": 0.4245,
           "start": 0.4235,
@@ -146,13 +150,15 @@
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "T8"
+            "colloquial": "Castle",
+            "official": "Turn 8"
           },
           "direction": "left",
           "scale": 1,
           "marker": 0.4602,
           "start": 0.4589,
           "end": 0.4614,
+          "complex": "Castle Section",
           "location": [
             49.852682,
             40.372509
@@ -163,13 +169,15 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "T9"
+            "colloquial": "Castle",
+            "official": "Turn 9"
           },
           "direction": "right",
           "scale": 2,
           "marker": 0.4637,
           "start": 0.4629,
           "end": 0.4647,
+          "complex": "Castle Section",
           "location": [
             49.852454,
             40.372435
@@ -180,13 +188,15 @@
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "T10"
+            "colloquial": "Castle",
+            "official": "Turn 10"
           },
           "direction": "left",
           "scale": 3,
           "marker": 0.4676,
           "start": 0.4652,
           "end": 0.468,
+          "complex": "Castle Section",
           "location": [
             49.8522,
             40.372352
@@ -197,13 +207,15 @@
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "T11"
+            "colloquial": "Castle",
+            "official": "Turn 11"
           },
           "direction": "right",
           "scale": 3,
           "marker": 0.4764,
           "start": 0.473,
           "end": 0.479,
+          "complex": "Castle Section",
           "location": [
             49.851626,
             40.372165
@@ -214,7 +226,8 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "T12"
+            "colloquial": "Turn 12",
+            "official": "Turn 12"
           },
           "direction": "left",
           "scale": 2,
@@ -265,9 +278,10 @@
           "number": 15,
           "names": {
             "numbered": "Turn 15",
-            "colloquial": "T15"
+            "colloquial": "Turn 15",
+            "official": "Turn 15"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 3,
           "marker": 0.6279,
           "start": 0.624,
@@ -282,10 +296,11 @@
           "number": 16,
           "names": {
             "numbered": "Turn 16",
-            "colloquial": "T16"
+            "colloquial": "Turn 16",
+            "official": "Turn 16"
           },
-          "direction": "left",
-          "scale": 2,
+          "direction": "right",
+          "scale": 1,
           "marker": 0.6871,
           "start": 0.6814,
           "end": 0.6934,
@@ -316,9 +331,10 @@
           "number": 18,
           "names": {
             "numbered": "Turn 18",
-            "colloquial": "T18"
+            "colloquial": "Turn 18",
+            "official": "Turn 18"
           },
-          "direction": "left",
+          "direction": "right",
           "scale": 5,
           "marker": 0.7629,
           "start": 0.7585,
@@ -350,10 +366,11 @@
           "number": 20,
           "names": {
             "numbered": "Turn 20",
-            "colloquial": "T20"
+            "colloquial": "Turn 20",
+            "official": "Turn 20"
           },
-          "direction": "right",
-          "scale": 5,
+          "direction": "left",
+          "scale": 4,
           "marker": 0.8426,
           "start": 0.8364,
           "end": 0.851,
@@ -398,7 +415,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-12T14:25:04.438869+00:00",
+    "generated_at": "2026-06-12T21:28:54.648145+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
