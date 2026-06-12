@@ -1,0 +1,39 @@
+{
+  "slug": "shanghai",
+  "name": "Shanghai International Circuit",
+  "aka": [
+    "Shanghai"
+  ],
+  "country": "CN",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 31.3389,
+    "lon": 121.2197,
+    "locality": "Jiading, Shanghai",
+    "region": "Shanghai",
+    "timezone": "Asia/Shanghai"
+  },
+  "osm": {
+    "bbox": [
+      31.3089,
+      121.1897,
+      31.3689,
+      121.2497
+    ],
+    "relation": 2094941
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5451,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/shanghai.json"
+  }
+}

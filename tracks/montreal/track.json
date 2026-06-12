@@ -1,0 +1,330 @@
+{
+  "slug": "montreal",
+  "name": "Circuit Gilles Villeneuve",
+  "aka": [
+    "Montreal"
+  ],
+  "country": "CA",
+  "location": {
+    "lat": 45.5035,
+    "lon": -73.5227,
+    "locality": "Montreal, Quebec",
+    "region": "Quebec",
+    "timezone": "America/Toronto"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Senna 'S'"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.0596,
+          "start": 0.0575,
+          "end": 0.0629,
+          "location": [
+            -73.523398,
+            45.502372
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Senna 'S'"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.0758,
+          "start": 0.0704,
+          "end": 0.0948,
+          "location": [
+            -73.523211,
+            45.501751
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "T3"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.1699,
+          "start": 0.167,
+          "end": 0.1733,
+          "location": [
+            -73.522737,
+            45.49811
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "T4"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.1821,
+          "start": 0.1804,
+          "end": 0.1857,
+          "location": [
+            -73.522544,
+            45.497702
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "T5"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.2403,
+          "start": 0.225,
+          "end": 0.2529,
+          "location": [
+            -73.524101,
+            45.497418
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "T6"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.2914,
+          "start": 0.2854,
+          "end": 0.297,
+          "location": [
+            -73.526011,
+            45.498778
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "T7"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.3053,
+          "start": 0.3003,
+          "end": 0.3243,
+          "location": [
+            -73.526092,
+            45.49928
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Pont de la Concorde"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.464,
+          "start": 0.462,
+          "end": 0.4661,
+          "location": [
+            -73.529853,
+            45.504157
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "T9"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.4735,
+          "start": 0.4695,
+          "end": 0.4869,
+          "location": [
+            -73.529884,
+            45.504529
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "The Hairpin"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.6228,
+          "start": 0.6145,
+          "end": 0.6285,
+          "location": [
+            -73.527825,
+            45.509847
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "T11"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.6471,
+          "start": 0.6429,
+          "end": 0.6539,
+          "location": [
+            -73.527531,
+            45.510777
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "T12"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.7353,
+          "start": 0.7296,
+          "end": 0.746,
+          "location": [
+            -73.527677,
+            45.514195
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "T13"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.897,
+          "start": 0.8943,
+          "end": 0.8998,
+          "location": [
+            -73.524796,
+            45.508516
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "T14"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.904,
+          "start": 0.8998,
+          "end": 0.9071,
+          "location": [
+            -73.524715,
+            45.508247
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.2521
+        },
+        {
+          "name": "2",
+          "marker": 0.572
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.8937,
+        "exit": 0.0849
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -73.523603,
+          45.504562
+        ]
+      },
+      "length_m": 4361,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "external_ids": {
+    "imsa_data": "montreal"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.582480+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 14
+    }
+  }
+}

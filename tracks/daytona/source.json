@@ -1,0 +1,42 @@
+{
+  "slug": "daytona",
+  "name": "Daytona International Speedway",
+  "aka": [
+    "Daytona"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 29.1851,
+    "lon": -81.0707,
+    "locality": "Daytona Beach, Florida",
+    "region": "Florida",
+    "timezone": "America/New_York"
+  },
+  "osm": {
+    "bbox": [
+      29.1551,
+      -81.1007,
+      29.2151,
+      -81.0407
+    ],
+    "relation": 5254136
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Road Course",
+      "length_m": 5729,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "daytona"
+  },
+  "lovely": {
+    "gp": "iracing/daytona-2011-road.json"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "monza",
+  "name": "Autodromo Nazionale Monza",
+  "aka": [
+    "Monza",
+    "Temple of Speed"
+  ],
+  "country": "IT",
+  "series": [
+    "wec",
+    "elms",
+    "f1"
+  ],
+  "location": {
+    "lat": 45.619,
+    "lon": 9.287,
+    "locality": "Monza",
+    "region": "Lombardy",
+    "timezone": "Europe/Rome"
+  },
+  "osm": {
+    "bbox": [
+      45.589,
+      9.257,
+      45.649,
+      9.317
+    ],
+    "relation": 284565
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5793,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "monza"
+  },
+  "lovely": {
+    "gp": "lmu/autodromo-nazionale-monza.json"
+  }
+}

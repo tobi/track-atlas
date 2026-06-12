@@ -1,0 +1,258 @@
+{
+  "slug": "road-america",
+  "name": "Road America",
+  "aka": [
+    "Elkhart Lake"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 43.7918,
+    "lon": -87.9897,
+    "locality": "Elkhart Lake, Wisconsin",
+    "region": "Wisconsin",
+    "timezone": "America/Chicago"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Turn 1"
+          },
+          "start": 0.08,
+          "end": 0.118,
+          "marker": 0.099
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Turn 3"
+          },
+          "start": 0.155,
+          "end": 0.19,
+          "marker": 0.1725
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Moraine Sweep"
+          },
+          "start": 0.255,
+          "end": 0.3,
+          "marker": 0.2775,
+          "location": [
+            -87.993157,
+            43.799328
+          ]
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Turn 5"
+          },
+          "start": 0.335,
+          "end": 0.37,
+          "marker": 0.3525
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Turn 6"
+          },
+          "start": 0.39,
+          "end": 0.415,
+          "marker": 0.4025
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Turn 7"
+          },
+          "start": 0.43,
+          "end": 0.45,
+          "marker": 0.44
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Turn 8"
+          },
+          "start": 0.484,
+          "end": 0.515,
+          "marker": 0.4995
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "The Carousel"
+          },
+          "start": 0.53,
+          "end": 0.615,
+          "marker": 0.5725,
+          "location": [
+            -87.998931,
+            43.795033
+          ]
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "The Kink"
+          },
+          "start": 0.64,
+          "end": 0.68,
+          "marker": 0.66,
+          "location": [
+            -88.002726,
+            43.798226
+          ]
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Kettle Bottoms"
+          },
+          "start": 0.71,
+          "end": 0.76,
+          "marker": 0.735,
+          "location": [
+            -88.000099,
+            43.801232
+          ]
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Canada Corner"
+          },
+          "start": 0.775,
+          "end": 0.806,
+          "marker": 0.7905,
+          "location": [
+            -87.997471,
+            43.804899
+          ]
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Bill Mitchell Bend"
+          },
+          "start": 0.824,
+          "end": 0.855,
+          "marker": 0.8395
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Turn 14"
+          },
+          "start": 0.871,
+          "end": 0.91,
+          "marker": 0.8905
+        }
+      ],
+      "straights": [
+        {
+          "name": "Hurry Downs",
+          "start": 0.451,
+          "end": 0.48
+        },
+        {
+          "name": "Thunder Valley",
+          "start": 0.807,
+          "end": 0.823
+        }
+      ],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.143
+        },
+        {
+          "name": "2",
+          "marker": 0.327
+        },
+        {
+          "name": "3",
+          "marker": 0.478
+        },
+        {
+          "name": "4",
+          "marker": 0.76
+        },
+        {
+          "name": "5",
+          "marker": 0.866
+        },
+        {
+          "name": "6",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.925,
+        "exit": 0.056
+      },
+      "length_m": 6514,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "road-america"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.529233+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 5,
+      "total": 13
+    }
+  }
+}

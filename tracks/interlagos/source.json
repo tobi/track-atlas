@@ -1,0 +1,43 @@
+{
+  "slug": "interlagos",
+  "name": "Autodromo Jose Carlos Pace",
+  "aka": [
+    "Interlagos"
+  ],
+  "country": "BR",
+  "series": [
+    "wec",
+    "f1"
+  ],
+  "location": {
+    "lat": -23.7022,
+    "lon": -46.6932,
+    "locality": "Sao Paulo",
+    "region": "Sao Paulo",
+    "timezone": "America/Sao_Paulo"
+  },
+  "osm": {
+    "bbox": [
+      -23.7322,
+      -46.7232,
+      -23.6722,
+      -46.6632
+    ],
+    "relation": 6781071
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4309,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "sao-paulo"
+  },
+  "lovely": {
+    "gp": "lmu/autodromo-jose-carlos-pace.json"
+  }
+}

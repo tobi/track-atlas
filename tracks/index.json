@@ -1,6 +1,93 @@
 {
   "tracks": [
     {
+      "slug": "bahrain",
+      "name": "Bahrain International Circuit",
+      "aka": [
+        "Sakhir"
+      ],
+      "country": "BH",
+      "location": {
+        "lat": 26.0326,
+        "lon": 50.5106,
+        "locality": "Sakhir",
+        "region": "Southern Governorate",
+        "timezone": "Asia/Bahrain"
+      },
+      "series": [
+        "wec",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5412,
+          "corners": 15,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "baku",
+      "name": "Baku City Circuit",
+      "aka": [
+        "Baku"
+      ],
+      "country": "AZ",
+      "location": {
+        "lat": 40.3725,
+        "lon": 49.8533,
+        "locality": "Baku",
+        "region": "Baku",
+        "timezone": "Asia/Baku"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 6003,
+          "corners": 20,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "barcelona",
+      "name": "Circuit de Barcelona-Catalunya",
+      "aka": [
+        "Catalunya",
+        "Montmelo"
+      ],
+      "country": "ES",
+      "location": {
+        "lat": 41.5687,
+        "lon": 2.2567,
+        "locality": "Montmelo",
+        "region": "Catalonia",
+        "timezone": "Europe/Madrid"
+      },
+      "series": [
+        "elms",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4657,
+          "corners": 14,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
       "slug": "circuit-de-la-sarthe",
       "name": "Circuit de la Sarthe",
       "aka": [
@@ -29,6 +116,777 @@
         }
       ],
       "poster": "tracks/circuit-de-la-sarthe/render/circuit-de-la-sarthe.png"
+    },
+    {
+      "slug": "circuit-of-the-americas",
+      "name": "Circuit of the Americas",
+      "aka": [
+        "COTA"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 30.1366,
+        "lon": -97.6307,
+        "locality": "Austin, Texas",
+        "region": "Texas",
+        "timezone": "America/Chicago"
+      },
+      "series": [
+        "wec",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5515,
+          "corners": 20,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "daytona",
+      "name": "Daytona International Speedway",
+      "aka": [
+        "Daytona"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 29.1851,
+        "lon": -81.0707,
+        "locality": "Daytona Beach, Florida",
+        "region": "Florida",
+        "timezone": "America/New_York"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Road Course",
+          "length_m": 5729,
+          "corners": 12,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "fuji",
+      "name": "Fuji Speedway",
+      "aka": [
+        "Fuji"
+      ],
+      "country": "JP",
+      "location": {
+        "lat": 35.3697,
+        "lon": 138.9227,
+        "locality": "Oyama, Shizuoka",
+        "region": "Shizuoka",
+        "timezone": "Asia/Tokyo"
+      },
+      "series": [
+        "wec"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4549,
+          "corners": 16,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "hungaroring",
+      "name": "Hungaroring",
+      "aka": [
+        "Budapest"
+      ],
+      "country": "HU",
+      "location": {
+        "lat": 47.5789,
+        "lon": 19.2486,
+        "locality": "Mogyorod",
+        "region": "Pest",
+        "timezone": "Europe/Budapest"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4381,
+          "corners": 14,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "imola",
+      "name": "Autodromo Enzo e Dino Ferrari",
+      "aka": [
+        "Imola"
+      ],
+      "country": "IT",
+      "location": {
+        "lat": 44.338,
+        "lon": 11.708,
+        "locality": "Imola",
+        "region": "Emilia-Romagna",
+        "timezone": "Europe/Rome"
+      },
+      "series": [
+        "wec",
+        "elms",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4909,
+          "corners": 19,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "indianapolis",
+      "name": "Indianapolis Motor Speedway",
+      "aka": [
+        "IMS",
+        "The Brickyard"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 39.795,
+        "lon": -86.2346,
+        "locality": "Speedway, Indiana",
+        "region": "Indiana",
+        "timezone": "America/Indiana/Indianapolis"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Road Course",
+          "length_m": 3925,
+          "corners": 14,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "interlagos",
+      "name": "Autodromo Jose Carlos Pace",
+      "aka": [
+        "Interlagos"
+      ],
+      "country": "BR",
+      "location": {
+        "lat": -23.7022,
+        "lon": -46.6932,
+        "locality": "Sao Paulo",
+        "region": "Sao Paulo",
+        "timezone": "America/Sao_Paulo"
+      },
+      "series": [
+        "wec",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4309,
+          "corners": 15,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "jeddah",
+      "name": "Jeddah Corniche Circuit",
+      "aka": [
+        "Jeddah"
+      ],
+      "country": "SA",
+      "location": {
+        "lat": 21.6319,
+        "lon": 39.1044,
+        "locality": "Jeddah",
+        "region": "Makkah",
+        "timezone": "Asia/Riyadh"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 6174,
+          "corners": 27,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "laguna-seca",
+      "name": "WeatherTech Raceway Laguna Seca",
+      "aka": [
+        "Laguna Seca"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 36.5842,
+        "lon": -121.7517,
+        "locality": "Monterey, California",
+        "region": "California",
+        "timezone": "America/Los_Angeles"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Full Course",
+          "length_m": 3602,
+          "corners": 10,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "las-vegas",
+      "name": "Las Vegas Strip Circuit",
+      "aka": [
+        "Las Vegas"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 36.1147,
+        "lon": -115.1683,
+        "locality": "Las Vegas, Nevada",
+        "region": "Nevada",
+        "timezone": "America/Los_Angeles"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 6201,
+          "corners": 17,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "lime-rock",
+      "name": "Lime Rock Park",
+      "aka": [
+        "Lime Rock"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 41.9277,
+        "lon": -73.3836,
+        "locality": "Lakeville, Connecticut",
+        "region": "Connecticut",
+        "timezone": "America/New_York"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Classic",
+          "length_m": 2462,
+          "corners": 5,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "long-beach",
+      "name": "Long Beach Street Circuit",
+      "aka": [
+        "Long Beach"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 33.7598,
+        "lon": -118.189,
+        "locality": "Long Beach, California",
+        "region": "California",
+        "timezone": "America/Los_Angeles"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Street Circuit",
+          "length_m": 3167,
+          "corners": 11,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "losail",
+      "name": "Lusail International Circuit",
+      "aka": [
+        "Losail",
+        "Qatar"
+      ],
+      "country": "QA",
+      "location": {
+        "lat": 25.4873,
+        "lon": 51.4525,
+        "locality": "Lusail",
+        "region": "Al Daayen",
+        "timezone": "Asia/Qatar"
+      },
+      "series": [
+        "wec",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5419,
+          "corners": 16,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "melbourne",
+      "name": "Albert Park Circuit",
+      "aka": [
+        "Melbourne",
+        "Albert Park"
+      ],
+      "country": "AU",
+      "location": {
+        "lat": -37.8497,
+        "lon": 144.968,
+        "locality": "Melbourne",
+        "region": "Victoria",
+        "timezone": "Australia/Melbourne"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5278,
+          "corners": 14,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "mexico-city",
+      "name": "Autodromo Hermanos Rodriguez",
+      "aka": [
+        "Mexico City"
+      ],
+      "country": "MX",
+      "location": {
+        "lat": 19.4042,
+        "lon": -99.0907,
+        "locality": "Mexico City",
+        "region": "CDMX",
+        "timezone": "America/Mexico_City"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4304,
+          "corners": 17,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "miami",
+      "name": "Miami International Autodrome",
+      "aka": [
+        "Miami"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 25.958,
+        "lon": -80.2389,
+        "locality": "Miami Gardens, Florida",
+        "region": "Florida",
+        "timezone": "America/New_York"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5412,
+          "corners": 19,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "monaco",
+      "name": "Circuit de Monaco",
+      "aka": [
+        "Monte Carlo"
+      ],
+      "country": "MC",
+      "location": {
+        "lat": 43.7347,
+        "lon": 7.4206,
+        "locality": "Monte Carlo",
+        "region": "Monaco",
+        "timezone": "Europe/Monaco"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 3337,
+          "corners": 19,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "montreal",
+      "name": "Circuit Gilles Villeneuve",
+      "aka": [
+        "Montreal"
+      ],
+      "country": "CA",
+      "location": {
+        "lat": 45.5035,
+        "lon": -73.5227,
+        "locality": "Montreal, Quebec",
+        "region": "Quebec",
+        "timezone": "America/Toronto"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4361,
+          "corners": 14,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "monza",
+      "name": "Autodromo Nazionale Monza",
+      "aka": [
+        "Monza",
+        "Temple of Speed"
+      ],
+      "country": "IT",
+      "location": {
+        "lat": 45.619,
+        "lon": 9.287,
+        "locality": "Monza",
+        "region": "Lombardy",
+        "timezone": "Europe/Rome"
+      },
+      "series": [
+        "wec",
+        "elms",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5793,
+          "corners": 11,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "mugello",
+      "name": "Autodromo Internazionale del Mugello",
+      "aka": [
+        "Mugello"
+      ],
+      "country": "IT",
+      "location": {
+        "lat": 43.9918,
+        "lon": 11.3698,
+        "locality": "Scarperia e San Piero",
+        "region": "Tuscany",
+        "timezone": "Europe/Rome"
+      },
+      "series": [
+        "elms"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5245,
+          "corners": 15,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "paul-ricard",
+      "name": "Circuit Paul Ricard",
+      "aka": [
+        "Le Castellet"
+      ],
+      "country": "FR",
+      "location": {
+        "lat": 43.2503,
+        "lon": 5.7883,
+        "locality": "Le Castellet",
+        "region": "Provence-Alpes-Cote d'Azur",
+        "timezone": "Europe/Paris"
+      },
+      "series": [
+        "elms"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5770,
+          "corners": 13,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "portimao",
+      "name": "Autodromo Internacional do Algarve",
+      "aka": [
+        "Portimao"
+      ],
+      "country": "PT",
+      "location": {
+        "lat": 37.2304,
+        "lon": -8.6279,
+        "locality": "Portimao",
+        "region": "Algarve",
+        "timezone": "Europe/Lisbon"
+      },
+      "series": [
+        "wec",
+        "elms"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4653,
+          "corners": 15,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "red-bull-ring",
+      "name": "Red Bull Ring",
+      "aka": [
+        "Spielberg",
+        "A1-Ring"
+      ],
+      "country": "AT",
+      "location": {
+        "lat": 47.2185,
+        "lon": 14.7588,
+        "locality": "Spielberg",
+        "region": "Styria",
+        "timezone": "Europe/Vienna"
+      },
+      "series": [
+        "elms",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4318,
+          "corners": 10,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "road-america",
+      "name": "Road America",
+      "aka": [
+        "Elkhart Lake"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 43.7918,
+        "lon": -87.9897,
+        "locality": "Elkhart Lake, Wisconsin",
+        "region": "Wisconsin",
+        "timezone": "America/Chicago"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Full Course",
+          "length_m": 6514,
+          "corners": 13,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "road-atlanta",
+      "name": "Michelin Raceway Road Atlanta",
+      "aka": [
+        "Road Atlanta"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 34.1413,
+        "lon": -83.8173,
+        "locality": "Braselton, Georgia",
+        "region": "Georgia",
+        "timezone": "America/New_York"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Full Course",
+          "length_m": 4088,
+          "corners": 14,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "sebring",
+      "name": "Sebring International Raceway",
+      "aka": [
+        "Sebring"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 27.4547,
+        "lon": -81.3483,
+        "locality": "Sebring, Florida",
+        "region": "Florida",
+        "timezone": "America/New_York"
+      },
+      "series": [
+        "imsa",
+        "wec"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "International Circuit",
+          "length_m": 5954,
+          "corners": 17,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "shanghai",
+      "name": "Shanghai International Circuit",
+      "aka": [
+        "Shanghai"
+      ],
+      "country": "CN",
+      "location": {
+        "lat": 31.3389,
+        "lon": 121.2197,
+        "locality": "Jiading, Shanghai",
+        "region": "Shanghai",
+        "timezone": "Asia/Shanghai"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5451,
+          "corners": 16,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
     },
     {
       "slug": "silverstone",
@@ -60,6 +918,205 @@
         }
       ],
       "poster": "tracks/silverstone/render/silverstone.png"
+    },
+    {
+      "slug": "singapore",
+      "name": "Marina Bay Street Circuit",
+      "aka": [
+        "Singapore",
+        "Marina Bay"
+      ],
+      "country": "SG",
+      "location": {
+        "lat": 1.2914,
+        "lon": 103.864,
+        "locality": "Singapore",
+        "region": "Singapore",
+        "timezone": "Asia/Singapore"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4940,
+          "corners": 19,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "spa-francorchamps",
+      "name": "Circuit de Spa-Francorchamps",
+      "aka": [
+        "Spa"
+      ],
+      "country": "BE",
+      "location": {
+        "lat": 50.4357,
+        "lon": 5.9695,
+        "locality": "Stavelot",
+        "region": "Wallonia",
+        "timezone": "Europe/Brussels"
+      },
+      "series": [
+        "wec",
+        "elms",
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 7004,
+          "corners": 20,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "suzuka",
+      "name": "Suzuka International Racing Course",
+      "aka": [
+        "Suzuka"
+      ],
+      "country": "JP",
+      "location": {
+        "lat": 34.8431,
+        "lon": 136.541,
+        "locality": "Suzuka, Mie",
+        "region": "Mie",
+        "timezone": "Asia/Tokyo"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5807,
+          "corners": 18,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "virginia-international-raceway",
+      "name": "Virginia International Raceway",
+      "aka": [
+        "VIR"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 36.5618,
+        "lon": -79.2046,
+        "locality": "Alton, Virginia",
+        "region": "Virginia",
+        "timezone": "America/New_York"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Full Course",
+          "length_m": 5262,
+          "corners": 16,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "watkins-glen",
+      "name": "Watkins Glen International",
+      "aka": [
+        "The Glen"
+      ],
+      "country": "US",
+      "location": {
+        "lat": 42.3369,
+        "lon": -76.9272,
+        "locality": "Watkins Glen, New York",
+        "region": "New York",
+        "timezone": "America/New_York"
+      },
+      "series": [
+        "imsa"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Full Course (Boot)",
+          "length_m": 5435,
+          "corners": 10,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "yas-marina",
+      "name": "Yas Marina Circuit",
+      "aka": [
+        "Abu Dhabi"
+      ],
+      "country": "AE",
+      "location": {
+        "lat": 24.4672,
+        "lon": 54.6031,
+        "locality": "Abu Dhabi",
+        "region": "Abu Dhabi",
+        "timezone": "Asia/Dubai"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5281,
+          "corners": 16,
+          "direction": "anticlockwise"
+        }
+      ],
+      "poster": null
+    },
+    {
+      "slug": "zandvoort",
+      "name": "Circuit Zandvoort",
+      "aka": [
+        "Zandvoort"
+      ],
+      "country": "NL",
+      "location": {
+        "lat": 52.3888,
+        "lon": 4.5409,
+        "locality": "Zandvoort",
+        "region": "North Holland",
+        "timezone": "Europe/Amsterdam"
+      },
+      "series": [
+        "f1"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 4259,
+          "corners": 14,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": null
     }
   ]
 }

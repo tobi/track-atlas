@@ -1,0 +1,44 @@
+{
+  "slug": "barcelona",
+  "name": "Circuit de Barcelona-Catalunya",
+  "aka": [
+    "Catalunya",
+    "Montmelo"
+  ],
+  "country": "ES",
+  "series": [
+    "elms",
+    "f1"
+  ],
+  "location": {
+    "lat": 41.5687,
+    "lon": 2.2567,
+    "locality": "Montmelo",
+    "region": "Catalonia",
+    "timezone": "Europe/Madrid"
+  },
+  "osm": {
+    "bbox": [
+      41.5387,
+      2.2267,
+      41.5987,
+      2.2867
+    ],
+    "relation": 284540
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4657,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "barcelona-catalunya"
+  },
+  "lovely": {
+    "gp": "f12025/catalunya.json"
+  }
+}

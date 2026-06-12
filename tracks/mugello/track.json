@@ -1,0 +1,316 @@
+{
+  "slug": "mugello",
+  "name": "Autodromo Internazionale del Mugello",
+  "aka": [
+    "Mugello"
+  ],
+  "country": "IT",
+  "location": {
+    "lat": 43.9918,
+    "lon": 11.3698,
+    "locality": "Scarperia e San Piero",
+    "region": "Tuscany",
+    "timezone": "Europe/Rome"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "San Donato"
+          },
+          "start": 0.116,
+          "end": 0.167,
+          "marker": 0.1415,
+          "location": [
+            11.3762,
+            44.002067
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Luco"
+          },
+          "start": 0.17,
+          "end": 0.194,
+          "marker": 0.182,
+          "location": [
+            11.377275,
+            44.000571
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Poggiosecco"
+          },
+          "start": 0.195,
+          "end": 0.235,
+          "marker": 0.215,
+          "location": [
+            11.376341,
+            43.999216
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Materassi"
+          },
+          "start": 0.268,
+          "end": 0.294,
+          "marker": 0.281,
+          "location": [
+            11.375191,
+            43.996491
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Borgo San Lorenzo"
+          },
+          "start": 0.295,
+          "end": 0.32,
+          "marker": 0.3075,
+          "location": [
+            11.375135,
+            43.99648
+          ]
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Casanova"
+          },
+          "start": 0.355,
+          "end": 0.384,
+          "marker": 0.3695,
+          "location": [
+            11.370989,
+            43.994073
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Savelli"
+          },
+          "start": 0.39,
+          "end": 0.42,
+          "marker": 0.405,
+          "location": [
+            11.369729,
+            43.992783
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Arrabbiata 1"
+          },
+          "start": 0.436,
+          "end": 0.485,
+          "marker": 0.4605,
+          "location": [
+            11.36712,
+            43.991767
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Arrabbiata 2"
+          },
+          "start": 0.495,
+          "end": 0.535,
+          "marker": 0.515,
+          "location": [
+            11.366013,
+            43.993842
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Scarperia"
+          },
+          "start": 0.57,
+          "end": 0.59,
+          "marker": 0.58,
+          "location": [
+            11.368226,
+            43.995892
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Palagio"
+          },
+          "start": 0.592,
+          "end": 0.625,
+          "marker": 0.6085,
+          "location": [
+            11.368824,
+            43.997156
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "Correntaio"
+          },
+          "start": 0.666,
+          "end": 0.722,
+          "marker": 0.694,
+          "location": [
+            11.370695,
+            43.998157
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Biondetti 1"
+          },
+          "start": 0.73,
+          "end": 0.753,
+          "marker": 0.7415,
+          "location": [
+            11.369507,
+            43.996184
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Biondetti 2"
+          },
+          "start": 0.755,
+          "end": 0.77,
+          "marker": 0.7625,
+          "location": [
+            11.368687,
+            43.995388
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "Bucine"
+          },
+          "start": 0.83,
+          "end": 0.9,
+          "marker": 0.865,
+          "location": [
+            11.368602,
+            43.993012
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.356
+        },
+        {
+          "name": "2",
+          "marker": 0.645
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.912,
+        "exit": 0.06
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          11.37226,
+          43.99881
+        ]
+      },
+      "length_m": 5245,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "elms"
+  ],
+  "external_ids": {
+    "imsa_data": "mugello"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.567288+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 1,
+      "total": 15
+    }
+  }
+}

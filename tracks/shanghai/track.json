@@ -1,0 +1,361 @@
+{
+  "slug": "shanghai",
+  "name": "Shanghai International Circuit",
+  "aka": [
+    "Shanghai"
+  ],
+  "country": "CN",
+  "location": {
+    "lat": 31.3389,
+    "lon": 121.2197,
+    "locality": "Jiading, Shanghai",
+    "region": "Shanghai",
+    "timezone": "Asia/Shanghai"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "T1"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.1075,
+          "start": 0.0902,
+          "end": 0.1355,
+          "location": [
+            121.216383,
+            31.336949
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "T2"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.1488,
+          "start": 0.1355,
+          "end": 0.1551,
+          "location": [
+            121.217174,
+            31.337771
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "T3"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.1645,
+          "start": 0.1551,
+          "end": 0.1799,
+          "location": [
+            121.217324,
+            31.337127
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "T4"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.1902,
+          "start": 0.1845,
+          "end": 0.1984,
+          "location": [
+            121.217779,
+            31.338102
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "T5"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.2458,
+          "start": 0.24,
+          "end": 0.2508,
+          "location": [
+            121.215719,
+            31.340184
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "T6"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.2933,
+          "start": 0.2871,
+          "end": 0.2994,
+          "location": [
+            121.215219,
+            31.342246
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "T7"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.3859,
+          "start": 0.3513,
+          "end": 0.4017,
+          "location": [
+            121.218951,
+            31.33971
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "T8"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.4307,
+          "start": 0.4164,
+          "end": 0.4516,
+          "location": [
+            121.220582,
+            31.341263
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "T9"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.4693,
+          "start": 0.4628,
+          "end": 0.4741,
+          "location": [
+            121.222107,
+            31.340142
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "T10"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.4903,
+          "start": 0.4867,
+          "end": 0.4934,
+          "location": [
+            121.222647,
+            31.340985
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "T11"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.578,
+          "start": 0.574,
+          "end": 0.5813,
+          "location": [
+            121.219906,
+            31.344413
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "T12"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.591,
+          "start": 0.5855,
+          "end": 0.599,
+          "location": [
+            121.21933,
+            31.344089
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "T13"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.6237,
+          "start": 0.6101,
+          "end": 0.6562,
+          "location": [
+            121.219293,
+            31.345405
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "T14"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.8817,
+          "start": 0.8776,
+          "end": 0.8837,
+          "location": [
+            121.227702,
+            31.335849
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "T15"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.897,
+          "start": 0.8942,
+          "end": 0.8988,
+          "location": [
+            121.226983,
+            31.33627
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16",
+            "colloquial": "T16"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.9501,
+          "start": 0.9486,
+          "end": 0.9516,
+          "location": [
+            121.225114,
+            31.338246
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.2607
+        },
+        {
+          "name": "2",
+          "marker": 0.5486
+        },
+        {
+          "name": "3",
+          "marker": 0.1
+        }
+      ],
+      "pit": {
+        "entry": 0.951,
+        "exit": 0.0785
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          121.222328,
+          31.337665
+        ]
+      },
+      "length_m": 5451,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.573650+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 16
+    }
+  }
+}

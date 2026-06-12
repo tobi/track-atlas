@@ -1,0 +1,39 @@
+{
+  "slug": "suzuka",
+  "name": "Suzuka International Racing Course",
+  "aka": [
+    "Suzuka"
+  ],
+  "country": "JP",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 34.8431,
+    "lon": 136.541,
+    "locality": "Suzuka, Mie",
+    "region": "Mie",
+    "timezone": "Asia/Tokyo"
+  },
+  "osm": {
+    "bbox": [
+      34.8131,
+      136.511,
+      34.8731,
+      136.571
+    ],
+    "relation": 284570
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5807,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/suzuka.json"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "singapore",
+  "name": "Marina Bay Street Circuit",
+  "aka": [
+    "Singapore",
+    "Marina Bay"
+  ],
+  "country": "SG",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 1.2914,
+    "lon": 103.864,
+    "locality": "Singapore",
+    "region": "Singapore",
+    "timezone": "Asia/Singapore"
+  },
+  "osm": {
+    "bbox": [
+      1.2614,
+      103.834,
+      1.3214,
+      103.894
+    ],
+    "relation": 421263
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4940,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/singapore.json"
+  }
+}

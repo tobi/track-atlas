@@ -1,0 +1,43 @@
+{
+  "slug": "sebring",
+  "name": "Sebring International Raceway",
+  "aka": [
+    "Sebring"
+  ],
+  "country": "US",
+  "series": [
+    "imsa",
+    "wec"
+  ],
+  "location": {
+    "lat": 27.4547,
+    "lon": -81.3483,
+    "locality": "Sebring, Florida",
+    "region": "Florida",
+    "timezone": "America/New_York"
+  },
+  "osm": {
+    "bbox": [
+      27.4247,
+      -81.3783,
+      27.4847,
+      -81.3183
+    ],
+    "relation": 7003292
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "International Circuit",
+      "length_m": 5954,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "sebring"
+  },
+  "lovely": {
+    "gp": "lmu/sebring-international-raceway.json"
+  }
+}

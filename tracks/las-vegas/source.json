@@ -1,0 +1,39 @@
+{
+  "slug": "las-vegas",
+  "name": "Las Vegas Strip Circuit",
+  "aka": [
+    "Las Vegas"
+  ],
+  "country": "US",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 36.1147,
+    "lon": -115.1683,
+    "locality": "Las Vegas, Nevada",
+    "region": "Nevada",
+    "timezone": "America/Los_Angeles"
+  },
+  "osm": {
+    "bbox": [
+      36.0847,
+      -115.1983,
+      36.1447,
+      -115.1383
+    ],
+    "relation": 16696508
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 6201,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/las-vegas.json"
+  }
+}

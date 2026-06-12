@@ -400,7 +400,12 @@ def main() -> None:
     if not slugs or slugs == [None]:
         ap.error("give a slug or --all")
     for slug in slugs:
-        render(slug, args.layout, args.out if not args.all else None)
+        try:
+            render(slug, args.layout, args.out if not args.all else None)
+        except Exception as e:
+            if not args.all:
+                raise
+            print(f"[{slug}] RENDER FAILED: {e}")
 
 
 if __name__ == "__main__":

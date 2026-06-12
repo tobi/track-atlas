@@ -1,0 +1,43 @@
+{
+  "slug": "indianapolis",
+  "name": "Indianapolis Motor Speedway",
+  "aka": [
+    "IMS",
+    "The Brickyard"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 39.795,
+    "lon": -86.2346,
+    "locality": "Speedway, Indiana",
+    "region": "Indiana",
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "osm": {
+    "bbox": [
+      39.765,
+      -86.2646,
+      39.825,
+      -86.2046
+    ],
+    "relation": 20573734
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Road Course",
+      "length_m": 3925,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "indianapolis"
+  },
+  "lovely": {
+    "gp": "iracing/indianapolis-2022-road.json"
+  }
+}

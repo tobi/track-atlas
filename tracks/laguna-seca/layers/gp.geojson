@@ -1,0 +1,69 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "outline",
+        "layout": "gp"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -121.757244,
+            36.582653
+          ],
+          [
+            -121.749268,
+            36.58494
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 2,
+        "display": "Andretti Hairpin",
+        "names": {
+          "numbered": "Turn 2",
+          "colloquial": "Andretti Hairpin"
+        },
+        "complex": null,
+        "direction": null,
+        "scale": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.757244,
+          36.582653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "number": 7,
+        "display": "The Corkscrew",
+        "names": {
+          "numbered": "Turn 7",
+          "colloquial": "The Corkscrew"
+        },
+        "complex": null,
+        "direction": null,
+        "scale": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.749268,
+          36.58494
+        ]
+      }
+    }
+  ]
+}

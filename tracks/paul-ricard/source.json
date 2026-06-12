@@ -1,0 +1,42 @@
+{
+  "slug": "paul-ricard",
+  "name": "Circuit Paul Ricard",
+  "aka": [
+    "Le Castellet"
+  ],
+  "country": "FR",
+  "series": [
+    "elms"
+  ],
+  "location": {
+    "lat": 43.2503,
+    "lon": 5.7883,
+    "locality": "Le Castellet",
+    "region": "Provence-Alpes-Cote d'Azur",
+    "timezone": "Europe/Paris"
+  },
+  "osm": {
+    "bbox": [
+      43.2203,
+      5.7583,
+      43.2803,
+      5.8183
+    ],
+    "relation": 10316343
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5770,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "paul-ricard"
+  },
+  "lovely": {
+    "gp": "assettocorsacompetizione/paul-ricard.json"
+  }
+}

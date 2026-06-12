@@ -1,0 +1,348 @@
+{
+  "slug": "virginia-international-raceway",
+  "name": "Virginia International Raceway",
+  "aka": [
+    "VIR"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 36.5618,
+    "lon": -79.2046,
+    "locality": "Alton, Virginia",
+    "region": "Virginia",
+    "timezone": "America/New_York"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Horseshoe"
+          },
+          "start": 0.05,
+          "end": 0.113,
+          "marker": 0.0815,
+          "location": [
+            -79.202601,
+            36.568253
+          ]
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "Turn 2"
+          },
+          "start": 0.12,
+          "end": 0.148,
+          "marker": 0.134,
+          "location": [
+            -79.204972,
+            36.568268
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Nascar Bend"
+          },
+          "start": 0.149,
+          "end": 0.18,
+          "marker": 0.1645,
+          "location": [
+            -79.206343,
+            36.567732
+          ]
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Left Hook"
+          },
+          "start": 0.181,
+          "end": 0.206,
+          "marker": 0.1935,
+          "location": [
+            -79.205713,
+            36.566107
+          ]
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "Turn 4b"
+          },
+          "start": 0.207,
+          "end": 0.225,
+          "marker": 0.216,
+          "location": [
+            -79.204968,
+            36.566178
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Turn 5a"
+          },
+          "start": 0.226,
+          "end": 0.243,
+          "marker": 0.2345,
+          "location": [
+            -79.204484,
+            36.565846
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Snake"
+          },
+          "start": 0.244,
+          "end": 0.308,
+          "marker": 0.276,
+          "location": [
+            -79.20439,
+            36.564724
+          ]
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Turn 7"
+          },
+          "start": 0.347,
+          "end": 0.367,
+          "marker": 0.357,
+          "location": [
+            -79.204816,
+            36.560403
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Turn 8a"
+          },
+          "start": 0.368,
+          "end": 0.386,
+          "marker": 0.377,
+          "location": [
+            -79.204798,
+            36.559318
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Turn 8b"
+          },
+          "start": 0.387,
+          "end": 0.404,
+          "marker": 0.3955,
+          "location": [
+            -79.204664,
+            36.558326
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Turn 9"
+          },
+          "start": 0.405,
+          "end": 0.43,
+          "marker": 0.4175,
+          "location": [
+            -79.204623,
+            36.557144
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12",
+            "colloquial": "South Bend"
+          },
+          "start": 0.44,
+          "end": 0.477,
+          "marker": 0.4585,
+          "location": [
+            -79.205345,
+            36.554972
+          ]
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13",
+            "colloquial": "Oak Tree"
+          },
+          "start": 0.502,
+          "end": 0.55,
+          "marker": 0.526,
+          "location": [
+            -79.204656,
+            36.552044
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14",
+            "colloquial": "Roller Coaster"
+          },
+          "start": 0.748,
+          "end": 0.83,
+          "marker": 0.789,
+          "location": [
+            -79.211855,
+            36.562472
+          ]
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15",
+            "colloquial": "Hog Pen"
+          },
+          "start": 0.831,
+          "end": 0.9,
+          "marker": 0.8655,
+          "location": [
+            -79.212499,
+            36.565757
+          ]
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16",
+            "colloquial": "Turn 18"
+          },
+          "start": 0.049,
+          "end": 0.118,
+          "marker": 0.0835,
+          "location": [
+            -79.202444,
+            36.568033
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [
+        {
+          "name": "Back Straight",
+          "start": 0.551,
+          "end": 0.747
+        },
+        {
+          "name": "Front Straight",
+          "start": 0.901,
+          "end": 0.975
+        }
+      ],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.185
+        },
+        {
+          "name": "2",
+          "marker": 0.337
+        },
+        {
+          "name": "3",
+          "marker": 0.505
+        },
+        {
+          "name": "4",
+          "marker": 0.735
+        },
+        {
+          "name": "5",
+          "marker": 0.829
+        },
+        {
+          "name": "6",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9,
+        "exit": 0.015
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -79.206307,
+          36.56884
+        ]
+      },
+      "length_m": 5262,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "virginia-international-raceway"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.533189+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 7,
+      "total": 16
+    }
+  }
+}

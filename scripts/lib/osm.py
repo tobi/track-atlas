@@ -42,15 +42,24 @@ def relation_geom(relation_id):
     )
 
 
-def relation_centerline(relation_data):
+def relation_centerline(relation_data, expected_m=None):
     """Chain a route-relation's member ways into one ordered centerline.
 
     `relation_data` is an Overpass `out geom` result whose first element is the
-    relation. Member ways carry their own ordered `geometry`; we orient each way
-    so it chains end-to-end onto the previous one (the relation lists them in
-    lap order but each way may be stored in either direction), then concatenate.
+    relation. Member ways carry their own ordered `geometry`.
 
-    The first way is oriented using the second so the whole loop runs one way.
+    Two strategies, best result wins (judged by closure + traced length vs
+    `expected_m` when given):
+
+      1. member-order chaining -- the relation lists ways in lap order; orient
+         each onto the previous and concatenate (works for well-curated
+         relations like Le Mans 2126739).
+      2. graph cycle search -- snap way endpoints into nodes, DFS for closed
+         cycles through the longest way, pick the cycle whose length is closest
+         to `expected_m` (or the longest cycle without it). This handles
+         relations whose members are unordered, duplicated (dual-carriageway
+         street circuits), or include alternate-layout branches.
+
     Returns [[lon, lat], ...] forming a closed loop, or None if unavailable.
     This is the real surface — every chicane and kink preserved.
     """
@@ -64,8 +73,8 @@ def relation_centerline(relation_data):
         if m.get("type") != "way":
             continue
         # skip non-lap members (pit lanes etc.) -- only '' / 'forward' /
-        # 'backward' roles are part of the racing lap
-        if m.get("role") not in ("", None, "forward", "backward"):
+        # 'backward' / 'main_track' roles are part of the racing lap
+        if m.get("role") not in ("", None, "forward", "backward", "main_track"):
             continue
         # some circuit relations list each way twice (out-and-back duplication);
         # keep the first occurrence only
@@ -77,14 +86,43 @@ def relation_centerline(relation_data):
         if not g or len(g) < 2:
             continue
         segs.append([[p["lon"], p["lat"]] for p in g])
-    if len(segs) < 2:
+    if not segs:
+        return None
+    if len(segs) == 1:
+        # single-way relation (e.g. Montreal main_track): use it directly if
+        # it's already (nearly) a closed loop
+        loop = segs[0]
+        return loop if haversine(loop[0], loop[-1]) < 50.0 else None
+
+    candidates = []
+    chained = _chain_in_member_order(segs)
+    if chained:
+        candidates.append(chained)
+    cycle = _graph_cycle(segs, expected_m)
+    if cycle:
+        candidates.append(cycle)
+    if not candidates:
         return None
 
+    def score(loop):
+        gap = haversine(loop[0], loop[-1])
+        L = loop_length_m(loop)
+        s = 0.0
+        s += min(gap, 500.0)  # open loops are bad
+        if expected_m:
+            s += abs(L - expected_m) / expected_m * 1000.0  # length error dominates
+        return s
+
+    return min(candidates, key=score)
+
+
+def _chain_in_member_order(segs):
+    """Strategy 1: concatenate member ways in relation order."""
     # Orient the first segment against the second so direction is consistent.
     s0, s1 = segs[0], segs[1]
     if (min(haversine(s0[0], s1[0]), haversine(s0[0], s1[-1]))
             < min(haversine(s0[-1], s1[0]), haversine(s0[-1], s1[-1]))):
-        segs[0] = s0[::-1]
+        segs = [s0[::-1]] + segs[1:]
 
     loop = list(segs[0])
     for s in segs[1:]:
@@ -97,6 +135,66 @@ def relation_centerline(relation_data):
         else:
             loop.extend(s)
     return loop
+
+
+def _graph_cycle(segs, expected_m=None):
+    """Strategy 2: treat ways as graph edges and search for the lap cycle.
+
+    Snap endpoints to ~5 m nodes, run an iterative DFS from the longest way,
+    and collect simple cycles back to its start. Returns the cycle closest in
+    length to expected_m (or the longest one). Handles unordered members,
+    dual-carriageway duplicates and branch ways (old chicanes, alt layouts).
+    """
+    def key(p):
+        return (round(p[0] * 20000), round(p[1] * 20000))  # ~5 m bins
+
+    edges = []  # (node_a, node_b, coords)
+    for c in segs:
+        edges.append((key(c[0]), key(c[-1]), c))
+    adj = {}
+    for i, (a, b, _c) in enumerate(edges):
+        adj.setdefault(a, []).append((i, b, False))
+        adj.setdefault(b, []).append((i, a, True))
+
+    lens = [loop_length_m(c) for _, _, c in (edges)]
+    start_i = max(range(len(edges)), key=lambda i: lens[i])
+    sa, sb, sc = edges[start_i]
+
+    best = None
+    best_err = float("inf")
+    # DFS from sb back to sa, not reusing edges.
+    stack = [(sb, [start_i], {start_i}, lens[start_i])]
+    iters = 0
+    while stack:
+        iters += 1
+        if iters > 200000:
+            break
+        node, path, used, dist = stack.pop()
+        if expected_m and dist > (expected_m * 1.6 + 2000):
+            continue
+        if node == sa and len(path) > 1:
+            err = abs(dist - expected_m) if expected_m else -dist
+            if err < best_err:
+                best_err, best = err, list(path)
+            continue
+        for ei, other, _rev in adj.get(node, []):
+            if ei in used:
+                continue
+            stack.append((other, path + [ei], used | {ei}, dist + lens[ei]))
+
+    if not best:
+        return None
+    # stitch the chosen edge sequence into one polyline
+    coords = list(edges[best[0]][2])
+    for ei in best[1:]:
+        c = edges[ei][2]
+        if haversine(coords[-1], c[-1]) < haversine(coords[-1], c[0]):
+            c = c[::-1]
+        if haversine(coords[-1], c[0]) < 10.0:
+            coords.extend(c[1:])
+        else:
+            coords.extend(c)
+    return coords
 
 
 def haversine(a, b):

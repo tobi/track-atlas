@@ -1,0 +1,41 @@
+{
+  "slug": "fuji",
+  "name": "Fuji Speedway",
+  "aka": [
+    "Fuji"
+  ],
+  "country": "JP",
+  "series": [
+    "wec"
+  ],
+  "location": {
+    "lat": 35.3697,
+    "lon": 138.9227,
+    "locality": "Oyama, Shizuoka",
+    "region": "Shizuoka",
+    "timezone": "Asia/Tokyo"
+  },
+  "osm": {
+    "bbox": [
+      35.3397,
+      138.8927,
+      35.3997,
+      138.9527
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4549,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "fuji"
+  },
+  "lovely": {
+    "gp": "lmu/fuji-speedway.json"
+  }
+}

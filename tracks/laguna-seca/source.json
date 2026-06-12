@@ -1,0 +1,41 @@
+{
+  "slug": "laguna-seca",
+  "name": "WeatherTech Raceway Laguna Seca",
+  "aka": [
+    "Laguna Seca"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 36.5842,
+    "lon": -121.7517,
+    "locality": "Monterey, California",
+    "region": "California",
+    "timezone": "America/Los_Angeles"
+  },
+  "osm": {
+    "bbox": [
+      36.5542,
+      -121.7817,
+      36.6142,
+      -121.7217
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "length_m": 3602,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "laguna-seca"
+  },
+  "lovely": {
+    "gp": "iracing/lagunaseca.json"
+  }
+}

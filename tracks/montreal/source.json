@@ -1,0 +1,42 @@
+{
+  "slug": "montreal",
+  "name": "Circuit Gilles Villeneuve",
+  "aka": [
+    "Montreal"
+  ],
+  "country": "CA",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 45.5035,
+    "lon": -73.5227,
+    "locality": "Montreal, Quebec",
+    "region": "Quebec",
+    "timezone": "America/Toronto"
+  },
+  "osm": {
+    "bbox": [
+      45.4735,
+      -73.5527,
+      45.5335,
+      -73.4927
+    ],
+    "relation": 284595
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4361,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "montreal"
+  },
+  "lovely": {
+    "gp": "f12025/montreal.json"
+  }
+}

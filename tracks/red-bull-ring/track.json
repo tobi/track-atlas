@@ -1,0 +1,258 @@
+{
+  "slug": "red-bull-ring",
+  "name": "Red Bull Ring",
+  "aka": [
+    "Spielberg",
+    "A1-Ring"
+  ],
+  "country": "AT",
+  "location": {
+    "lat": 47.2185,
+    "lon": 14.7588,
+    "locality": "Spielberg",
+    "region": "Styria",
+    "timezone": "Europe/Vienna"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Niki Lauda Curve"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.1067,
+          "start": 0.1035,
+          "end": 0.1087,
+          "location": [
+            14.760941,
+            47.219292
+          ]
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2",
+            "colloquial": "T2"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.2565,
+          "start": 0.2384,
+          "end": 0.2776,
+          "location": [
+            14.76232,
+            47.224328
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Remus"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.3251,
+          "start": 0.3212,
+          "end": 0.3267,
+          "location": [
+            14.754127,
+            47.226174
+          ]
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Schlossgold"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.5149,
+          "start": 0.5072,
+          "end": 0.5223,
+          "location": [
+            14.764495,
+            47.225464
+          ]
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5",
+            "colloquial": "T5"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.5575,
+          "start": 0.5276,
+          "end": 0.5789,
+          "location": [
+            14.770101,
+            47.221628
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Rauch"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.6359,
+          "start": 0.6152,
+          "end": 0.6562,
+          "location": [
+            14.759057,
+            47.224219
+          ]
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7",
+            "colloquial": "Würth"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.7077,
+          "start": 0.6896,
+          "end": 0.7255,
+          "location": [
+            14.759841,
+            47.220239
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "T8"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.7512,
+          "start": 0.7265,
+          "end": 0.7669,
+          "location": [
+            14.769396,
+            47.221042
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9",
+            "colloquial": "Rindt"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.8801,
+          "start": 0.8678,
+          "end": 0.8895,
+          "location": [
+            14.76971,
+            47.223012
+          ]
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10",
+            "colloquial": "Red Bull Mobile"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.9271,
+          "start": 0.9236,
+          "end": 0.9308,
+          "location": [
+            14.770175,
+            47.221182
+          ]
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.2787
+        },
+        {
+          "name": "2",
+          "marker": 0.68
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.8988,
+        "exit": 0.1303
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          14.756414,
+          47.223774
+        ]
+      },
+      "length_m": 4318,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "elms",
+    "f1"
+  ],
+  "external_ids": {
+    "imsa_data": "red-bull-ring"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.570146+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 6,
+      "total": 10
+    }
+  }
+}

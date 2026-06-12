@@ -1,0 +1,43 @@
+{
+  "slug": "circuit-of-the-americas",
+  "name": "Circuit of the Americas",
+  "aka": [
+    "COTA"
+  ],
+  "country": "US",
+  "series": [
+    "wec",
+    "f1"
+  ],
+  "location": {
+    "lat": 30.1366,
+    "lon": -97.6307,
+    "locality": "Austin, Texas",
+    "region": "Texas",
+    "timezone": "America/Chicago"
+  },
+  "osm": {
+    "bbox": [
+      30.1066,
+      -97.6607,
+      30.1666,
+      -97.6007
+    ],
+    "relation": 6537729
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5515,
+      "direction": "anticlockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "circuit-of-the-americas"
+  },
+  "lovely": {
+    "gp": "lmu/circuit-of-the-americas.json"
+  }
+}

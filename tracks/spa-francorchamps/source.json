@@ -1,0 +1,44 @@
+{
+  "slug": "spa-francorchamps",
+  "name": "Circuit de Spa-Francorchamps",
+  "aka": [
+    "Spa"
+  ],
+  "country": "BE",
+  "series": [
+    "wec",
+    "elms",
+    "f1"
+  ],
+  "location": {
+    "lat": 50.4357,
+    "lon": 5.9695,
+    "locality": "Stavelot",
+    "region": "Wallonia",
+    "timezone": "Europe/Brussels"
+  },
+  "osm": {
+    "bbox": [
+      50.4057,
+      5.9395,
+      50.4657,
+      5.9995
+    ],
+    "relation": 284560
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 7004,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "spa-francorchamps"
+  },
+  "lovely": {
+    "gp": "lmu/circuit-de-spa-francorchamps.json"
+  }
+}

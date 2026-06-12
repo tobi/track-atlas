@@ -50,6 +50,23 @@ SCHEMA = ROOT / "schema" / "track.schema.json"
 MAX_CORNER_OFF_TRACK_M = 60.0
 LEN_WARN_PCT = 3.0
 LEN_ERR_PCT = 10.0
+MIN_NAMED_PCT = 40.0   # below this, warn: corner naming too thin
+
+# ---------------------------------------------------------------------------
+# THE MINIMUM BAR -- what a track must have to count as "in" the atlas.
+# Each item is (key, human label). verify_track() fills report.bar with
+# True/False per key; the summary prints exactly what's missing per track.
+# ---------------------------------------------------------------------------
+BAR = [
+    ("schema",    "track.json valid against schema"),
+    ("outline",   "real closed outline geometry (>=8 pts)"),
+    ("length",    f"outline length within {LEN_ERR_PCT:.0f}% of declared"),
+    ("located",   "every corner has a coordinate"),
+    ("on_track",  f"every corner within {MAX_CORNER_OFF_TRACK_M:.0f} m of the outline"),
+    ("order",     "corner lap-order matches geometry"),
+    ("sf",        "start/finish present and on the outline"),
+    ("render",    "poster render (svg+png) exists and is fresh"),
+]
 
 
 class Report:
@@ -58,10 +75,28 @@ class Report:
         self.errors: list[str] = []
         self.warnings: list[str] = []
         self.infos: list[str] = []
+        # bar item key -> True (met) / False (failed) / None (not evaluated,
+        # counts as failed in the summary)
+        self.bar: dict = {k: None for k, _ in BAR}
 
     def err(self, msg): self.errors.append(msg)
     def warn(self, msg): self.warnings.append(msg)
     def info(self, msg): self.infos.append(msg)
+
+    def bar_ok(self, key):
+        if self.bar.get(key) is None:
+            self.bar[key] = True
+
+    def bar_fail(self, key):
+        self.bar[key] = False
+
+    @property
+    def meets_bar(self):
+        return all(v is True for v in self.bar.values())
+
+    def missing(self):
+        labels = dict(BAR)
+        return [labels[k] for k, v in self.bar.items() if v is not True]
 
     def dump(self):
         print(f"\n== {self.slug} ==")
@@ -153,10 +188,12 @@ def verify_track(slug: str, schema=None) -> Report:
             import jsonschema
             jsonschema.validate(track, schema)
             r.info("schema valid")
+            r.bar_ok("schema")
         except ImportError:
             r.warn("jsonschema not installed -- schema validation skipped")
         except Exception as e:
             r.err(f"schema violation: {str(e).splitlines()[0]}")
+            r.bar_fail("schema")
 
     for key in ("slug", "name", "country", "location", "layouts"):
         if not track.get(key):
@@ -176,6 +213,7 @@ def verify_track(slug: str, schema=None) -> Report:
                 r.warn(f"{pre}.{key} missing")
         if not lo.get("start_finish", {}).get("location"):
             r.err(f"{pre}.start_finish missing")
+            r.bar_fail("sf")
         pit = lo.get("pit") or {}
         if pit.get("entry") is None or pit.get("exit") is None:
             r.warn(f"{pre}.pit entry/exit missing")
@@ -190,11 +228,18 @@ def verify_track(slug: str, schema=None) -> Report:
         unlocated = [c["number"] for c in corners if not c.get("location")]
         if unlocated:
             r.err(f"{pre} corners without location: {unlocated}")
+            r.bar_fail("located")
+        else:
+            r.bar_ok("located")
         unmarked = [c["number"] for c in corners if c.get("marker") is None]
         if unmarked:
             r.warn(f"{pre} corners without lap marker: {unmarked}")
         named = sum(1 for c in corners
                     if c.get("names", {}).get("colloquial") or c.get("names", {}).get("official"))
+        named_pct = named / len(corners) * 100
+        if named_pct < MIN_NAMED_PCT:
+            r.warn(f"{pre} only {named}/{len(corners)} corners named "
+                   f"({named_pct:.0f}% < {MIN_NAMED_PCT:.0f}%) -- curate overrides.json")
         r.info(f"{pre} {len(corners)} corners ({named} named), "
                f"{len(corners) - len(unlocated)} located")
 
@@ -235,9 +280,13 @@ def verify_track(slug: str, schema=None) -> Report:
         loop = outline["geometry"]["coordinates"]
         if len(loop) < 8:
             r.err(f"{pre} outline too short ({len(loop)} pts) -- not real geometry")
+            r.bar_fail("outline")
             continue
         if loop[0] != loop[-1]:
             r.err(f"{pre} outline is not a closed loop")
+            r.bar_fail("outline")
+        else:
+            r.bar_ok("outline")
 
         # length check
         cum, total = arc_lengths(loop)
@@ -247,10 +296,15 @@ def verify_track(slug: str, schema=None) -> Report:
             msg = f"{pre} outline {total:,.0f} m vs declared {decl:,.0f} m ({pct:.1f}%)"
             if pct > LEN_ERR_PCT:
                 r.err(msg)
+                r.bar_fail("length")
             elif pct > LEN_WARN_PCT:
                 r.warn(msg)
+                r.bar_ok("length")
             else:
                 r.info(msg)
+                r.bar_ok("length")
+        else:
+            r.bar_fail("length")  # can't check without declared length
 
         # corners on track?
         off = []
@@ -263,8 +317,10 @@ def verify_track(slug: str, schema=None) -> Report:
         if off:
             r.err(f"{pre} corners off the outline (> {MAX_CORNER_OFF_TRACK_M:.0f} m): "
                   + ", ".join(f"T{n} {d:.0f}m" for n, d in off))
+            r.bar_fail("on_track")
         else:
             r.info(f"{pre} all located corners sit on the outline")
+            r.bar_ok("on_track")
 
         # start/finish on track?
         sf = lo.get("start_finish", {}).get("location")
@@ -272,6 +328,9 @@ def verify_track(slug: str, schema=None) -> Report:
             d = nearest_dist_to_polyline(sf, loop)
             if d > MAX_CORNER_OFF_TRACK_M:
                 r.err(f"{pre} start_finish {d:.0f} m off the outline")
+                r.bar_fail("sf")
+            else:
+                r.bar_ok("sf")
 
         # lap-order vs geometric order
         ordered = [c for c in sorted(corners, key=lambda c: c.get("marker") or 0)
@@ -287,9 +346,15 @@ def verify_track(slug: str, schema=None) -> Report:
                 # tolerate a couple of swaps from near-coincident chicane corners
                 msg = (f"{pre} corner order along centerline disagrees with lap "
                        f"markers for {nbad}/{npairs} pairs (turns {worst})")
-                (r.warn if nbad <= 2 else r.err)(msg)
+                if nbad <= 2:
+                    r.warn(msg)
+                    r.bar_ok("order")
+                else:
+                    r.err(msg)
+                    r.bar_fail("order")
             else:
                 r.info(f"{pre} corner lap-order matches geometry ({npairs} pairs)")
+                r.bar_ok("order")
 
         # pit markers sane
         for k in ("entry", "exit"):
@@ -300,11 +365,14 @@ def verify_track(slug: str, schema=None) -> Report:
     # renders exist + fresh
     rdir = tdir / "render"
     png, svgf = rdir / f"{slug}.png", rdir / f"{slug}.svg"
+    render_ok = True
     for f in (svgf, png):
         if not f.exists():
             r.err(f"render missing: render/{f.name}")
+            render_ok = False
         elif f.stat().st_mtime < tj_f.stat().st_mtime:
             r.warn(f"render/{f.name} older than track.json -- re-run scripts/render.py {slug}")
+    r.bar_ok("render") if render_ok else r.bar_fail("render")
 
     return r
 
@@ -323,15 +391,36 @@ def main() -> None:
     slugs = [args.slug] if args.slug else sorted(
         p.name for p in TRACKS.iterdir() if (p / "source.json").exists())
 
+    reports = []
     failed = False
     for slug in slugs:
         rep = verify_track(slug, schema)
         rep.dump()
+        reports.append(rep)
         if rep.errors or (args.strict and rep.warnings):
             failed = True
 
-    n = len(slugs)
-    print(f"\n{n} track(s) verified -- {'FAIL' if failed else 'PASS'}")
+    # ---- minimum-bar scoreboard ----
+    keys = [k for k, _ in BAR]
+    col = {k: k[:7] for k in keys}
+    print("\n" + "=" * 78)
+    print("MINIMUM BAR  (" + "  ".join(f"{i+1}={lbl}" for i, (_, lbl) in enumerate(BAR)) + ")")
+    print("=" * 78)
+    namew = max(len(r.slug) for r in reports) + 2
+    print(" " * namew + "  ".join(f"{i+1:>2}" for i in range(len(keys))) + "   verdict")
+    for r in reports:
+        cells = []
+        for k in keys:
+            v = r.bar.get(k)
+            cells.append(" ✓" if v is True else " ✗")
+        verdict = "CLEAR" if r.meets_bar else "BELOW BAR"
+        print(f"{r.slug:<{namew}}" + "  ".join(cells) + f"   {verdict}")
+        if not r.meets_bar:
+            for m in r.missing():
+                print(" " * namew + f"   missing: {m}")
+    clear = sum(1 for r in reports if r.meets_bar)
+    print(f"\n{clear}/{len(reports)} tracks clear the bar -- "
+          f"{'PASS' if not failed else 'FAIL'}")
     sys.exit(1 if failed else 0)
 
 

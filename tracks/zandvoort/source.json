@@ -1,0 +1,39 @@
+{
+  "slug": "zandvoort",
+  "name": "Circuit Zandvoort",
+  "aka": [
+    "Zandvoort"
+  ],
+  "country": "NL",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 52.3888,
+    "lon": 4.5409,
+    "locality": "Zandvoort",
+    "region": "North Holland",
+    "timezone": "Europe/Amsterdam"
+  },
+  "osm": {
+    "bbox": [
+      52.3588,
+      4.5109,
+      52.4188,
+      4.5709
+    ],
+    "relation": 13545573
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4259,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/zandvoort.json"
+  }
+}

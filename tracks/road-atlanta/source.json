@@ -1,0 +1,41 @@
+{
+  "slug": "road-atlanta",
+  "name": "Michelin Raceway Road Atlanta",
+  "aka": [
+    "Road Atlanta"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 34.1413,
+    "lon": -83.8173,
+    "locality": "Braselton, Georgia",
+    "region": "Georgia",
+    "timezone": "America/New_York"
+  },
+  "osm": {
+    "bbox": [
+      34.1113,
+      -83.8473,
+      34.1713,
+      -83.7873
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "length_m": 4088,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "road-atlanta"
+  },
+  "lovely": {
+    "gp": "iracing/roadatlanta-full.json"
+  }
+}

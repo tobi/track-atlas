@@ -1,0 +1,42 @@
+{
+  "slug": "virginia-international-raceway",
+  "name": "Virginia International Raceway",
+  "aka": [
+    "VIR"
+  ],
+  "country": "US",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 36.5618,
+    "lon": -79.2046,
+    "locality": "Alton, Virginia",
+    "region": "Virginia",
+    "timezone": "America/New_York"
+  },
+  "osm": {
+    "bbox": [
+      36.5318,
+      -79.2346,
+      36.5918,
+      -79.1746
+    ],
+    "relation": 15765486
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Full Course",
+      "length_m": 5262,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "virginia-international-raceway"
+  },
+  "lovely": {
+    "gp": "iracing/virginia-2022-full.json"
+  }
+}

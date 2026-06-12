@@ -1,0 +1,280 @@
+{
+  "slug": "monza",
+  "name": "Autodromo Nazionale Monza",
+  "aka": [
+    "Monza",
+    "Temple of Speed"
+  ],
+  "country": "IT",
+  "location": {
+    "lat": 45.619,
+    "lon": 9.287,
+    "locality": "Monza",
+    "region": "Lombardy",
+    "timezone": "Europe/Rome"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1",
+            "colloquial": "Variante del Rettifilo"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.16,
+          "start": 0.5,
+          "end": 0.16,
+          "location": [
+            9.282329,
+            45.62477
+          ]
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.17,
+          "start": 0.16,
+          "end": 0.17,
+          "location": [
+            9.282253,
+            45.625286
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3",
+            "colloquial": "Curva Grande"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.24,
+          "start": 0.21,
+          "end": 0.29,
+          "location": [
+            9.282901,
+            45.62865
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4",
+            "colloquial": "Variante della Roggia"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.37,
+          "start": 0.36,
+          "end": 0.37,
+          "location": [
+            9.291518,
+            45.630359
+          ]
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.38,
+          "start": 0.37,
+          "end": 0.38,
+          "location": [
+            9.292024,
+            45.630606
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6",
+            "colloquial": "Curve di Lesmo"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.44,
+          "start": 0.42,
+          "end": 0.45,
+          "location": [
+            9.296477,
+            45.630996
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.49,
+          "start": 0.49,
+          "end": 0.5,
+          "location": [
+            9.296548,
+            45.628299
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8",
+            "colloquial": "Variante Ascari"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.68,
+          "start": 0.68,
+          "end": 0.69,
+          "location": [
+            9.285489,
+            45.621517
+          ]
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.69,
+          "start": 0.69,
+          "end": 0.7,
+          "location": [
+            9.285035,
+            45.621116
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.71,
+          "start": 0.71,
+          "end": 0.72,
+          "location": [
+            9.284845,
+            45.620115
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11",
+            "colloquial": "Curva Parabolica"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.9,
+          "start": 0.88,
+          "end": 0.95,
+          "location": [
+            9.281536,
+            45.612218
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [
+        {
+          "name": "Main Straight",
+          "start": 0.96,
+          "end": 0.15
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Sector 1",
+          "marker": 0.35
+        },
+        {
+          "name": "Sector 2",
+          "marker": 0.65
+        },
+        {
+          "name": "Sector 3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.98,
+        "exit": 0.05
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          9.280904,
+          45.617117
+        ]
+      },
+      "length_m": 5793,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "wec",
+    "elms",
+    "f1"
+  ],
+  "external_ids": {
+    "imsa_data": "monza"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.546234+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 3,
+      "total": 11
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "slug": "bahrain",
+  "name": "Bahrain International Circuit",
+  "aka": [
+    "Sakhir"
+  ],
+  "country": "BH",
+  "series": [
+    "wec",
+    "f1"
+  ],
+  "location": {
+    "lat": 26.0326,
+    "lon": 50.5106,
+    "locality": "Sakhir",
+    "region": "Southern Governorate",
+    "timezone": "Asia/Bahrain"
+  },
+  "osm": {
+    "bbox": [
+      26.0026,
+      50.4806,
+      26.0626,
+      50.5406
+    ],
+    "relation": 11987743
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 5412,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "bahrain"
+  },
+  "lovely": {
+    "gp": "lmu/bahrain-international-circuit.json"
+  }
+}

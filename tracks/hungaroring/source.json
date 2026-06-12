@@ -1,0 +1,39 @@
+{
+  "slug": "hungaroring",
+  "name": "Hungaroring",
+  "aka": [
+    "Budapest"
+  ],
+  "country": "HU",
+  "series": [
+    "f1"
+  ],
+  "location": {
+    "lat": 47.5789,
+    "lon": 19.2486,
+    "locality": "Mogyorod",
+    "region": "Pest",
+    "timezone": "Europe/Budapest"
+  },
+  "osm": {
+    "bbox": [
+      47.5489,
+      19.2186,
+      47.6089,
+      19.2786
+    ],
+    "relation": 284557
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 4381,
+      "direction": "clockwise",
+      "lovely": "gp"
+    }
+  ],
+  "lovely": {
+    "gp": "f12025/hungaroring.json"
+  }
+}

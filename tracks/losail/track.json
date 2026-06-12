@@ -1,0 +1,269 @@
+{
+  "slug": "losail",
+  "name": "Lusail International Circuit",
+  "aka": [
+    "Losail",
+    "Qatar"
+  ],
+  "country": "QA",
+  "location": {
+    "lat": 25.4873,
+    "lon": 51.4525,
+    "locality": "Lusail",
+    "region": "Al Daayen",
+    "timezone": "Asia/Qatar"
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "colloquial",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "names": {
+            "numbered": "Turn 1"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.15,
+          "start": 0.13,
+          "end": 0.17
+        },
+        {
+          "number": 2,
+          "names": {
+            "numbered": "Turn 2"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.21,
+          "start": 0.19,
+          "end": 0.22
+        },
+        {
+          "number": 3,
+          "names": {
+            "numbered": "Turn 3"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.25,
+          "start": 0.24,
+          "end": 0.26
+        },
+        {
+          "number": 4,
+          "names": {
+            "numbered": "Turn 4"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.32,
+          "start": 0.31,
+          "end": 0.33
+        },
+        {
+          "number": 5,
+          "names": {
+            "numbered": "Turn 5"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.35,
+          "start": 0.34,
+          "end": 0.37
+        },
+        {
+          "number": 6,
+          "names": {
+            "numbered": "Turn 6"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.41,
+          "start": 0.39,
+          "end": 0.42
+        },
+        {
+          "number": 7,
+          "names": {
+            "numbered": "Turn 7"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.49,
+          "start": 0.47,
+          "end": 0.5
+        },
+        {
+          "number": 8,
+          "names": {
+            "numbered": "Turn 8"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.52,
+          "start": 0.5,
+          "end": 0.53
+        },
+        {
+          "number": 9,
+          "names": {
+            "numbered": "Turn 9"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.55,
+          "start": 0.54,
+          "end": 0.56
+        },
+        {
+          "number": 10,
+          "names": {
+            "numbered": "Turn 10"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.59,
+          "start": 0.58,
+          "end": 0.6
+        },
+        {
+          "number": 11,
+          "names": {
+            "numbered": "Turn 11"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.63,
+          "start": 0.6,
+          "end": 0.66
+        },
+        {
+          "number": 12,
+          "names": {
+            "numbered": "Turn 12"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.7,
+          "start": 0.69,
+          "end": 0.72
+        },
+        {
+          "number": 13,
+          "names": {
+            "numbered": "Turn 13"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.74,
+          "start": 0.73,
+          "end": 0.75
+        },
+        {
+          "number": 14,
+          "names": {
+            "numbered": "Turn 14"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.78,
+          "start": 0.77,
+          "end": 0.79
+        },
+        {
+          "number": 15,
+          "names": {
+            "numbered": "Turn 15"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.84,
+          "start": 0.82,
+          "end": 0.86
+        },
+        {
+          "number": 16,
+          "names": {
+            "numbered": "Turn 16"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.92,
+          "start": 0.9,
+          "end": 0.94
+        }
+      ],
+      "straights": [
+        {
+          "name": "Main Straight",
+          "start": 0.95,
+          "end": 0.12
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Sector 1",
+          "marker": 0.3
+        },
+        {
+          "name": "Sector 2",
+          "marker": 0.66
+        },
+        {
+          "name": "Sector 3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.98,
+        "exit": 0.08
+      },
+      "length_m": 5419,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "wec",
+    "f1"
+  ],
+  "external_ids": {
+    "imsa_data": "losail"
+  },
+  "provenance": {
+    "generated_at": "2026-06-12T12:41:28.549958+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 16
+    }
+  }
+}
