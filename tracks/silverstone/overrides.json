@@ -2,24 +2,132 @@
   "_comment": "Silverstone GP. Lovely gives colloquial names but no numbers and repeats names across multi-apex complexes. We layer in numbered grouping via complex. official names largely match colloquial here (British circuits mostly use the colloquial name officially).",
   "gp": {
     "corners": {
-      "1": { "official": "Abbey" },
-      "2": { "official": "Farm Curve", "complex": "Abbey / Farm" },
-      "3": { "official": "Village", "complex": "Village / The Loop / Aintree" },
-      "4": { "official": "The Loop", "complex": "Village / The Loop / Aintree" },
-      "5": { "official": "Aintree", "complex": "Village / The Loop / Aintree" },
-      "6": { "official": "Brooklands" },
-      "7": { "official": "Luffield" },
-      "8": { "official": "Woodcote" },
-      "9": { "official": "Copse" },
-      "10": { "official": "Maggotts", "complex": "Maggotts / Becketts / Chapel" },
-      "11": { "official": "Maggotts", "complex": "Maggotts / Becketts / Chapel" },
-      "12": { "official": "Becketts", "complex": "Maggotts / Becketts / Chapel" },
-      "13": { "official": "Becketts", "complex": "Maggotts / Becketts / Chapel" },
-      "14": { "official": "Chapel", "complex": "Maggotts / Becketts / Chapel" },
-      "15": { "official": "Stowe" },
-      "16": { "official": "Vale", "complex": "Vale" },
-      "17": { "official": "Vale", "complex": "Vale" },
-      "18": { "official": "Club" }
-    }
+      "1": {
+        "official": "Abbey",
+        "colloquial": "Abbey",
+        "direction": "right",
+        "scale": 5,
+        "error": "scale 3 is too severe — Abbey is taken near-flat in F1, should be 5"
+      },
+      "2": {
+        "official": "Farm Curve",
+        "complex": "Abbey / Farm",
+        "colloquial": "Farm",
+        "direction": "left",
+        "scale": 5,
+        "error": "complex 'Abbey / Farm' should be null — drivers don't refer to Abbey-Farm as a single unit (and T1 has complex null, so the pairing is inconsistent anyway)"
+      },
+      "3": {
+        "official": "Village",
+        "complex": "Arena",
+        "colloquial": "Village",
+        "direction": "right",
+        "scale": 2,
+        "error": "complex name 'Village / The Loop / Aintree' is not what drivers say — this section is collectively called the 'Arena'"
+      },
+      "4": {
+        "official": "The Loop",
+        "complex": "Arena",
+        "colloquial": "The Loop",
+        "direction": "left",
+        "scale": 1,
+        "error": "The Loop is the slowest corner on the circuit, a tight ~150° left — scale should be 1, not 2; complex should be 'Arena'"
+      },
+      "5": {
+        "official": "Aintree",
+        "complex": "Arena",
+        "colloquial": "Aintree",
+        "direction": "left",
+        "scale": 4,
+        "error": "Aintree is a fast left onto the Wellington Straight — scale 4 rather than 3; complex should be 'Arena'"
+      },
+      "6": {
+        "official": "Brooklands"
+      },
+      "7": {
+        "official": "Luffield",
+        "colloquial": "Luffield",
+        "direction": "right",
+        "scale": 2,
+        "error": "scale 1 overstates it — Luffield is a long slow right but not a hairpin, scale 2 fits better"
+      },
+      "8": {
+        "official": "Woodcote"
+      },
+      "9": {
+        "official": "Copse",
+        "colloquial": "Copse",
+        "direction": "right",
+        "scale": 5,
+        "error": "scale 2 is badly wrong — Copse is one of the fastest corners on the calendar, taken near-flat in F1, should be 5"
+      },
+      "10": {
+        "official": "Maggotts",
+        "complex": "Maggotts-Becketts-Chapel",
+        "colloquial": "Maggotts",
+        "direction": "left",
+        "scale": 6,
+        "error": "colloquial spelled 'Maggots' — correct spelling is 'Maggotts'; the first left is barely a deflection taken flat, scale 6; also shares identical coordinates with T11 — one of the two points is misplaced"
+      },
+      "11": {
+        "official": "Becketts",
+        "complex": "Maggotts-Becketts-Chapel",
+        "colloquial": "Becketts",
+        "direction": "right",
+        "scale": 4,
+        "error": "named 'Maggots' but on the official circuit map T11 is the first part of Becketts (T10 is Maggotts, T11-13 Becketts); spelling also wrong; coordinate is a duplicate of T10"
+      },
+      "12": {
+        "official": "Becketts",
+        "complex": "Maggotts-Becketts-Chapel",
+        "colloquial": "Becketts",
+        "direction": "left",
+        "scale": 4,
+        "error": "shares identical coordinates with T13 — apex points should be distinct; scale 4 fits the fast left better than 3"
+      },
+      "13": {
+        "official": "Becketts",
+        "complex": "Maggotts-Becketts-Chapel",
+        "colloquial": "Becketts",
+        "direction": "right",
+        "scale": 3,
+        "error": "coordinate is a duplicate of T12 — one of the two points is misplaced"
+      },
+      "14": {
+        "official": "Chapel",
+        "complex": "Maggotts / Becketts / Chapel"
+      },
+      "15": {
+        "official": "Stowe",
+        "colloquial": "Stowe",
+        "direction": "right",
+        "scale": 4,
+        "error": "Stowe is a fast right at the end of Hangar Straight — scale 4 rather than 3"
+      },
+      "16": {
+        "official": "Vale",
+        "complex": "Vale",
+        "colloquial": "Vale",
+        "direction": "left",
+        "scale": 2,
+        "error": "shares identical coordinates with T17 — the left (T16) and right (T17) apexes are clearly separate points on track"
+      },
+      "17": {
+        "official": "Club",
+        "complex": "Vale",
+        "colloquial": "Club",
+        "direction": "right",
+        "scale": 2,
+        "error": "on the official map T17 is the first part of Club, not Vale (T16 is Vale, T17-18 Club); coordinate is a duplicate of T16"
+      },
+      "18": {
+        "official": "Club",
+        "colloquial": "Club",
+        "direction": "right",
+        "scale": 3,
+        "error": "Club exit is a long opening right onto the Hamilton Straight — scale 3 rather than 2"
+      }
+    },
+    "errors_summary": "Three pairs of corners (10/11, 12/13, 16/17) have duplicate coordinates; T11 misnamed Maggotts (should be Becketts) and 'Maggots' misspelled throughout; T9 Copse and T1 Abbey severity badly understated; complexes for T1-2 spurious and T3-5 should be 'Arena'; T17 should be Club not Vale"
   }
 }
