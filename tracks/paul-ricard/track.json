@@ -27,7 +27,8 @@
           "number": 1,
           "names": {
             "numbered": "Turn 1",
-            "colloquial": "S de la Verrerie"
+            "colloquial": "Virage de la Verrerie",
+            "official": "Virage de la Verrerie"
           },
           "marker": 0.1,
           "start": 0.98,
@@ -35,13 +36,16 @@
           "location": [
             5.785492,
             43.254774
-          ]
+          ],
+          "direction": "right",
+          "scale": 3
         },
         {
           "number": 2,
           "names": {
             "numbered": "Turn 2",
-            "colloquial": "S de la Verrerie"
+            "colloquial": "Virage de la Verrerie",
+            "official": "Virage de la Verrerie"
           },
           "marker": 0.133,
           "start": 0.12,
@@ -49,13 +53,16 @@
           "location": [
             5.785492,
             43.254774
-          ]
+          ],
+          "direction": "left",
+          "scale": 3
         },
         {
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Virage de L'Hotel"
+            "colloquial": "Virage de l'Hotel",
+            "official": "Virage de l'Hotel"
           },
           "marker": 0.228,
           "start": 0.21,
@@ -63,15 +70,20 @@
           "location": [
             5.779604,
             43.257176
-          ]
+          ],
+          "direction": "right",
+          "scale": 2
         },
         {
           "number": 4,
           "names": {
             "numbered": "Turn 4",
-            "colloquial": "4"
+            "colloquial": "Saint Baume",
+            "official": "Virage de Saint Baume"
           },
           "marker": 0.243,
+          "direction": "right",
+          "scale": 4,
           "location": [
             5.779249,
             43.257629
@@ -82,7 +94,8 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Virage du Camp"
+            "colloquial": "Virage du Camp",
+            "official": "Virage du Camp"
           },
           "marker": 0.263,
           "start": 0.25,
@@ -90,15 +103,20 @@
           "location": [
             5.778235,
             43.257679
-          ]
+          ],
+          "direction": "left",
+          "scale": 3
         },
         {
           "number": 6,
           "names": {
             "numbered": "Turn 6",
-            "colloquial": "6"
+            "colloquial": "Virage du Camp",
+            "official": "Virage du Camp"
           },
           "marker": 0.287,
+          "direction": "right",
+          "scale": 4,
           "location": [
             5.778315,
             43.258114
@@ -109,7 +127,8 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Virage de la Sainte-Beaume"
+            "colloquial": "Sainte-Baume",
+            "official": "Virage de la Sainte-Baume"
           },
           "marker": 0.327,
           "start": 0.31,
@@ -117,17 +136,22 @@
           "location": [
             5.779015,
             43.258494
-          ]
+          ],
+          "direction": "left",
+          "scale": 5
         },
         {
           "number": 8,
           "names": {
             "numbered": "Turn 8",
-            "colloquial": "Courde de Signes"
+            "colloquial": "Signes",
+            "official": "Courbe de Signes"
           },
           "marker": 0.673,
           "start": 0.645,
           "end": 0.708,
+          "direction": "right",
+          "scale": 6,
           "location": [
             5.802878,
             43.251066
@@ -138,7 +162,8 @@
           "number": 9,
           "names": {
             "numbered": "Turn 9",
-            "colloquial": "Double Droite De Beausset"
+            "colloquial": "Beausset",
+            "official": "Double Droite de Beausset"
           },
           "marker": 0.758,
           "start": 0.722,
@@ -146,13 +171,16 @@
           "location": [
             5.802503,
             43.247489
-          ]
+          ],
+          "direction": "right",
+          "scale": 4
         },
         {
           "number": 10,
           "names": {
             "numbered": "Turn 10",
-            "colloquial": "Virage de Bendor"
+            "colloquial": "Bendor",
+            "official": "Virage de Bendor"
           },
           "marker": 0.826,
           "start": 0.81,
@@ -160,17 +188,22 @@
           "location": [
             5.802504,
             43.250045
-          ]
+          ],
+          "direction": "left",
+          "scale": 2
         },
         {
           "number": 11,
           "names": {
             "numbered": "Turn 11",
-            "colloquial": "Courbe du Garbalan"
+            "colloquial": "Garbalan",
+            "official": "Courbe du Garbalan"
           },
           "marker": 0.866,
           "start": 0.848,
           "end": 0.895,
+          "direction": "right",
+          "scale": 5,
           "location": [
             5.799961,
             43.249739
@@ -181,11 +214,14 @@
           "number": 12,
           "names": {
             "numbered": "Turn 12",
-            "colloquial": "Virage de la Tour"
+            "colloquial": "La Tour",
+            "official": "Virage de la Tour"
           },
           "marker": 0.913,
           "start": 0.9,
           "end": 0.934,
+          "direction": "left",
+          "scale": 4,
           "location": [
             5.797138,
             43.25075
@@ -196,7 +232,8 @@
           "number": 13,
           "names": {
             "numbered": "Turn 13",
-            "colloquial": "Virage du Pont"
+            "colloquial": "Pont",
+            "official": "Virage du Pont"
           },
           "marker": 0.944,
           "start": 0.936,
@@ -204,7 +241,9 @@
           "location": [
             5.796218,
             43.249556
-          ]
+          ],
+          "direction": "right",
+          "scale": 2
         }
       ],
       "straights": [
@@ -247,7 +286,7 @@
     "imsa_data": "paul-ricard"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:58.087355+00:00",
+    "generated_at": "2026-06-12T21:32:13.805990+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

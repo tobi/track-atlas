@@ -1965,14 +1965,15 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "S de la Verrerie",
+        "display": "Virage de la Verrerie",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "S de la Verrerie"
+          "colloquial": "Virage de la Verrerie",
+          "official": "Virage de la Verrerie"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -1987,14 +1988,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "S de la Verrerie",
+        "display": "Virage de la Verrerie",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "S de la Verrerie"
+          "colloquial": "Virage de la Verrerie",
+          "official": "Virage de la Verrerie"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2009,14 +2011,15 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "Virage de L'Hotel",
+        "display": "Virage de l'Hotel",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "Virage de L'Hotel"
+          "colloquial": "Virage de l'Hotel",
+          "official": "Virage de l'Hotel"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -2031,14 +2034,15 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "4",
+        "display": "Saint Baume",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "4"
+          "colloquial": "Saint Baume",
+          "official": "Virage de Saint Baume"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -2056,11 +2060,12 @@
         "display": "Virage du Camp",
         "names": {
           "numbered": "Turn 5",
-          "colloquial": "Virage du Camp"
+          "colloquial": "Virage du Camp",
+          "official": "Virage du Camp"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 3
       },
       "geometry": {
         "type": "Point",
@@ -2075,14 +2080,15 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "6",
+        "display": "Virage du Camp",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "6"
+          "colloquial": "Virage du Camp",
+          "official": "Virage du Camp"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -2097,14 +2103,15 @@
       "properties": {
         "role": "corner",
         "number": 7,
-        "display": "Virage de la Sainte-Beaume",
+        "display": "Sainte-Baume",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "Virage de la Sainte-Beaume"
+          "colloquial": "Sainte-Baume",
+          "official": "Virage de la Sainte-Baume"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -2119,14 +2126,15 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Courde de Signes",
+        "display": "Signes",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Courde de Signes"
+          "colloquial": "Signes",
+          "official": "Courbe de Signes"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 6
       },
       "geometry": {
         "type": "Point",
@@ -2141,14 +2149,15 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "Double Droite De Beausset",
+        "display": "Beausset",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "Double Droite De Beausset"
+          "colloquial": "Beausset",
+          "official": "Double Droite de Beausset"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -2163,14 +2172,15 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "Virage de Bendor",
+        "display": "Bendor",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "Virage de Bendor"
+          "colloquial": "Bendor",
+          "official": "Virage de Bendor"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -2185,14 +2195,15 @@
       "properties": {
         "role": "corner",
         "number": 11,
-        "display": "Courbe du Garbalan",
+        "display": "Garbalan",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "Courbe du Garbalan"
+          "colloquial": "Garbalan",
+          "official": "Courbe du Garbalan"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 5
       },
       "geometry": {
         "type": "Point",
@@ -2207,14 +2218,15 @@
       "properties": {
         "role": "corner",
         "number": 12,
-        "display": "Virage de la Tour",
+        "display": "La Tour",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "Virage de la Tour"
+          "colloquial": "La Tour",
+          "official": "Virage de la Tour"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "left",
+        "scale": 4
       },
       "geometry": {
         "type": "Point",
@@ -2229,14 +2241,15 @@
       "properties": {
         "role": "corner",
         "number": 13,
-        "display": "Virage du Pont",
+        "display": "Pont",
         "names": {
           "numbered": "Turn 13",
-          "colloquial": "Virage du Pont"
+          "colloquial": "Pont",
+          "official": "Virage du Pont"
         },
         "complex": null,
-        "direction": null,
-        "scale": null
+        "direction": "right",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
