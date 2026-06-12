@@ -1245,13 +1245,14 @@
       "properties": {
         "role": "corner",
         "number": 1,
-        "display": "Senna 'S'",
+        "display": "Senna S",
         "names": {
           "numbered": "Turn 1",
-          "colloquial": "Senna 'S'"
+          "colloquial": "Senna S",
+          "official": "Turn 1"
         },
-        "complex": null,
-        "direction": "left",
+        "complex": "Senna S",
+        "direction": "right",
         "scale": 2
       },
       "geometry": {
@@ -1267,14 +1268,15 @@
       "properties": {
         "role": "corner",
         "number": 2,
-        "display": "Senna 'S'",
+        "display": "Senna S",
         "names": {
           "numbered": "Turn 2",
-          "colloquial": "Senna 'S'"
+          "colloquial": "Senna S",
+          "official": "Turn 2"
         },
-        "complex": null,
-        "direction": "right",
-        "scale": 1
+        "complex": "Senna S",
+        "direction": "left",
+        "scale": 2
       },
       "geometry": {
         "type": "Point",
@@ -1289,13 +1291,14 @@
       "properties": {
         "role": "corner",
         "number": 3,
-        "display": "T3",
+        "display": "Turn 3",
         "names": {
           "numbered": "Turn 3",
-          "colloquial": "T3"
+          "colloquial": "Turn 3",
+          "official": "Turn 3"
         },
         "complex": null,
-        "direction": "right",
+        "direction": "left",
         "scale": 2
       },
       "geometry": {
@@ -1311,13 +1314,14 @@
       "properties": {
         "role": "corner",
         "number": 4,
-        "display": "T4",
+        "display": "Turn 4",
         "names": {
           "numbered": "Turn 4",
-          "colloquial": "T4"
+          "colloquial": "Turn 4",
+          "official": "Turn 4"
         },
         "complex": null,
-        "direction": "left",
+        "direction": "right",
         "scale": 3
       },
       "geometry": {
@@ -1355,13 +1359,14 @@
       "properties": {
         "role": "corner",
         "number": 6,
-        "display": "T6",
+        "display": "Turn 6",
         "names": {
           "numbered": "Turn 6",
-          "colloquial": "T6"
+          "colloquial": "Turn 6",
+          "official": "Turn 6"
         },
         "complex": null,
-        "direction": "left",
+        "direction": "right",
         "scale": 2
       },
       "geometry": {
@@ -1377,13 +1382,14 @@
       "properties": {
         "role": "corner",
         "number": 7,
-        "display": "T7",
+        "display": "Turn 7",
         "names": {
           "numbered": "Turn 7",
-          "colloquial": "T7"
+          "colloquial": "Turn 7",
+          "official": "Turn 7"
         },
         "complex": null,
-        "direction": "right",
+        "direction": "left",
         "scale": 3
       },
       "geometry": {
@@ -1399,14 +1405,15 @@
       "properties": {
         "role": "corner",
         "number": 8,
-        "display": "Pont de la Concorde",
+        "display": "Hairpin",
         "names": {
           "numbered": "Turn 8",
-          "colloquial": "Pont de la Concorde"
+          "colloquial": "Hairpin",
+          "official": "Turn 8"
         },
         "complex": null,
-        "direction": "right",
-        "scale": 2
+        "direction": "left",
+        "scale": 1
       },
       "geometry": {
         "type": "Point",
@@ -1421,13 +1428,14 @@
       "properties": {
         "role": "corner",
         "number": 9,
-        "display": "T9",
+        "display": "Turn 9",
         "names": {
           "numbered": "Turn 9",
-          "colloquial": "T9"
+          "colloquial": "Turn 9",
+          "official": "Turn 9"
         },
         "complex": null,
-        "direction": "left",
+        "direction": "right",
         "scale": 3
       },
       "geometry": {
@@ -1443,13 +1451,14 @@
       "properties": {
         "role": "corner",
         "number": 10,
-        "display": "The Hairpin",
+        "display": "Hairpin",
         "names": {
           "numbered": "Turn 10",
-          "colloquial": "The Hairpin"
+          "colloquial": "Hairpin",
+          "official": "L'Epingle"
         },
         "complex": null,
-        "direction": "right",
+        "direction": "left",
         "scale": 1
       },
       "geometry": {
@@ -1465,13 +1474,14 @@
       "properties": {
         "role": "corner",
         "number": 11,
-        "display": "T11",
+        "display": "Turn 11",
         "names": {
           "numbered": "Turn 11",
-          "colloquial": "T11"
+          "colloquial": "Turn 11",
+          "official": "Turn 11"
         },
         "complex": null,
-        "direction": "left",
+        "direction": "right",
         "scale": 5
       },
       "geometry": {
@@ -1487,13 +1497,14 @@
       "properties": {
         "role": "corner",
         "number": 12,
-        "display": "T12",
+        "display": "Turn 12",
         "names": {
           "numbered": "Turn 12",
-          "colloquial": "T12"
+          "colloquial": "Turn 12",
+          "official": "Turn 12"
         },
         "complex": null,
-        "direction": "right",
+        "direction": "left",
         "scale": 6
       },
       "geometry": {
@@ -1509,13 +1520,14 @@
       "properties": {
         "role": "corner",
         "number": 13,
-        "display": "T13",
+        "display": "Wall of Champions",
         "names": {
           "numbered": "Turn 13",
-          "colloquial": "T13"
+          "colloquial": "Wall of Champions",
+          "official": "Turn 13"
         },
-        "complex": null,
-        "direction": "right",
+        "complex": "Wall of Champions",
+        "direction": "left",
         "scale": 2
       },
       "geometry": {
@@ -1531,13 +1543,14 @@
       "properties": {
         "role": "corner",
         "number": 14,
-        "display": "T14",
+        "display": "Wall of Champions",
         "names": {
           "numbered": "Turn 14",
-          "colloquial": "T14"
+          "colloquial": "Wall of Champions",
+          "official": "Turn 14"
         },
-        "complex": null,
-        "direction": "left",
+        "complex": "Wall of Champions",
+        "direction": "right",
         "scale": 2
       },
       "geometry": {
