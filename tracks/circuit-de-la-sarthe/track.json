@@ -384,7 +384,7 @@
           "end": 0.99,
           "location": [
             0.207528,
-            47.949596
+            47.949583
           ],
           "location_source": "centerline"
         }
@@ -424,14 +424,27 @@
         "entry": 0.99,
         "exit": 0.03
       },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          0.207595,
+          47.950961
+        ]
+      },
       "length_m": 13626,
       "direction": "clockwise",
       "active_years": "2018-"
     }
   ],
   "wikidata": "Q270760",
+  "series": [
+    "wec"
+  ],
+  "external_ids": {
+    "imsa_data": "le-mans"
+  },
   "provenance": {
-    "generated_at": "2026-06-11T12:29:55.573618+00:00",
+    "generated_at": "2026-06-12T11:13:47.598816+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

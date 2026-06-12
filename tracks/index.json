@@ -1,0 +1,65 @@
+{
+  "tracks": [
+    {
+      "slug": "circuit-de-la-sarthe",
+      "name": "Circuit de la Sarthe",
+      "aka": [
+        "La Sarthe",
+        "Circuit des 24 Heures du Mans",
+        "Le Mans"
+      ],
+      "country": "FR",
+      "location": {
+        "lat": 47.95,
+        "lon": 0.2247,
+        "locality": "Le Mans",
+        "region": "Pays de la Loire",
+        "timezone": "Europe/Paris"
+      },
+      "series": [
+        "wec"
+      ],
+      "layouts": [
+        {
+          "id": "24h",
+          "name": "Circuit des 24 Heures",
+          "length_m": 13626,
+          "corners": 21,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": "tracks/circuit-de-la-sarthe/render/circuit-de-la-sarthe.png"
+    },
+    {
+      "slug": "silverstone",
+      "name": "Silverstone Circuit",
+      "aka": [
+        "Silverstone",
+        "The Home of British Motor Racing"
+      ],
+      "country": "GB",
+      "location": {
+        "lat": 52.0733,
+        "lon": -1.0147,
+        "locality": "Silverstone, Northamptonshire",
+        "region": "England",
+        "timezone": "Europe/London"
+      },
+      "series": [
+        "f1",
+        "wec",
+        "elms"
+      ],
+      "layouts": [
+        {
+          "id": "gp",
+          "name": "Grand Prix Circuit",
+          "length_m": 5891,
+          "corners": 18,
+          "direction": "clockwise"
+        }
+      ],
+      "poster": "tracks/silverstone/render/silverstone.png"
+    }
+  ]
+}

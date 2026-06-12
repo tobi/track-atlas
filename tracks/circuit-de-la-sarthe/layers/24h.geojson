@@ -1723,14 +1723,6 @@
             47.956748
           ],
           [
-            0.228468,
-            47.955035
-          ],
-          [
-            0.228501,
-            47.954966
-          ],
-          [
             0.22942,
             47.953035
           ],
@@ -3736,6 +3728,49 @@
     {
       "type": "Feature",
       "properties": {
+        "role": "start_finish",
+        "name": "Start / Finish",
+        "marker": 0.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.207595,
+          47.950961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "pit_entry",
+        "marker": 0.99
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.207528,
+          47.949583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "pit_exit",
+        "marker": 0.03
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.208478,
+          47.955027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "role": "corner",
         "number": 1,
         "display": "Dunlop Curve",
@@ -4200,7 +4235,7 @@
         "type": "Point",
         "coordinates": [
           0.207528,
-          47.949596
+          47.949583
         ]
       }
     }

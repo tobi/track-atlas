@@ -1,7 +1,10 @@
 {
   "slug": "silverstone",
   "name": "Silverstone Circuit",
-  "aka": ["Silverstone", "The Home of British Motor Racing"],
+  "aka": [
+    "Silverstone",
+    "The Home of British Motor Racing"
+  ],
   "country": "GB",
   "wikidata": "Q180969",
   "location": {
@@ -15,17 +18,33 @@
     "gp": "f12025/silverstone.json"
   },
   "osm": {
-    "bbox": [52.064, -1.034, 52.082, -0.997]
+    "bbox": [
+      52.064,
+      -1.034,
+      52.082,
+      -0.997
+    ],
+    "relation": 51160
   },
   "layouts": [
     {
       "id": "gp",
       "name": "Grand Prix Circuit",
-      "aka": ["Arena GP"],
+      "aka": [
+        "Arena GP"
+      ],
       "length_m": 5891,
       "direction": "clockwise",
       "active_years": "2011-",
       "lovely": "gp"
     }
-  ]
+  ],
+  "series": [
+    "f1",
+    "wec",
+    "elms"
+  ],
+  "external_ids": {
+    "imsa_data": "silverstone"
+  }
 }

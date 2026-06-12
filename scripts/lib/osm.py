@@ -59,9 +59,20 @@ def relation_centerline(relation_data):
     if rel is None:
         return None
     segs = []
+    seen_refs = set()
     for m in rel.get("members", []):
         if m.get("type") != "way":
             continue
+        # skip non-lap members (pit lanes etc.) -- only '' / 'forward' /
+        # 'backward' roles are part of the racing lap
+        if m.get("role") not in ("", None, "forward", "backward"):
+            continue
+        # some circuit relations list each way twice (out-and-back duplication);
+        # keep the first occurrence only
+        ref = m.get("ref")
+        if ref is not None and ref in seen_refs:
+            continue
+        seen_refs.add(ref)
         g = m.get("geometry")
         if not g or len(g) < 2:
             continue
@@ -271,19 +282,26 @@ def align_markers_to_centerline(loop, matched):
             d += 1.0
         un.append(un[-1] + d)
 
+    # Markers are cyclic (lap fractions): extend the control set with wrapped
+    # copies of the last/first anchors so markers outside [markers[0],
+    # markers[-1]] (e.g. the 0.0 start/finish line) interpolate across the lap
+    # boundary instead of extrapolating with an arbitrary edge slope.
+    markers = [markers[-1] - 1.0] + markers + [markers[0] + 1.0]
+    un = [un[-1] - 1.0] + un + [un[0] + 1.0]
+
     def place(marker):
-        # piecewise-linear interpolate marker -> unwrapped centerline fraction,
-        # extrapolating with the edge slope at the ends.
-        if marker <= markers[0]:
-            i = 0
-        elif marker >= markers[-1]:
-            i = len(markers) - 2
-        else:
-            i = max(j for j in range(len(markers) - 1) if markers[j] <= marker)
+        # piecewise-linear interpolate marker -> unwrapped centerline fraction
+        # within the cyclically-extended control set.
+        m = marker
+        if m < markers[0]:
+            m += 1.0
+        elif m > markers[-1]:
+            m -= 1.0
+        i = max(j for j in range(len(markers) - 1) if markers[j] <= m)
         m0, m1 = markers[i], markers[i + 1]
         f0, f1 = un[i], un[i + 1]
-        t = (marker - m0) / ((m1 - m0) or 1e-9)
-        return point_at_fraction(loop, cum, total, f0 + t * (f1 - f0))
+        t = (m - m0) / ((m1 - m0) or 1e-9)
+        return point_at_fraction(loop, cum, total, (f0 + t * (f1 - f0)) % 1.0)
 
     return place, loop
 

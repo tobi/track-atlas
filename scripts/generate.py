@@ -56,13 +56,27 @@ def resolve_name(corner: dict, default_layer: str) -> str:
 
 
 def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
-                   default_layer: str = "colloquial") -> dict:
+                   default_layer: str = "colloquial", start_finish=None,
+                   pit_points=None) -> dict:
     feats = []
     if outline_coords:
         feats.append({
             "type": "Feature",
             "properties": {"role": "outline", "layout": layout_id},
             "geometry": {"type": "LineString", "coordinates": outline_coords},
+        })
+    if start_finish:
+        feats.append({
+            "type": "Feature",
+            "properties": {"role": "start_finish", "name": "Start / Finish",
+                           "marker": start_finish.get("marker", 0.0)},
+            "geometry": {"type": "Point", "coordinates": start_finish["location"]},
+        })
+    for role, p in (pit_points or {}).items():
+        feats.append({
+            "type": "Feature",
+            "properties": {"role": role, "marker": p.get("marker")},
+            "geometry": {"type": "Point", "coordinates": p["location"]},
         })
     for c in corners:
         if "location" not in c:
@@ -102,6 +116,10 @@ def generate_track(slug: str) -> dict:
     }
     if src.get("wikidata"):
         track["wikidata"] = src["wikidata"]
+    if src.get("series"):
+        track["series"] = src["series"]
+    if src.get("external_ids"):
+        track["external_ids"] = src["external_ids"]
 
     matched_total = 0
     corner_total = 0
@@ -169,6 +187,9 @@ def generate_track(slug: str) -> dict:
                 centerline = None
 
         outline_coords = None
+        sf_point = None       # start/finish {marker, location}
+        pit_points = {}       # {"pit_entry"/"pit_exit": {marker, location}}
+        pit = pit_from_lovely(lovely)
         if centerline and len(centerline) >= 8:
             matched_pts = [(c["marker"], c["location"]) for c in corners
                            if "location" in c and "marker" in c]
@@ -179,6 +200,22 @@ def generate_track(slug: str) -> dict:
                     p = place(c["marker"])
                     c["location"] = [round(p[0], 6), round(p[1], 6)]
                     c["location_source"] = "centerline"
+            # Start/finish = lap fraction 0.0 (Lovely markers are measured from
+            # the timing line), unless the source pins it manually.
+            sf_src = layout.get("start_finish")
+            if sf_src and sf_src.get("location"):
+                sf_point = {"marker": sf_src.get("marker", 0.0),
+                            "location": sf_src["location"]}
+            else:
+                p = place(0.0)
+                sf_point = {"marker": 0.0,
+                            "location": [round(p[0], 6), round(p[1], 6)]}
+            for key, role in (("entry", "pit_entry"), ("exit", "pit_exit")):
+                m = (pit or {}).get(key)
+                if m is not None:
+                    p = place(m)
+                    pit_points[role] = {"marker": m,
+                                        "location": [round(p[0], 6), round(p[1], 6)]}
             outline_coords = [[round(x, 6), round(y, 6)] for x, y in oriented]
             if outline_coords[0] != outline_coords[-1]:
                 outline_coords.append(outline_coords[0])  # close the loop
@@ -192,7 +229,8 @@ def generate_track(slug: str) -> dict:
             if len(outline_coords) >= 3:
                 outline_coords.append(outline_coords[0])  # close the loop
         default_layer = layout.get("name_default", src.get("name_default", "colloquial"))
-        gj = _layer_geojson(lid, corners, outline_coords or None, default_layer)
+        gj = _layer_geojson(lid, corners, outline_coords or None, default_layer,
+                            start_finish=sf_point, pit_points=pit_points)
         (tdir / outline_path).write_text(json.dumps(gj, ensure_ascii=False, indent=2))
 
         lo = {
@@ -204,8 +242,10 @@ def generate_track(slug: str) -> dict:
             "corners": corners,
             "straights": straights_from_lovely(lovely),
             "sectors": sectors_from_lovely(lovely),
-            "pit": pit_from_lovely(lovely),
+            "pit": pit,
         }
+        if sf_point:
+            lo["start_finish"] = sf_point
         for k in ("length_m", "direction", "active_years"):
             if k in layout:
                 lo[k] = layout[k]
@@ -251,6 +291,11 @@ def main() -> None:
             runpy.run_path(str(custom), run_name="__main__")
         else:
             generate_track(slug)
+
+    # keep the site catalog fresh
+    import runpy as _rp
+    _rp.run_path(str(Path(__file__).resolve().parent / "build_index.py"),
+                 run_name="__main__")
 
 
 if __name__ == "__main__":
