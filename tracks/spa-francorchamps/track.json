@@ -59,7 +59,8 @@
           "number": 3,
           "names": {
             "numbered": "Turn 3",
-            "colloquial": "Eau Rouge"
+            "colloquial": "Eau Rouge",
+            "official": "Eau Rouge"
           },
           "direction": "left",
           "scale": 5,
@@ -69,18 +70,21 @@
           "location": [
             5.970514,
             50.442521
-          ]
+          ],
+          "complex": "Eau Rouge-Raidillon"
         },
         {
           "number": 4,
           "names": {
-            "numbered": "Turn 4"
+            "numbered": "Turn 4",
+            "colloquial": "Eau Rouge-Raidillon"
           },
           "direction": "right",
           "scale": 5,
           "marker": 0.15,
           "start": 0.14,
           "end": 0.16,
+          "complex": "Eau Rouge-Raidillon",
           "location": [
             5.971365,
             50.44213
@@ -91,7 +95,8 @@
           "number": 5,
           "names": {
             "numbered": "Turn 5",
-            "colloquial": "Raidillon"
+            "colloquial": "Raidillon",
+            "official": "Raidillon"
           },
           "direction": "left",
           "scale": 5,
@@ -101,7 +106,8 @@
           "location": [
             5.971767,
             50.441504
-          ]
+          ],
+          "complex": "Eau Rouge-Raidillon"
         },
         {
           "number": 6,
@@ -123,10 +129,11 @@
           "number": 7,
           "names": {
             "numbered": "Turn 7",
-            "colloquial": "Les Combes"
+            "colloquial": "Les Combes",
+            "official": "Les Combes"
           },
           "direction": "right",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.33,
           "start": 0.32,
           "end": 0.33,
@@ -138,10 +145,12 @@
         {
           "number": 8,
           "names": {
-            "numbered": "Turn 8"
+            "numbered": "Turn 8",
+            "official": "Les Combes",
+            "colloquial": "Les Combes"
           },
           "direction": "left",
-          "scale": 4,
+          "scale": 3,
           "marker": 0.34,
           "start": 0.33,
           "end": 0.35,
@@ -154,7 +163,9 @@
         {
           "number": 9,
           "names": {
-            "numbered": "Turn 9"
+            "numbered": "Turn 9",
+            "official": "Malmedy",
+            "colloquial": "Malmedy"
           },
           "direction": "right",
           "scale": 4,
@@ -186,7 +197,9 @@
         {
           "number": 11,
           "names": {
-            "numbered": "Turn 11"
+            "numbered": "Turn 11",
+            "official": "Rivage",
+            "colloquial": "Rivage"
           },
           "direction": "left",
           "scale": 4,
@@ -219,13 +232,16 @@
         {
           "number": 13,
           "names": {
-            "numbered": "Turn 13"
+            "numbered": "Turn 13",
+            "official": "Les Fagnes",
+            "colloquial": "Les Fagnes"
           },
           "direction": "right",
-          "scale": 4,
+          "scale": 5,
           "marker": 0.63,
           "start": 0.62,
           "end": 0.64,
+          "complex": "Fagnes-Stavelot",
           "location": [
             5.966341,
             50.430398
@@ -235,13 +251,16 @@
         {
           "number": 14,
           "names": {
-            "numbered": "Turn 14"
+            "numbered": "Turn 14",
+            "official": "Stavelot",
+            "colloquial": "Stavelot"
           },
           "direction": "left",
-          "scale": 4,
+          "scale": 5,
           "marker": 0.65,
           "start": 0.64,
           "end": 0.66,
+          "complex": "Fagnes-Stavelot",
           "location": [
             5.964503,
             50.43069
@@ -252,7 +271,8 @@
           "number": 15,
           "names": {
             "numbered": "Turn 15",
-            "colloquial": "Campus"
+            "colloquial": "Paul Frère",
+            "official": "Paul Frère"
           },
           "direction": "right",
           "scale": 3,
@@ -268,10 +288,11 @@
           "number": 16,
           "names": {
             "numbered": "Turn 16",
-            "colloquial": "Stavelot"
+            "colloquial": "Campus",
+            "official": "Campus"
           },
-          "direction": "right",
-          "scale": 4,
+          "direction": "left",
+          "scale": 3,
           "marker": 0.72,
           "start": 0.71,
           "end": 0.73,
@@ -284,7 +305,9 @@
         {
           "number": 17,
           "names": {
-            "numbered": "Turn 17"
+            "numbered": "Turn 17",
+            "official": "Stavelot",
+            "colloquial": "Stavelot"
           },
           "direction": "left",
           "scale": 1,
@@ -317,7 +340,8 @@
           "number": 19,
           "names": {
             "numbered": "Turn 19",
-            "colloquial": "Chicane"
+            "colloquial": "Bus Stop Chicane",
+            "official": "Chicane"
           },
           "direction": "right",
           "scale": 1,
@@ -327,18 +351,22 @@
           "location": [
             5.966539,
             50.441512
-          ]
+          ],
+          "complex": "Bus Stop"
         },
         {
           "number": 20,
           "names": {
-            "numbered": "Turn 20"
+            "numbered": "Turn 20",
+            "official": "Chicane",
+            "colloquial": "Bus Stop Chicane"
           },
           "direction": "left",
           "scale": 1,
           "marker": 0.96,
           "start": 0.95,
           "end": 0.96,
+          "complex": "Bus Stop",
           "location": [
             5.967265,
             50.44174
@@ -396,7 +424,7 @@
     "imsa_data": "spa-francorchamps"
   },
   "provenance": {
-    "generated_at": "2026-06-12T14:24:50.361975+00:00",
+    "generated_at": "2026-06-12T21:34:23.872428+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
