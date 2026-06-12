@@ -1,0 +1,129 @@
+{
+  "gp": {
+    "corners": {
+      "1": {
+        "colloquial": "Turn 1",
+        "official": "First Corner",
+        "direction": "right",
+        "scale": 3
+      },
+      "2": {
+        "colloquial": "Turn 2",
+        "official": "Second Corner",
+        "direction": "right",
+        "scale": 4
+      },
+      "3": {
+        "colloquial": "S Curves",
+        "official": "S Curves",
+        "complex": "S Curves",
+        "direction": "left",
+        "scale": 3
+      },
+      "4": {
+        "colloquial": "S Curves",
+        "official": "S Curves",
+        "complex": "S Curves",
+        "direction": "right",
+        "scale": 3
+      },
+      "5": {
+        "colloquial": "S Curves",
+        "official": "S Curves",
+        "complex": "S Curves",
+        "direction": "left",
+        "scale": 3
+      },
+      "6": {
+        "colloquial": "S Curves",
+        "official": "S Curves",
+        "complex": "S Curves",
+        "direction": "right",
+        "scale": 4
+      },
+      "7": {
+        "colloquial": "Dunlop",
+        "official": "Dunlop Curve",
+        "direction": "left",
+        "scale": 4
+      },
+      "8": {
+        "colloquial": "Degner 1",
+        "official": "Degner Curve 1",
+        "complex": "Degner",
+        "direction": "left",
+        "scale": 3,
+        "error": "corner 8 direction should be left not right"
+      },
+      "9": {
+        "colloquial": "Degner 2",
+        "official": "Degner Curve 2",
+        "complex": "Degner",
+        "direction": "left",
+        "scale": 2,
+        "error": "corner 9 direction should be left not right"
+      },
+      "10": {
+        "colloquial": "Turn 10",
+        "official": "Turn 10",
+        "direction": "left",
+        "scale": 4,
+        "error": "corner 10 direction should be left not right"
+      },
+      "11": {
+        "colloquial": "Hairpin",
+        "official": "Hairpin",
+        "direction": "left",
+        "scale": 1
+      },
+      "12": {
+        "colloquial": "Turn 12",
+        "official": "Turn 12",
+        "direction": "right",
+        "scale": 5
+      },
+      "13": {
+        "colloquial": "Spoon",
+        "official": "Spoon Curve",
+        "complex": "Spoon",
+        "direction": "left",
+        "scale": 3
+      },
+      "14": {
+        "colloquial": "Spoon",
+        "official": "Spoon Curve",
+        "complex": "Spoon",
+        "direction": "left",
+        "scale": 3
+      },
+      "15": {
+        "colloquial": "130R",
+        "official": "130R",
+        "direction": "left",
+        "scale": 5,
+        "error": "corner 15 scale should be 5 not 4 - this is one of F1's fastest corners"
+      },
+      "16": {
+        "colloquial": "Casio Triangle",
+        "official": "Casio Triangle",
+        "complex": "Casio Triangle",
+        "direction": "right",
+        "scale": 2
+      },
+      "17": {
+        "colloquial": "Casio Triangle",
+        "official": "Casio Triangle",
+        "complex": "Casio Triangle",
+        "direction": "left",
+        "scale": 2
+      },
+      "18": {
+        "colloquial": "Chicane",
+        "official": "Chicane",
+        "direction": "right",
+        "scale": 3
+      }
+    },
+    "errors_summary": "Corners 8, 9, and 10 have incorrect directions (all marked right, should be left); corner 15 (130R) severity should be 5 not 4"
+  }
+}
