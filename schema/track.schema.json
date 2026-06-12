@@ -33,6 +33,16 @@
       "description": "Geographic centroid of the circuit."
     },
     "wikidata": { "type": "string", "pattern": "^Q[0-9]+$" },
+    "series": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Series that race (or raced) here, lowercase codes: 'wec', 'imsa', 'elms', 'alms', 'f1', 'lmc', ..."
+    },
+    "external_ids": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "Crosswalk to other datasets, e.g. {\"imsa_data\": \"le-mans\"} -> tracks.json id in tobi/imsa_data."
+    },
     "layouts": {
       "type": "array",
       "minItems": 1,
@@ -168,6 +178,11 @@
         "location": {
           "$ref": "#/definitions/lonlat",
           "description": "Apex coordinate, when resolvable from geometry."
+        },
+        "location_source": {
+          "type": "string",
+          "enum": ["osm-way", "centerline", "manual"],
+          "description": "How the location was derived: matched OSM named way (default when absent), lap-fraction projection onto the centerline, or hand-placed."
         }
       }
     },

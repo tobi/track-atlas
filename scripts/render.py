@@ -190,9 +190,11 @@ def build_svg(slug: str, layout_id: str | None) -> str:
 
     # --- start/finish ---
     sf = None
-    if corners:
-        sfc = min(corners, key=lambda c: c.get("marker", 1))
-        sx, sy = tf(*project([sfc["location"]], lat0)[0])
+    sf_loc = (layout.get("start_finish") or {}).get("location")
+    if not sf_loc and corners:
+        sf_loc = min(corners, key=lambda c: c.get("marker", 1))["location"]
+    if sf_loc:
+        sx, sy = tf(*project([sf_loc], lat0)[0])
         sf = (sx, sy)
         svg.append(f'<circle cx="{sx:.1f}" cy="{sy:.1f}" r="13" fill="none" '
                    f'stroke="#ffffff" stroke-width="3"/>')
