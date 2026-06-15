@@ -60,10 +60,12 @@ emits `schema/track.schema.json` from them; `verify.py` validates via the models
 ## DONE: website browse layouts + naming layers
 - [x] Layout `<select>` (browse every configuration) + name-layer `<select>` (browse every naming layer)
 
-## Parked (need explicit go — destructive / speculative)
-- [ ] git history rewrite + force-push (strip old PNG blobs from history, ~60MB) — HOLD: irreversible, rewrites public history. Say the word.
-- [ ] Layout-variant model: separate full layouts per series (Sebring IMSA vs WEC pit) — deferred: no track needs it yet
+## DONE: git history rewrite
+- [x] git-filter-repo stripped old tracks/<slug>/render/ blobs + .goutputstream from all history; force-pushed. .git 70M -> 5.6M.
 
-## Curation backlog (verify warns, doesn't fail) — needs real names, not code
-- [ ] Number-only tracks: jeddah, miami, shanghai, losail, indianapolis (genuinely few/no corner names)
-- [ ] Fix inconsistent complex strings splitting groups: silverstone (Maggotts/Becketts/Chapel vs Maggotts-Becketts-Chapel; Abbey/Farm), laguna-seca (Corkscrew, Esses)
+## DONE: committed + pushed everything to origin/main
+
+## Not actionable without input/data
+- [ ] Layout-variant model: separate full layouts per series (Sebring IMSA vs WEC pit) — speculative; no track in the repo needs it yet
+- [ ] Number-only tracks (jeddah, miami, shanghai, losail, indianapolis) — genuinely have no corner names; need real-world naming, not code
+- [ ] Single-corner "complex" warnings (silverstone Abbey/Farm; laguna-seca Corkscrew; Esses) — judgment calls: are these really complexes, or just named corners? Left for human review. (Maggotts-Becketts-Chapel separator typo: FIXED)
