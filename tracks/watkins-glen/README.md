@@ -1,5 +1,7 @@
 # Watkins Glen International
 
+![watkins-glen poster](raw/render/watkins-glen.png)
+
 - **Layout**: Full Course (Boot) (5435 m, clockwise)
 - **Series**: imsa
 - **Corners**: 10 (10 named); OSM name-match 6/10, 0 placed by centerline lap-fraction

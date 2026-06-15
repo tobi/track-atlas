@@ -1,5 +1,7 @@
 # Michelin Raceway Road Atlanta
 
+![road-atlanta poster](raw/render/road-atlanta.png)
+
 - **Layout**: Full Course (4088 m, clockwise)
 - **Series**: imsa
 - **Corners**: 14 (14 named); OSM name-match 1/14, 0 placed by centerline lap-fraction

@@ -1,5 +1,7 @@
 # Long Beach Street Circuit
 
+![long-beach poster](raw/render/long-beach.png)
+
 - **Layout**: Street Circuit (3167 m, clockwise)
 - **Series**: imsa
 - **Corners**: 11 (11 named); OSM name-match 0/11, 11 placed by centerline lap-fraction

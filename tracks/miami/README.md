@@ -1,5 +1,7 @@
 # Miami International Autodrome
 
+![miami poster](raw/render/miami.png)
+
 - **Layout**: Grand Prix Circuit (5412 m, clockwise)
 - **Series**: f1
 - **Corners**: 19 (19 named); OSM name-match 0/19, 0 placed by centerline lap-fraction

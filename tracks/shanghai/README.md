@@ -1,5 +1,7 @@
 # Shanghai International Circuit
 
+![shanghai poster](raw/render/shanghai.png)
+
 - **Layout**: Grand Prix Circuit (5451 m, clockwise)
 - **Series**: f1
 - **Corners**: 16 (16 named); OSM name-match 0/16, 0 placed by centerline lap-fraction

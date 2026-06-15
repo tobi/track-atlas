@@ -1,5 +1,7 @@
 # Circuit de la Sarthe — Le Mans 24h
 
+![circuit-de-la-sarthe poster](raw/render/circuit-de-la-sarthe.png)
+
 **Status: good.** Corner names (numbered / official / colloquial) complete and
 curated; 14/21 corners pinned to real OSM coordinates.
 

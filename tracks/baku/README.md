@@ -1,5 +1,7 @@
 # Baku City Circuit
 
+![baku poster](raw/render/baku.png)
+
 - **Layout**: Grand Prix Circuit (6003 m, anticlockwise)
 - **Series**: f1
 - **Corners**: 20 (20 named); OSM name-match 0/20, 20 placed by centerline lap-fraction

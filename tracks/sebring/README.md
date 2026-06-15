@@ -1,5 +1,7 @@
 # Sebring International Raceway
 
+![sebring poster](raw/render/sebring.png)
+
 - **Layouts**: two series-specific configurations of the International Circuit
   (5954 m, clockwise), sharing the same geometry and corners:
   - `wec` — pit entry/exit 0.72 / 0.82 (from Lovely)

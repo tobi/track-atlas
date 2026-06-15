@@ -1,5 +1,7 @@
 # Yas Marina Circuit
 
+![yas-marina poster](raw/render/yas-marina.png)
+
 - **Layout**: Grand Prix Circuit (5281 m, anticlockwise)
 - **Series**: f1
 - **Corners**: 16 (16 named); OSM name-match 0/16, 16 placed by centerline lap-fraction

@@ -12,6 +12,8 @@
  */
 const REPO = "tobi/track-atlas";
 const BRANCH = "main";
+// The site lives in /site/; the data (tracks/, tracks.jsonl) is one level up.
+const DATA = "../";
 
 const $grid = document.getElementById("grid");
 const $detail = document.getElementById("detail");
@@ -26,7 +28,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
 const fmtKm = (m) => m ? (m / 1000).toFixed(3) + " km" : "—";
 
 async function boot() {
-  const res = await fetch("tracks/index.json");
+  const res = await fetch(DATA + "tracks/index.json");
   CATALOG = (await res.json()).tracks;
   route();
   window.addEventListener("hashchange", route);
@@ -50,7 +52,7 @@ function renderGrid(q) {
   });
   $grid.innerHTML = hits.map((t) => `
     <div class="card" onclick="location.hash='/${t.slug}'">
-      ${t.poster ? `<img src="${t.poster}" alt="${esc(t.name)}" loading="lazy">` : ""}
+      ${t.poster ? `<img src="${DATA}${t.poster}" alt="${esc(t.name)}" loading="lazy">` : ""}
       <div class="body">
         <h3>${esc(t.name)}</h3>
         <div class="meta">${esc(t.location?.locality || "")} · ${esc(t.country || "")}
@@ -67,7 +69,7 @@ async function showDetail(slug) {
   $grid.style.display = "none"; $search.style.display = "none";
   $detail.style.display = "block";
 
-  const track = await (await fetch(`tracks/${slug}/raw/track.json`)).json();
+  const track = await (await fetch(`${DATA}tracks/${slug}/raw/track.json`)).json();
   window.__track = track;
   const ghBase = `https://github.com/${REPO}`;
 
@@ -94,7 +96,7 @@ async function showDetail(slug) {
     <div id="statsWrap"></div>
     <div class="det-cols">
       <div><div id="map"></div></div>
-      <div class="poster">${entry.poster ? `<img src="${entry.poster}">` : ""}</div>
+      <div class="poster">${entry.poster ? `<img src="${DATA}${entry.poster}">` : ""}</div>
     </div>
     <h3 style="margin-top:26px">Corners</h3>
     <div id="cornersWrap"></div>
@@ -130,7 +132,7 @@ async function showLayout(layoutId) {
       `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>`;
 
   renderCorners();
-  const gj = await (await fetch(`tracks/${track.slug}/raw/${layout.geometry.outline}`)).json();
+  const gj = await (await fetch(`${DATA}tracks/${track.slug}/raw/${layout.geometry.outline}`)).json();
   renderMap(gj, track);
 }
 
@@ -162,7 +164,7 @@ function renderCorners() {
     <table id="cornersTbl">
       <tr><th>#</th><th>code</th><th>display</th>
         ${cols.map((c) => `<th>${esc((track.name_layers[c] || {}).label || c)}</th>`).join("")}
-        <th>complex</th><th>dir</th><th>scale</th><th>lap %</th><th></th></tr>
+        <th>complex</th><th>dir</th><th>scale</th><th>apex %</th><th>phase (brake→exit)</th><th></th></tr>
       ${(layout.corners || []).map((c) => `
         <tr>
           <td>${c.number}</td>
@@ -173,9 +175,16 @@ function renderCorners() {
           <td>${c.direction === "left" ? "←" : c.direction === "right" ? "→" : ""}</td>
           <td>${esc(scaleLabel(c.scale))}</td>
           <td class="muted">${c.marker != null ? (c.marker * 100).toFixed(1) : ""}</td>
+          <td class="muted">${phaseText(c)}</td>
           <td><span class="edit" onclick='openEdit(${JSON.stringify(track.slug)}, ${JSON.stringify(layout.id)}, ${c.number})'>✎ edit</span></td>
         </tr>`).join("")}
     </table>`;
+}
+
+// "6.5% → 10.7%" braking-zone start to exit; "—" for corners with no phase.
+function phaseText(c) {
+  if (c.start == null || c.end == null) return "—";
+  return `${(c.start * 100).toFixed(1)}% → ${(c.end * 100).toFixed(1)}%`;
 }
 
 function renderMap(gj, track) {

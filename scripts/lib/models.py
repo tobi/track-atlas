@@ -70,8 +70,13 @@ class Corner(Strict):
         None, ge=1, le=6,
         description="Severity 1-6: 1=Hairpin, 2=Slow, 3=Medium, 4=Fast, 5=Very fast, 6=Kink.")
     marker: Optional[Fraction] = Field(None, description="Lap fraction at the apex.")
-    start: Optional[Fraction] = Field(None, description="Lap fraction where the corner begins.")
-    end: Optional[Fraction] = Field(None, description="Lap fraction where the corner ends.")
+    start: Optional[Fraction] = Field(
+        None, description="Lap fraction where the corner phase begins — the braking/turn-in "
+                          "point, a few hundred metres before the apex for slow corners, scaled "
+                          "by severity. Computed by lib/phases.py; corners in a complex meet.")
+    end: Optional[Fraction] = Field(
+        None, description="Lap fraction where the corner phase ends — a short distance after the "
+                          "apex, into the throttle on exit.")
     location: Optional[LonLat] = Field(None, description="Apex coordinate, when resolvable.")
     location_source: Optional[Literal["osm-way", "centerline", "manual"]] = None
 

@@ -1,5 +1,7 @@
 # Road America
 
+![road-america poster](raw/render/road-america.png)
+
 - **Layout**: Full Course (6514 m, clockwise)
 - **Series**: imsa
 - **Corners**: 13 (13 named); OSM name-match 5/13, 0 placed by centerline lap-fraction

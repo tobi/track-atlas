@@ -2,6 +2,13 @@
 
 Running checklist of requested work. Keep updated; don't drop anything.
 
+## DONE: tracks.jsonl + phases-in-data + site move
+- [x] Corner phases promoted into track.json (corner.start/marker/end) via lib/phases.py; schema updated; rendered in the site corner table + geojson properties
+- [x] Pipeline generates `tracks.jsonl` at repo root (build_jsonl.py, one track per line); linked prominently from README + the website
+- [x] Moved the web app into `site/` (paths rebased to ../); README browse link updated
+- [x] Every track README embeds `![](raw/render/<slug>.png)`; repo README has a Sebring example at the top and states tracks.jsonl is the point
+- [x] suggest_phases.py is now a preview/tuning tool (phases live in the data)
+
 ## In progress: corner-naming model redesign
 Base identifier + arbitrary sparse name layers; `official` mandatory layer;
 display = default-layer ?? numbered (no fall-through); Sebring "Sunset Bend"

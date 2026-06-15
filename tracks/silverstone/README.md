@@ -1,5 +1,7 @@
 # Silverstone Circuit — Grand Prix layout
 
+![silverstone poster](raw/render/silverstone.png)
+
 **Status: excellent.** All 18 corners named and pinned to real OSM coordinates.
 
 - **Layout:** `gp` — Grand Prix Circuit (Arena), 5.891 km, clockwise.

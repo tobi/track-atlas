@@ -100,7 +100,7 @@
             }
           ],
           "default": null,
-          "description": "Lap fraction where the corner begins.",
+          "description": "Lap fraction where the corner phase begins — the braking/turn-in point, a few hundred metres before the apex for slow corners, scaled by severity. Computed by lib/phases.py; corners in a complex meet.",
           "title": "Start"
         },
         "end": {
@@ -116,7 +116,7 @@
             }
           ],
           "default": null,
-          "description": "Lap fraction where the corner ends.",
+          "description": "Lap fraction where the corner phase ends — a short distance after the apex, into the throttle on exit.",
           "title": "End"
         },
         "location": {

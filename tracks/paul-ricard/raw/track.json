@@ -46,8 +46,8 @@
             "official": "Virage de la Verrerie"
           },
           "marker": 0.1,
-          "start": 0.98,
-          "end": 0.12,
+          "start": 0.0792,
+          "end": 0.115,
           "location": [
             5.785492,
             43.254774
@@ -64,8 +64,8 @@
             "official": "Virage de la Verrerie"
           },
           "marker": 0.133,
-          "start": 0.12,
-          "end": 0.15,
+          "start": 0.115,
+          "end": 0.15033,
           "location": [
             5.785492,
             43.254774
@@ -82,8 +82,8 @@
             "official": "Virage de l'Hotel"
           },
           "marker": 0.228,
-          "start": 0.21,
-          "end": 0.234,
+          "start": 0.1968,
+          "end": 0.23775,
           "location": [
             5.779604,
             43.257176
@@ -106,7 +106,9 @@
             5.779249,
             43.257629
           ],
-          "location_source": "centerline"
+          "location_source": "centerline",
+          "start": 0.23775,
+          "end": 0.25037
         },
         {
           "number": 5,
@@ -117,8 +119,8 @@
             "official": "Virage du Camp"
           },
           "marker": 0.263,
-          "start": 0.25,
-          "end": 0.27,
+          "start": 0.25037,
+          "end": 0.27712,
           "location": [
             5.778235,
             43.257679
@@ -141,7 +143,9 @@
             5.778315,
             43.258114
           ],
-          "location_source": "centerline"
+          "location_source": "centerline",
+          "start": 0.27712,
+          "end": 0.29913
         },
         {
           "number": 7,
@@ -152,8 +156,8 @@
             "official": "Virage de la Sainte-Baume"
           },
           "marker": 0.327,
-          "start": 0.31,
-          "end": 0.347,
+          "start": 0.32093,
+          "end": 0.3348,
           "location": [
             5.779015,
             43.258494
@@ -170,8 +174,8 @@
             "official": "Courbe de Signes"
           },
           "marker": 0.673,
-          "start": 0.645,
-          "end": 0.708,
+          "start": 0.673,
+          "end": 0.673,
           "direction": "right",
           "scale": 6,
           "location": [
@@ -189,8 +193,8 @@
             "official": "Double Droite de Beausset"
           },
           "marker": 0.758,
-          "start": 0.722,
-          "end": 0.8,
+          "start": 0.74587,
+          "end": 0.77013,
           "location": [
             5.802503,
             43.247489
@@ -207,8 +211,8 @@
             "official": "Virage de Bendor"
           },
           "marker": 0.826,
-          "start": 0.81,
-          "end": 0.846,
+          "start": 0.7948,
+          "end": 0.84853,
           "location": [
             5.802504,
             43.250045
@@ -225,8 +229,8 @@
             "official": "Courbe du Garbalan"
           },
           "marker": 0.866,
-          "start": 0.848,
-          "end": 0.895,
+          "start": 0.85993,
+          "end": 0.8738,
           "direction": "right",
           "scale": 5,
           "location": [
@@ -244,8 +248,8 @@
             "official": "Virage de la Tour"
           },
           "marker": 0.913,
-          "start": 0.9,
-          "end": 0.934,
+          "start": 0.90087,
+          "end": 0.92168,
           "direction": "left",
           "scale": 4,
           "location": [
@@ -263,8 +267,8 @@
             "official": "Virage du Pont"
           },
           "marker": 0.944,
-          "start": 0.936,
-          "end": 0.958,
+          "start": 0.92168,
+          "end": 0.96653,
           "location": [
             5.796218,
             43.249556
@@ -313,7 +317,7 @@
     "imsa_data": "paul-ricard"
   },
   "provenance": {
-    "generated_at": "2026-06-15T14:45:54.318755+00:00",
+    "generated_at": "2026-06-15T16:36:37.306233+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

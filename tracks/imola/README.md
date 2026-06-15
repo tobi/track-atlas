@@ -1,5 +1,7 @@
 # Autodromo Enzo e Dino Ferrari
 
+![imola poster](raw/render/imola.png)
+
 - **Layout**: Grand Prix Circuit (4909 m, anticlockwise)
 - **Series**: wec, elms, f1
 - **Corners**: 19 (8 named); OSM name-match 7/19, 12 placed by centerline lap-fraction

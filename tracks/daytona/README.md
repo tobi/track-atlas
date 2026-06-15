@@ -1,5 +1,7 @@
 # Daytona International Speedway
 
+![daytona poster](raw/render/daytona.png)
+
 - **Layout**: Road Course (5729 m, clockwise)
 - **Series**: imsa
 - **Corners**: 12 (12 named); OSM name-match 0/12, 12 placed by centerline lap-fraction

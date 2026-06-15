@@ -1,5 +1,7 @@
 # Bahrain International Circuit
 
+![bahrain poster](raw/render/bahrain.png)
+
 - **Layout**: Grand Prix Circuit (5412 m, clockwise)
 - **Series**: wec, f1
 - **Corners**: 15 (0 named); OSM name-match 0/15, 15 placed by centerline lap-fraction

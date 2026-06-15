@@ -1,5 +1,7 @@
 # WeatherTech Raceway Laguna Seca
 
+![laguna-seca poster](raw/render/laguna-seca.png)
+
 - **Layout**: Full Course (3602 m, anticlockwise)
 - **Series**: imsa
 - **Corners**: 10 (10 named); OSM name-match 2/10, 0 placed by centerline lap-fraction

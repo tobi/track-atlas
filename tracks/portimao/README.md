@@ -1,5 +1,7 @@
 # Autodromo Internacional do Algarve
 
+![portimao poster](raw/render/portimao.png)
+
 - **Layout**: Grand Prix Circuit (4653 m, clockwise)
 - **Series**: wec, elms
 - **Corners**: 15 (8 named); OSM name-match 0/15, 0 placed by centerline lap-fraction

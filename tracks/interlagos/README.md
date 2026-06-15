@@ -1,5 +1,7 @@
 # Autodromo Jose Carlos Pace
 
+![interlagos poster](raw/render/interlagos.png)
+
 - **Layout**: Grand Prix Circuit (4309 m, anticlockwise)
 - **Series**: wec, f1
 - **Corners**: 15 (11 named); OSM name-match 10/15, 5 placed by centerline lap-fraction

@@ -1,5 +1,7 @@
 # Circuit of the Americas
 
+![circuit-of-the-americas poster](raw/render/circuit-of-the-americas.png)
+
 - **Layout**: Grand Prix Circuit (5515 m, anticlockwise)
 - **Series**: wec, f1
 - **Corners**: 20 (0 named); OSM name-match 0/20, 20 placed by centerline lap-fraction

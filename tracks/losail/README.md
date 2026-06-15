@@ -1,5 +1,7 @@
 # Lusail International Circuit
 
+![losail poster](raw/render/losail.png)
+
 - **Layout**: Grand Prix Circuit (5419 m, clockwise)
 - **Series**: wec, f1
 - **Corners**: 16 (0 named); OSM name-match 0/16, 0 placed by centerline lap-fraction

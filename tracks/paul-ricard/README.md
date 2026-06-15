@@ -1,5 +1,7 @@
 # Circuit Paul Ricard
 
+![paul-ricard poster](raw/render/paul-ricard.png)
+
 - **Layout**: Grand Prix Circuit (5770 m, clockwise)
 - **Series**: elms
 - **Corners**: 13 (13 named); OSM name-match 8/13, 5 placed by centerline lap-fraction

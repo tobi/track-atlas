@@ -1,5 +1,7 @@
 # Circuit Gilles Villeneuve
 
+![montreal poster](raw/render/montreal.png)
+
 - **Layout**: Grand Prix Circuit (4361 m, clockwise)
 - **Series**: f1
 - **Corners**: 14 (14 named); OSM name-match 0/14, 0 placed by centerline lap-fraction

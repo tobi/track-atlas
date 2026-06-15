@@ -1,5 +1,7 @@
 # Autodromo Internazionale del Mugello
 
+![mugello poster](raw/render/mugello.png)
+
 - **Layout**: Grand Prix Circuit (5245 m, clockwise)
 - **Series**: elms
 - **Corners**: 15 (15 named); OSM name-match 1/15, 0 placed by centerline lap-fraction

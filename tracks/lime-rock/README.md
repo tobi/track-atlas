@@ -1,5 +1,7 @@
 # Lime Rock Park
 
+![lime-rock poster](raw/render/lime-rock.png)
+
 - **Layout**: Classic (2462 m, clockwise)
 - **Series**: imsa
 - **Corners**: 5 (5 named); OSM name-match 3/5, 0 placed by centerline lap-fraction

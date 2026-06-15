@@ -1,5 +1,7 @@
 # Circuit de Barcelona-Catalunya
 
+![barcelona poster](raw/render/barcelona.png)
+
 - **Layout**: Grand Prix Circuit (4657 m, clockwise)
 - **Series**: elms, f1
 - **Corners**: 14 (14 named); OSM name-match 0/14, 14 placed by centerline lap-fraction

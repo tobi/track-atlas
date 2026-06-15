@@ -1,5 +1,7 @@
 # Hungaroring
 
+![hungaroring poster](raw/render/hungaroring.png)
+
 - **Layout**: Grand Prix Circuit (4381 m, clockwise)
 - **Series**: f1
 - **Corners**: 14 (14 named); OSM name-match 0/14, 14 placed by centerline lap-fraction

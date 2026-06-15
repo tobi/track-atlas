@@ -1,5 +1,7 @@
 # Las Vegas Strip Circuit
 
+![las-vegas poster](raw/render/las-vegas.png)
+
 - **Layout**: Grand Prix Circuit (6201 m, anticlockwise)
 - **Series**: f1
 - **Corners**: 17 (17 named); OSM name-match 0/17, 17 placed by centerline lap-fraction

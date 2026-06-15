@@ -1,5 +1,7 @@
 # Autodromo Nazionale Monza
 
+![monza poster](raw/render/monza.png)
+
 - **Layout**: Grand Prix Circuit (5793 m, clockwise)
 - **Series**: wec, elms, f1
 - **Corners**: 11 (6 named); OSM name-match 3/11, 8 placed by centerline lap-fraction

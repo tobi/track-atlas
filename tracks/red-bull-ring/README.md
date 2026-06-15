@@ -1,5 +1,7 @@
 # Red Bull Ring
 
+![red-bull-ring poster](raw/render/red-bull-ring.png)
+
 - **Layout**: Grand Prix Circuit (4318 m, clockwise)
 - **Series**: elms, f1
 - **Corners**: 10 (10 named); OSM name-match 6/10, 4 placed by centerline lap-fraction

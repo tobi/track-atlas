@@ -1,5 +1,7 @@
 # Marina Bay Street Circuit
 
+![singapore poster](raw/render/singapore.png)
+
 - **Layout**: Grand Prix Circuit (4940 m, anticlockwise)
 - **Series**: f1
 - **Corners**: 19 (19 named); OSM name-match 0/19, 19 placed by centerline lap-fraction

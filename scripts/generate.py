@@ -39,6 +39,7 @@ from lib.osm import (  # noqa: E402
 from lib.naming import (  # noqa: E402
     DEFAULT_LAYER, build_registry, numbered_for, resolve_name as _resolve,
 )
+from lib.phases import compute_phases  # noqa: E402
 
 # Name layers an override may set (besides numbered, which is derived from code).
 OVERRIDE_NAME_LAYERS = ("official", "driver", "historical", "sponsor", "local")
@@ -93,6 +94,9 @@ def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
                 "complex": c.get("complex"),
                 "direction": c.get("direction"),
                 "scale": c.get("scale"),
+                "marker": c.get("marker"),
+                "start": c.get("start"),
+                "end": c.get("end"),
             },
             "geometry": {"type": "Point", "coordinates": c["location"]},
         })
@@ -328,6 +332,19 @@ def generate_track(slug: str) -> dict:
                 outline_coords = [c["location"] for c in traced]
                 if len(outline_coords) >= 3:
                     outline_coords.append(outline_coords[0])  # close the loop
+        # Corner phases: brake-zone start / apex / exit as lap fractions, written
+        # onto each corner's start/end (apex stays the marker).
+        total_m = layout.get("length_m")
+        if not total_m and outline_coords:
+            from lib.osm import loop_length_m
+            total_m = loop_length_m(outline_coords)
+        if total_m:
+            phases = compute_phases(corners, total_m)
+            for c in corners:
+                p = phases.get(c["number"])
+                if p:
+                    c["start"], c["end"] = p["start"], p["end"]
+
         # Pick the default display layer: the configured preference if any corner
         # actually carries it, else the best populated layer (driver -> official
         # -> numbered). Number-only tracks honestly default to 'numbered'; the
@@ -405,10 +422,11 @@ def main() -> None:
         else:
             generate_track(slug)
 
-    # keep the site catalog fresh
+    # keep the site catalog + the headline tracks.jsonl dataset fresh
     import runpy as _rp
-    _rp.run_path(str(Path(__file__).resolve().parent / "build_index.py"),
-                 run_name="__main__")
+    here = Path(__file__).resolve().parent
+    _rp.run_path(str(here / "build_index.py"), run_name="__main__")
+    _rp.run_path(str(here / "build_jsonl.py"), run_name="__main__")
 
 
 if __name__ == "__main__":

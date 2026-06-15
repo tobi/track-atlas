@@ -1,5 +1,7 @@
 # Jeddah Corniche Circuit
 
+![jeddah poster](raw/render/jeddah.png)
+
 - **Layout**: Grand Prix Circuit (6174 m, anticlockwise)
 - **Series**: f1
 - **Corners**: 27 (27 named); OSM name-match 0/27, 0 placed by centerline lap-fraction
