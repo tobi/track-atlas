@@ -12,8 +12,6 @@
  */
 const REPO = "tobi/track-atlas";
 const BRANCH = "main";
-// The site lives in /site/; the data (tracks/, tracks.jsonl) is one level up.
-const DATA = "../";
 
 const $grid = document.getElementById("grid");
 const $detail = document.getElementById("detail");
@@ -28,8 +26,10 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
 const fmtKm = (m) => m ? (m / 1000).toFixed(3) + " km" : "—";
 
 async function boot() {
-  const res = await fetch(DATA + "tracks/index.json");
-  CATALOG = (await res.json()).tracks;
+  // The site is driven entirely by tracks.jsonl (the dataset) + geojson/ —
+  // both sit next to index.html in the deployed site/ (see .github/workflows/pages.yml).
+  const txt = await (await fetch("tracks.jsonl")).text();
+  CATALOG = txt.trim().split("\n").filter(Boolean).map((l) => JSON.parse(l));
   route();
   window.addEventListener("hashchange", route);
   $search.addEventListener("input", () => renderGrid($search.value));
@@ -51,26 +51,26 @@ function renderGrid(q) {
                  t.location?.locality, t.location?.region].join(" ").toLowerCase();
     return q.split(/\s+/).every((w) => hay.includes(w));
   });
-  $grid.innerHTML = hits.map((t) => `
+  $grid.innerHTML = hits.map((t) => {
+    const corners = (t.layouts[0]?.corners || []).length;
+    return `
     <div class="card" onclick="location.hash='/${t.slug}'">
-      ${t.poster ? `<img src="${DATA}${t.poster}" alt="${esc(t.name)}" loading="lazy">` : ""}
       <div class="body">
         <h3>${esc(t.name)}</h3>
         <div class="meta">${esc(t.location?.locality || "")} · ${esc(t.country || "")}
-          · ${t.layouts.map((l) => `${esc(l.name)} ${fmtKm(l.length_m)}`).join(" · ")}</div>
+          · ${t.layouts.map((l) => `${esc(l.name)} ${fmtKm(l.length_m)}`).join(" · ")}
+          · ${corners} corners</div>
         <div style="margin-top:7px">${(t.series || []).map((s) =>
           `<span class="chip">${esc(s)}</span>`).join("")}</div>
       </div>
-    </div>`).join("") || `<p class="muted">No tracks match.</p>`;
+    </div>`; }).join("") || `<p class="muted">No tracks match.</p>`;
 }
 
 async function showDetail(slug) {
-  const entry = CATALOG.find((t) => t.slug === slug);
-  if (!entry) { location.hash = ""; return; }
+  const track = CATALOG.find((t) => t.slug === slug);  // full object, already loaded from tracks.jsonl
+  if (!track) { location.hash = ""; return; }
   $grid.style.display = "none"; $search.style.display = "none";
   $detail.style.display = "block";
-
-  const track = await (await fetch(`${DATA}tracks/${slug}/raw/track.json`)).json();
   window.__track = track;
   const ghBase = `https://github.com/${REPO}`;
 
@@ -95,10 +95,7 @@ async function showDetail(slug) {
         <select id="layerPick" onchange="setDisplayLayer(this.value)"></select></label>
     </div>
     <div id="statsWrap"></div>
-    <div class="det-cols">
-      <div><div id="map"></div></div>
-      <div class="poster">${entry.poster ? `<img src="${DATA}${entry.poster}">` : ""}</div>
-    </div>
+    <div id="map"></div>
     <div class="drive">
       <div class="sim-bar">
         <span class="lbl">Drive</span>
@@ -148,7 +145,8 @@ async function showLayout(layoutId) {
       `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>`;
 
   renderCorners();
-  const gj = await (await fetch(`${DATA}tracks/${track.slug}/raw/${layout.geometry.outline}`)).json();
+  // geometry lives flattened next to the site: geojson/<slug>_<layout>.geojson
+  const gj = await (await fetch(`geojson/${track.slug}_${layout.id}.geojson`)).json();
   renderMap(gj, track);
   if (window.TrackSim) { TrackSim.load(gj); TrackSim.syncButtons(); }
 }

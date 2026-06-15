@@ -63,9 +63,11 @@ Display name for T17 resolves to **"Turn 17"** — the `driver` layer is empty
 (drivers just say the number) so it falls back to the identifier, while the
 official name "Sunset Bend" is preserved in its own layer.
 
-Browse it: **https://tobi.github.io/track-atlas/site/** — search, inspect on a
-map, see each corner's phase, switch layouts/name layers, propose edits via
-GitHub deep links. The site links straight to `tracks.jsonl`.
+Browse it: **https://tobi.github.io/track-atlas/** — search, inspect on a map,
+**drive a lap** (Three.js sim with brake/throttle colouring), see each corner's
+phase, switch layouts/name layers, propose edits via GitHub deep links. The site
+is built from `tracks.jsonl` and links straight to it. (Deployed from `site/` by
+`.github/workflows/pages.yml`.)
 
 ## Directory structure
 

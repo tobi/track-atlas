@@ -11,3 +11,7 @@ venv/
 
 # NOTE: tracks/*/raw/ is intentionally committed — raw source downloads are
 # kept as reproducibility artifacts (generate.py builds from them offline).
+
+# local site build artifacts (CI copies these in pages.yml)
+site/tracks.jsonl
+site/geojson/
