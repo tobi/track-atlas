@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="Helvetica, Arial, sans-serif">
+<defs>
+      <radialGradient id="bg" cx="38%" cy="34%" r="85%">
+        <stop offset="0%" stop-color="#1b2030"/>
+        <stop offset="55%" stop-color="#12151f"/>
+        <stop offset="100%" stop-color="#0a0c12"/>
+      </radialGradient>
+      <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ff5a36"/>
+        <stop offset="100%" stop-color="#ffffff"/>
+      </linearGradient>
+      <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="6" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<path d="M 417.7,259.8 L 505.7,300.8 L 607.8,346.7 L 659.4,369.2 L 767.8,417.8 L 908.9,480.1 L 1007.6,525.0 L 1024.0,543.3 L 1031.9,556.8 L 1035.0,565.3 L 1037.2,573.4 L 1039.7,586.0 L 1040.0,603.2 L 1038.3,613.9 L 1033.3,629.2 L 1024.7,644.5 L 1015.7,657.7 L 1005.4,668.9 L 993.9,677.1 L 967.1,685.7 L 945.8,684.4 L 921.6,674.3 L 873.1,642.8 L 822.6,614.4 L 808.1,609.2 L 793.1,607.5 L 778.5,608.4 L 763.7,612.1 L 744.9,622.4 L 738.1,627.8 L 729.9,637.1 L 725.3,645.9 L 722.7,654.0 L 720.2,668.1 L 722.4,699.3 L 723.9,726.5 L 722.1,752.3 L 714.7,769.2 L 704.2,779.7 L 689.9,790.6 L 673.4,799.0 L 605.9,824.0 L 582.1,831.5 L 564.3,834.2 L 543.9,834.3 L 518.0,830.2 L 492.0,825.8 L 468.2,823.3 L 434.8,823.0 L 324.8,833.5 L 311.4,834.9 L 306.8,833.9 L 303.2,831.9 L 298.6,828.7 L 295.7,823.9 L 294.3,818.8 L 293.3,812.7 L 292.2,807.1 L 289.7,802.3 L 285.9,799.0 L 280.0,796.3 L 265.6,792.4 L 258.6,790.5 L 253.7,788.2 L 249.0,783.9 L 244.3,777.0 L 234.7,758.8 L 218.5,727.8 L 212.0,718.1 L 200.2,703.6 L 182.0,685.5 L 159.8,663.6 L 90.8,521.9 L 90.0,487.3 L 93.4,474.5 L 96.4,466.3 L 107.5,446.1 L 133.3,415.5 L 154.1,392.7 L 205.1,337.5 L 240.7,300.0 L 251.1,291.2 L 271.0,274.8 L 296.8,257.4 L 319.4,247.6 L 346.7,243.1 L 371.7,244.6 L 383.6,246.7 L 417.7,259.8 Z" fill="none" stroke="#000000" stroke-opacity="0.5" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 417.7,259.8 L 505.7,300.8 L 607.8,346.7 L 659.4,369.2 L 767.8,417.8 L 908.9,480.1 L 1007.6,525.0 L 1024.0,543.3 L 1031.9,556.8 L 1035.0,565.3 L 1037.2,573.4 L 1039.7,586.0 L 1040.0,603.2 L 1038.3,613.9 L 1033.3,629.2 L 1024.7,644.5 L 1015.7,657.7 L 1005.4,668.9 L 993.9,677.1 L 967.1,685.7 L 945.8,684.4 L 921.6,674.3 L 873.1,642.8 L 822.6,614.4 L 808.1,609.2 L 793.1,607.5 L 778.5,608.4 L 763.7,612.1 L 744.9,622.4 L 738.1,627.8 L 729.9,637.1 L 725.3,645.9 L 722.7,654.0 L 720.2,668.1 L 722.4,699.3 L 723.9,726.5 L 722.1,752.3 L 714.7,769.2 L 704.2,779.7 L 689.9,790.6 L 673.4,799.0 L 605.9,824.0 L 582.1,831.5 L 564.3,834.2 L 543.9,834.3 L 518.0,830.2 L 492.0,825.8 L 468.2,823.3 L 434.8,823.0 L 324.8,833.5 L 311.4,834.9 L 306.8,833.9 L 303.2,831.9 L 298.6,828.7 L 295.7,823.9 L 294.3,818.8 L 293.3,812.7 L 292.2,807.1 L 289.7,802.3 L 285.9,799.0 L 280.0,796.3 L 265.6,792.4 L 258.6,790.5 L 253.7,788.2 L 249.0,783.9 L 244.3,777.0 L 234.7,758.8 L 218.5,727.8 L 212.0,718.1 L 200.2,703.6 L 182.0,685.5 L 159.8,663.6 L 90.8,521.9 L 90.0,487.3 L 93.4,474.5 L 96.4,466.3 L 107.5,446.1 L 133.3,415.5 L 154.1,392.7 L 205.1,337.5 L 240.7,300.0 L 251.1,291.2 L 271.0,274.8 L 296.8,257.4 L 319.4,247.6 L 346.7,243.1 L 371.7,244.6 L 383.6,246.7 L 417.7,259.8 Z" fill="none" stroke="#39404f" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 417.7,259.8 L 505.7,300.8 L 607.8,346.7 L 659.4,369.2 L 767.8,417.8 L 908.9,480.1 L 1007.6,525.0 L 1024.0,543.3 L 1031.9,556.8 L 1035.0,565.3 L 1037.2,573.4 L 1039.7,586.0 L 1040.0,603.2 L 1038.3,613.9 L 1033.3,629.2 L 1024.7,644.5 L 1015.7,657.7 L 1005.4,668.9 L 993.9,677.1 L 967.1,685.7 L 945.8,684.4 L 921.6,674.3 L 873.1,642.8 L 822.6,614.4 L 808.1,609.2 L 793.1,607.5 L 778.5,608.4 L 763.7,612.1 L 744.9,622.4 L 738.1,627.8 L 729.9,637.1 L 725.3,645.9 L 722.7,654.0 L 720.2,668.1 L 722.4,699.3 L 723.9,726.5 L 722.1,752.3 L 714.7,769.2 L 704.2,779.7 L 689.9,790.6 L 673.4,799.0 L 605.9,824.0 L 582.1,831.5 L 564.3,834.2 L 543.9,834.3 L 518.0,830.2 L 492.0,825.8 L 468.2,823.3 L 434.8,823.0 L 324.8,833.5 L 311.4,834.9 L 306.8,833.9 L 303.2,831.9 L 298.6,828.7 L 295.7,823.9 L 294.3,818.8 L 293.3,812.7 L 292.2,807.1 L 289.7,802.3 L 285.9,799.0 L 280.0,796.3 L 265.6,792.4 L 258.6,790.5 L 253.7,788.2 L 249.0,783.9 L 244.3,777.0 L 234.7,758.8 L 218.5,727.8 L 212.0,718.1 L 200.2,703.6 L 182.0,685.5 L 159.8,663.6 L 90.8,521.9 L 90.0,487.3 L 93.4,474.5 L 96.4,466.3 L 107.5,446.1 L 133.3,415.5 L 154.1,392.7 L 205.1,337.5 L 240.7,300.0 L 251.1,291.2 L 271.0,274.8 L 296.8,257.4 L 319.4,247.6 L 346.7,243.1 L 371.7,244.6 L 383.6,246.7 L 417.7,259.8 Z" fill="none" stroke="#e7edf8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 417.7,259.8 L 505.7,300.8 L 607.8,346.7 L 659.4,369.2 L 767.8,417.8 L 908.9,480.1 L 1007.6,525.0 L 1024.0,543.3 L 1031.9,556.8 L 1035.0,565.3 L 1037.2,573.4 L 1039.7,586.0 L 1040.0,603.2 L 1038.3,613.9 L 1033.3,629.2 L 1024.7,644.5 L 1015.7,657.7 L 1005.4,668.9 L 993.9,677.1 L 967.1,685.7 L 945.8,684.4 L 921.6,674.3 L 873.1,642.8 L 822.6,614.4 L 808.1,609.2 L 793.1,607.5 L 778.5,608.4 L 763.7,612.1 L 744.9,622.4 L 738.1,627.8 L 729.9,637.1 L 725.3,645.9 L 722.7,654.0 L 720.2,668.1 L 722.4,699.3 L 723.9,726.5 L 722.1,752.3 L 714.7,769.2 L 704.2,779.7 L 689.9,790.6 L 673.4,799.0 L 605.9,824.0 L 582.1,831.5 L 564.3,834.2 L 543.9,834.3 L 518.0,830.2 L 492.0,825.8 L 468.2,823.3 L 434.8,823.0 L 324.8,833.5 L 311.4,834.9 L 306.8,833.9 L 303.2,831.9 L 298.6,828.7 L 295.7,823.9 L 294.3,818.8 L 293.3,812.7 L 292.2,807.1 L 289.7,802.3 L 285.9,799.0 L 280.0,796.3 L 265.6,792.4 L 258.6,790.5 L 253.7,788.2 L 249.0,783.9 L 244.3,777.0 L 234.7,758.8 L 218.5,727.8 L 212.0,718.1 L 200.2,703.6 L 182.0,685.5 L 159.8,663.6 L 90.8,521.9 L 90.0,487.3 L 93.4,474.5 L 96.4,466.3 L 107.5,446.1 L 133.3,415.5 L 154.1,392.7 L 205.1,337.5 L 240.7,300.0 L 251.1,291.2 L 271.0,274.8 L 296.8,257.4 L 319.4,247.6 L 346.7,243.1 L 371.7,244.6 L 383.6,246.7 L 417.7,259.8 Z" fill="none" stroke="#ff5a36" stroke-opacity="0.55" stroke-width="1.2" stroke-linejoin="round" filter="url(#glow)"/>
+<circle cx="784.9" cy="425.4" r="13" fill="none" stroke="#ffffff" stroke-width="3"/>
+<rect x="780.9" y="403.4" width="8" height="18" fill="#ffffff"/>
+<circle cx="988.4" cy="665.3" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="988.4" y="668.7" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">1</text>
+<circle cx="723.8" cy="726.8" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="723.8" y="730.2" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">2</text>
+<circle cx="269.4" cy="793.5" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="269.4" y="796.9" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">3</text>
+<circle cx="101.9" cy="468.6" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="101.9" y="472.0" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">4</text>
+<circle cx="332.3" cy="258.2" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="332.3" y="261.6" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">5</text>
+<line x1="988.4" y1="665.3" x2="1040.2" y2="670.4" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="1048.2" y="674.4" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="start">Big Bend</text>
+<line x1="723.8" y1="726.8" x2="768.9" y2="752.7" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="776.9" y="756.7" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="start">Esses</text>
+<line x1="269.4" y1="793.5" x2="225.5" y2="821.4" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="217.5" y="825.4" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">The Uphill</text>
+<line x1="101.9" y1="468.6" x2="52.8" y2="451.4" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="44.8" y="455.4" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">West Bend</text>
+<line x1="332.3" y1="258.2" x2="306.4" y2="213.0" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="298.4" y="217.0" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">The Downhill</text>
+<text x="90" y="64" font-size="20" letter-spacing="5" fill="#ff5a36" font-weight="700">TRACK ATLAS</text>
+<text x="90" y="108" font-size="42" font-weight="800" fill="#ffffff">LIME ROCK PARK</text>
+<text x="90" y="136" font-size="16" fill="#9aa6bd">Lime Rock</text>
+<rect x="1170" y="200" width="360" height="710" rx="16" fill="#ffffff" fill-opacity="0.04" stroke="#ff5a36" stroke-opacity="0.5"/>
+<text x="1198" y="250" font-size="13" letter-spacing="2" fill="#8794ab">LAYOUT</text>
+<text x="1198" y="276" font-size="22" font-weight="700" fill="#eef2fb">Classic</text>
+<text x="1198" y="320" font-size="13" letter-spacing="2" fill="#8794ab">LENGTH</text>
+<text x="1198" y="346" font-size="22" font-weight="700" fill="#eef2fb">2.462 km</text>
+<text x="1198" y="390" font-size="13" letter-spacing="2" fill="#8794ab">CORNERS</text>
+<text x="1198" y="416" font-size="22" font-weight="700" fill="#eef2fb">5</text>
+<text x="1198" y="460" font-size="13" letter-spacing="2" fill="#8794ab">NAMED CORNERS</text>
+<text x="1198" y="486" font-size="22" font-weight="700" fill="#eef2fb">5</text>
+<text x="1198" y="530" font-size="13" letter-spacing="2" fill="#8794ab">DIRECTION</text>
+<text x="1198" y="556" font-size="22" font-weight="700" fill="#eef2fb">Clockwise</text>
+<text x="1198" y="600" font-size="13" letter-spacing="2" fill="#8794ab">SECTORS</text>
+<text x="1198" y="626" font-size="22" font-weight="700" fill="#eef2fb">4</text>
+<text x="1198" y="670" font-size="13" letter-spacing="2" fill="#8794ab">COUNTRY</text>
+<text x="1198" y="696" font-size="22" font-weight="700" fill="#eef2fb">USA</text>
+<text x="1198" y="740" font-size="13" letter-spacing="2" fill="#8794ab">LOCATION</text>
+<text x="1198" y="766" font-size="22" font-weight="700" fill="#eef2fb">Lakeville, Connecticut</text>
+<text x="1198" y="810" font-size="13" letter-spacing="2" fill="#8794ab">COMPLEXES</text>
+<rect x="1198" y="816" width="54" height="24" rx="12" fill="#ff5a36" fill-opacity="0.16" stroke="#ff5a36" stroke-opacity="0.5"/>
+<text x="1225" y="833" font-size="12" fill="#eef2fb" text-anchor="middle">Esses</text>
+<text x="90" y="966" font-size="12" fill="#566177">Geometry © OpenStreetMap contributors (ODbL) · corner data: Lovely-Sim-Racing + curated · track-atlas</text>
+<text x="90" y="942" font-size="12" fill="#8794ab">⚑ start / finish</text>
+</svg>

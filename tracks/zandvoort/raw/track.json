@@ -1,0 +1,371 @@
+{
+  "slug": "zandvoort",
+  "name": "Circuit Zandvoort",
+  "aka": [
+    "Zandvoort"
+  ],
+  "country": "NL",
+  "location": {
+    "lat": 52.3888,
+    "lon": 4.5409,
+    "locality": "Zandvoort",
+    "region": "North Holland",
+    "timezone": "Europe/Amsterdam"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    },
+    "driver": {
+      "label": "Driver",
+      "description": "What drivers actually call it."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1",
+            "driver": "Tarzan",
+            "official": "Tarzan"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.0901,
+          "start": 0.0736,
+          "end": 0.1048,
+          "location": [
+            4.542789,
+            52.389116
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2",
+            "driver": "Gerlachbocht",
+            "official": "Gerlachbocht"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.1644,
+          "start": 0.1586,
+          "end": 0.1732,
+          "location": [
+            4.543476,
+            52.388428
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "driver": "Hugenholtz",
+            "official": "Hugenholtz"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.2012,
+          "start": 0.1876,
+          "end": 0.214,
+          "location": [
+            4.545755,
+            52.388356
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4",
+            "driver": "Hondenvlak",
+            "official": "Hondenvlak"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.2576,
+          "start": 0.249,
+          "end": 0.2655,
+          "location": [
+            4.549035,
+            52.388882
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "Hondenvlak",
+            "official": "Hondenvlak"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.2969,
+          "start": 0.2774,
+          "end": 0.3139,
+          "complex": "Hondenvlak",
+          "location": [
+            4.551478,
+            52.38892
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "driver": "Hondenvlak",
+            "official": "Hondenvlak"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.3364,
+          "start": 0.3265,
+          "end": 0.3459,
+          "complex": "Hondenvlak",
+          "location": [
+            4.553056,
+            52.387973
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "Scheivlak",
+            "official": "Scheivlak"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.4005,
+          "start": 0.3722,
+          "end": 0.4247,
+          "location": [
+            4.551192,
+            52.385824
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8",
+            "driver": "Mastersbocht",
+            "official": "Mastersbocht"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.477,
+          "start": 0.4724,
+          "end": 0.4809,
+          "location": [
+            4.549168,
+            52.386923
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "Renault",
+            "official": "Renault"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.5312,
+          "start": 0.5244,
+          "end": 0.5509,
+          "location": [
+            4.550565,
+            52.387986
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10",
+            "driver": "Vodafone",
+            "official": "Vodafone"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.5945,
+          "start": 0.558,
+          "end": 0.6057,
+          "location": [
+            4.546623,
+            52.387898
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "driver": "Hugenholtzbocht",
+            "official": "Hugenholtzbocht"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.7278,
+          "start": 0.725,
+          "end": 0.7308,
+          "location": [
+            4.542414,
+            52.385446
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12",
+            "driver": "Hans Ernst",
+            "official": "Hans Ernst Bocht"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.7479,
+          "start": 0.7344,
+          "end": 0.7577,
+          "location": [
+            4.542504,
+            52.384689
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "code": "13",
+          "names": {
+            "numbered": "Turn 13",
+            "driver": "Kumho",
+            "official": "Kumho"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.8256,
+          "start": 0.8148,
+          "end": 0.8366,
+          "location": [
+            4.538738,
+            52.38542
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "code": "14",
+          "names": {
+            "numbered": "Turn 14",
+            "driver": "Arie Luyendyk",
+            "official": "Arie Luyendyk Bocht"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.8831,
+          "start": 0.8534,
+          "end": 0.9149,
+          "location": [
+            4.539862,
+            52.387488
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.3498
+        },
+        {
+          "name": "2",
+          "marker": 0.6971
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9527,
+        "exit": 0.1183
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          4.542645,
+          52.391624
+        ]
+      },
+      "length_m": 4259,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:31.543509+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 14
+    }
+  }
+}

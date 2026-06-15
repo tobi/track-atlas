@@ -1,0 +1,455 @@
+{
+  "slug": "singapore",
+  "name": "Marina Bay Street Circuit",
+  "aka": [
+    "Singapore",
+    "Marina Bay"
+  ],
+  "country": "SG",
+  "location": {
+    "lat": 1.2914,
+    "lon": 103.864,
+    "locality": "Singapore",
+    "region": "Singapore",
+    "timezone": "Asia/Singapore"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    },
+    "driver": {
+      "label": "Driver",
+      "description": "What drivers actually call it."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1",
+            "driver": "Sheares",
+            "official": "Sheares Turn"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.0898,
+          "start": 0.0836,
+          "end": 0.0932,
+          "location": [
+            103.864246,
+            1.291399
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2",
+            "driver": "T2"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.1024,
+          "start": 0.0954,
+          "end": 0.1095,
+          "location": [
+            103.864172,
+            1.291957
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "driver": "T3"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.1195,
+          "start": 0.1115,
+          "end": 0.1255,
+          "location": [
+            103.864059,
+            1.292712
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4",
+            "driver": "T4"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.1447,
+          "start": 0.1363,
+          "end": 0.15,
+          "location": [
+            103.863893,
+            1.293826
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "T5"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.1999,
+          "start": 0.1908,
+          "end": 0.2117,
+          "location": [
+            103.862371,
+            1.294345
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "driver": "T6"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.2965,
+          "start": 0.283,
+          "end": 0.3082,
+          "location": [
+            103.861539,
+            1.29134
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "Memorial",
+            "official": "Memorial Corner"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.3693,
+          "start": 0.364,
+          "end": 0.3724,
+          "location": [
+            103.858343,
+            1.29172
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8",
+            "driver": "Stamford",
+            "official": "Stamford Corner"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.4124,
+          "start": 0.4079,
+          "end": 0.4156,
+          "location": [
+            103.856677,
+            1.292685
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "Padang",
+            "official": "Padang Corner"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.4511,
+          "start": 0.4456,
+          "end": 0.4627,
+          "location": [
+            103.855434,
+            1.292535
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10",
+            "driver": "Singapore Sling",
+            "official": "Singapore Sling"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.5385,
+          "start": 0.5369,
+          "end": 0.5494,
+          "location": [
+            103.852993,
+            1.291915
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "driver": "T11"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.567,
+          "start": 0.5627,
+          "end": 0.572,
+          "location": [
+            103.852371,
+            1.290804
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12",
+            "driver": "T12"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.5839,
+          "start": 0.579,
+          "end": 0.5874,
+          "location": [
+            103.852003,
+            1.290145
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "code": "13",
+          "names": {
+            "numbered": "Turn 13",
+            "driver": "T13"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.6246,
+          "start": 0.6198,
+          "end": 0.6293,
+          "location": [
+            103.851955,
+            1.28872
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "code": "14",
+          "names": {
+            "numbered": "Turn 14",
+            "driver": "Connaught",
+            "official": "Connaught Drive"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.7339,
+          "start": 0.7286,
+          "end": 0.7385,
+          "location": [
+            103.854114,
+            1.288461
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "code": "15",
+          "names": {
+            "numbered": "Turn 15",
+            "driver": "T15"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.7851,
+          "start": 0.7749,
+          "end": 0.7981,
+          "location": [
+            103.854769,
+            1.290646
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "code": "16",
+          "names": {
+            "numbered": "Turn 16",
+            "driver": "Anderson Bridge",
+            "official": "Anderson Bridge"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.8846,
+          "start": 0.8805,
+          "end": 0.8893,
+          "location": [
+            103.858187,
+            1.289708
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 17,
+          "code": "17",
+          "names": {
+            "numbered": "Turn 17",
+            "driver": "Esplanade",
+            "official": "Esplanade Drive"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.8966,
+          "start": 0.892,
+          "end": 0.906,
+          "location": [
+            103.858723,
+            1.28968
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 18,
+          "code": "18",
+          "names": {
+            "numbered": "Turn 18",
+            "driver": "Raffles Boulevard",
+            "official": "Raffles Boulevard"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.9579,
+          "start": 0.9533,
+          "end": 0.9611,
+          "location": [
+            103.861277,
+            1.289282
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 19,
+          "code": "19",
+          "names": {
+            "numbered": "Turn 19",
+            "driver": "T19"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.9784,
+          "start": 0.9746,
+          "end": 0.9821,
+          "location": [
+            103.86188,
+            1.288796
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.336
+        },
+        {
+          "name": "2",
+          "marker": 0.7055
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9407,
+        "exit": 0.1058
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          103.862841,
+          1.288701
+        ]
+      },
+      "length_m": 4940,
+      "direction": "anticlockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:31.521158+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 19
+    }
+  }
+}

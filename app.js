@@ -67,19 +67,9 @@ async function showDetail(slug) {
   $grid.style.display = "none"; $search.style.display = "none";
   $detail.style.display = "block";
 
-  const track = await (await fetch(`tracks/${slug}/track.json`)).json();
-  const layout = track.layouts[0];
-  const gj = await (await fetch(`tracks/${slug}/${layout.geometry.outline}`)).json();
-
+  const track = await (await fetch(`tracks/${slug}/raw/track.json`)).json();
+  window.__track = track;
   const ghBase = `https://github.com/${REPO}`;
-  const stats = [
-    ["Layout", layout.name], ["Length", fmtKm(layout.length_m)],
-    ["Corners", (layout.corners || []).length],
-    ["Direction", layout.direction || "—"],
-    ["Sectors", (layout.sectors || []).length],
-    ["Country", track.country || "—"],
-    ["Series", (track.series || []).join(", ") || "—"],
-  ];
 
   $detail.innerHTML = `
     <span class="back" onclick="location.hash=''">&larr; all tracks</span>
@@ -88,44 +78,104 @@ async function showDetail(slug) {
       <span class="aka">${esc((track.aka || []).join(", "))}</span>
     </div>
     <div class="det-actions">
-      <button class="btn" onclick="window.open('${ghBase}/blob/${BRANCH}/tracks/${slug}/track.json','_blank')">track.json</button>
+      <button class="btn" onclick="window.open('${ghBase}/blob/${BRANCH}/tracks/${slug}/raw/track.json','_blank')">track.json</button>
       <button class="btn" onclick="window.open('${ghBase}/edit/${BRANCH}/tracks/${slug}/overrides.json','_blank')">Edit overrides on GitHub (PR)</button>
       <button class="btn" onclick="window.open('${ghBase}/edit/${BRANCH}/tracks/${slug}/source.json','_blank')">Edit source on GitHub (PR)</button>
       <button class="btn" onclick="proposeTrackIssue('${slug}')">Report a problem</button>
     </div>
-    <div class="stats">${stats.map(([k, v]) =>
-      `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>
+    <div style="margin:16px 0;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
+      <label class="muted" style="font-size:13px">layout
+        <select id="layoutPick" onchange="showLayout(this.value)">
+          ${track.layouts.map((l) => `<option value="${esc(l.id)}">${esc(l.name)} · ${fmtKm(l.length_m)}</option>`).join("")}
+        </select></label>
+      <label class="muted" style="font-size:13px">name layer
+        <select id="layerPick" onchange="setDisplayLayer(this.value)"></select></label>
+    </div>
+    <div id="statsWrap"></div>
     <div class="det-cols">
       <div><div id="map"></div></div>
       <div class="poster">${entry.poster ? `<img src="${entry.poster}">` : ""}</div>
     </div>
     <h3 style="margin-top:26px">Corners</h3>
-    <table id="cornersTbl">
-      <tr><th>#</th><th>display</th><th>colloquial</th><th>official</th>
-          <th>complex</th><th>dir</th><th>scale</th><th>lap %</th><th></th></tr>
-      ${(layout.corners || []).map((c) => `
-        <tr>
-          <td>${c.number}</td>
-          <td><b>${esc(resolveName(c, layout.name_default))}</b></td>
-          <td>${esc(c.names.colloquial || "")}</td>
-          <td>${esc(c.names.official || "")}</td>
-          <td>${esc(c.complex || "")}</td>
-          <td>${c.direction === "left" ? "←" : c.direction === "right" ? "→" : ""}</td>
-          <td>${c.scale ?? ""}</td>
-          <td class="muted">${c.marker != null ? (c.marker * 100).toFixed(1) : ""}</td>
-          <td><span class="edit" onclick='openEdit(${JSON.stringify(slug)}, ${JSON.stringify(layout.id)}, ${c.number})'>✎ edit</span></td>
-        </tr>`).join("")}
-    </table>
-    <p class="muted">Spotted a wrong name, missing colloquial, or bad grouping?
-    Hover a row and hit ✎ — it prefills a GitHub issue/PR for you.</p>`;
+    <div id="cornersWrap"></div>
+    <p class="muted">Spotted a wrong name or bad grouping? Hover a row and hit ✎ —
+    it prefills a GitHub issue/PR. Empty a name layer to clear it (drivers then use the number).</p>`;
 
-  window.__track = track; // for the edit dialog
+  showLayout(track.layouts[0].id);
+}
+
+// Render one layout: stats, name-layer picker, corner table, and the map. The
+// layout <select> lets you browse every configuration; the name-layer <select>
+// browses every naming layer the track declares.
+async function showLayout(layoutId) {
+  const track = window.__track;
+  const layout = track.layouts.find((l) => l.id === layoutId) || track.layouts[0];
+  currentLayout = layout;
+  displayLayer = layout.name_default;
+
+  const layers = Object.keys(track.name_layers || {numbered: 1});
+  document.getElementById("layerPick").innerHTML = layers.map((code) =>
+    `<option value="${esc(code)}" ${code === displayLayer ? "selected" : ""}>${esc((track.name_layers[code] || {}).label || code)}</option>`).join("");
+
+  const stats = [
+    ["Layout", layout.name], ["Length", fmtKm(layout.length_m)],
+    ["Corners", (layout.corners || []).length],
+    ["Direction", layout.direction || "—"],
+    ["Sectors", (layout.sectors || []).length],
+    ["Country", track.country || "—"],
+    ["Series", (track.series || []).join(", ") || "—"],
+  ];
+  document.getElementById("statsWrap").innerHTML =
+    `<div class="stats">${stats.map(([k, v]) =>
+      `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>`;
+
+  renderCorners();
+  const gj = await (await fetch(`tracks/${track.slug}/raw/${layout.geometry.outline}`)).json();
   renderMap(gj, track);
 }
 
+const SCALE_LABELS = {1: "Hairpin", 2: "Slow", 3: "Medium", 4: "Fast", 5: "Very fast", 6: "Kink"};
+const scaleLabel = (s) => s == null ? "" : `${s} ${SCALE_LABELS[s] || ""}`.trim();
+
+let displayLayer = null;   // selected name layer for the "display" column
+let currentLayout = null;  // layout currently shown in the detail view
+
+// Two-step resolution: the chosen layer if present, else the numbered identifier
+// (no fall-through to other layers — an absent name means "use the number").
 function resolveName(c, def) {
   const n = c.names || {};
-  return n[def] || n.colloquial || n.official || n.numbered;
+  return n[def] || n.numbered;
+}
+
+// Overlay layers shown as table columns (numbered is just "Turn <code>", skip it).
+function nameLayerColumns(track) {
+  return Object.keys(track.name_layers || {}).filter((code) => code !== "numbered");
+}
+
+function setDisplayLayer(code) { displayLayer = code; renderCorners(); }
+
+function renderCorners() {
+  const track = window.__track;
+  const layout = currentLayout || track.layouts[0];
+  const cols = nameLayerColumns(track);
+  document.getElementById("cornersWrap").innerHTML = `
+    <table id="cornersTbl">
+      <tr><th>#</th><th>code</th><th>display</th>
+        ${cols.map((c) => `<th>${esc((track.name_layers[c] || {}).label || c)}</th>`).join("")}
+        <th>complex</th><th>dir</th><th>scale</th><th>lap %</th><th></th></tr>
+      ${(layout.corners || []).map((c) => `
+        <tr>
+          <td>${c.number}</td>
+          <td class="muted">${esc(c.code ?? c.number)}</td>
+          <td><b>${esc(resolveName(c, displayLayer))}</b></td>
+          ${cols.map((L) => `<td>${esc((c.names || {})[L] || "")}</td>`).join("")}
+          <td>${esc(c.complex || "")}</td>
+          <td>${c.direction === "left" ? "←" : c.direction === "right" ? "→" : ""}</td>
+          <td>${esc(scaleLabel(c.scale))}</td>
+          <td class="muted">${c.marker != null ? (c.marker * 100).toFixed(1) : ""}</td>
+          <td><span class="edit" onclick='openEdit(${JSON.stringify(track.slug)}, ${JSON.stringify(layout.id)}, ${c.number})'>✎ edit</span></td>
+        </tr>`).join("")}
+    </table>`;
 }
 
 function renderMap(gj, track) {
@@ -161,13 +211,17 @@ function openEdit(slug, layoutId, number) {
   const track = window.__track;
   const layout = track.layouts.find((l) => l.id === layoutId);
   const c = layout.corners.find((x) => x.number === number);
+  const cols = nameLayerColumns(window.__track);
+  const reg = window.__track.name_layers || {};
   $dlg.innerHTML = `
     <h3>Edit T${c.number} — ${esc(resolveName(c, layout.name_default))}</h3>
     <p>Changes become an <code>overrides.json</code> patch delivered as a GitHub
-       issue or PR. Nothing is saved locally.</p>
+       issue or PR. Nothing is saved locally. Empty a name layer to clear it
+       (the display then falls back to the number).</p>
     <div class="row">
-      <div><label>Colloquial</label><input id="e_coll" value="${esc(c.names.colloquial || "")}"></div>
-      <div><label>Official</label><input id="e_off" value="${esc(c.names.official || "")}"></div>
+      <div><label>Code</label><input id="e_code" value="${esc(c.code ?? c.number)}"></div>
+      ${cols.map((L) => `<div><label>${esc((reg[L] || {}).label || L)}</label>
+        <input id="e_name_${esc(L)}" value="${esc((c.names || {})[L] || "")}"></div>`).join("")}
     </div>
     <div class="row">
       <div><label>Complex</label><input id="e_comp" value="${esc(c.complex || "")}"></div>
@@ -190,10 +244,20 @@ function openEdit(slug, layoutId, number) {
 }
 
 function collectEdit(slug, layoutId, number) {
-  const v = (id) => document.getElementById(id).value.trim();
+  const track = window.__track;
+  const c = track.layouts.find((l) => l.id === layoutId)
+              .corners.find((x) => x.number === number) || { names: {} };
+  const v = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ""; };
   const patch = {};
-  if (v("e_coll")) patch.colloquial = v("e_coll");
-  if (v("e_off")) patch.official = v("e_off");
+  const code = v("e_code");
+  if (code && code !== String(c.code ?? c.number)) patch.code = code;
+  for (const L of nameLayerColumns(track)) {
+    const el = document.getElementById(`e_name_${L}`);
+    if (!el) continue;
+    const val = el.value.trim();
+    const cur = (c.names || {})[L] || "";
+    if (val !== cur) patch[L] = val === "" ? null : val; // null clears the layer
+  }
   if (v("e_comp")) patch.complex = v("e_comp");
   if (v("e_dir")) patch.direction = v("e_dir");
   if (v("e_scale")) patch.scale = Number(v("e_scale"));

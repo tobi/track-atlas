@@ -34,3 +34,14 @@ def load_source(slug: str) -> dict:
 
 def track_dir(slug: str) -> Path:
     return TRACKS / slug
+
+
+def raw_dir(slug: str) -> Path:
+    """Where every generated file lives (downloads + derived track.json, layers,
+    renders, phases). Inputs (source.json, overrides.json, README.md) stay in
+    track_dir; everything the build can recreate goes here."""
+    return TRACKS / slug / "raw"
+
+
+def track_json_path(slug: str) -> Path:
+    return raw_dir(slug) / "track.json"

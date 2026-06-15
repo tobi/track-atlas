@@ -1,0 +1,370 @@
+{
+  "slug": "barcelona",
+  "name": "Circuit de Barcelona-Catalunya",
+  "aka": [
+    "Catalunya",
+    "Montmelo"
+  ],
+  "country": "ES",
+  "location": {
+    "lat": 41.5687,
+    "lon": 2.2567,
+    "locality": "Montmelo",
+    "region": "Catalonia",
+    "timezone": "Europe/Madrid"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    },
+    "driver": {
+      "label": "Driver",
+      "description": "What drivers actually call it."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1",
+            "driver": "Elf",
+            "official": "Elf"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.1813,
+          "start": 0.1722,
+          "end": 0.1889,
+          "location": [
+            2.260278,
+            41.568911
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2",
+            "driver": "T2"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.2008,
+          "start": 0.1928,
+          "end": 0.2092,
+          "location": [
+            2.259667,
+            41.568185
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "driver": "Renault",
+            "official": "Renault"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.2521,
+          "start": 0.2222,
+          "end": 0.3059,
+          "location": [
+            2.258064,
+            41.566272
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4",
+            "driver": "Repsol",
+            "official": "Repsol"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.3754,
+          "start": 0.3555,
+          "end": 0.4107,
+          "location": [
+            2.252503,
+            41.564563
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "Seat",
+            "official": "Seat"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.4594,
+          "start": 0.445,
+          "end": 0.468,
+          "location": [
+            2.253747,
+            41.567882
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "driver": "T6"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.5106,
+          "start": 0.4996,
+          "end": 0.5216,
+          "location": [
+            2.255323,
+            41.567382
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "Würth",
+            "official": "Würth"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.5492,
+          "start": 0.5398,
+          "end": 0.5553,
+          "location": [
+            2.254159,
+            41.565928
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8",
+            "driver": "T8"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.5669,
+          "start": 0.5588,
+          "end": 0.5732,
+          "location": [
+            2.254317,
+            41.56531
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "Campsa",
+            "official": "Campsa"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.6228,
+          "start": 0.6058,
+          "end": 0.6388,
+          "location": [
+            2.257111,
+            41.566499
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10",
+            "driver": "La Caixa",
+            "official": "La Caixa"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.7508,
+          "start": 0.7413,
+          "end": 0.7577,
+          "location": [
+            2.257408,
+            41.571
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "driver": "T11"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.7693,
+          "start": 0.7591,
+          "end": 0.7873,
+          "location": [
+            2.258378,
+            41.57137
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12",
+            "driver": "Banc Sabadell",
+            "official": "Banc de Sabadell"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.8128,
+          "start": 0.7916,
+          "end": 0.8337,
+          "location": [
+            2.260657,
+            41.57224
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "code": "13",
+          "names": {
+            "numbered": "Turn 13",
+            "driver": "Europcar",
+            "official": "Europcar"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.8756,
+          "start": 0.8625,
+          "end": 0.8851,
+          "location": [
+            2.260329,
+            41.573185
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "code": "14",
+          "names": {
+            "numbered": "Turn 14",
+            "driver": "New Holland",
+            "official": "New Holland"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.9348,
+          "start": 0.9165,
+          "end": 0.9511,
+          "location": [
+            2.259804,
+            41.574193
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.3485
+        },
+        {
+          "name": "2",
+          "marker": 0.7314
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9118,
+        "exit": 0.1636
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          2.26082,
+          41.574612
+        ]
+      },
+      "length_m": 4657,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "elms",
+    "f1"
+  ],
+  "external_ids": {
+    "imsa_data": "barcelona-catalunya"
+  },
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:05.101294+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 14
+    }
+  }
+}

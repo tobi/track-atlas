@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="Helvetica, Arial, sans-serif">
+<defs>
+      <radialGradient id="bg" cx="38%" cy="34%" r="85%">
+        <stop offset="0%" stop-color="#1b2030"/>
+        <stop offset="55%" stop-color="#12151f"/>
+        <stop offset="100%" stop-color="#0a0c12"/>
+      </radialGradient>
+      <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ff5a36"/>
+        <stop offset="100%" stop-color="#ffffff"/>
+      </linearGradient>
+      <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="6" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<path d="M 784.3,910.0 C 749.9,1012.1 624.3,908.6 610.6,837.1 C 596.9,765.7 690.6,564.4 701.9,481.5 C 713.3,398.5 699.3,356.8 678.6,339.5 C 658.0,322.2 595.0,355.7 578.1,377.9 C 561.1,400.1 596.6,440.7 576.9,472.7 C 557.2,504.6 478.3,528.0 460.0,569.7 C 441.8,611.4 491.9,727.5 467.4,723.1 C 442.9,718.8 321.2,601.6 313.3,543.5 C 305.3,485.3 384.4,436.9 420.0,374.3 C 455.5,311.8 488.5,193.4 526.7,168.0 C 564.9,142.6 600.7,212.7 649.1,222.1 C 697.4,231.5 794.2,109.7 816.7,224.3 C 839.3,339.0 818.6,807.9 784.3,910.0 Z" fill="none" stroke="#000000" stroke-opacity="0.5" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 784.3,910.0 C 749.9,1012.1 624.3,908.6 610.6,837.1 C 596.9,765.7 690.6,564.4 701.9,481.5 C 713.3,398.5 699.3,356.8 678.6,339.5 C 658.0,322.2 595.0,355.7 578.1,377.9 C 561.1,400.1 596.6,440.7 576.9,472.7 C 557.2,504.6 478.3,528.0 460.0,569.7 C 441.8,611.4 491.9,727.5 467.4,723.1 C 442.9,718.8 321.2,601.6 313.3,543.5 C 305.3,485.3 384.4,436.9 420.0,374.3 C 455.5,311.8 488.5,193.4 526.7,168.0 C 564.9,142.6 600.7,212.7 649.1,222.1 C 697.4,231.5 794.2,109.7 816.7,224.3 C 839.3,339.0 818.6,807.9 784.3,910.0 Z" fill="none" stroke="#39404f" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 784.3,910.0 C 749.9,1012.1 624.3,908.6 610.6,837.1 C 596.9,765.7 690.6,564.4 701.9,481.5 C 713.3,398.5 699.3,356.8 678.6,339.5 C 658.0,322.2 595.0,355.7 578.1,377.9 C 561.1,400.1 596.6,440.7 576.9,472.7 C 557.2,504.6 478.3,528.0 460.0,569.7 C 441.8,611.4 491.9,727.5 467.4,723.1 C 442.9,718.8 321.2,601.6 313.3,543.5 C 305.3,485.3 384.4,436.9 420.0,374.3 C 455.5,311.8 488.5,193.4 526.7,168.0 C 564.9,142.6 600.7,212.7 649.1,222.1 C 697.4,231.5 794.2,109.7 816.7,224.3 C 839.3,339.0 818.6,807.9 784.3,910.0 Z" fill="none" stroke="#e7edf8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 784.3,910.0 C 749.9,1012.1 624.3,908.6 610.6,837.1 C 596.9,765.7 690.6,564.4 701.9,481.5 C 713.3,398.5 699.3,356.8 678.6,339.5 C 658.0,322.2 595.0,355.7 578.1,377.9 C 561.1,400.1 596.6,440.7 576.9,472.7 C 557.2,504.6 478.3,528.0 460.0,569.7 C 441.8,611.4 491.9,727.5 467.4,723.1 C 442.9,718.8 321.2,601.6 313.3,543.5 C 305.3,485.3 384.4,436.9 420.0,374.3 C 455.5,311.8 488.5,193.4 526.7,168.0 C 564.9,142.6 600.7,212.7 649.1,222.1 C 697.4,231.5 794.2,109.7 816.7,224.3 C 839.3,339.0 818.6,807.9 784.3,910.0 Z" fill="none" stroke="#ff5a36" stroke-opacity="0.55" stroke-width="1.2" stroke-linejoin="round" filter="url(#glow)"/>
+<circle cx="846.0" cy="601.3" r="13" fill="none" stroke="#ffffff" stroke-width="3"/>
+<rect x="842.0" y="579.3" width="8" height="18" fill="#ffffff"/>
+<circle cx="784.3" cy="910.0" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="784.3" y="913.4" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">1</text>
+<circle cx="610.6" cy="837.1" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="610.6" y="840.5" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">2</text>
+<circle cx="701.9" cy="481.5" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="701.9" y="484.9" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">3</text>
+<circle cx="678.6" cy="339.5" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="678.6" y="342.9" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">4</text>
+<circle cx="578.1" cy="377.9" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="578.1" y="381.3" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">5</text>
+<circle cx="576.9" cy="472.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="576.9" y="476.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">6</text>
+<circle cx="460.0" cy="569.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="460.0" y="573.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">7</text>
+<circle cx="467.4" cy="723.1" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="467.4" y="726.5" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">8</text>
+<circle cx="313.3" cy="543.5" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="313.3" y="546.9" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">9</text>
+<circle cx="420.0" cy="374.3" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="420.0" y="377.7" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">10</text>
+<circle cx="526.7" cy="168.0" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="526.7" y="171.4" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">11</text>
+<circle cx="649.1" cy="222.1" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="649.1" y="225.5" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">12</text>
+<circle cx="816.7" cy="224.3" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="816.7" y="227.7" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">13</text>
+<line x1="610.6" y1="837.1" x2="614.5" y2="889.0" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="622.5" y="893.0" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="start">Turn 3</text>
+<line x1="701.9" y1="481.5" x2="753.9" y2="482.0" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="761.9" y="486.0" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="start">Moraine Sweep</text>
+<line x1="678.6" y1="339.5" x2="707.8" y2="296.4" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="715.8" y="300.4" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="start">Turn 5</text>
+<line x1="578.1" y1="377.9" x2="575.4" y2="326.0" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="567.4" y="330.0" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">Turn 6</text>
+<line x1="576.9" y1="472.7" x2="543.3" y2="433.0" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="535.3" y="437.0" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">Turn 7</text>
+<line x1="460.0" y1="569.7" x2="417.9" y2="600.2" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="409.9" y="604.2" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">Turn 8</text>
+<line x1="467.4" y1="723.1" x2="445.0" y2="770.1" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="437.0" y="774.1" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">The Carousel</text>
+<line x1="313.3" y1="543.5" x2="262.6" y2="555.3" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="254.6" y="559.3" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">The Kink</text>
+<line x1="420.0" y1="374.3" x2="376.3" y2="358.0" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="368.3" y="362.0" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">Kettle Bottoms</text>
+<line x1="526.7" y1="168.0" x2="517.4" y2="168.0" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="509.4" y="172.0" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="end">Canada Corner</text>
+<line x1="649.1" y1="222.1" x2="661.9" y2="171.7" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="669.9" y="175.7" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="start">Bill Mitchell Bend</text>
+<line x1="816.7" y1="224.3" x2="851.8" y2="203.7" stroke="#ff5a36" stroke-opacity="0.45" stroke-width="1.3"/>
+<text x="859.8" y="207.7" font-size="15" font-weight="600" fill="#eef2fb" text-anchor="start">Turn 14</text>
+<text x="90" y="64" font-size="20" letter-spacing="5" fill="#ff5a36" font-weight="700">TRACK ATLAS</text>
+<text x="90" y="108" font-size="42" font-weight="800" fill="#ffffff">ROAD AMERICA</text>
+<text x="90" y="136" font-size="16" fill="#9aa6bd">Elkhart Lake</text>
+<rect x="1170" y="200" width="360" height="710" rx="16" fill="#ffffff" fill-opacity="0.04" stroke="#ff5a36" stroke-opacity="0.5"/>
+<text x="1198" y="250" font-size="13" letter-spacing="2" fill="#8794ab">LAYOUT</text>
+<text x="1198" y="276" font-size="22" font-weight="700" fill="#eef2fb">Full Course</text>
+<text x="1198" y="320" font-size="13" letter-spacing="2" fill="#8794ab">LENGTH</text>
+<text x="1198" y="346" font-size="22" font-weight="700" fill="#eef2fb">6.514 km</text>
+<text x="1198" y="390" font-size="13" letter-spacing="2" fill="#8794ab">CORNERS</text>
+<text x="1198" y="416" font-size="22" font-weight="700" fill="#eef2fb">13</text>
+<text x="1198" y="460" font-size="13" letter-spacing="2" fill="#8794ab">NAMED CORNERS</text>
+<text x="1198" y="486" font-size="22" font-weight="700" fill="#eef2fb">12</text>
+<text x="1198" y="530" font-size="13" letter-spacing="2" fill="#8794ab">DIRECTION</text>
+<text x="1198" y="556" font-size="22" font-weight="700" fill="#eef2fb">Clockwise</text>
+<text x="1198" y="600" font-size="13" letter-spacing="2" fill="#8794ab">SECTORS</text>
+<text x="1198" y="626" font-size="22" font-weight="700" fill="#eef2fb">6</text>
+<text x="1198" y="670" font-size="13" letter-spacing="2" fill="#8794ab">COUNTRY</text>
+<text x="1198" y="696" font-size="22" font-weight="700" fill="#eef2fb">USA</text>
+<text x="1198" y="740" font-size="13" letter-spacing="2" fill="#8794ab">LOCATION</text>
+<text x="1198" y="766" font-size="22" font-weight="700" fill="#eef2fb">Elkhart Lake, Wisconsin</text>
+<text x="90" y="966" font-size="12" fill="#566177">Geometry © OpenStreetMap contributors (ODbL) · corner data: Lovely-Sim-Racing + curated · track-atlas</text>
+<text x="90" y="942" font-size="12" fill="#8794ab">⚑ start / finish</text>
+</svg>

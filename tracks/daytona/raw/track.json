@@ -1,0 +1,311 @@
+{
+  "slug": "daytona",
+  "name": "Daytona International Speedway",
+  "aka": [
+    "Daytona"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 29.1851,
+    "lon": -81.0707,
+    "locality": "Daytona Beach, Florida",
+    "region": "Florida",
+    "timezone": "America/New_York"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    },
+    "driver": {
+      "label": "Driver",
+      "description": "What drivers actually call it."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Road Course",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1"
+          },
+          "marker": 0.085,
+          "direction": "left",
+          "scale": 2,
+          "location": [
+            -81.062861,
+            29.19005
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2"
+          },
+          "marker": 0.115,
+          "direction": "left",
+          "scale": 3,
+          "location": [
+            -81.064075,
+            29.191157
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "driver": "International Horseshoe",
+            "official": "International Horseshoe"
+          },
+          "marker": 0.169,
+          "direction": "right",
+          "scale": 1,
+          "location": [
+            -81.067145,
+            29.191174
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4",
+            "driver": "The Kink",
+            "official": "Turn 4 (Kink)"
+          },
+          "marker": 0.255,
+          "direction": "left",
+          "scale": 5,
+          "location": [
+            -81.071475,
+            29.188818
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "West Horseshoe",
+            "official": "West Horseshoe"
+          },
+          "marker": 0.309,
+          "direction": "left",
+          "scale": 2,
+          "location": [
+            -81.07345,
+            29.186669
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "driver": "NASCAR 1",
+            "official": "Turn 6 (NASCAR Turn 1)"
+          },
+          "marker": 0.376,
+          "direction": "left",
+          "scale": 5,
+          "location": [
+            -81.07304,
+            29.183833
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "NASCAR 2",
+            "official": "Turn 7 (NASCAR Turn 2)"
+          },
+          "marker": 0.451,
+          "direction": "left",
+          "scale": 5,
+          "location": [
+            -81.069865,
+            29.186424
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8",
+            "driver": "Bus Stop entry"
+          },
+          "marker": 0.67,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "left",
+          "scale": 4,
+          "location": [
+            -81.073854,
+            29.183109
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "Bus Stop"
+          },
+          "marker": 0.68,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "right",
+          "scale": 3,
+          "location": [
+            -81.074385,
+            29.182881
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10",
+            "driver": "Bus Stop"
+          },
+          "marker": 0.692,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "right",
+          "scale": 3,
+          "location": [
+            -81.074762,
+            29.182381
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "driver": "Bus Stop exit"
+          },
+          "marker": 0.703,
+          "complex": "Bus Stop (Le Mans Chicane)",
+          "direction": "left",
+          "scale": 4,
+          "location": [
+            -81.074865,
+            29.181819
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12",
+            "driver": "NASCAR 3",
+            "official": "Turn 12 (NASCAR Turns 3-4)"
+          },
+          "marker": 0.81,
+          "direction": "left",
+          "scale": 5,
+          "location": [
+            -81.070888,
+            29.17875
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.14
+        },
+        {
+          "name": "2",
+          "marker": 0.272
+        },
+        {
+          "name": "3",
+          "marker": 0.355
+        },
+        {
+          "name": "4",
+          "marker": 0.63
+        },
+        {
+          "name": "5",
+          "marker": 1
+        }
+      ],
+      "pit": {},
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -81.063994,
+          29.186052
+        ]
+      },
+      "length_m": 5729,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "daytona"
+  },
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:05.123353+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 12
+    }
+  }
+}

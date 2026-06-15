@@ -3,10 +3,11 @@
 
 Checks every track (or one slug) for:
 
-  STRUCTURE
+  STRUCTURE  (owned by the Pydantic models in lib/models.py)
     - required files exist (source.json, track.json, layers/*.geojson, README.md)
-    - track.json validates against schema/track.schema.json (when jsonschema is
-      installed; otherwise structural checks below still run)
+    - track.json validates against the Track model: types, enums, lon/lat shape,
+      sequential corner numbers, unique corner codes, contiguous complexes,
+      mandatory + declared name layers, name_default references a real layer
     - every layout's geometry.outline file exists and parses
 
   COMPLETENESS
@@ -41,11 +42,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib.config import TRACKS  # noqa: E402
+from lib.config import TRACKS, raw_dir, track_json_path  # noqa: E402
 from lib.osm import haversine, arc_lengths  # noqa: E402
+from lib.models import Track  # noqa: E402
+from pydantic import ValidationError  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = ROOT / "schema" / "track.schema.json"
 
 MAX_CORNER_OFF_TRACK_M = 80.0
 LEN_WARN_PCT = 3.0
@@ -170,8 +172,8 @@ def verify_track(slug: str, schema=None) -> Report:
     tdir = TRACKS / slug
 
     # --- structure ---
-    src_f, tj_f = tdir / "source.json", tdir / "track.json"
-    for f, label in ((src_f, "source.json"), (tj_f, "track.json"),
+    src_f, tj_f = tdir / "source.json", track_json_path(slug)
+    for f, label in ((src_f, "source.json"), (tj_f, "raw/track.json"),
                      (tdir / "README.md", "README.md")):
         if not f.exists():
             r.err(f"missing {label}")
@@ -183,17 +185,15 @@ def verify_track(slug: str, schema=None) -> Report:
         r.err(f"track.json unparseable: {e}")
         return r
 
-    if schema is not None:
-        try:
-            import jsonschema
-            jsonschema.validate(track, schema)
-            r.info("schema valid")
-            r.bar_ok("schema")
-        except ImportError:
-            r.warn("jsonschema not installed -- schema validation skipped")
-        except Exception as e:
-            r.err(f"schema violation: {str(e).splitlines()[0]}")
-            r.bar_fail("schema")
+    try:
+        Track.model_validate(track)
+        r.info("schema valid (pydantic)")
+        r.bar_ok("schema")
+    except ValidationError as e:
+        for err in e.errors():
+            loc = ".".join(str(x) for x in err["loc"]) or "(root)"
+            r.err(f"schema: {loc}: {err['msg']}")
+        r.bar_fail("schema")
 
     for key in ("slug", "name", "country", "location", "layouts"):
         if not track.get(key):
@@ -202,6 +202,13 @@ def verify_track(slug: str, schema=None) -> Report:
         r.err(f"slug mismatch: folder={slug} track.json={track.get('slug')}")
     if not track.get("series"):
         r.warn("track.series missing (which series race here?)")
+    nlr = track.get("name_layers") or {}
+    if not nlr:
+        r.err("track.name_layers missing")
+    else:
+        for req in ("numbered", "official"):
+            if req not in nlr:
+                r.err(f"track.name_layers missing mandatory layer '{req}'")
 
     for lo in track.get("layouts", []):
         lid = lo.get("id", "?")
@@ -222,9 +229,20 @@ def verify_track(slug: str, schema=None) -> Report:
         if not corners:
             r.err(f"{pre} has no corners")
             continue
-        nums = [c.get("number") for c in corners]
-        if sorted(nums) != list(range(1, len(nums) + 1)):
-            r.err(f"{pre} corner numbers not sequential 1..{len(nums)}: {sorted(nums)}")
+        # Structural invariants (sequential numbers, unique codes, contiguous
+        # complexes, declared name layers, name_default reference) are enforced
+        # by the Pydantic model above. Here we add only the soft signal it
+        # doesn't: a "complex" tagged on a single corner usually means an
+        # inconsistent complex string split the group.
+        from collections import defaultdict
+        comp = defaultdict(list)
+        for c in corners:
+            if c.get("complex"):
+                comp[c["complex"]].append(c["number"])
+        for cname, ns in comp.items():
+            if len(ns) < 2:
+                r.warn(f"{pre} complex '{cname}' spans a single corner {sorted(ns)} -- "
+                       f"likely an inconsistent complex name split the group")
         unlocated = [c["number"] for c in corners if not c.get("location")]
         if unlocated:
             r.err(f"{pre} corners without location: {unlocated}")
@@ -235,7 +253,7 @@ def verify_track(slug: str, schema=None) -> Report:
         if unmarked:
             r.warn(f"{pre} corners without lap marker: {unmarked}")
         named = sum(1 for c in corners
-                    if c.get("names", {}).get("colloquial") or c.get("names", {}).get("official"))
+                    if any(k != "numbered" for k in c.get("names", {})))
         named_pct = named / len(corners) * 100
         if named_pct < MIN_NAMED_PCT:
             r.warn(f"{pre} only {named}/{len(corners)} corners named "
@@ -244,7 +262,8 @@ def verify_track(slug: str, schema=None) -> Report:
                f"{len(corners) - len(unlocated)} located")
 
         # geometry file
-        gpath = tdir / (lo.get("geometry", {}).get("outline") or "")
+        # geometry.outline is relative to track.json's own dir (raw/)
+        gpath = raw_dir(slug) / (lo.get("geometry", {}).get("outline") or "")
         if not gpath.exists():
             r.err(f"{pre} outline file missing: {gpath.name}")
             continue
@@ -357,22 +376,16 @@ def verify_track(slug: str, schema=None) -> Report:
                 r.info(f"{pre} corner lap-order matches geometry ({npairs} pairs)")
                 r.bar_ok("order")
 
-        # pit markers sane
-        for k in ("entry", "exit"):
-            v = pit.get(k)
-            if v is not None and not (0.0 <= v <= 1.0):
-                r.err(f"{pre}.pit.{k} = {v} outside [0,1]")
-
     # renders exist + fresh
-    rdir = tdir / "render"
+    rdir = raw_dir(slug) / "render"
     png, svgf = rdir / f"{slug}.png", rdir / f"{slug}.svg"
     render_ok = True
     for f in (svgf, png):
         if not f.exists():
-            r.err(f"render missing: render/{f.name}")
+            r.err(f"render missing: raw/render/{f.name}")
             render_ok = False
         elif f.stat().st_mtime < tj_f.stat().st_mtime:
-            r.warn(f"render/{f.name} older than track.json -- re-run scripts/render.py {slug}")
+            r.warn(f"raw/render/{f.name} older than track.json -- re-run scripts/render.py {slug}")
     r.bar_ok("render") if render_ok else r.bar_fail("render")
 
     return r
@@ -385,17 +398,13 @@ def main() -> None:
                     help="warnings count as failures")
     args = ap.parse_args()
 
-    schema = None
-    if SCHEMA.exists():
-        schema = json.loads(SCHEMA.read_text())
-
     slugs = [args.slug] if args.slug else sorted(
         p.name for p in TRACKS.iterdir() if (p / "source.json").exists())
 
     reports = []
     failed = False
     for slug in slugs:
-        rep = verify_track(slug, schema)
+        rep = verify_track(slug)
         rep.dump()
         reports.append(rep)
         if rep.errors or (args.strict and rep.warnings):

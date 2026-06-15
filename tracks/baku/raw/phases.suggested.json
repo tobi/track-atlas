@@ -1,0 +1,227 @@
+{
+  "gp": {
+    "note": "suggested corner phases as lap fractions (start/apex/end). Heuristic from severity; review and edit. Not authoritative.",
+    "corners": {
+      "1": {
+        "number": 1,
+        "code": "1",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.0532,
+        "start": 0.02321,
+        "end": 0.07486
+      },
+      "2": {
+        "number": 2,
+        "code": "2",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.1103,
+        "start": 0.09031,
+        "end": 0.12696
+      },
+      "3": {
+        "number": 3,
+        "code": "3",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.2552,
+        "start": 0.24354,
+        "end": 0.26573
+      },
+      "4": {
+        "number": 4,
+        "code": "4",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.2928,
+        "start": 0.26573,
+        "end": 0.31446
+      },
+      "5": {
+        "number": 5,
+        "code": "5",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.3507,
+        "start": 0.32071,
+        "end": 0.35447
+      },
+      "6": {
+        "number": 6,
+        "code": "6",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.3597,
+        "start": 0.35447,
+        "end": 0.38136
+      },
+      "7": {
+        "number": 7,
+        "code": "7",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.4245,
+        "start": 0.39451,
+        "end": 0.43671
+      },
+      "8": {
+        "number": 8,
+        "code": "8",
+        "scale": 1,
+        "scale_label": "Hairpin",
+        "brakes": true,
+        "complex": "Castle Section",
+        "apex": 0.4602,
+        "start": 0.43671,
+        "end": 0.4619
+      },
+      "9": {
+        "number": 9,
+        "code": "9",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": "Castle Section",
+        "apex": 0.4637,
+        "start": 0.4619,
+        "end": 0.46573
+      },
+      "10": {
+        "number": 10,
+        "code": "10",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": "Castle Section",
+        "apex": 0.4676,
+        "start": 0.46573,
+        "end": 0.4716
+      },
+      "11": {
+        "number": 11,
+        "code": "11",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": "Castle Section",
+        "apex": 0.4764,
+        "start": 0.4716,
+        "end": 0.48011
+      },
+      "12": {
+        "number": 12,
+        "code": "12",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.4868,
+        "start": 0.48011,
+        "end": 0.50846
+      },
+      "13": {
+        "number": 13,
+        "code": "13",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.5516,
+        "start": 0.53161,
+        "end": 0.56826
+      },
+      "14": {
+        "number": 14,
+        "code": "14",
+        "scale": 5,
+        "scale_label": "Very fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.5899,
+        "start": 0.58407,
+        "end": 0.5974
+      },
+      "15": {
+        "number": 15,
+        "code": "15",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.6279,
+        "start": 0.60791,
+        "end": 0.64456
+      },
+      "16": {
+        "number": 16,
+        "code": "16",
+        "scale": 1,
+        "scale_label": "Hairpin",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.6871,
+        "start": 0.64545,
+        "end": 0.71542
+      },
+      "17": {
+        "number": 17,
+        "code": "17",
+        "scale": 6,
+        "scale_label": "Kink",
+        "brakes": false,
+        "complex": null,
+        "apex": 0.7212,
+        "start": 0.7212,
+        "end": 0.7212
+      },
+      "18": {
+        "number": 18,
+        "code": "18",
+        "scale": 5,
+        "scale_label": "Very fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.7629,
+        "start": 0.75707,
+        "end": 0.7704
+      },
+      "19": {
+        "number": 19,
+        "code": "19",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.7865,
+        "start": 0.77484,
+        "end": 0.79816
+      },
+      "20": {
+        "number": 20,
+        "code": "20",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.8426,
+        "start": 0.83094,
+        "end": 0.85426
+      }
+    }
+  }
+}

@@ -2,43 +2,43 @@
   "gp": {
     "corners": {
       "1": {
-        "colloquial": "Turn 1",
+        "driver": "Turn 1",
         "official": "Turn 1",
         "direction": "left",
         "scale": 6
       },
       "2": {
-        "colloquial": "Andretti Hairpin",
+        "driver": "Andretti Hairpin",
         "official": "Andretti Hairpin",
         "direction": "left",
         "scale": 1
       },
       "3": {
-        "colloquial": "Turn 3",
+        "driver": "Turn 3",
         "official": "Turn 3",
         "direction": "right",
         "scale": 3
       },
       "4": {
-        "colloquial": "Turn 4",
+        "driver": "Turn 4",
         "official": "Turn 4",
         "direction": "right",
         "scale": 4
       },
       "5": {
-        "colloquial": "Turn 5",
+        "driver": "Turn 5",
         "official": "Turn 5",
         "direction": "left",
         "scale": 3
       },
       "6": {
-        "colloquial": "Turn 6",
+        "driver": "Turn 6",
         "official": "Turn 6",
         "direction": "left",
         "scale": 4
       },
       "7": {
-        "colloquial": "The Corkscrew",
+        "driver": "The Corkscrew",
         "official": "The Corkscrew (Turn 8/8a)",
         "complex": "The Corkscrew",
         "direction": "left",
@@ -46,21 +46,21 @@
         "error": "numbered name should be 'Turn 8' not 'Turn 7' — the Corkscrew is officially T8/8a; the real Turn 7 (a left kink at the top of the hill before the Corkscrew, around marker ~0.65) is missing from the dataset. The Corkscrew itself is a left-right combination; direction given is for the first (entry) apex."
       },
       "8": {
-        "colloquial": "Rainey Curve",
+        "driver": "Rainey Curve",
         "official": "Rainey Curve (Turn 9)",
         "direction": "left",
         "scale": 4,
         "error": "numbered name 'Turn 8' conflicts with colloquial 'Turn 9' — this corner is officially Turn 9 (Rainey Curve); internal numbering is off by one from the Corkscrew onward due to the missing Turn 7"
       },
       "9": {
-        "colloquial": "Turn 10",
+        "driver": "Turn 10",
         "official": "Turn 10",
         "direction": "right",
         "scale": 3,
         "error": "numbered name should be 'Turn 10' not 'Turn 9' — off-by-one from missing Turn 7"
       },
       "10": {
-        "colloquial": "Turn 11",
+        "driver": "Turn 11",
         "official": "Turn 11",
         "direction": "left",
         "scale": 2,

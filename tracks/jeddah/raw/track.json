@@ -1,0 +1,558 @@
+{
+  "slug": "jeddah",
+  "name": "Jeddah Corniche Circuit",
+  "aka": [
+    "Jeddah"
+  ],
+  "country": "SA",
+  "location": {
+    "lat": 21.6319,
+    "lon": 39.1044,
+    "locality": "Jeddah",
+    "region": "Makkah",
+    "timezone": "Asia/Riyadh"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "numbered",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.0829,
+          "start": 0.0801,
+          "end": 0.0858,
+          "location": [
+            39.105356,
+            21.625803
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.0907,
+          "start": 0.0877,
+          "end": 0.0969,
+          "location": [
+            39.105739,
+            21.625555
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.1158,
+          "start": 0.1096,
+          "end": 0.1212,
+          "location": [
+            39.10644,
+            21.626106
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.1665,
+          "start": 0.1636,
+          "end": 0.1692,
+          "location": [
+            39.105812,
+            21.628866
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.1812,
+          "start": 0.1699,
+          "end": 0.2018,
+          "location": [
+            39.105585,
+            21.629656
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.2139,
+          "start": 0.2044,
+          "end": 0.218,
+          "location": [
+            39.104953,
+            21.631378
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.2287,
+          "start": 0.225,
+          "end": 0.2329,
+          "location": [
+            39.104663,
+            21.632157
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.2398,
+          "start": 0.236,
+          "end": 0.2453,
+          "location": [
+            39.104449,
+            21.632742
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.2667,
+          "start": 0.2575,
+          "end": 0.2727,
+          "location": [
+            39.103929,
+            21.634159
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.2808,
+          "start": 0.2768,
+          "end": 0.2885,
+          "location": [
+            39.10357,
+            21.634825
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.2984,
+          "start": 0.2899,
+          "end": 0.3059,
+          "location": [
+            39.103075,
+            21.635261
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.3135,
+          "start": 0.3059,
+          "end": 0.3352,
+          "location": [
+            39.103302,
+            21.636068
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "code": "13",
+          "names": {
+            "numbered": "Turn 13"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.3991,
+          "start": 0.3833,
+          "end": 0.4282,
+          "location": [
+            39.102187,
+            21.640355
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "code": "14",
+          "names": {
+            "numbered": "Turn 14"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.4644,
+          "start": 0.4345,
+          "end": 0.4787,
+          "location": [
+            39.101835,
+            21.643608
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "code": "15",
+          "names": {
+            "numbered": "Turn 15"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.4885,
+          "start": 0.4787,
+          "end": 0.4979,
+          "location": [
+            39.102719,
+            21.644513
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "code": "16",
+          "names": {
+            "numbered": "Turn 16"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.5064,
+          "start": 0.4999,
+          "end": 0.5112,
+          "location": [
+            39.103031,
+            21.645462
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 17,
+          "code": "17",
+          "names": {
+            "numbered": "Turn 17"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.5187,
+          "start": 0.512,
+          "end": 0.5281,
+          "location": [
+            39.103121,
+            21.64614
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 18,
+          "code": "18",
+          "names": {
+            "numbered": "Turn 18"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.5373,
+          "start": 0.5281,
+          "end": 0.5584,
+          "location": [
+            39.103107,
+            21.647174
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 19,
+          "code": "19",
+          "names": {
+            "numbered": "Turn 19"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.5879,
+          "start": 0.5722,
+          "end": 0.5969,
+          "location": [
+            39.102802,
+            21.649942
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 20,
+          "code": "20",
+          "names": {
+            "numbered": "Turn 20"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.6236,
+          "start": 0.5982,
+          "end": 0.6309,
+          "location": [
+            39.101919,
+            21.64885
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 21,
+          "code": "21",
+          "names": {
+            "numbered": "Turn 21"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.6571,
+          "start": 0.6324,
+          "end": 0.6884,
+          "location": [
+            39.102559,
+            21.647128
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 22,
+          "code": "22",
+          "names": {
+            "numbered": "Turn 22"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.702,
+          "start": 0.6959,
+          "end": 0.7071,
+          "location": [
+            39.101855,
+            21.644754
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 23,
+          "code": "23",
+          "names": {
+            "numbered": "Turn 23"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.7124,
+          "start": 0.7079,
+          "end": 0.7208,
+          "location": [
+            39.101307,
+            21.644507
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 24,
+          "code": "24",
+          "names": {
+            "numbered": "Turn 24"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.7372,
+          "start": 0.7322,
+          "end": 0.741,
+          "location": [
+            39.10086,
+            21.643272
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 25,
+          "code": "25",
+          "names": {
+            "numbered": "Turn 25"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.7829,
+          "start": 0.7638,
+          "end": 0.7995,
+          "location": [
+            39.101636,
+            21.640847
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 26,
+          "code": "26",
+          "names": {
+            "numbered": "Turn 26"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.8487,
+          "start": 0.8188,
+          "end": 0.875,
+          "location": [
+            39.10267,
+            21.637397
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 27,
+          "code": "27",
+          "names": {
+            "numbered": "Turn 27"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.907,
+          "start": 0.8976,
+          "end": 0.9145,
+          "location": [
+            39.103059,
+            21.634344
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.3417
+        },
+        {
+          "name": "2",
+          "marker": 0.6761
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9543,
+        "exit": 0.093
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          39.102665,
+          21.629503
+        ]
+      },
+      "length_m": 6174,
+      "direction": "anticlockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:07.891010+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 27
+    }
+  }
+}

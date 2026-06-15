@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="Helvetica, Arial, sans-serif">
+<defs>
+      <radialGradient id="bg" cx="38%" cy="34%" r="85%">
+        <stop offset="0%" stop-color="#1b2030"/>
+        <stop offset="55%" stop-color="#12151f"/>
+        <stop offset="100%" stop-color="#0a0c12"/>
+      </radialGradient>
+      <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ff5a36"/>
+        <stop offset="100%" stop-color="#ffffff"/>
+      </linearGradient>
+      <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="6" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<path d="M 613.3,902.5 C 625.9,947.0 619.0,911.5 624.1,910.0 C 629.2,908.5 643.6,910.0 643.9,893.2 C 644.3,876.4 630.2,827.3 626.1,809.3 C 622.1,791.3 623.8,798.0 619.7,785.2 C 615.7,772.5 606.2,745.5 601.9,732.8 C 597.5,720.1 596.0,716.0 593.7,709.1 C 591.3,702.2 591.1,701.5 587.6,691.3 C 584.1,681.2 577.0,658.8 572.9,648.2 C 568.7,637.7 566.8,633.5 562.7,628.0 C 558.7,622.4 550.0,621.0 548.7,614.7 C 547.5,608.4 559.3,616.0 555.2,590.1 C 551.0,564.3 530.5,497.9 523.6,459.7 C 516.7,421.5 511.2,381.8 513.7,360.7 C 516.2,339.6 533.0,342.6 538.7,333.2 C 544.3,323.8 545.6,312.6 547.5,304.3 C 549.4,296.1 549.7,292.4 550.0,283.7 C 550.4,275.0 551.1,271.5 549.6,252.2 C 548.1,232.9 546.6,176.5 541.0,168.0 C 535.4,159.5 517.2,187.0 516.0,201.2 C 514.9,215.5 534.4,232.8 534.1,253.6 C 533.8,274.4 520.1,312.6 514.2,325.9 C 508.3,339.1 503.4,325.9 498.7,333.4 C 494.0,340.9 484.5,352.4 486.1,370.9 C 487.6,389.5 499.5,414.9 508.0,444.7 C 516.6,474.5 530.6,516.7 537.3,549.7 C 544.0,582.7 535.6,583.8 548.3,642.6 C 560.9,701.4 600.6,857.9 613.3,902.5 Z" fill="none" stroke="#000000" stroke-opacity="0.5" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 613.3,902.5 C 625.9,947.0 619.0,911.5 624.1,910.0 C 629.2,908.5 643.6,910.0 643.9,893.2 C 644.3,876.4 630.2,827.3 626.1,809.3 C 622.1,791.3 623.8,798.0 619.7,785.2 C 615.7,772.5 606.2,745.5 601.9,732.8 C 597.5,720.1 596.0,716.0 593.7,709.1 C 591.3,702.2 591.1,701.5 587.6,691.3 C 584.1,681.2 577.0,658.8 572.9,648.2 C 568.7,637.7 566.8,633.5 562.7,628.0 C 558.7,622.4 550.0,621.0 548.7,614.7 C 547.5,608.4 559.3,616.0 555.2,590.1 C 551.0,564.3 530.5,497.9 523.6,459.7 C 516.7,421.5 511.2,381.8 513.7,360.7 C 516.2,339.6 533.0,342.6 538.7,333.2 C 544.3,323.8 545.6,312.6 547.5,304.3 C 549.4,296.1 549.7,292.4 550.0,283.7 C 550.4,275.0 551.1,271.5 549.6,252.2 C 548.1,232.9 546.6,176.5 541.0,168.0 C 535.4,159.5 517.2,187.0 516.0,201.2 C 514.9,215.5 534.4,232.8 534.1,253.6 C 533.8,274.4 520.1,312.6 514.2,325.9 C 508.3,339.1 503.4,325.9 498.7,333.4 C 494.0,340.9 484.5,352.4 486.1,370.9 C 487.6,389.5 499.5,414.9 508.0,444.7 C 516.6,474.5 530.6,516.7 537.3,549.7 C 544.0,582.7 535.6,583.8 548.3,642.6 C 560.9,701.4 600.6,857.9 613.3,902.5 Z" fill="none" stroke="#39404f" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 613.3,902.5 C 625.9,947.0 619.0,911.5 624.1,910.0 C 629.2,908.5 643.6,910.0 643.9,893.2 C 644.3,876.4 630.2,827.3 626.1,809.3 C 622.1,791.3 623.8,798.0 619.7,785.2 C 615.7,772.5 606.2,745.5 601.9,732.8 C 597.5,720.1 596.0,716.0 593.7,709.1 C 591.3,702.2 591.1,701.5 587.6,691.3 C 584.1,681.2 577.0,658.8 572.9,648.2 C 568.7,637.7 566.8,633.5 562.7,628.0 C 558.7,622.4 550.0,621.0 548.7,614.7 C 547.5,608.4 559.3,616.0 555.2,590.1 C 551.0,564.3 530.5,497.9 523.6,459.7 C 516.7,421.5 511.2,381.8 513.7,360.7 C 516.2,339.6 533.0,342.6 538.7,333.2 C 544.3,323.8 545.6,312.6 547.5,304.3 C 549.4,296.1 549.7,292.4 550.0,283.7 C 550.4,275.0 551.1,271.5 549.6,252.2 C 548.1,232.9 546.6,176.5 541.0,168.0 C 535.4,159.5 517.2,187.0 516.0,201.2 C 514.9,215.5 534.4,232.8 534.1,253.6 C 533.8,274.4 520.1,312.6 514.2,325.9 C 508.3,339.1 503.4,325.9 498.7,333.4 C 494.0,340.9 484.5,352.4 486.1,370.9 C 487.6,389.5 499.5,414.9 508.0,444.7 C 516.6,474.5 530.6,516.7 537.3,549.7 C 544.0,582.7 535.6,583.8 548.3,642.6 C 560.9,701.4 600.6,857.9 613.3,902.5 Z" fill="none" stroke="#e7edf8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 613.3,902.5 C 625.9,947.0 619.0,911.5 624.1,910.0 C 629.2,908.5 643.6,910.0 643.9,893.2 C 644.3,876.4 630.2,827.3 626.1,809.3 C 622.1,791.3 623.8,798.0 619.7,785.2 C 615.7,772.5 606.2,745.5 601.9,732.8 C 597.5,720.1 596.0,716.0 593.7,709.1 C 591.3,702.2 591.1,701.5 587.6,691.3 C 584.1,681.2 577.0,658.8 572.9,648.2 C 568.7,637.7 566.8,633.5 562.7,628.0 C 558.7,622.4 550.0,621.0 548.7,614.7 C 547.5,608.4 559.3,616.0 555.2,590.1 C 551.0,564.3 530.5,497.9 523.6,459.7 C 516.7,421.5 511.2,381.8 513.7,360.7 C 516.2,339.6 533.0,342.6 538.7,333.2 C 544.3,323.8 545.6,312.6 547.5,304.3 C 549.4,296.1 549.7,292.4 550.0,283.7 C 550.4,275.0 551.1,271.5 549.6,252.2 C 548.1,232.9 546.6,176.5 541.0,168.0 C 535.4,159.5 517.2,187.0 516.0,201.2 C 514.9,215.5 534.4,232.8 534.1,253.6 C 533.8,274.4 520.1,312.6 514.2,325.9 C 508.3,339.1 503.4,325.9 498.7,333.4 C 494.0,340.9 484.5,352.4 486.1,370.9 C 487.6,389.5 499.5,414.9 508.0,444.7 C 516.6,474.5 530.6,516.7 537.3,549.7 C 544.0,582.7 535.6,583.8 548.3,642.6 C 560.9,701.4 600.6,857.9 613.3,902.5 Z" fill="none" stroke="#ff5a36" stroke-opacity="0.55" stroke-width="1.2" stroke-linejoin="round" filter="url(#glow)"/>
+<circle cx="537.1" cy="789.9" r="13" fill="none" stroke="#ffffff" stroke-width="3"/>
+<rect x="533.1" y="767.9" width="8" height="18" fill="#ffffff"/>
+<circle cx="613.3" cy="902.5" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="613.3" y="905.9" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">1</text>
+<circle cx="624.1" cy="910.0" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="624.1" y="913.4" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">2</text>
+<circle cx="643.9" cy="893.2" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="643.9" y="896.6" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">3</text>
+<circle cx="626.1" cy="809.3" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="626.1" y="812.7" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">4</text>
+<circle cx="619.7" cy="785.2" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="619.7" y="788.6" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">5</text>
+<circle cx="601.9" cy="732.8" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="601.9" y="736.2" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">6</text>
+<circle cx="593.7" cy="709.1" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="593.7" y="712.5" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">7</text>
+<circle cx="587.6" cy="691.3" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="587.6" y="694.7" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">8</text>
+<circle cx="572.9" cy="648.2" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="572.9" y="651.6" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">9</text>
+<circle cx="562.7" cy="628.0" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="562.7" y="631.4" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">10</text>
+<circle cx="548.7" cy="614.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="548.7" y="618.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">11</text>
+<circle cx="555.2" cy="590.1" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="555.2" y="593.5" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">12</text>
+<circle cx="523.6" cy="459.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="523.6" y="463.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">13</text>
+<circle cx="513.7" cy="360.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="513.7" y="364.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">14</text>
+<circle cx="538.7" cy="333.2" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="538.7" y="336.6" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">15</text>
+<circle cx="547.5" cy="304.3" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="547.5" y="307.7" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">16</text>
+<circle cx="550.0" cy="283.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="550.0" y="287.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">17</text>
+<circle cx="549.6" cy="252.2" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="549.6" y="255.6" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">18</text>
+<circle cx="541.0" cy="168.0" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="541.0" y="171.4" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">19</text>
+<circle cx="516.0" cy="201.2" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="516.0" y="204.6" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">20</text>
+<circle cx="534.1" cy="253.6" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="534.1" y="257.0" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">21</text>
+<circle cx="514.2" cy="325.9" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="514.2" y="329.3" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">22</text>
+<circle cx="498.7" cy="333.4" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="498.7" y="336.8" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">23</text>
+<circle cx="486.1" cy="370.9" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="486.1" y="374.3" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">24</text>
+<circle cx="508.0" cy="444.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="508.0" y="448.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">25</text>
+<circle cx="537.3" cy="549.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="537.3" y="553.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">26</text>
+<circle cx="548.3" cy="642.6" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="548.3" y="646.0" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">27</text>
+<text x="90" y="64" font-size="20" letter-spacing="5" fill="#ff5a36" font-weight="700">TRACK ATLAS</text>
+<text x="90" y="108" font-size="42" font-weight="800" fill="#ffffff">JEDDAH CORNICHE CIRCUIT</text>
+<text x="90" y="136" font-size="16" fill="#9aa6bd">Jeddah</text>
+<rect x="1170" y="200" width="360" height="710" rx="16" fill="#ffffff" fill-opacity="0.04" stroke="#ff5a36" stroke-opacity="0.5"/>
+<text x="1198" y="250" font-size="13" letter-spacing="2" fill="#8794ab">LAYOUT</text>
+<text x="1198" y="276" font-size="22" font-weight="700" fill="#eef2fb">Grand Prix Circuit</text>
+<text x="1198" y="320" font-size="13" letter-spacing="2" fill="#8794ab">LENGTH</text>
+<text x="1198" y="346" font-size="22" font-weight="700" fill="#eef2fb">6.174 km</text>
+<text x="1198" y="390" font-size="13" letter-spacing="2" fill="#8794ab">CORNERS</text>
+<text x="1198" y="416" font-size="22" font-weight="700" fill="#eef2fb">27</text>
+<text x="1198" y="460" font-size="13" letter-spacing="2" fill="#8794ab">NAMED CORNERS</text>
+<text x="1198" y="486" font-size="22" font-weight="700" fill="#eef2fb">0</text>
+<text x="1198" y="530" font-size="13" letter-spacing="2" fill="#8794ab">DIRECTION</text>
+<text x="1198" y="556" font-size="22" font-weight="700" fill="#eef2fb">Anticlockwise</text>
+<text x="1198" y="600" font-size="13" letter-spacing="2" fill="#8794ab">SECTORS</text>
+<text x="1198" y="626" font-size="22" font-weight="700" fill="#eef2fb">3</text>
+<text x="1198" y="670" font-size="13" letter-spacing="2" fill="#8794ab">COUNTRY</text>
+<text x="1198" y="696" font-size="22" font-weight="700" fill="#eef2fb">SA</text>
+<text x="1198" y="740" font-size="13" letter-spacing="2" fill="#8794ab">LOCATION</text>
+<text x="1198" y="766" font-size="22" font-weight="700" fill="#eef2fb">Jeddah</text>
+<text x="90" y="966" font-size="12" fill="#566177">Geometry © OpenStreetMap contributors (ODbL) · corner data: Lovely-Sim-Racing + curated · track-atlas</text>
+<text x="90" y="942" font-size="12" fill="#8794ab">⚑ start / finish</text>
+</svg>

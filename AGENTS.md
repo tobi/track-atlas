@@ -67,11 +67,11 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 - Clean: single area, 18/18 corners geo-matched on first pass.
 - Lovely repeats names across multi-apex complexes (Maggots×2, Becketts×2,
   Vale×2). Grouped via `overrides.json` `complex`. British circuits mostly use
-  the colloquial name *as* the official name.
+  the driver name *as* the official name.
 
 ## Matching / normalization rules
 
-- Join key = `normalize(colloquial or official)` against `normalize(osm_way_name)`.
+- Join key = `normalize(driver or official)` against `normalize(osm_way_name)`.
 - `normalize()` (in `lib/osm.py`): NFKD-strip accents, lowercase, drop
   {virage, courbe, chicane, esses, le/la/les/du/de/des/d/s, the}, strip
   non-alphanumerics. Tune here if a track mismatches.

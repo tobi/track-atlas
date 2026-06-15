@@ -19,11 +19,17 @@ from lib.config import TRACKS  # noqa: E402
 def main() -> None:
     entries = []
     for p in sorted(TRACKS.iterdir()):
-        tj = p / "track.json"
+        tj = p / "raw" / "track.json"
         if not tj.exists():
             continue
         t = json.loads(tj.read_text())
-        png = p / "render" / f"{p.name}.png"
+        rel = f"tracks/{t['slug']}/raw/render/{t['slug']}"
+        svg = p / "raw" / "render" / f"{p.name}.svg"
+        png = p / "raw" / "render" / f"{p.name}.png"
+        # The SVG is the poster the site shows: ~5x smaller than the PNG and
+        # crisp at any size. The PNG stays as a raster fallback (og:image,
+        # social embeds, non-SVG consumers).
+        poster = f"{rel}.svg" if svg.exists() else (f"{rel}.png" if png.exists() else None)
         entries.append({
             "slug": t["slug"],
             "name": t["name"],
@@ -38,7 +44,8 @@ def main() -> None:
                  "direction": lo.get("direction")}
                 for lo in t.get("layouts", [])
             ],
-            "poster": f"tracks/{t['slug']}/render/{t['slug']}.png" if png.exists() else None,
+            "poster": poster,
+            "poster_png": f"{rel}.png" if png.exists() else None,
         })
     out = TRACKS / "index.json"
     out.write_text(json.dumps({"tracks": entries}, ensure_ascii=False, indent=2))

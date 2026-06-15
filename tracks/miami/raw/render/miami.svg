@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" font-family="Helvetica, Arial, sans-serif">
+<defs>
+      <radialGradient id="bg" cx="38%" cy="34%" r="85%">
+        <stop offset="0%" stop-color="#1b2030"/>
+        <stop offset="55%" stop-color="#12151f"/>
+        <stop offset="100%" stop-color="#0a0c12"/>
+      </radialGradient>
+      <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ff5a36"/>
+        <stop offset="100%" stop-color="#ffffff"/>
+      </linearGradient>
+      <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="6" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<path d="M 154.6,387.3 C 75.6,367.8 98.3,360.0 90.0,347.4 C 81.7,334.7 19.4,313.4 104.5,311.1 C 189.6,308.8 503.1,329.0 600.8,333.4 C 698.4,337.8 658.9,337.0 690.4,337.7 C 721.9,338.4 748.6,336.5 789.9,337.5 C 831.2,338.6 902.7,342.4 938.0,344.0 C 973.3,345.5 984.7,313.7 1001.7,346.7 C 1018.7,379.7 1046.3,484.3 1040.0,541.9 C 1033.7,599.6 1060.8,655.2 964.1,692.7 C 867.4,730.2 552.6,757.6 459.8,766.9 C 367.0,776.2 438.1,753.0 407.2,748.4 C 376.2,743.7 309.1,740.0 274.0,738.7 C 239.0,737.5 213.6,740.5 196.8,740.9 C 180.1,741.4 190.1,742.6 173.6,741.6 C 157.2,740.5 17.8,750.2 97.9,734.6 C 178.1,719.0 554.5,679.2 654.5,647.7 C 754.6,616.3 713.3,576.5 698.3,545.9 C 683.2,515.3 654.7,490.6 564.1,464.1 C 473.5,437.7 233.6,406.7 154.6,387.3 Z" fill="none" stroke="#000000" stroke-opacity="0.5" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 154.6,387.3 C 75.6,367.8 98.3,360.0 90.0,347.4 C 81.7,334.7 19.4,313.4 104.5,311.1 C 189.6,308.8 503.1,329.0 600.8,333.4 C 698.4,337.8 658.9,337.0 690.4,337.7 C 721.9,338.4 748.6,336.5 789.9,337.5 C 831.2,338.6 902.7,342.4 938.0,344.0 C 973.3,345.5 984.7,313.7 1001.7,346.7 C 1018.7,379.7 1046.3,484.3 1040.0,541.9 C 1033.7,599.6 1060.8,655.2 964.1,692.7 C 867.4,730.2 552.6,757.6 459.8,766.9 C 367.0,776.2 438.1,753.0 407.2,748.4 C 376.2,743.7 309.1,740.0 274.0,738.7 C 239.0,737.5 213.6,740.5 196.8,740.9 C 180.1,741.4 190.1,742.6 173.6,741.6 C 157.2,740.5 17.8,750.2 97.9,734.6 C 178.1,719.0 554.5,679.2 654.5,647.7 C 754.6,616.3 713.3,576.5 698.3,545.9 C 683.2,515.3 654.7,490.6 564.1,464.1 C 473.5,437.7 233.6,406.7 154.6,387.3 Z" fill="none" stroke="#39404f" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 154.6,387.3 C 75.6,367.8 98.3,360.0 90.0,347.4 C 81.7,334.7 19.4,313.4 104.5,311.1 C 189.6,308.8 503.1,329.0 600.8,333.4 C 698.4,337.8 658.9,337.0 690.4,337.7 C 721.9,338.4 748.6,336.5 789.9,337.5 C 831.2,338.6 902.7,342.4 938.0,344.0 C 973.3,345.5 984.7,313.7 1001.7,346.7 C 1018.7,379.7 1046.3,484.3 1040.0,541.9 C 1033.7,599.6 1060.8,655.2 964.1,692.7 C 867.4,730.2 552.6,757.6 459.8,766.9 C 367.0,776.2 438.1,753.0 407.2,748.4 C 376.2,743.7 309.1,740.0 274.0,738.7 C 239.0,737.5 213.6,740.5 196.8,740.9 C 180.1,741.4 190.1,742.6 173.6,741.6 C 157.2,740.5 17.8,750.2 97.9,734.6 C 178.1,719.0 554.5,679.2 654.5,647.7 C 754.6,616.3 713.3,576.5 698.3,545.9 C 683.2,515.3 654.7,490.6 564.1,464.1 C 473.5,437.7 233.6,406.7 154.6,387.3 Z" fill="none" stroke="#e7edf8" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 154.6,387.3 C 75.6,367.8 98.3,360.0 90.0,347.4 C 81.7,334.7 19.4,313.4 104.5,311.1 C 189.6,308.8 503.1,329.0 600.8,333.4 C 698.4,337.8 658.9,337.0 690.4,337.7 C 721.9,338.4 748.6,336.5 789.9,337.5 C 831.2,338.6 902.7,342.4 938.0,344.0 C 973.3,345.5 984.7,313.7 1001.7,346.7 C 1018.7,379.7 1046.3,484.3 1040.0,541.9 C 1033.7,599.6 1060.8,655.2 964.1,692.7 C 867.4,730.2 552.6,757.6 459.8,766.9 C 367.0,776.2 438.1,753.0 407.2,748.4 C 376.2,743.7 309.1,740.0 274.0,738.7 C 239.0,737.5 213.6,740.5 196.8,740.9 C 180.1,741.4 190.1,742.6 173.6,741.6 C 157.2,740.5 17.8,750.2 97.9,734.6 C 178.1,719.0 554.5,679.2 654.5,647.7 C 754.6,616.3 713.3,576.5 698.3,545.9 C 683.2,515.3 654.7,490.6 564.1,464.1 C 473.5,437.7 233.6,406.7 154.6,387.3 Z" fill="none" stroke="#ff5a36" stroke-opacity="0.55" stroke-width="1.2" stroke-linejoin="round" filter="url(#glow)"/>
+<circle cx="497.6" cy="424.0" r="13" fill="none" stroke="#ffffff" stroke-width="3"/>
+<rect x="493.6" y="402.0" width="8" height="18" fill="#ffffff"/>
+<circle cx="154.6" cy="387.3" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="154.6" y="390.7" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">1</text>
+<circle cx="90.0" cy="347.4" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="90.0" y="350.8" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">2</text>
+<circle cx="104.5" cy="311.1" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="104.5" y="314.5" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">3</text>
+<circle cx="600.8" cy="333.4" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="600.8" y="336.8" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">4</text>
+<circle cx="690.4" cy="337.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="690.4" y="341.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">5</text>
+<circle cx="789.9" cy="337.5" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="789.9" y="340.9" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">6</text>
+<circle cx="938.0" cy="344.0" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="938.0" y="347.4" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">7</text>
+<circle cx="1001.7" cy="346.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="1001.7" y="350.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">8</text>
+<circle cx="1040.0" cy="541.9" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="1040.0" y="545.3" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">9</text>
+<circle cx="964.1" cy="692.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="964.1" y="696.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">10</text>
+<circle cx="459.8" cy="766.9" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="459.8" y="770.3" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">11</text>
+<circle cx="407.2" cy="748.4" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="407.2" y="751.8" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">12</text>
+<circle cx="274.0" cy="738.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="274.0" y="742.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">13</text>
+<circle cx="196.8" cy="740.9" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="196.8" y="744.3" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">14</text>
+<circle cx="173.6" cy="741.6" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="173.6" y="745.0" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">15</text>
+<circle cx="97.9" cy="734.6" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="97.9" y="738.0" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">16</text>
+<circle cx="654.5" cy="647.7" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="654.5" y="651.1" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">17</text>
+<circle cx="698.3" cy="545.9" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="698.3" y="549.3" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">18</text>
+<circle cx="564.1" cy="464.1" r="7" fill="#ff5a36" stroke="#0a0c12" stroke-width="2.5" filter="url(#glow)"/>
+<text x="564.1" y="467.5" font-size="9" font-weight="700" fill="#0a0c12" text-anchor="middle">19</text>
+<text x="90" y="64" font-size="20" letter-spacing="5" fill="#ff5a36" font-weight="700">TRACK ATLAS</text>
+<text x="90" y="108" font-size="42" font-weight="800" fill="#ffffff">MIAMI INTERNATIONAL AUTODROME</text>
+<text x="90" y="136" font-size="16" fill="#9aa6bd">Miami</text>
+<rect x="1170" y="200" width="360" height="710" rx="16" fill="#ffffff" fill-opacity="0.04" stroke="#ff5a36" stroke-opacity="0.5"/>
+<text x="1198" y="250" font-size="13" letter-spacing="2" fill="#8794ab">LAYOUT</text>
+<text x="1198" y="276" font-size="22" font-weight="700" fill="#eef2fb">Grand Prix Circuit</text>
+<text x="1198" y="320" font-size="13" letter-spacing="2" fill="#8794ab">LENGTH</text>
+<text x="1198" y="346" font-size="22" font-weight="700" fill="#eef2fb">5.412 km</text>
+<text x="1198" y="390" font-size="13" letter-spacing="2" fill="#8794ab">CORNERS</text>
+<text x="1198" y="416" font-size="22" font-weight="700" fill="#eef2fb">19</text>
+<text x="1198" y="460" font-size="13" letter-spacing="2" fill="#8794ab">NAMED CORNERS</text>
+<text x="1198" y="486" font-size="22" font-weight="700" fill="#eef2fb">0</text>
+<text x="1198" y="530" font-size="13" letter-spacing="2" fill="#8794ab">DIRECTION</text>
+<text x="1198" y="556" font-size="22" font-weight="700" fill="#eef2fb">Clockwise</text>
+<text x="1198" y="600" font-size="13" letter-spacing="2" fill="#8794ab">SECTORS</text>
+<text x="1198" y="626" font-size="22" font-weight="700" fill="#eef2fb">3</text>
+<text x="1198" y="670" font-size="13" letter-spacing="2" fill="#8794ab">COUNTRY</text>
+<text x="1198" y="696" font-size="22" font-weight="700" fill="#eef2fb">USA</text>
+<text x="1198" y="740" font-size="13" letter-spacing="2" fill="#8794ab">LOCATION</text>
+<text x="1198" y="766" font-size="22" font-weight="700" fill="#eef2fb">Miami Gardens, Florida</text>
+<text x="90" y="966" font-size="12" fill="#566177">Geometry © OpenStreetMap contributors (ODbL) · corner data: Lovely-Sim-Racing + curated · track-atlas</text>
+<text x="90" y="942" font-size="12" fill="#8794ab">⚑ start / finish</text>
+</svg>

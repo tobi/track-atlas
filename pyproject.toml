@@ -1,0 +1,9 @@
+[project]
+name = "track-atlas"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "cairosvg>=2.9.0",
+    "pillow>=12.2.0",
+    "pydantic>=2.13.4",
+]

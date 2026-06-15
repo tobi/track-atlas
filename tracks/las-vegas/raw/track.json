@@ -1,0 +1,413 @@
+{
+  "slug": "las-vegas",
+  "name": "Las Vegas Strip Circuit",
+  "aka": [
+    "Las Vegas"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 36.1147,
+    "lon": -115.1683,
+    "locality": "Las Vegas, Nevada",
+    "region": "Nevada",
+    "timezone": "America/Los_Angeles"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    },
+    "driver": {
+      "label": "Driver",
+      "description": "What drivers actually call it."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1",
+            "driver": "T1"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.0499,
+          "start": 0.0462,
+          "end": 0.0638,
+          "location": [
+            -115.160411,
+            36.122101
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2",
+            "driver": "T2"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.0685,
+          "start": 0.0638,
+          "end": 0.073,
+          "location": [
+            -115.160744,
+            36.121118
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "driver": "T3"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.9007,
+          "start": 0.0832,
+          "end": 0.1028,
+          "location": [
+            -115.16857,
+            36.125443
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4",
+            "driver": "T4"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.1078,
+          "start": 0.1028,
+          "end": 0.12,
+          "location": [
+            -115.160808,
+            36.119409
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "T5"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.2546,
+          "start": 0.2496,
+          "end": 0.2588,
+          "location": [
+            -115.163959,
+            36.113666
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "driver": "T6"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.3045,
+          "start": 0.2828,
+          "end": 0.3242,
+          "complex": "Sphere section",
+          "location": [
+            -115.16377,
+            36.110911
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "T7"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.3317,
+          "start": 0.328,
+          "end": 0.3346,
+          "complex": "Sphere section",
+          "location": [
+            -115.16217,
+            36.110648
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8",
+            "driver": "T8"
+          },
+          "direction": "right",
+          "scale": 2,
+          "marker": 0.3393,
+          "start": 0.3354,
+          "end": 0.3471,
+          "complex": "Sphere section",
+          "location": [
+            -115.161783,
+            36.110934
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "T9"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.3624,
+          "start": 0.3566,
+          "end": 0.3669,
+          "complex": "Sphere section",
+          "location": [
+            -115.160374,
+            36.110918
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10",
+            "driver": "T10"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.4482,
+          "start": 0.4157,
+          "end": 0.4578,
+          "location": [
+            -115.164582,
+            36.107952
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "driver": "T11"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.4864,
+          "start": 0.4748,
+          "end": 0.5084,
+          "location": [
+            -115.167223,
+            36.107954
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12",
+            "driver": "Strip entry"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.5235,
+          "start": 0.5212,
+          "end": 0.5254,
+          "location": [
+            -115.169788,
+            36.10796
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "code": "13",
+          "names": {
+            "numbered": "Turn 13",
+            "driver": "T13"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.656,
+          "start": 0.6273,
+          "end": 0.678,
+          "location": [
+            -115.173046,
+            36.113174
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "code": "14",
+          "names": {
+            "numbered": "Turn 14",
+            "driver": "End of the Strip"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.8386,
+          "start": 0.8359,
+          "end": 0.8408,
+          "location": [
+            -115.17099,
+            36.123075
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "code": "15",
+          "names": {
+            "numbered": "Turn 15",
+            "driver": "T15"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.846,
+          "start": 0.8442,
+          "end": 0.8481,
+          "location": [
+            -115.170741,
+            36.123436
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "code": "16",
+          "names": {
+            "numbered": "Turn 16",
+            "driver": "T16"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.8576,
+          "start": 0.8552,
+          "end": 0.8607,
+          "location": [
+            -115.170365,
+            36.124008
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 17,
+          "code": "17",
+          "names": {
+            "numbered": "Turn 17",
+            "driver": "T17"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.9831,
+          "start": 0.973,
+          "end": 0.996,
+          "location": [
+            -115.164724,
+            36.122492
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.2749
+        },
+        {
+          "name": "2",
+          "marker": 0.5447
+        },
+        {
+          "name": "3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.9287,
+        "exit": 0.055
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -115.163687,
+          36.122291
+        ]
+      },
+      "length_m": 6201,
+      "direction": "anticlockwise"
+    }
+  ],
+  "series": [
+    "f1"
+  ],
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:07.950083+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 17
+    }
+  }
+}

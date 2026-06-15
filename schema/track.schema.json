@@ -1,240 +1,739 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/tobi/track-atlas/schema/track.schema.json",
   "title": "Track",
-  "description": "Clean, source-agnostic metadata for a single racing circuit. One file per track at tracks/<slug>/track.json. Geometry lives in sibling layers/*.geojson and is linked by id.",
-  "type": "object",
-  "required": ["slug", "name", "location", "layouts"],
-  "additionalProperties": false,
-  "properties": {
-    "slug": {
-      "type": "string",
-      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-      "description": "Stable folder/identifier. Lowercase, hyphen-separated."
-    },
-    "name": { "type": "string", "description": "Official circuit name." },
-    "aka": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "Alternative / colloquial circuit names (e.g. 'La Sarthe')."
-    },
-    "country": { "type": "string", "description": "ISO 3166-1 alpha-2 code." },
-    "location": {
-      "type": "object",
-      "required": ["lat", "lon"],
+  "description": "Clean, source-agnostic metadata for a single racing circuit (tracks/<slug>/track.json). GENERATED from scripts/lib/models.py — do not edit by hand; run scripts/build_schema.py.",
+  "$defs": {
+    "Corner": {
       "additionalProperties": false,
       "properties": {
-        "lat": { "type": "number" },
-        "lon": { "type": "number" },
-        "locality": { "type": "string" },
-        "region": { "type": "string" },
-        "timezone": { "type": "string" }
+        "number": {
+          "description": "Sequential corner number 1..N, no gaps — the ordering key.",
+          "title": "Number",
+          "type": "integer"
+        },
+        "code": {
+          "description": "Trackside identifier (usually str(number); '5a'/'5b' for split apexes). The 'numbered' layer is this as 'Turn <code>'.",
+          "title": "Code",
+          "type": "string"
+        },
+        "names": {
+          "description": "Name layers keyed by layer code (see track.name_layers). 'numbered' is always present; other layers appear only when a name is known. An unnamed corner carries only 'numbered'.",
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": {
+              "type": "string"
+            }
+          },
+          "title": "Names",
+          "type": "object"
+        },
+        "complex": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Multi-corner complex this turn belongs to (e.g. 'Porsche Curves'). Corners sharing a complex must form one gap-free consecutive run.",
+          "title": "Complex"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "left",
+                "right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        },
+        "scale": {
+          "anyOf": [
+            {
+              "maximum": 6,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Severity 1-6: 1=Hairpin, 2=Slow, 3=Medium, 4=Fast, 5=Very fast, 6=Kink.",
+          "title": "Scale"
+        },
+        "marker": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lap fraction at the apex.",
+          "title": "Marker"
+        },
+        "start": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lap fraction where the corner begins.",
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lap fraction where the corner ends.",
+          "title": "End"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Apex coordinate, when resolvable.",
+          "title": "Location"
+        },
+        "location_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "osm-way",
+                "centerline",
+                "manual"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location Source"
+        }
       },
-      "description": "Geographic centroid of the circuit."
+      "required": [
+        "number",
+        "code",
+        "names"
+      ],
+      "title": "Corner",
+      "type": "object"
     },
-    "wikidata": { "type": "string", "pattern": "^Q[0-9]+$" },
-    "series": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "Series that race (or raced) here, lowercase codes: 'wec', 'imsa', 'elms', 'alms', 'f1', 'lmc', ..."
+    "Geometry": {
+      "additionalProperties": false,
+      "properties": {
+        "outline": {
+          "description": "Path (relative to track dir) to the layout's GeoJSON.",
+          "title": "Outline",
+          "type": "string"
+        },
+        "crs": {
+          "default": "EPSG:4326",
+          "title": "Crs",
+          "type": "string"
+        }
+      },
+      "required": [
+        "outline"
+      ],
+      "title": "Geometry",
+      "type": "object"
     },
-    "external_ids": {
-      "type": "object",
-      "additionalProperties": { "type": "string" },
-      "description": "Crosswalk to other datasets, e.g. {\"imsa_data\": \"le-mans\"} -> tracks.json id in tobi/imsa_data."
-    },
-    "layouts": {
-      "type": "array",
-      "minItems": 1,
-      "items": { "$ref": "#/definitions/layout" }
-    },
-    "provenance": { "$ref": "#/definitions/provenance" }
-  },
-  "definitions": {
-    "layout": {
-      "type": "object",
-      "required": ["id", "name", "geometry"],
+    "Layout": {
       "additionalProperties": false,
       "properties": {
         "id": {
-          "type": "string",
           "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
-          "description": "Layout identifier unique within the track (e.g. '24h', 'bugatti')."
+          "title": "Id",
+          "type": "string"
         },
-        "name": { "type": "string" },
-        "aka": { "type": "array", "items": { "type": "string" } },
-        "length_m": { "type": "number", "description": "Lap length in metres." },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "aka": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Aka",
+          "type": "array"
+        },
+        "length_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Lap length in metres.",
+          "title": "Length M"
+        },
         "direction": {
-          "type": "string",
-          "enum": ["clockwise", "anticlockwise"],
-          "description": "Racing direction."
+          "anyOf": [
+            {
+              "enum": [
+                "clockwise",
+                "anticlockwise"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
         },
         "active_years": {
-          "type": "string",
-          "description": "Free-form, e.g. '1990-' or '1972,1979-1989'."
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Free-form, e.g. '2018-' or '1972,1979-1989'.",
+          "title": "Active Years"
         },
         "geometry": {
-          "type": "object",
-          "required": ["outline"],
-          "additionalProperties": false,
-          "properties": {
-            "outline": {
-              "type": "string",
-              "description": "Path (relative to track dir) to the GeoJSON LineString of the racing line / centerline for this layout."
-            },
-            "crs": { "type": "string", "default": "EPSG:4326" }
-          }
+          "$ref": "#/$defs/Geometry"
         },
-        "start_finish": { "$ref": "#/definitions/point_ref" },
+        "start_finish": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PointRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
         "name_default": {
-          "type": "string",
-          "enum": ["colloquial", "official", "numbered"],
-          "default": "colloquial",
-          "description": "Which naming layer best represents how this track's corners are usually referred to. Consumers use this to pick a display name, falling back through colloquial -> official -> numbered when the chosen layer is absent for a corner."
+          "default": "driver",
+          "description": "Layer code (a key in track.name_layers) used as the default display name. Resolution is two steps: corner.names[name_default] if present, else corner.names.numbered — it does NOT fall through to other named layers.",
+          "title": "Name Default",
+          "type": "string"
         },
         "corners": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/corner" }
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Corner"
+          },
+          "title": "Corners",
+          "type": "array"
         },
         "straights": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/straight" }
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Straight"
+          },
+          "title": "Straights",
+          "type": "array"
         },
         "sectors": {
-          "type": "array",
+          "default": [],
           "items": {
-            "type": "object",
-            "required": ["name", "marker"],
-            "properties": {
-              "name": { "type": "string" },
-              "marker": { "type": "number", "description": "Lap fraction [0,1] of the sector boundary." }
-            }
-          }
+            "$ref": "#/$defs/Sector"
+          },
+          "title": "Sectors",
+          "type": "array"
         },
         "pit": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "entry": { "type": "number", "description": "Lap fraction [0,1]." },
-            "exit": { "type": "number", "description": "Lap fraction [0,1]." }
-          }
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Pit"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         },
         "marshal_posts": {
-          "type": "array",
-          "description": "Optional. Marshal / flag post locations.",
-          "items": { "$ref": "#/definitions/point_ref" }
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/PointRef"
+          },
+          "title": "Marshal Posts",
+          "type": "array"
         },
         "access_points": {
-          "type": "array",
-          "description": "Optional. Track exit/access/escape-road points.",
-          "items": { "$ref": "#/definitions/point_ref" }
-        }
-      }
-    },
-    "corner": {
-      "type": "object",
-      "required": ["number", "names"],
-      "additionalProperties": false,
-      "properties": {
-        "number": { "type": "integer", "description": "Sequential corner number on the lap." },
-        "names": {
-          "type": "object",
-          "description": "Parallel naming layers. 'numbered' always exists (naive 'Turn N' for everything that bends). 'official' and 'colloquial' are present only when known. Consumers should resolve a display name via the layout's name_default, falling back to colloquial -> official -> numbered.",
-          "additionalProperties": false,
-          "properties": {
-            "numbered": {
-              "type": "string",
-              "description": "Naive numbering, always present (e.g. 'Turn 1'). For multi-apex complexes, 'Turn 14a' style is allowed."
-            },
-            "official": {
-              "type": "string",
-              "description": "Official corner name from the circuit/governing body, when one exists."
-            },
-            "colloquial": {
-              "type": "string",
-              "description": "What drivers/fans actually call it. Often the best display name."
-            }
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/PointRef"
           },
-          "required": ["numbered"]
-        },
-        "complex": {
-          "type": "string",
-          "description": "Name of the multi-corner complex this turn belongs to (e.g. 'Porsche Curves', 'Maggotts/Becketts'). Several numbered corners can share one complex."
-        },
-        "direction": {
-          "type": "string",
-          "enum": ["left", "right"],
-          "description": "Turn direction."
-        },
-        "scale": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 6,
-          "description": "Severity 1-6 (1 = hairpin, 6 = barely a kink). From Lovely."
-        },
-        "marker": { "type": "number", "description": "Lap fraction [0,1] at the apex." },
-        "start": { "type": "number", "description": "Lap fraction [0,1] where the corner begins." },
-        "end": { "type": "number", "description": "Lap fraction [0,1] where the corner ends." },
-        "location": {
-          "$ref": "#/definitions/lonlat",
-          "description": "Apex coordinate, when resolvable from geometry."
-        },
-        "location_source": {
-          "type": "string",
-          "enum": ["osm-way", "centerline", "manual"],
-          "description": "How the location was derived: matched OSM named way (default when absent), lap-fraction projection onto the centerline, or hand-placed."
+          "title": "Access Points",
+          "type": "array"
         }
-      }
+      },
+      "required": [
+        "id",
+        "name",
+        "geometry"
+      ],
+      "title": "Layout",
+      "type": "object"
     },
-    "straight": {
-      "type": "object",
-      "required": ["name"],
+    "Location": {
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string" },
-        "aka": { "type": "array", "items": { "type": "string" } },
-        "start": { "type": "number", "description": "Lap fraction [0,1]." },
-        "end": { "type": "number", "description": "Lap fraction [0,1]." }
-      }
+        "lat": {
+          "title": "Lat",
+          "type": "number"
+        },
+        "lon": {
+          "title": "Lon",
+          "type": "number"
+        },
+        "locality": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Locality"
+        },
+        "region": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region"
+        },
+        "timezone": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timezone"
+        }
+      },
+      "required": [
+        "lat",
+        "lon"
+      ],
+      "title": "Location",
+      "type": "object"
     },
-    "point_ref": {
-      "type": "object",
-      "required": ["location"],
+    "NameLayer": {
+      "additionalProperties": false,
+      "description": "Registry entry describing one corner-name layer for clients.",
+      "properties": {
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Human-readable layer name for UI.",
+          "title": "Label"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "title": "NameLayer",
+      "type": "object"
+    },
+    "Pit": {
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string" },
-        "name": { "type": "string" },
-        "location": { "$ref": "#/definitions/lonlat" },
-        "marker": { "type": "number" }
-      }
+        "entry": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Entry"
+        },
+        "exit": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Exit"
+        }
+      },
+      "title": "Pit",
+      "type": "object"
     },
-    "lonlat": {
-      "type": "array",
-      "description": "[longitude, latitude] per GeoJSON axis order.",
-      "minItems": 2,
-      "maxItems": 2,
-      "items": { "type": "number" }
+    "PointRef": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Id"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "location": {
+          "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Location",
+          "type": "array"
+        },
+        "marker": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Marker"
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "title": "PointRef",
+      "type": "object"
     },
-    "provenance": {
-      "type": "object",
-      "description": "Where each part of the data came from and when.",
+    "Provenance": {
       "additionalProperties": true,
       "properties": {
-        "generated_at": { "type": "string", "format": "date-time" },
-        "sources": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": { "type": "string" },
-              "url": { "type": "string" },
-              "license": { "type": "string" },
-              "retrieved": { "type": "string" },
-              "provides": { "type": "array", "items": { "type": "string" } }
+        "generated_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
             }
-          }
+          ],
+          "default": null,
+          "title": "Generated At"
+        },
+        "sources": {
+          "anyOf": [
+            {
+              "items": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sources"
+        },
+        "corner_match": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Corner Match"
         }
-      }
+      },
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Sector": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "marker": {
+          "description": "Lap fraction in [0,1].",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Marker",
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "marker"
+      ],
+      "title": "Sector",
+      "type": "object"
+    },
+    "Straight": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "aka": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Aka",
+          "type": "array"
+        },
+        "start": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Straight",
+      "type": "object"
     }
-  }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "slug": {
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "title": "Slug",
+      "type": "string"
+    },
+    "name": {
+      "description": "Official circuit name.",
+      "title": "Name",
+      "type": "string"
+    },
+    "aka": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Aka",
+      "type": "array"
+    },
+    "country": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "ISO 3166-1 alpha-2 code.",
+      "title": "Country"
+    },
+    "location": {
+      "$ref": "#/$defs/Location"
+    },
+    "wikidata": {
+      "anyOf": [
+        {
+          "pattern": "^Q[0-9]+$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Wikidata"
+    },
+    "series": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Series",
+      "type": "array"
+    },
+    "external_ids": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "default": {},
+      "title": "External Ids",
+      "type": "object"
+    },
+    "name_layers": {
+      "description": "Registry of corner-name layers. Keys are layer codes; clients enumerate these to offer a layer to display. 'numbered' and 'official' are mandatory; 'driver' is the usual default.",
+      "patternProperties": {
+        "^[a-z][a-z0-9_]*$": {
+          "$ref": "#/$defs/NameLayer"
+        }
+      },
+      "title": "Name Layers",
+      "type": "object"
+    },
+    "layouts": {
+      "items": {
+        "$ref": "#/$defs/Layout"
+      },
+      "minItems": 1,
+      "title": "Layouts",
+      "type": "array"
+    },
+    "provenance": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Provenance"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "slug",
+    "name",
+    "location",
+    "name_layers",
+    "layouts"
+  ],
+  "type": "object"
 }

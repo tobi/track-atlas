@@ -2,27 +2,27 @@
   "gp": {
     "corners": {
       "1": {
-        "colloquial": "First Chicane",
+        "driver": "First Chicane",
         "official": "Variante del Rettifilo",
         "complex": "Variante del Rettifilo",
         "direction": "right",
         "scale": 2
       },
       "2": {
-        "colloquial": "First Chicane",
+        "driver": "First Chicane",
         "official": "Variante del Rettifilo",
         "complex": "Variante del Rettifilo",
         "direction": "left",
         "scale": 2
       },
       "3": {
-        "colloquial": "Curva Grande",
+        "driver": "Curva Grande",
         "official": "Curva Grande",
         "direction": "right",
         "scale": 5
       },
       "4": {
-        "colloquial": "Roggia",
+        "driver": "Roggia",
         "official": "Variante della Roggia",
         "complex": "Variante della Roggia",
         "direction": "right",
@@ -30,7 +30,7 @@
         "error": "direction should be right not left - this is a right-left chicane, T4 is the right-hander"
       },
       "5": {
-        "colloquial": "Roggia",
+        "driver": "Roggia",
         "official": "Variante della Roggia",
         "complex": "Variante della Roggia",
         "direction": "left",
@@ -38,20 +38,20 @@
         "error": "direction should be left not right - T5 is the left exit of the chicane"
       },
       "6": {
-        "colloquial": "Lesmo 1",
+        "driver": "Lesmo 1",
         "official": "Lesmo 1",
         "direction": "right",
         "scale": 3
       },
       "7": {
-        "colloquial": "Lesmo 2",
+        "driver": "Lesmo 2",
         "official": "Lesmo 2",
         "direction": "right",
         "scale": 3,
         "error": "scale should be 3 not 4 - Lesmo 2 is a medium-speed right-hander, similar severity to Lesmo 1"
       },
       "8": {
-        "colloquial": "Ascari",
+        "driver": "Ascari",
         "official": "Variante Ascari",
         "complex": "Variante Ascari",
         "direction": "right",
@@ -59,7 +59,7 @@
         "error": "direction should be right not left, scale should be 3 not 5 - Ascari is a medium-speed right-left-left chicane, T8 is the right entry"
       },
       "9": {
-        "colloquial": "Ascari",
+        "driver": "Ascari",
         "official": "Variante Ascari",
         "complex": "Variante Ascari",
         "direction": "left",
@@ -67,7 +67,7 @@
         "error": "scale should be 3 not 5 - this is the medium-speed left middle part of Ascari chicane"
       },
       "10": {
-        "colloquial": "Ascari",
+        "driver": "Ascari",
         "official": "Variante Ascari",
         "complex": "Variante Ascari",
         "direction": "left",
@@ -75,7 +75,7 @@
         "error": "scale should be 3 not 5 - this is the left exit of Ascari chicane, still medium speed"
       },
       "11": {
-        "colloquial": "Parabolica",
+        "driver": "Parabolica",
         "official": "Curva Parabolica",
         "direction": "right",
         "scale": 3

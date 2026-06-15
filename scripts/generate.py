@@ -36,6 +36,12 @@ from lib.osm import (  # noqa: E402
     stitch_circuit_ways, orient_loop, pit_lane_centroid, rotate_loop_to,
     densify,
 )
+from lib.naming import (  # noqa: E402
+    DEFAULT_LAYER, build_registry, numbered_for, resolve_name as _resolve,
+)
+
+# Name layers an override may set (besides numbered, which is derived from code).
+OVERRIDE_NAME_LAYERS = ("official", "driver", "historical", "sponsor", "local")
 
 
 def _osm_corner_index(osm: dict) -> dict:
@@ -47,18 +53,11 @@ def _osm_corner_index(osm: dict) -> dict:
 
 
 def resolve_name(corner: dict, default_layer: str) -> str:
-    """Pick a display name for a corner: try the track's preferred layer, then
-    fall back colloquial -> official -> numbered (numbered always exists)."""
-    names = corner["names"]
-    order = [default_layer, "colloquial", "official", "numbered"]
-    for layer in order:
-        if names.get(layer):
-            return names[layer]
-    return names["numbered"]
+    return _resolve(corner["names"], default_layer)
 
 
 def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
-                   default_layer: str = "colloquial", start_finish=None,
+                   default_layer: str = DEFAULT_LAYER, start_finish=None,
                    pit_points=None) -> dict:
     feats = []
     if outline_coords:
@@ -88,6 +87,7 @@ def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
             "properties": {
                 "role": "corner",
                 "number": c["number"],
+                "code": c.get("code", str(c["number"])),
                 "display": resolve_name(c, default_layer),
                 "names": c["names"],
                 "complex": c.get("complex"),
@@ -103,7 +103,9 @@ def generate_track(slug: str) -> dict:
     src = load_source(slug)
     tdir = track_dir(slug)
     raw = tdir / "raw"
-    (tdir / "layers").mkdir(exist_ok=True)
+    # All generated files live under raw/ (downloads + derived). track.json's
+    # geometry.outline paths are relative to track.json's own dir (raw/).
+    (raw / "layers").mkdir(parents=True, exist_ok=True)
 
     osm = json.loads((raw / "osm.json").read_text()) if (raw / "osm.json").exists() else {}
     osm_idx = _osm_corner_index(osm) if osm else {}
@@ -114,8 +116,10 @@ def generate_track(slug: str) -> dict:
         "aka": src.get("aka", []),
         "country": src.get("country"),
         "location": src["location"],
+        "name_layers": {},   # filled after layouts, from the layers actually used
         "layouts": [],
     }
+    name_layer_codes = set()
     if src.get("wikidata"):
         track["wikidata"] = src["wikidata"]
     if src.get("series"):
@@ -136,13 +140,13 @@ def generate_track(slug: str) -> dict:
 
         corners = corners_from_lovely(lovely)
         # Join OSM coordinates onto corners by matching the corner's best known
-        # name (colloquial preferred, then official) against OSM way names, with
+        # name (driver preferred, then official) against OSM way names, with
         # a fuzzy fallback for upstream typos (Lovely "Arange" -> OSM "Arnage").
         import difflib
         osm_keys = list(osm_idx.keys())
         for c in corners:
             corner_total += 1
-            match_name = c["names"].get("colloquial") or c["names"].get("official")
+            match_name = c["names"].get("driver") or c["names"].get("official")
             if match_name:
                 key = normalize(match_name)
                 hit = osm_idx.get(key)
@@ -154,25 +158,55 @@ def generate_track(slug: str) -> dict:
                     c["location"] = [round(hit[1][0], 6), round(hit[1][1], 6)]
                     matched_total += 1
 
-        # Curated overrides: layer in official/colloquial names + complex group
-        # that upstream sources lack. tracks/<slug>/overrides.json, keyed by
-        # layout id then corner number:
+        # Curated overrides: name layers + complex group / direction / scale /
+        # code that upstream sources lack. tracks/<slug>/overrides.json, keyed
+        # by layout id then corner number:
         #   {"24h": {"corners": {"14": {"official": "Virage Porsche",
-        #                               "colloquial": "Porsche Curves",
+        #                               "driver": "Porsche Curves",
         #                               "complex": "Porsche Curves"}}}}
         ov_file = tdir / "overrides.json"
+        cleared_driver = set()   # corners whose driver layer an override cleared
         if ov_file.exists():
             ov = json.loads(ov_file.read_text()).get(lid, {}).get("corners", {})
             for c in corners:
                 o = ov.get(str(c["number"]))
                 if not o:
                     continue
-                for layer in ("official", "colloquial", "numbered"):
+                if "code" in o:
+                    c["code"] = str(o["code"])
+                for layer in OVERRIDE_NAME_LAYERS:
                     if layer in o:
-                        c["names"][layer] = o[layer]
+                        # null / "" deletes the layer (e.g. promote a Lovely
+                        # name to 'official' and clear 'driver' so the display
+                        # falls back to the number -- Sebring "Sunset Bend").
+                        if o[layer] in (None, ""):
+                            c["names"].pop(layer, None)
+                            if layer == "driver":
+                                cleared_driver.add(c["number"])
+                        else:
+                            c["names"][layer] = o[layer]
                 for k in ("complex", "direction", "scale"):
                     if k in o:
                         c[k] = o[k]
+
+        # Normalize the name layers:
+        #   - 'numbered' always tracks the (possibly overridden) code;
+        #   - drop any overlay that merely repeats the numbered identifier
+        #     ("official": "Turn 3" is a placeholder, not a real name);
+        #   - default 'driver' to the official name when no distinct driver
+        #     nickname is known and it wasn't explicitly cleared -- drivers use
+        #     the official name unless they say something else (or just the
+        #     number, e.g. Sebring T17, which clears driver via an override).
+        for c in corners:
+            c.setdefault("code", str(c["number"]))
+            c["names"]["numbered"] = numbered_for(c["code"])
+            num = c["names"]["numbered"]
+            for layer in list(c["names"]):
+                if layer != "numbered" and c["names"][layer] == num:
+                    del c["names"][layer]
+            if ("driver" not in c["names"] and c["names"].get("official")
+                    and c["number"] not in cleared_driver):
+                c["names"]["driver"] = c["names"]["official"]
         # --- Build the outline + place every corner on the real track ---
         # Prefer the OSM route relation centerline (the official continuous lap,
         # public-road sections and all). With it we can (a) draw the true track
@@ -282,10 +316,21 @@ def generate_track(slug: str) -> dict:
                 outline_coords = [c["location"] for c in traced]
                 if len(outline_coords) >= 3:
                     outline_coords.append(outline_coords[0])  # close the loop
-        default_layer = layout.get("name_default", src.get("name_default", "colloquial"))
+        # Pick the default display layer: the configured preference if any corner
+        # actually carries it, else the best populated layer (driver -> official
+        # -> numbered). Number-only tracks honestly default to 'numbered'; the
+        # thin-naming warning in verify.py is the curation signal.
+        populated = set()
+        for c in corners:
+            populated.update(c["names"].keys())
+        name_layer_codes.update(populated)
+        preferred = layout.get("name_default") or src.get("name_default") or DEFAULT_LAYER
+        default_layer = preferred if preferred in populated else next(
+            (l for l in (DEFAULT_LAYER, "official", "numbered") if l in populated),
+            "numbered")
         gj = _layer_geojson(lid, corners, outline_coords or None, default_layer,
                             start_finish=sf_point, pit_points=pit_points)
-        (tdir / outline_path).write_text(json.dumps(gj, ensure_ascii=False, indent=2))
+        (raw / outline_path).write_text(json.dumps(gj, ensure_ascii=False, indent=2))
 
         lo = {
             "id": lid,
@@ -305,6 +350,8 @@ def generate_track(slug: str) -> dict:
                 lo[k] = layout[k]
         track["layouts"].append(lo)
 
+    track["name_layers"] = build_registry(name_layer_codes)
+
     track["provenance"] = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "sources": [
@@ -318,8 +365,8 @@ def generate_track(slug: str) -> dict:
         "corner_match": {"matched": matched_total, "total": corner_total},
     }
 
-    (tdir / "track.json").write_text(json.dumps(track, ensure_ascii=False, indent=2))
-    print(f"[{slug}] track.json written -- corners matched to OSM geometry: "
+    (raw / "track.json").write_text(json.dumps(track, ensure_ascii=False, indent=2))
+    print(f"[{slug}] raw/track.json written -- corners matched to OSM geometry: "
           f"{matched_total}/{corner_total}")
     return track
 

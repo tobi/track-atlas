@@ -1,0 +1,283 @@
+{
+  "slug": "long-beach",
+  "name": "Long Beach Street Circuit",
+  "aka": [
+    "Long Beach"
+  ],
+  "country": "US",
+  "location": {
+    "lat": 33.7598,
+    "lon": -118.189,
+    "locality": "Long Beach, California",
+    "region": "California",
+    "timezone": "America/Los_Angeles"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    },
+    "driver": {
+      "label": "Driver",
+      "description": "What drivers actually call it."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Street Circuit",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1",
+            "driver": "Shoreline"
+          },
+          "marker": 0.223,
+          "direction": "right",
+          "scale": 3,
+          "location": [
+            -118.187684,
+            33.762052
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2",
+            "driver": "Aquarium"
+          },
+          "marker": 0.283,
+          "direction": "left",
+          "scale": 2,
+          "location": [
+            -118.18975,
+            33.761808
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "driver": "T3"
+          },
+          "marker": 0.295,
+          "direction": "right",
+          "scale": 4,
+          "location": [
+            -118.190161,
+            33.761887
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4",
+            "driver": "T4"
+          },
+          "marker": 0.331,
+          "direction": "left",
+          "scale": 4,
+          "location": [
+            -118.191326,
+            33.762305
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "T5"
+          },
+          "marker": 0.378,
+          "direction": "left",
+          "scale": 4,
+          "location": [
+            -118.192811,
+            33.762915
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "driver": "T6"
+          },
+          "marker": 0.505,
+          "direction": "right",
+          "scale": 5,
+          "location": [
+            -118.196262,
+            33.763098
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "T7"
+          },
+          "marker": 0.536,
+          "direction": "left",
+          "scale": 4,
+          "location": [
+            -118.19716,
+            33.763607
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8",
+            "driver": "The Fountain"
+          },
+          "marker": 0.602,
+          "direction": "left",
+          "scale": 2,
+          "location": [
+            -118.196225,
+            33.764753
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "T9"
+          },
+          "marker": 0.801,
+          "direction": "right",
+          "scale": 3,
+          "location": [
+            -118.192365,
+            33.765396
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10",
+            "driver": "T10"
+          },
+          "marker": 0.842,
+          "direction": "left",
+          "scale": 4,
+          "location": [
+            -118.191446,
+            33.765841
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "driver": "The Hairpin"
+          },
+          "marker": 0.882,
+          "direction": "right",
+          "scale": 1,
+          "location": [
+            -118.190037,
+            33.76588
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [],
+      "sectors": [
+        {
+          "name": "1",
+          "marker": 0.312
+        },
+        {
+          "name": "2",
+          "marker": 0.455
+        },
+        {
+          "name": "3",
+          "marker": 0.726
+        },
+        {
+          "name": "4",
+          "marker": 1
+        }
+      ],
+      "pit": {},
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -118.185888,
+          33.765664
+        ]
+      },
+      "length_m": 3167,
+      "direction": "clockwise"
+    }
+  ],
+  "series": [
+    "imsa"
+  ],
+  "external_ids": {
+    "imsa_data": "long-beach"
+  },
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:07.953910+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 0,
+      "total": 11
+    }
+  }
+}

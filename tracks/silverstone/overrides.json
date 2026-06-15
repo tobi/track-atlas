@@ -4,7 +4,7 @@
     "corners": {
       "1": {
         "official": "Abbey",
-        "colloquial": "Abbey",
+        "driver": "Abbey",
         "direction": "right",
         "scale": 5,
         "error": "scale 3 is too severe — Abbey is taken near-flat in F1, should be 5"
@@ -12,7 +12,7 @@
       "2": {
         "official": "Farm Curve",
         "complex": "Abbey / Farm",
-        "colloquial": "Farm",
+        "driver": "Farm",
         "direction": "left",
         "scale": 5,
         "error": "complex 'Abbey / Farm' should be null — drivers don't refer to Abbey-Farm as a single unit (and T1 has complex null, so the pairing is inconsistent anyway)"
@@ -20,7 +20,7 @@
       "3": {
         "official": "Village",
         "complex": "Arena",
-        "colloquial": "Village",
+        "driver": "Village",
         "direction": "right",
         "scale": 2,
         "error": "complex name 'Village / The Loop / Aintree' is not what drivers say — this section is collectively called the 'Arena'"
@@ -28,7 +28,7 @@
       "4": {
         "official": "The Loop",
         "complex": "Arena",
-        "colloquial": "The Loop",
+        "driver": "The Loop",
         "direction": "left",
         "scale": 1,
         "error": "The Loop is the slowest corner on the circuit, a tight ~150° left — scale should be 1, not 2; complex should be 'Arena'"
@@ -36,7 +36,7 @@
       "5": {
         "official": "Aintree",
         "complex": "Arena",
-        "colloquial": "Aintree",
+        "driver": "Aintree",
         "direction": "left",
         "scale": 4,
         "error": "Aintree is a fast left onto the Wellington Straight — scale 4 rather than 3; complex should be 'Arena'"
@@ -46,7 +46,7 @@
       },
       "7": {
         "official": "Luffield",
-        "colloquial": "Luffield",
+        "driver": "Luffield",
         "direction": "right",
         "scale": 2,
         "error": "scale 1 overstates it — Luffield is a long slow right but not a hairpin, scale 2 fits better"
@@ -56,7 +56,7 @@
       },
       "9": {
         "official": "Copse",
-        "colloquial": "Copse",
+        "driver": "Copse",
         "direction": "right",
         "scale": 5,
         "error": "scale 2 is badly wrong — Copse is one of the fastest corners on the calendar, taken near-flat in F1, should be 5"
@@ -64,7 +64,7 @@
       "10": {
         "official": "Maggotts",
         "complex": "Maggotts-Becketts-Chapel",
-        "colloquial": "Maggotts",
+        "driver": "Maggotts",
         "direction": "left",
         "scale": 6,
         "error": "colloquial spelled 'Maggots' — correct spelling is 'Maggotts'; the first left is barely a deflection taken flat, scale 6; also shares identical coordinates with T11 — one of the two points is misplaced"
@@ -72,7 +72,7 @@
       "11": {
         "official": "Becketts",
         "complex": "Maggotts-Becketts-Chapel",
-        "colloquial": "Becketts",
+        "driver": "Becketts",
         "direction": "right",
         "scale": 4,
         "error": "named 'Maggots' but on the official circuit map T11 is the first part of Becketts (T10 is Maggotts, T11-13 Becketts); spelling also wrong; coordinate is a duplicate of T10"
@@ -80,7 +80,7 @@
       "12": {
         "official": "Becketts",
         "complex": "Maggotts-Becketts-Chapel",
-        "colloquial": "Becketts",
+        "driver": "Becketts",
         "direction": "left",
         "scale": 4,
         "error": "shares identical coordinates with T13 — apex points should be distinct; scale 4 fits the fast left better than 3"
@@ -88,18 +88,18 @@
       "13": {
         "official": "Becketts",
         "complex": "Maggotts-Becketts-Chapel",
-        "colloquial": "Becketts",
+        "driver": "Becketts",
         "direction": "right",
         "scale": 3,
         "error": "coordinate is a duplicate of T12 — one of the two points is misplaced"
       },
       "14": {
         "official": "Chapel",
-        "complex": "Maggotts / Becketts / Chapel"
+        "complex": "Maggotts-Becketts-Chapel"
       },
       "15": {
         "official": "Stowe",
-        "colloquial": "Stowe",
+        "driver": "Stowe",
         "direction": "right",
         "scale": 4,
         "error": "Stowe is a fast right at the end of Hangar Straight — scale 4 rather than 3"
@@ -107,7 +107,7 @@
       "16": {
         "official": "Vale",
         "complex": "Vale",
-        "colloquial": "Vale",
+        "driver": "Vale",
         "direction": "left",
         "scale": 2,
         "error": "shares identical coordinates with T17 — the left (T16) and right (T17) apexes are clearly separate points on track"
@@ -115,14 +115,14 @@
       "17": {
         "official": "Club",
         "complex": "Vale",
-        "colloquial": "Club",
+        "driver": "Club",
         "direction": "right",
         "scale": 2,
         "error": "on the official map T17 is the first part of Club, not Vale (T16 is Vale, T17-18 Club); coordinate is a duplicate of T16"
       },
       "18": {
         "official": "Club",
-        "colloquial": "Club",
+        "driver": "Club",
         "direction": "right",
         "scale": 3,
         "error": "Club exit is a long opening right onto the Hamilton Straight — scale 3 rather than 2"

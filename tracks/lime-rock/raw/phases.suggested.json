@@ -1,0 +1,62 @@
+{
+  "gp": {
+    "note": "suggested corner phases as lap fractions (start/apex/end). Heuristic from severity; review and edit. Not authoritative.",
+    "corners": {
+      "1": {
+        "number": 1,
+        "code": "1",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.148,
+        "start": 0.09926,
+        "end": 0.18862
+      },
+      "2": {
+        "number": 2,
+        "code": "2",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": "Esses",
+        "apex": 0.309,
+        "start": 0.26026,
+        "end": 0.34962
+      },
+      "3": {
+        "number": 3,
+        "code": "3",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.53,
+        "start": 0.50157,
+        "end": 0.55843
+      },
+      "4": {
+        "number": 4,
+        "code": "4",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.692,
+        "start": 0.66357,
+        "end": 0.72043
+      },
+      "5": {
+        "number": 5,
+        "code": "5",
+        "scale": 5,
+        "scale_label": "Very fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.823,
+        "start": 0.80878,
+        "end": 0.84128
+      }
+    }
+  }
+}

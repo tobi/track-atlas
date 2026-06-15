@@ -1,0 +1,470 @@
+{
+  "slug": "imola",
+  "name": "Autodromo Enzo e Dino Ferrari",
+  "aka": [
+    "Imola"
+  ],
+  "country": "IT",
+  "location": {
+    "lat": 44.338,
+    "lon": 11.708,
+    "locality": "Imola",
+    "region": "Emilia-Romagna",
+    "timezone": "Europe/Rome"
+  },
+  "name_layers": {
+    "numbered": {
+      "label": "Numbered",
+      "description": "Sequential 'Turn N' identifier (always present)."
+    },
+    "official": {
+      "label": "Official",
+      "description": "Circuit / governing-body name."
+    },
+    "driver": {
+      "label": "Driver",
+      "description": "What drivers actually call it."
+    }
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/gp.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1",
+            "driver": "Variante Bassa"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.01,
+          "start": 0.99,
+          "end": 0.1,
+          "location": [
+            11.716926,
+            44.343956
+          ]
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2",
+            "driver": "Tamburello",
+            "official": "Variante Tamburello"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.14,
+          "start": 0.13,
+          "end": 0.15,
+          "location": [
+            11.706544,
+            44.342959
+          ],
+          "complex": "Tamburello"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "official": "Variante Tamburello",
+            "driver": "Tamburello"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.15,
+          "start": 0.15,
+          "end": 0.16,
+          "complex": "Tamburello",
+          "location": [
+            11.706256,
+            44.342687
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4",
+            "official": "Variante Tamburello",
+            "driver": "Tamburello"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.18,
+          "start": 0.17,
+          "end": 0.19,
+          "complex": "Tamburello",
+          "location": [
+            11.705678,
+            44.341663
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "Villeneuve",
+            "official": "Variante Villeneuve"
+          },
+          "direction": "left",
+          "scale": 5,
+          "marker": 0.27,
+          "start": 0.26,
+          "end": 0.28,
+          "location": [
+            11.704516,
+            44.338551
+          ],
+          "complex": "Villeneuve"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "official": "Variante Villeneuve",
+            "driver": "Villeneuve"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.29,
+          "start": 0.28,
+          "end": 0.3,
+          "complex": "Villeneuve",
+          "location": [
+            11.70382,
+            44.338034
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "Tosa",
+            "official": "Tosa"
+          },
+          "direction": "left",
+          "scale": 1,
+          "marker": 0.34,
+          "start": 0.33,
+          "end": 0.35,
+          "location": [
+            11.70224,
+            44.336716
+          ]
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.43,
+          "start": 0.42,
+          "end": 0.44,
+          "location": [
+            11.708713,
+            44.336677
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "Piratella",
+            "official": "Piratella"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.47,
+          "start": 0.45,
+          "end": 0.49,
+          "location": [
+            11.710487,
+            44.337932
+          ]
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.51,
+          "start": 0.5,
+          "end": 0.52,
+          "location": [
+            11.710322,
+            44.339081
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "official": "Acque Minerali",
+            "driver": "Acque Minerali 1"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.55,
+          "start": 0.54,
+          "end": 0.57,
+          "complex": "Acque Minerali",
+          "location": [
+            11.710169,
+            44.340205
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12",
+            "driver": "Acque Minerali 2",
+            "official": "Acque Minerali"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.58,
+          "start": 0.57,
+          "end": 0.59,
+          "location": [
+            11.710874,
+            44.340848
+          ],
+          "complex": "Acque Minerali"
+        },
+        {
+          "number": 13,
+          "code": "13",
+          "names": {
+            "numbered": "Turn 13"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.59,
+          "start": 0.59,
+          "end": 0.61,
+          "location": [
+            11.711509,
+            44.340748
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "code": "14",
+          "names": {
+            "numbered": "Turn 14",
+            "driver": "Variante Alta",
+            "official": "Variante Alta"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.68,
+          "start": 0.67,
+          "end": 0.69,
+          "complex": "Variante Alta",
+          "location": [
+            11.717421,
+            44.340472
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "code": "15",
+          "names": {
+            "numbered": "Turn 15",
+            "official": "Variante Alta",
+            "driver": "Variante Alta"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.69,
+          "start": 0.69,
+          "end": 0.7,
+          "complex": "Variante Alta",
+          "location": [
+            11.718054,
+            44.340652
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "code": "16",
+          "names": {
+            "numbered": "Turn 16"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.81,
+          "start": 0.78,
+          "end": 0.82,
+          "location": [
+            11.724809,
+            44.343818
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 17,
+          "code": "17",
+          "names": {
+            "numbered": "Turn 17",
+            "driver": "Rivazza 1",
+            "official": "Rivazza"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.84,
+          "start": 0.83,
+          "end": 0.85,
+          "location": [
+            11.724513,
+            44.344963
+          ],
+          "complex": "Rivazza"
+        },
+        {
+          "number": 18,
+          "code": "18",
+          "names": {
+            "numbered": "Turn 18",
+            "official": "Rivazza",
+            "driver": "Rivazza 2"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.87,
+          "start": 0.86,
+          "end": 0.88,
+          "complex": "Rivazza",
+          "location": [
+            11.723269,
+            44.344785
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 19,
+          "code": "19",
+          "names": {
+            "numbered": "Turn 19",
+            "official": "Variante Bassa",
+            "driver": "Variante Bassa"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.94,
+          "start": 0.92,
+          "end": 0.96,
+          "location": [
+            11.720256,
+            44.344025
+          ],
+          "location_source": "centerline"
+        }
+      ],
+      "straights": [
+        {
+          "name": "Main Straight",
+          "start": 0.96,
+          "end": 0.12
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Sector 1",
+          "marker": 0.33
+        },
+        {
+          "name": "Sector 2",
+          "marker": 0.65
+        },
+        {
+          "name": "Sector 3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.93,
+        "exit": 0.04
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          11.717511,
+          44.344045
+        ]
+      },
+      "length_m": 4909,
+      "direction": "anticlockwise"
+    }
+  ],
+  "series": [
+    "wec",
+    "elms",
+    "f1"
+  ],
+  "external_ids": {
+    "imsa_data": "imola"
+  },
+  "provenance": {
+    "generated_at": "2026-06-15T14:15:05.136581+00:00",
+    "sources": [
+      {
+        "name": "Lovely-Sim-Racing/lovely-track-data",
+        "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
+        "license": "see upstream",
+        "provides": [
+          "corners",
+          "straights",
+          "sectors",
+          "pit"
+        ]
+      },
+      {
+        "name": "OpenStreetMap (Overpass)",
+        "url": "https://www.openstreetmap.org",
+        "license": "ODbL",
+        "provides": [
+          "geometry",
+          "named-corner-coordinates"
+        ]
+      }
+    ],
+    "corner_match": {
+      "matched": 7,
+      "total": 19
+    }
+  }
+}
