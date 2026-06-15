@@ -61,6 +61,33 @@ def sectors_from_lovely(lovely: dict) -> list[dict]:
             for s in lovely.get("sector", []) if "marker" in s]
 
 
+def sectors_s1s3(lovely: dict) -> list[dict]:
+    """The three canonical timing sectors S1/S2/S3 as {name, start, end} lap
+    fractions. Every circuit gets exactly three. We take Lovely's sector
+    boundaries (which range from 3 to ~6 mini-sectors, and are occasionally
+    buggy) and pick the two internal boundaries nearest 1/3 and 2/3; with no
+    usable data we fall back to even thirds.
+    """
+    raw = [s["marker"] for s in lovely.get("sector", [])
+           if isinstance(s.get("marker"), (int, float))]
+    internal = sorted({round(m, 5) for m in raw if 0.02 < m < 0.98})
+    if len(internal) >= 2:
+        b1 = min(internal, key=lambda m: abs(m - 1 / 3))
+        upper = [m for m in internal if m > b1 + 0.05]
+        b2 = min(upper, key=lambda m: abs(m - 2 / 3)) if upper else (b1 + 1.0) / 2
+    elif len(internal) == 1:
+        b1 = internal[0]
+        b2 = (b1 + 1.0) / 2
+    else:
+        b1, b2 = 1 / 3, 2 / 3
+    b1, b2 = round(b1, 5), round(b2, 5)
+    return [
+        {"name": "S1", "start": 0.0, "end": b1},
+        {"name": "S2", "start": b1, "end": b2},
+        {"name": "S3", "start": b2, "end": 1.0},
+    ]
+
+
 def pit_from_lovely(lovely: dict) -> dict:
     pit = {}
     if "pitentry" in lovely:

@@ -329,16 +329,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.356
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.356
         },
         {
-          "name": "2",
-          "marker": 0.645
+          "name": "S2",
+          "start": 0.356,
+          "end": 0.645
         },
         {
-          "name": "3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.645,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -363,7 +366,7 @@
     "imsa_data": "mugello"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:37.300526+00:00",
+    "generated_at": "2026-06-15T17:56:37.541728+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

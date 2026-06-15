@@ -248,20 +248,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.261
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.261
         },
         {
-          "name": "2",
-          "marker": 0.505
+          "name": "S2",
+          "start": 0.261,
+          "end": 0.662
         },
         {
-          "name": "3",
-          "marker": 0.662
-        },
-        {
-          "name": "4",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.662,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -286,7 +285,7 @@
     "imsa_data": "indianapolis"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:33.318268+00:00",
+    "generated_at": "2026-06-15T17:56:33.638159+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

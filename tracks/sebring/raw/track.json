@@ -352,16 +352,19 @@
       ],
       "sectors": [
         {
-          "name": "Sector 1",
-          "marker": 0.36
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.36
         },
         {
-          "name": "Sector 2",
-          "marker": 0.61
+          "name": "S2",
+          "start": 0.36,
+          "end": 0.61
         },
         {
-          "name": "Sector 3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.61,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -706,16 +709,19 @@
       ],
       "sectors": [
         {
-          "name": "Sector 1",
-          "marker": 0.36
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.36
         },
         {
-          "name": "Sector 2",
-          "marker": 0.61
+          "name": "S2",
+          "start": 0.36,
+          "end": 0.61
         },
         {
-          "name": "Sector 3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.61,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -744,7 +750,7 @@
     "imsa_data": "sebring"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:37:00.820017+00:00",
+    "generated_at": "2026-06-15T17:57:00.958132+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -265,24 +265,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.14
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.355
         },
         {
-          "name": "2",
-          "marker": 0.272
+          "name": "S2",
+          "start": 0.355,
+          "end": 0.63
         },
         {
-          "name": "3",
-          "marker": 0.355
-        },
-        {
-          "name": "4",
-          "marker": 0.63
-        },
-        {
-          "name": "5",
-          "marker": 1
+          "name": "S3",
+          "start": 0.63,
+          "end": 1.0
         }
       ],
       "pit": {},
@@ -304,7 +299,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:33.302249+00:00",
+    "generated_at": "2026-06-15T17:56:33.618056+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

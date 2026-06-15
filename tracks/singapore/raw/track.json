@@ -393,16 +393,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.336
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.336
         },
         {
-          "name": "2",
-          "marker": 0.7055
+          "name": "S2",
+          "start": 0.336,
+          "end": 0.7055
         },
         {
-          "name": "3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.7055,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -424,7 +427,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-15T16:37:00.835390+00:00",
+    "generated_at": "2026-06-15T17:57:00.979557+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

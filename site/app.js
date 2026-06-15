@@ -132,11 +132,13 @@ async function showLayout(layoutId) {
   document.getElementById("layerPick").innerHTML = layers.map((code) =>
     `<option value="${esc(code)}" ${code === displayLayer ? "selected" : ""}>${esc((track.name_layers[code] || {}).label || code)}</option>`).join("");
 
+  const sectors = (layout.sectors || []).map((s) =>
+    `${s.name} ${Math.round(s.start * 100)}–${Math.round(s.end * 100)}%`).join("  ");
   const stats = [
     ["Layout", layout.name], ["Length", fmtKm(layout.length_m)],
     ["Corners", (layout.corners || []).length],
     ["Direction", layout.direction || "—"],
-    ["Sectors", (layout.sectors || []).length],
+    ["Sectors", sectors || "—"],
     ["Country", track.country || "—"],
     ["Series", (track.series || []).join(", ") || "—"],
   ];
@@ -171,6 +173,14 @@ function nameLayerColumns(track) {
 
 function setDisplayLayer(code) { displayLayer = code; renderCorners(); }
 
+// Which timing sector (S1/S2/S3) a corner's apex falls in.
+function sectorOf(c, layout) {
+  const m = c.marker;
+  if (m == null) return "";
+  const s = (layout.sectors || []).find((x) => m >= x.start && m < x.end);
+  return s ? s.name : "";
+}
+
 function renderCorners() {
   const track = window.__track;
   const layout = currentLayout || track.layouts[0];
@@ -179,7 +189,7 @@ function renderCorners() {
     <table id="cornersTbl">
       <tr><th>#</th><th>code</th><th>display</th>
         ${cols.map((c) => `<th>${esc((track.name_layers[c] || {}).label || c)}</th>`).join("")}
-        <th>complex</th><th>dir</th><th>scale</th><th>apex %</th><th>phase (brake→exit)</th><th></th></tr>
+        <th>complex</th><th>sec</th><th>dir</th><th>scale</th><th>apex %</th><th>phase (brake→exit)</th><th></th></tr>
       ${(layout.corners || []).map((c) => `
         <tr>
           <td>${c.number}</td>
@@ -187,6 +197,7 @@ function renderCorners() {
           <td><b>${esc(resolveName(c, displayLayer))}</b></td>
           ${cols.map((L) => `<td>${esc((c.names || {})[L] || "")}</td>`).join("")}
           <td>${esc(c.complex || "")}</td>
+          <td class="muted">${esc(sectorOf(c, layout))}</td>
           <td>${c.direction === "left" ? "←" : c.direction === "right" ? "→" : ""}</td>
           <td>${esc(scaleLabel(c.scale))}</td>
           <td class="muted">${c.marker != null ? (c.marker * 100).toFixed(1) : ""}</td>

@@ -89,8 +89,9 @@ class Corner(Strict):
 
 
 class Sector(Strict):
-    name: str
-    marker: Fraction
+    name: str = Field(description="Timing sector label: 'S1', 'S2', 'S3'.")
+    start: Fraction = Field(description="Lap fraction where the sector begins.")
+    end: Fraction = Field(description="Lap fraction where the sector ends (the timing line).")
 
 
 class Straight(Strict):

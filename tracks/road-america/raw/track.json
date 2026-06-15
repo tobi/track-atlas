@@ -292,28 +292,19 @@
       ],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.143
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.327
         },
         {
-          "name": "2",
-          "marker": 0.327
+          "name": "S2",
+          "start": 0.327,
+          "end": 0.76
         },
         {
-          "name": "3",
-          "marker": 0.478
-        },
-        {
-          "name": "4",
-          "marker": 0.76
-        },
-        {
-          "name": "5",
-          "marker": 0.866
-        },
-        {
-          "name": "6",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.76,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -338,7 +329,7 @@
     "imsa_data": "road-america"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:37:00.809663+00:00",
+    "generated_at": "2026-06-15T17:57:00.945930+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -28,7 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS, load_source, track_dir  # noqa: E402
 from lib.lovely import (  # noqa: E402
-    corners_from_lovely, pit_from_lovely, sectors_from_lovely, straights_from_lovely,
+    corners_from_lovely, pit_from_lovely, sectors_s1s3, straights_from_lovely,
 )
 from lib.osm import (  # noqa: E402
     centroid, named_corner_ways, normalize,
@@ -369,7 +369,7 @@ def generate_track(slug: str) -> dict:
             "geometry": {"outline": outline_path, "crs": "EPSG:4326"},
             "corners": corners,
             "straights": straights_from_lovely(lovely),
-            "sectors": sectors_from_lovely(lovely),
+            "sectors": sectors_s1s3(lovely),
             "pit": pit,
         }
         if sf_point:

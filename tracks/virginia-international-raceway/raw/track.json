@@ -335,28 +335,19 @@
       ],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.185
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.337
         },
         {
-          "name": "2",
-          "marker": 0.337
+          "name": "S2",
+          "start": 0.337,
+          "end": 0.735
         },
         {
-          "name": "3",
-          "marker": 0.505
-        },
-        {
-          "name": "4",
-          "marker": 0.735
-        },
-        {
-          "name": "5",
-          "marker": 0.829
-        },
-        {
-          "name": "6",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.735,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -381,7 +372,7 @@
     "imsa_data": "virginia-international-raceway"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:37:00.848388+00:00",
+    "generated_at": "2026-06-15T17:57:00.995531+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

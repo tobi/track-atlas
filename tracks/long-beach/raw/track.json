@@ -239,20 +239,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.312
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.312
         },
         {
-          "name": "2",
-          "marker": 0.455
+          "name": "S2",
+          "start": 0.312,
+          "end": 0.726
         },
         {
-          "name": "3",
-          "marker": 0.726
-        },
-        {
-          "name": "4",
-          "marker": 1
+          "name": "S3",
+          "start": 0.726,
+          "end": 1.0
         }
       ],
       "pit": {},
@@ -274,7 +273,7 @@
     "imsa_data": "long-beach"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:36.257100+00:00",
+    "generated_at": "2026-06-15T17:56:36.534107+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

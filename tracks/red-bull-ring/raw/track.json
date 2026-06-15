@@ -222,16 +222,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.2787
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.2787
         },
         {
-          "name": "2",
-          "marker": 0.68
+          "name": "S2",
+          "start": 0.2787,
+          "end": 0.68
         },
         {
-          "name": "3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.68,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -257,7 +260,7 @@
     "imsa_data": "red-bull-ring"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:51.752779+00:00",
+    "generated_at": "2026-06-15T17:56:51.761608+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

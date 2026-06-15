@@ -379,16 +379,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.3079
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.3079
         },
         {
-          "name": "2",
-          "marker": 0.729
+          "name": "S2",
+          "start": 0.3079,
+          "end": 0.729
         },
         {
-          "name": "3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.729,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -417,7 +420,7 @@
     "imsa_data": "silverstone"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:37:00.831958+00:00",
+    "generated_at": "2026-06-15T17:57:00.974671+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -571,20 +571,29 @@
       "additionalProperties": false,
       "properties": {
         "name": {
+          "description": "Timing sector label: 'S1', 'S2', 'S3'.",
           "title": "Name",
           "type": "string"
         },
-        "marker": {
-          "description": "Lap fraction in [0,1].",
+        "start": {
+          "description": "Lap fraction where the sector begins.",
           "maximum": 1.0,
           "minimum": 0.0,
-          "title": "Marker",
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "description": "Lap fraction where the sector ends (the timing line).",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "End",
           "type": "number"
         }
       },
       "required": [
         "name",
-        "marker"
+        "start",
+        "end"
       ],
       "title": "Sector",
       "type": "object"

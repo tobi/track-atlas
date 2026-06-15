@@ -160,7 +160,7 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `name_default` | string | | Layer code (a key in `name_layers`) shown by default (usually `driver`). Resolution is two steps: `names[name_default]` if present, else `names.numbered` — no fall-through to other layers |
 | `corners` | corner[] | | Ordered corner list (see below) |
 | `straights` | straight[] | | `{name, aka?, start?, end?}` as lap fractions |
-| `sectors` | object[] | | `{name, marker}` — sector boundary lap fractions |
+| `sectors` | object[] | | Always the three timing sectors: `{name: "S1"\|"S2"\|"S3", start, end}` as lap fractions, contiguous 0→1 |
 | `pit` | object | | `{entry, exit}` lap fractions of pit entry/exit |
 | `marshal_posts` | point_ref[] | | optional |
 | `access_points` | point_ref[] | | optional |

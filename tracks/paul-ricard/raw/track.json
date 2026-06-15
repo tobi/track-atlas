@@ -286,16 +286,19 @@
       ],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.263
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.263
         },
         {
-          "name": "2",
-          "marker": 0.597
+          "name": "S2",
+          "start": 0.263,
+          "end": 0.597
         },
         {
-          "name": "3",
-          "marker": 1
+          "name": "S3",
+          "start": 0.597,
+          "end": 1.0
         }
       ],
       "pit": {},
@@ -317,7 +320,7 @@
     "imsa_data": "paul-ricard"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:37.306233+00:00",
+    "generated_at": "2026-06-15T17:56:37.548792+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

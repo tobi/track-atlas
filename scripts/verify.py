@@ -225,6 +225,17 @@ def verify_track(slug: str, schema=None) -> Report:
         if pit.get("entry") is None or pit.get("exit") is None:
             r.warn(f"{pre}.pit entry/exit missing")
 
+        # every track needs the three canonical timing sectors, contiguous 0->1
+        secs = lo.get("sectors", [])
+        if [s.get("name") for s in secs] != ["S1", "S2", "S3"]:
+            r.err(f"{pre} sectors must be exactly [S1, S2, S3], got {[s.get('name') for s in secs]}")
+        else:
+            b = [secs[0].get("start"), secs[0].get("end"), secs[1].get("end"), secs[2].get("end")]
+            ok = (b[0] == 0.0 and abs(b[3] - 1.0) < 1e-6 and 0 < b[1] < b[2] < b[3]
+                  and secs[1].get("start") == b[1] and secs[2].get("start") == b[2])
+            if not ok:
+                r.err(f"{pre} sectors not contiguous 0->1: {b}")
+
         corners = lo.get("corners", [])
         if not corners:
             r.err(f"{pre} has no corners")

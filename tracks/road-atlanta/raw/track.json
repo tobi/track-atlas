@@ -289,20 +289,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.168
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.443
         },
         {
-          "name": "2",
-          "marker": 0.443
+          "name": "S2",
+          "start": 0.443,
+          "end": 0.787
         },
         {
-          "name": "3",
-          "marker": 0.787
-        },
-        {
-          "name": "4",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.787,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -327,7 +326,7 @@
     "imsa_data": "road-atlanta"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:37:00.814656+00:00",
+    "generated_at": "2026-06-15T17:57:00.951685+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

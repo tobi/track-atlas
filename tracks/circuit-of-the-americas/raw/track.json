@@ -402,16 +402,19 @@
       ],
       "sectors": [
         {
-          "name": "Sector 1",
-          "marker": 0.3
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.3
         },
         {
-          "name": "Sector 2",
-          "marker": 0.7
+          "name": "S2",
+          "start": 0.3,
+          "end": 0.7
         },
         {
-          "name": "Sector 3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.7,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -437,7 +440,7 @@
     "imsa_data": "circuit-of-the-americas"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:33.299248+00:00",
+    "generated_at": "2026-06-15T17:56:33.614553+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -309,16 +309,19 @@
       ],
       "sectors": [
         {
-          "name": "Sector 1",
-          "marker": 0.32
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.32
         },
         {
-          "name": "Sector 2",
-          "marker": 0.73
+          "name": "S2",
+          "start": 0.32,
+          "end": 0.73
         },
         {
-          "name": "Sector 3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.73,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -344,7 +347,7 @@
     "imsa_data": "bahrain"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:36:33.262326+00:00",
+    "generated_at": "2026-06-15T17:56:33.583857+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

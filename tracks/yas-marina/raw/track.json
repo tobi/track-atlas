@@ -319,16 +319,19 @@
       "straights": [],
       "sectors": [
         {
-          "name": "1",
-          "marker": 0.2295
+          "name": "S1",
+          "start": 0.0,
+          "end": 0.2295
         },
         {
-          "name": "2",
-          "marker": 0.6703
+          "name": "S2",
+          "start": 0.2295,
+          "end": 0.6703
         },
         {
-          "name": "3",
-          "marker": 1.0
+          "name": "S3",
+          "start": 0.6703,
+          "end": 1.0
         }
       ],
       "pit": {
@@ -353,7 +356,7 @@
     "imsa_data": "yas-marina"
   },
   "provenance": {
-    "generated_at": "2026-06-15T16:37:00.854357+00:00",
+    "generated_at": "2026-06-15T17:57:01.002136+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
