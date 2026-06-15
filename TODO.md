@@ -2,6 +2,12 @@
 
 Running checklist of requested work. Keep updated; don't drop anything.
 
+## DONE: Three.js driving sim on the detail page
+- [x] site/sim.js: drives the real centerline; quasi-static speed solver (curvature -> cornering limit, brake pass, traction pass)
+- [x] 3 car classes (GT3 / LMPh / BMW 328) with distinct grip/brake/accel/top-speed; chase + isometric cameras
+- [x] track surface coloured by state: red brake / amber corner / green throttle; HUD shows class + km/h
+- [x] verified in headless Chromium (iso shows whole coloured loop; chase shows surface ahead)
+
 ## DONE: tracks.jsonl + phases-in-data + site move
 - [x] Corner phases promoted into track.json (corner.start/marker/end) via lib/phases.py; schema updated; rendered in the site corner table + geojson properties
 - [x] Pipeline generates `tracks.jsonl` at repo root (build_jsonl.py, one track per line); linked prominently from README + the website

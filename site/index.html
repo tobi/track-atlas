@@ -84,6 +84,21 @@
   dialog .row { display: flex; gap: 10px; }
   dialog .row > div { flex: 1; }
   dialog .actions { margin-top: 18px; display: flex; gap: 10px; justify-content: flex-end; }
+  /* driving sim */
+  .drive { margin: 22px 0 6px; }
+  .sim-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .sim-bar .lbl { color: var(--muted); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  .sim-bar button { padding: 6px 12px; border-radius: 8px; font-size: 13px; cursor: pointer;
+                    background: var(--panel2); border: 1px solid var(--line); color: var(--text); }
+  .sim-bar button:hover { border-color: var(--accent); }
+  .sim-bar button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .sim-bar .legend { margin-left: auto; color: var(--muted); font-size: 12px; }
+  .sim-bar .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px;
+                       margin: 0 4px 0 12px; vertical-align: middle; }
+  #sim { height: 460px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+         background: var(--bg); }
+  #sim canvas { display: block; width: 100%; height: 100%; }
+  #simHud { font-variant-numeric: tabular-nums; }
 </style>
 </head>
 <body>
@@ -99,6 +114,8 @@
 <footer>Geometry © OpenStreetMap contributors (ODbL) · corner data: Lovely-Sim-Racing + curated · track-atlas</footer>
 <dialog id="editDlg"></dialog>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="sim.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

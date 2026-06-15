@@ -1,0 +1,40 @@
+name: release
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tracks.jsonl'
+      - 'tracks/**/*.json'
+      - 'tracks/**/*.geojson'
+      - 'schema/*.json'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build release archive
+        run: |
+          mkdir -p dist/geojson
+          cp README.md tracks.jsonl dist/
+          cp schema/track.schema.json dist/
+          find tracks -path '*/raw/layers/*.geojson' | while read f; do
+            slug=$(echo "$f" | cut -d/ -f2)
+            layout=$(basename "$f" .geojson)
+            cp "$f" "dist/geojson/${slug}_${layout}.geojson"
+          done
+          cd dist && zip -r ../track-atlas.zip . && cd ..
+
+      - name: Generate tag
+        id: tag
+        run: echo "tag=build-$(date -u +%Y%m%d-%H%M%S)" >> "$GITHUB_OUTPUT"
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: Track Atlas ${{ steps.tag.outputs.tag }}
+          files: track-atlas.zip
+          make_latest: true

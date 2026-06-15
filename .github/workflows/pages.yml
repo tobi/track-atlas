@@ -1,0 +1,40 @@
+name: pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'tracks.jsonl'
+      - 'tracks/**/*.json'
+      - 'tracks/**/*.geojson'
+      - 'schema/*.json'
+      - 'README.md'
+permissions:
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build site
+        run: |
+          cp tracks.jsonl site/
+          mkdir -p site/geojson
+          find tracks -path '*/raw/layers/*.geojson' | while read f; do
+            slug=$(echo "$f" | cut -d/ -f2)
+            layout=$(basename "$f" .geojson)
+            cp "$f" "site/geojson/${slug}_${layout}.geojson"
+          done
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment

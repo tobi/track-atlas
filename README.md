@@ -334,7 +334,11 @@ uv run python scripts/suggest_phases.py --all
 at **/track-atlas/site/**: search by name/aka/country/series, posters, a Leaflet
 map per track (outline + corners + start/finish + pit on real imagery), a
 **layout switcher** and **name-layer switcher**, the full corner table (every
-naming layer + each corner's phase), a direct link to **`tracks.jsonl`**, and
+naming layer + each corner's phase), a direct link to **`tracks.jsonl`**, a
+**Three.js driving sim** (`site/sim.js`) that laps the real centerline with a
+quasi-static speed solver — pick GT3 / LMPh / BMW 328, chase or isometric camera,
+and the track surface is coloured by what the car is doing (red brake, amber
+corner, green throttle) — and
 **propose-an-edit deep links** — corner edits prefill a GitHub issue with a
 ready-to-paste `overrides.json` patch, and "edit on GitHub" jumps straight into
 the web editor on `source.json` / `overrides.json` to open a PR. `tracks/index.json`

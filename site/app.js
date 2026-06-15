@@ -38,7 +38,8 @@ async function boot() {
 function route() {
   const slug = location.hash.replace(/^#\/?/, "");
   if (slug) showDetail(slug);
-  else { $detail.style.display = "none"; $grid.style.display = "grid";
+  else { if (window.TrackSim) TrackSim.dispose();
+         $detail.style.display = "none"; $grid.style.display = "grid";
          $search.style.display = "block"; renderGrid($search.value); }
 }
 
@@ -98,6 +99,21 @@ async function showDetail(slug) {
       <div><div id="map"></div></div>
       <div class="poster">${entry.poster ? `<img src="${DATA}${entry.poster}">` : ""}</div>
     </div>
+    <div class="drive">
+      <div class="sim-bar">
+        <span class="lbl">Drive</span>
+        <button data-sim-cls="lmph" onclick="TrackSim.setClass('lmph')">LMPh</button>
+        <button data-sim-cls="gt3" onclick="TrackSim.setClass('gt3')">GT3</button>
+        <button data-sim-cls="bmw328" onclick="TrackSim.setClass('bmw328')">BMW 328</button>
+        <span class="lbl" style="margin-left:8px">view</span>
+        <button data-sim-cam="chase" onclick="TrackSim.setCamera('chase')">Chase</button>
+        <button data-sim-cam="iso" onclick="TrackSim.setCamera('iso')">Isometric</button>
+        <button id="simPlay" onclick="TrackSim.toggle()">⏸ pause</button>
+        <span id="simHud" class="lbl"></span>
+        <span class="legend"><i style="background:#ff3b30"></i>brake<i style="background:#ffd60a"></i>corner<i style="background:#35c759"></i>throttle</span>
+      </div>
+      <div id="sim"></div>
+    </div>
     <h3 style="margin-top:26px">Corners</h3>
     <div id="cornersWrap"></div>
     <p class="muted">Spotted a wrong name or bad grouping? Hover a row and hit ✎ —
@@ -134,6 +150,7 @@ async function showLayout(layoutId) {
   renderCorners();
   const gj = await (await fetch(`${DATA}tracks/${track.slug}/raw/${layout.geometry.outline}`)).json();
   renderMap(gj, track);
+  if (window.TrackSim) { TrackSim.load(gj); TrackSim.syncButtons(); }
 }
 
 const SCALE_LABELS = {1: "Hairpin", 2: "Slow", 3: "Medium", 4: "Fast", 5: "Very fast", 6: "Kink"};
