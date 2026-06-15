@@ -16,7 +16,7 @@ curated; 14/21 corners pinned to real OSM coordinates.
 | corner coordinates | 🟡 14/21 from OSM named ways |
 | pit entry/exit | ✅ from Lovely |
 | sectors | ✅ 3 |
-| slow zones | 🟡 10 zones (zones lentes) — APPROXIMATE spans, anchored to sections; need exact ACO boundaries |
+| slow zones | 🟡 35 zones in 9 sectors (zones lentes, 80 km/h, since 2014) — the official **count** is right; spans are evenly distributed (~390 m each) and labelled by section. Exact ACO signaller-post boundaries aren't public, so individual boundaries are approximate. |
 | straights | ✅ incl. Hunaudières |
 | outline geometry | 🟡 corner-trace (ordered named-corner points), not a full centerline |
 

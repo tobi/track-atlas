@@ -143,12 +143,22 @@ async function showLayout(layoutId) {
     ["Series", (track.series || []).join(", ") || "—"],
   ];
   const sz = layout.slow_zones || [];
-  const szHtml = sz.length ? `<div style="margin-top:8px">
+  let szHtml = "";
+  if (sz.length) {
+    // group consecutive zones by section name for a readable summary
+    const groups = [];
+    sz.forEach((z) => {
+      const last = groups[groups.length - 1];
+      if (last && last.name === (z.name || "")) { last.n++; last.end = z.end; }
+      else groups.push({ name: z.name || "", n: 1, start: z.start, end: z.end });
+    });
+    szHtml = `<div style="margin-top:8px">
       <div class="k" style="color:var(--muted);font-size:11px;letter-spacing:1.5px;text-transform:uppercase">
-        Slow zones (${sz.length})</div>
+        Slow zones — ${sz.length} (zones lentes, 80 km/h)</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:7px">
-        ${sz.map((z) => `<span class="chip" style="text-transform:none">${esc((z.id || "").toUpperCase())} · ${Math.round(z.start * 100)}–${Math.round(z.end * 100)}%${z.name ? " · " + esc(z.name) : ""}</span>`).join("")}
-      </div></div>` : "";
+        ${groups.map((g) => `<span class="chip" style="text-transform:none">${esc(g.name || "zone")} · ${Math.round(g.start * 100)}–${Math.round(g.end * 100)}%${g.n > 1 ? ` · ${g.n} zones` : ""}</span>`).join("")}
+      </div></div>`;
+  }
   document.getElementById("statsWrap").innerHTML =
     `<div class="stats">${stats.map(([k, v]) =>
       `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>${szHtml}`;
