@@ -27,11 +27,21 @@
   },
   "layouts": [
     {
-      "id": "gp",
+      "id": "wec",
       "name": "International Circuit",
       "length_m": 5954,
       "direction": "clockwise",
-      "lovely": "gp"
+      "lovely": "gp",
+      "series": ["wec"]
+    },
+    {
+      "id": "imsa",
+      "name": "International Circuit",
+      "length_m": 5954,
+      "direction": "clockwise",
+      "lovely": "gp",
+      "series": ["imsa"],
+      "pit": {"entry": 0.705, "exit": 0.835}
     }
   ],
   "external_ids": {

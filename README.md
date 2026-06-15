@@ -90,13 +90,15 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 
 | field | type | req | description |
 |---|---|---|---|
-| `id` | string | ✓ | Unique within the track (`"24h"`, `"gp"`) |
+| `id` | string | ✓ | Unique within the track (`"24h"`, `"wec"`, `"imsa"`) |
 | `name` | string | ✓ | `"Circuit des 24 Heures"` |
 | `aka` | string[] | | |
+| `series` | string[] | | Series that use THIS layout, when it's series-specific (e.g. `["imsa"]` vs `["wec"]` for Sebring's two pit configs). Empty = the track-level series all share this layout |
 | `length_m` | number | | Official lap length in metres |
 | `direction` | enum | | `clockwise` \| `anticlockwise` |
 | `active_years` | string | | Free-form (`"2018-"`, `"1972,1979-1989"`) |
 | `geometry` | object | ✓ | `{outline: "layers/<id>.geojson", crs: "EPSG:4326"}` |
+| `pit` | object | | `{entry, exit}` lap fractions. In `source.json` a layout may set this to override the Lovely-derived pit — used by series variants that share geometry but differ in pit in/out |
 | `start_finish` | point_ref | | `{marker: 0.0, location: [lon,lat]}` — the timing line. Lap fractions throughout the dataset are measured from here |
 | `name_default` | string | | Layer code (a key in `name_layers`) shown by default (usually `driver`). Resolution is two steps: `names[name_default]` if present, else `names.numbered` — no fall-through to other layers |
 | `corners` | corner[] | | Ordered corner list (see below) |
@@ -218,7 +220,16 @@ members and duplicated way refs in the relation are filtered out.
    }}}
    ```
    `driver` defaults to the `official` name when you don't set it. Re-run
-   generate + render + verify after edits.
+   generate + render + verify after edits. A `"*"` key applies its corner
+   overrides to **every** layout (curation shared by series variants), with
+   layout-specific keys winning per corner.
+
+   **Multiple layouts / series variants.** When one circuit has configs that
+   differ (e.g. Sebring's pit in/out for IMSA vs WEC), add one `layout` per
+   config in `source.json` — same `lovely`/`osm` geometry, distinguished by `id`,
+   `series`, and a `pit` override. This is the "separate full layouts" model:
+   each is a complete layout (geometry duplicated), and the site lets you browse
+   between them. Share their corner curation via the `"*"` overrides key.
 6. Write a short `tracks/<slug>/README.md` (data state, known gaps, sources)
    and commit everything **including `raw/`** (reproducibility artifacts).
 

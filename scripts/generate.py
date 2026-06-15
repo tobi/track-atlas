@@ -167,7 +167,14 @@ def generate_track(slug: str) -> dict:
         ov_file = tdir / "overrides.json"
         cleared_driver = set()   # corners whose driver layer an override cleared
         if ov_file.exists():
-            ov = json.loads(ov_file.read_text()).get(lid, {}).get("corners", {})
+            # Overrides are keyed by layout id; a "*" block applies to every
+            # layout (curation shared by series variants that use the same
+            # geometry -- Sebring WEC/IMSA). Layout-specific fields win per corner.
+            ov_all = json.loads(ov_file.read_text())
+            shared = ov_all.get("*", {}).get("corners", {})
+            specific = ov_all.get(lid, {}).get("corners", {})
+            ov = {n: {**shared.get(n, {}), **specific.get(n, {})}
+                  for n in set(shared) | set(specific)}
             for c in corners:
                 o = ov.get(str(c["number"]))
                 if not o:
@@ -238,6 +245,11 @@ def generate_track(slug: str) -> dict:
         sf_point = None       # start/finish {marker, location}
         pit_points = {}       # {"pit_entry"/"pit_exit": {marker, location}}
         pit = pit_from_lovely(lovely)
+        # A source layout may override pit in/out -- e.g. series that share the
+        # same circuit geometry but use a different pit configuration (Sebring
+        # IMSA vs WEC). "separate full layouts": one layout entry per config.
+        if isinstance(layout.get("pit"), dict):
+            pit = layout["pit"]
         if centerline and len(centerline) >= 8:
             centerline = densify(centerline)
             matched_pts = [(c["marker"], c["location"]) for c in corners
@@ -345,7 +357,7 @@ def generate_track(slug: str) -> dict:
         }
         if sf_point:
             lo["start_finish"] = sf_point
-        for k in ("length_m", "direction", "active_years"):
+        for k in ("length_m", "direction", "active_years", "series"):
             if k in layout:
                 lo[k] = layout[k]
         track["layouts"].append(lo)

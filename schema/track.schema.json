@@ -204,6 +204,15 @@
           "title": "Aka",
           "type": "array"
         },
+        "series": {
+          "default": [],
+          "description": "Series that use THIS layout, when it is series-specific (e.g. ['imsa'] vs ['wec'] for Sebring's two pit configurations). Empty = the track-level series all use this layout.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Series",
+          "type": "array"
+        },
         "length_m": {
           "anyOf": [
             {

@@ -28,12 +28,12 @@
   },
   "layouts": [
     {
-      "id": "gp",
+      "id": "wec",
       "name": "International Circuit",
       "aka": [],
       "name_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "outline": "layers/wec.geojson",
         "crs": "EPSG:4326"
       },
       "corners": [
@@ -376,7 +376,364 @@
         ]
       },
       "length_m": 5954,
-      "direction": "clockwise"
+      "direction": "clockwise",
+      "series": [
+        "wec"
+      ]
+    },
+    {
+      "id": "imsa",
+      "name": "International Circuit",
+      "aka": [],
+      "name_default": "driver",
+      "geometry": {
+        "outline": "layers/imsa.geojson",
+        "crs": "EPSG:4326"
+      },
+      "corners": [
+        {
+          "number": 1,
+          "code": "1",
+          "names": {
+            "numbered": "Turn 1",
+            "driver": "Tower Turn"
+          },
+          "direction": "left",
+          "scale": 3,
+          "marker": 0.09,
+          "start": 0.06,
+          "end": 0.11,
+          "location": [
+            -81.348481,
+            27.45104
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 2,
+          "code": "2",
+          "names": {
+            "numbered": "Turn 2"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.14,
+          "start": 0.13,
+          "end": 0.15,
+          "location": [
+            -81.348859,
+            27.453691
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 3,
+          "code": "3",
+          "names": {
+            "numbered": "Turn 3",
+            "driver": "Bend"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.16,
+          "start": 0.15,
+          "end": 0.17,
+          "location": [
+            -81.349242,
+            27.454556
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 4,
+          "code": "4",
+          "names": {
+            "numbered": "Turn 4"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.17,
+          "start": 0.17,
+          "end": 0.18,
+          "location": [
+            -81.34982,
+            27.454664
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 5,
+          "code": "5",
+          "names": {
+            "numbered": "Turn 5",
+            "driver": "Warehouse"
+          },
+          "direction": "left",
+          "scale": 2,
+          "marker": 0.19,
+          "start": 0.18,
+          "end": 0.2,
+          "location": [
+            -81.350892,
+            27.454906
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 6,
+          "code": "6",
+          "names": {
+            "numbered": "Turn 6",
+            "driver": "Big Bend"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.26,
+          "start": 0.22,
+          "end": 0.28,
+          "location": [
+            -81.353985,
+            27.452654
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 7,
+          "code": "7",
+          "names": {
+            "numbered": "Turn 7",
+            "driver": "Hairpin"
+          },
+          "direction": "right",
+          "scale": 1,
+          "marker": 0.34,
+          "start": 0.33,
+          "end": 0.35,
+          "location": [
+            -81.358064,
+            27.453073
+          ]
+        },
+        {
+          "number": 8,
+          "code": "8",
+          "names": {
+            "numbered": "Turn 8",
+            "driver": "Bishop Bend"
+          },
+          "direction": "right",
+          "scale": 6,
+          "marker": 0.39,
+          "start": 0.37,
+          "end": 0.4,
+          "location": [
+            -81.357424,
+            27.454183
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 9,
+          "code": "9",
+          "names": {
+            "numbered": "Turn 9",
+            "driver": "Cunningham"
+          },
+          "direction": "left",
+          "scale": 6,
+          "marker": 0.42,
+          "start": 0.4,
+          "end": 0.44,
+          "location": [
+            -81.356796,
+            27.454562
+          ]
+        },
+        {
+          "number": 10,
+          "code": "10",
+          "names": {
+            "numbered": "Turn 10",
+            "driver": "Gendebien"
+          },
+          "direction": "right",
+          "scale": 3,
+          "marker": 0.47,
+          "start": 0.46,
+          "end": 0.48,
+          "location": [
+            -81.354059,
+            27.456003
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 11,
+          "code": "11",
+          "names": {
+            "numbered": "Turn 11",
+            "driver": "Collier"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.51,
+          "start": 0.48,
+          "end": 0.52,
+          "location": [
+            -81.352182,
+            27.457016
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 12,
+          "code": "12",
+          "names": {
+            "numbered": "Turn 12"
+          },
+          "direction": "right",
+          "scale": 5,
+          "marker": 0.53,
+          "start": 0.52,
+          "end": 0.54,
+          "location": [
+            -81.351163,
+            27.456414
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 13,
+          "code": "13",
+          "names": {
+            "numbered": "Turn 13",
+            "driver": "Tower"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.56,
+          "start": 0.55,
+          "end": 0.57,
+          "location": [
+            -81.349378,
+            27.456906
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 14,
+          "code": "14",
+          "names": {
+            "numbered": "Turn 14",
+            "driver": "Bishop"
+          },
+          "direction": "left",
+          "scale": 4,
+          "marker": 0.63,
+          "start": 0.62,
+          "end": 0.64,
+          "location": [
+            -81.347878,
+            27.454133
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 15,
+          "code": "15",
+          "names": {
+            "numbered": "Turn 15",
+            "driver": "Coca-Cola"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.69,
+          "start": 0.67,
+          "end": 0.71,
+          "location": [
+            -81.346623,
+            27.451121
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 16,
+          "code": "16",
+          "names": {
+            "numbered": "Turn 16",
+            "driver": "Le Mans"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.73,
+          "start": 0.72,
+          "end": 0.74,
+          "location": [
+            -81.346581,
+            27.44914
+          ],
+          "location_source": "centerline"
+        },
+        {
+          "number": 17,
+          "code": "17",
+          "names": {
+            "numbered": "Turn 17",
+            "official": "Sunset Bend"
+          },
+          "direction": "right",
+          "scale": 4,
+          "marker": 0.93,
+          "start": 0.89,
+          "end": 0.95,
+          "location": [
+            -81.35709,
+            27.449443
+          ]
+        }
+      ],
+      "straights": [
+        {
+          "name": "Main Straight",
+          "start": 0.96,
+          "end": 0.05
+        },
+        {
+          "name": "Ullman Straight",
+          "start": 0.75,
+          "end": 0.88
+        }
+      ],
+      "sectors": [
+        {
+          "name": "Sector 1",
+          "marker": 0.36
+        },
+        {
+          "name": "Sector 2",
+          "marker": 0.61
+        },
+        {
+          "name": "Sector 3",
+          "marker": 1.0
+        }
+      ],
+      "pit": {
+        "entry": 0.705,
+        "exit": 0.835
+      },
+      "start_finish": {
+        "marker": 0.0,
+        "location": [
+          -81.353398,
+          27.450227
+        ]
+      },
+      "length_m": 5954,
+      "direction": "clockwise",
+      "series": [
+        "imsa"
+      ]
     }
   ],
   "series": [
@@ -387,7 +744,7 @@
     "imsa_data": "sebring"
   },
   "provenance": {
-    "generated_at": "2026-06-15T14:15:31.506946+00:00",
+    "generated_at": "2026-06-15T14:46:16.849477+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -411,8 +768,8 @@
       }
     ],
     "corner_match": {
-      "matched": 3,
-      "total": 17
+      "matched": 6,
+      "total": 34
     }
   }
 }

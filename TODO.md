@@ -65,7 +65,12 @@ emits `schema/track.schema.json` from them; `verify.py` validates via the models
 
 ## DONE: committed + pushed everything to origin/main
 
+## DONE: layout-variant model (separate full layouts per series)
+- [x] Capability: per-layout `pit` override + `series` field in source.json; `"*"` shared-overrides key so variants share corner curation
+- [x] Sebring: two layouts (`wec`, `imsa`) sharing geometry, different pit; site browses both
+- [~] Sebring IMSA pit values (0.705/0.835) are SPECULATIVE placeholders — flagged in tracks/sebring/README.md, need an authoritative source
+- note: only Sebring races both IMSA+WEC; other multi-series tracks (f1/wec/elms) use one shared layout, so no variants added
+
 ## Not actionable without input/data
-- [ ] Layout-variant model: separate full layouts per series (Sebring IMSA vs WEC pit) — speculative; no track in the repo needs it yet
 - [ ] Number-only tracks (jeddah, miami, shanghai, losail, indianapolis) — genuinely have no corner names; need real-world naming, not code
 - [ ] Single-corner "complex" warnings (silverstone Abbey/Farm; laguna-seca Corkscrew; Esses) — judgment calls: are these really complexes, or just named corners? Left for human review. (Maggotts-Becketts-Chapel separator typo: FIXED)

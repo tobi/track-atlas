@@ -86,7 +86,7 @@ async function showDetail(slug) {
     <div style="margin:16px 0;display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
       <label class="muted" style="font-size:13px">layout
         <select id="layoutPick" onchange="showLayout(this.value)">
-          ${track.layouts.map((l) => `<option value="${esc(l.id)}">${esc(l.name)} · ${fmtKm(l.length_m)}</option>`).join("")}
+          ${track.layouts.map((l) => `<option value="${esc(l.id)}">${esc(l.name)}${l.series && l.series.length ? ` — ${esc(l.series.join("/").toUpperCase())}` : ""} · ${fmtKm(l.length_m)}</option>`).join("")}
         </select></label>
       <label class="muted" style="font-size:13px">name layer
         <select id="layerPick" onchange="setDisplayLayer(this.value)"></select></label>

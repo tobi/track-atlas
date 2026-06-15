@@ -1,5 +1,197 @@
 {
-  "gp": {
+  "wec": {
+    "note": "suggested corner phases as lap fractions (start/apex/end). Heuristic from severity; review and edit. Not authoritative.",
+    "corners": {
+      "1": {
+        "number": 1,
+        "code": "1",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.09,
+        "start": 0.06985,
+        "end": 0.1068
+      },
+      "2": {
+        "number": 2,
+        "code": "2",
+        "scale": 6,
+        "scale_label": "Kink",
+        "brakes": false,
+        "complex": null,
+        "apex": 0.14,
+        "start": 0.14,
+        "end": 0.14
+      },
+      "3": {
+        "number": 3,
+        "code": "3",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.16,
+        "start": 0.14824,
+        "end": 0.16667
+      },
+      "4": {
+        "number": 4,
+        "code": "4",
+        "scale": 5,
+        "scale_label": "Very fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.17,
+        "start": 0.16667,
+        "end": 0.174
+      },
+      "5": {
+        "number": 5,
+        "code": "5",
+        "scale": 2,
+        "scale_label": "Slow",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.19,
+        "start": 0.174,
+        "end": 0.21183
+      },
+      "6": {
+        "number": 6,
+        "code": "6",
+        "scale": 5,
+        "scale_label": "Very fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.26,
+        "start": 0.25412,
+        "end": 0.26756
+      },
+      "7": {
+        "number": 7,
+        "code": "7",
+        "scale": 1,
+        "scale_label": "Hairpin",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.34,
+        "start": 0.29801,
+        "end": 0.36855
+      },
+      "8": {
+        "number": 8,
+        "code": "8",
+        "scale": 6,
+        "scale_label": "Kink",
+        "brakes": false,
+        "complex": null,
+        "apex": 0.39,
+        "start": 0.39,
+        "end": 0.39
+      },
+      "9": {
+        "number": 9,
+        "code": "9",
+        "scale": 6,
+        "scale_label": "Kink",
+        "brakes": false,
+        "complex": null,
+        "apex": 0.42,
+        "start": 0.42,
+        "end": 0.42
+      },
+      "10": {
+        "number": 10,
+        "code": "10",
+        "scale": 3,
+        "scale_label": "Medium",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.47,
+        "start": 0.44985,
+        "end": 0.4868
+      },
+      "11": {
+        "number": 11,
+        "code": "11",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.51,
+        "start": 0.49824,
+        "end": 0.52176
+      },
+      "12": {
+        "number": 12,
+        "code": "12",
+        "scale": 5,
+        "scale_label": "Very fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.53,
+        "start": 0.52412,
+        "end": 0.53756
+      },
+      "13": {
+        "number": 13,
+        "code": "13",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.56,
+        "start": 0.54824,
+        "end": 0.57176
+      },
+      "14": {
+        "number": 14,
+        "code": "14",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.63,
+        "start": 0.61824,
+        "end": 0.64176
+      },
+      "15": {
+        "number": 15,
+        "code": "15",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.69,
+        "start": 0.67824,
+        "end": 0.70176
+      },
+      "16": {
+        "number": 16,
+        "code": "16",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.73,
+        "start": 0.71824,
+        "end": 0.74176
+      },
+      "17": {
+        "number": 17,
+        "code": "17",
+        "scale": 4,
+        "scale_label": "Fast",
+        "brakes": true,
+        "complex": null,
+        "apex": 0.93,
+        "start": 0.91824,
+        "end": 0.94176
+      }
+    }
+  },
+  "imsa": {
     "note": "suggested corner phases as lap fractions (start/apex/end). Heuristic from severity; review and edit. Not authoritative.",
     "corners": {
       "1": {

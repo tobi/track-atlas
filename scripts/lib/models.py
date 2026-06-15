@@ -117,6 +117,9 @@ class Layout(Strict):
     id: Slug
     name: str
     aka: list[str] = []
+    series: list[str] = Field(default=[], description="Series that use THIS layout, when it is "
+                              "series-specific (e.g. ['imsa'] vs ['wec'] for Sebring's two pit "
+                              "configurations). Empty = the track-level series all use this layout.")
     length_m: Optional[float] = Field(None, description="Lap length in metres.")
     direction: Optional[Literal["clockwise", "anticlockwise"]] = None
     active_years: Optional[str] = Field(None, description="Free-form, e.g. '2018-' or '1972,1979-1989'.")
