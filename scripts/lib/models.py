@@ -94,6 +94,21 @@ class Sector(Strict):
     end: Fraction = Field(description="Lap fraction where the sector ends (the timing line).")
 
 
+class Zone(Strict):
+    """A track segment, e.g. an endurance 'slow zone' (zone lente) that can be set
+    to a speed limit independently — the lap is pre-divided into these."""
+    id: str = Field(description="Stable zone id, e.g. 'sz1'.")
+    name: Optional[str] = Field(None, description="Section the zone covers, e.g. 'Mulsanne'.")
+    start: Fraction = Field(description="Lap fraction where the zone begins.")
+    end: Fraction = Field(description="Lap fraction where the zone ends.")
+
+    @model_validator(mode="after")
+    def _ordered(self) -> "Zone":
+        if not self.start < self.end:
+            raise ValueError(f"slow zone '{self.id}' start {self.start} must be < end {self.end}")
+        return self
+
+
 class Straight(Strict):
     name: str
     aka: list[str] = []
@@ -139,6 +154,9 @@ class Layout(Strict):
     corners: list[Corner] = []
     straights: list[Straight] = []
     sectors: list[Sector] = []
+    slow_zones: list[Zone] = Field(default=[], description="Endurance slow zones (zones lentes) — "
+                                   "track segments the organisers can set to a speed limit; the lap "
+                                   "is pre-divided into these. Curated input (e.g. Le Mans).")
     pit: Optional[Pit] = None
     marshal_posts: list[PointRef] = []
     access_points: list[PointRef] = []

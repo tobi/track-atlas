@@ -161,6 +161,7 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `corners` | corner[] | | Ordered corner list (see below) |
 | `straights` | straight[] | | `{name, aka?, start?, end?}` as lap fractions |
 | `sectors` | object[] | | Always the three timing sectors: `{name: "S1"\|"S2"\|"S3", start, end}` as lap fractions, contiguous 0→1 |
+| `slow_zones` | object[] | | Endurance slow zones (zones lentes): `{id, name?, start, end}` lap-fraction segments the organisers can speed-limit. Curated (e.g. Le Mans). |
 | `pit` | object | | `{entry, exit}` lap fractions of pit entry/exit |
 | `marshal_posts` | point_ref[] | | optional |
 | `access_points` | point_ref[] | | optional |

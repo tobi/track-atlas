@@ -37,7 +37,19 @@
       "length_m": 13626,
       "direction": "clockwise",
       "active_years": "2018-",
-      "lovely": "24h"
+      "lovely": "24h",
+      "slow_zones": [
+        {"id": "sz1",  "name": "Dunlop",                "start": 0.0,  "end": 0.08},
+        {"id": "sz2",  "name": "Esses / Tertre Rouge",  "start": 0.08, "end": 0.16},
+        {"id": "sz3",  "name": "Hunaudières 1",         "start": 0.16, "end": 0.30},
+        {"id": "sz4",  "name": "Hunaudières 2",         "start": 0.30, "end": 0.45},
+        {"id": "sz5",  "name": "Hunaudières 3",         "start": 0.45, "end": 0.58},
+        {"id": "sz6",  "name": "Mulsanne to Indianapolis","start": 0.58, "end": 0.71},
+        {"id": "sz7",  "name": "Indianapolis / Arnage", "start": 0.71, "end": 0.78},
+        {"id": "sz8",  "name": "Porsche Curves",        "start": 0.78, "end": 0.90},
+        {"id": "sz9",  "name": "Karting / Corvette",    "start": 0.90, "end": 0.96},
+        {"id": "sz10", "name": "Ford Chicanes",         "start": 0.96, "end": 1.0}
+      ]
     }
   ],
   "series": [

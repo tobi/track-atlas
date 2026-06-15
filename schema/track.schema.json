@@ -299,6 +299,15 @@
           "title": "Sectors",
           "type": "array"
         },
+        "slow_zones": {
+          "default": [],
+          "description": "Endurance slow zones (zones lentes) — track segments the organisers can set to a speed limit; the lap is pre-divided into these. Curated input (e.g. Le Mans).",
+          "items": {
+            "$ref": "#/$defs/Zone"
+          },
+          "title": "Slow Zones",
+          "type": "array"
+        },
         "pit": {
           "anyOf": [
             {
@@ -648,6 +657,51 @@
         "name"
       ],
       "title": "Straight",
+      "type": "object"
+    },
+    "Zone": {
+      "additionalProperties": false,
+      "description": "A track segment, e.g. an endurance 'slow zone' (zone lente) that can be set\nto a speed limit independently — the lap is pre-divided into these.",
+      "properties": {
+        "id": {
+          "description": "Stable zone id, e.g. 'sz1'.",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Section the zone covers, e.g. 'Mulsanne'.",
+          "title": "Name"
+        },
+        "start": {
+          "description": "Lap fraction where the zone begins.",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "description": "Lap fraction where the zone ends.",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "End",
+          "type": "number"
+        }
+      },
+      "required": [
+        "id",
+        "start",
+        "end"
+      ],
+      "title": "Zone",
       "type": "object"
     }
   },

@@ -374,7 +374,7 @@ def generate_track(slug: str) -> dict:
         }
         if sf_point:
             lo["start_finish"] = sf_point
-        for k in ("length_m", "direction", "active_years", "series"):
+        for k in ("length_m", "direction", "active_years", "series", "slow_zones"):
             if k in layout:
                 lo[k] = layout[k]
         track["layouts"].append(lo)

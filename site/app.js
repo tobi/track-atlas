@@ -142,9 +142,16 @@ async function showLayout(layoutId) {
     ["Country", track.country || "—"],
     ["Series", (track.series || []).join(", ") || "—"],
   ];
+  const sz = layout.slow_zones || [];
+  const szHtml = sz.length ? `<div style="margin-top:8px">
+      <div class="k" style="color:var(--muted);font-size:11px;letter-spacing:1.5px;text-transform:uppercase">
+        Slow zones (${sz.length})</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:7px">
+        ${sz.map((z) => `<span class="chip" style="text-transform:none">${esc((z.id || "").toUpperCase())} · ${Math.round(z.start * 100)}–${Math.round(z.end * 100)}%${z.name ? " · " + esc(z.name) : ""}</span>`).join("")}
+      </div></div>` : "";
   document.getElementById("statsWrap").innerHTML =
     `<div class="stats">${stats.map(([k, v]) =>
-      `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>`;
+      `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>${szHtml}`;
 
   renderCorners();
   // geometry lives flattened next to the site: geojson/<slug>_<layout>.geojson

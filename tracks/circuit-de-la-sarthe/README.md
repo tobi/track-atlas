@@ -16,6 +16,7 @@ curated; 14/21 corners pinned to real OSM coordinates.
 | corner coordinates | 🟡 14/21 from OSM named ways |
 | pit entry/exit | ✅ from Lovely |
 | sectors | ✅ 3 |
+| slow zones | 🟡 10 zones (zones lentes) — APPROXIMATE spans, anchored to sections; need exact ACO boundaries |
 | straights | ✅ incl. Hunaudières |
 | outline geometry | 🟡 corner-trace (ordered named-corner points), not a full centerline |
 
