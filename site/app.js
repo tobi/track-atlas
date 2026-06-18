@@ -80,6 +80,7 @@ async function showDetail(slug) {
       <h2>${esc(track.name)}</h2>
       <span class="aka">${esc((track.aka || []).join(", "))}</span>
     </div>
+    <div id="statsWrap"></div>
     <div class="det-actions">
       <button class="btn" onclick="window.open('${ghBase}/blob/${BRANCH}/tracks/${slug}/raw/track.json','_blank')">track.json</button>
       <button class="btn" onclick="window.open('${ghBase}/edit/${BRANCH}/tracks/${slug}/overrides.json','_blank')">Edit overrides on GitHub (PR)</button>
@@ -94,7 +95,6 @@ async function showDetail(slug) {
       <label class="muted" style="font-size:13px">name layer
         <select id="layerPick" onchange="setDisplayLayer(this.value)"></select></label>
     </div>
-    <div id="statsWrap"></div>
     <div id="map"></div>
     <div class="drive">
       <div class="sim-bar">
