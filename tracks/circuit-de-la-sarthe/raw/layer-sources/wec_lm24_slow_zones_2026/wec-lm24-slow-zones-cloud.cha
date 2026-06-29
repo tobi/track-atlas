@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ChampionshipProjectItem>
+  <ConnectionProtocolID>6adeafef-d2ac-4d6c-8dfc-c1b6bc5d3648</ConnectionProtocolID>
+  <FuelAndTyresInParallel>False</FuelAndTyresInParallel>
+  <ChampionshipFilterEnabled>False</ChampionshipFilterEnabled>
+  <ConnectionOptions>
+    <ConnectionOption>
+      <Key>Username</Key>
+      <Value></Value>
+    </ConnectionOption>
+    <ConnectionOption>
+      <Key>Password</Key>
+      <Value></Value>
+    </ConnectionOption>
+    <ConnectionOption>
+      <Key>GPS</Key>
+      <Value>rgps</Value>
+    </ConnectionOption>
+    <ConnectionOption>
+      <Key>Record GPS</Key>
+      <Value>false</Value>
+    </ConnectionOption>
+    <ConnectionOption>
+      <Key>Read History</Key>
+      <Value>false</Value>
+    </ConnectionOption>
+  </ConnectionOptions>
+  <ConnectionSettings>
+    <ConnectionSetting>
+      <Key>Host</Key>
+      <Value>fiawec.datapublisher.alkamelcloud.com</Value>
+    </ConnectionSetting>
+    <ConnectionSetting>
+      <Key>Port</Key>
+      <Value>11001</Value>
+    </ConnectionSetting>
+  </ConnectionSettings>
+  <ChampionshipFilterAllowStrings />
+  <ChampionshipFilterBlockStrings />
+  <ChampionshipPoints>
+    <ChampionshipPoint>
+      <PIC>1</PIC>
+      <Points>25</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>2</PIC>
+      <Points>18</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>3</PIC>
+      <Points>15</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>4</PIC>
+      <Points>12</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>5</PIC>
+      <Points>10</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>6</PIC>
+      <Points>8</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>7</PIC>
+      <Points>6</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>8</PIC>
+      <Points>4</Points>
+    </ChampionshipPoint>
+    <ChampionshipPoint>
+      <PIC>9</PIC>
+      <Points>2</Points>
+    </ChampionshipPoint>
+  </ChampionshipPoints>
+  <CustomOptionsDictionary>
+    <CustomOption ID="6adeafef-d2ac-4d6c-8dfc-c1b6bc5d3648">
+      <CustomOptionValue>
+        <Key>Use Micro Sectors As Main Sectors</Key>
+        <Value>true</Value>
+      </CustomOptionValue>
+      <CustomOptionValue>
+        <Key>Micro Sectors</Key>
+        <Value>SZ1,FL,Z4;SZ2,Z4,IP1;SZ3,IP1,Z12;SZ4,Z12,A7-1;SZ5,A7-1,A8-1;SZ6,A8-1,SCLB;SZ7,SCLB,PORIN;SZ8,PORIN,POROUT;SZ9,POROUT,FL</Value>
+      </CustomOptionValue>
+    </CustomOption>
+  </CustomOptionsDictionary>
+</ChampionshipProjectItem>

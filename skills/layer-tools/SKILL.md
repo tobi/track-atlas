@@ -226,6 +226,16 @@ uv run python scripts/verify.py <slug>
 
 7. Inspect `tracks/<slug>/raw/track.json` and ensure the layer has provenance.
 
+## Lessons learned / gotchas
+
+- Range layer fractions are only correct visually if the layout GeoJSON centerline starts at marker `0.0` / start-finish. `generate.py` rotates generated centerlines to start at `layout_points.start_finish`; do not remove this.
+- Generated layers must be inspectable raw artifacts first: `raw/generated-layers/<config-id>.json`, then baked into `raw/track.json`.
+- Do not create a `straights` layer by default. It clutters the UI and is not usually a useful verification layer. If a series publishes official straight/timing-zone data, add it deliberately as a sourced range layer with provenance.
+- The site is layer-first. Timing sectors are just `range_layers[id="timing_sectors"]`; do not add separate sector-only UI/data paths.
+- For tracks with many range items (microsectors/slow zones), keep item controls compact (chips/swatches) and use hover to preview individual segments.
+- Avoid competing map popups. The app uses one cursor readout in the side panel plus map highlights.
+- If an upstream source collapses/misnumbers corners (Watkins Glen iRacing did), use a curated `replace_corners` override rather than trying to patch names one-by-one.
+
 ## Rules for adding new tools
 
 - Tools must be deterministic.

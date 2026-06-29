@@ -220,7 +220,7 @@ function renderLayerPanel(layout) {
       <label class="layer-toggle" onmouseenter='hoverMapLayer("range", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.range[l.id] ? "checked" : ""} onchange='toggleRangeLayer(${JSON.stringify(l.id)}, this.checked)'>
         <div><b><span style="color:${RANGE_COLORS[i % RANGE_COLORS.length]}">●</span> ${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>
       <div class="layer-items">
-        ${(l.items || []).map((it, j) => `<div class="layer-item" onmouseenter='hoverRangeItem(${JSON.stringify(l.id)}, ${JSON.stringify(it.id)})' onmouseleave="clearMapHover()"><span><i class="swatch" style="background:${RANGE_COLORS[j % RANGE_COLORS.length]}"></i>${esc(it.label || it.id)}</span><span>${pct(it.start)}–${pct(it.end)}</span></div>`).join("")}
+        ${(l.items || []).map((it, j) => `<div class="layer-item" title="${esc(it.label || it.id)} · ${pct(it.start)}–${pct(it.end)}" onmouseenter='hoverRangeItem(${JSON.stringify(l.id)}, ${JSON.stringify(it.id)})' onmouseleave="clearMapHover()"><i class="swatch" style="background:${RANGE_COLORS[j % RANGE_COLORS.length]}"></i><span>${esc(it.label || it.id)}</span><span class="range-pct">${pct(it.start)}–${pct(it.end)}</span></div>`).join("")}
       </div>
     </div>`).join("") || `<div class="muted">No range layers</div>`}`;
 }

@@ -1,0 +1,35 @@
+{
+  "layers": [
+    {
+      "id": "wec_lm24_slow_zones_2026",
+      "layout": "24h",
+      "tool": "hhtiming_cha_microsectors",
+      "resources": {
+        "cha": {
+          "url": "https://s3.us-west-2.amazonaws.com/downloads.hhtiming.com/Championship+Configurations/WEC_LM24_SZ_Cloud.cha",
+          "filename": "wec-lm24-slow-zones-cloud.cha"
+        }
+      },
+      "params": {
+        "resource": "cha",
+        "layer_id": "slow_zones",
+        "kind": "slow_zones",
+        "label": "WEC Slow Zones",
+        "series": ["wec"],
+        "coverage": "partition",
+        "source": "HH Timing WEC LM24 slow-zone championship configuration",
+        "items": [
+          {"id": "sz1", "label": "Dunlop", "start": 0.0, "end": 0.1},
+          {"id": "sz2", "label": "Tertre Rouge", "start": 0.1, "end": 0.16},
+          {"id": "sz3", "label": "Hunaudières (1st chicane)", "start": 0.16, "end": 0.31},
+          {"id": "sz4", "label": "Hunaudières (2nd chicane)", "start": 0.31, "end": 0.46},
+          {"id": "sz5", "label": "Mulsanne corner", "start": 0.46, "end": 0.58},
+          {"id": "sz6", "label": "Indianapolis", "start": 0.58, "end": 0.71},
+          {"id": "sz7", "label": "Arnage", "start": 0.71, "end": 0.78},
+          {"id": "sz8", "label": "Porsche Curves", "start": 0.78, "end": 0.93},
+          {"id": "sz9", "label": "Ford Chicanes", "start": 0.93, "end": 1.0}
+        ]
+      }
+    }
+  ]
+}

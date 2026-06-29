@@ -25,6 +25,9 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 - Converter tools live in `scripts/layer_tools/` and must be pure stdin→stdout:
   the runner resolves every URL/path to `raw/layer-sources/<config-id>/` before
   invocation. Do not make tools fetch their own inputs or guess missing data.
+- Range-layer fractions assume the GeoJSON centerline begins at marker `0.0` /
+  start-finish. `generate.py` rotates generated centerlines to that origin; keep
+  this invariant or every sector/microsector/slow-zone overlay will be offset.
 - Known good sources:
   - IMSA / Al Kamel noticeboard `Timing 3 Sector Map.pdf` and
     `Timing All Sections Map.pdf` for timing sectors + microsectors.
