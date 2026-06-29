@@ -34,7 +34,7 @@ from lib.osm import (  # noqa: E402
     centroid, named_corner_ways, normalize,
     relation_centerline, align_markers_to_centerline,
     stitch_circuit_ways, orient_loop, pit_lane_centroid, rotate_loop_to,
-    densify, haversine, loop_length_m,
+    densify, haversine, loop_length_m, arc_lengths, point_at_fraction,
 )
 from lib.naming import (  # noqa: E402
     DEFAULT_LAYER, build_registry, numbered_for, resolve_name as _resolve,
@@ -333,9 +333,13 @@ def generate_track(slug: str) -> dict:
             if sf_src and sf_src.get("location"):
                 matched_pts.append((sf_src.get("marker", 0.0), sf_src["location"]))
             place, oriented = align_markers_to_centerline(centerline, matched_pts)
-            # Place corners that never matched an OSM way, by lap fraction.
+            # OSM named ways identify/align named sections, but their centroids
+            # are not reliable apexes (a named way can cover an entire complex,
+            # and repeated names can otherwise collapse to one coordinate). Once
+            # marker→centerline alignment is learned, place every apex by its lap
+            # marker on the centerline.
             for c in corners:
-                if "location" not in c and "marker" in c:
+                if "marker" in c:
                     p = place(c["marker"])
                     c["location"] = [round(p[0], 6), round(p[1], 6)]
                     c["location_source"] = "centerline"
@@ -383,12 +387,11 @@ def generate_track(slug: str) -> dict:
                     # corners by raw lap fraction.
                     anchor = pit_lane_centroid(osm.get("elements", []))
                     oriented = rotate_loop_to(stitched, anchor) if anchor else stitched
-                    from lib.osm import arc_lengths, point_at_fraction
                     cum, total = arc_lengths(oriented + [oriented[0]])
                     closed = oriented + [oriented[0]]
                     place = lambda m: point_at_fraction(closed, cum, total, m)  # noqa: E731
                 for c in corners:
-                    if "location" not in c and "marker" in c:
+                    if "marker" in c:
                         p = place(c["marker"])
                         c["location"] = [round(p[0], 6), round(p[1], 6)]
                         c["location_source"] = "centerline"
@@ -414,6 +417,26 @@ def generate_track(slug: str) -> dict:
                 outline_coords = [c["location"] for c in traced]
                 if len(outline_coords) >= 3:
                     outline_coords.append(outline_coords[0])  # close the loop
+        # Final invariant: marker fractions are measured on the emitted GeoJSON
+        # centerline. OSM way centroids and piecewise alignment are useful to
+        # choose/orient the lap, but clients slice ranges directly by raw marker
+        # fractions, so every point carrying a marker must be placed from the
+        # final emitted coordinate frame.
+        if outline_coords and len(outline_coords) >= 2:
+            cum_final, total_final = arc_lengths(outline_coords)
+            for c in corners:
+                if c.get("marker") is not None:
+                    p = point_at_fraction(outline_coords, cum_final, total_final, c["marker"])
+                    c["location"] = [round(p[0], 6), round(p[1], 6)]
+                    c["location_source"] = "centerline"
+            if sf_point and sf_point.get("marker") is not None:
+                p = point_at_fraction(outline_coords, cum_final, total_final, sf_point["marker"])
+                sf_point["location"] = [round(p[0], 6), round(p[1], 6)]
+            for pp in pit_points.values():
+                if pp.get("marker") is not None:
+                    p = point_at_fraction(outline_coords, cum_final, total_final, pp["marker"])
+                    pp["location"] = [round(p[0], 6), round(p[1], 6)]
+
         # Corner phases: brake-zone start / apex / exit as lap fractions, written
         # onto each corner's start/end (apex stays the marker).
         total_m = layout.get("length_m")
