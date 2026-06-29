@@ -12,7 +12,7 @@
     "region": "Provence-Alpes-Cote d'Azur",
     "timezone": "Europe/Paris"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,284 +31,408 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "Virage de la Verrerie",
-            "official": "Virage de la Verrerie"
-          },
-          "marker": 0.1,
-          "start": 0.0792,
-          "end": 0.115,
-          "location": [
-            5.785492,
-            43.254774
-          ],
-          "direction": "right",
-          "scale": 3
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                5.792374,
+                43.251564
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "Virage de la Verrerie",
-            "official": "Virage de la Verrerie"
-          },
-          "marker": 0.133,
-          "start": 0.115,
-          "end": 0.15033,
-          "location": [
-            5.785492,
-            43.254774
-          ],
-          "direction": "left",
-          "scale": 3
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Virage de l'Hotel",
-            "official": "Virage de l'Hotel"
-          },
-          "marker": 0.228,
-          "start": 0.1968,
-          "end": 0.23775,
-          "location": [
-            5.779604,
-            43.257176
-          ],
-          "direction": "right",
-          "scale": 2
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Saint Baume",
-            "official": "Virage de Saint Baume"
-          },
-          "marker": 0.243,
-          "direction": "right",
-          "scale": 4,
-          "location": [
-            5.779249,
-            43.257629
-          ],
-          "location_source": "centerline",
-          "start": 0.23775,
-          "end": 0.25037
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "Virage du Camp",
-            "official": "Virage du Camp"
-          },
-          "marker": 0.263,
-          "start": 0.25037,
-          "end": 0.27712,
-          "location": [
-            5.778235,
-            43.257679
-          ],
-          "direction": "left",
-          "scale": 3
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Virage du Camp",
-            "official": "Virage du Camp"
-          },
-          "marker": 0.287,
-          "direction": "right",
-          "scale": 4,
-          "location": [
-            5.778315,
-            43.258114
-          ],
-          "location_source": "centerline",
-          "start": 0.27712,
-          "end": 0.29913
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Sainte-Baume",
-            "official": "Virage de la Sainte-Baume"
-          },
-          "marker": 0.327,
-          "start": 0.32093,
-          "end": 0.3348,
-          "location": [
-            5.779015,
-            43.258494
-          ],
-          "direction": "left",
-          "scale": 5
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Signes",
-            "official": "Courbe de Signes"
-          },
-          "marker": 0.673,
-          "start": 0.673,
-          "end": 0.673,
-          "direction": "right",
-          "scale": 6,
-          "location": [
-            5.802878,
-            43.251066
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Beausset",
-            "official": "Double Droite de Beausset"
-          },
-          "marker": 0.758,
-          "start": 0.74587,
-          "end": 0.77013,
-          "location": [
-            5.802503,
-            43.247489
-          ],
-          "direction": "right",
-          "scale": 4
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Bendor",
-            "official": "Virage de Bendor"
-          },
-          "marker": 0.826,
-          "start": 0.7948,
-          "end": 0.84853,
-          "location": [
-            5.802504,
-            43.250045
-          ],
-          "direction": "left",
-          "scale": 2
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Garbalan",
-            "official": "Courbe du Garbalan"
-          },
-          "marker": 0.866,
-          "start": 0.85993,
-          "end": 0.8738,
-          "direction": "right",
-          "scale": 5,
-          "location": [
-            5.799961,
-            43.249739
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "La Tour",
-            "official": "Virage de la Tour"
-          },
-          "marker": 0.913,
-          "start": 0.90087,
-          "end": 0.92168,
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            5.797138,
-            43.25075
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "driver": "Pont",
-            "official": "Virage du Pont"
-          },
-          "marker": 0.944,
-          "start": 0.92168,
-          "end": 0.96653,
-          "location": [
-            5.796218,
-            43.249556
-          ],
-          "direction": "right",
-          "scale": 2
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Virage de la Verrerie",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "Virage de la Verrerie",
+                "official": "Virage de la Verrerie"
+              },
+              "marker": 0.1,
+              "location": [
+                5.785492,
+                43.254774
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Virage de la Verrerie",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "Virage de la Verrerie",
+                "official": "Virage de la Verrerie"
+              },
+              "marker": 0.133,
+              "location": [
+                5.785492,
+                43.254774
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Virage de l'Hotel",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Virage de l'Hotel",
+                "official": "Virage de l'Hotel"
+              },
+              "marker": 0.228,
+              "location": [
+                5.779604,
+                43.257176
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Saint Baume",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Saint Baume",
+                "official": "Virage de Saint Baume"
+              },
+              "marker": 0.243,
+              "location": [
+                5.779249,
+                43.257629
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Virage du Camp",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "Virage du Camp",
+                "official": "Virage du Camp"
+              },
+              "marker": 0.263,
+              "location": [
+                5.778235,
+                43.257679
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Virage du Camp",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Virage du Camp",
+                "official": "Virage du Camp"
+              },
+              "marker": 0.287,
+              "location": [
+                5.778315,
+                43.258114
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Sainte-Baume",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Sainte-Baume",
+                "official": "Virage de la Sainte-Baume"
+              },
+              "marker": 0.327,
+              "location": [
+                5.779015,
+                43.258494
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Signes",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Signes",
+                "official": "Courbe de Signes"
+              },
+              "marker": 0.673,
+              "location": [
+                5.802878,
+                43.251066
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Beausset",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Beausset",
+                "official": "Double Droite de Beausset"
+              },
+              "marker": 0.758,
+              "location": [
+                5.802503,
+                43.247489
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Bendor",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Bendor",
+                "official": "Virage de Bendor"
+              },
+              "marker": 0.826,
+              "location": [
+                5.802504,
+                43.250045
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Garbalan",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Garbalan",
+                "official": "Courbe du Garbalan"
+              },
+              "marker": 0.866,
+              "location": [
+                5.799961,
+                43.249739
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "La Tour",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "La Tour",
+                "official": "Virage de la Tour"
+              },
+              "marker": 0.913,
+              "location": [
+                5.797138,
+                43.25075
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Pont",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "Pont",
+                "official": "Virage du Pont"
+              },
+              "marker": 0.944,
+              "location": [
+                5.796218,
+                43.249556
+              ],
+              "direction": "right",
+              "scale": 2
+            }
+          ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Ligne Droit du Mistral",
-          "start": 0.35,
-          "end": 0.64
-        }
-      ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.263
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.263
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.263,
+              "end": 0.597
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.597,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.263,
-          "end": 0.597
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Virage de la Verrerie",
+              "start": 0.0792,
+              "end": 0.115,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Virage de la Verrerie",
+              "start": 0.115,
+              "end": 0.15033,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Virage de l'Hotel",
+              "start": 0.1968,
+              "end": 0.23775,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Saint Baume",
+              "start": 0.23775,
+              "end": 0.25037,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Virage du Camp",
+              "start": 0.25037,
+              "end": 0.27712,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Virage du Camp",
+              "start": 0.27712,
+              "end": 0.29913,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Sainte-Baume",
+              "start": 0.32093,
+              "end": 0.3348,
+              "anchor": "t7"
+            },
+            {
+              "id": "t9",
+              "label": "Beausset",
+              "start": 0.74587,
+              "end": 0.77013,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Bendor",
+              "start": 0.7948,
+              "end": 0.84853,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Garbalan",
+              "start": 0.85993,
+              "end": 0.8738,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "La Tour",
+              "start": 0.90087,
+              "end": 0.92168,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Pont",
+              "start": 0.92168,
+              "end": 0.96653,
+              "anchor": "t13"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.597,
-          "end": 1.0
+          "id": "straights",
+          "kind": "straights",
+          "label": "Straights",
+          "items": [
+            {
+              "id": "lignedroitmistral",
+              "label": "Ligne Droit du Mistral",
+              "start": 0.35,
+              "end": 0.64
+            }
+          ]
         }
       ],
-      "pit": {},
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          5.792374,
-          43.251564
-        ]
-      },
       "length_m": 5770,
       "direction": "clockwise"
     }
@@ -320,7 +444,7 @@
     "imsa_data": "paul-ricard"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:36.913644+00:00",
+    "generated_at": "2026-06-29T15:41:59.145653+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

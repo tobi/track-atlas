@@ -1288,6 +1288,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.72
       },
       "geometry": {
@@ -1302,6 +1303,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.82
       },
       "geometry": {
@@ -1316,19 +1318,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Tower Turn",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Tower Turn"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.09,
-        "start": 0.06985,
-        "end": 0.1068
+        "marker": 0.09
       },
       "geometry": {
         "type": "Point",
@@ -1342,18 +1342,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Turn 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.14,
-        "start": 0.14,
-        "end": 0.14
+        "marker": 0.14
       },
       "geometry": {
         "type": "Point",
@@ -1367,19 +1365,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Bend",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Bend"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.16,
-        "start": 0.14824,
-        "end": 0.16667
+        "marker": 0.16
       },
       "geometry": {
         "type": "Point",
@@ -1393,18 +1389,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Turn 4",
-        "names": {
+        "labels": {
           "numbered": "Turn 4"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.17,
-        "start": 0.16667,
-        "end": 0.174
+        "marker": 0.17
       },
       "geometry": {
         "type": "Point",
@@ -1418,19 +1412,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Warehouse",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Warehouse"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.19,
-        "start": 0.174,
-        "end": 0.21183
+        "marker": 0.19
       },
       "geometry": {
         "type": "Point",
@@ -1444,19 +1436,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Big Bend",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Big Bend"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.26,
-        "start": 0.25412,
-        "end": 0.26756
+        "marker": 0.26
       },
       "geometry": {
         "type": "Point",
@@ -1470,19 +1460,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Hairpin",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Hairpin"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.34,
-        "start": 0.29801,
-        "end": 0.36855
+        "marker": 0.34
       },
       "geometry": {
         "type": "Point",
@@ -1496,19 +1484,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Bishop Bend",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Bishop Bend"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.39,
-        "start": 0.39,
-        "end": 0.39
+        "marker": 0.39
       },
       "geometry": {
         "type": "Point",
@@ -1522,19 +1508,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Cunningham",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Cunningham"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.42,
-        "start": 0.42,
-        "end": 0.42
+        "marker": 0.42
       },
       "geometry": {
         "type": "Point",
@@ -1548,19 +1532,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Gendebien",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Gendebien"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.47,
-        "start": 0.44985,
-        "end": 0.4868
+        "marker": 0.47
       },
       "geometry": {
         "type": "Point",
@@ -1574,19 +1556,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Collier",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Collier"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.51,
-        "start": 0.49824,
-        "end": 0.52176
+        "marker": 0.51
       },
       "geometry": {
         "type": "Point",
@@ -1600,18 +1580,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Turn 12",
-        "names": {
+        "labels": {
           "numbered": "Turn 12"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.53,
-        "start": 0.52412,
-        "end": 0.53756
+        "marker": 0.53
       },
       "geometry": {
         "type": "Point",
@@ -1625,19 +1603,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Tower",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Tower"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.56,
-        "start": 0.54824,
-        "end": 0.57176
+        "marker": 0.56
       },
       "geometry": {
         "type": "Point",
@@ -1651,19 +1627,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Bishop",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Bishop"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.63,
-        "start": 0.61824,
-        "end": 0.64176
+        "marker": 0.63
       },
       "geometry": {
         "type": "Point",
@@ -1677,19 +1651,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Coca-Cola",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Coca-Cola"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.69,
-        "start": 0.67824,
-        "end": 0.70176
+        "marker": 0.69
       },
       "geometry": {
         "type": "Point",
@@ -1703,19 +1675,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Le Mans",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Le Mans"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.73,
-        "start": 0.71824,
-        "end": 0.74176
+        "marker": 0.73
       },
       "geometry": {
         "type": "Point",
@@ -1729,19 +1699,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Turn 17",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "official": "Sunset Bend"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.93,
-        "start": 0.91824,
-        "end": 0.94176
+        "marker": 0.93
       },
       "geometry": {
         "type": "Point",

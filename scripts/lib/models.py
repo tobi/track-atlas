@@ -1,19 +1,21 @@
 """Pydantic models for a track-atlas track.json — the single source of truth.
 
-These models *define* the schema: `scripts/build_schema.py` emits
-`schema/track.schema.json` from them, and `scripts/verify.py` validates every
-track against them. Structural invariants (sequential corner numbers, unique
-codes, contiguous complexes, mandatory/declared name layers, the naming model)
-live here as validators. Geometry/alignment checks that need the GeoJSON and the
-filesystem stay in verify.py.
+The atlas is layout-first: a physical track/facility has one or more racing
+layouts, and every spatial annotation belongs to a layout. Layout annotations
+come in two shapes:
 
-Run anything that imports this under uv (pydantic is a project dependency):
-    uv run python scripts/verify.py
+  * point_layers: discrete lap locations (corner apexes, start/finish, pit in/out,
+    marshal posts, timing loops)
+  * range_layers: lap intervals (timing sectors, IMSA microsectors, corner
+    phases, complexes, slow zones, straights)
+
+These models define the schema: `scripts/build_schema.py` emits
+`schema/track.schema.json` from them, and `scripts/verify.py` validates every
+track against them.
 """
 from __future__ import annotations
 
-from collections import defaultdict
-from typing import Annotated, Literal, Optional
+from typing import Annotated, Any, Literal, Optional
 
 from pydantic import (
     BaseModel, ConfigDict, Field, StringConstraints,
@@ -25,6 +27,8 @@ from .naming import DEFAULT_LAYER, MANDATORY_LAYERS
 # --- scalar / constrained types ----------------------------------------------
 Slug = Annotated[str, StringConstraints(pattern=r"^[a-z0-9]+(-[a-z0-9]+)*$")]
 LayerCode = Annotated[str, StringConstraints(pattern=r"^[a-z][a-z0-9_]*$")]
+LayerId = Annotated[str, StringConstraints(pattern=r"^[a-z][a-z0-9_]*$")]
+ItemId = Annotated[str, StringConstraints(pattern=r"^[a-z0-9][a-z0-9_-]*$")]
 LonLat = Annotated[
     list[float],
     Field(min_length=2, max_length=2,
@@ -48,89 +52,112 @@ class Location(Strict):
     timezone: Optional[str] = None
 
 
-class NameLayer(Strict):
-    """Registry entry describing one corner-name layer for clients."""
+class LabelLayer(Strict):
+    """Registry entry describing one label/name layer for clients."""
     label: Optional[str] = Field(None, description="Human-readable layer name for UI.")
     description: Optional[str] = None
 
 
-class Corner(Strict):
-    number: int = Field(description="Sequential corner number 1..N, no gaps — the ordering key.")
-    code: str = Field(description="Trackside identifier (usually str(number); '5a'/'5b' for split apexes). "
-                                  "The 'numbered' layer is this as 'Turn <code>'.")
-    names: dict[LayerCode, str] = Field(
-        description="Name layers keyed by layer code (see track.name_layers). 'numbered' is always "
-                    "present; other layers appear only when a name is known. An unnamed corner carries "
-                    "only 'numbered'.")
-    complex: Optional[str] = Field(
-        None, description="Multi-corner complex this turn belongs to (e.g. 'Porsche Curves'). Corners "
-                          "sharing a complex must form one gap-free consecutive run.")
-    direction: Optional[Literal["left", "right"]] = None
-    scale: Optional[int] = Field(
-        None, ge=1, le=6,
-        description="Severity 1-6: 1=Hairpin, 2=Slow, 3=Medium, 4=Fast, 5=Very fast, 6=Kink.")
-    marker: Optional[Fraction] = Field(None, description="Lap fraction at the apex.")
-    start: Optional[Fraction] = Field(
-        None, description="Lap fraction where the corner phase begins — the braking/turn-in "
-                          "point, a few hundred metres before the apex for slow corners, scaled "
-                          "by severity. Computed by lib/phases.py; corners in a complex meet.")
-    end: Optional[Fraction] = Field(
-        None, description="Lap fraction where the corner phase ends — a short distance after the "
-                          "apex, into the throttle on exit.")
-    location: Optional[LonLat] = Field(None, description="Apex coordinate, when resolvable.")
+class Geometry(Strict):
+    centerline: str = Field(description="Path (relative to track dir) to the layout's GeoJSON centerline/layer file.")
+    crs: str = "EPSG:4326"
+
+
+class PointItem(Strict):
+    """A discrete annotation on a layout lap coordinate.
+
+    The corners layer uses number/code/direction/scale/labels. Layout control
+    points such as start_finish, pit_entry and pit_exit usually use label,
+    marker and location.
+    """
+    id: ItemId
+    label: Optional[str] = None
+    marker: Optional[Fraction] = None
+    location: Optional[LonLat] = None
     location_source: Optional[Literal["osm-way", "centerline", "manual"]] = None
-
-    @field_validator("names")
-    @classmethod
-    def _numbered_present(cls, v: dict) -> dict:
-        if "numbered" not in v:
-            raise ValueError("corner.names must contain the 'numbered' base layer")
-        return v
-
-
-class Sector(Strict):
-    name: str = Field(description="Timing sector label: 'S1', 'S2', 'S3'.")
-    start: Fraction = Field(description="Lap fraction where the sector begins.")
-    end: Fraction = Field(description="Lap fraction where the sector ends (the timing line).")
+    labels: dict[LayerCode, str] = Field(default_factory=dict)
+    number: Optional[int] = None
+    code: Optional[str] = None
+    direction: Optional[Literal["left", "right"]] = None
+    scale: Optional[int] = Field(None, ge=1, le=6,
+                                description="Severity 1-6: 1=Hairpin, 2=Slow, 3=Medium, 4=Fast, 5=Very fast, 6=Kink.")
 
 
-class Zone(Strict):
-    """A track segment, e.g. an endurance 'slow zone' (zone lente) that can be set
-    to a speed limit independently — the lap is pre-divided into these."""
-    id: str = Field(description="Stable zone id, e.g. 'sz1'.")
-    name: Optional[str] = Field(None, description="Section the zone covers, e.g. 'Mulsanne'.")
-    start: Fraction = Field(description="Lap fraction where the zone begins.")
-    end: Fraction = Field(description="Lap fraction where the zone ends.")
+class PointLayer(Strict):
+    id: LayerId
+    kind: LayerId
+    label: str
+    description: Optional[str] = None
+    series: list[str] = []
+    items: list[PointItem] = []
 
     @model_validator(mode="after")
-    def _ordered(self) -> "Zone":
-        if not self.start < self.end:
-            raise ValueError(f"slow zone '{self.id}' start {self.start} must be < end {self.end}")
+    def _unique_items(self) -> "PointLayer":
+        ids = [i.id for i in self.items]
+        dupes = {x for x in ids if ids.count(x) > 1}
+        if dupes:
+            raise ValueError(f"point layer '{self.id}' duplicate item ids: {sorted(dupes)}")
+        if self.kind == "corners":
+            nums = [i.number for i in self.items]
+            if any(n is None for n in nums):
+                raise ValueError("corners point layer items must have number")
+            nums_int = [int(n) for n in nums if n is not None]
+            if sorted(nums_int) != list(range(1, len(nums_int) + 1)):
+                raise ValueError(f"corner numbers not sequential 1..{len(nums_int)}: {sorted(nums_int)}")
+            codes = [i.code for i in self.items]
+            if any(c in (None, "") for c in codes):
+                raise ValueError("corners point layer items must have code")
+            dup_codes = {x for x in codes if codes.count(x) > 1}
+            if dup_codes:
+                raise ValueError(f"duplicate corner codes: {sorted(dup_codes)}")
+            missing_numbered = [i.id for i in self.items if "numbered" not in i.labels]
+            if missing_numbered:
+                raise ValueError(f"corner items missing numbered label: {missing_numbered}")
         return self
 
 
-class Straight(Strict):
-    name: str
-    aka: list[str] = []
-    start: Optional[Fraction] = None
-    end: Optional[Fraction] = None
+class RangeItem(Strict):
+    """A lap interval annotation."""
+    id: ItemId
+    label: Optional[str] = None
+    start: Fraction
+    end: Fraction
+    labels: dict[LayerCode, str] = Field(default_factory=dict)
+    anchor: Optional[ItemId] = Field(None, description="Point item this range is derived from, e.g. a corner apex id.")
+    members: list[ItemId] = Field(default=[], description="Point items contained in this range, e.g. corners in a complex.")
+    entry_ref: Optional[str] = Field(None, description="Upstream timing loop / line where the range starts, when known.")
+    exit_ref: Optional[str] = Field(None, description="Upstream timing loop / line where the range ends, when known.")
+    length_m: Optional[float] = Field(None, description="Official/source length of this range in metres, when known.")
 
 
-class PointRef(Strict):
-    id: Optional[str] = None
-    name: Optional[str] = None
-    location: LonLat
-    marker: Optional[Fraction] = None
+class RangeLayer(Strict):
+    id: LayerId
+    kind: LayerId
+    label: str
+    description: Optional[str] = None
+    series: list[str] = []
+    coverage: Optional[Literal["partition", "partial", "overlap"]] = None
+    generated: bool = False
+    provenance: Optional[dict[str, Any]] = None
+    items: list[RangeItem] = []
 
-
-class Pit(Strict):
-    entry: Optional[Fraction] = None
-    exit: Optional[Fraction] = None
-
-
-class Geometry(Strict):
-    outline: str = Field(description="Path (relative to track dir) to the layout's GeoJSON.")
-    crs: str = "EPSG:4326"
+    @model_validator(mode="after")
+    def _range_invariants(self) -> "RangeLayer":
+        ids = [i.id for i in self.items]
+        dupes = {x for x in ids if ids.count(x) > 1}
+        if dupes:
+            raise ValueError(f"range layer '{self.id}' duplicate item ids: {sorted(dupes)}")
+        for item in self.items:
+            if not item.start < item.end:
+                raise ValueError(f"range '{item.id}' start {item.start} must be < end {item.end}")
+        if self.coverage == "partition" and self.items:
+            ordered = sorted(self.items, key=lambda i: i.start)
+            if abs(ordered[0].start - 0.0) > 1e-6 or abs(ordered[-1].end - 1.0) > 1e-6:
+                raise ValueError(f"partition layer '{self.id}' must cover 0.0→1.0")
+            for a, b in zip(ordered, ordered[1:]):
+                if abs(a.end - b.start) > 1e-6:
+                    raise ValueError(f"partition layer '{self.id}' has gap/overlap between {a.id} and {b.id}")
+        return self
 
 
 # --- layout ------------------------------------------------------------------
@@ -138,46 +165,24 @@ class Layout(Strict):
     id: Slug
     name: str
     aka: list[str] = []
-    series: list[str] = Field(default=[], description="Series that use THIS layout, when it is "
-                              "series-specific (e.g. ['imsa'] vs ['wec'] for Sebring's two pit "
-                              "configurations). Empty = the track-level series all use this layout.")
+    series: list[str] = Field(default=[], description="Series that use THIS layout/configuration.")
     length_m: Optional[float] = Field(None, description="Lap length in metres.")
     direction: Optional[Literal["clockwise", "anticlockwise"]] = None
     active_years: Optional[str] = Field(None, description="Free-form, e.g. '2018-' or '1972,1979-1989'.")
     geometry: Geometry
-    start_finish: Optional[PointRef] = None
-    name_default: str = Field(
+    label_default: str = Field(
         DEFAULT_LAYER,
-        description="Layer code (a key in track.name_layers) used as the default display name. "
-                    "Resolution is two steps: corner.names[name_default] if present, else "
-                    "corner.names.numbered — it does NOT fall through to other named layers.")
-    corners: list[Corner] = []
-    straights: list[Straight] = []
-    sectors: list[Sector] = []
-    slow_zones: list[Zone] = Field(default=[], description="Endurance slow zones (zones lentes) — "
-                                   "track segments the organisers can set to a speed limit; the lap "
-                                   "is pre-divided into these. Curated input (e.g. Le Mans).")
-    pit: Optional[Pit] = None
-    marshal_posts: list[PointRef] = []
-    access_points: list[PointRef] = []
+        description="Label layer code used as the default display name. Resolution is two steps: item.labels[label_default] if present, else item.labels.numbered.")
+    point_layers: list[PointLayer] = []
+    range_layers: list[RangeLayer] = []
 
     @model_validator(mode="after")
-    def _corner_invariants(self) -> "Layout":
-        nums = [c.number for c in self.corners]
-        if nums and sorted(nums) != list(range(1, len(nums) + 1)):
-            raise ValueError(f"corner numbers not sequential 1..{len(nums)}: {sorted(nums)}")
-        codes = [c.code for c in self.corners]
-        dupes = {x for x in codes if codes.count(x) > 1}
-        if dupes:
-            raise ValueError(f"duplicate corner codes: {sorted(dupes)}")
-        runs: dict[str, list[int]] = defaultdict(list)
-        for c in self.corners:
-            if c.complex:
-                runs[c.complex].append(c.number)
-        for cname, ns in runs.items():
-            s = sorted(ns)
-            if s != list(range(s[0], s[0] + len(s))):
-                raise ValueError(f"complex '{cname}' is not a contiguous run of corners: {s}")
+    def _layer_ids_unique(self) -> "Layout":
+        for attr in ("point_layers", "range_layers"):
+            ids = [layer.id for layer in getattr(self, attr)]
+            dupes = {x for x in ids if ids.count(x) > 1}
+            if dupes:
+                raise ValueError(f"layout '{self.id}' duplicate {attr} ids: {sorted(dupes)}")
         return self
 
 
@@ -191,40 +196,49 @@ class Provenance(BaseModel):
 
 class Track(Strict):
     slug: Slug
-    name: str = Field(description="Official circuit name.")
+    name: str = Field(description="Official circuit/facility name.")
     aka: list[str] = []
     country: Optional[str] = Field(None, description="ISO 3166-1 alpha-2 code.")
     location: Location
     wikidata: Optional[Annotated[str, StringConstraints(pattern=r"^Q[0-9]+$")]] = None
     series: list[str] = []
     external_ids: dict[str, str] = {}
-    name_layers: dict[LayerCode, NameLayer] = Field(
-        description="Registry of corner-name layers. Keys are layer codes; clients enumerate these to "
-                    "offer a layer to display. 'numbered' and 'official' are mandatory; 'driver' is the "
-                    "usual default.")
+    label_layers: dict[LayerCode, LabelLayer] = Field(
+        description="Registry of label/name layers. Keys are label codes used by item.labels. 'numbered' and 'official' are mandatory; 'driver' is the usual default.")
     layouts: Annotated[list[Layout], Field(min_length=1)]
     provenance: Optional[Provenance] = None
 
-    @field_validator("name_layers")
+    @field_validator("label_layers")
     @classmethod
     def _mandatory_layers(cls, v: dict) -> dict:
         missing = [m for m in MANDATORY_LAYERS if m not in v]
         if missing:
-            raise ValueError(f"name_layers must declare mandatory layer(s): {missing}")
+            raise ValueError(f"label_layers must declare mandatory layer(s): {missing}")
         return v
 
     @model_validator(mode="after")
     def _layer_references(self) -> "Track":
-        declared = set(self.name_layers)
+        declared = set(self.label_layers)
         for lo in self.layouts:
-            if lo.name_default not in declared:
+            if lo.label_default not in declared:
                 raise ValueError(
-                    f"layout '{lo.id}'.name_default '{lo.name_default}' is not a declared "
-                    f"name layer {sorted(declared)}")
-            for c in lo.corners:
-                undeclared = set(c.names) - declared
-                if undeclared:
-                    raise ValueError(
-                        f"layout '{lo.id}' corner {c.number} uses undeclared name layer(s) "
-                        f"{sorted(undeclared)} (declare them in track.name_layers)")
+                    f"layout '{lo.id}'.label_default '{lo.label_default}' is not a declared label layer {sorted(declared)}")
+            point_ids = {item.id for layer in lo.point_layers for item in layer.items}
+            for layer in lo.point_layers:
+                for item in layer.items:
+                    undeclared = set(item.labels) - declared
+                    if undeclared:
+                        raise ValueError(
+                            f"layout '{lo.id}' point layer '{layer.id}' item '{item.id}' uses undeclared label layer(s) {sorted(undeclared)}")
+            for layer in lo.range_layers:
+                for item in layer.items:
+                    undeclared = set(item.labels) - declared
+                    if undeclared:
+                        raise ValueError(
+                            f"layout '{lo.id}' range layer '{layer.id}' item '{item.id}' uses undeclared label layer(s) {sorted(undeclared)}")
+                    refs = ([item.anchor] if item.anchor else []) + item.members
+                    missing = [ref for ref in refs if ref not in point_ids]
+                    if missing:
+                        raise ValueError(
+                            f"layout '{lo.id}' range layer '{layer.id}' item '{item.id}' references missing point item(s) {missing}")
         return self

@@ -1296,6 +1296,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.99
       },
       "geometry": {
@@ -1310,6 +1311,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.1
       },
       "geometry": {
@@ -1324,20 +1326,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "First Corner",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "First Corner",
           "official": "TGR Corner"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.17,
-        "start": 0.11504,
-        "end": 0.2
+        "marker": 0.17
       },
       "geometry": {
         "type": "Point",
@@ -1351,18 +1351,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Turn 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.2,
-        "start": 0.2,
-        "end": 0.2
+        "marker": 0.2
       },
       "geometry": {
         "type": "Point",
@@ -1376,20 +1374,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Coca-Cola",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Coca-Cola",
           "official": "Coca-Cola Corner"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.29,
-        "start": 0.27461,
-        "end": 0.30539
+        "marker": 0.29
       },
       "geometry": {
         "type": "Point",
@@ -1403,20 +1399,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "100R",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "100R",
           "official": "100R"
         },
-        "complex": "100R",
         "direction": "right",
         "scale": 4,
-        "marker": 0.34,
-        "start": 0.32461,
-        "end": 0.37333
+        "marker": 0.34
       },
       "geometry": {
         "type": "Point",
@@ -1430,20 +1424,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "100R exit",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "official": "100R",
           "driver": "100R exit"
         },
-        "complex": "100R",
         "direction": "right",
         "scale": 5,
-        "marker": 0.39,
-        "start": 0.37333,
-        "end": 0.39763
+        "marker": 0.39
       },
       "geometry": {
         "type": "Point",
@@ -1457,20 +1449,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Hairpin",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Hairpin",
           "official": "Hairpin Corner (75R)"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.44,
-        "start": 0.39763,
-        "end": 0.47
+        "marker": 0.44
       },
       "geometry": {
         "type": "Point",
@@ -1484,18 +1474,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Turn 7",
-        "names": {
+        "labels": {
           "numbered": "Turn 7"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.47,
-        "start": 0.47,
-        "end": 0.47
+        "marker": 0.47
       },
       "geometry": {
         "type": "Point",
@@ -1509,18 +1497,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Turn 8",
-        "names": {
+        "labels": {
           "numbered": "Turn 8"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.52,
-        "start": 0.52,
-        "end": 0.52
+        "marker": 0.52
       },
       "geometry": {
         "type": "Point",
@@ -1534,20 +1520,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "300R",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "300R",
           "official": "300R"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.56,
-        "start": 0.55231,
-        "end": 0.56989
+        "marker": 0.56
       },
       "geometry": {
         "type": "Point",
@@ -1561,20 +1545,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Dunlop",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Dunlop",
           "official": "Dunlop Corner"
         },
-        "complex": "Dunlop Chicane",
         "direction": "right",
         "scale": 1,
-        "marker": 0.63,
-        "start": 0.57504,
-        "end": 0.63486
+        "marker": 0.63
       },
       "geometry": {
         "type": "Point",
@@ -1588,18 +1570,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Turn 11",
-        "names": {
+        "labels": {
           "numbered": "Turn 11"
         },
-        "complex": "Dunlop Chicane",
         "direction": "left",
         "scale": 2,
-        "marker": 0.64,
-        "start": 0.63486,
-        "end": 0.65576
+        "marker": 0.64
       },
       "geometry": {
         "type": "Point",
@@ -1613,18 +1593,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Turn 12",
-        "names": {
+        "labels": {
           "numbered": "Turn 12"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.66,
-        "start": 0.65576,
-        "end": 0.66989
+        "marker": 0.66
       },
       "geometry": {
         "type": "Point",
@@ -1638,20 +1616,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "13th Corner",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "13th Corner",
           "official": "GR Supra Corner"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.7,
-        "start": 0.67362,
-        "end": 0.71176
+        "marker": 0.7
       },
       "geometry": {
         "type": "Point",
@@ -1665,20 +1641,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Netz Corner",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "official": "Netz Corner",
           "driver": "Netz Corner"
         },
-        "complex": "Netz",
         "direction": "left",
         "scale": 4,
-        "marker": 0.72,
-        "start": 0.71176,
-        "end": 0.7284
+        "marker": 0.72
       },
       "geometry": {
         "type": "Point",
@@ -1692,20 +1666,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Netz",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Netz",
           "official": "Netz Corner"
         },
-        "complex": "Netz",
         "direction": "left",
         "scale": 2,
-        "marker": 0.75,
-        "start": 0.7284,
-        "end": 0.77395
+        "marker": 0.75
       },
       "geometry": {
         "type": "Point",
@@ -1719,20 +1691,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Panasonic",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Panasonic",
           "official": "Panasonic Corner"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.82,
-        "start": 0.77395,
-        "end": 0.85737
+        "marker": 0.82
       },
       "geometry": {
         "type": "Point",

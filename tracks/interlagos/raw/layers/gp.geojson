@@ -1420,6 +1420,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.98
       },
       "geometry": {
@@ -1434,6 +1435,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.07
       },
       "geometry": {
@@ -1448,20 +1450,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Senna S",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Senna S",
           "official": "Descida do S do Senna"
         },
-        "complex": "Senna S",
         "direction": "left",
         "scale": 2,
-        "marker": 0.09,
-        "start": 0.04823,
-        "end": 0.1004
+        "marker": 0.09
       },
       "geometry": {
         "type": "Point",
@@ -1475,20 +1475,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Senna S",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "official": "Senna S",
           "driver": "Senna S"
         },
-        "complex": "Senna S",
         "direction": "right",
         "scale": 3,
-        "marker": 0.11,
-        "start": 0.1004,
-        "end": 0.13321
+        "marker": 0.11
       },
       "geometry": {
         "type": "Point",
@@ -1502,20 +1500,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Curva do Sol",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Curva do Sol",
           "official": "Curva do Sol"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.15,
-        "start": 0.13375,
-        "end": 0.16625
+        "marker": 0.15
       },
       "geometry": {
         "type": "Point",
@@ -1529,20 +1525,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Descida do Lago",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Descida do Lago",
           "official": "Descida do Lago"
         },
-        "complex": "Descida do Lago",
         "direction": "left",
         "scale": 4,
-        "marker": 0.33,
-        "start": 0.31375,
-        "end": 0.35667
+        "marker": 0.33
       },
       "geometry": {
         "type": "Point",
@@ -1556,20 +1550,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Descida do Lago",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "official": "Descida do Lago",
           "driver": "Descida do Lago"
         },
-        "complex": "Descida do Lago",
         "direction": "left",
         "scale": 5,
-        "marker": 0.37,
-        "start": 0.35667,
-        "end": 0.38044
+        "marker": 0.37
       },
       "geometry": {
         "type": "Point",
@@ -1583,20 +1575,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Ferradura",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Ferradura",
           "official": "Ferradura"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.48,
-        "start": 0.43823,
-        "end": 0.49258
+        "marker": 0.48
       },
       "geometry": {
         "type": "Point",
@@ -1610,20 +1600,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Laranjinha",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Laranjinha",
           "official": "Laranjinha"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.51,
-        "start": 0.49258,
-        "end": 0.536
+        "marker": 0.51
       },
       "geometry": {
         "type": "Point",
@@ -1637,20 +1625,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Pinheirinho",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "official": "Pinheirinho",
           "driver": "Pinheirinho"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.55,
-        "start": 0.536,
-        "end": 0.56105
+        "marker": 0.55
       },
       "geometry": {
         "type": "Point",
@@ -1664,20 +1650,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Pinheirinho",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Pinheirinho",
           "official": "Pinheirinho"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.58,
-        "start": 0.56105,
-        "end": 0.60143
+        "marker": 0.58
       },
       "geometry": {
         "type": "Point",
@@ -1691,20 +1675,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Bico de Pato",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Bico de Pato",
           "official": "Bico de Pato"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.64,
-        "start": 0.60143,
-        "end": 0.67017
+        "marker": 0.64
       },
       "geometry": {
         "type": "Point",
@@ -1718,20 +1700,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Mergulho",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Mergulho",
           "official": "Mergulho"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.69,
-        "start": 0.67375,
-        "end": 0.70625
+        "marker": 0.69
       },
       "geometry": {
         "type": "Point",
@@ -1745,20 +1725,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Juncao",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Juncao",
           "official": "Junção"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.76,
-        "start": 0.71823,
-        "end": 0.79
+        "marker": 0.76
       },
       "geometry": {
         "type": "Point",
@@ -1772,20 +1750,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Juncao",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "official": "Junção",
           "driver": "Juncao"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.79,
-        "start": 0.79,
-        "end": 0.79
+        "marker": 0.79
       },
       "geometry": {
         "type": "Point",
@@ -1799,20 +1775,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Subida dos Boxes",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Subida dos Boxes",
           "official": "Subida dos Boxes"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.86,
-        "start": 0.86,
-        "end": 0.86
+        "marker": 0.86
       },
       "geometry": {
         "type": "Point",
@@ -1826,20 +1800,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Arquibancadas",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Arquibancadas",
           "official": "Arquibancadas"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.94,
-        "start": 0.92375,
-        "end": 0.95625
+        "marker": 0.94
       },
       "geometry": {
         "type": "Point",

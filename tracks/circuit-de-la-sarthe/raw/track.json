@@ -14,7 +14,7 @@
     "region": "Pays de la Loire",
     "timezone": "Europe/Paris"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -35,516 +35,748 @@
       "aka": [
         "Grand Prix Endurance Circuit"
       ],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/24h.geojson",
+        "centerline": "layers/24h.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "Dunlop Curve",
-            "official": "Courbe Dunlop"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.05,
-          "start": 0.04743,
-          "end": 0.0533,
-          "location": [
-            0.210987,
-            47.956831
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                0.207592,
+                47.950921
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.99,
+              "location": [
+                0.207527,
+                47.949562
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.03,
+              "location": [
+                0.208423,
+                47.954933
+              ]
+            }
           ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "Dunlop Chicane",
-            "official": "Chicane Dunlop"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.06,
-          "start": 0.05486,
-          "end": 0.065,
-          "location": [
-            0.210987,
-            47.956831
-          ],
-          "complex": "Dunlop Chicane"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "official": "Chicane Dunlop",
-            "driver": "Dunlop Chicane"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.07,
-          "start": 0.065,
-          "end": 0.07514,
-          "complex": "Dunlop Chicane",
-          "location": [
-            0.212049,
-            47.957606
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Esses de la Forêt",
-            "official": "Esses de la Forêt"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.11,
-          "start": 0.10486,
-          "end": 0.115,
-          "location": [
-            0.21752,
-            47.960039
-          ],
-          "complex": "Esses de la Forêt"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "official": "Esses de la Forêt",
-            "driver": "Esses de la Forêt"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.12,
-          "start": 0.115,
-          "end": 0.12514,
-          "complex": "Esses de la Forêt",
-          "location": [
-            0.218226,
-            47.960862
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Tertre Rouge",
-            "official": "Virage du Tertre Rouge"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.14,
-          "start": 0.13486,
-          "end": 0.14514,
-          "location": [
-            0.221069,
-            47.961497
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Dunlop Curve",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "Dunlop Curve",
+                "official": "Courbe Dunlop"
+              },
+              "marker": 0.05,
+              "location": [
+                0.210987,
+                47.956831
+              ],
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Dunlop Chicane",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "Dunlop Chicane",
+                "official": "Chicane Dunlop"
+              },
+              "marker": 0.06,
+              "location": [
+                0.210987,
+                47.956831
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Dunlop Chicane",
+              "labels": {
+                "numbered": "Turn 3",
+                "official": "Chicane Dunlop",
+                "driver": "Dunlop Chicane"
+              },
+              "marker": 0.07,
+              "location": [
+                0.212049,
+                47.957606
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Esses de la Forêt",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Esses de la Forêt",
+                "official": "Esses de la Forêt"
+              },
+              "marker": 0.11,
+              "location": [
+                0.21752,
+                47.960039
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Esses de la Forêt",
+              "labels": {
+                "numbered": "Turn 5",
+                "official": "Esses de la Forêt",
+                "driver": "Esses de la Forêt"
+              },
+              "marker": 0.12,
+              "location": [
+                0.218226,
+                47.960862
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Tertre Rouge",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Tertre Rouge",
+                "official": "Virage du Tertre Rouge"
+              },
+              "marker": 0.14,
+              "location": [
+                0.221069,
+                47.961497
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "First Chicane",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "First Chicane",
+                "official": "Chicane Daytona"
+              },
+              "marker": 0.3,
+              "location": [
+                0.23313,
+                47.944242
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Second Chicane",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Second Chicane",
+                "official": "Chicane Michelin"
+              },
+              "marker": 0.45,
+              "location": [
+                0.241897,
+                47.927817
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Mulsanne",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Mulsanne",
+                "official": "Virage de Mulsanne"
+              },
+              "marker": 0.57,
+              "location": [
+                0.243504,
+                47.914042
+              ],
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Indianapolis",
+              "labels": {
+                "numbered": "Turn 10",
+                "official": "Virage d'Indianapolis",
+                "driver": "Indianapolis"
+              },
+              "marker": 0.7,
+              "location": [
+                0.221308,
+                47.920315
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Indianapolis",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Indianapolis",
+                "official": "Virage d'Indianapolis"
+              },
+              "marker": 0.72,
+              "location": [
+                0.219262,
+                47.92235
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Arnage",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "Arnage",
+                "official": "Virage d'Arnage"
+              },
+              "marker": 0.74,
+              "location": [
+                0.215615,
+                47.92148
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Turn 13",
+              "labels": {
+                "numbered": "Turn 13"
+              },
+              "marker": 0.82,
+              "location": [
+                0.211145,
+                47.930027
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 6
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Porsche Curves",
+              "labels": {
+                "numbered": "Turn 14",
+                "driver": "Porsche Curves",
+                "official": "Virage Porsche"
+              },
+              "marker": 0.85,
+              "location": [
+                0.209169,
+                47.933028
+              ],
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Porsche Curves",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Porsche Curves",
+                "official": "Virage du Pont"
+              },
+              "marker": 0.87,
+              "location": [
+                0.210624,
+                47.935503
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t16",
+              "number": 16,
+              "code": "16",
+              "label": "Karting",
+              "labels": {
+                "numbered": "Turn 16",
+                "driver": "Karting",
+                "official": "Virage du Karting"
+              },
+              "marker": 0.89,
+              "location": [
+                0.209249,
+                47.938097
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t17",
+              "number": 17,
+              "code": "17",
+              "label": "Corvette",
+              "labels": {
+                "numbered": "Turn 17",
+                "driver": "Corvette",
+                "official": "Virage Corvette"
+              },
+              "marker": 0.91,
+              "location": [
+                0.210424,
+                47.939855
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t18",
+              "number": 18,
+              "code": "18",
+              "label": "Ford Chicane",
+              "labels": {
+                "numbered": "Turn 18",
+                "driver": "Ford Chicane",
+                "official": "Chicane Ford"
+              },
+              "marker": 0.97,
+              "location": [
+                0.208476,
+                47.947064
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t19",
+              "number": 19,
+              "code": "19",
+              "label": "Ford Chicane",
+              "labels": {
+                "numbered": "Turn 19",
+                "official": "Chicane Ford",
+                "driver": "Ford Chicane"
+              },
+              "marker": 0.98,
+              "location": [
+                0.207512,
+                47.948214
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t20",
+              "number": 20,
+              "code": "20",
+              "label": "Ford Chicane",
+              "labels": {
+                "numbered": "Turn 20",
+                "driver": "Ford Chicane",
+                "official": "Chicane du Raccordement"
+              },
+              "marker": 0.98,
+              "location": [
+                0.20753,
+                47.948222
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t21",
+              "number": 21,
+              "code": "21",
+              "label": "Ford Chicane",
+              "labels": {
+                "numbered": "Turn 21",
+                "official": "Virage du Raccordement",
+                "driver": "Ford Chicane"
+              },
+              "marker": 0.99,
+              "location": [
+                0.207527,
+                47.949562
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            }
           ]
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "First Chicane",
-            "official": "Chicane Daytona"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.3,
-          "start": 0.28679,
-          "end": 0.3629,
-          "location": [
-            0.23313,
-            47.944242
-          ],
-          "complex": "Mulsanne Straight Chicanes"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Second Chicane",
-            "official": "Chicane Michelin"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.45,
-          "start": 0.3629,
-          "end": 0.45954,
-          "location": [
-            0.241897,
-            47.927817
-          ],
-          "complex": "Mulsanne Straight Chicanes"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Mulsanne",
-            "official": "Virage de Mulsanne"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.57,
-          "start": 0.55165,
-          "end": 0.58248,
-          "location": [
-            0.243504,
-            47.914042
-          ]
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "official": "Virage d'Indianapolis",
-            "driver": "Indianapolis"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.7,
-          "start": 0.69743,
-          "end": 0.70545,
-          "complex": "Indianapolis",
-          "location": [
-            0.221308,
-            47.920315
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Indianapolis",
-            "official": "Virage d'Indianapolis"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.72,
-          "start": 0.70545,
-          "end": 0.72714,
-          "complex": "Indianapolis",
-          "location": [
-            0.219262,
-            47.92235
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "Arnage",
-            "official": "Virage d'Arnage"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.74,
-          "start": 0.72714,
-          "end": 0.74954,
-          "location": [
-            0.215615,
-            47.92148
-          ]
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13"
-          },
-          "direction": "left",
-          "scale": 6,
-          "marker": 0.82,
-          "start": 0.82,
-          "end": 0.82,
-          "location": [
-            0.211145,
-            47.930027
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "driver": "Porsche Curves",
-            "official": "Virage Porsche"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.85,
-          "start": 0.84743,
-          "end": 0.86125,
-          "location": [
-            0.209169,
-            47.933028
-          ],
-          "complex": "Porsche Curves"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Porsche Curves",
-            "official": "Virage du Pont"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.87,
-          "start": 0.86125,
-          "end": 0.87783,
-          "location": [
-            0.210624,
-            47.935503
-          ],
-          "complex": "Porsche Curves"
-        },
-        {
-          "number": 16,
-          "code": "16",
-          "names": {
-            "numbered": "Turn 16",
-            "driver": "Karting",
-            "official": "Virage du Karting"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.89,
-          "start": 0.87783,
-          "end": 0.9,
-          "location": [
-            0.209249,
-            47.938097
-          ],
-          "complex": "Porsche Curves"
-        },
-        {
-          "number": 17,
-          "code": "17",
-          "names": {
-            "numbered": "Turn 17",
-            "driver": "Corvette",
-            "official": "Virage Corvette"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.91,
-          "start": 0.9,
-          "end": 0.91514,
-          "location": [
-            0.210424,
-            47.939855
-          ],
-          "complex": "Porsche Curves"
-        },
-        {
-          "number": 18,
-          "code": "18",
-          "names": {
-            "numbered": "Turn 18",
-            "driver": "Ford Chicane",
-            "official": "Chicane Ford"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.97,
-          "start": 0.96119,
-          "end": 0.97455,
-          "location": [
-            0.208476,
-            47.947064
-          ],
-          "complex": "Ford Chicanes"
-        },
-        {
-          "number": 19,
-          "code": "19",
-          "names": {
-            "numbered": "Turn 19",
-            "official": "Chicane Ford",
-            "driver": "Ford Chicane"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.98,
-          "start": 0.97455,
-          "end": 0.98,
-          "complex": "Ford Chicanes",
-          "location": [
-            0.207512,
-            47.948214
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 20,
-          "code": "20",
-          "names": {
-            "numbered": "Turn 20",
-            "driver": "Ford Chicane",
-            "official": "Chicane du Raccordement"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.98,
-          "start": 0.98,
-          "end": 0.98455,
-          "location": [
-            0.20753,
-            47.948222
-          ],
-          "complex": "Ford Chicanes"
-        },
-        {
-          "number": 21,
-          "code": "21",
-          "names": {
-            "numbered": "Turn 21",
-            "official": "Virage du Raccordement",
-            "driver": "Ford Chicane"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.99,
-          "start": 0.98455,
-          "end": 0.99734,
-          "complex": "Ford Chicanes",
-          "location": [
-            0.207527,
-            47.949562
-          ],
-          "location_source": "centerline"
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Main Straight",
-          "start": 0.99,
-          "end": 0.02
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.14
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.14,
+              "end": 0.57
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.57,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "Hunaudières",
-          "start": 0.16,
-          "end": 0.029
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Dunlop Curve",
+              "start": 0.04743,
+              "end": 0.0533,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Dunlop Chicane",
+              "start": 0.05486,
+              "end": 0.065,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Dunlop Chicane",
+              "start": 0.065,
+              "end": 0.07514,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Esses de la Forêt",
+              "start": 0.10486,
+              "end": 0.115,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Esses de la Forêt",
+              "start": 0.115,
+              "end": 0.12514,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Tertre Rouge",
+              "start": 0.13486,
+              "end": 0.14514,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "First Chicane",
+              "start": 0.28679,
+              "end": 0.3629,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Second Chicane",
+              "start": 0.3629,
+              "end": 0.45954,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Mulsanne",
+              "start": 0.55165,
+              "end": 0.58248,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Indianapolis",
+              "start": 0.69743,
+              "end": 0.70545,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Indianapolis",
+              "start": 0.70545,
+              "end": 0.72714,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Arnage",
+              "start": 0.72714,
+              "end": 0.74954,
+              "anchor": "t12"
+            },
+            {
+              "id": "t14",
+              "label": "Porsche Curves",
+              "start": 0.84743,
+              "end": 0.86125,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "Porsche Curves",
+              "start": 0.86125,
+              "end": 0.87783,
+              "anchor": "t15"
+            },
+            {
+              "id": "t16",
+              "label": "Karting",
+              "start": 0.87783,
+              "end": 0.9,
+              "anchor": "t16"
+            },
+            {
+              "id": "t17",
+              "label": "Corvette",
+              "start": 0.9,
+              "end": 0.91514,
+              "anchor": "t17"
+            },
+            {
+              "id": "t18",
+              "label": "Ford Chicane",
+              "start": 0.96119,
+              "end": 0.97455,
+              "anchor": "t18"
+            },
+            {
+              "id": "t19",
+              "label": "Ford Chicane",
+              "start": 0.97455,
+              "end": 0.98,
+              "anchor": "t19"
+            },
+            {
+              "id": "t20",
+              "label": "Ford Chicane",
+              "start": 0.98,
+              "end": 0.98455,
+              "anchor": "t20"
+            },
+            {
+              "id": "t21",
+              "label": "Ford Chicane",
+              "start": 0.98455,
+              "end": 0.99734,
+              "anchor": "t21"
+            }
+          ]
         },
         {
-          "name": "Hunaudières",
-          "start": 0.32,
-          "end": 0.043
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "dunlop",
+              "label": "Dunlop Chicane",
+              "start": 0.05486,
+              "end": 0.07514,
+              "members": [
+                "t2",
+                "t3"
+              ]
+            },
+            {
+              "id": "foret",
+              "label": "Esses de la Forêt",
+              "start": 0.10486,
+              "end": 0.12514,
+              "members": [
+                "t4",
+                "t5"
+              ]
+            },
+            {
+              "id": "mulsannestraightchicanes",
+              "label": "Mulsanne Straight Chicanes",
+              "start": 0.28679,
+              "end": 0.45954,
+              "members": [
+                "t7",
+                "t8"
+              ]
+            },
+            {
+              "id": "indianapolis",
+              "label": "Indianapolis",
+              "start": 0.69743,
+              "end": 0.72714,
+              "members": [
+                "t10",
+                "t11"
+              ]
+            },
+            {
+              "id": "porschecurves",
+              "label": "Porsche Curves",
+              "start": 0.84743,
+              "end": 0.91514,
+              "members": [
+                "t14",
+                "t15",
+                "t16",
+                "t17"
+              ]
+            },
+            {
+              "id": "fordchicanes",
+              "label": "Ford Chicanes",
+              "start": 0.96119,
+              "end": 0.99734,
+              "members": [
+                "t18",
+                "t19",
+                "t20",
+                "t21"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "slow_zones",
+          "kind": "slow_zones",
+          "label": "Slow Zones",
+          "items": [
+            {
+              "id": "sz1",
+              "label": "Dunlop",
+              "start": 0.0,
+              "end": 0.1
+            },
+            {
+              "id": "sz2",
+              "label": "Tertre Rouge",
+              "start": 0.1,
+              "end": 0.16
+            },
+            {
+              "id": "sz3",
+              "label": "Hunaudières (1st chicane)",
+              "start": 0.16,
+              "end": 0.31
+            },
+            {
+              "id": "sz4",
+              "label": "Hunaudières (2nd chicane)",
+              "start": 0.31,
+              "end": 0.46
+            },
+            {
+              "id": "sz5",
+              "label": "Mulsanne corner",
+              "start": 0.46,
+              "end": 0.58
+            },
+            {
+              "id": "sz6",
+              "label": "Indianapolis",
+              "start": 0.58,
+              "end": 0.71
+            },
+            {
+              "id": "sz7",
+              "label": "Arnage",
+              "start": 0.71,
+              "end": 0.78
+            },
+            {
+              "id": "sz8",
+              "label": "Porsche Curves",
+              "start": 0.78,
+              "end": 0.93
+            },
+            {
+              "id": "sz9",
+              "label": "Ford Chicanes",
+              "start": 0.93,
+              "end": 1.0
+            }
+          ]
         }
       ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.14
-        },
-        {
-          "name": "S2",
-          "start": 0.14,
-          "end": 0.57
-        },
-        {
-          "name": "S3",
-          "start": 0.57,
-          "end": 1.0
-        }
-      ],
-      "pit": {
-        "entry": 0.99,
-        "exit": 0.03
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          0.207592,
-          47.950921
-        ]
-      },
       "length_m": 13626,
       "direction": "clockwise",
-      "active_years": "2018-",
-      "slow_zones": [
-        {
-          "id": "sz1",
-          "name": "Dunlop",
-          "start": 0.0,
-          "end": 0.1
-        },
-        {
-          "id": "sz2",
-          "name": "Tertre Rouge",
-          "start": 0.1,
-          "end": 0.16
-        },
-        {
-          "id": "sz3",
-          "name": "Hunaudières (1st chicane)",
-          "start": 0.16,
-          "end": 0.31
-        },
-        {
-          "id": "sz4",
-          "name": "Hunaudières (2nd chicane)",
-          "start": 0.31,
-          "end": 0.46
-        },
-        {
-          "id": "sz5",
-          "name": "Mulsanne corner",
-          "start": 0.46,
-          "end": 0.58
-        },
-        {
-          "id": "sz6",
-          "name": "Indianapolis",
-          "start": 0.58,
-          "end": 0.71
-        },
-        {
-          "id": "sz7",
-          "name": "Arnage",
-          "start": 0.71,
-          "end": 0.78
-        },
-        {
-          "id": "sz8",
-          "name": "Porsche Curves",
-          "start": 0.78,
-          "end": 0.93
-        },
-        {
-          "id": "sz9",
-          "name": "Ford Chicanes",
-          "start": 0.93,
-          "end": 1.0
-        }
-      ]
+      "active_years": "2018-"
     }
   ],
   "wikidata": "Q270760",
@@ -555,7 +787,7 @@
     "imsa_data": "le-mans"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:32.911880+00:00",
+    "generated_at": "2026-06-29T15:41:52.208968+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

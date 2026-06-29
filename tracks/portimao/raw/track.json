@@ -12,7 +12,7 @@
     "region": "Algarve",
     "timezone": "Europe/Lisbon"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,338 +31,472 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "official": "Curva 1",
-            "driver": "Curva 1"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.09,
-          "start": 0.07496,
-          "end": 0.10504,
-          "location": [
-            -8.630933,
-            37.232453
-          ],
-          "location_source": "centerline"
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -8.629632,
+                37.228831
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.93,
+              "location": [
+                -8.628132,
+                37.226251
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.03,
+              "location": [
+                -8.630064,
+                37.230038
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "official": "Curva 2",
-            "driver": "Curva 2"
-          },
-          "direction": "right",
-          "scale": 6,
-          "marker": 0.12,
-          "start": 0.12,
-          "end": 0.12,
-          "location": [
-            -8.631376,
-            37.233659
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Lagos",
-            "official": "Curva Lagos"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.16,
-          "start": 0.12,
-          "end": 0.18125,
-          "location": [
-            -8.631962,
-            37.235267
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "official": "Curva 4",
-            "driver": "Curva 4"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.19,
-          "start": 0.18125,
-          "end": 0.20504,
-          "location": [
-            -8.631174,
-            37.236174
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "Torre VIP",
-            "official": "Curva Torre VIP"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.31,
-          "start": 0.25627,
-          "end": 0.34654,
-          "location": [
-            -8.629497,
-            37.235626
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "official": "Curva 6",
-            "driver": "Curva 6"
-          },
-          "direction": "left",
-          "scale": 6,
-          "marker": 0.37,
-          "start": 0.37,
-          "end": 0.37,
-          "location": [
-            -8.62952,
-            37.233383
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "official": "Curva 7",
-            "driver": "Curva 7"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.42,
-          "start": 0.41248,
-          "end": 0.426,
-          "location": [
-            -8.628791,
-            37.231372
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Samsung",
-            "official": "Curva Samsung"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.45,
-          "start": 0.426,
-          "end": 0.47794,
-          "location": [
-            -8.628144,
-            37.230468
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Craig Jones",
-            "official": "Curva Craig Jones"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.53,
-          "start": 0.52248,
-          "end": 0.53967,
-          "location": [
-            -8.627374,
-            37.233235
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Portimão",
-            "official": "Curva Portimão"
-          },
-          "direction": "right",
-          "scale": 6,
-          "marker": 0.58,
-          "start": 0.58,
-          "end": 0.58,
-          "location": [
-            -8.626071,
-            37.231554
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "official": "Curva 11",
-            "driver": "Curva 11"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.6,
-          "start": 0.58,
-          "end": 0.62149,
-          "location": [
-            -8.625133,
-            37.231175
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "official": "Curva 12",
-            "driver": "Curva 12"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.65,
-          "start": 0.64248,
-          "end": 0.6561,
-          "location": [
-            -8.625414,
-            37.22989
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "official": "Curva 13",
-            "driver": "Curva 13"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.69,
-          "start": 0.6561,
-          "end": 0.71429,
-          "location": [
-            -8.626931,
-            37.228927
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "driver": "Sagres",
-            "official": "Curva Sagres"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.74,
-          "start": 0.71429,
-          "end": 0.76794,
-          "location": [
-            -8.626749,
-            37.227593
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Galp",
-            "official": "Curva Galp"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.83,
-          "start": 0.82248,
-          "end": 0.83967,
-          "location": [
-            -8.624651,
-            37.228452
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Curva 1",
+              "labels": {
+                "numbered": "Turn 1",
+                "official": "Curva 1",
+                "driver": "Curva 1"
+              },
+              "marker": 0.09,
+              "location": [
+                -8.630933,
+                37.232453
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Curva 2",
+              "labels": {
+                "numbered": "Turn 2",
+                "official": "Curva 2",
+                "driver": "Curva 2"
+              },
+              "marker": 0.12,
+              "location": [
+                -8.631376,
+                37.233659
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Lagos",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Lagos",
+                "official": "Curva Lagos"
+              },
+              "marker": 0.16,
+              "location": [
+                -8.631962,
+                37.235267
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Curva 4",
+              "labels": {
+                "numbered": "Turn 4",
+                "official": "Curva 4",
+                "driver": "Curva 4"
+              },
+              "marker": 0.19,
+              "location": [
+                -8.631174,
+                37.236174
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Torre VIP",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "Torre VIP",
+                "official": "Curva Torre VIP"
+              },
+              "marker": 0.31,
+              "location": [
+                -8.629497,
+                37.235626
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 1
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Curva 6",
+              "labels": {
+                "numbered": "Turn 6",
+                "official": "Curva 6",
+                "driver": "Curva 6"
+              },
+              "marker": 0.37,
+              "location": [
+                -8.62952,
+                37.233383
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 6
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Curva 7",
+              "labels": {
+                "numbered": "Turn 7",
+                "official": "Curva 7",
+                "driver": "Curva 7"
+              },
+              "marker": 0.42,
+              "location": [
+                -8.628791,
+                37.231372
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Samsung",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Samsung",
+                "official": "Curva Samsung"
+              },
+              "marker": 0.45,
+              "location": [
+                -8.628144,
+                37.230468
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Craig Jones",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Craig Jones",
+                "official": "Curva Craig Jones"
+              },
+              "marker": 0.53,
+              "location": [
+                -8.627374,
+                37.233235
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Portimão",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Portimão",
+                "official": "Curva Portimão"
+              },
+              "marker": 0.58,
+              "location": [
+                -8.626071,
+                37.231554
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Curva 11",
+              "labels": {
+                "numbered": "Turn 11",
+                "official": "Curva 11",
+                "driver": "Curva 11"
+              },
+              "marker": 0.6,
+              "location": [
+                -8.625133,
+                37.231175
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Curva 12",
+              "labels": {
+                "numbered": "Turn 12",
+                "official": "Curva 12",
+                "driver": "Curva 12"
+              },
+              "marker": 0.65,
+              "location": [
+                -8.625414,
+                37.22989
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Curva 13",
+              "labels": {
+                "numbered": "Turn 13",
+                "official": "Curva 13",
+                "driver": "Curva 13"
+              },
+              "marker": 0.69,
+              "location": [
+                -8.626931,
+                37.228927
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 1
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Sagres",
+              "labels": {
+                "numbered": "Turn 14",
+                "driver": "Sagres",
+                "official": "Curva Sagres"
+              },
+              "marker": 0.74,
+              "location": [
+                -8.626749,
+                37.227593
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Galp",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Galp",
+                "official": "Curva Galp"
+              },
+              "marker": 0.83,
+              "location": [
+                -8.624651,
+                37.228452
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            }
+          ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Main Straight",
-          "start": 0.88,
-          "end": 0.07
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.21
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.21,
+              "end": 0.56
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.56,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "Back Straight",
-          "start": 0.2,
-          "end": 0.3
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Curva 1",
+              "start": 0.07496,
+              "end": 0.10504,
+              "anchor": "t1"
+            },
+            {
+              "id": "t3",
+              "label": "Lagos",
+              "start": 0.12,
+              "end": 0.18125,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Curva 4",
+              "start": 0.18125,
+              "end": 0.20504,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Torre VIP",
+              "start": 0.25627,
+              "end": 0.34654,
+              "anchor": "t5"
+            },
+            {
+              "id": "t7",
+              "label": "Curva 7",
+              "start": 0.41248,
+              "end": 0.426,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Samsung",
+              "start": 0.426,
+              "end": 0.47794,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Craig Jones",
+              "start": 0.52248,
+              "end": 0.53967,
+              "anchor": "t9"
+            },
+            {
+              "id": "t11",
+              "label": "Curva 11",
+              "start": 0.58,
+              "end": 0.62149,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Curva 12",
+              "start": 0.64248,
+              "end": 0.6561,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Curva 13",
+              "start": 0.6561,
+              "end": 0.71429,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Sagres",
+              "start": 0.71429,
+              "end": 0.76794,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "Galp",
+              "start": 0.82248,
+              "end": 0.83967,
+              "anchor": "t15"
+            }
+          ]
+        },
+        {
+          "id": "straights",
+          "kind": "straights",
+          "label": "Straights",
+          "items": [
+            {
+              "id": "backstraight",
+              "label": "Back Straight",
+              "start": 0.2,
+              "end": 0.3
+            }
+          ]
         }
       ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.21
-        },
-        {
-          "name": "S2",
-          "start": 0.21,
-          "end": 0.56
-        },
-        {
-          "name": "S3",
-          "start": 0.56,
-          "end": 1.0
-        }
-      ],
-      "pit": {
-        "entry": 0.93,
-        "exit": 0.03
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -8.629632,
-          37.228831
-        ]
-      },
       "length_m": 4653,
       "direction": "clockwise"
     }
@@ -375,7 +509,7 @@
     "imsa_data": "portimao"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:46.643383+00:00",
+    "generated_at": "2026-06-29T15:42:07.231084+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

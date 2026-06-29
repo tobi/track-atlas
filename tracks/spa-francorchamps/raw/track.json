@@ -12,7 +12,7 @@
     "region": "Wallonia",
     "timezone": "Europe/Brussels"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,423 +31,630 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "La Source"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.04,
-          "start": 0.00431,
-          "end": 0.06427,
-          "location": [
-            5.96347,
-            50.44618
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                5.965246,
+                50.443972
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.97,
+              "location": [
+                5.96675,
+                50.442293
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.03,
+              "location": [
+                5.963746,
+                50.445652
+              ]
+            }
           ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2"
-          },
-          "direction": "right",
-          "scale": 6,
-          "marker": 0.08,
-          "start": 0.08,
-          "end": 0.08,
-          "location": [
-            5.967014,
-            50.444994
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Eau Rouge",
-            "official": "Eau Rouge"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.13,
-          "start": 0.125,
-          "end": 0.14125,
-          "location": [
-            5.970514,
-            50.442521
-          ],
-          "complex": "Eau Rouge-Raidillon"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Eau Rouge-Raidillon"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.15,
-          "start": 0.14125,
-          "end": 0.16125,
-          "complex": "Eau Rouge-Raidillon",
-          "location": [
-            5.971365,
-            50.44213
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "Raidillon",
-            "official": "Raidillon"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.17,
-          "start": 0.16125,
-          "end": 0.17642,
-          "location": [
-            5.971767,
-            50.441504
-          ],
-          "complex": "Eau Rouge-Raidillon"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6"
-          },
-          "direction": "right",
-          "scale": 6,
-          "marker": 0.21,
-          "start": 0.21,
-          "end": 0.21,
-          "location": [
-            5.973891,
-            50.439028
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Les Combes",
-            "official": "Les Combes"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.33,
-          "start": 0.31287,
-          "end": 0.33455,
-          "location": [
-            5.976935,
-            50.430911
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "La Source",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "La Source"
+              },
+              "marker": 0.04,
+              "location": [
+                5.96347,
+                50.44618
+              ],
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Turn 2",
+              "labels": {
+                "numbered": "Turn 2"
+              },
+              "marker": 0.08,
+              "location": [
+                5.967014,
+                50.444994
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Eau Rouge",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Eau Rouge",
+                "official": "Eau Rouge"
+              },
+              "marker": 0.13,
+              "location": [
+                5.970514,
+                50.442521
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Eau Rouge-Raidillon",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Eau Rouge-Raidillon"
+              },
+              "marker": 0.15,
+              "location": [
+                5.971365,
+                50.44213
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Raidillon",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "Raidillon",
+                "official": "Raidillon"
+              },
+              "marker": 0.17,
+              "location": [
+                5.971767,
+                50.441504
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Turn 6",
+              "labels": {
+                "numbered": "Turn 6"
+              },
+              "marker": 0.21,
+              "location": [
+                5.973891,
+                50.439028
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Les Combes",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Les Combes",
+                "official": "Les Combes"
+              },
+              "marker": 0.33,
+              "location": [
+                5.976935,
+                50.430911
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Les Combes",
+              "labels": {
+                "numbered": "Turn 8",
+                "official": "Les Combes",
+                "driver": "Les Combes"
+              },
+              "marker": 0.34,
+              "location": [
+                5.976759,
+                50.430424
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Malmedy",
+              "labels": {
+                "numbered": "Turn 9",
+                "official": "Malmedy",
+                "driver": "Malmedy"
+              },
+              "marker": 0.36,
+              "location": [
+                5.976807,
+                50.429316
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Bruxelles",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Bruxelles"
+              },
+              "marker": 0.42,
+              "location": [
+                5.972567,
+                50.428014
+              ],
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Rivage",
+              "labels": {
+                "numbered": "Turn 11",
+                "official": "Rivage",
+                "driver": "Rivage"
+              },
+              "marker": 0.45,
+              "location": [
+                5.974144,
+                50.429164
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Pouhon",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "Pouhon"
+              },
+              "marker": 0.54,
+              "location": [
+                5.971605,
+                50.434191
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Les Fagnes",
+              "labels": {
+                "numbered": "Turn 13",
+                "official": "Les Fagnes",
+                "driver": "Les Fagnes"
+              },
+              "marker": 0.63,
+              "location": [
+                5.966341,
+                50.430398
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Stavelot",
+              "labels": {
+                "numbered": "Turn 14",
+                "official": "Stavelot",
+                "driver": "Stavelot"
+              },
+              "marker": 0.65,
+              "location": [
+                5.964503,
+                50.43069
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Paul Frère",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Paul Frère",
+                "official": "Paul Frère"
+              },
+              "marker": 0.69,
+              "location": [
+                5.962033,
+                50.42885
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t16",
+              "number": 16,
+              "code": "16",
+              "label": "Campus",
+              "labels": {
+                "numbered": "Turn 16",
+                "driver": "Campus",
+                "official": "Campus"
+              },
+              "marker": 0.72,
+              "location": [
+                5.959855,
+                50.429634
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t17",
+              "number": 17,
+              "code": "17",
+              "label": "Stavelot",
+              "labels": {
+                "numbered": "Turn 17",
+                "official": "Stavelot",
+                "driver": "Stavelot"
+              },
+              "marker": 0.82,
+              "location": [
+                5.964926,
+                50.433746
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 1
+            },
+            {
+              "id": "t18",
+              "number": 18,
+              "code": "18",
+              "label": "Blanchimont",
+              "labels": {
+                "numbered": "Turn 18",
+                "driver": "Blanchimont"
+              },
+              "marker": 0.86,
+              "location": [
+                5.966923,
+                50.435384
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t19",
+              "number": 19,
+              "code": "19",
+              "label": "Bus Stop Chicane",
+              "labels": {
+                "numbered": "Turn 19",
+                "driver": "Bus Stop Chicane",
+                "official": "Chicane"
+              },
+              "marker": 0.95,
+              "location": [
+                5.966539,
+                50.441512
+              ],
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t20",
+              "number": 20,
+              "code": "20",
+              "label": "Bus Stop Chicane",
+              "labels": {
+                "numbered": "Turn 20",
+                "official": "Chicane",
+                "driver": "Bus Stop Chicane"
+              },
+              "marker": 0.96,
+              "location": [
+                5.967265,
+                50.44174
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 1
+            }
           ]
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "official": "Les Combes",
-            "driver": "Les Combes"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.34,
-          "start": 0.33455,
-          "end": 0.35176,
-          "location": [
-            5.976759,
-            50.430424
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "official": "Malmedy",
-            "driver": "Malmedy"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.36,
-          "start": 0.35176,
-          "end": 0.36999,
-          "location": [
-            5.976807,
-            50.429316
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Bruxelles"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.42,
-          "start": 0.38431,
-          "end": 0.44125,
-          "location": [
-            5.972567,
-            50.428014
-          ]
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "official": "Rivage",
-            "driver": "Rivage"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.45,
-          "start": 0.44125,
-          "end": 0.45999,
-          "location": [
-            5.974144,
-            50.429164
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "Pouhon"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.54,
-          "start": 0.53001,
-          "end": 0.54999,
-          "location": [
-            5.971605,
-            50.434191
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "official": "Les Fagnes",
-            "driver": "Les Fagnes"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.63,
-          "start": 0.625,
-          "end": 0.64125,
-          "complex": "Fagnes-Stavelot",
-          "location": [
-            5.966341,
-            50.430398
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "official": "Stavelot",
-            "driver": "Stavelot"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.65,
-          "start": 0.64125,
-          "end": 0.65642,
-          "complex": "Fagnes-Stavelot",
-          "location": [
-            5.964503,
-            50.43069
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Paul Frère",
-            "official": "Paul Frère"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.69,
-          "start": 0.67287,
-          "end": 0.70364,
-          "location": [
-            5.962033,
-            50.42885
-          ]
-        },
-        {
-          "number": 16,
-          "code": "16",
-          "names": {
-            "numbered": "Turn 16",
-            "driver": "Campus",
-            "official": "Campus"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.72,
-          "start": 0.70364,
-          "end": 0.73428,
-          "location": [
-            5.959855,
-            50.429634
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 17,
-          "code": "17",
-          "names": {
-            "numbered": "Turn 17",
-            "official": "Stavelot",
-            "driver": "Stavelot"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.82,
-          "start": 0.78431,
-          "end": 0.84427,
-          "location": [
-            5.964926,
-            50.433746
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 18,
-          "code": "18",
-          "names": {
-            "numbered": "Turn 18",
-            "driver": "Blanchimont"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.86,
-          "start": 0.855,
-          "end": 0.86642,
-          "location": [
-            5.966923,
-            50.435384
-          ]
-        },
-        {
-          "number": 19,
-          "code": "19",
-          "names": {
-            "numbered": "Turn 19",
-            "driver": "Bus Stop Chicane",
-            "official": "Chicane"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.95,
-          "start": 0.91431,
-          "end": 0.95405,
-          "location": [
-            5.966539,
-            50.441512
-          ],
-          "complex": "Bus Stop"
-        },
-        {
-          "number": 20,
-          "code": "20",
-          "names": {
-            "numbered": "Turn 20",
-            "official": "Chicane",
-            "driver": "Bus Stop Chicane"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.96,
-          "start": 0.95405,
-          "end": 0.98427,
-          "complex": "Bus Stop",
-          "location": [
-            5.967265,
-            50.44174
-          ],
-          "location_source": "centerline"
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Main Straight",
-          "start": 0.96,
-          "end": 0.03
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.31
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.31,
+              "end": 0.71
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.71,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "Kemmel Straight",
-          "start": 0.22,
-          "end": 0.32
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "La Source",
+              "start": 0.00431,
+              "end": 0.06427,
+              "anchor": "t1"
+            },
+            {
+              "id": "t3",
+              "label": "Eau Rouge",
+              "start": 0.125,
+              "end": 0.14125,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Eau Rouge-Raidillon",
+              "start": 0.14125,
+              "end": 0.16125,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Raidillon",
+              "start": 0.16125,
+              "end": 0.17642,
+              "anchor": "t5"
+            },
+            {
+              "id": "t7",
+              "label": "Les Combes",
+              "start": 0.31287,
+              "end": 0.33455,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Les Combes",
+              "start": 0.33455,
+              "end": 0.35176,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Malmedy",
+              "start": 0.35176,
+              "end": 0.36999,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Bruxelles",
+              "start": 0.38431,
+              "end": 0.44125,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Rivage",
+              "start": 0.44125,
+              "end": 0.45999,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Pouhon",
+              "start": 0.53001,
+              "end": 0.54999,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Les Fagnes",
+              "start": 0.625,
+              "end": 0.64125,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Stavelot",
+              "start": 0.64125,
+              "end": 0.65642,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "Paul Frère",
+              "start": 0.67287,
+              "end": 0.70364,
+              "anchor": "t15"
+            },
+            {
+              "id": "t16",
+              "label": "Campus",
+              "start": 0.70364,
+              "end": 0.73428,
+              "anchor": "t16"
+            },
+            {
+              "id": "t17",
+              "label": "Stavelot",
+              "start": 0.78431,
+              "end": 0.84427,
+              "anchor": "t17"
+            },
+            {
+              "id": "t18",
+              "label": "Blanchimont",
+              "start": 0.855,
+              "end": 0.86642,
+              "anchor": "t18"
+            },
+            {
+              "id": "t19",
+              "label": "Bus Stop Chicane",
+              "start": 0.91431,
+              "end": 0.95405,
+              "anchor": "t19"
+            },
+            {
+              "id": "t20",
+              "label": "Bus Stop Chicane",
+              "start": 0.95405,
+              "end": 0.98427,
+              "anchor": "t20"
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "eaurougeraidillon",
+              "label": "Eau Rouge-Raidillon",
+              "start": 0.125,
+              "end": 0.17642,
+              "members": [
+                "t3",
+                "t4",
+                "t5"
+              ]
+            },
+            {
+              "id": "fagnesstavelot",
+              "label": "Fagnes-Stavelot",
+              "start": 0.625,
+              "end": 0.65642,
+              "members": [
+                "t13",
+                "t14"
+              ]
+            },
+            {
+              "id": "busstop",
+              "label": "Bus Stop",
+              "start": 0.91431,
+              "end": 0.98427,
+              "members": [
+                "t19",
+                "t20"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "straights",
+          "kind": "straights",
+          "label": "Straights",
+          "items": [
+            {
+              "id": "kemmelstraight",
+              "label": "Kemmel Straight",
+              "start": 0.22,
+              "end": 0.32
+            }
+          ]
         }
       ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.31
-        },
-        {
-          "name": "S2",
-          "start": 0.31,
-          "end": 0.71
-        },
-        {
-          "name": "S3",
-          "start": 0.71,
-          "end": 1.0
-        }
-      ],
-      "pit": {
-        "entry": 0.97,
-        "exit": 0.03
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          5.965246,
-          50.443972
-        ]
-      },
       "length_m": 7004,
       "direction": "clockwise"
     }
@@ -461,7 +668,7 @@
     "imsa_data": "spa-francorchamps"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:59.540373+00:00",
+    "generated_at": "2026-06-29T15:41:59.137930+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -7,7 +7,7 @@ zone, kink = none). Neighbours are resolved so phases never overlap, and corners
 inside one complex meet exactly (curve 1 ends where curve 2 starts). The apex is
 the corner's existing marker.
 
-generate.py calls this to populate corner.start / corner.end; suggest_phases.py
+generate.py calls this to populate layout.range_layers[id=corner_ranges]; suggest_phases.py
 uses it to preview and tune the distance tables.
 """
 from __future__ import annotations

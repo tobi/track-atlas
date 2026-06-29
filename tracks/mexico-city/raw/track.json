@@ -12,7 +12,7 @@
     "region": "CDMX",
     "timezone": "America/Mexico_City"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,359 +31,542 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "Esses",
-            "official": "Esses Moisés Solana"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.2839,
-          "start": 0.24208,
-          "end": 0.29461,
-          "complex": "Esses",
-          "location": [
-            -99.085859,
-            19.405174
-          ],
-          "location_source": "centerline"
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -99.09687,
+                19.405394
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.9533,
+              "location": [
+                -99.095228,
+                19.405344
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.1372,
+              "location": [
+                -99.091842,
+                19.405888
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "Esses",
-            "official": "Esses Moisés Solana"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.3045,
-          "start": 0.29461,
-          "end": 0.30995,
-          "complex": "Esses",
-          "location": [
-            -99.08502,
-            19.405064
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Esses",
-            "official": "Esses Moisés Solana"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.3165,
-          "start": 0.30995,
-          "end": 0.33973,
-          "complex": "Esses",
-          "location": [
-            -99.084534,
-            19.404987
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Ese del Lago",
-            "official": "Ese del Lago"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.4804,
-          "start": 0.43858,
-          "end": 0.48728,
-          "location": [
-            -99.084905,
-            19.40013
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "Ese del Lago",
-            "official": "Ese del Lago"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.4968,
-          "start": 0.48728,
-          "end": 0.50857,
-          "location": [
-            -99.085251,
-            19.399584
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Horquilla",
-            "official": "Horquilla"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.5312,
-          "start": 0.50857,
-          "end": 0.5707,
-          "location": [
-            -99.086025,
-            19.398468
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Esses del Bosque",
-            "official": "Esses del Bosque"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.6092,
-          "start": 0.58132,
-          "end": 0.62668,
-          "complex": "Esses del Bosque",
-          "location": [
-            -99.086821,
-            19.397737
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Esses del Bosque",
-            "official": "Esses del Bosque"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.6328,
-          "start": 0.62668,
-          "end": 0.6416,
-          "complex": "Esses del Bosque",
-          "location": [
-            -99.086694,
-            19.398644
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Esses del Bosque",
-            "official": "Esses del Bosque"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.6553,
-          "start": 0.6416,
-          "end": 0.67156,
-          "complex": "Esses del Bosque",
-          "location": [
-            -99.086573,
-            19.399509
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.6995,
-          "start": 0.69137,
-          "end": 0.70951,
-          "location": [
-            -99.087441,
-            19.40081
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.7173,
-          "start": 0.70951,
-          "end": 0.72776,
-          "location": [
-            -99.087851,
-            19.401359
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.8515,
-          "start": 0.82362,
-          "end": 0.86401,
-          "location": [
-            -99.092534,
-            19.40341
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "driver": "Foro Sol",
-            "official": "Foro Sol"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.8953,
-          "start": 0.86401,
-          "end": 0.90064,
-          "location": [
-            -99.094316,
-            19.403654
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.9063,
-          "start": 0.90064,
-          "end": 0.9144,
-          "location": [
-            -99.094764,
-            19.403715
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15"
-          },
-          "direction": "left",
-          "scale": 6,
-          "marker": 0.9144,
-          "start": 0.9144,
-          "end": 0.9144,
-          "location": [
-            -99.095022,
-            19.403863
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 16,
-          "code": "16",
-          "names": {
-            "numbered": "Turn 16"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.9359,
-          "start": 0.9144,
-          "end": 0.94543,
-          "location": [
-            -99.095071,
-            19.404696
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 17,
-          "code": "17",
-          "names": {
-            "numbered": "Turn 17",
-            "driver": "Peraltada",
-            "official": "Peraltada"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.948,
-          "start": 0.94543,
-          "end": 0.95846,
-          "location": [
-            -99.09515,
-            19.405158
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Esses",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "Esses",
+                "official": "Esses Moisés Solana"
+              },
+              "marker": 0.2839,
+              "location": [
+                -99.085859,
+                19.405174
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Esses",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "Esses",
+                "official": "Esses Moisés Solana"
+              },
+              "marker": 0.3045,
+              "location": [
+                -99.08502,
+                19.405064
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Esses",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Esses",
+                "official": "Esses Moisés Solana"
+              },
+              "marker": 0.3165,
+              "location": [
+                -99.084534,
+                19.404987
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Ese del Lago",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Ese del Lago",
+                "official": "Ese del Lago"
+              },
+              "marker": 0.4804,
+              "location": [
+                -99.084905,
+                19.40013
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Ese del Lago",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "Ese del Lago",
+                "official": "Ese del Lago"
+              },
+              "marker": 0.4968,
+              "location": [
+                -99.085251,
+                19.399584
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Horquilla",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Horquilla",
+                "official": "Horquilla"
+              },
+              "marker": 0.5312,
+              "location": [
+                -99.086025,
+                19.398468
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Esses del Bosque",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Esses del Bosque",
+                "official": "Esses del Bosque"
+              },
+              "marker": 0.6092,
+              "location": [
+                -99.086821,
+                19.397737
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Esses del Bosque",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Esses del Bosque",
+                "official": "Esses del Bosque"
+              },
+              "marker": 0.6328,
+              "location": [
+                -99.086694,
+                19.398644
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Esses del Bosque",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Esses del Bosque",
+                "official": "Esses del Bosque"
+              },
+              "marker": 0.6553,
+              "location": [
+                -99.086573,
+                19.399509
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Turn 10",
+              "labels": {
+                "numbered": "Turn 10"
+              },
+              "marker": 0.6995,
+              "location": [
+                -99.087441,
+                19.40081
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Turn 11",
+              "labels": {
+                "numbered": "Turn 11"
+              },
+              "marker": 0.7173,
+              "location": [
+                -99.087851,
+                19.401359
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Turn 12",
+              "labels": {
+                "numbered": "Turn 12"
+              },
+              "marker": 0.8515,
+              "location": [
+                -99.092534,
+                19.40341
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Foro Sol",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "Foro Sol",
+                "official": "Foro Sol"
+              },
+              "marker": 0.8953,
+              "location": [
+                -99.094316,
+                19.403654
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 1
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Turn 14",
+              "labels": {
+                "numbered": "Turn 14"
+              },
+              "marker": 0.9063,
+              "location": [
+                -99.094764,
+                19.403715
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Turn 15",
+              "labels": {
+                "numbered": "Turn 15"
+              },
+              "marker": 0.9144,
+              "location": [
+                -99.095022,
+                19.403863
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 6
+            },
+            {
+              "id": "t16",
+              "number": 16,
+              "code": "16",
+              "label": "Turn 16",
+              "labels": {
+                "numbered": "Turn 16"
+              },
+              "marker": 0.9359,
+              "location": [
+                -99.095071,
+                19.404696
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t17",
+              "number": 17,
+              "code": "17",
+              "label": "Peraltada",
+              "labels": {
+                "numbered": "Turn 17",
+                "driver": "Peraltada",
+                "official": "Peraltada"
+              },
+              "marker": 0.948,
+              "location": [
+                -99.09515,
+                19.405158
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            }
+          ]
         }
       ],
-      "straights": [],
-      "sectors": [
+      "range_layers": [
         {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.4502
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.4502
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.4502,
+              "end": 0.7939
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.7939,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.4502,
-          "end": 0.7939
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Esses",
+              "start": 0.24208,
+              "end": 0.29461,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Esses",
+              "start": 0.29461,
+              "end": 0.30995,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Esses",
+              "start": 0.30995,
+              "end": 0.33973,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Ese del Lago",
+              "start": 0.43858,
+              "end": 0.48728,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Ese del Lago",
+              "start": 0.48728,
+              "end": 0.50857,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Horquilla",
+              "start": 0.50857,
+              "end": 0.5707,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Esses del Bosque",
+              "start": 0.58132,
+              "end": 0.62668,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Esses del Bosque",
+              "start": 0.62668,
+              "end": 0.6416,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Esses del Bosque",
+              "start": 0.6416,
+              "end": 0.67156,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Turn 10",
+              "start": 0.69137,
+              "end": 0.70951,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Turn 11",
+              "start": 0.70951,
+              "end": 0.72776,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.82362,
+              "end": 0.86401,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Foro Sol",
+              "start": 0.86401,
+              "end": 0.90064,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Turn 14",
+              "start": 0.90064,
+              "end": 0.9144,
+              "anchor": "t14"
+            },
+            {
+              "id": "t16",
+              "label": "Turn 16",
+              "start": 0.9144,
+              "end": 0.94543,
+              "anchor": "t16"
+            },
+            {
+              "id": "t17",
+              "label": "Peraltada",
+              "start": 0.94543,
+              "end": 0.95846,
+              "anchor": "t17"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.7939,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "complex-1",
+              "label": "Esses",
+              "start": 0.24208,
+              "end": 0.33973,
+              "members": [
+                "t1",
+                "t2",
+                "t3"
+              ]
+            },
+            {
+              "id": "delbosque",
+              "label": "Esses del Bosque",
+              "start": 0.58132,
+              "end": 0.67156,
+              "members": [
+                "t7",
+                "t8",
+                "t9"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.9533,
-        "exit": 0.1372
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -99.09687,
-          19.405394
-        ]
-      },
       "length_m": 4304,
       "direction": "clockwise"
     }
@@ -392,7 +575,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-15T20:11:35.893904+00:00",
+    "generated_at": "2026-06-29T15:41:58.291208+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

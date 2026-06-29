@@ -1424,6 +1424,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.9619
       },
       "geometry": {
@@ -1438,6 +1439,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.1064
       },
       "geometry": {
@@ -1452,20 +1454,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "First Corner",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "official": "First Corner",
           "driver": "First Corner"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.1193,
-        "start": 0.09864,
-        "end": 0.13489
+        "marker": 0.1193
       },
       "geometry": {
         "type": "Point",
@@ -1479,20 +1479,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Second Corner",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "official": "Second Corner",
           "driver": "Second Corner"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.1458,
-        "start": 0.13489,
-        "end": 0.15785
+        "marker": 0.1458
       },
       "geometry": {
         "type": "Point",
@@ -1506,20 +1504,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "S Curves",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "S Curves",
           "official": "S Curves"
         },
-        "complex": "S Curves",
         "direction": "left",
         "scale": 3,
-        "marker": 0.1928,
-        "start": 0.17214,
-        "end": 0.20121
+        "marker": 0.1928
       },
       "geometry": {
         "type": "Point",
@@ -1533,20 +1529,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "S Curves",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "S Curves",
           "official": "S Curves"
         },
-        "complex": "S Curves",
         "direction": "right",
         "scale": 3,
-        "marker": 0.2113,
-        "start": 0.20121,
-        "end": 0.22325
+        "marker": 0.2113
       },
       "geometry": {
         "type": "Point",
@@ -1560,20 +1554,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "S Curves",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "S Curves",
           "official": "S Curves"
         },
-        "complex": "S Curves",
         "direction": "left",
         "scale": 3,
-        "marker": 0.2376,
-        "start": 0.22325,
-        "end": 0.2556
+        "marker": 0.2376
       },
       "geometry": {
         "type": "Point",
@@ -1587,20 +1579,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "S Curves",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "S Curves",
           "official": "S Curves"
         },
-        "complex": "S Curves",
         "direction": "right",
         "scale": 4,
-        "marker": 0.2682,
-        "start": 0.2556,
-        "end": 0.28025
+        "marker": 0.2682
       },
       "geometry": {
         "type": "Point",
@@ -1614,20 +1604,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Dunlop",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Dunlop",
           "official": "Dunlop Curve"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.303,
-        "start": 0.29095,
-        "end": 0.31505
+        "marker": 0.303
       },
       "geometry": {
         "type": "Point",
@@ -1641,20 +1629,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Degner 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Degner 1",
           "official": "Degner Curve 1"
         },
-        "complex": "Degner",
         "direction": "left",
         "scale": 3,
-        "marker": 0.396,
-        "start": 0.37534,
-        "end": 0.40604
+        "marker": 0.396
       },
       "geometry": {
         "type": "Point",
@@ -1668,20 +1654,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Degner 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Degner 2",
           "official": "Degner Curve 2"
         },
-        "complex": "Degner",
         "direction": "left",
         "scale": 2,
-        "marker": 0.4241,
-        "start": 0.40604,
-        "end": 0.44649
+        "marker": 0.4241
       },
       "geometry": {
         "type": "Point",
@@ -1695,18 +1679,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Turn 10",
-        "names": {
+        "labels": {
           "numbered": "Turn 10"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.4809,
-        "start": 0.46885,
-        "end": 0.486
+        "marker": 0.4809
       },
       "geometry": {
         "type": "Point",
@@ -1720,20 +1702,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Hairpin",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Hairpin",
           "official": "Hairpin"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.5042,
-        "start": 0.486,
-        "end": 0.53348
+        "marker": 0.5042
       },
       "geometry": {
         "type": "Point",
@@ -1747,18 +1727,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Turn 12",
-        "names": {
+        "labels": {
           "numbered": "Turn 12"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.5487,
-        "start": 0.54267,
-        "end": 0.55645
+        "marker": 0.5487
       },
       "geometry": {
         "type": "Point",
@@ -1772,20 +1750,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Spoon",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Spoon",
           "official": "Spoon Curve"
         },
-        "complex": "Spoon",
         "direction": "left",
         "scale": 3,
-        "marker": 0.6574,
-        "start": 0.63674,
-        "end": 0.67045
+        "marker": 0.6574
       },
       "geometry": {
         "type": "Point",
@@ -1799,20 +1775,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Spoon",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Spoon",
           "official": "Spoon Curve"
         },
-        "complex": "Spoon",
         "direction": "left",
         "scale": 3,
-        "marker": 0.6861,
-        "start": 0.67045,
-        "end": 0.70332
+        "marker": 0.6861
       },
       "geometry": {
         "type": "Point",
@@ -1826,20 +1800,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "130R",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "130R",
           "official": "130R"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.8577,
-        "start": 0.85167,
-        "end": 0.86545
+        "marker": 0.8577
       },
       "geometry": {
         "type": "Point",
@@ -1853,20 +1825,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Casio Triangle",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Casio Triangle",
           "official": "Casio Triangle"
         },
-        "complex": "Casio Triangle",
         "direction": "right",
         "scale": 2,
-        "marker": 0.9301,
-        "start": 0.8991,
-        "end": 0.93383
+        "marker": 0.9301
       },
       "geometry": {
         "type": "Point",
@@ -1880,20 +1850,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Casio Triangle",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "driver": "Casio Triangle",
           "official": "Casio Triangle"
         },
-        "complex": "Casio Triangle",
         "direction": "left",
         "scale": 2,
-        "marker": 0.939,
-        "start": 0.93383,
-        "end": 0.94638
+        "marker": 0.939
       },
       "geometry": {
         "type": "Point",
@@ -1907,20 +1875,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t18",
         "number": 18,
         "code": "18",
         "display": "Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 18",
           "driver": "Chicane",
           "official": "Chicane"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.9532,
-        "start": 0.94638,
-        "end": 0.97042
+        "marker": 0.9532
       },
       "geometry": {
         "type": "Point",

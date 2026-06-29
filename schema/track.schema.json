@@ -4,172 +4,12 @@
   "title": "Track",
   "description": "Clean, source-agnostic metadata for a single racing circuit (tracks/<slug>/track.json). GENERATED from scripts/lib/models.py — do not edit by hand; run scripts/build_schema.py.",
   "$defs": {
-    "Corner": {
-      "additionalProperties": false,
-      "properties": {
-        "number": {
-          "description": "Sequential corner number 1..N, no gaps — the ordering key.",
-          "title": "Number",
-          "type": "integer"
-        },
-        "code": {
-          "description": "Trackside identifier (usually str(number); '5a'/'5b' for split apexes). The 'numbered' layer is this as 'Turn <code>'.",
-          "title": "Code",
-          "type": "string"
-        },
-        "names": {
-          "description": "Name layers keyed by layer code (see track.name_layers). 'numbered' is always present; other layers appear only when a name is known. An unnamed corner carries only 'numbered'.",
-          "patternProperties": {
-            "^[a-z][a-z0-9_]*$": {
-              "type": "string"
-            }
-          },
-          "title": "Names",
-          "type": "object"
-        },
-        "complex": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Multi-corner complex this turn belongs to (e.g. 'Porsche Curves'). Corners sharing a complex must form one gap-free consecutive run.",
-          "title": "Complex"
-        },
-        "direction": {
-          "anyOf": [
-            {
-              "enum": [
-                "left",
-                "right"
-              ],
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Direction"
-        },
-        "scale": {
-          "anyOf": [
-            {
-              "maximum": 6,
-              "minimum": 1,
-              "type": "integer"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Severity 1-6: 1=Hairpin, 2=Slow, 3=Medium, 4=Fast, 5=Very fast, 6=Kink.",
-          "title": "Scale"
-        },
-        "marker": {
-          "anyOf": [
-            {
-              "description": "Lap fraction in [0,1].",
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Lap fraction at the apex.",
-          "title": "Marker"
-        },
-        "start": {
-          "anyOf": [
-            {
-              "description": "Lap fraction in [0,1].",
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Lap fraction where the corner phase begins — the braking/turn-in point, a few hundred metres before the apex for slow corners, scaled by severity. Computed by lib/phases.py; corners in a complex meet.",
-          "title": "Start"
-        },
-        "end": {
-          "anyOf": [
-            {
-              "description": "Lap fraction in [0,1].",
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Lap fraction where the corner phase ends — a short distance after the apex, into the throttle on exit.",
-          "title": "End"
-        },
-        "location": {
-          "anyOf": [
-            {
-              "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
-              "items": {
-                "type": "number"
-              },
-              "maxItems": 2,
-              "minItems": 2,
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Apex coordinate, when resolvable.",
-          "title": "Location"
-        },
-        "location_source": {
-          "anyOf": [
-            {
-              "enum": [
-                "osm-way",
-                "centerline",
-                "manual"
-              ],
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Location Source"
-        }
-      },
-      "required": [
-        "number",
-        "code",
-        "names"
-      ],
-      "title": "Corner",
-      "type": "object"
-    },
     "Geometry": {
       "additionalProperties": false,
       "properties": {
-        "outline": {
-          "description": "Path (relative to track dir) to the layout's GeoJSON.",
-          "title": "Outline",
+        "centerline": {
+          "description": "Path (relative to track dir) to the layout's GeoJSON centerline/layer file.",
+          "title": "Centerline",
           "type": "string"
         },
         "crs": {
@@ -179,9 +19,42 @@
         }
       },
       "required": [
-        "outline"
+        "centerline"
       ],
       "title": "Geometry",
+      "type": "object"
+    },
+    "LabelLayer": {
+      "additionalProperties": false,
+      "description": "Registry entry describing one label/name layer for clients.",
+      "properties": {
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Human-readable layer name for UI.",
+          "title": "Label"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        }
+      },
+      "title": "LabelLayer",
       "type": "object"
     },
     "Layout": {
@@ -206,7 +79,7 @@
         },
         "series": {
           "default": [],
-          "description": "Series that use THIS layout, when it is series-specific (e.g. ['imsa'] vs ['wec'] for Sebring's two pit configurations). Empty = the track-level series all use this layout.",
+          "description": "Series that use THIS layout/configuration.",
           "items": {
             "type": "string"
           },
@@ -258,81 +131,26 @@
         "geometry": {
           "$ref": "#/$defs/Geometry"
         },
-        "start_finish": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/PointRef"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null
-        },
-        "name_default": {
+        "label_default": {
           "default": "driver",
-          "description": "Layer code (a key in track.name_layers) used as the default display name. Resolution is two steps: corner.names[name_default] if present, else corner.names.numbered — it does NOT fall through to other named layers.",
-          "title": "Name Default",
+          "description": "Label layer code used as the default display name. Resolution is two steps: item.labels[label_default] if present, else item.labels.numbered.",
+          "title": "Label Default",
           "type": "string"
         },
-        "corners": {
+        "point_layers": {
           "default": [],
           "items": {
-            "$ref": "#/$defs/Corner"
+            "$ref": "#/$defs/PointLayer"
           },
-          "title": "Corners",
+          "title": "Point Layers",
           "type": "array"
         },
-        "straights": {
+        "range_layers": {
           "default": [],
           "items": {
-            "$ref": "#/$defs/Straight"
+            "$ref": "#/$defs/RangeLayer"
           },
-          "title": "Straights",
-          "type": "array"
-        },
-        "sectors": {
-          "default": [],
-          "items": {
-            "$ref": "#/$defs/Sector"
-          },
-          "title": "Sectors",
-          "type": "array"
-        },
-        "slow_zones": {
-          "default": [],
-          "description": "Endurance slow zones (zones lentes) — track segments the organisers can set to a speed limit; the lap is pre-divided into these. Curated input (e.g. Le Mans).",
-          "items": {
-            "$ref": "#/$defs/Zone"
-          },
-          "title": "Slow Zones",
-          "type": "array"
-        },
-        "pit": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/Pit"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null
-        },
-        "marshal_posts": {
-          "default": [],
-          "items": {
-            "$ref": "#/$defs/PointRef"
-          },
-          "title": "Marshal Posts",
-          "type": "array"
-        },
-        "access_points": {
-          "default": [],
-          "items": {
-            "$ref": "#/$defs/PointRef"
-          },
-          "title": "Access Points",
+          "title": "Range Layers",
           "type": "array"
         }
       },
@@ -399,10 +217,15 @@
       "title": "Location",
       "type": "object"
     },
-    "NameLayer": {
+    "PointItem": {
       "additionalProperties": false,
-      "description": "Registry entry describing one corner-name layer for clients.",
+      "description": "A discrete annotation on a layout lap coordinate.\n\nThe corners layer uses number/code/direction/scale/labels. Layout control\npoints such as start_finish, pit_entry and pit_exit usually use label,\nmarker and location.",
       "properties": {
+        "id": {
+          "pattern": "^[a-z0-9][a-z0-9_-]*$",
+          "title": "Id",
+          "type": "string"
+        },
         "label": {
           "anyOf": [
             {
@@ -413,98 +236,7 @@
             }
           ],
           "default": null,
-          "description": "Human-readable layer name for UI.",
           "title": "Label"
-        },
-        "description": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Description"
-        }
-      },
-      "title": "NameLayer",
-      "type": "object"
-    },
-    "Pit": {
-      "additionalProperties": false,
-      "properties": {
-        "entry": {
-          "anyOf": [
-            {
-              "description": "Lap fraction in [0,1].",
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Entry"
-        },
-        "exit": {
-          "anyOf": [
-            {
-              "description": "Lap fraction in [0,1].",
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Exit"
-        }
-      },
-      "title": "Pit",
-      "type": "object"
-    },
-    "PointRef": {
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Id"
-        },
-        "name": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Name"
-        },
-        "location": {
-          "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
-          "items": {
-            "type": "number"
-          },
-          "maxItems": 2,
-          "minItems": 2,
-          "title": "Location",
-          "type": "array"
         },
         "marker": {
           "anyOf": [
@@ -520,12 +252,165 @@
           ],
           "default": null,
           "title": "Marker"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "location_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "osm-way",
+                "centerline",
+                "manual"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location Source"
+        },
+        "labels": {
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": {
+              "type": "string"
+            }
+          },
+          "title": "Labels",
+          "type": "object"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Number"
+        },
+        "code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Code"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "left",
+                "right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        },
+        "scale": {
+          "anyOf": [
+            {
+              "maximum": 6,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Severity 1-6: 1=Hairpin, 2=Slow, 3=Medium, 4=Fast, 5=Very fast, 6=Kink.",
+          "title": "Scale"
         }
       },
       "required": [
-        "location"
+        "id"
       ],
-      "title": "PointRef",
+      "title": "PointItem",
+      "type": "object"
+    },
+    "PointLayer": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "series": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Series",
+          "type": "array"
+        },
+        "items": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/PointItem"
+          },
+          "title": "Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "label"
+      ],
+      "title": "PointLayer",
       "type": "object"
     },
     "Provenance": {
@@ -576,99 +461,16 @@
       "title": "Provenance",
       "type": "object"
     },
-    "Sector": {
+    "RangeItem": {
       "additionalProperties": false,
-      "properties": {
-        "name": {
-          "description": "Timing sector label: 'S1', 'S2', 'S3'.",
-          "title": "Name",
-          "type": "string"
-        },
-        "start": {
-          "description": "Lap fraction where the sector begins.",
-          "maximum": 1.0,
-          "minimum": 0.0,
-          "title": "Start",
-          "type": "number"
-        },
-        "end": {
-          "description": "Lap fraction where the sector ends (the timing line).",
-          "maximum": 1.0,
-          "minimum": 0.0,
-          "title": "End",
-          "type": "number"
-        }
-      },
-      "required": [
-        "name",
-        "start",
-        "end"
-      ],
-      "title": "Sector",
-      "type": "object"
-    },
-    "Straight": {
-      "additionalProperties": false,
-      "properties": {
-        "name": {
-          "title": "Name",
-          "type": "string"
-        },
-        "aka": {
-          "default": [],
-          "items": {
-            "type": "string"
-          },
-          "title": "Aka",
-          "type": "array"
-        },
-        "start": {
-          "anyOf": [
-            {
-              "description": "Lap fraction in [0,1].",
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Start"
-        },
-        "end": {
-          "anyOf": [
-            {
-              "description": "Lap fraction in [0,1].",
-              "maximum": 1.0,
-              "minimum": 0.0,
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "End"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "Straight",
-      "type": "object"
-    },
-    "Zone": {
-      "additionalProperties": false,
-      "description": "A track segment, e.g. an endurance 'slow zone' (zone lente) that can be set\nto a speed limit independently — the lap is pre-divided into these.",
+      "description": "A lap interval annotation.",
       "properties": {
         "id": {
-          "description": "Stable zone id, e.g. 'sz1'.",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$",
           "title": "Id",
           "type": "string"
         },
-        "name": {
+        "label": {
           "anyOf": [
             {
               "type": "string"
@@ -678,22 +480,93 @@
             }
           ],
           "default": null,
-          "description": "Section the zone covers, e.g. 'Mulsanne'.",
-          "title": "Name"
+          "title": "Label"
         },
         "start": {
-          "description": "Lap fraction where the zone begins.",
+          "description": "Lap fraction in [0,1].",
           "maximum": 1.0,
           "minimum": 0.0,
           "title": "Start",
           "type": "number"
         },
         "end": {
-          "description": "Lap fraction where the zone ends.",
+          "description": "Lap fraction in [0,1].",
           "maximum": 1.0,
           "minimum": 0.0,
           "title": "End",
           "type": "number"
+        },
+        "labels": {
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": {
+              "type": "string"
+            }
+          },
+          "title": "Labels",
+          "type": "object"
+        },
+        "anchor": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9][a-z0-9_-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Point item this range is derived from, e.g. a corner apex id.",
+          "title": "Anchor"
+        },
+        "members": {
+          "default": [],
+          "description": "Point items contained in this range, e.g. corners in a complex.",
+          "items": {
+            "pattern": "^[a-z0-9][a-z0-9_-]*$",
+            "type": "string"
+          },
+          "title": "Members",
+          "type": "array"
+        },
+        "entry_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Upstream timing loop / line where the range starts, when known.",
+          "title": "Entry Ref"
+        },
+        "exit_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Upstream timing loop / line where the range ends, when known.",
+          "title": "Exit Ref"
+        },
+        "length_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Official/source length of this range in metres, when known.",
+          "title": "Length M"
         }
       },
       "required": [
@@ -701,7 +574,96 @@
         "start",
         "end"
       ],
-      "title": "Zone",
+      "title": "RangeItem",
+      "type": "object"
+    },
+    "RangeLayer": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "series": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Series",
+          "type": "array"
+        },
+        "coverage": {
+          "anyOf": [
+            {
+              "enum": [
+                "partition",
+                "partial",
+                "overlap"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coverage"
+        },
+        "generated": {
+          "default": false,
+          "title": "Generated",
+          "type": "boolean"
+        },
+        "provenance": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provenance"
+        },
+        "items": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/RangeItem"
+          },
+          "title": "Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "label"
+      ],
+      "title": "RangeLayer",
       "type": "object"
     }
   },
@@ -713,7 +675,7 @@
       "type": "string"
     },
     "name": {
-      "description": "Official circuit name.",
+      "description": "Official circuit/facility name.",
       "title": "Name",
       "type": "string"
     },
@@ -770,14 +732,14 @@
       "title": "External Ids",
       "type": "object"
     },
-    "name_layers": {
-      "description": "Registry of corner-name layers. Keys are layer codes; clients enumerate these to offer a layer to display. 'numbered' and 'official' are mandatory; 'driver' is the usual default.",
+    "label_layers": {
+      "description": "Registry of label/name layers. Keys are label codes used by item.labels. 'numbered' and 'official' are mandatory; 'driver' is the usual default.",
       "patternProperties": {
         "^[a-z][a-z0-9_]*$": {
-          "$ref": "#/$defs/NameLayer"
+          "$ref": "#/$defs/LabelLayer"
         }
       },
-      "title": "Name Layers",
+      "title": "Label Layers",
       "type": "object"
     },
     "layouts": {
@@ -804,7 +766,7 @@
     "slug",
     "name",
     "location",
-    "name_layers",
+    "label_layers",
     "layouts"
   ],
   "type": "object"

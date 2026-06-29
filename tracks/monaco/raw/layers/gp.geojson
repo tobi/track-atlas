@@ -1728,6 +1728,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.8871
       },
       "geometry": {
@@ -1742,6 +1743,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.0797
       },
       "geometry": {
@@ -1756,20 +1758,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Sainte Devote",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Sainte Devote",
           "official": "Sainte Dévote"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.0663,
-        "start": 0.01236,
-        "end": 0.10526
+        "marker": 0.0663
       },
       "geometry": {
         "type": "Point",
@@ -1783,20 +1783,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Beau Rivage",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Beau Rivage",
           "official": "Beau Rivage"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.1559,
-        "start": 0.1559,
-        "end": 0.1559
+        "marker": 0.1559
       },
       "geometry": {
         "type": "Point",
@@ -1810,20 +1808,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Massenet",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Massenet",
           "official": "Massenet"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.2318,
-        "start": 0.19584,
-        "end": 0.24871
+        "marker": 0.2318
       },
       "geometry": {
         "type": "Point",
@@ -1837,20 +1833,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Casino",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Casino",
           "official": "Casino Square"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.269,
-        "start": 0.24871,
-        "end": 0.29532
+        "marker": 0.269
       },
       "geometry": {
         "type": "Point",
@@ -1864,20 +1858,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Mirabeau",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Mirabeau",
           "official": "Mirabeau"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.3427,
-        "start": 0.29532,
-        "end": 0.35604
+        "marker": 0.3427
       },
       "geometry": {
         "type": "Point",
@@ -1891,20 +1883,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Fairmont Hairpin",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Fairmont Hairpin",
           "official": "Grand Hotel Hairpin"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.3817,
-        "start": 0.35604,
-        "end": 0.39606
+        "marker": 0.3817
       },
       "geometry": {
         "type": "Point",
@@ -1918,20 +1908,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Portier",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Portier",
           "official": "Portier"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.4062,
-        "start": 0.39606,
-        "end": 0.41588
+        "marker": 0.4062
       },
       "geometry": {
         "type": "Point",
@@ -1945,20 +1933,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Portier",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Portier",
           "official": "Portier"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.4333,
-        "start": 0.41588,
-        "end": 0.47226
+        "marker": 0.4333
       },
       "geometry": {
         "type": "Point",
@@ -1972,20 +1958,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Tunnel",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Tunnel",
           "official": "Tunnel Entry"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.5267,
-        "start": 0.51621,
-        "end": 0.54019
+        "marker": 0.5267
       },
       "geometry": {
         "type": "Point",
@@ -1999,20 +1983,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Nouvelle Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Nouvelle Chicane",
           "official": "Nouvelle Chicane"
         },
-        "complex": "Nouvelle Chicane",
         "direction": "right",
         "scale": 2,
-        "marker": 0.6322,
-        "start": 0.57826,
-        "end": 0.63451
+        "marker": 0.6322
       },
       "geometry": {
         "type": "Point",
@@ -2026,20 +2008,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Nouvelle Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Nouvelle Chicane",
           "official": "Nouvelle Chicane"
         },
-        "complex": "Nouvelle Chicane",
         "direction": "left",
         "scale": 2,
-        "marker": 0.6377,
-        "start": 0.63451,
-        "end": 0.67666
+        "marker": 0.6377
       },
       "geometry": {
         "type": "Point",
@@ -2053,20 +2033,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Tabac",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Tabac",
           "official": "Tabac"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.7176,
-        "start": 0.68164,
-        "end": 0.73842
+        "marker": 0.7176
       },
       "geometry": {
         "type": "Point",
@@ -2080,20 +2058,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Swimming Pool",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Swimming Pool",
           "official": "Louis Chiron"
         },
-        "complex": "Swimming Pool",
         "direction": "left",
         "scale": 3,
-        "marker": 0.7634,
-        "start": 0.73842,
-        "end": 0.76811
+        "marker": 0.7634
       },
       "geometry": {
         "type": "Point",
@@ -2107,20 +2083,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Swimming Pool",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Swimming Pool",
           "official": "Swimming Pool"
         },
-        "complex": "Swimming Pool",
         "direction": "right",
         "scale": 2,
-        "marker": 0.7766,
-        "start": 0.76811,
-        "end": 0.79124
+        "marker": 0.7766
       },
       "geometry": {
         "type": "Point",
@@ -2134,20 +2108,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Swimming Pool",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Swimming Pool",
           "official": "Swimming Pool"
         },
-        "complex": "Swimming Pool",
         "direction": "left",
         "scale": 2,
-        "marker": 0.8115,
-        "start": 0.79124,
-        "end": 0.81784
+        "marker": 0.8115
       },
       "geometry": {
         "type": "Point",
@@ -2161,20 +2133,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Swimming Pool",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Swimming Pool",
           "official": "Swimming Pool"
         },
-        "complex": "Swimming Pool",
         "direction": "right",
         "scale": 3,
-        "marker": 0.8237,
-        "start": 0.81784,
-        "end": 0.84064
+        "marker": 0.8237
       },
       "geometry": {
         "type": "Point",
@@ -2188,20 +2158,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Rascasse",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "driver": "Rascasse",
           "official": "La Rascasse"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.883,
-        "start": 0.84064,
-        "end": 0.89801
+        "marker": 0.883
       },
       "geometry": {
         "type": "Point",
@@ -2215,20 +2183,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t18",
         "number": 18,
         "code": "18",
         "display": "Anthony Noghes",
-        "names": {
+        "labels": {
           "numbered": "Turn 18",
           "driver": "Anthony Noghes",
           "official": "Virage Anthony Noghès"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.9086,
-        "start": 0.89801,
-        "end": 0.91325
+        "marker": 0.9086
       },
       "geometry": {
         "type": "Point",
@@ -2242,20 +2208,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t19",
         "number": 19,
         "code": "19",
         "display": "Anthony Noghes",
-        "names": {
+        "labels": {
           "numbered": "Turn 19",
           "driver": "Anthony Noghes",
           "official": "Virage Anthony Noghès"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.9165,
-        "start": 0.91325,
-        "end": 0.93748
+        "marker": 0.9165
       },
       "geometry": {
         "type": "Point",

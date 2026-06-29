@@ -13,7 +13,7 @@
     "region": "Indiana",
     "timezone": "America/Indiana/Indianapolis"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -28,252 +28,398 @@
       "id": "gp",
       "name": "Road Course",
       "aka": [],
-      "name_default": "numbered",
+      "label_default": "numbered",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1"
-          },
-          "start": 0.13593,
-          "end": 0.18014,
-          "marker": 0.1665,
-          "location": [
-            -86.233998,
-            39.792235
-          ],
-          "location_source": "centerline"
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -86.238847,
+                39.793157
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.833,
+              "location": [
+                -86.235565,
+                39.789587
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.107,
+              "location": [
+                -86.238898,
+                39.79692
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2"
-          },
-          "start": 0.18014,
-          "end": 0.21264,
-          "marker": 0.1965,
-          "location": [
-            -86.232914,
-            39.791822
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3"
-          },
-          "start": 0.21264,
-          "end": 0.25268,
-          "marker": 0.232,
-          "location": [
-            -86.231454,
-            39.791581
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4"
-          },
-          "start": 0.25268,
-          "end": 0.29568,
-          "marker": 0.2775,
-          "location": [
-            -86.231075,
-            39.790162
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5"
-          },
-          "start": 0.29568,
-          "end": 0.32727,
-          "marker": 0.3175,
-          "location": [
-            -86.231617,
-            39.788843
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6"
-          },
-          "start": 0.32727,
-          "end": 0.36448,
-          "marker": 0.339,
-          "location": [
-            -86.232388,
-            39.788388
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7"
-          },
-          "start": 0.49893,
-          "end": 0.54541,
-          "marker": 0.5295,
-          "location": [
-            -86.23865,
-            39.790273
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8"
-          },
-          "start": 0.54541,
-          "end": 0.577,
-          "marker": 0.5645,
-          "location": [
-            -86.238822,
-            39.791491
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9"
-          },
-          "start": 0.577,
-          "end": 0.60927,
-          "marker": 0.592,
-          "location": [
-            -86.238837,
-            39.792458
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10"
-          },
-          "start": 0.60927,
-          "end": 0.65548,
-          "marker": 0.63,
-          "location": [
-            -86.238857,
-            39.793794
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11"
-          },
-          "start": 0.67343,
-          "end": 0.72948,
-          "marker": 0.704,
-          "location": [
-            -86.23889,
-            39.796397
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12"
-          },
-          "start": 0.75693,
-          "end": 0.80523,
-          "marker": 0.7875,
-          "location": [
-            -86.238567,
-            39.799127
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13"
-          },
-          "start": 0.80523,
-          "end": 0.85198,
-          "marker": 0.8265,
-          "location": [
-            -86.2377,
-            39.799972
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14"
-          },
-          "start": 0.86143,
-          "end": 0.91748,
-          "marker": 0.892,
-          "location": [
-            -86.235669,
-            39.801055
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Turn 1",
+              "labels": {
+                "numbered": "Turn 1"
+              },
+              "marker": 0.1665,
+              "location": [
+                -86.238912,
+                39.799011
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Turn 2",
+              "labels": {
+                "numbered": "Turn 2"
+              },
+              "marker": 0.1965,
+              "location": [
+                -86.237714,
+                39.799343
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Turn 3",
+              "labels": {
+                "numbered": "Turn 3"
+              },
+              "marker": 0.232,
+              "location": [
+                -86.237501,
+                39.800556
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Turn 4",
+              "labels": {
+                "numbered": "Turn 4"
+              },
+              "marker": 0.2775,
+              "location": [
+                -86.235757,
+                39.801118
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Turn 5",
+              "labels": {
+                "numbered": "Turn 5"
+              },
+              "marker": 0.3175,
+              "location": [
+                -86.235443,
+                39.799783
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Turn 6",
+              "labels": {
+                "numbered": "Turn 6"
+              },
+              "marker": 0.339,
+              "location": [
+                -86.235016,
+                39.799161
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Turn 7",
+              "labels": {
+                "numbered": "Turn 7"
+              },
+              "marker": 0.5295,
+              "location": [
+                -86.234919,
+                39.792461
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Turn 8",
+              "labels": {
+                "numbered": "Turn 8"
+              },
+              "marker": 0.5645,
+              "location": [
+                -86.233546,
+                39.792248
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Turn 9",
+              "labels": {
+                "numbered": "Turn 9"
+              },
+              "marker": 0.592,
+              "location": [
+                -86.232719,
+                39.791617
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Turn 10",
+              "labels": {
+                "numbered": "Turn 10"
+              },
+              "marker": 0.63,
+              "location": [
+                -86.231112,
+                39.791393
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Turn 11",
+              "labels": {
+                "numbered": "Turn 11"
+              },
+              "marker": 0.704,
+              "location": [
+                -86.231569,
+                39.788887
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Turn 12",
+              "labels": {
+                "numbered": "Turn 12"
+              },
+              "marker": 0.7875,
+              "location": [
+                -86.235121,
+                39.788172
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Turn 13",
+              "labels": {
+                "numbered": "Turn 13"
+              },
+              "marker": 0.8265,
+              "location": [
+                -86.235361,
+                39.789429
+              ],
+              "location_source": "centerline"
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Turn 14",
+              "labels": {
+                "numbered": "Turn 14"
+              },
+              "marker": 0.892,
+              "location": [
+                -86.238078,
+                39.789495
+              ],
+              "location_source": "centerline"
+            }
+          ]
         }
       ],
-      "straights": [],
-      "sectors": [
+      "range_layers": [
         {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.261
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.261
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.261,
+              "end": 0.662
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.662,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.261,
-          "end": 0.662
-        },
-        {
-          "name": "S3",
-          "start": 0.662,
-          "end": 1.0
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.13593,
+              "end": 0.18014,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.18014,
+              "end": 0.21264,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Turn 3",
+              "start": 0.21264,
+              "end": 0.25268,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Turn 4",
+              "start": 0.25268,
+              "end": 0.29568,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Turn 5",
+              "start": 0.29568,
+              "end": 0.32727,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Turn 6",
+              "start": 0.32727,
+              "end": 0.36448,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Turn 7",
+              "start": 0.49893,
+              "end": 0.54541,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Turn 8",
+              "start": 0.54541,
+              "end": 0.577,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Turn 9",
+              "start": 0.577,
+              "end": 0.60927,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Turn 10",
+              "start": 0.60927,
+              "end": 0.65548,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Turn 11",
+              "start": 0.67343,
+              "end": 0.72948,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.75693,
+              "end": 0.80523,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Turn 13",
+              "start": 0.80523,
+              "end": 0.85198,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Turn 14",
+              "start": 0.86143,
+              "end": 0.91748,
+              "anchor": "t14"
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.833,
-        "exit": 0.107
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -86.234983,
-          39.797434
-        ]
-      },
       "length_m": 3925,
       "direction": "clockwise"
     }
@@ -285,7 +431,7 @@
     "imsa_data": "indianapolis"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:32.935305+00:00",
+    "generated_at": "2026-06-29T15:41:55.799078+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

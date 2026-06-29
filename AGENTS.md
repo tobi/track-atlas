@@ -15,6 +15,24 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 
 ## Source paths that work
 
+### Generated layer inputs (timing sectors, microsectors, slow zones)
+- Use the project skill at `skills/layer-tools/SKILL.md` before adding or
+  changing generated point/range layers.
+- Per-track generated layer inputs live in `tracks/<slug>/generation-config.json`.
+  The config declares URLs/files, converter tool name, layout id, and all params.
+- `scripts/generate.py <slug>` writes base `raw/track.json` and then applies the
+  generation config. For config-only edits, use `uv run python scripts/build_layers.py <slug>`.
+- Converter tools live in `scripts/layer_tools/` and must be pure stdin→stdout:
+  the runner resolves every URL/path to `raw/layer-sources/<config-id>/` before
+  invocation. Do not make tools fetch their own inputs or guess missing data.
+- Known good sources:
+  - IMSA / Al Kamel noticeboard `Timing 3 Sector Map.pdf` and
+    `Timing All Sections Map.pdf` for timing sectors + microsectors.
+  - HH Timing IMSA docs for loop-pair crosschecks:
+    `https://help.hhtiming.com/series-specific-info/imsa/`.
+  - HH Timing Le Mans docs / `.cha` configs for WEC slow-zone loop pairs:
+    `https://help.hhtiming.com/series-specific-info/lm24/`.
+
 ### Lovely-Sim-Racing/lovely-track-data
 - Manifest: `https://raw.githubusercontent.com/Lovely-Sim-Racing/lovely-track-data/main/data/manifest.json`
 - Per track: `.../main/data/{simId}/{trackId}.json` (the manifest gives the `path`).

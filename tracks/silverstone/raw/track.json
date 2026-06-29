@@ -13,7 +13,7 @@
     "region": "England",
     "timezone": "Europe/London"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -34,377 +34,576 @@
       "aka": [
         "Arena GP"
       ],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "Abbey",
-            "official": "Abbey"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.0726,
-          "start": 0.06666,
-          "end": 0.08024,
-          "location": [
-            -1.019308,
-            52.071256
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -1.024072,
+                52.06779
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.9066,
+              "location": [
+                -1.020259,
+                52.065295
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.108,
+              "location": [
+                -1.016312,
+                52.071257
+              ]
+            }
           ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "Farm",
-            "official": "Farm Curve"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.1071,
-          "start": 0.10116,
-          "end": 0.11474,
-          "location": [
-            -1.016393,
-            52.071268
-          ],
-          "complex": "Abbey / Farm"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Village",
-            "official": "Village"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.1553,
-          "start": 0.12474,
-          "end": 0.1643,
-          "location": [
-            -1.013289,
-            52.072477
-          ],
-          "complex": "Arena"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "The Loop",
-            "official": "The Loop"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.1816,
-          "start": 0.1643,
-          "end": 0.20533,
-          "location": [
-            -1.012127,
-            52.071651
-          ],
-          "complex": "Arena"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "Aintree",
-            "official": "Aintree"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.2151,
-          "start": 0.20533,
-          "end": 0.22698,
-          "location": [
-            -1.0115,
-            52.072893
-          ],
-          "complex": "Arena"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Brooklands",
-            "official": "Brooklands"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.3401,
-          "start": 0.31973,
-          "end": 0.35399,
-          "location": [
-            -1.019094,
-            52.077114
-          ]
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Luffield",
-            "official": "Luffield"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.379,
-          "start": 0.35399,
-          "end": 0.40107,
-          "location": [
-            -1.021126,
-            52.07604
-          ]
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Woodcote",
-            "official": "Woodcote"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.4376,
-          "start": 0.42572,
-          "end": 0.44948,
-          "location": [
-            -1.01946,
-            52.078259
-          ]
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Copse",
-            "official": "Copse"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.5271,
-          "start": 0.52116,
-          "end": 0.53474,
-          "location": [
-            -1.011674,
-            52.078666
-          ]
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Maggotts",
-            "official": "Maggotts"
-          },
-          "direction": "left",
-          "scale": 6,
-          "marker": 0.6181,
-          "start": 0.6181,
-          "end": 0.6181,
-          "location": [
-            -1.009814,
-            52.073813
-          ],
-          "complex": "Maggotts-Becketts-Chapel"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Becketts",
-            "official": "Becketts"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.6345,
-          "start": 0.6181,
-          "end": 0.6487,
-          "location": [
-            -1.009814,
-            52.073813
-          ],
-          "complex": "Maggotts-Becketts-Chapel"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "Becketts",
-            "official": "Becketts"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.6629,
-          "start": 0.6487,
-          "end": 0.67204,
-          "location": [
-            -1.009968,
-            52.072063
-          ],
-          "complex": "Maggotts-Becketts-Chapel"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "driver": "Becketts",
-            "official": "Becketts"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.6877,
-          "start": 0.67204,
-          "end": 0.70703,
-          "location": [
-            -1.009968,
-            52.072063
-          ],
-          "complex": "Maggotts-Becketts-Chapel"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "driver": "Chapel Curve",
-            "official": "Chapel"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.7138,
-          "start": 0.70703,
-          "end": 0.72144,
-          "location": [
-            -1.009468,
-            52.070864
-          ],
-          "complex": "Maggotts-Becketts-Chapel"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Stowe",
-            "official": "Stowe"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.8632,
-          "start": 0.85132,
-          "end": 0.87508,
-          "location": [
-            -1.017885,
-            52.0637
-          ]
-        },
-        {
-          "number": 16,
-          "code": "16",
-          "names": {
-            "numbered": "Turn 16",
-            "driver": "Vale",
-            "official": "Vale"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.9403,
-          "start": 0.90974,
-          "end": 0.94563,
-          "location": [
-            -1.022305,
-            52.066484
-          ],
-          "complex": "Vale"
-        },
-        {
-          "number": 17,
-          "code": "17",
-          "names": {
-            "numbered": "Turn 17",
-            "driver": "Club",
-            "official": "Club"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.953,
-          "start": 0.94563,
-          "end": 0.9687,
-          "location": [
-            -1.022305,
-            52.066484
-          ],
-          "complex": "Vale"
-        },
-        {
-          "number": 18,
-          "code": "18",
-          "names": {
-            "numbered": "Turn 18",
-            "driver": "Club",
-            "official": "Club"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.9832,
-          "start": 0.9687,
-          "end": 0.00018,
-          "location": [
-            -1.023776,
-            52.066903
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Abbey",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "Abbey",
+                "official": "Abbey"
+              },
+              "marker": 0.0726,
+              "location": [
+                -1.019308,
+                52.071256
+              ],
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Farm",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "Farm",
+                "official": "Farm Curve"
+              },
+              "marker": 0.1071,
+              "location": [
+                -1.016393,
+                52.071268
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Village",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Village",
+                "official": "Village"
+              },
+              "marker": 0.1553,
+              "location": [
+                -1.013289,
+                52.072477
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "The Loop",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "The Loop",
+                "official": "The Loop"
+              },
+              "marker": 0.1816,
+              "location": [
+                -1.012127,
+                52.071651
+              ],
+              "direction": "left",
+              "scale": 1
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Aintree",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "Aintree",
+                "official": "Aintree"
+              },
+              "marker": 0.2151,
+              "location": [
+                -1.0115,
+                52.072893
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Brooklands",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Brooklands",
+                "official": "Brooklands"
+              },
+              "marker": 0.3401,
+              "location": [
+                -1.019094,
+                52.077114
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Luffield",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Luffield",
+                "official": "Luffield"
+              },
+              "marker": 0.379,
+              "location": [
+                -1.021126,
+                52.07604
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Woodcote",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Woodcote",
+                "official": "Woodcote"
+              },
+              "marker": 0.4376,
+              "location": [
+                -1.01946,
+                52.078259
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Copse",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Copse",
+                "official": "Copse"
+              },
+              "marker": 0.5271,
+              "location": [
+                -1.011674,
+                52.078666
+              ],
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Maggotts",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Maggotts",
+                "official": "Maggotts"
+              },
+              "marker": 0.6181,
+              "location": [
+                -1.009814,
+                52.073813
+              ],
+              "direction": "left",
+              "scale": 6
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Becketts",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Becketts",
+                "official": "Becketts"
+              },
+              "marker": 0.6345,
+              "location": [
+                -1.009814,
+                52.073813
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Becketts",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "Becketts",
+                "official": "Becketts"
+              },
+              "marker": 0.6629,
+              "location": [
+                -1.009968,
+                52.072063
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Becketts",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "Becketts",
+                "official": "Becketts"
+              },
+              "marker": 0.6877,
+              "location": [
+                -1.009968,
+                52.072063
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Chapel Curve",
+              "labels": {
+                "numbered": "Turn 14",
+                "driver": "Chapel Curve",
+                "official": "Chapel"
+              },
+              "marker": 0.7138,
+              "location": [
+                -1.009468,
+                52.070864
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Stowe",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Stowe",
+                "official": "Stowe"
+              },
+              "marker": 0.8632,
+              "location": [
+                -1.017885,
+                52.0637
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t16",
+              "number": 16,
+              "code": "16",
+              "label": "Vale",
+              "labels": {
+                "numbered": "Turn 16",
+                "driver": "Vale",
+                "official": "Vale"
+              },
+              "marker": 0.9403,
+              "location": [
+                -1.022305,
+                52.066484
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t17",
+              "number": 17,
+              "code": "17",
+              "label": "Club",
+              "labels": {
+                "numbered": "Turn 17",
+                "driver": "Club",
+                "official": "Club"
+              },
+              "marker": 0.953,
+              "location": [
+                -1.022305,
+                52.066484
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t18",
+              "number": 18,
+              "code": "18",
+              "label": "Club",
+              "labels": {
+                "numbered": "Turn 18",
+                "driver": "Club",
+                "official": "Club"
+              },
+              "marker": 0.9832,
+              "location": [
+                -1.023776,
+                52.066903
+              ],
+              "direction": "right",
+              "scale": 3
+            }
           ]
         }
       ],
-      "straights": [],
-      "sectors": [
+      "range_layers": [
         {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.3079
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.3079
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.3079,
+              "end": 0.729
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.729,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.3079,
-          "end": 0.729
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Abbey",
+              "start": 0.06666,
+              "end": 0.08024,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Farm",
+              "start": 0.10116,
+              "end": 0.11474,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Village",
+              "start": 0.12474,
+              "end": 0.1643,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "The Loop",
+              "start": 0.1643,
+              "end": 0.20533,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Aintree",
+              "start": 0.20533,
+              "end": 0.22698,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Brooklands",
+              "start": 0.31973,
+              "end": 0.35399,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Luffield",
+              "start": 0.35399,
+              "end": 0.40107,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Woodcote",
+              "start": 0.42572,
+              "end": 0.44948,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Copse",
+              "start": 0.52116,
+              "end": 0.53474,
+              "anchor": "t9"
+            },
+            {
+              "id": "t11",
+              "label": "Becketts",
+              "start": 0.6181,
+              "end": 0.6487,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Becketts",
+              "start": 0.6487,
+              "end": 0.67204,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Becketts",
+              "start": 0.67204,
+              "end": 0.70703,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Chapel Curve",
+              "start": 0.70703,
+              "end": 0.72144,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "Stowe",
+              "start": 0.85132,
+              "end": 0.87508,
+              "anchor": "t15"
+            },
+            {
+              "id": "t16",
+              "label": "Vale",
+              "start": 0.90974,
+              "end": 0.94563,
+              "anchor": "t16"
+            },
+            {
+              "id": "t17",
+              "label": "Club",
+              "start": 0.94563,
+              "end": 0.9687,
+              "anchor": "t17"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.729,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "abbeyfarm",
+              "label": "Abbey / Farm",
+              "start": 0.10116,
+              "end": 0.11474,
+              "members": [
+                "t2"
+              ]
+            },
+            {
+              "id": "arena",
+              "label": "Arena",
+              "start": 0.12474,
+              "end": 0.22698,
+              "members": [
+                "t3",
+                "t4",
+                "t5"
+              ]
+            },
+            {
+              "id": "maggottsbeckettschapel",
+              "label": "Maggotts-Becketts-Chapel",
+              "start": 0.6181,
+              "end": 0.72144,
+              "members": [
+                "t10",
+                "t11",
+                "t12",
+                "t13",
+                "t14"
+              ]
+            },
+            {
+              "id": "vale",
+              "label": "Vale",
+              "start": 0.90974,
+              "end": 0.9687,
+              "members": [
+                "t16",
+                "t17"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.9066,
-        "exit": 0.108
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -1.024072,
-          52.06779
-        ]
-      },
       "length_m": 5891,
       "direction": "clockwise",
       "active_years": "2011-"
@@ -420,7 +619,7 @@
     "imsa_data": "silverstone"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:59.531976+00:00",
+    "generated_at": "2026-06-29T15:41:58.287401+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

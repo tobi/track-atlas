@@ -12,7 +12,7 @@
     "region": "Connecticut",
     "timezone": "America/New_York"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,161 +31,270 @@
       "id": "gp",
       "name": "Classic",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "Big Bend",
-            "official": "Big Bend"
-          },
-          "start": 0.09926,
-          "end": 0.18862,
-          "marker": 0.148,
-          "location": [
-            -73.378531,
-            41.926531
-          ],
-          "direction": "right",
-          "scale": 3
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -73.380817,
+                41.928536
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.9,
+              "location": [
+                -73.383739,
+                41.929505
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.046,
+              "location": [
+                -73.379471,
+                41.928094
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "The Left-Hander",
-            "official": "Left Hander"
-          },
-          "start": 0.26026,
-          "end": 0.34962,
-          "marker": 0.309,
-          "complex": "Esses",
-          "direction": "left",
-          "scale": 3,
-          "location": [
-            -73.381503,
-            41.926017
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "The Uphill",
-            "official": "Uphill"
-          },
-          "start": 0.50157,
-          "end": 0.55843,
-          "marker": 0.53,
-          "direction": "right",
-          "scale": 4,
-          "location": [
-            -73.386607,
-            41.92546
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "West Bend",
-            "official": "West Bend"
-          },
-          "start": 0.66357,
-          "end": 0.72043,
-          "marker": 0.692,
-          "location": [
-            -73.388488,
-            41.928175
-          ],
-          "direction": "right",
-          "scale": 4
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "The Downhill",
-            "official": "Diving Turn"
-          },
-          "start": 0.80878,
-          "end": 0.84128,
-          "marker": 0.823,
-          "location": [
-            -73.385901,
-            41.929933
-          ],
-          "direction": "right",
-          "scale": 5
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Big Bend",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "Big Bend",
+                "official": "Big Bend"
+              },
+              "marker": 0.148,
+              "location": [
+                -73.378531,
+                41.926531
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "The Left-Hander",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "The Left-Hander",
+                "official": "Left Hander"
+              },
+              "marker": 0.309,
+              "location": [
+                -73.381503,
+                41.926017
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "The Uphill",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "The Uphill",
+                "official": "Uphill"
+              },
+              "marker": 0.53,
+              "location": [
+                -73.386607,
+                41.92546
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "West Bend",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "West Bend",
+                "official": "West Bend"
+              },
+              "marker": 0.692,
+              "location": [
+                -73.388488,
+                41.928175
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "The Downhill",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "The Downhill",
+                "official": "Diving Turn"
+              },
+              "marker": 0.823,
+              "location": [
+                -73.385901,
+                41.929933
+              ],
+              "direction": "right",
+              "scale": 5
+            }
+          ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Sam Posey Straight",
-          "start": 0.001,
-          "end": 0.076
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.23
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.23,
+              "end": 0.63
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.63,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "No Name Straight",
-          "start": 0.385,
-          "end": 0.479
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Big Bend",
+              "start": 0.09926,
+              "end": 0.18862,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "The Left-Hander",
+              "start": 0.26026,
+              "end": 0.34962,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "The Uphill",
+              "start": 0.50157,
+              "end": 0.55843,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "West Bend",
+              "start": 0.66357,
+              "end": 0.72043,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "The Downhill",
+              "start": 0.80878,
+              "end": 0.84128,
+              "anchor": "t5"
+            }
+          ]
         },
         {
-          "name": "Back Straight",
-          "start": 0.581,
-          "end": 0.648
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "complex-1",
+              "label": "Esses",
+              "start": 0.26026,
+              "end": 0.34962,
+              "members": [
+                "t2"
+              ]
+            }
+          ]
         },
         {
-          "name": "Downhill",
-          "start": 0.736,
-          "end": 0.787
-        },
-        {
-          "name": "Sam Posey Straight",
-          "start": 0.859,
-          "end": 1
+          "id": "straights",
+          "kind": "straights",
+          "label": "Straights",
+          "items": [
+            {
+              "id": "samposeystraight",
+              "label": "Sam Posey Straight",
+              "start": 0.001,
+              "end": 0.076
+            },
+            {
+              "id": "nonamestraight",
+              "label": "No Name Straight",
+              "start": 0.385,
+              "end": 0.479
+            },
+            {
+              "id": "backstraight",
+              "label": "Back Straight",
+              "start": 0.581,
+              "end": 0.648
+            },
+            {
+              "id": "downhill",
+              "label": "Downhill",
+              "start": 0.736,
+              "end": 0.787
+            },
+            {
+              "id": "samposeystraight-2",
+              "label": "Sam Posey Straight",
+              "start": 0.859,
+              "end": 1
+            }
+          ]
         }
       ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.23
-        },
-        {
-          "name": "S2",
-          "start": 0.23,
-          "end": 0.63
-        },
-        {
-          "name": "S3",
-          "start": 0.63,
-          "end": 1.0
-        }
-      ],
-      "pit": {
-        "entry": 0.9,
-        "exit": 0.046
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -73.380817,
-          41.928536
-        ]
-      },
       "length_m": 2462,
       "direction": "clockwise"
     }
@@ -197,7 +306,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:35.883340+00:00",
+    "generated_at": "2026-06-29T15:41:55.801446+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

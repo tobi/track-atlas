@@ -13,7 +13,7 @@
     "region": "Styria",
     "timezone": "Europe/Vienna"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -32,222 +32,333 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "official": "Niki Lauda Kurve",
-            "driver": "Niki Lauda Kurve"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.1067,
-          "start": 0.06501,
-          "end": 0.13681,
-          "location": [
-            14.760941,
-            47.219292
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                14.766527,
+                47.220259
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.8988,
+              "location": [
+                14.770272,
+                47.222254
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.1303,
+              "location": [
+                14.760187,
+                47.220029
+              ]
+            }
           ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "Remus Kurve",
-            "official": "Remus Kurve"
-          },
-          "direction": "right",
-          "scale": 6,
-          "marker": 0.2565,
-          "start": 0.2565,
-          "end": 0.2565,
-          "location": [
-            14.756599,
-            47.224218
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Remus",
-            "official": "Remus"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.3251,
-          "start": 0.2672,
-          "end": 0.36447,
-          "location": [
-            14.754127,
-            47.226174
-          ]
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Schlossgold",
-            "official": "Schlossgold"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.5149,
-          "start": 0.47321,
-          "end": 0.54259,
-          "location": [
-            14.764495,
-            47.225464
-          ]
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.5575,
-          "start": 0.54259,
-          "end": 0.57371,
-          "location": [
-            14.762985,
-            47.224403
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Rauch Kurve",
-            "official": "Rauch Kurve"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.6359,
-          "start": 0.60811,
-          "end": 0.65906,
-          "location": [
-            14.759057,
-            47.224219
-          ]
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Würth Kurve",
-            "official": "Würth Kurve"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.7077,
-          "start": 0.67991,
-          "end": 0.73086,
-          "location": [
-            14.76047,
-            47.222048
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.7512,
-          "start": 0.73499,
-          "end": 0.76741,
-          "location": [
-            14.762462,
-            47.222944
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Rindt",
-            "official": "Jochen-Rindt-Kurve"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.8801,
-          "start": 0.85231,
-          "end": 0.89689,
-          "location": [
-            14.76971,
-            47.223012
-          ]
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Mobilkurve",
-            "official": "Red Bull Mobile Kurve"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.9271,
-          "start": 0.89689,
-          "end": 0.95721,
-          "location": [
-            14.770175,
-            47.221182
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Niki Lauda Kurve",
+              "labels": {
+                "numbered": "Turn 1",
+                "official": "Niki Lauda Kurve",
+                "driver": "Niki Lauda Kurve"
+              },
+              "marker": 0.1067,
+              "location": [
+                14.760941,
+                47.219292
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Remus Kurve",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "Remus Kurve",
+                "official": "Remus Kurve"
+              },
+              "marker": 0.2565,
+              "location": [
+                14.756599,
+                47.224218
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Remus",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Remus",
+                "official": "Remus"
+              },
+              "marker": 0.3251,
+              "location": [
+                14.754127,
+                47.226174
+              ],
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Schlossgold",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Schlossgold",
+                "official": "Schlossgold"
+              },
+              "marker": 0.5149,
+              "location": [
+                14.764495,
+                47.225464
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Turn 5",
+              "labels": {
+                "numbered": "Turn 5"
+              },
+              "marker": 0.5575,
+              "location": [
+                14.762985,
+                47.224403
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Rauch Kurve",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Rauch Kurve",
+                "official": "Rauch Kurve"
+              },
+              "marker": 0.6359,
+              "location": [
+                14.759057,
+                47.224219
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Würth Kurve",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Würth Kurve",
+                "official": "Würth Kurve"
+              },
+              "marker": 0.7077,
+              "location": [
+                14.76047,
+                47.222048
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Turn 8",
+              "labels": {
+                "numbered": "Turn 8"
+              },
+              "marker": 0.7512,
+              "location": [
+                14.762462,
+                47.222944
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Rindt",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Rindt",
+                "official": "Jochen-Rindt-Kurve"
+              },
+              "marker": 0.8801,
+              "location": [
+                14.76971,
+                47.223012
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Mobilkurve",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Mobilkurve",
+                "official": "Red Bull Mobile Kurve"
+              },
+              "marker": 0.9271,
+              "location": [
+                14.770175,
+                47.221182
+              ],
+              "direction": "left",
+              "scale": 2
+            }
           ]
         }
       ],
-      "straights": [],
-      "sectors": [
+      "range_layers": [
         {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.2787
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.2787
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.2787,
+              "end": 0.68
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.68,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.2787,
-          "end": 0.68
-        },
-        {
-          "name": "S3",
-          "start": 0.68,
-          "end": 1.0
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Niki Lauda Kurve",
+              "start": 0.06501,
+              "end": 0.13681,
+              "anchor": "t1"
+            },
+            {
+              "id": "t3",
+              "label": "Remus",
+              "start": 0.2672,
+              "end": 0.36447,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Schlossgold",
+              "start": 0.47321,
+              "end": 0.54259,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Turn 5",
+              "start": 0.54259,
+              "end": 0.57371,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Rauch Kurve",
+              "start": 0.60811,
+              "end": 0.65906,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Würth Kurve",
+              "start": 0.67991,
+              "end": 0.73086,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Turn 8",
+              "start": 0.73499,
+              "end": 0.76741,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Rindt",
+              "start": 0.85231,
+              "end": 0.89689,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Mobilkurve",
+              "start": 0.89689,
+              "end": 0.95721,
+              "anchor": "t10"
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.8988,
-        "exit": 0.1303
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          14.766527,
-          47.220259
-        ]
-      },
       "length_m": 4318,
       "direction": "clockwise"
     }
@@ -260,7 +371,7 @@
     "imsa_data": "red-bull-ring"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:50.805251+00:00",
+    "generated_at": "2026-06-29T15:41:55.789775+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -1220,6 +1220,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.9407
       },
       "geometry": {
@@ -1234,6 +1235,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.1058
       },
       "geometry": {
@@ -1248,20 +1250,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Sheares",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Sheares",
           "official": "Sheares Turn"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.0898,
-        "start": 0.03919,
-        "end": 0.09873
+        "marker": 0.0898
       },
       "geometry": {
         "type": "Point",
@@ -1275,19 +1275,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "T2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "T2"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.1024,
-        "start": 0.09873,
-        "end": 0.1087
+        "marker": 0.1024
       },
       "geometry": {
         "type": "Point",
@@ -1301,19 +1299,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "T3",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "T3"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.1195,
-        "start": 0.1087,
-        "end": 0.13974
+        "marker": 0.1195
       },
       "geometry": {
         "type": "Point",
@@ -1327,19 +1323,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "T4",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "T4"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.1447,
-        "start": 0.1447,
-        "end": 0.1447
+        "marker": 0.1447
       },
       "geometry": {
         "type": "Point",
@@ -1353,19 +1347,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "T5",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "T5"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.1999,
-        "start": 0.17561,
-        "end": 0.22014
+        "marker": 0.1999
       },
       "geometry": {
         "type": "Point",
@@ -1379,19 +1371,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "T6",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "T6"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.2965,
-        "start": 0.2965,
-        "end": 0.2965
+        "marker": 0.2965
       },
       "geometry": {
         "type": "Point",
@@ -1405,20 +1395,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Memorial",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Memorial",
           "official": "Memorial Corner"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.3693,
-        "start": 0.33286,
-        "end": 0.38737
+        "marker": 0.3693
       },
       "geometry": {
         "type": "Point",
@@ -1432,20 +1420,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Stamford",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Stamford",
           "official": "Stamford Corner"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.4124,
-        "start": 0.38737,
-        "end": 0.42863
+        "marker": 0.4124
       },
       "geometry": {
         "type": "Point",
@@ -1459,20 +1445,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Padang",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Padang",
           "official": "Padang Corner"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.4511,
-        "start": 0.42863,
-        "end": 0.47742
+        "marker": 0.4511
       },
       "geometry": {
         "type": "Point",
@@ -1486,20 +1470,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Singapore Sling",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Singapore Sling",
           "official": "Singapore Sling"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.5385,
-        "start": 0.50206,
-        "end": 0.55332
+        "marker": 0.5385
       },
       "geometry": {
         "type": "Point",
@@ -1513,19 +1495,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "T11",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "T11"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.567,
-        "start": 0.55332,
-        "end": 0.57468
+        "marker": 0.567
       },
       "geometry": {
         "type": "Point",
@@ -1539,19 +1519,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "T12",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "T12"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.5839,
-        "start": 0.57468,
-        "end": 0.59553
+        "marker": 0.5839
       },
       "geometry": {
         "type": "Point",
@@ -1565,19 +1543,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "T13",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "T13"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.6246,
-        "start": 0.59553,
-        "end": 0.65901
+        "marker": 0.6246
       },
       "geometry": {
         "type": "Point",
@@ -1591,20 +1567,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Connaught",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Connaught",
           "official": "Connaught Drive"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.7339,
-        "start": 0.69746,
-        "end": 0.76022
+        "marker": 0.7339
       },
       "geometry": {
         "type": "Point",
@@ -1618,19 +1592,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "T15",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "T15"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.7851,
-        "start": 0.77093,
-        "end": 0.79927
+        "marker": 0.7851
       },
       "geometry": {
         "type": "Point",
@@ -1644,20 +1616,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Anderson Bridge",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Anderson Bridge",
           "official": "Anderson Bridge"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.8846,
-        "start": 0.84816,
-        "end": 0.89084
+        "marker": 0.8846
       },
       "geometry": {
         "type": "Point",
@@ -1671,20 +1641,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Esplanade",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "driver": "Esplanade",
           "official": "Esplanade Drive"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.8966,
-        "start": 0.89084,
-        "end": 0.91684
+        "marker": 0.8966
       },
       "geometry": {
         "type": "Point",
@@ -1698,20 +1666,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t18",
         "number": 18,
         "code": "18",
         "display": "Raffles Boulevard",
-        "names": {
+        "labels": {
           "numbered": "Turn 18",
           "driver": "Raffles Boulevard",
           "official": "Raffles Boulevard"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.9579,
-        "start": 0.92146,
-        "end": 0.9665
+        "marker": 0.9579
       },
       "geometry": {
         "type": "Point",
@@ -1725,19 +1691,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t19",
         "number": 19,
         "code": "19",
         "display": "T19",
-        "names": {
+        "labels": {
           "numbered": "Turn 19",
           "driver": "T19"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.9784,
-        "start": 0.9665,
-        "end": 0.00472
+        "marker": 0.9784
       },
       "geometry": {
         "type": "Point",

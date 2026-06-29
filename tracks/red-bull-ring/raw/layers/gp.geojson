@@ -1220,6 +1220,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.8988
       },
       "geometry": {
@@ -1234,6 +1235,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.1303
       },
       "geometry": {
@@ -1248,20 +1250,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Niki Lauda Kurve",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "official": "Niki Lauda Kurve",
           "driver": "Niki Lauda Kurve"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.1067,
-        "start": 0.06501,
-        "end": 0.13681
+        "marker": 0.1067
       },
       "geometry": {
         "type": "Point",
@@ -1275,20 +1275,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Remus Kurve",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Remus Kurve",
           "official": "Remus Kurve"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.2565,
-        "start": 0.2565,
-        "end": 0.2565
+        "marker": 0.2565
       },
       "geometry": {
         "type": "Point",
@@ -1302,20 +1300,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Remus",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Remus",
           "official": "Remus"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.3251,
-        "start": 0.2672,
-        "end": 0.36447
+        "marker": 0.3251
       },
       "geometry": {
         "type": "Point",
@@ -1329,20 +1325,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Schlossgold",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Schlossgold",
           "official": "Schlossgold"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.5149,
-        "start": 0.47321,
-        "end": 0.54259
+        "marker": 0.5149
       },
       "geometry": {
         "type": "Point",
@@ -1356,18 +1350,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Turn 5",
-        "names": {
+        "labels": {
           "numbered": "Turn 5"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.5575,
-        "start": 0.54259,
-        "end": 0.57371
+        "marker": 0.5575
       },
       "geometry": {
         "type": "Point",
@@ -1381,20 +1373,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Rauch Kurve",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Rauch Kurve",
           "official": "Rauch Kurve"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.6359,
-        "start": 0.60811,
-        "end": 0.65906
+        "marker": 0.6359
       },
       "geometry": {
         "type": "Point",
@@ -1408,20 +1398,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Würth Kurve",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Würth Kurve",
           "official": "Würth Kurve"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.7077,
-        "start": 0.67991,
-        "end": 0.73086
+        "marker": 0.7077
       },
       "geometry": {
         "type": "Point",
@@ -1435,18 +1423,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Turn 8",
-        "names": {
+        "labels": {
           "numbered": "Turn 8"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.7512,
-        "start": 0.73499,
-        "end": 0.76741
+        "marker": 0.7512
       },
       "geometry": {
         "type": "Point",
@@ -1460,20 +1446,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Rindt",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Rindt",
           "official": "Jochen-Rindt-Kurve"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.8801,
-        "start": 0.85231,
-        "end": 0.89689
+        "marker": 0.8801
       },
       "geometry": {
         "type": "Point",
@@ -1487,20 +1471,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Mobilkurve",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Mobilkurve",
           "official": "Red Bull Mobile Kurve"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.9271,
-        "start": 0.89689,
-        "end": 0.95721
+        "marker": 0.9271
       },
       "geometry": {
         "type": "Point",

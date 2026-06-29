@@ -1812,6 +1812,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.97
       },
       "geometry": {
@@ -1826,6 +1827,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.03
       },
       "geometry": {
@@ -1840,19 +1842,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "La Source",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "La Source"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.04,
-        "start": 0.00431,
-        "end": 0.06427
+        "marker": 0.04
       },
       "geometry": {
         "type": "Point",
@@ -1866,18 +1866,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Turn 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.08,
-        "start": 0.08,
-        "end": 0.08
+        "marker": 0.08
       },
       "geometry": {
         "type": "Point",
@@ -1891,20 +1889,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Eau Rouge",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Eau Rouge",
           "official": "Eau Rouge"
         },
-        "complex": "Eau Rouge-Raidillon",
         "direction": "left",
         "scale": 5,
-        "marker": 0.13,
-        "start": 0.125,
-        "end": 0.14125
+        "marker": 0.13
       },
       "geometry": {
         "type": "Point",
@@ -1918,19 +1914,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Eau Rouge-Raidillon",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Eau Rouge-Raidillon"
         },
-        "complex": "Eau Rouge-Raidillon",
         "direction": "right",
         "scale": 5,
-        "marker": 0.15,
-        "start": 0.14125,
-        "end": 0.16125
+        "marker": 0.15
       },
       "geometry": {
         "type": "Point",
@@ -1944,20 +1938,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Raidillon",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Raidillon",
           "official": "Raidillon"
         },
-        "complex": "Eau Rouge-Raidillon",
         "direction": "left",
         "scale": 5,
-        "marker": 0.17,
-        "start": 0.16125,
-        "end": 0.17642
+        "marker": 0.17
       },
       "geometry": {
         "type": "Point",
@@ -1971,18 +1963,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Turn 6",
-        "names": {
+        "labels": {
           "numbered": "Turn 6"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.21,
-        "start": 0.21,
-        "end": 0.21
+        "marker": 0.21
       },
       "geometry": {
         "type": "Point",
@@ -1996,20 +1986,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Les Combes",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Les Combes",
           "official": "Les Combes"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.33,
-        "start": 0.31287,
-        "end": 0.33455
+        "marker": 0.33
       },
       "geometry": {
         "type": "Point",
@@ -2023,20 +2011,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Les Combes",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "official": "Les Combes",
           "driver": "Les Combes"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.34,
-        "start": 0.33455,
-        "end": 0.35176
+        "marker": 0.34
       },
       "geometry": {
         "type": "Point",
@@ -2050,20 +2036,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Malmedy",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "official": "Malmedy",
           "driver": "Malmedy"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.36,
-        "start": 0.35176,
-        "end": 0.36999
+        "marker": 0.36
       },
       "geometry": {
         "type": "Point",
@@ -2077,19 +2061,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Bruxelles",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Bruxelles"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.42,
-        "start": 0.38431,
-        "end": 0.44125
+        "marker": 0.42
       },
       "geometry": {
         "type": "Point",
@@ -2103,20 +2085,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Rivage",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "official": "Rivage",
           "driver": "Rivage"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.45,
-        "start": 0.44125,
-        "end": 0.45999
+        "marker": 0.45
       },
       "geometry": {
         "type": "Point",
@@ -2130,19 +2110,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Pouhon",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Pouhon"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.54,
-        "start": 0.53001,
-        "end": 0.54999
+        "marker": 0.54
       },
       "geometry": {
         "type": "Point",
@@ -2156,20 +2134,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Les Fagnes",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "official": "Les Fagnes",
           "driver": "Les Fagnes"
         },
-        "complex": "Fagnes-Stavelot",
         "direction": "right",
         "scale": 5,
-        "marker": 0.63,
-        "start": 0.625,
-        "end": 0.64125
+        "marker": 0.63
       },
       "geometry": {
         "type": "Point",
@@ -2183,20 +2159,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Stavelot",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "official": "Stavelot",
           "driver": "Stavelot"
         },
-        "complex": "Fagnes-Stavelot",
         "direction": "left",
         "scale": 5,
-        "marker": 0.65,
-        "start": 0.64125,
-        "end": 0.65642
+        "marker": 0.65
       },
       "geometry": {
         "type": "Point",
@@ -2210,20 +2184,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Paul Frère",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Paul Frère",
           "official": "Paul Frère"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.69,
-        "start": 0.67287,
-        "end": 0.70364
+        "marker": 0.69
       },
       "geometry": {
         "type": "Point",
@@ -2237,20 +2209,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Campus",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Campus",
           "official": "Campus"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.72,
-        "start": 0.70364,
-        "end": 0.73428
+        "marker": 0.72
       },
       "geometry": {
         "type": "Point",
@@ -2264,20 +2234,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Stavelot",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "official": "Stavelot",
           "driver": "Stavelot"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.82,
-        "start": 0.78431,
-        "end": 0.84427
+        "marker": 0.82
       },
       "geometry": {
         "type": "Point",
@@ -2291,19 +2259,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t18",
         "number": 18,
         "code": "18",
         "display": "Blanchimont",
-        "names": {
+        "labels": {
           "numbered": "Turn 18",
           "driver": "Blanchimont"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.86,
-        "start": 0.855,
-        "end": 0.86642
+        "marker": 0.86
       },
       "geometry": {
         "type": "Point",
@@ -2317,20 +2283,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t19",
         "number": 19,
         "code": "19",
         "display": "Bus Stop Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 19",
           "driver": "Bus Stop Chicane",
           "official": "Chicane"
         },
-        "complex": "Bus Stop",
         "direction": "right",
         "scale": 1,
-        "marker": 0.95,
-        "start": 0.91431,
-        "end": 0.95405
+        "marker": 0.95
       },
       "geometry": {
         "type": "Point",
@@ -2344,20 +2308,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t20",
         "number": 20,
         "code": "20",
         "display": "Bus Stop Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 20",
           "official": "Chicane",
           "driver": "Bus Stop Chicane"
         },
-        "complex": "Bus Stop",
         "direction": "left",
         "scale": 1,
-        "marker": 0.96,
-        "start": 0.95405,
-        "end": 0.98427
+        "marker": 0.96
       },
       "geometry": {
         "type": "Point",

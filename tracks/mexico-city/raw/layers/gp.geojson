@@ -1164,6 +1164,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.9533
       },
       "geometry": {
@@ -1178,6 +1179,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.1372
       },
       "geometry": {
@@ -1192,20 +1194,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Esses",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Esses",
           "official": "Esses Moisés Solana"
         },
-        "complex": "Esses",
         "direction": "right",
         "scale": 2,
-        "marker": 0.2839,
-        "start": 0.24208,
-        "end": 0.29461
+        "marker": 0.2839
       },
       "geometry": {
         "type": "Point",
@@ -1219,20 +1219,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Esses",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Esses",
           "official": "Esses Moisés Solana"
         },
-        "complex": "Esses",
         "direction": "left",
         "scale": 3,
-        "marker": 0.3045,
-        "start": 0.29461,
-        "end": 0.30995
+        "marker": 0.3045
       },
       "geometry": {
         "type": "Point",
@@ -1246,20 +1244,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Esses",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Esses",
           "official": "Esses Moisés Solana"
         },
-        "complex": "Esses",
         "direction": "right",
         "scale": 3,
-        "marker": 0.3165,
-        "start": 0.30995,
-        "end": 0.33973
+        "marker": 0.3165
       },
       "geometry": {
         "type": "Point",
@@ -1273,20 +1269,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Ese del Lago",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Ese del Lago",
           "official": "Ese del Lago"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.4804,
-        "start": 0.43858,
-        "end": 0.48728
+        "marker": 0.4804
       },
       "geometry": {
         "type": "Point",
@@ -1300,20 +1294,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Ese del Lago",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Ese del Lago",
           "official": "Ese del Lago"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.4968,
-        "start": 0.48728,
-        "end": 0.50857
+        "marker": 0.4968
       },
       "geometry": {
         "type": "Point",
@@ -1327,20 +1319,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Horquilla",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Horquilla",
           "official": "Horquilla"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.5312,
-        "start": 0.50857,
-        "end": 0.5707
+        "marker": 0.5312
       },
       "geometry": {
         "type": "Point",
@@ -1354,20 +1344,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Esses del Bosque",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Esses del Bosque",
           "official": "Esses del Bosque"
         },
-        "complex": "Esses del Bosque",
         "direction": "left",
         "scale": 3,
-        "marker": 0.6092,
-        "start": 0.58132,
-        "end": 0.62668
+        "marker": 0.6092
       },
       "geometry": {
         "type": "Point",
@@ -1381,20 +1369,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Esses del Bosque",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Esses del Bosque",
           "official": "Esses del Bosque"
         },
-        "complex": "Esses del Bosque",
         "direction": "right",
         "scale": 5,
-        "marker": 0.6328,
-        "start": 0.62668,
-        "end": 0.6416
+        "marker": 0.6328
       },
       "geometry": {
         "type": "Point",
@@ -1408,20 +1394,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Esses del Bosque",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Esses del Bosque",
           "official": "Esses del Bosque"
         },
-        "complex": "Esses del Bosque",
         "direction": "left",
         "scale": 4,
-        "marker": 0.6553,
-        "start": 0.6416,
-        "end": 0.67156
+        "marker": 0.6553
       },
       "geometry": {
         "type": "Point",
@@ -1435,18 +1419,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Turn 10",
-        "names": {
+        "labels": {
           "numbered": "Turn 10"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.6995,
-        "start": 0.69137,
-        "end": 0.70951
+        "marker": 0.6995
       },
       "geometry": {
         "type": "Point",
@@ -1460,18 +1442,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Turn 11",
-        "names": {
+        "labels": {
           "numbered": "Turn 11"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.7173,
-        "start": 0.70951,
-        "end": 0.72776
+        "marker": 0.7173
       },
       "geometry": {
         "type": "Point",
@@ -1485,18 +1465,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Turn 12",
-        "names": {
+        "labels": {
           "numbered": "Turn 12"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.8515,
-        "start": 0.82362,
-        "end": 0.86401
+        "marker": 0.8515
       },
       "geometry": {
         "type": "Point",
@@ -1510,20 +1488,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Foro Sol",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Foro Sol",
           "official": "Foro Sol"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.8953,
-        "start": 0.86401,
-        "end": 0.90064
+        "marker": 0.8953
       },
       "geometry": {
         "type": "Point",
@@ -1537,18 +1513,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Turn 14",
-        "names": {
+        "labels": {
           "numbered": "Turn 14"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.9063,
-        "start": 0.90064,
-        "end": 0.9144
+        "marker": 0.9063
       },
       "geometry": {
         "type": "Point",
@@ -1562,18 +1536,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Turn 15",
-        "names": {
+        "labels": {
           "numbered": "Turn 15"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.9144,
-        "start": 0.9144,
-        "end": 0.9144
+        "marker": 0.9144
       },
       "geometry": {
         "type": "Point",
@@ -1587,18 +1559,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Turn 16",
-        "names": {
+        "labels": {
           "numbered": "Turn 16"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.9359,
-        "start": 0.9144,
-        "end": 0.94543
+        "marker": 0.9359
       },
       "geometry": {
         "type": "Point",
@@ -1612,20 +1582,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Peraltada",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "driver": "Peraltada",
           "official": "Peraltada"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.948,
-        "start": 0.94543,
-        "end": 0.95846
+        "marker": 0.948
       },
       "geometry": {
         "type": "Point",

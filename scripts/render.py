@@ -27,6 +27,15 @@ from lib.config import TRACKS, load_source, track_dir, raw_dir, track_json_path 
 from lib.osm import way_coords, trace_loop, loop_length_m, relation_centerline  # noqa: E402
 from lib.naming import DEFAULT_LAYER  # noqa: E402
 
+
+def point_layer(layout: dict, layer_id: str) -> dict:
+    return next((l for l in layout.get("point_layers", []) if l.get("id") == layer_id), {"items": []})
+
+
+def layout_point(layout: dict, point_id: str) -> dict | None:
+    return next((p for p in point_layer(layout, "layout_points").get("items", []) if p.get("id") == point_id), None)
+
+
 # Ways that aren't part of the main circuit surface we want to draw.
 DROP_WAY = re.compile(
     r"bugatti|prost|c\.?i\.?k|amateur|\bkart\b|karting|\bmoto\b|penalty|"
@@ -99,7 +108,7 @@ def build_svg(slug: str, layout_id: str | None) -> str:
     #      included. This is the real track.
     #   2. Stitched named raceway ways (trace_loop) — ordered by lap fraction.
     #   3. A smooth spline through corner apexes — last-resort fallback.
-    corners = [c for c in layout.get("corners", []) if "location" in c]
+    corners = [c for c in point_layer(layout, "corners").get("items", []) if "location" in c]
     corners_ordered = sorted(corners, key=lambda c: c["number"])
 
     traced = None
@@ -110,7 +119,7 @@ def build_svg(slug: str, layout_id: str | None) -> str:
         except Exception:
             traced = None
     if not traced or len(traced) < 8:
-        traced = trace_loop(osm.get("elements", []), layout.get("corners", []))
+        traced = trace_loop(osm.get("elements", []), corners)
     use_real = traced is not None and len(traced) >= 8
 
     all_lonlat = list(traced) if use_real else []
@@ -191,7 +200,7 @@ def build_svg(slug: str, layout_id: str | None) -> str:
 
     # --- start/finish ---
     sf = None
-    sf_loc = (layout.get("start_finish") or {}).get("location")
+    sf_loc = (layout_point(layout, "start_finish") or {}).get("location")
     if not sf_loc and corners:
         sf_loc = min(corners, key=lambda c: c.get("marker", 1))["location"]
     if sf_loc:
@@ -203,8 +212,8 @@ def build_svg(slug: str, layout_id: str | None) -> str:
 
     # --- corners: dots first, then decluttered radial labels ---
     def resolve(c):
-        n = c.get("names", {})
-        return n.get(layout.get("name_default", DEFAULT_LAYER)) or n.get("numbered")
+        n = c.get("labels", {})
+        return n.get(layout.get("label_default", DEFAULT_LAYER)) or n.get("numbered")
 
     dot_pos = {}
     for c in corners:
@@ -218,24 +227,33 @@ def build_svg(slug: str, layout_id: str | None) -> str:
     # Build label set: one entry per complex (anchored at its mid corner) plus
     # one per *named* solo corner. Unnamed corners (only a "Turn N" fallback)
     # keep their numbered dot but get no text label, to avoid clutter.
-    seen_complex = {}
     labels = []  # dict: dot(x,y), text, side, desired_y
+    corners_by_id = {c["id"]: c for c in corners}
+    complex_member_ids = set()
+    complex_layer = next((l for l in layout.get("range_layers", []) if l.get("id") == "corner_complexes"), {"items": []})
+    for comp in complex_layer.get("items", []):
+        members = [corners_by_id[m] for m in comp.get("members", []) if m in corners_by_id]
+        if not members:
+            continue
+        complex_member_ids.update(c["id"] for c in members)
+        mid = sorted(members, key=lambda c: c["number"])[len(members) // 2]
+        px, py = dot_pos[mid["number"]]
+        text = comp.get("label") or comp.get("id")
+        vx, vy = px - cx, py - cy
+        d = math.hypot(vx, vy) or 1
+        lx = px + vx / d * 52
+        ly = py + vy / d * 52
+        side = "right" if lx >= px else "left"
+        labels.append({"dot": (px, py), "text": text, "side": side,
+                       "lx": lx, "ly": ly})
     for c in corners:
-        comp = c.get("complex")
-        if comp:
-            if comp in seen_complex:
-                continue
-            seen_complex[comp] = True
-            members = [x for x in corners if x.get("complex") == comp]
-            mid = members[len(members) // 2]
-            px, py = dot_pos[mid["number"]]
-            text = comp
-        else:
-            names = c.get("names", {})
-            if not any(k != "numbered" for k in names):
-                continue  # unnamed corner -> dot only, no label
-            px, py = dot_pos[c["number"]]
-            text = resolve(c)
+        if c["id"] in complex_member_ids:
+            continue
+        names = c.get("labels", {})
+        if not any(k != "numbered" for k in names):
+            continue  # unnamed corner -> dot only, no label
+        px, py = dot_pos[c["number"]]
+        text = resolve(c)
         vx, vy = px - cx, py - cy
         d = math.hypot(vx, vy) or 1
         lx = px + vx / d * 52
@@ -292,8 +310,8 @@ def build_svg(slug: str, layout_id: str | None) -> str:
         return f"{m/1000:.3f} km" if m else "—"
 
     direction = layout.get("direction", "—")
-    n_named = sum(1 for c in layout.get("corners", [])
-                  if any(k != "numbered" for k in c.get("names", {})))
+    n_named = sum(1 for c in corners
+                  if any(k != "numbered" for k in c.get("labels", {})))
     countries = {"FR": "France", "GB": "United Kingdom", "DE": "Germany",
                  "IT": "Italy", "BE": "Belgium", "ES": "Spain", "US": "USA",
                  "JP": "Japan", "AU": "Australia", "NL": "Netherlands"}
@@ -303,10 +321,10 @@ def build_svg(slug: str, layout_id: str | None) -> str:
     stats = [
         ("LAYOUT", layout["name"]),
         ("LENGTH", fmt_len(layout.get("length_m"))),
-        ("CORNERS", str(len(layout.get("corners", [])))),
+        ("CORNERS", str(len(corners))),
         ("NAMED CORNERS", str(n_named)),
         ("DIRECTION", direction.capitalize()),
-        ("SECTORS", str(len(layout.get("sectors", [])))),
+        ("SECTORS", str(len(next((l for l in layout.get("range_layers", []) if l.get("id") == "timing_sectors"), {"items": []}).get("items", [])))),
         ("COUNTRY", country),
         ("LOCATION", locality),
     ]
@@ -319,11 +337,7 @@ def build_svg(slug: str, layout_id: str | None) -> str:
         ty += 70
 
     # complexes chips
-    comps = []
-    for c in layout.get("corners", []):
-        cc = c.get("complex")
-        if cc and cc not in comps:
-            comps.append(cc)
+    comps = [c.get("label") or c.get("id") for c in complex_layer.get("items", [])]
     if comps:
         svg.append(f'<text x="{panel_x+28}" y="{ty}" font-size="13" letter-spacing="2" '
                    f'fill="#8794ab">COMPLEXES</text>')

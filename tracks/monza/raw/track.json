@@ -13,7 +13,7 @@
     "region": "Lombardy",
     "timezone": "Europe/Rome"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -32,261 +32,411 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "First Chicane",
-            "official": "Variante del Rettifilo"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.16,
-          "start": 0.12893,
-          "end": 0.16419,
-          "location": [
-            9.282329,
-            45.62477
-          ],
-          "complex": "Variante del Rettifilo"
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                9.280904,
+                45.617117
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.98,
+              "location": [
+                9.280759,
+                45.616112
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.05,
+              "location": [
+                9.281286,
+                45.619629
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "official": "Variante del Rettifilo",
-            "driver": "First Chicane"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.17,
-          "start": 0.16419,
-          "end": 0.19244,
-          "complex": "Variante del Rettifilo",
-          "location": [
-            9.282253,
-            45.625286
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Curva Grande",
-            "official": "Curva Grande"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.24,
-          "start": 0.23396,
-          "end": 0.24777,
-          "location": [
-            9.282901,
-            45.62865
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Roggia",
-            "official": "Variante della Roggia"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.37,
-          "start": 0.33893,
-          "end": 0.37419,
-          "location": [
-            9.291518,
-            45.630359
-          ],
-          "complex": "Variante della Roggia"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "official": "Variante della Roggia",
-            "driver": "Roggia"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.38,
-          "start": 0.37419,
-          "end": 0.40244,
-          "complex": "Variante della Roggia",
-          "location": [
-            9.292024,
-            45.630606
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Lesmo 1",
-            "official": "Lesmo 1"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.44,
-          "start": 0.41929,
-          "end": 0.45726,
-          "location": [
-            9.296477,
-            45.630996
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "official": "Lesmo 2",
-            "driver": "Lesmo 2"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.49,
-          "start": 0.46929,
-          "end": 0.50726,
-          "location": [
-            9.296548,
-            45.628299
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Ascari",
-            "official": "Variante Ascari"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.68,
-          "start": 0.65929,
-          "end": 0.68455,
-          "location": [
-            9.285489,
-            45.621517
-          ],
-          "complex": "Variante Ascari"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "official": "Variante Ascari",
-            "driver": "Ascari"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.69,
-          "start": 0.68455,
-          "end": 0.69909,
-          "complex": "Variante Ascari",
-          "location": [
-            9.285035,
-            45.621116
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "official": "Variante Ascari",
-            "driver": "Ascari"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.71,
-          "start": 0.69909,
-          "end": 0.72726,
-          "complex": "Variante Ascari",
-          "location": [
-            9.284845,
-            45.620115
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Parabolica",
-            "official": "Curva Parabolica"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.9,
-          "start": 0.87929,
-          "end": 0.91726,
-          "location": [
-            9.281536,
-            45.612218
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "First Chicane",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "First Chicane",
+                "official": "Variante del Rettifilo"
+              },
+              "marker": 0.16,
+              "location": [
+                9.282329,
+                45.62477
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "First Chicane",
+              "labels": {
+                "numbered": "Turn 2",
+                "official": "Variante del Rettifilo",
+                "driver": "First Chicane"
+              },
+              "marker": 0.17,
+              "location": [
+                9.282253,
+                45.625286
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Curva Grande",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Curva Grande",
+                "official": "Curva Grande"
+              },
+              "marker": 0.24,
+              "location": [
+                9.282901,
+                45.62865
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Roggia",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Roggia",
+                "official": "Variante della Roggia"
+              },
+              "marker": 0.37,
+              "location": [
+                9.291518,
+                45.630359
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Roggia",
+              "labels": {
+                "numbered": "Turn 5",
+                "official": "Variante della Roggia",
+                "driver": "Roggia"
+              },
+              "marker": 0.38,
+              "location": [
+                9.292024,
+                45.630606
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Lesmo 1",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Lesmo 1",
+                "official": "Lesmo 1"
+              },
+              "marker": 0.44,
+              "location": [
+                9.296477,
+                45.630996
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Lesmo 2",
+              "labels": {
+                "numbered": "Turn 7",
+                "official": "Lesmo 2",
+                "driver": "Lesmo 2"
+              },
+              "marker": 0.49,
+              "location": [
+                9.296548,
+                45.628299
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Ascari",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Ascari",
+                "official": "Variante Ascari"
+              },
+              "marker": 0.68,
+              "location": [
+                9.285489,
+                45.621517
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Ascari",
+              "labels": {
+                "numbered": "Turn 9",
+                "official": "Variante Ascari",
+                "driver": "Ascari"
+              },
+              "marker": 0.69,
+              "location": [
+                9.285035,
+                45.621116
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Ascari",
+              "labels": {
+                "numbered": "Turn 10",
+                "official": "Variante Ascari",
+                "driver": "Ascari"
+              },
+              "marker": 0.71,
+              "location": [
+                9.284845,
+                45.620115
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Parabolica",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Parabolica",
+                "official": "Curva Parabolica"
+              },
+              "marker": 0.9,
+              "location": [
+                9.281536,
+                45.612218
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            }
+          ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Main Straight",
-          "start": 0.96,
-          "end": 0.15
-        }
-      ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.35
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.35
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.35,
+              "end": 0.65
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.65,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.35,
-          "end": 0.65
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "First Chicane",
+              "start": 0.12893,
+              "end": 0.16419,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "First Chicane",
+              "start": 0.16419,
+              "end": 0.19244,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Curva Grande",
+              "start": 0.23396,
+              "end": 0.24777,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Roggia",
+              "start": 0.33893,
+              "end": 0.37419,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Roggia",
+              "start": 0.37419,
+              "end": 0.40244,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Lesmo 1",
+              "start": 0.41929,
+              "end": 0.45726,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Lesmo 2",
+              "start": 0.46929,
+              "end": 0.50726,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Ascari",
+              "start": 0.65929,
+              "end": 0.68455,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Ascari",
+              "start": 0.68455,
+              "end": 0.69909,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Ascari",
+              "start": 0.69909,
+              "end": 0.72726,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Parabolica",
+              "start": 0.87929,
+              "end": 0.91726,
+              "anchor": "t11"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.65,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "variantedelrettifilo",
+              "label": "Variante del Rettifilo",
+              "start": 0.12893,
+              "end": 0.19244,
+              "members": [
+                "t1",
+                "t2"
+              ]
+            },
+            {
+              "id": "variantedellaroggia",
+              "label": "Variante della Roggia",
+              "start": 0.33893,
+              "end": 0.40244,
+              "members": [
+                "t4",
+                "t5"
+              ]
+            },
+            {
+              "id": "varianteascari",
+              "label": "Variante Ascari",
+              "start": 0.65929,
+              "end": 0.72726,
+              "members": [
+                "t8",
+                "t9",
+                "t10"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.98,
-        "exit": 0.05
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          9.280904,
-          45.617117
-        ]
-      },
       "length_m": 5793,
       "direction": "clockwise"
     }
@@ -300,7 +450,7 @@
     "imsa_data": "monza"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:36.902171+00:00",
+    "generated_at": "2026-06-29T15:41:58.230119+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

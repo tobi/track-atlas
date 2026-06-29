@@ -12,7 +12,7 @@
     "region": "Mie",
     "timezone": "Asia/Tokyo"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,389 +31,602 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "official": "First Corner",
-            "driver": "First Corner"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.1193,
-          "start": 0.09864,
-          "end": 0.13489,
-          "location": [
-            136.528819,
-            34.844493
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "official": "Second Corner",
-            "driver": "Second Corner"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.1458,
-          "start": 0.13489,
-          "end": 0.15785,
-          "location": [
-            136.530409,
-            34.844033
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "S Curves",
-            "official": "S Curves"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.1928,
-          "start": 0.17214,
-          "end": 0.20121,
-          "complex": "S Curves",
-          "location": [
-            136.533096,
-            34.844666
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "S Curves",
-            "official": "S Curves"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.2113,
-          "start": 0.20121,
-          "end": 0.22325,
-          "complex": "S Curves",
-          "location": [
-            136.533959,
-            34.845323
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "S Curves",
-            "official": "S Curves"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.2376,
-          "start": 0.22325,
-          "end": 0.2556,
-          "complex": "S Curves",
-          "location": [
-            136.535284,
-            34.845674
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "S Curves",
-            "official": "S Curves"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.2682,
-          "start": 0.2556,
-          "end": 0.28025,
-          "complex": "S Curves",
-          "location": [
-            136.537063,
-            34.846031
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Dunlop",
-            "official": "Dunlop Curve"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.303,
-          "start": 0.29095,
-          "end": 0.31505,
-          "location": [
-            136.538738,
-            34.844889
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Degner 1",
-            "official": "Degner Curve 1"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.396,
-          "start": 0.37534,
-          "end": 0.40604,
-          "complex": "Degner",
-          "location": [
-            136.542494,
-            34.841136
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Degner 2",
-            "official": "Degner Curve 2"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.4241,
-          "start": 0.40604,
-          "end": 0.44649,
-          "complex": "Degner",
-          "location": [
-            136.543416,
-            34.839914
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.4809,
-          "start": 0.46885,
-          "end": 0.486,
-          "location": [
-            136.541321,
-            34.840169
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Hairpin",
-            "official": "Hairpin"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.5042,
-          "start": 0.486,
-          "end": 0.53348,
-          "location": [
-            136.540113,
-            34.840709
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.5487,
-          "start": 0.54267,
-          "end": 0.55645,
-          "location": [
-            136.538387,
-            34.842298
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "driver": "Spoon",
-            "official": "Spoon Curve"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.6574,
-          "start": 0.63674,
-          "end": 0.67045,
-          "complex": "Spoon",
-          "location": [
-            136.534271,
-            34.844747
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "driver": "Spoon",
-            "official": "Spoon Curve"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.6861,
-          "start": 0.67045,
-          "end": 0.70332,
-          "complex": "Spoon",
-          "location": [
-            136.533013,
-            34.843673
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "130R",
-            "official": "130R"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.8577,
-          "start": 0.85167,
-          "end": 0.86545,
-          "location": [
-            136.531843,
-            34.844088
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                136.522133,
+                34.8473
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.9619,
+              "location": [
+                136.523336,
+                34.848363
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.1064,
+              "location": [
+                136.528045,
+                34.844718
+              ]
+            }
           ]
         },
         {
-          "number": 16,
-          "code": "16",
-          "names": {
-            "numbered": "Turn 16",
-            "driver": "Casio Triangle",
-            "official": "Casio Triangle"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.9301,
-          "start": 0.8991,
-          "end": 0.93383,
-          "complex": "Casio Triangle",
-          "location": [
-            136.524368,
-            34.847006
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 17,
-          "code": "17",
-          "names": {
-            "numbered": "Turn 17",
-            "driver": "Casio Triangle",
-            "official": "Casio Triangle"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.939,
-          "start": 0.93383,
-          "end": 0.94638,
-          "complex": "Casio Triangle",
-          "location": [
-            136.524145,
-            34.847433
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 18,
-          "code": "18",
-          "names": {
-            "numbered": "Turn 18",
-            "driver": "Chicane",
-            "official": "Chicane"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.9532,
-          "start": 0.94638,
-          "end": 0.97042,
-          "location": [
-            136.523777,
-            34.84811
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "First Corner",
+              "labels": {
+                "numbered": "Turn 1",
+                "official": "First Corner",
+                "driver": "First Corner"
+              },
+              "marker": 0.1193,
+              "location": [
+                136.528819,
+                34.844493
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Second Corner",
+              "labels": {
+                "numbered": "Turn 2",
+                "official": "Second Corner",
+                "driver": "Second Corner"
+              },
+              "marker": 0.1458,
+              "location": [
+                136.530409,
+                34.844033
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "S Curves",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "S Curves",
+                "official": "S Curves"
+              },
+              "marker": 0.1928,
+              "location": [
+                136.533096,
+                34.844666
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "S Curves",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "S Curves",
+                "official": "S Curves"
+              },
+              "marker": 0.2113,
+              "location": [
+                136.533959,
+                34.845323
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "S Curves",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "S Curves",
+                "official": "S Curves"
+              },
+              "marker": 0.2376,
+              "location": [
+                136.535284,
+                34.845674
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "S Curves",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "S Curves",
+                "official": "S Curves"
+              },
+              "marker": 0.2682,
+              "location": [
+                136.537063,
+                34.846031
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Dunlop",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Dunlop",
+                "official": "Dunlop Curve"
+              },
+              "marker": 0.303,
+              "location": [
+                136.538738,
+                34.844889
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Degner 1",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Degner 1",
+                "official": "Degner Curve 1"
+              },
+              "marker": 0.396,
+              "location": [
+                136.542494,
+                34.841136
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Degner 2",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Degner 2",
+                "official": "Degner Curve 2"
+              },
+              "marker": 0.4241,
+              "location": [
+                136.543416,
+                34.839914
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Turn 10",
+              "labels": {
+                "numbered": "Turn 10"
+              },
+              "marker": 0.4809,
+              "location": [
+                136.541321,
+                34.840169
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Hairpin",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Hairpin",
+                "official": "Hairpin"
+              },
+              "marker": 0.5042,
+              "location": [
+                136.540113,
+                34.840709
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 1
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Turn 12",
+              "labels": {
+                "numbered": "Turn 12"
+              },
+              "marker": 0.5487,
+              "location": [
+                136.538387,
+                34.842298
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Spoon",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "Spoon",
+                "official": "Spoon Curve"
+              },
+              "marker": 0.6574,
+              "location": [
+                136.534271,
+                34.844747
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Spoon",
+              "labels": {
+                "numbered": "Turn 14",
+                "driver": "Spoon",
+                "official": "Spoon Curve"
+              },
+              "marker": 0.6861,
+              "location": [
+                136.533013,
+                34.843673
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "130R",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "130R",
+                "official": "130R"
+              },
+              "marker": 0.8577,
+              "location": [
+                136.531843,
+                34.844088
+              ],
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t16",
+              "number": 16,
+              "code": "16",
+              "label": "Casio Triangle",
+              "labels": {
+                "numbered": "Turn 16",
+                "driver": "Casio Triangle",
+                "official": "Casio Triangle"
+              },
+              "marker": 0.9301,
+              "location": [
+                136.524368,
+                34.847006
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t17",
+              "number": 17,
+              "code": "17",
+              "label": "Casio Triangle",
+              "labels": {
+                "numbered": "Turn 17",
+                "driver": "Casio Triangle",
+                "official": "Casio Triangle"
+              },
+              "marker": 0.939,
+              "location": [
+                136.524145,
+                34.847433
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t18",
+              "number": 18,
+              "code": "18",
+              "label": "Chicane",
+              "labels": {
+                "numbered": "Turn 18",
+                "driver": "Chicane",
+                "official": "Chicane"
+              },
+              "marker": 0.9532,
+              "location": [
+                136.523777,
+                34.84811
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            }
+          ]
         }
       ],
-      "straights": [],
-      "sectors": [
+      "range_layers": [
         {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.3821
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.3821
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.3821,
+              "end": 0.8173
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.8173,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.3821,
-          "end": 0.8173
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "First Corner",
+              "start": 0.09864,
+              "end": 0.13489,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Second Corner",
+              "start": 0.13489,
+              "end": 0.15785,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "S Curves",
+              "start": 0.17214,
+              "end": 0.20121,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "S Curves",
+              "start": 0.20121,
+              "end": 0.22325,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "S Curves",
+              "start": 0.22325,
+              "end": 0.2556,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "S Curves",
+              "start": 0.2556,
+              "end": 0.28025,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Dunlop",
+              "start": 0.29095,
+              "end": 0.31505,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Degner 1",
+              "start": 0.37534,
+              "end": 0.40604,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Degner 2",
+              "start": 0.40604,
+              "end": 0.44649,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Turn 10",
+              "start": 0.46885,
+              "end": 0.486,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Hairpin",
+              "start": 0.486,
+              "end": 0.53348,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.54267,
+              "end": 0.55645,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Spoon",
+              "start": 0.63674,
+              "end": 0.67045,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Spoon",
+              "start": 0.67045,
+              "end": 0.70332,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "130R",
+              "start": 0.85167,
+              "end": 0.86545,
+              "anchor": "t15"
+            },
+            {
+              "id": "t16",
+              "label": "Casio Triangle",
+              "start": 0.8991,
+              "end": 0.93383,
+              "anchor": "t16"
+            },
+            {
+              "id": "t17",
+              "label": "Casio Triangle",
+              "start": 0.93383,
+              "end": 0.94638,
+              "anchor": "t17"
+            },
+            {
+              "id": "t18",
+              "label": "Chicane",
+              "start": 0.94638,
+              "end": 0.97042,
+              "anchor": "t18"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.8173,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "curves",
+              "label": "S Curves",
+              "start": 0.17214,
+              "end": 0.28025,
+              "members": [
+                "t3",
+                "t4",
+                "t5",
+                "t6"
+              ]
+            },
+            {
+              "id": "degner",
+              "label": "Degner",
+              "start": 0.37534,
+              "end": 0.44649,
+              "members": [
+                "t8",
+                "t9"
+              ]
+            },
+            {
+              "id": "spoon",
+              "label": "Spoon",
+              "start": 0.63674,
+              "end": 0.70332,
+              "members": [
+                "t13",
+                "t14"
+              ]
+            },
+            {
+              "id": "casiotriangle",
+              "label": "Casio Triangle",
+              "start": 0.8991,
+              "end": 0.94638,
+              "members": [
+                "t16",
+                "t17"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.9619,
-        "exit": 0.1064
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          136.522133,
-          34.8473
-        ]
-      },
       "length_m": 5807,
       "direction": "clockwise"
     }
@@ -422,7 +635,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-15T20:11:59.545189+00:00",
+    "generated_at": "2026-06-29T15:42:07.236355+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

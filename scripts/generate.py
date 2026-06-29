@@ -53,13 +53,12 @@ def _osm_corner_index(osm: dict) -> dict:
     return idx
 
 
-def resolve_name(corner: dict, default_layer: str) -> str:
-    return _resolve(corner["names"], default_layer)
+def resolve_label(item: dict, default_layer: str) -> str:
+    return _resolve(item["labels"], default_layer)
 
 
 def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
-                   default_layer: str = DEFAULT_LAYER, start_finish=None,
-                   pit_points=None) -> dict:
+                   default_layer: str = DEFAULT_LAYER, layout_points=None) -> dict:
     feats = []
     if outline_coords:
         feats.append({
@@ -67,17 +66,13 @@ def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
             "properties": {"role": "outline", "layout": layout_id},
             "geometry": {"type": "LineString", "coordinates": outline_coords},
         })
-    if start_finish:
+    for p in (layout_points or []):
+        if "location" not in p:
+            continue
         feats.append({
             "type": "Feature",
-            "properties": {"role": "start_finish", "name": "Start / Finish",
-                           "marker": start_finish.get("marker", 0.0)},
-            "geometry": {"type": "Point", "coordinates": start_finish["location"]},
-        })
-    for role, p in (pit_points or {}).items():
-        feats.append({
-            "type": "Feature",
-            "properties": {"role": role, "marker": p.get("marker")},
+            "properties": {"role": p["id"], "name": p.get("label"),
+                           "marker": p.get("marker")},
             "geometry": {"type": "Point", "coordinates": p["location"]},
         })
     for c in corners:
@@ -87,16 +82,14 @@ def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
             "type": "Feature",
             "properties": {
                 "role": "corner",
+                "id": c["id"],
                 "number": c["number"],
                 "code": c.get("code", str(c["number"])),
-                "display": resolve_name(c, default_layer),
-                "names": c["names"],
-                "complex": c.get("complex"),
+                "display": resolve_label(c, default_layer),
+                "labels": c["labels"],
                 "direction": c.get("direction"),
                 "scale": c.get("scale"),
                 "marker": c.get("marker"),
-                "start": c.get("start"),
-                "end": c.get("end"),
             },
             "geometry": {"type": "Point", "coordinates": c["location"]},
         })
@@ -108,7 +101,7 @@ def generate_track(slug: str) -> dict:
     tdir = track_dir(slug)
     raw = tdir / "raw"
     # All generated files live under raw/ (downloads + derived). track.json's
-    # geometry.outline paths are relative to track.json's own dir (raw/).
+    # geometry.centerline paths are relative to track.json's own dir (raw/).
     (raw / "layers").mkdir(parents=True, exist_ok=True)
 
     osm = json.loads((raw / "osm.json").read_text()) if (raw / "osm.json").exists() else {}
@@ -120,7 +113,7 @@ def generate_track(slug: str) -> dict:
         "aka": src.get("aka", []),
         "country": src.get("country"),
         "location": src["location"],
-        "name_layers": {},   # filled after layouts, from the layers actually used
+        "label_layers": {},   # filled after layouts, from the layers actually used
         "layouts": [],
     }
     name_layer_codes = set()
@@ -353,33 +346,115 @@ def generate_track(slug: str) -> dict:
         for c in corners:
             populated.update(c["names"].keys())
         name_layer_codes.update(populated)
-        preferred = layout.get("name_default") or src.get("name_default") or DEFAULT_LAYER
+        preferred = layout.get("label_default") or src.get("label_default") or DEFAULT_LAYER
         default_layer = preferred if preferred in populated else next(
             (l for l in (DEFAULT_LAYER, "official", "numbered") if l in populated),
             "numbered")
-        gj = _layer_geojson(lid, corners, outline_coords or None, default_layer,
-                            start_finish=sf_point, pit_points=pit_points)
+
+        corner_points = []
+        for c in sorted(corners, key=lambda x: x["number"]):
+            item = {
+                "id": f"t{c['number']}",
+                "number": c["number"],
+                "code": c.get("code", str(c["number"])),
+                "label": _resolve(c["names"], default_layer),
+                "labels": c["names"],
+            }
+            for k in ("marker", "location", "location_source", "direction", "scale"):
+                if k in c and c[k] is not None:
+                    item[k] = c[k]
+            corner_points.append(item)
+
+        layout_points = []
+        if sf_point:
+            layout_points.append({"id": "start_finish", "label": "Start / Finish", **sf_point})
+        for role in ("pit_entry", "pit_exit"):
+            if role in pit_points:
+                layout_points.append({"id": role, "label": role.replace("_", " ").title(), **pit_points[role]})
+
+        point_layers = []
+        if layout_points:
+            point_layers.append({"id": "layout_points", "kind": "layout_points", "label": "Layout Points", "items": layout_points})
+        point_layers.append({"id": "corners", "kind": "corners", "label": "Corners", "items": corner_points})
+
+        range_layers = []
+        sectors = sectors_s1s3(lovely)
+        if sectors:
+            range_layers.append({
+                "id": "timing_sectors", "kind": "timing_sectors", "label": "Timing Sectors", "coverage": "partition",
+                "items": [{"id": s["name"].lower(), "label": s["name"], "start": s["start"], "end": s["end"]} for s in sectors],
+            })
+        corner_ranges = []
+        for c in sorted(corners, key=lambda x: x["number"]):
+            if c.get("start") is not None and c.get("end") is not None and c["start"] < c["end"]:
+                corner_ranges.append({
+                    "id": f"t{c['number']}", "label": _resolve(c["names"], default_layer),
+                    "start": c["start"], "end": c["end"], "anchor": f"t{c['number']}",
+                })
+        if corner_ranges:
+            range_layers.append({"id": "corner_ranges", "kind": "corner_ranges", "label": "Corners", "generated": True, "items": corner_ranges})
+
+        complexes = []
+        seen_complexes = []
+        for c in sorted(corners, key=lambda x: x["number"]):
+            comp = c.get("complex")
+            if comp and comp not in seen_complexes:
+                seen_complexes.append(comp)
+                members = [x for x in corners if x.get("complex") == comp]
+                starts = [x.get("start", x.get("marker")) for x in members if x.get("start", x.get("marker")) is not None]
+                ends = [x.get("end", x.get("marker")) for x in members if x.get("end", x.get("marker")) is not None]
+                if starts and ends and min(starts) < max(ends):
+                    complexes.append({
+                        "id": normalize(comp) or f"complex-{len(complexes) + 1}", "label": comp,
+                        "start": min(starts), "end": max(ends),
+                        "members": [f"t{x['number']}" for x in sorted(members, key=lambda y: y["number"])],
+                    })
+        if complexes:
+            range_layers.append({"id": "corner_complexes", "kind": "corner_complexes", "label": "Corner Complexes", "items": complexes})
+
+        straights = [s for s in straights_from_lovely(lovely) if s.get("start") is not None and s.get("end") is not None and s["start"] < s["end"]]
+        if straights:
+            straight_items = []
+            used_ids = set()
+            for i, s in enumerate(straights):
+                base = normalize(s["name"]) or f"straight-{i+1}"
+                sid = base
+                n = 2
+                while sid in used_ids:
+                    sid = f"{base}-{n}"
+                    n += 1
+                used_ids.add(sid)
+                straight_items.append({"id": sid, "label": s["name"], "start": s["start"], "end": s["end"]})
+            range_layers.append({
+                "id": "straights", "kind": "straights", "label": "Straights",
+                "items": straight_items,
+            })
+        slow_zones = layout.get("slow_zones", [])
+        if slow_zones:
+            range_layers.append({
+                "id": "slow_zones", "kind": "slow_zones", "label": "Slow Zones",
+                "items": [{"id": z["id"], "label": z.get("name"), "start": z["start"], "end": z["end"]} for z in slow_zones],
+            })
+
+        gj = _layer_geojson(lid, corner_points, outline_coords or None, default_layer,
+                            layout_points=layout_points)
         (raw / outline_path).write_text(json.dumps(gj, ensure_ascii=False, indent=2))
 
         lo = {
             "id": lid,
             "name": layout["name"],
             "aka": layout.get("aka", []),
-            "name_default": default_layer,
-            "geometry": {"outline": outline_path, "crs": "EPSG:4326"},
-            "corners": corners,
-            "straights": straights_from_lovely(lovely),
-            "sectors": sectors_s1s3(lovely),
-            "pit": pit,
+            "label_default": default_layer,
+            "geometry": {"centerline": outline_path, "crs": "EPSG:4326"},
+            "point_layers": point_layers,
+            "range_layers": range_layers,
         }
-        if sf_point:
-            lo["start_finish"] = sf_point
-        for k in ("length_m", "direction", "active_years", "series", "slow_zones"):
+        for k in ("length_m", "direction", "active_years", "series"):
             if k in layout:
                 lo[k] = layout[k]
         track["layouts"].append(lo)
 
-    track["name_layers"] = build_registry(name_layer_codes)
+    track["label_layers"] = build_registry(name_layer_codes)
 
     track["provenance"] = {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -395,6 +470,11 @@ def generate_track(slug: str) -> dict:
     }
 
     (raw / "track.json").write_text(json.dumps(track, ensure_ascii=False, indent=2))
+    # Optional per-track layer configs can fetch/parse external timing maps and
+    # merge additional point/range layers. The runner resolves every URL/file to
+    # local raw/layer-sources before invoking a pure converter tool.
+    from lib.layer_runner import run_layer_configs
+    track = run_layer_configs(slug, write=True)
     print(f"[{slug}] raw/track.json written -- corners matched to OSM geometry: "
           f"{matched_total}/{corner_total}")
     return track

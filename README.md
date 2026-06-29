@@ -1,9 +1,10 @@
 # track-atlas
 
-Clean, source-agnostic metadata for racing circuits: corner names in layers
-(numbered / official / driver + any others), corner coordinates, start/finish + pit markers, sector
-splits, a real-geometry GeoJSON layer per layout, and a generated poster per
-track.
+Clean, source-agnostic metadata for racing circuits: facilities with one or
+more layouts, layout-owned point layers (corners, start/finish, pit markers,
+marshal posts), layout-owned range layers (timing sectors, IMSA microsectors,
+corner ranges, complexes, slow zones, straights), real-geometry GeoJSON per
+layout, and a generated poster per track.
 
 The goal is the dataset that doesn't exist yet: **one place where a corner has
 both its official name *and* what drivers actually call it, pinned to a real
@@ -18,7 +19,7 @@ Stream it, `grep` it, or load it in one line:
 
 ```bash
 # every corner drivers actually have a name for, across all tracks
-jq -r '.layouts[].corners[] | select(.names.driver) | "\(.names.driver)"' tracks.jsonl | sort -u
+jq -r '.layouts[].point_layers[] | select(.id=="corners") | .items[] | select(.labels.driver) | "\(.labels.driver)"' tracks.jsonl | sort -u
 ```
 ```python
 import json
@@ -26,13 +27,13 @@ tracks = [json.loads(l) for l in open("tracks.jsonl")]
 ```
 
 One line, pretty-printed (Sebring, trimmed) — note the two series-specific
-layouts, the parallel name layers, and the per-corner braking phase:
+layouts, label layers, point layers, and range layers:
 
 ```jsonc
 {
   "slug": "sebring", "name": "Sebring International Raceway",
   "country": "US", "series": ["imsa", "wec"],
-  "name_layers": {                       // the naming layers this track declares
+  "label_layers": {
     "numbered": {"label": "Numbered"},
     "official": {"label": "Official"},
     "driver":   {"label": "Driver"}
@@ -41,20 +42,29 @@ layouts, the parallel name layers, and the per-corner braking phase:
     {
       "id": "imsa", "name": "International Circuit", "series": ["imsa"],
       "length_m": 5954, "direction": "clockwise",
-      "pit": {"entry": 0.705, "exit": 0.835},   // IMSA pit differs from WEC
-      "geometry": {"outline": "layers/imsa.geojson"},
-      "name_default": "driver",
-      "corners": [
-        { "number": 17, "code": "17",
-          "names": {"numbered": "Turn 17", "official": "Sunset Bend"},
-          "direction": "right", "scale": 4,     // 4 = Fast
-          "marker": 0.93,                        // apex, lap fraction
-          "start": 0.91824, "end": 0.94176,      // braking-zone start -> exit
-          "location": [-81.35709, 27.449443] }
-        // … 16 more corners
+      "geometry": {"centerline": "layers/imsa.geojson"},
+      "label_default": "driver",
+      "point_layers": [
+        {"id": "layout_points", "kind": "layout_points", "label": "Layout Points",
+         "items": [
+           {"id": "start_finish", "label": "Start / Finish", "marker": 0.0, "location": [-81.35, 27.45]},
+           {"id": "pit_entry", "label": "Pit Entry", "marker": 0.705},
+           {"id": "pit_exit", "label": "Pit Exit", "marker": 0.835}
+         ]},
+        {"id": "corners", "kind": "corners", "label": "Corners",
+         "items": [
+           {"id": "t17", "number": 17, "code": "17",
+            "labels": {"numbered": "Turn 17", "official": "Sunset Bend"},
+            "direction": "right", "scale": 4,
+            "marker": 0.93, "location": [-81.35709, 27.449443]}
+         ]}
+      ],
+      "range_layers": [
+        {"id": "timing_sectors", "kind": "timing_sectors", "coverage": "partition", "items": [/* S1/S2/S3 */]},
+        {"id": "corner_ranges", "kind": "corner_ranges", "generated": true,
+         "items": [{"id": "t17", "anchor": "t17", "start": 0.91824, "end": 0.94176}]}
       ]
     }
-    // … the "wec" layout
   ]
 }
 ```
@@ -92,7 +102,8 @@ track-atlas/
 └── tracks/
     ├── index.json               # GENERATED: the catalog the site reads
     └── <slug>/
-        ├── source.json          # INPUT: declares where this track's data comes from
+        ├── source.json          # INPUT: declares where this track's base data comes from
+        ├── generation-config.json # INPUT (optional): URLs/files + layer tools for generated range/point layers
         ├── overrides.json       # INPUT: curated names/fixes (hand- or LLM-authored)
         ├── README.md            # INPUT: state of this track's data (embeds the poster)
         ├── scripts/             # INPUT (optional): per-track import.py / generate.py
@@ -116,6 +127,7 @@ flow:
 ```
 source.json ──import.py──> raw/{osm,lovely}.json ──generate.py──> raw/track.json + raw/layers/*.geojson
 overrides.json ──────────────────────────────────────────┘            │   (corner phases computed in)
+generation-config.json ──build_layers.py / layer_tools───────────────┘   (optional timing/microsector/slow-zone layers)
                                        render.py        ──> raw/render/<slug>.{svg,png}
                                        build_index.py   ──> tracks/index.json
                                        build_jsonl.py   ──> tracks.jsonl   (the dataset)
@@ -139,7 +151,7 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `wikidata` | string | | Wikidata QID (`"Q270760"`) |
 | `series` | string[] | | Series that race here, lowercase codes (`["wec","elms"]`) |
 | `external_ids` | object | | Crosswalk to other datasets (`{"imsa_data": "le-mans"}`) |
-| `name_layers` | object | ✓ | Registry of corner-name layers `{code: {label, description?}}`. `numbered` + `official` mandatory; `driver` is the usual default. Clients enumerate these to offer a layer to display |
+| `label_layers` | object | ✓ | Registry of label/name layers `{code: {label, description?}}`. `numbered` + `official` mandatory; `driver` is the usual default. Clients enumerate these to offer a label layer to display |
 | `layouts` | layout[] | ✓ | One entry per configuration (GP / 24h / national / moto…) |
 | `provenance` | object | | `generated_at`, `sources[]` (name/url/license/provides), `corner_match` |
 
@@ -154,17 +166,12 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `length_m` | number | | Official lap length in metres |
 | `direction` | enum | | `clockwise` \| `anticlockwise` |
 | `active_years` | string | | Free-form (`"2018-"`, `"1972,1979-1989"`) |
-| `geometry` | object | ✓ | `{outline: "layers/<id>.geojson", crs: "EPSG:4326"}` |
-| `pit` | object | | `{entry, exit}` lap fractions. In `source.json` a layout may set this to override the Lovely-derived pit — used by series variants that share geometry but differ in pit in/out |
-| `start_finish` | point_ref | | `{marker: 0.0, location: [lon,lat]}` — the timing line. Lap fractions throughout the dataset are measured from here |
-| `name_default` | string | | Layer code (a key in `name_layers`) shown by default (usually `driver`). Resolution is two steps: `names[name_default]` if present, else `names.numbered` — no fall-through to other layers |
-| `corners` | corner[] | | Ordered corner list (see below) |
-| `straights` | straight[] | | `{name, aka?, start?, end?}` as lap fractions |
-| `sectors` | object[] | | Always the three timing sectors: `{name: "S1"\|"S2"\|"S3", start, end}` as lap fractions, contiguous 0→1 |
-| `slow_zones` | object[] | | Endurance slow zones (zones lentes): `{id, name?, start, end}` lap-fraction segments the organisers can speed-limit. Curated (e.g. Le Mans). |
-| `pit` | object | | `{entry, exit}` lap fractions of pit entry/exit |
-| `marshal_posts` | point_ref[] | | optional |
-| `access_points` | point_ref[] | | optional |
+| `geometry` | object | ✓ | `{centerline: "layers/<id>.geojson", crs: "EPSG:4326"}` |
+| `point_layers` | point_layer[] | | Discrete layout annotations. Required conventional layers: `layout_points` for start/finish + pit in/out when known, and `corners` for corner apexes. |
+| `range_layers` | range_layer[] | | Lap interval annotations: `timing_sectors`, `imsa_microsectors`, `corner_ranges`, `corner_complexes`, `slow_zones`, `straights`, etc. |
+| `label_default` | string | | Label layer code (a key in `label_layers`) shown by default (usually `driver`). Resolution is two steps: `labels[label_default]` if present, else `labels.numbered` — no fall-through to other layers |
+| `point_layers[].items` | point_item[] | | Each item has `id`, optional `label`, `marker`, `location`, and optional corner fields (`number`, `code`, `labels`, `direction`, `scale`). |
+| `range_layers[].items` | range_item[] | | Each item has `id`, optional `label`, `start`, `end`, and optional `anchor` / `members` references to point item ids. |
 
 ### Corner
 
@@ -173,10 +180,10 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `number` | int | ✓ | Sequential 1..N around the lap, no gaps — the ordering key |
 | `code` | string | ✓ | Trackside identifier; usually `str(number)`, but split apexes use `"5a"`/`"5b"`. The `numbered` layer is `"Turn <code>"` |
 | `names` | object | ✓ | Name layers keyed by layer code — see below. `numbered` always present |
-| `names.numbered` | string | ✓ | The `"Turn <code>"` identifier, always present (covers unnamed corners) |
-| `names.official` | string | | Circuit/governing-body name (`"Virage du Tertre Rouge"`) |
-| `names.driver` | string | | What drivers say (`"Tertre Rouge"`); defaults to `official` when no distinct nickname is known |
-| `names.<other>` | string | | Any further layer declared in `name_layers` (`historical`, `sponsor`, …) |
+| `labels.numbered` | string | ✓ | The `"Turn <code>"` identifier, always present on corner points (covers unnamed corners) |
+| `labels.official` | string | | Circuit/governing-body name (`"Virage du Tertre Rouge"`) |
+| `labels.driver` | string | | What drivers say (`"Tertre Rouge"`); defaults to `official` when no distinct nickname is known |
+| `labels.<other>` | string | | Any further layer declared in `label_layers` (`historical`, `sponsor`, …) |
 | `complex` | string | | Multi-corner section this turn belongs to (`"Porsche Curves"`). Members must be one gap-free consecutive run. Only for sections drivers say as one word — adjacent-but-distinct corners are NOT a complex |
 | `direction` | enum | | `left` \| `right` |
 | `scale` | int 1–6 | | Severity with labels: 1 Hairpin, 2 Slow, 3 Medium, 4 Fast, 5 Very fast, 6 Kink |
@@ -191,9 +198,9 @@ Corner names are **a base identifier plus any number of sparse overlay layers**.
 Every corner has a `code` and an always-present `numbered` layer (`"Turn <code>"`)
 — that's the base, and it covers unnamed corners too (a kink drivers don't talk
 about carries only `numbered`). Overlay layers (`official`, `driver`, and any
-others declared in the track's `name_layers`) appear only when a name is known.
+others declared in the track's `label_layers`) appear only when a name is known.
 
-A layout's `name_default` (usually `driver`) picks the display layer. Resolution
+A layout's `label_default` (usually `driver`) picks the display layer. Resolution
 is **two steps**: the default layer if the corner has it, else the `numbered`
 identifier — it does **not** fall through other layers. So an absent default-layer
 name means drivers just use the number (Sebring T17 is officially *Sunset Bend*
@@ -209,14 +216,14 @@ A `FeatureCollection` per layout. Every feature carries a `role` property:
 | `outline` | LineString (closed: first == last point) | `layout` — the real centerline from the OSM route relation, every chicane preserved |
 | `start_finish` | Point | `name`, `marker` (0.0) |
 | `pit_entry` / `pit_exit` | Point | `marker` |
-| `corner` | Point (one per located corner) | `number`, `code`, `display` (resolved name), `names` (all layers), `complex`, `direction`, `scale` |
+| `corner` | Point (one per located corner point item) | `id`, `number`, `code`, `display` (resolved label), `labels` (all label layers), `direction`, `scale`, `marker` |
 
 The outline is the **OSM `type=route`/`type=circuit` relation centerline** —
 the authoritative continuous lap, including public-road sections that aren't
 tagged `highway=raceway` (Le Mans' Mulsanne straight is the D338). Pit-lane
 members and duplicated way refs in the relation are filtered out.
 
-## source.json (the only file you write for a new track)
+## source.json (base track metadata)
 
 ```jsonc
 {
@@ -240,6 +247,31 @@ members and duplicated way refs in the relation are filtered out.
   ]
 }
 ```
+
+## generation-config.json (optional generated layers)
+
+Use this when an external source can be transformed into extra layout layers,
+for example IMSA microsectors, official timing sectors, WEC slow zones, timing
+loops, or speed traps. A config names the layout, converter tool, input URLs or
+files, and all parameters the tool needs. The runner downloads/copies resources
+into `raw/layer-sources/<config-id>/` before invoking the tool, so tools are pure
+stdin→stdout transforms.
+
+```jsonc
+{
+  "layers": [{
+    "id": "imsa_microsectors_2026",
+    "layout": "gp",
+    "tool": "imsa_timing_pdf",
+    "resources": {"pdf": {"url": "https://.../03_Timing%20All%20Sections%20Map.pdf"}},
+    "params": {"layer_id": "imsa_microsectors", "count": 11, "item_prefix": "ms"}
+  }]
+}
+```
+
+See `skills/layer-tools/SKILL.md` for the contract and source patterns. Run
+`uv run python scripts/build_layers.py <slug>` after editing only this file;
+`generate.py` also applies it automatically.
 
 ## Adding a new track
 
@@ -305,7 +337,7 @@ uv run python scripts/verify.py --strict   # warnings fail too
 `verify.py` validates each `track.json` against the **Pydantic models**
 (`scripts/lib/models.py`) — types, enums, lon/lat shape, sequential corner
 numbers, unique corner codes, contiguous complexes, mandatory + declared name
-layers, `name_default` references a real layer — then runs geometry/alignment
+layers, `label_default` references a real layer — then runs geometry/alignment
 checks it can't express as a schema: required files, every corner located,
 closed outline, **traced length vs declared length_m** (warn >3%, fail >10%),
 **every corner within 80 m of the outline**, corner lap-order vs geometric order
@@ -318,9 +350,10 @@ The committed `schema/track.schema.json` is regenerated from the models with
 
 ## Corner phases
 
-Each corner's braking-zone **start / apex / exit** are computed by
-`scripts/lib/phases.py` and written into `track.json` as `corner.start` /
-`corner.marker` (apex) / `corner.end` (lap fractions). The braking distance
+Each corner's braking-zone **start / apex / exit** is computed by
+`scripts/lib/phases.py`. The apex is the corner point's `marker`; start/end are
+written as layout `range_layers[id="corner_ranges"]` items with `anchor` pointing
+back to the corner point id. The braking distance
 scales with severity (a hairpin brakes far earlier than a kink); neighbours are
 resolved so phases never overlap, and corners inside one complex meet exactly
 (curve 1 ends where curve 2 starts). To tune the distance tables and preview

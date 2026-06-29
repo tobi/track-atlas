@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Preview corner phases (braking-zone start / apex / exit) for a track.
 
-Corner phases are now generated INTO track.json (corner.start / marker / end) by
+Corner phases are generated into layout.range_layers[id=corner_ranges] by
 generate.py via lib/phases.py. This tool recomputes them with the same logic so
 you can tune the BRAKE_M / EXIT_M distance tables in lib/phases.py and preview
 the result before re-running generate. It prints a table; it writes nothing.
@@ -27,7 +27,7 @@ from lib.phases import compute_phases  # noqa: E402
 def layout_length_m(layout: dict, rawd: Path) -> float | None:
     if layout.get("length_m"):
         return float(layout["length_m"])
-    gpath = rawd / (layout.get("geometry", {}).get("outline") or "")
+    gpath = rawd / (layout.get("geometry", {}).get("centerline") or "")
     if gpath.exists():
         gj = json.loads(gpath.read_text())
         for f in gj.get("features", []):
@@ -46,8 +46,17 @@ def preview(slug: str) -> None:
         if not total:
             print(f"  [{layout['id']}] no length -- skipped")
             continue
-        ph = compute_phases(layout.get("corners", []), total)
-        by_num = {c["number"]: c for c in layout.get("corners", [])}
+        corners = next((l.get("items", []) for l in layout.get("point_layers", []) if l.get("id") == "corners"), [])
+        # compute_phases predates range_layers and consumes a compact corner dict.
+        compact = [{"number": c["number"], "code": c.get("code"), "marker": c.get("marker"),
+                    "scale": c.get("scale")} for c in corners]
+        by_id = {c["id"]: c for c in compact}
+        for comp in next((l.get("items", []) for l in layout.get("range_layers", []) if l.get("id") == "corner_complexes"), []):
+            for mid in comp.get("members", []):
+                if mid in by_id:
+                    by_id[mid]["complex"] = comp.get("label")
+        ph = compute_phases(compact, total)
+        by_num = {c["number"]: c for c in compact}
         print(f"  [{layout['id']}] {round(total)} m, {len(ph)} corners")
         print(f"    {'#':>3} {'scale':<11} {'start':>7} {'apex':>7} {'end':>7}  span  complex")
         for num, p in sorted(ph.items()):

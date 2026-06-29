@@ -4836,6 +4836,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.99
       },
       "geometry": {
@@ -4850,6 +4851,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.03
       },
       "geometry": {
@@ -4864,20 +4866,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Dunlop Curve",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Dunlop Curve",
           "official": "Courbe Dunlop"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.05,
-        "start": 0.04743,
-        "end": 0.0533
+        "marker": 0.05
       },
       "geometry": {
         "type": "Point",
@@ -4891,20 +4891,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Dunlop Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Dunlop Chicane",
           "official": "Chicane Dunlop"
         },
-        "complex": "Dunlop Chicane",
         "direction": "left",
         "scale": 4,
-        "marker": 0.06,
-        "start": 0.05486,
-        "end": 0.065
+        "marker": 0.06
       },
       "geometry": {
         "type": "Point",
@@ -4918,20 +4916,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Dunlop Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "official": "Chicane Dunlop",
           "driver": "Dunlop Chicane"
         },
-        "complex": "Dunlop Chicane",
         "direction": "right",
         "scale": 4,
-        "marker": 0.07,
-        "start": 0.065,
-        "end": 0.07514
+        "marker": 0.07
       },
       "geometry": {
         "type": "Point",
@@ -4945,20 +4941,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Esses de la Forêt",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Esses de la Forêt",
           "official": "Esses de la Forêt"
         },
-        "complex": "Esses de la Forêt",
         "direction": "left",
         "scale": 4,
-        "marker": 0.11,
-        "start": 0.10486,
-        "end": 0.115
+        "marker": 0.11
       },
       "geometry": {
         "type": "Point",
@@ -4972,20 +4966,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Esses de la Forêt",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "official": "Esses de la Forêt",
           "driver": "Esses de la Forêt"
         },
-        "complex": "Esses de la Forêt",
         "direction": "right",
         "scale": 4,
-        "marker": 0.12,
-        "start": 0.115,
-        "end": 0.12514
+        "marker": 0.12
       },
       "geometry": {
         "type": "Point",
@@ -4999,20 +4991,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Tertre Rouge",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Tertre Rouge",
           "official": "Virage du Tertre Rouge"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.14,
-        "start": 0.13486,
-        "end": 0.14514
+        "marker": 0.14
       },
       "geometry": {
         "type": "Point",
@@ -5026,20 +5016,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "First Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "First Chicane",
           "official": "Chicane Daytona"
         },
-        "complex": "Mulsanne Straight Chicanes",
         "direction": "right",
         "scale": 2,
-        "marker": 0.3,
-        "start": 0.28679,
-        "end": 0.3629
+        "marker": 0.3
       },
       "geometry": {
         "type": "Point",
@@ -5053,20 +5041,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Second Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Second Chicane",
           "official": "Chicane Michelin"
         },
-        "complex": "Mulsanne Straight Chicanes",
         "direction": "left",
         "scale": 2,
-        "marker": 0.45,
-        "start": 0.3629,
-        "end": 0.45954
+        "marker": 0.45
       },
       "geometry": {
         "type": "Point",
@@ -5080,20 +5066,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Mulsanne",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Mulsanne",
           "official": "Virage de Mulsanne"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.57,
-        "start": 0.55165,
-        "end": 0.58248
+        "marker": 0.57
       },
       "geometry": {
         "type": "Point",
@@ -5107,20 +5091,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Indianapolis",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "official": "Virage d'Indianapolis",
           "driver": "Indianapolis"
         },
-        "complex": "Indianapolis",
         "direction": "right",
         "scale": 5,
-        "marker": 0.7,
-        "start": 0.69743,
-        "end": 0.70545
+        "marker": 0.7
       },
       "geometry": {
         "type": "Point",
@@ -5134,20 +5116,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Indianapolis",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Indianapolis",
           "official": "Virage d'Indianapolis"
         },
-        "complex": "Indianapolis",
         "direction": "left",
         "scale": 3,
-        "marker": 0.72,
-        "start": 0.70545,
-        "end": 0.72714
+        "marker": 0.72
       },
       "geometry": {
         "type": "Point",
@@ -5161,20 +5141,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Arnage",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Arnage",
           "official": "Virage d'Arnage"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.74,
-        "start": 0.72714,
-        "end": 0.74954
+        "marker": 0.74
       },
       "geometry": {
         "type": "Point",
@@ -5188,18 +5166,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Turn 13",
-        "names": {
+        "labels": {
           "numbered": "Turn 13"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.82,
-        "start": 0.82,
-        "end": 0.82
+        "marker": 0.82
       },
       "geometry": {
         "type": "Point",
@@ -5213,20 +5189,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Porsche Curves",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Porsche Curves",
           "official": "Virage Porsche"
         },
-        "complex": "Porsche Curves",
         "direction": "right",
         "scale": 5,
-        "marker": 0.85,
-        "start": 0.84743,
-        "end": 0.86125
+        "marker": 0.85
       },
       "geometry": {
         "type": "Point",
@@ -5240,20 +5214,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Porsche Curves",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Porsche Curves",
           "official": "Virage du Pont"
         },
-        "complex": "Porsche Curves",
         "direction": "left",
         "scale": 5,
-        "marker": 0.87,
-        "start": 0.86125,
-        "end": 0.87783
+        "marker": 0.87
       },
       "geometry": {
         "type": "Point",
@@ -5267,20 +5239,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Karting",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Karting",
           "official": "Virage du Karting"
         },
-        "complex": "Porsche Curves",
         "direction": "right",
         "scale": 4,
-        "marker": 0.89,
-        "start": 0.87783,
-        "end": 0.9
+        "marker": 0.89
       },
       "geometry": {
         "type": "Point",
@@ -5294,20 +5264,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Corvette",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "driver": "Corvette",
           "official": "Virage Corvette"
         },
-        "complex": "Porsche Curves",
         "direction": "left",
         "scale": 4,
-        "marker": 0.91,
-        "start": 0.9,
-        "end": 0.91514
+        "marker": 0.91
       },
       "geometry": {
         "type": "Point",
@@ -5321,20 +5289,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t18",
         "number": 18,
         "code": "18",
         "display": "Ford Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 18",
           "driver": "Ford Chicane",
           "official": "Chicane Ford"
         },
-        "complex": "Ford Chicanes",
         "direction": "left",
         "scale": 3,
-        "marker": 0.97,
-        "start": 0.96119,
-        "end": 0.97455
+        "marker": 0.97
       },
       "geometry": {
         "type": "Point",
@@ -5348,20 +5314,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t19",
         "number": 19,
         "code": "19",
         "display": "Ford Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 19",
           "official": "Chicane Ford",
           "driver": "Ford Chicane"
         },
-        "complex": "Ford Chicanes",
         "direction": "right",
         "scale": 3,
-        "marker": 0.98,
-        "start": 0.97455,
-        "end": 0.98
+        "marker": 0.98
       },
       "geometry": {
         "type": "Point",
@@ -5375,20 +5339,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t20",
         "number": 20,
         "code": "20",
         "display": "Ford Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 20",
           "driver": "Ford Chicane",
           "official": "Chicane du Raccordement"
         },
-        "complex": "Ford Chicanes",
         "direction": "left",
         "scale": 3,
-        "marker": 0.98,
-        "start": 0.98,
-        "end": 0.98455
+        "marker": 0.98
       },
       "geometry": {
         "type": "Point",
@@ -5402,20 +5364,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t21",
         "number": 21,
         "code": "21",
         "display": "Ford Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 21",
           "official": "Virage du Raccordement",
           "driver": "Ford Chicane"
         },
-        "complex": "Ford Chicanes",
         "direction": "right",
         "scale": 3,
-        "marker": 0.99,
-        "start": 0.98455,
-        "end": 0.99734
+        "marker": 0.99
       },
       "geometry": {
         "type": "Point",

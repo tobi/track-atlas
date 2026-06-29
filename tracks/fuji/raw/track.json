@@ -12,7 +12,7 @@
     "region": "Shizuoka",
     "timezone": "Asia/Tokyo"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,348 +31,512 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "First Corner",
-            "official": "TGR Corner"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.17,
-          "start": 0.11504,
-          "end": 0.2,
-          "location": [
-            138.9338,
-            35.375891
-          ],
-          "location_source": "centerline"
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                138.927423,
+                35.372405
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.99,
+              "location": [
+                138.927032,
+                35.372149
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.1,
+              "location": [
+                138.931339,
+                35.37497
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2"
-          },
-          "direction": "right",
-          "scale": 6,
-          "marker": 0.2,
-          "start": 0.2,
-          "end": 0.2,
-          "location": [
-            138.9334,
-            35.374733
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Coca-Cola",
-            "official": "Coca-Cola Corner"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.29,
-          "start": 0.27461,
-          "end": 0.30539,
-          "location": [
-            138.931109,
-            35.371753
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "100R",
-            "official": "100R"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.34,
-          "start": 0.32461,
-          "end": 0.37333,
-          "complex": "100R",
-          "location": [
-            138.93155,
-            35.369812
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "official": "100R",
-            "driver": "100R exit"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.39,
-          "start": 0.37333,
-          "end": 0.39763,
-          "complex": "100R",
-          "location": [
-            138.929489,
-            35.369313
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Hairpin",
-            "official": "Hairpin Corner (75R)"
-          },
-          "direction": "left",
-          "scale": 1,
-          "marker": 0.44,
-          "start": 0.39763,
-          "end": 0.47,
-          "location": [
-            138.927834,
-            35.370459
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7"
-          },
-          "direction": "left",
-          "scale": 6,
-          "marker": 0.47,
-          "start": 0.47,
-          "end": 0.47,
-          "location": [
-            138.927535,
-            35.369287
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8"
-          },
-          "direction": "right",
-          "scale": 6,
-          "marker": 0.52,
-          "start": 0.52,
-          "end": 0.52,
-          "location": [
-            138.927264,
-            35.367311
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "300R",
-            "official": "300R"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.56,
-          "start": 0.55231,
-          "end": 0.56989,
-          "location": [
-            138.926169,
-            35.365964
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Dunlop",
-            "official": "Dunlop Corner"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.63,
-          "start": 0.57504,
-          "end": 0.63486,
-          "complex": "Dunlop Chicane",
-          "location": [
-            138.923682,
-            35.365291
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.64,
-          "start": 0.63486,
-          "end": 0.65576,
-          "complex": "Dunlop Chicane",
-          "location": [
-            138.923196,
-            35.365253
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12"
-          },
-          "direction": "right",
-          "scale": 5,
-          "marker": 0.66,
-          "start": 0.65576,
-          "end": 0.66989,
-          "location": [
-            138.922266,
-            35.365499
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "driver": "13th Corner",
-            "official": "GR Supra Corner"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.7,
-          "start": 0.67362,
-          "end": 0.71176,
-          "location": [
-            138.922288,
-            35.366641
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "official": "Netz Corner",
-            "driver": "Netz Corner"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.72,
-          "start": 0.71176,
-          "end": 0.7284,
-          "complex": "Netz",
-          "location": [
-            138.922914,
-            35.36724
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Netz",
-            "official": "Netz Corner"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.75,
-          "start": 0.7284,
-          "end": 0.77395,
-          "complex": "Netz",
-          "location": [
-            138.922174,
-            35.367952
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 16,
-          "code": "16",
-          "names": {
-            "numbered": "Turn 16",
-            "driver": "Panasonic",
-            "official": "Panasonic Corner"
-          },
-          "direction": "right",
-          "scale": 1,
-          "marker": 0.82,
-          "start": 0.77395,
-          "end": 0.85737,
-          "location": [
-            138.920375,
-            35.36779
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "First Corner",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "First Corner",
+                "official": "TGR Corner"
+              },
+              "marker": 0.17,
+              "location": [
+                138.9338,
+                35.375891
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Turn 2",
+              "labels": {
+                "numbered": "Turn 2"
+              },
+              "marker": 0.2,
+              "location": [
+                138.9334,
+                35.374733
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Coca-Cola",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Coca-Cola",
+                "official": "Coca-Cola Corner"
+              },
+              "marker": 0.29,
+              "location": [
+                138.931109,
+                35.371753
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "100R",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "100R",
+                "official": "100R"
+              },
+              "marker": 0.34,
+              "location": [
+                138.93155,
+                35.369812
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "100R exit",
+              "labels": {
+                "numbered": "Turn 5",
+                "official": "100R",
+                "driver": "100R exit"
+              },
+              "marker": 0.39,
+              "location": [
+                138.929489,
+                35.369313
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Hairpin",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Hairpin",
+                "official": "Hairpin Corner (75R)"
+              },
+              "marker": 0.44,
+              "location": [
+                138.927834,
+                35.370459
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 1
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Turn 7",
+              "labels": {
+                "numbered": "Turn 7"
+              },
+              "marker": 0.47,
+              "location": [
+                138.927535,
+                35.369287
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 6
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Turn 8",
+              "labels": {
+                "numbered": "Turn 8"
+              },
+              "marker": 0.52,
+              "location": [
+                138.927264,
+                35.367311
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "300R",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "300R",
+                "official": "300R"
+              },
+              "marker": 0.56,
+              "location": [
+                138.926169,
+                35.365964
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Dunlop",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Dunlop",
+                "official": "Dunlop Corner"
+              },
+              "marker": 0.63,
+              "location": [
+                138.923682,
+                35.365291
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Turn 11",
+              "labels": {
+                "numbered": "Turn 11"
+              },
+              "marker": 0.64,
+              "location": [
+                138.923196,
+                35.365253
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Turn 12",
+              "labels": {
+                "numbered": "Turn 12"
+              },
+              "marker": 0.66,
+              "location": [
+                138.922266,
+                35.365499
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "13th Corner",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "13th Corner",
+                "official": "GR Supra Corner"
+              },
+              "marker": 0.7,
+              "location": [
+                138.922288,
+                35.366641
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Netz Corner",
+              "labels": {
+                "numbered": "Turn 14",
+                "official": "Netz Corner",
+                "driver": "Netz Corner"
+              },
+              "marker": 0.72,
+              "location": [
+                138.922914,
+                35.36724
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Netz",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Netz",
+                "official": "Netz Corner"
+              },
+              "marker": 0.75,
+              "location": [
+                138.922174,
+                35.367952
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t16",
+              "number": 16,
+              "code": "16",
+              "label": "Panasonic",
+              "labels": {
+                "numbered": "Turn 16",
+                "driver": "Panasonic",
+                "official": "Panasonic Corner"
+              },
+              "marker": 0.82,
+              "location": [
+                138.920375,
+                35.36779
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 1
+            }
+          ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Main Straight",
-          "start": 0.83,
-          "end": 0.15
-        }
-      ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.41
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.41
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.41,
+              "end": 0.66
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.66,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.41,
-          "end": 0.66
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "First Corner",
+              "start": 0.11504,
+              "end": 0.2,
+              "anchor": "t1"
+            },
+            {
+              "id": "t3",
+              "label": "Coca-Cola",
+              "start": 0.27461,
+              "end": 0.30539,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "100R",
+              "start": 0.32461,
+              "end": 0.37333,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "100R exit",
+              "start": 0.37333,
+              "end": 0.39763,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Hairpin",
+              "start": 0.39763,
+              "end": 0.47,
+              "anchor": "t6"
+            },
+            {
+              "id": "t9",
+              "label": "300R",
+              "start": 0.55231,
+              "end": 0.56989,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Dunlop",
+              "start": 0.57504,
+              "end": 0.63486,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Turn 11",
+              "start": 0.63486,
+              "end": 0.65576,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.65576,
+              "end": 0.66989,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "13th Corner",
+              "start": 0.67362,
+              "end": 0.71176,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Netz Corner",
+              "start": 0.71176,
+              "end": 0.7284,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "Netz",
+              "start": 0.7284,
+              "end": 0.77395,
+              "anchor": "t15"
+            },
+            {
+              "id": "t16",
+              "label": "Panasonic",
+              "start": 0.77395,
+              "end": 0.85737,
+              "anchor": "t16"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.66,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "100r",
+              "label": "100R",
+              "start": 0.32461,
+              "end": 0.39763,
+              "members": [
+                "t4",
+                "t5"
+              ]
+            },
+            {
+              "id": "dunlop",
+              "label": "Dunlop Chicane",
+              "start": 0.57504,
+              "end": 0.65576,
+              "members": [
+                "t10",
+                "t11"
+              ]
+            },
+            {
+              "id": "netz",
+              "label": "Netz",
+              "start": 0.71176,
+              "end": 0.77395,
+              "members": [
+                "t14",
+                "t15"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.99,
-        "exit": 0.1
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          138.927423,
-          35.372405
-        ]
-      },
       "length_m": 4549,
       "direction": "clockwise"
     }
@@ -384,7 +548,7 @@
     "imsa_data": "fuji"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:32.924949+00:00",
+    "generated_at": "2026-06-29T15:41:44.723746+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -2580,6 +2580,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.9527
       },
       "geometry": {
@@ -2594,6 +2595,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.1183
       },
       "geometry": {
@@ -2608,20 +2610,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Tarzan",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Tarzan",
           "official": "Tarzan"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.0901,
-        "start": 0.0314,
-        "end": 0.13002
+        "marker": 0.0901
       },
       "geometry": {
         "type": "Point",
@@ -2635,20 +2635,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Gerlachbocht",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Gerlachbocht",
           "official": "Gerlachbocht"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.1644,
-        "start": 0.13622,
-        "end": 0.17491
+        "marker": 0.1644
       },
       "geometry": {
         "type": "Point",
@@ -2662,20 +2660,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Hugenholtz",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Hugenholtz",
           "official": "Hugenholtz"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.2012,
-        "start": 0.17491,
-        "end": 0.24112
+        "marker": 0.2012
       },
       "geometry": {
         "type": "Point",
@@ -2689,20 +2685,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Hondenvlak",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Hondenvlak",
           "official": "Hondenvlak"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.2576,
-        "start": 0.24938,
-        "end": 0.26817
+        "marker": 0.2576
       },
       "geometry": {
         "type": "Point",
@@ -2716,20 +2710,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Hondenvlak",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Hondenvlak",
           "official": "Hondenvlak"
         },
-        "complex": "Hondenvlak",
         "direction": "left",
         "scale": 4,
-        "marker": 0.2969,
-        "start": 0.28046,
-        "end": 0.32323
+        "marker": 0.2969
       },
       "geometry": {
         "type": "Point",
@@ -2743,20 +2735,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Hondenvlak",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Hondenvlak",
           "official": "Hondenvlak"
         },
-        "complex": "Hondenvlak",
         "direction": "right",
         "scale": 5,
-        "marker": 0.3364,
-        "start": 0.32323,
-        "end": 0.34697
+        "marker": 0.3364
       },
       "geometry": {
         "type": "Point",
@@ -2770,20 +2760,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Scheivlak",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Scheivlak",
           "official": "Scheivlak"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.4005,
-        "start": 0.37232,
-        "end": 0.42398
+        "marker": 0.4005
       },
       "geometry": {
         "type": "Point",
@@ -2797,20 +2785,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Mastersbocht",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Mastersbocht",
           "official": "Mastersbocht"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.477,
-        "start": 0.44882,
-        "end": 0.49636
+        "marker": 0.477
       },
       "geometry": {
         "type": "Point",
@@ -2824,20 +2810,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Renault",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Renault",
           "official": "Renault"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.5312,
-        "start": 0.49636,
-        "end": 0.55286
+        "marker": 0.5312
       },
       "geometry": {
         "type": "Point",
@@ -2851,20 +2835,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Vodafone",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Vodafone",
           "official": "Vodafone"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.5945,
-        "start": 0.55286,
-        "end": 0.63442
+        "marker": 0.5945
       },
       "geometry": {
         "type": "Point",
@@ -2878,20 +2860,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Hugenholtzbocht",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Hugenholtzbocht",
           "official": "Hugenholtzbocht"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.7278,
-        "start": 0.68554,
-        "end": 0.73468
+        "marker": 0.7278
       },
       "geometry": {
         "type": "Point",
@@ -2905,20 +2885,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Hans Ernst",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Hans Ernst",
           "official": "Hans Ernst Bocht"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.7479,
-        "start": 0.73468,
-        "end": 0.78782
+        "marker": 0.7479
       },
       "geometry": {
         "type": "Point",
@@ -2932,20 +2910,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Kumho",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Kumho",
           "official": "Kumho"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.8256,
-        "start": 0.79742,
-        "end": 0.84908
+        "marker": 0.8256
       },
       "geometry": {
         "type": "Point",
@@ -2959,20 +2935,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Arie Luyendyk",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Arie Luyendyk",
           "official": "Arie Luyendyk Bocht"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.8831,
-        "start": 0.86666,
-        "end": 0.89954
+        "marker": 0.8831
       },
       "geometry": {
         "type": "Point",

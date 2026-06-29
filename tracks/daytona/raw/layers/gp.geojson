@@ -1436,18 +1436,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Turn 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 1"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.085,
-        "start": 0.05358,
-        "end": 0.1006
+        "marker": 0.085
       },
       "geometry": {
         "type": "Point",
@@ -1461,18 +1459,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Turn 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.115,
-        "start": 0.1006,
-        "end": 0.13043
+        "marker": 0.115
       },
       "geometry": {
         "type": "Point",
@@ -1486,20 +1482,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "International Horseshoe",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "International Horseshoe",
           "official": "International Horseshoe"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.169,
-        "start": 0.13043,
-        "end": 0.19867
+        "marker": 0.169
       },
       "geometry": {
         "type": "Point",
@@ -1513,20 +1507,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "The Kink",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "The Kink",
           "official": "Turn 4 (Kink)"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.255,
-        "start": 0.24889,
-        "end": 0.26285
+        "marker": 0.255
       },
       "geometry": {
         "type": "Point",
@@ -1540,20 +1532,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "West Horseshoe",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "West Horseshoe",
           "official": "West Horseshoe"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.309,
-        "start": 0.27758,
-        "end": 0.33169
+        "marker": 0.309
       },
       "geometry": {
         "type": "Point",
@@ -1567,20 +1557,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "NASCAR 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "NASCAR 1",
           "official": "Turn 6 (NASCAR Turn 1)"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.376,
-        "start": 0.36989,
-        "end": 0.38385
+        "marker": 0.376
       },
       "geometry": {
         "type": "Point",
@@ -1594,20 +1582,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "NASCAR 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "NASCAR 2",
           "official": "Turn 7 (NASCAR Turn 2)"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.451,
-        "start": 0.44489,
-        "end": 0.45885
+        "marker": 0.451
       },
       "geometry": {
         "type": "Point",
@@ -1621,19 +1607,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Bus Stop entry",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Bus Stop entry"
         },
-        "complex": "Bus Stop (Le Mans Chicane)",
         "direction": "left",
         "scale": 4,
-        "marker": 0.67,
-        "start": 0.65778,
-        "end": 0.67368
+        "marker": 0.67
       },
       "geometry": {
         "type": "Point",
@@ -1647,19 +1631,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Bus Stop",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Bus Stop"
         },
-        "complex": "Bus Stop (Le Mans Chicane)",
         "direction": "right",
         "scale": 3,
-        "marker": 0.68,
-        "start": 0.67368,
-        "end": 0.68545
+        "marker": 0.68
       },
       "geometry": {
         "type": "Point",
@@ -1673,19 +1655,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Bus Stop",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Bus Stop"
         },
-        "complex": "Bus Stop (Le Mans Chicane)",
         "direction": "right",
         "scale": 3,
-        "marker": 0.692,
-        "start": 0.68545,
-        "end": 0.69847
+        "marker": 0.692
       },
       "geometry": {
         "type": "Point",
@@ -1699,19 +1679,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Bus Stop exit",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Bus Stop exit"
         },
-        "complex": "Bus Stop (Le Mans Chicane)",
         "direction": "left",
         "scale": 4,
-        "marker": 0.703,
-        "start": 0.69847,
-        "end": 0.71522
+        "marker": 0.703
       },
       "geometry": {
         "type": "Point",
@@ -1725,20 +1703,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "NASCAR 3",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "NASCAR 3",
           "official": "Turn 12 (NASCAR Turns 3-4)"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.81,
-        "start": 0.80389,
-        "end": 0.81785
+        "marker": 0.81
       },
       "geometry": {
         "type": "Point",

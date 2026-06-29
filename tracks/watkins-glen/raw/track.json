@@ -12,7 +12,7 @@
     "region": "New York",
     "timezone": "America/New_York"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,228 +31,520 @@
       "id": "gp",
       "name": "Full Course (Boot)",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1"
-          },
-          "start": 0.03288,
-          "end": 0.08992,
-          "marker": 0.066,
-          "direction": "right",
-          "scale": 2,
-          "location": [
-            -76.928561,
-            42.34397
-          ],
-          "location_source": "centerline"
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -76.928851,
+                42.340779
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.947,
+              "location": [
+                -76.929072,
+                42.338216
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.078,
+              "location": [
+                -76.927975,
+                42.344267
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "The Esses"
-          },
-          "start": 0.17062,
-          "end": 0.27475,
-          "marker": 0.1835,
-          "location": [
-            -76.923132,
-            42.341471
-          ],
-          "complex": "The Esses",
-          "direction": "left",
-          "scale": 4
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "The Esses"
-          },
-          "start": 0.27475,
-          "end": 0.397,
-          "marker": 0.366,
-          "location": [
-            -76.920656,
-            42.33282
-          ],
-          "complex": "The Esses",
-          "direction": "right",
-          "scale": 4
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "The Esses"
-          },
-          "start": 0.397,
-          "end": 0.4715,
-          "marker": 0.428,
-          "location": [
-            -76.921381,
-            42.330634
-          ],
-          "complex": "The Esses",
-          "direction": "left",
-          "scale": 4
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "The Esses"
-          },
-          "start": 0.4715,
-          "end": 0.52788,
-          "marker": 0.515,
-          "location": [
-            -76.925721,
-            42.332298
-          ],
-          "complex": "The Esses",
-          "direction": "right",
-          "scale": 4
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "The Loop"
-          },
-          "start": 0.57538,
-          "end": 0.67688,
-          "marker": 0.6085,
-          "location": [
-            -76.926976,
-            42.328803
-          ],
-          "complex": "The Loop",
-          "direction": "left",
-          "scale": 2
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "The Loop"
-          },
-          "start": 0.67688,
-          "end": 0.7584,
-          "marker": 0.74,
-          "location": [
-            -76.927912,
-            42.334202
-          ],
-          "complex": "The Loop",
-          "direction": "left",
-          "scale": 3
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "The Bus Stop"
-          },
-          "start": 0.76738,
-          "end": 0.82944,
-          "marker": 0.8005,
-          "complex": "The Bus Stop",
-          "direction": "right",
-          "scale": 2,
-          "location": [
-            -76.924323,
-            42.333638
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "The Bus Stop"
-          },
-          "start": 0.82944,
-          "end": 0.89342,
-          "marker": 0.8695,
-          "complex": "The Bus Stop",
-          "direction": "left",
-          "scale": 2,
-          "location": [
-            -76.925034,
-            42.336836
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10"
-          },
-          "start": 0.92362,
-          "end": 0.94938,
-          "marker": 0.9365,
-          "direction": "right",
-          "scale": 4,
-          "location": [
-            -76.929013,
-            42.337714
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Turn 1",
+              "labels": {
+                "numbered": "Turn 1"
+              },
+              "marker": 0.066,
+              "location": [
+                -76.928561,
+                42.34397
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "The Esses",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "The Esses"
+              },
+              "marker": 0.1835,
+              "location": [
+                -76.923132,
+                42.341471
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "The Esses",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "The Esses"
+              },
+              "marker": 0.366,
+              "location": [
+                -76.920656,
+                42.33282
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "The Esses",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "The Esses"
+              },
+              "marker": 0.428,
+              "location": [
+                -76.921381,
+                42.330634
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "The Esses",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "The Esses"
+              },
+              "marker": 0.515,
+              "location": [
+                -76.925721,
+                42.332298
+              ],
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "The Loop",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "The Loop"
+              },
+              "marker": 0.6085,
+              "location": [
+                -76.926976,
+                42.328803
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "The Loop",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "The Loop"
+              },
+              "marker": 0.74,
+              "location": [
+                -76.927912,
+                42.334202
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "The Bus Stop",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "The Bus Stop"
+              },
+              "marker": 0.8005,
+              "location": [
+                -76.924323,
+                42.333638
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "The Bus Stop",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "The Bus Stop"
+              },
+              "marker": 0.8695,
+              "location": [
+                -76.925034,
+                42.336836
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Turn 10",
+              "labels": {
+                "numbered": "Turn 10"
+              },
+              "marker": 0.9365,
+              "location": [
+                -76.929013,
+                42.337714
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            }
+          ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Back Straight",
-          "start": 0.255,
-          "end": 0.34
-        }
-      ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.299
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "series": [
+            "imsa"
+          ],
+          "coverage": "partition",
+          "provenance": {
+            "source": "IMSA / Al Kamel Timing 3 Sector Map",
+            "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/14_Watkins%20Glen%20International/03_Timing%203%20Sector%20Map.pdf",
+            "local_path": "tracks/watkins-glen/raw/layer-sources/imsa_timing_sectors_2026/imsa-2026-timing-3-sector-map.pdf",
+            "length_unit": "inch",
+            "total_length_m": 5490.439
+          },
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.26201083,
+              "length_m": 1438.554,
+              "entry_ref": "FL",
+              "exit_ref": "i1"
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.26201083,
+              "end": 0.63663785,
+              "length_m": 2056.867,
+              "entry_ref": "i1",
+              "exit_ref": "i2"
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.63663785,
+              "end": 1.0,
+              "length_m": 1995.018,
+              "entry_ref": "i2",
+              "exit_ref": "FL"
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.299,
-          "end": 0.686
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.03288,
+              "end": 0.08992,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "The Esses",
+              "start": 0.17062,
+              "end": 0.27475,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "The Esses",
+              "start": 0.27475,
+              "end": 0.397,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "The Esses",
+              "start": 0.397,
+              "end": 0.4715,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "The Esses",
+              "start": 0.4715,
+              "end": 0.52788,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "The Loop",
+              "start": 0.57538,
+              "end": 0.67688,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "The Loop",
+              "start": 0.67688,
+              "end": 0.7584,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "The Bus Stop",
+              "start": 0.76738,
+              "end": 0.82944,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "The Bus Stop",
+              "start": 0.82944,
+              "end": 0.89342,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Turn 10",
+              "start": 0.92362,
+              "end": 0.94938,
+              "anchor": "t10"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.686,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "complex-1",
+              "label": "The Esses",
+              "start": 0.17062,
+              "end": 0.52788,
+              "members": [
+                "t2",
+                "t3",
+                "t4",
+                "t5"
+              ]
+            },
+            {
+              "id": "loop",
+              "label": "The Loop",
+              "start": 0.57538,
+              "end": 0.7584,
+              "members": [
+                "t6",
+                "t7"
+              ]
+            },
+            {
+              "id": "busstop",
+              "label": "The Bus Stop",
+              "start": 0.76738,
+              "end": 0.89342,
+              "members": [
+                "t8",
+                "t9"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "straights",
+          "kind": "straights",
+          "label": "Straights",
+          "items": [
+            {
+              "id": "backstraight",
+              "label": "Back Straight",
+              "start": 0.255,
+              "end": 0.34
+            }
+          ]
+        },
+        {
+          "id": "imsa_microsectors",
+          "kind": "microsectors",
+          "label": "IMSA Microsectors",
+          "series": [
+            "imsa"
+          ],
+          "coverage": "partition",
+          "provenance": {
+            "source": "IMSA / Al Kamel Timing All Sections Map",
+            "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/14_Watkins%20Glen%20International/03_Timing%20All%20Sections%20Map.pdf",
+            "local_path": "tracks/watkins-glen/raw/layer-sources/imsa_microsectors_2026/imsa-2026-timing-all-sections-map.pdf",
+            "length_unit": "inch",
+            "total_length_m": 5490.439
+          },
+          "items": [
+            {
+              "id": "ms1",
+              "label": "MS1",
+              "start": 0.0,
+              "end": 0.03926739,
+              "length_m": 215.595,
+              "entry_ref": "T1",
+              "exit_ref": "T2"
+            },
+            {
+              "id": "ms2",
+              "label": "MS2",
+              "start": 0.03926739,
+              "end": 0.11400867,
+              "length_m": 410.362,
+              "entry_ref": "T2",
+              "exit_ref": "T3"
+            },
+            {
+              "id": "ms3",
+              "label": "MS3",
+              "start": 0.11400867,
+              "end": 0.26201083,
+              "length_m": 812.597,
+              "entry_ref": "T3",
+              "exit_ref": "T4"
+            },
+            {
+              "id": "ms4",
+              "label": "MS4",
+              "start": 0.26201083,
+              "end": 0.31307047,
+              "length_m": 280.34,
+              "entry_ref": "T4",
+              "exit_ref": "T5"
+            },
+            {
+              "id": "ms5",
+              "label": "MS5",
+              "start": 0.31307047,
+              "end": 0.31975999,
+              "length_m": 36.728,
+              "entry_ref": "T5",
+              "exit_ref": "T6"
+            },
+            {
+              "id": "ms6",
+              "label": "MS6",
+              "start": 0.31975999,
+              "end": 0.45146859,
+              "length_m": 723.138,
+              "entry_ref": "T6",
+              "exit_ref": "T7"
+            },
+            {
+              "id": "ms7",
+              "label": "MS7",
+              "start": 0.45146859,
+              "end": 0.63663785,
+              "length_m": 1016.66,
+              "entry_ref": "T7",
+              "exit_ref": "T8"
+            },
+            {
+              "id": "ms8",
+              "label": "MS8",
+              "start": 0.63663785,
+              "end": 0.7615644,
+              "length_m": 685.902,
+              "entry_ref": "T8",
+              "exit_ref": "T9"
+            },
+            {
+              "id": "ms9",
+              "label": "MS9",
+              "start": 0.7615644,
+              "end": 0.91110248,
+              "length_m": 821.03,
+              "entry_ref": "T9",
+              "exit_ref": "TA"
+            },
+            {
+              "id": "ms10",
+              "label": "MS10",
+              "start": 0.91110248,
+              "end": 0.96301334,
+              "length_m": 285.013,
+              "entry_ref": "TA",
+              "exit_ref": "TB"
+            },
+            {
+              "id": "ms11",
+              "label": "MS11",
+              "start": 0.96301334,
+              "end": 1.0,
+              "length_m": 203.073,
+              "entry_ref": "TB",
+              "exit_ref": "T1"
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.947,
-        "exit": 0.078
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -76.928851,
-          42.340779
-        ]
-      },
       "length_m": 5435,
       "direction": "clockwise"
     }
@@ -264,7 +556,7 @@
     "imsa_data": "watkins-glen"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:59.553485+00:00",
+    "generated_at": "2026-06-29T16:17:54.364685+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -1180,6 +1180,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.94
       },
       "geometry": {
@@ -1194,6 +1195,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.131
       },
       "geometry": {
@@ -1208,18 +1210,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Turn 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 1"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.102,
-        "start": 0.07265,
-        "end": 0.12646
+        "marker": 0.102
       },
       "geometry": {
         "type": "Point",
@@ -1233,18 +1233,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Turn 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.1755,
-        "start": 0.14615,
-        "end": 0.19256
+        "marker": 0.1755
       },
       "geometry": {
         "type": "Point",
@@ -1258,18 +1256,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Turn 3",
-        "names": {
+        "labels": {
           "numbered": "Turn 3"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.2045,
-        "start": 0.19256,
-        "end": 0.21445
+        "marker": 0.2045
       },
       "geometry": {
         "type": "Point",
@@ -1283,18 +1279,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Turn 4",
-        "names": {
+        "labels": {
           "numbered": "Turn 4"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.2315,
-        "start": 0.21445,
-        "end": 0.25596
+        "marker": 0.2315
       },
       "geometry": {
         "type": "Point",
@@ -1308,18 +1302,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Turn 5",
-        "names": {
+        "labels": {
           "numbered": "Turn 5"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.296,
-        "start": 0.27888,
-        "end": 0.31312
+        "marker": 0.296
       },
       "geometry": {
         "type": "Point",
@@ -1333,18 +1325,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Turn 6",
-        "names": {
+        "labels": {
           "numbered": "Turn 6"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.353,
-        "start": 0.34444,
-        "end": 0.36401
+        "marker": 0.353
       },
       "geometry": {
         "type": "Point",
@@ -1358,18 +1348,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Turn 7",
-        "names": {
+        "labels": {
           "numbered": "Turn 7"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.4855,
-        "start": 0.42435,
-        "end": 0.50711
+        "marker": 0.4855
       },
       "geometry": {
         "type": "Point",
@@ -1383,18 +1371,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Turn 8",
-        "names": {
+        "labels": {
           "numbered": "Turn 8"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.53,
-        "start": 0.50711,
-        "end": 0.5618
+        "marker": 0.53
       },
       "geometry": {
         "type": "Point",
@@ -1408,18 +1394,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Turn 9",
-        "names": {
+        "labels": {
           "numbered": "Turn 9"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.595,
-        "start": 0.56565,
-        "end": 0.61946
+        "marker": 0.595
       },
       "geometry": {
         "type": "Point",
@@ -1433,18 +1417,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Turn 10",
-        "names": {
+        "labels": {
           "numbered": "Turn 10"
         },
-        "complex": "Turn 10",
         "direction": "right",
         "scale": 3,
-        "marker": 0.7595,
-        "start": 0.73015,
-        "end": 0.79859
+        "marker": 0.7595
       },
       "geometry": {
         "type": "Point",
@@ -1458,20 +1440,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Turn 10A",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Turn 10A",
           "official": "Turn 10A"
         },
-        "complex": "Turn 10",
         "direction": "left",
         "scale": 3,
-        "marker": 0.8455,
-        "start": 0.79859,
-        "end": 0.86697
+        "marker": 0.8455
       },
       "geometry": {
         "type": "Point",
@@ -1485,20 +1465,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Turn 10B",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Turn 10B",
           "official": "Turn 10B"
         },
-        "complex": "Turn 10",
         "direction": "left",
         "scale": 4,
-        "marker": 0.882,
-        "start": 0.86697,
-        "end": 0.8939
+        "marker": 0.882
       },
       "geometry": {
         "type": "Point",
@@ -1512,20 +1490,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Turn 11",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Turn 11",
           "official": "Turn 11"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.9245,
-        "start": 0.8939,
-        "end": 0.9531
+        "marker": 0.9245
       },
       "geometry": {
         "type": "Point",
@@ -1539,20 +1515,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Turn 12",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Turn 12",
           "official": "Turn 12"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.9795,
-        "start": 0.9531,
-        "end": 0.00396
+        "marker": 0.9795
       },
       "geometry": {
         "type": "Point",

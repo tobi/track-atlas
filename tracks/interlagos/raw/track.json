@@ -12,7 +12,7 @@
     "region": "Sao Paulo",
     "timezone": "America/Sao_Paulo"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,327 +31,483 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "Senna S",
-            "official": "Descida do S do Senna"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.09,
-          "start": 0.04823,
-          "end": 0.1004,
-          "location": [
-            -46.699248,
-            -23.706152
-          ],
-          "complex": "Senna S"
-        },
-        {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "official": "Senna S",
-            "driver": "Senna S"
-          },
-          "direction": "right",
-          "scale": 3,
-          "marker": 0.11,
-          "start": 0.1004,
-          "end": 0.13321,
-          "complex": "Senna S",
-          "location": [
-            -46.698314,
-            -23.706047
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Curva do Sol",
-            "official": "Curva do Sol"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.15,
-          "start": 0.13375,
-          "end": 0.16625,
-          "location": [
-            -46.696144,
-            -23.7059
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -46.700142,
+                -23.703173
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.98,
+              "location": [
+                -46.700329,
+                -23.70251
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.07,
+              "location": [
+                -46.699488,
+                -23.705496
+              ]
+            }
           ]
         },
         {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Descida do Lago",
-            "official": "Descida do Lago"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.33,
-          "start": 0.31375,
-          "end": 0.35667,
-          "location": [
-            -46.694241,
-            -23.699688
-          ],
-          "complex": "Descida do Lago"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "official": "Descida do Lago",
-            "driver": "Descida do Lago"
-          },
-          "direction": "left",
-          "scale": 5,
-          "marker": 0.37,
-          "start": 0.35667,
-          "end": 0.38044,
-          "complex": "Descida do Lago",
-          "location": [
-            -46.695718,
-            -23.699385
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Ferradura",
-            "official": "Ferradura"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.48,
-          "start": 0.43823,
-          "end": 0.49258,
-          "location": [
-            -46.69858,
-            -23.70231
-          ]
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Laranjinha",
-            "official": "Laranjinha"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.51,
-          "start": 0.49258,
-          "end": 0.536,
-          "location": [
-            -46.699738,
-            -23.702057
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "official": "Pinheirinho",
-            "driver": "Pinheirinho"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.55,
-          "start": 0.536,
-          "end": 0.56105,
-          "location": [
-            -46.69984,
-            -23.700545
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Pinheirinho",
-            "official": "Pinheirinho"
-          },
-          "direction": "left",
-          "scale": 3,
-          "marker": 0.58,
-          "start": 0.56105,
-          "end": 0.60143,
-          "location": [
-            -46.698824,
-            -23.700551
-          ]
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Bico de Pato",
-            "official": "Bico de Pato"
-          },
-          "direction": "right",
-          "scale": 2,
-          "marker": 0.64,
-          "start": 0.60143,
-          "end": 0.67017,
-          "location": [
-            -46.699396,
-            -23.698868
-          ]
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Mergulho",
-            "official": "Mergulho"
-          },
-          "direction": "left",
-          "scale": 4,
-          "marker": 0.69,
-          "start": 0.67375,
-          "end": 0.70625,
-          "location": [
-            -46.697756,
-            -23.69924
-          ]
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "Juncao",
-            "official": "Junção"
-          },
-          "direction": "left",
-          "scale": 2,
-          "marker": 0.76,
-          "start": 0.71823,
-          "end": 0.79,
-          "location": [
-            -46.6964,
-            -23.698024
-          ]
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "official": "Junção",
-            "driver": "Juncao"
-          },
-          "direction": "left",
-          "scale": 6,
-          "marker": 0.79,
-          "start": 0.79,
-          "end": 0.79,
-          "location": [
-            -46.696709,
-            -23.697179
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "driver": "Subida dos Boxes",
-            "official": "Subida dos Boxes"
-          },
-          "direction": "left",
-          "scale": 6,
-          "marker": 0.86,
-          "start": 0.86,
-          "end": 0.86,
-          "location": [
-            -46.699628,
-            -23.697949
-          ]
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Arquibancadas",
-            "official": "Arquibancadas"
-          },
-          "direction": "right",
-          "scale": 4,
-          "marker": 0.94,
-          "start": 0.92375,
-          "end": 0.95625,
-          "location": [
-            -46.700544,
-            -23.701175
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Senna S",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "Senna S",
+                "official": "Descida do S do Senna"
+              },
+              "marker": 0.09,
+              "location": [
+                -46.699248,
+                -23.706152
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Senna S",
+              "labels": {
+                "numbered": "Turn 2",
+                "official": "Senna S",
+                "driver": "Senna S"
+              },
+              "marker": 0.11,
+              "location": [
+                -46.698314,
+                -23.706047
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Curva do Sol",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Curva do Sol",
+                "official": "Curva do Sol"
+              },
+              "marker": 0.15,
+              "location": [
+                -46.696144,
+                -23.7059
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Descida do Lago",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Descida do Lago",
+                "official": "Descida do Lago"
+              },
+              "marker": 0.33,
+              "location": [
+                -46.694241,
+                -23.699688
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Descida do Lago",
+              "labels": {
+                "numbered": "Turn 5",
+                "official": "Descida do Lago",
+                "driver": "Descida do Lago"
+              },
+              "marker": 0.37,
+              "location": [
+                -46.695718,
+                -23.699385
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Ferradura",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Ferradura",
+                "official": "Ferradura"
+              },
+              "marker": 0.48,
+              "location": [
+                -46.69858,
+                -23.70231
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Laranjinha",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Laranjinha",
+                "official": "Laranjinha"
+              },
+              "marker": 0.51,
+              "location": [
+                -46.699738,
+                -23.702057
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Pinheirinho",
+              "labels": {
+                "numbered": "Turn 8",
+                "official": "Pinheirinho",
+                "driver": "Pinheirinho"
+              },
+              "marker": 0.55,
+              "location": [
+                -46.69984,
+                -23.700545
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Pinheirinho",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Pinheirinho",
+                "official": "Pinheirinho"
+              },
+              "marker": 0.58,
+              "location": [
+                -46.698824,
+                -23.700551
+              ],
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Bico de Pato",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Bico de Pato",
+                "official": "Bico de Pato"
+              },
+              "marker": 0.64,
+              "location": [
+                -46.699396,
+                -23.698868
+              ],
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Mergulho",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Mergulho",
+                "official": "Mergulho"
+              },
+              "marker": 0.69,
+              "location": [
+                -46.697756,
+                -23.69924
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Juncao",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "Juncao",
+                "official": "Junção"
+              },
+              "marker": 0.76,
+              "location": [
+                -46.6964,
+                -23.698024
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Juncao",
+              "labels": {
+                "numbered": "Turn 13",
+                "official": "Junção",
+                "driver": "Juncao"
+              },
+              "marker": 0.79,
+              "location": [
+                -46.696709,
+                -23.697179
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 6
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Subida dos Boxes",
+              "labels": {
+                "numbered": "Turn 14",
+                "driver": "Subida dos Boxes",
+                "official": "Subida dos Boxes"
+              },
+              "marker": 0.86,
+              "location": [
+                -46.699628,
+                -23.697949
+              ],
+              "direction": "left",
+              "scale": 6
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Arquibancadas",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Arquibancadas",
+                "official": "Arquibancadas"
+              },
+              "marker": 0.94,
+              "location": [
+                -46.700544,
+                -23.701175
+              ],
+              "direction": "right",
+              "scale": 4
+            }
           ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Main Straight",
-          "start": 0.96,
-          "end": 0.06
-        }
-      ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.3
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.3
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.3,
+              "end": 0.74
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.74,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.3,
-          "end": 0.74
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Senna S",
+              "start": 0.04823,
+              "end": 0.1004,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Senna S",
+              "start": 0.1004,
+              "end": 0.13321,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Curva do Sol",
+              "start": 0.13375,
+              "end": 0.16625,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Descida do Lago",
+              "start": 0.31375,
+              "end": 0.35667,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Descida do Lago",
+              "start": 0.35667,
+              "end": 0.38044,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Ferradura",
+              "start": 0.43823,
+              "end": 0.49258,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Laranjinha",
+              "start": 0.49258,
+              "end": 0.536,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Pinheirinho",
+              "start": 0.536,
+              "end": 0.56105,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Pinheirinho",
+              "start": 0.56105,
+              "end": 0.60143,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Bico de Pato",
+              "start": 0.60143,
+              "end": 0.67017,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Mergulho",
+              "start": 0.67375,
+              "end": 0.70625,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Juncao",
+              "start": 0.71823,
+              "end": 0.79,
+              "anchor": "t12"
+            },
+            {
+              "id": "t15",
+              "label": "Arquibancadas",
+              "start": 0.92375,
+              "end": 0.95625,
+              "anchor": "t15"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.74,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "senna",
+              "label": "Senna S",
+              "start": 0.04823,
+              "end": 0.13321,
+              "members": [
+                "t1",
+                "t2"
+              ]
+            },
+            {
+              "id": "descidadolago",
+              "label": "Descida do Lago",
+              "start": 0.31375,
+              "end": 0.38044,
+              "members": [
+                "t4",
+                "t5"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.98,
-        "exit": 0.07
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -46.700142,
-          -23.703173
-        ]
-      },
       "length_m": 4309,
       "direction": "anticlockwise"
     }
@@ -364,7 +520,7 @@
     "imsa_data": "sao-paulo"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:32.940166+00:00",
+    "generated_at": "2026-06-29T15:41:52.214990+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -12,7 +12,7 @@
     "region": "Tuscany",
     "timezone": "Europe/Rome"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,330 +31,506 @@
       "id": "gp",
       "name": "Grand Prix Circuit",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "San Donato",
-            "official": "San Donato"
-          },
-          "start": 0.09384,
-          "end": 0.17019,
-          "marker": 0.1415,
-          "direction": "right",
-          "scale": 1,
-          "location": [
-            11.3762,
-            44.002067
-          ],
-          "location_source": "centerline"
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                11.37226,
+                43.99881
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.912,
+              "location": [
+                11.369885,
+                43.995027
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.06,
+              "location": [
+                11.374137,
+                44.001294
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2",
-            "driver": "Luco",
-            "official": "Luco"
-          },
-          "start": 0.17019,
-          "end": 0.19535,
-          "marker": 0.182,
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            11.377275,
-            44.000571
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "Poggio Secco",
-            "official": "Poggio Secco"
-          },
-          "start": 0.20165,
-          "end": 0.22835,
-          "marker": 0.215,
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            11.376341,
-            43.999216
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Materassi",
-            "official": "Materassi"
-          },
-          "start": 0.25812,
-          "end": 0.29659,
-          "marker": 0.281,
-          "direction": "right",
-          "scale": 3,
-          "location": [
-            11.375191,
-            43.996491
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "Borgo San Lorenzo",
-            "official": "Borgo San Lorenzo"
-          },
-          "start": 0.29659,
-          "end": 0.32085,
-          "marker": 0.3075,
-          "location": [
-            11.375135,
-            43.99648
-          ],
-          "direction": "left",
-          "scale": 4
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Casanova",
-            "official": "Casanova-Savelli"
-          },
-          "start": 0.36283,
-          "end": 0.37808,
-          "marker": 0.3695,
-          "direction": "right",
-          "scale": 5,
-          "location": [
-            11.370989,
-            43.994073
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Savelli",
-            "official": "Casanova-Savelli"
-          },
-          "start": 0.39833,
-          "end": 0.41358,
-          "marker": 0.405,
-          "direction": "left",
-          "scale": 5,
-          "location": [
-            11.369729,
-            43.992783
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Arrabbiata 1",
-            "official": "Arrabbiata 1"
-          },
-          "start": 0.43762,
-          "end": 0.49256,
-          "marker": 0.4605,
-          "complex": "Arrabbiata",
-          "direction": "left",
-          "scale": 3,
-          "location": [
-            11.36712,
-            43.991767
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Arrabbiata 2",
-            "official": "Arrabbiata 2"
-          },
-          "start": 0.49256,
-          "end": 0.52835,
-          "marker": 0.515,
-          "complex": "Arrabbiata",
-          "direction": "right",
-          "scale": 4,
-          "location": [
-            11.366013,
-            43.993842
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Scarperia",
-            "official": "Scarperia"
-          },
-          "start": 0.57333,
-          "end": 0.58858,
-          "marker": 0.58,
-          "direction": "left",
-          "scale": 5,
-          "location": [
-            11.368226,
-            43.995892
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Palagio",
-            "official": "Palagio"
-          },
-          "start": 0.59515,
-          "end": 0.62185,
-          "marker": 0.6085,
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            11.368824,
-            43.997156
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "Correntaio",
-            "official": "Correntaio"
-          },
-          "start": 0.68065,
-          "end": 0.70735,
-          "marker": 0.694,
-          "direction": "right",
-          "scale": 4,
-          "location": [
-            11.370695,
-            43.998157
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "driver": "Biondetti 1",
-            "official": "Biondetti 1"
-          },
-          "start": 0.71862,
-          "end": 0.75105,
-          "marker": 0.7415,
-          "complex": "Biondetti",
-          "direction": "left",
-          "scale": 3,
-          "location": [
-            11.369507,
-            43.996184
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "driver": "Biondetti 2",
-            "official": "Biondetti 2"
-          },
-          "start": 0.75105,
-          "end": 0.78157,
-          "marker": 0.7625,
-          "complex": "Biondetti",
-          "direction": "left",
-          "scale": 3,
-          "location": [
-            11.368687,
-            43.995388
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Bucine",
-            "official": "Bucine"
-          },
-          "start": 0.83068,
-          "end": 0.88979,
-          "marker": 0.865,
-          "direction": "right",
-          "scale": 2,
-          "location": [
-            11.368602,
-            43.993012
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "San Donato",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "San Donato",
+                "official": "San Donato"
+              },
+              "marker": 0.1415,
+              "location": [
+                11.3762,
+                44.002067
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Luco",
+              "labels": {
+                "numbered": "Turn 2",
+                "driver": "Luco",
+                "official": "Luco"
+              },
+              "marker": 0.182,
+              "location": [
+                11.377275,
+                44.000571
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "Poggio Secco",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "Poggio Secco",
+                "official": "Poggio Secco"
+              },
+              "marker": 0.215,
+              "location": [
+                11.376341,
+                43.999216
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Materassi",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Materassi",
+                "official": "Materassi"
+              },
+              "marker": 0.281,
+              "location": [
+                11.375191,
+                43.996491
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Borgo San Lorenzo",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "Borgo San Lorenzo",
+                "official": "Borgo San Lorenzo"
+              },
+              "marker": 0.3075,
+              "location": [
+                11.375135,
+                43.99648
+              ],
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Casanova",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Casanova",
+                "official": "Casanova-Savelli"
+              },
+              "marker": 0.3695,
+              "location": [
+                11.370989,
+                43.994073
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Savelli",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Savelli",
+                "official": "Casanova-Savelli"
+              },
+              "marker": 0.405,
+              "location": [
+                11.369729,
+                43.992783
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Arrabbiata 1",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Arrabbiata 1",
+                "official": "Arrabbiata 1"
+              },
+              "marker": 0.4605,
+              "location": [
+                11.36712,
+                43.991767
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Arrabbiata 2",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Arrabbiata 2",
+                "official": "Arrabbiata 2"
+              },
+              "marker": 0.515,
+              "location": [
+                11.366013,
+                43.993842
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Scarperia",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Scarperia",
+                "official": "Scarperia"
+              },
+              "marker": 0.58,
+              "location": [
+                11.368226,
+                43.995892
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Palagio",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Palagio",
+                "official": "Palagio"
+              },
+              "marker": 0.6085,
+              "location": [
+                11.368824,
+                43.997156
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "Correntaio",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "Correntaio",
+                "official": "Correntaio"
+              },
+              "marker": 0.694,
+              "location": [
+                11.370695,
+                43.998157
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Biondetti 1",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "Biondetti 1",
+                "official": "Biondetti 1"
+              },
+              "marker": 0.7415,
+              "location": [
+                11.369507,
+                43.996184
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Biondetti 2",
+              "labels": {
+                "numbered": "Turn 14",
+                "driver": "Biondetti 2",
+                "official": "Biondetti 2"
+              },
+              "marker": 0.7625,
+              "location": [
+                11.368687,
+                43.995388
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Bucine",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Bucine",
+                "official": "Bucine"
+              },
+              "marker": 0.865,
+              "location": [
+                11.368602,
+                43.993012
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            }
+          ]
         }
       ],
-      "straights": [],
-      "sectors": [
+      "range_layers": [
         {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.356
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.356
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.356,
+              "end": 0.645
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.645,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.356,
-          "end": 0.645
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "San Donato",
+              "start": 0.09384,
+              "end": 0.17019,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Luco",
+              "start": 0.17019,
+              "end": 0.19535,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "Poggio Secco",
+              "start": 0.20165,
+              "end": 0.22835,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Materassi",
+              "start": 0.25812,
+              "end": 0.29659,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Borgo San Lorenzo",
+              "start": 0.29659,
+              "end": 0.32085,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Casanova",
+              "start": 0.36283,
+              "end": 0.37808,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Savelli",
+              "start": 0.39833,
+              "end": 0.41358,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Arrabbiata 1",
+              "start": 0.43762,
+              "end": 0.49256,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Arrabbiata 2",
+              "start": 0.49256,
+              "end": 0.52835,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Scarperia",
+              "start": 0.57333,
+              "end": 0.58858,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Palagio",
+              "start": 0.59515,
+              "end": 0.62185,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "Correntaio",
+              "start": 0.68065,
+              "end": 0.70735,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Biondetti 1",
+              "start": 0.71862,
+              "end": 0.75105,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Biondetti 2",
+              "start": 0.75105,
+              "end": 0.78157,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "Bucine",
+              "start": 0.83068,
+              "end": 0.88979,
+              "anchor": "t15"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.645,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "arrabbiata",
+              "label": "Arrabbiata",
+              "start": 0.43762,
+              "end": 0.52835,
+              "members": [
+                "t8",
+                "t9"
+              ]
+            },
+            {
+              "id": "biondetti",
+              "label": "Biondetti",
+              "start": 0.71862,
+              "end": 0.78157,
+              "members": [
+                "t13",
+                "t14"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {
-        "entry": 0.912,
-        "exit": 0.06
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          11.37226,
-          43.99881
-        ]
-      },
       "length_m": 5245,
       "direction": "clockwise"
     }
@@ -366,7 +542,7 @@
     "imsa_data": "mugello"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:36.907679+00:00",
+    "generated_at": "2026-06-29T15:41:58.307519+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

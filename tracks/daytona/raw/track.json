@@ -12,7 +12,7 @@
     "region": "Florida",
     "timezone": "America/New_York"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,263 +31,395 @@
       "id": "gp",
       "name": "Road Course",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1"
-          },
-          "marker": 0.085,
-          "direction": "left",
-          "scale": 2,
-          "location": [
-            -81.062861,
-            29.19005
-          ],
-          "location_source": "centerline",
-          "start": 0.05358,
-          "end": 0.1006
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -81.063994,
+                29.186052
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2"
-          },
-          "marker": 0.115,
-          "direction": "left",
-          "scale": 3,
-          "location": [
-            -81.064075,
-            29.191157
-          ],
-          "location_source": "centerline",
-          "start": 0.1006,
-          "end": 0.13043
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "International Horseshoe",
-            "official": "International Horseshoe"
-          },
-          "marker": 0.169,
-          "direction": "right",
-          "scale": 1,
-          "location": [
-            -81.067145,
-            29.191174
-          ],
-          "location_source": "centerline",
-          "start": 0.13043,
-          "end": 0.19867
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "The Kink",
-            "official": "Turn 4 (Kink)"
-          },
-          "marker": 0.255,
-          "direction": "left",
-          "scale": 5,
-          "location": [
-            -81.071475,
-            29.188818
-          ],
-          "location_source": "centerline",
-          "start": 0.24889,
-          "end": 0.26285
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "West Horseshoe",
-            "official": "West Horseshoe"
-          },
-          "marker": 0.309,
-          "direction": "left",
-          "scale": 2,
-          "location": [
-            -81.07345,
-            29.186669
-          ],
-          "location_source": "centerline",
-          "start": 0.27758,
-          "end": 0.33169
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "NASCAR 1",
-            "official": "Turn 6 (NASCAR Turn 1)"
-          },
-          "marker": 0.376,
-          "direction": "left",
-          "scale": 5,
-          "location": [
-            -81.07304,
-            29.183833
-          ],
-          "location_source": "centerline",
-          "start": 0.36989,
-          "end": 0.38385
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "NASCAR 2",
-            "official": "Turn 7 (NASCAR Turn 2)"
-          },
-          "marker": 0.451,
-          "direction": "left",
-          "scale": 5,
-          "location": [
-            -81.069865,
-            29.186424
-          ],
-          "location_source": "centerline",
-          "start": 0.44489,
-          "end": 0.45885
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Bus Stop entry"
-          },
-          "marker": 0.67,
-          "complex": "Bus Stop (Le Mans Chicane)",
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            -81.073854,
-            29.183109
-          ],
-          "location_source": "centerline",
-          "start": 0.65778,
-          "end": 0.67368
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Bus Stop"
-          },
-          "marker": 0.68,
-          "complex": "Bus Stop (Le Mans Chicane)",
-          "direction": "right",
-          "scale": 3,
-          "location": [
-            -81.074385,
-            29.182881
-          ],
-          "location_source": "centerline",
-          "start": 0.67368,
-          "end": 0.68545
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Bus Stop"
-          },
-          "marker": 0.692,
-          "complex": "Bus Stop (Le Mans Chicane)",
-          "direction": "right",
-          "scale": 3,
-          "location": [
-            -81.074762,
-            29.182381
-          ],
-          "location_source": "centerline",
-          "start": 0.68545,
-          "end": 0.69847
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Bus Stop exit"
-          },
-          "marker": 0.703,
-          "complex": "Bus Stop (Le Mans Chicane)",
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            -81.074865,
-            29.181819
-          ],
-          "location_source": "centerline",
-          "start": 0.69847,
-          "end": 0.71522
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "NASCAR 3",
-            "official": "Turn 12 (NASCAR Turns 3-4)"
-          },
-          "marker": 0.81,
-          "direction": "left",
-          "scale": 5,
-          "location": [
-            -81.070888,
-            29.17875
-          ],
-          "location_source": "centerline",
-          "start": 0.80389,
-          "end": 0.81785
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Turn 1",
+              "labels": {
+                "numbered": "Turn 1"
+              },
+              "marker": 0.085,
+              "location": [
+                -81.062861,
+                29.19005
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Turn 2",
+              "labels": {
+                "numbered": "Turn 2"
+              },
+              "marker": 0.115,
+              "location": [
+                -81.064075,
+                29.191157
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "International Horseshoe",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "International Horseshoe",
+                "official": "International Horseshoe"
+              },
+              "marker": 0.169,
+              "location": [
+                -81.067145,
+                29.191174
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "The Kink",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "The Kink",
+                "official": "Turn 4 (Kink)"
+              },
+              "marker": 0.255,
+              "location": [
+                -81.071475,
+                29.188818
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "West Horseshoe",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "West Horseshoe",
+                "official": "West Horseshoe"
+              },
+              "marker": 0.309,
+              "location": [
+                -81.07345,
+                29.186669
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "NASCAR 1",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "NASCAR 1",
+                "official": "Turn 6 (NASCAR Turn 1)"
+              },
+              "marker": 0.376,
+              "location": [
+                -81.07304,
+                29.183833
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "NASCAR 2",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "NASCAR 2",
+                "official": "Turn 7 (NASCAR Turn 2)"
+              },
+              "marker": 0.451,
+              "location": [
+                -81.069865,
+                29.186424
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Bus Stop entry",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Bus Stop entry"
+              },
+              "marker": 0.67,
+              "location": [
+                -81.073854,
+                29.183109
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Bus Stop",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Bus Stop"
+              },
+              "marker": 0.68,
+              "location": [
+                -81.074385,
+                29.182881
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Bus Stop",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Bus Stop"
+              },
+              "marker": 0.692,
+              "location": [
+                -81.074762,
+                29.182381
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Bus Stop exit",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Bus Stop exit"
+              },
+              "marker": 0.703,
+              "location": [
+                -81.074865,
+                29.181819
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "NASCAR 3",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "NASCAR 3",
+                "official": "Turn 12 (NASCAR Turns 3-4)"
+              },
+              "marker": 0.81,
+              "location": [
+                -81.070888,
+                29.17875
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 5
+            }
+          ]
         }
       ],
-      "straights": [],
-      "sectors": [
+      "range_layers": [
         {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.355
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.355
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.355,
+              "end": 0.63
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.63,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "S2",
-          "start": 0.355,
-          "end": 0.63
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.05358,
+              "end": 0.1006,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.1006,
+              "end": 0.13043,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "International Horseshoe",
+              "start": 0.13043,
+              "end": 0.19867,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "The Kink",
+              "start": 0.24889,
+              "end": 0.26285,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "West Horseshoe",
+              "start": 0.27758,
+              "end": 0.33169,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "NASCAR 1",
+              "start": 0.36989,
+              "end": 0.38385,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "NASCAR 2",
+              "start": 0.44489,
+              "end": 0.45885,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Bus Stop entry",
+              "start": 0.65778,
+              "end": 0.67368,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Bus Stop",
+              "start": 0.67368,
+              "end": 0.68545,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Bus Stop",
+              "start": 0.68545,
+              "end": 0.69847,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Bus Stop exit",
+              "start": 0.69847,
+              "end": 0.71522,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "NASCAR 3",
+              "start": 0.80389,
+              "end": 0.81785,
+              "anchor": "t12"
+            }
+          ]
         },
         {
-          "name": "S3",
-          "start": 0.63,
-          "end": 1.0
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "busstopmans",
+              "label": "Bus Stop (Le Mans Chicane)",
+              "start": 0.65778,
+              "end": 0.71522,
+              "members": [
+                "t8",
+                "t9",
+                "t10",
+                "t11"
+              ]
+            }
+          ]
         }
       ],
-      "pit": {},
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -81.063994,
-          29.186052
-        ]
-      },
       "length_m": 5729,
       "direction": "clockwise"
     }
@@ -299,7 +431,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:32.919047+00:00",
+    "generated_at": "2026-06-29T15:41:59.127853+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -1080,6 +1080,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.93
       },
       "geometry": {
@@ -1094,6 +1095,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.03
       },
       "geometry": {
@@ -1108,20 +1110,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Curva 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "official": "Curva 1",
           "driver": "Curva 1"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.09,
-        "start": 0.07496,
-        "end": 0.10504
+        "marker": 0.09
       },
       "geometry": {
         "type": "Point",
@@ -1135,20 +1135,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Curva 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "official": "Curva 2",
           "driver": "Curva 2"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.12,
-        "start": 0.12,
-        "end": 0.12
+        "marker": 0.12
       },
       "geometry": {
         "type": "Point",
@@ -1162,20 +1160,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Lagos",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Lagos",
           "official": "Curva Lagos"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.16,
-        "start": 0.12,
-        "end": 0.18125
+        "marker": 0.16
       },
       "geometry": {
         "type": "Point",
@@ -1189,20 +1185,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Curva 4",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "official": "Curva 4",
           "driver": "Curva 4"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.19,
-        "start": 0.18125,
-        "end": 0.20504
+        "marker": 0.19
       },
       "geometry": {
         "type": "Point",
@@ -1216,20 +1210,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Torre VIP",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Torre VIP",
           "official": "Curva Torre VIP"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.31,
-        "start": 0.25627,
-        "end": 0.34654
+        "marker": 0.31
       },
       "geometry": {
         "type": "Point",
@@ -1243,20 +1235,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Curva 6",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "official": "Curva 6",
           "driver": "Curva 6"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.37,
-        "start": 0.37,
-        "end": 0.37
+        "marker": 0.37
       },
       "geometry": {
         "type": "Point",
@@ -1270,20 +1260,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Curva 7",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "official": "Curva 7",
           "driver": "Curva 7"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.42,
-        "start": 0.41248,
-        "end": 0.426
+        "marker": 0.42
       },
       "geometry": {
         "type": "Point",
@@ -1297,20 +1285,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Samsung",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Samsung",
           "official": "Curva Samsung"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.45,
-        "start": 0.426,
-        "end": 0.47794
+        "marker": 0.45
       },
       "geometry": {
         "type": "Point",
@@ -1324,20 +1310,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Craig Jones",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Craig Jones",
           "official": "Curva Craig Jones"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.53,
-        "start": 0.52248,
-        "end": 0.53967
+        "marker": 0.53
       },
       "geometry": {
         "type": "Point",
@@ -1351,20 +1335,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Portimão",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Portimão",
           "official": "Curva Portimão"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.58,
-        "start": 0.58,
-        "end": 0.58
+        "marker": 0.58
       },
       "geometry": {
         "type": "Point",
@@ -1378,20 +1360,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Curva 11",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "official": "Curva 11",
           "driver": "Curva 11"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.6,
-        "start": 0.58,
-        "end": 0.62149
+        "marker": 0.6
       },
       "geometry": {
         "type": "Point",
@@ -1405,20 +1385,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Curva 12",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "official": "Curva 12",
           "driver": "Curva 12"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.65,
-        "start": 0.64248,
-        "end": 0.6561
+        "marker": 0.65
       },
       "geometry": {
         "type": "Point",
@@ -1432,20 +1410,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Curva 13",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "official": "Curva 13",
           "driver": "Curva 13"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.69,
-        "start": 0.6561,
-        "end": 0.71429
+        "marker": 0.69
       },
       "geometry": {
         "type": "Point",
@@ -1459,20 +1435,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Sagres",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Sagres",
           "official": "Curva Sagres"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.74,
-        "start": 0.71429,
-        "end": 0.76794
+        "marker": 0.74
       },
       "geometry": {
         "type": "Point",
@@ -1486,20 +1460,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Galp",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Galp",
           "official": "Curva Galp"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.83,
-        "start": 0.82248,
-        "end": 0.83967
+        "marker": 0.83
       },
       "geometry": {
         "type": "Point",

@@ -532,6 +532,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.9
       },
       "geometry": {
@@ -546,6 +547,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.046
       },
       "geometry": {
@@ -560,20 +562,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Big Bend",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Big Bend",
           "official": "Big Bend"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.148,
-        "start": 0.09926,
-        "end": 0.18862
+        "marker": 0.148
       },
       "geometry": {
         "type": "Point",
@@ -587,20 +587,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "The Left-Hander",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "The Left-Hander",
           "official": "Left Hander"
         },
-        "complex": "Esses",
         "direction": "left",
         "scale": 3,
-        "marker": 0.309,
-        "start": 0.26026,
-        "end": 0.34962
+        "marker": 0.309
       },
       "geometry": {
         "type": "Point",
@@ -614,20 +612,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "The Uphill",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "The Uphill",
           "official": "Uphill"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.53,
-        "start": 0.50157,
-        "end": 0.55843
+        "marker": 0.53
       },
       "geometry": {
         "type": "Point",
@@ -641,20 +637,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "West Bend",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "West Bend",
           "official": "West Bend"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.692,
-        "start": 0.66357,
-        "end": 0.72043
+        "marker": 0.692
       },
       "geometry": {
         "type": "Point",
@@ -668,20 +662,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "The Downhill",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "The Downhill",
           "official": "Diving Turn"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.823,
-        "start": 0.80878,
-        "end": 0.84128
+        "marker": 0.823
       },
       "geometry": {
         "type": "Point",

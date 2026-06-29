@@ -16,6 +16,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS  # noqa: E402
 
 
+def _point_layer(layout: dict, layer_id: str) -> dict:
+    return next((layer for layer in layout.get("point_layers", []) if layer.get("id") == layer_id), {"items": []})
+
+
 def main() -> None:
     entries = []
     for p in sorted(TRACKS.iterdir()):
@@ -40,7 +44,7 @@ def main() -> None:
             "layouts": [
                 {"id": lo["id"], "name": lo["name"],
                  "length_m": lo.get("length_m"),
-                 "corners": len(lo.get("corners", [])),
+                 "corners": len(_point_layer(lo, "corners").get("items", [])),
                  "direction": lo.get("direction")}
                 for lo in t.get("layouts", [])
             ],

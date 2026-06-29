@@ -1424,6 +1424,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.99
       },
       "geometry": {
@@ -1438,6 +1439,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.07
       },
       "geometry": {
@@ -1452,20 +1454,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Michael Schumacher Corner",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "official": "Michael Schumacher Corner",
           "driver": "Michael Schumacher Corner"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.14,
-        "start": 0.10674,
-        "end": 0.1504
+        "marker": 0.14
       },
       "geometry": {
         "type": "Point",
@@ -1479,18 +1479,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Turn 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.16,
-        "start": 0.1504,
-        "end": 0.17
+        "marker": 0.16
       },
       "geometry": {
         "type": "Point",
@@ -1504,18 +1502,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Turn 3",
-        "names": {
+        "labels": {
           "numbered": "Turn 3"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.17,
-        "start": 0.17,
-        "end": 0.17
+        "marker": 0.17
       },
       "geometry": {
         "type": "Point",
@@ -1529,18 +1525,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Turn 4",
-        "names": {
+        "labels": {
           "numbered": "Turn 4"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.28,
-        "start": 0.24674,
-        "end": 0.30402
+        "marker": 0.28
       },
       "geometry": {
         "type": "Point",
@@ -1554,18 +1548,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Turn 5",
-        "names": {
+        "labels": {
           "numbered": "Turn 5"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.33,
-        "start": 0.33,
-        "end": 0.33
+        "marker": 0.33
       },
       "geometry": {
         "type": "Point",
@@ -1579,18 +1571,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Turn 6",
-        "names": {
+        "labels": {
           "numbered": "Turn 6"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.36,
-        "start": 0.35353,
-        "end": 0.36831
+        "marker": 0.36
       },
       "geometry": {
         "type": "Point",
@@ -1604,18 +1594,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Turn 7",
-        "names": {
+        "labels": {
           "numbered": "Turn 7"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.38,
-        "start": 0.37353,
-        "end": 0.388
+        "marker": 0.38
       },
       "geometry": {
         "type": "Point",
@@ -1629,18 +1617,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Turn 8",
-        "names": {
+        "labels": {
           "numbered": "Turn 8"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.42,
-        "start": 0.388,
-        "end": 0.44402
+        "marker": 0.42
       },
       "geometry": {
         "type": "Point",
@@ -1654,18 +1640,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Turn 9",
-        "names": {
+        "labels": {
           "numbered": "Turn 9"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.49,
-        "start": 0.47707,
-        "end": 0.49438
+        "marker": 0.49
       },
       "geometry": {
         "type": "Point",
@@ -1679,18 +1663,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Turn 10",
-        "names": {
+        "labels": {
           "numbered": "Turn 10"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.51,
-        "start": 0.49438,
-        "end": 0.54141
+        "marker": 0.51
       },
       "geometry": {
         "type": "Point",
@@ -1704,18 +1686,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Turn 11",
-        "names": {
+        "labels": {
           "numbered": "Turn 11"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.64,
-        "start": 0.61783,
-        "end": 0.65848
+        "marker": 0.64
       },
       "geometry": {
         "type": "Point",
@@ -1729,18 +1709,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Turn 12",
-        "names": {
+        "labels": {
           "numbered": "Turn 12"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.7,
-        "start": 0.69353,
-        "end": 0.70831
+        "marker": 0.7
       },
       "geometry": {
         "type": "Point",
@@ -1754,18 +1732,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Turn 13",
-        "names": {
+        "labels": {
           "numbered": "Turn 13"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.76,
-        "start": 0.73783,
-        "end": 0.77848
+        "marker": 0.76
       },
       "geometry": {
         "type": "Point",
@@ -1779,18 +1755,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Turn 14",
-        "names": {
+        "labels": {
           "numbered": "Turn 14"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.91,
-        "start": 0.87674,
-        "end": 0.93
+        "marker": 0.91
       },
       "geometry": {
         "type": "Point",
@@ -1804,18 +1778,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Turn 15",
-        "names": {
+        "labels": {
           "numbered": "Turn 15"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.93,
-        "start": 0.93,
-        "end": 0.93
+        "marker": 0.93
       },
       "geometry": {
         "type": "Point",

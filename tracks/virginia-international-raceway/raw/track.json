@@ -12,7 +12,7 @@
     "region": "Virginia",
     "timezone": "America/New_York"
   },
-  "name_layers": {
+  "label_layers": {
     "numbered": {
       "label": "Numbered",
       "description": "Sequential 'Turn N' identifier (always present)."
@@ -31,336 +31,519 @@
       "id": "gp",
       "name": "Full Course",
       "aka": [],
-      "name_default": "driver",
+      "label_default": "driver",
       "geometry": {
-        "outline": "layers/gp.geojson",
+        "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326"
       },
-      "corners": [
+      "point_layers": [
         {
-          "number": 1,
-          "code": "1",
-          "names": {
-            "numbered": "Turn 1",
-            "driver": "Horseshoe"
-          },
-          "start": 0.03399,
-          "end": 0.08316,
-          "marker": 0.0815,
-          "location": [
-            -79.202601,
-            36.568253
-          ],
-          "direction": "right",
-          "scale": 1
+          "id": "layout_points",
+          "kind": "layout_points",
+          "label": "Layout Points",
+          "items": [
+            {
+              "id": "start_finish",
+              "label": "Start / Finish",
+              "marker": 0.0,
+              "location": [
+                -79.206307,
+                36.56884
+              ]
+            },
+            {
+              "id": "pit_entry",
+              "label": "Pit Entry",
+              "marker": 0.9,
+              "location": [
+                -79.211667,
+                36.567016
+              ]
+            },
+            {
+              "id": "pit_exit",
+              "label": "Pit Exit",
+              "marker": 0.015,
+              "location": [
+                -79.205425,
+                36.568872
+              ]
+            }
+          ]
         },
         {
-          "number": 2,
-          "code": "2",
-          "names": {
-            "numbered": "Turn 2"
-          },
-          "start": 0.1207,
-          "end": 0.14524,
-          "marker": 0.134,
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            -79.204972,
-            36.568268
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 3,
-          "code": "3",
-          "names": {
-            "numbered": "Turn 3",
-            "driver": "NASCAR"
-          },
-          "start": 0.14524,
-          "end": 0.17486,
-          "marker": 0.1645,
-          "location": [
-            -79.206343,
-            36.567732
-          ],
-          "direction": "right",
-          "scale": 3
-        },
-        {
-          "number": 4,
-          "code": "4",
-          "names": {
-            "numbered": "Turn 4",
-            "driver": "Left Hook"
-          },
-          "start": 0.17486,
-          "end": 0.20813,
-          "marker": 0.1935,
-          "location": [
-            -79.205713,
-            36.566107
-          ],
-          "direction": "left",
-          "scale": 2
-        },
-        {
-          "number": 5,
-          "code": "5",
-          "names": {
-            "numbered": "Turn 5",
-            "driver": "Climbing Esses"
-          },
-          "start": 0.20813,
-          "end": 0.22525,
-          "marker": 0.216,
-          "complex": "Climbing Esses",
-          "direction": "right",
-          "scale": 4,
-          "location": [
-            -79.204968,
-            36.566178
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 6,
-          "code": "6",
-          "names": {
-            "numbered": "Turn 6",
-            "driver": "Climbing Esses"
-          },
-          "start": 0.22525,
-          "end": 0.24612,
-          "marker": 0.2345,
-          "complex": "Climbing Esses",
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            -79.204484,
-            36.565846
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 7,
-          "code": "7",
-          "names": {
-            "numbered": "Turn 7",
-            "driver": "Snake"
-          },
-          "start": 0.24612,
-          "end": 0.30071,
-          "marker": 0.276,
-          "location": [
-            -79.20439,
-            36.564724
-          ],
-          "direction": "left",
-          "scale": 2
-        },
-        {
-          "number": 8,
-          "code": "8",
-          "names": {
-            "numbered": "Turn 8",
-            "driver": "Spiral"
-          },
-          "start": 0.32279,
-          "end": 0.3674,
-          "marker": 0.357,
-          "direction": "right",
-          "scale": 2,
-          "location": [
-            -79.204816,
-            36.560403
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 9,
-          "code": "9",
-          "names": {
-            "numbered": "Turn 9",
-            "driver": "Spiral"
-          },
-          "start": 0.3674,
-          "end": 0.38541,
-          "marker": 0.377,
-          "direction": "left",
-          "scale": 3,
-          "location": [
-            -79.204798,
-            36.559318
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 10,
-          "code": "10",
-          "names": {
-            "numbered": "Turn 10",
-            "driver": "Spiral"
-          },
-          "start": 0.38541,
-          "end": 0.4055,
-          "marker": 0.3955,
-          "direction": "right",
-          "scale": 3,
-          "location": [
-            -79.204664,
-            36.558326
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 11,
-          "code": "11",
-          "names": {
-            "numbered": "Turn 11",
-            "driver": "Spiral"
-          },
-          "start": 0.4055,
-          "end": 0.43614,
-          "marker": 0.4175,
-          "direction": "left",
-          "scale": 3,
-          "location": [
-            -79.204623,
-            36.557144
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 12,
-          "code": "12",
-          "names": {
-            "numbered": "Turn 12",
-            "driver": "South Bend"
-          },
-          "start": 0.43614,
-          "end": 0.4775,
-          "marker": 0.4585,
-          "location": [
-            -79.205345,
-            36.554972
-          ],
-          "direction": "right",
-          "scale": 3
-        },
-        {
-          "number": 13,
-          "code": "13",
-          "names": {
-            "numbered": "Turn 13",
-            "driver": "Oak Tree"
-          },
-          "start": 0.5127,
-          "end": 0.5393,
-          "marker": 0.526,
-          "direction": "left",
-          "scale": 4,
-          "location": [
-            -79.204656,
-            36.552044
-          ],
-          "location_source": "centerline"
-        },
-        {
-          "number": 14,
-          "code": "14",
-          "names": {
-            "numbered": "Turn 14",
-            "driver": "Roller Coaster"
-          },
-          "start": 0.78235,
-          "end": 0.79755,
-          "marker": 0.789,
-          "location": [
-            -79.211855,
-            36.562472
-          ],
-          "direction": "right",
-          "scale": 5
-        },
-        {
-          "number": 15,
-          "code": "15",
-          "names": {
-            "numbered": "Turn 15",
-            "driver": "Hog Pen"
-          },
-          "start": 0.83129,
-          "end": 0.89021,
-          "marker": 0.8655,
-          "location": [
-            -79.212499,
-            36.565757
-          ],
-          "direction": "left",
-          "scale": 2
-        },
-        {
-          "number": 16,
-          "code": "16",
-          "names": {
-            "numbered": "Turn 16",
-            "driver": "Turn 17",
-            "official": "Turn 17"
-          },
-          "start": 0.08316,
-          "end": 0.09205,
-          "marker": 0.0835,
-          "direction": "right",
-          "scale": 5,
-          "location": [
-            -79.202444,
-            36.568033
-          ],
-          "location_source": "centerline"
+          "id": "corners",
+          "kind": "corners",
+          "label": "Corners",
+          "items": [
+            {
+              "id": "t1",
+              "number": 1,
+              "code": "1",
+              "label": "Horseshoe",
+              "labels": {
+                "numbered": "Turn 1",
+                "driver": "Horseshoe"
+              },
+              "marker": 0.0815,
+              "location": [
+                -79.202601,
+                36.568253
+              ],
+              "direction": "right",
+              "scale": 1
+            },
+            {
+              "id": "t2",
+              "number": 2,
+              "code": "2",
+              "label": "Turn 2",
+              "labels": {
+                "numbered": "Turn 2"
+              },
+              "marker": 0.134,
+              "location": [
+                -79.204972,
+                36.568268
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t3",
+              "number": 3,
+              "code": "3",
+              "label": "NASCAR",
+              "labels": {
+                "numbered": "Turn 3",
+                "driver": "NASCAR"
+              },
+              "marker": 0.1645,
+              "location": [
+                -79.206343,
+                36.567732
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Left Hook",
+              "labels": {
+                "numbered": "Turn 4",
+                "driver": "Left Hook"
+              },
+              "marker": 0.1935,
+              "location": [
+                -79.205713,
+                36.566107
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Climbing Esses",
+              "labels": {
+                "numbered": "Turn 5",
+                "driver": "Climbing Esses"
+              },
+              "marker": 0.216,
+              "location": [
+                -79.204968,
+                36.566178
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t6",
+              "number": 6,
+              "code": "6",
+              "label": "Climbing Esses",
+              "labels": {
+                "numbered": "Turn 6",
+                "driver": "Climbing Esses"
+              },
+              "marker": 0.2345,
+              "location": [
+                -79.204484,
+                36.565846
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t7",
+              "number": 7,
+              "code": "7",
+              "label": "Snake",
+              "labels": {
+                "numbered": "Turn 7",
+                "driver": "Snake"
+              },
+              "marker": 0.276,
+              "location": [
+                -79.20439,
+                36.564724
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t8",
+              "number": 8,
+              "code": "8",
+              "label": "Spiral",
+              "labels": {
+                "numbered": "Turn 8",
+                "driver": "Spiral"
+              },
+              "marker": 0.357,
+              "location": [
+                -79.204816,
+                36.560403
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t9",
+              "number": 9,
+              "code": "9",
+              "label": "Spiral",
+              "labels": {
+                "numbered": "Turn 9",
+                "driver": "Spiral"
+              },
+              "marker": 0.377,
+              "location": [
+                -79.204798,
+                36.559318
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t10",
+              "number": 10,
+              "code": "10",
+              "label": "Spiral",
+              "labels": {
+                "numbered": "Turn 10",
+                "driver": "Spiral"
+              },
+              "marker": 0.3955,
+              "location": [
+                -79.204664,
+                36.558326
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t11",
+              "number": 11,
+              "code": "11",
+              "label": "Spiral",
+              "labels": {
+                "numbered": "Turn 11",
+                "driver": "Spiral"
+              },
+              "marker": 0.4175,
+              "location": [
+                -79.204623,
+                36.557144
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 3
+            },
+            {
+              "id": "t12",
+              "number": 12,
+              "code": "12",
+              "label": "South Bend",
+              "labels": {
+                "numbered": "Turn 12",
+                "driver": "South Bend"
+              },
+              "marker": 0.4585,
+              "location": [
+                -79.205345,
+                36.554972
+              ],
+              "direction": "right",
+              "scale": 3
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Oak Tree",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "Oak Tree"
+              },
+              "marker": 0.526,
+              "location": [
+                -79.204656,
+                36.552044
+              ],
+              "location_source": "centerline",
+              "direction": "left",
+              "scale": 4
+            },
+            {
+              "id": "t14",
+              "number": 14,
+              "code": "14",
+              "label": "Roller Coaster",
+              "labels": {
+                "numbered": "Turn 14",
+                "driver": "Roller Coaster"
+              },
+              "marker": 0.789,
+              "location": [
+                -79.211855,
+                36.562472
+              ],
+              "direction": "right",
+              "scale": 5
+            },
+            {
+              "id": "t15",
+              "number": 15,
+              "code": "15",
+              "label": "Hog Pen",
+              "labels": {
+                "numbered": "Turn 15",
+                "driver": "Hog Pen"
+              },
+              "marker": 0.8655,
+              "location": [
+                -79.212499,
+                36.565757
+              ],
+              "direction": "left",
+              "scale": 2
+            },
+            {
+              "id": "t16",
+              "number": 16,
+              "code": "16",
+              "label": "Turn 17",
+              "labels": {
+                "numbered": "Turn 16",
+                "driver": "Turn 17",
+                "official": "Turn 17"
+              },
+              "marker": 0.0835,
+              "location": [
+                -79.202444,
+                36.568033
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 5
+            }
+          ]
         }
       ],
-      "straights": [
+      "range_layers": [
         {
-          "name": "Back Straight",
-          "start": 0.551,
-          "end": 0.747
+          "id": "timing_sectors",
+          "kind": "timing_sectors",
+          "label": "Timing Sectors",
+          "coverage": "partition",
+          "items": [
+            {
+              "id": "s1",
+              "label": "S1",
+              "start": 0.0,
+              "end": 0.337
+            },
+            {
+              "id": "s2",
+              "label": "S2",
+              "start": 0.337,
+              "end": 0.735
+            },
+            {
+              "id": "s3",
+              "label": "S3",
+              "start": 0.735,
+              "end": 1.0
+            }
+          ]
         },
         {
-          "name": "Front Straight",
-          "start": 0.901,
-          "end": 0.975
+          "id": "corner_ranges",
+          "kind": "corner_ranges",
+          "label": "Corners",
+          "generated": true,
+          "items": [
+            {
+              "id": "t1",
+              "label": "Horseshoe",
+              "start": 0.03399,
+              "end": 0.08316,
+              "anchor": "t1"
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.1207,
+              "end": 0.14524,
+              "anchor": "t2"
+            },
+            {
+              "id": "t3",
+              "label": "NASCAR",
+              "start": 0.14524,
+              "end": 0.17486,
+              "anchor": "t3"
+            },
+            {
+              "id": "t4",
+              "label": "Left Hook",
+              "start": 0.17486,
+              "end": 0.20813,
+              "anchor": "t4"
+            },
+            {
+              "id": "t5",
+              "label": "Climbing Esses",
+              "start": 0.20813,
+              "end": 0.22525,
+              "anchor": "t5"
+            },
+            {
+              "id": "t6",
+              "label": "Climbing Esses",
+              "start": 0.22525,
+              "end": 0.24612,
+              "anchor": "t6"
+            },
+            {
+              "id": "t7",
+              "label": "Snake",
+              "start": 0.24612,
+              "end": 0.30071,
+              "anchor": "t7"
+            },
+            {
+              "id": "t8",
+              "label": "Spiral",
+              "start": 0.32279,
+              "end": 0.3674,
+              "anchor": "t8"
+            },
+            {
+              "id": "t9",
+              "label": "Spiral",
+              "start": 0.3674,
+              "end": 0.38541,
+              "anchor": "t9"
+            },
+            {
+              "id": "t10",
+              "label": "Spiral",
+              "start": 0.38541,
+              "end": 0.4055,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
+              "label": "Spiral",
+              "start": 0.4055,
+              "end": 0.43614,
+              "anchor": "t11"
+            },
+            {
+              "id": "t12",
+              "label": "South Bend",
+              "start": 0.43614,
+              "end": 0.4775,
+              "anchor": "t12"
+            },
+            {
+              "id": "t13",
+              "label": "Oak Tree",
+              "start": 0.5127,
+              "end": 0.5393,
+              "anchor": "t13"
+            },
+            {
+              "id": "t14",
+              "label": "Roller Coaster",
+              "start": 0.78235,
+              "end": 0.79755,
+              "anchor": "t14"
+            },
+            {
+              "id": "t15",
+              "label": "Hog Pen",
+              "start": 0.83129,
+              "end": 0.89021,
+              "anchor": "t15"
+            },
+            {
+              "id": "t16",
+              "label": "Turn 17",
+              "start": 0.08316,
+              "end": 0.09205,
+              "anchor": "t16"
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "climbing",
+              "label": "Climbing Esses",
+              "start": 0.20813,
+              "end": 0.24612,
+              "members": [
+                "t5",
+                "t6"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "straights",
+          "kind": "straights",
+          "label": "Straights",
+          "items": [
+            {
+              "id": "backstraight",
+              "label": "Back Straight",
+              "start": 0.551,
+              "end": 0.747
+            },
+            {
+              "id": "frontstraight",
+              "label": "Front Straight",
+              "start": 0.901,
+              "end": 0.975
+            }
+          ]
         }
       ],
-      "sectors": [
-        {
-          "name": "S1",
-          "start": 0.0,
-          "end": 0.337
-        },
-        {
-          "name": "S2",
-          "start": 0.337,
-          "end": 0.735
-        },
-        {
-          "name": "S3",
-          "start": 0.735,
-          "end": 1.0
-        }
-      ],
-      "pit": {
-        "entry": 0.9,
-        "exit": 0.015
-      },
-      "start_finish": {
-        "marker": 0.0,
-        "location": [
-          -79.206307,
-          36.56884
-        ]
-      },
       "length_m": 5262,
       "direction": "clockwise"
     }
@@ -372,7 +555,7 @@
     "imsa_data": "virginia-international-raceway"
   },
   "provenance": {
-    "generated_at": "2026-06-15T20:11:59.550181+00:00",
+    "generated_at": "2026-06-29T15:41:59.150422+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

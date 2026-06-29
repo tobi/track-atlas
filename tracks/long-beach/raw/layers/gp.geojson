@@ -864,19 +864,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Shoreline",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Shoreline"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.223,
-        "start": 0.18511,
-        "end": 0.24443
+        "marker": 0.223
       },
       "geometry": {
         "type": "Point",
@@ -890,19 +888,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Aquarium",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Aquarium"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.283,
-        "start": 0.24443,
-        "end": 0.2908
+        "marker": 0.283
       },
       "geometry": {
         "type": "Point",
@@ -916,19 +912,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "T3",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "T3"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.295,
-        "start": 0.2908,
-        "end": 0.313
+        "marker": 0.295
       },
       "geometry": {
         "type": "Point",
@@ -942,19 +936,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "T4",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "T4"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.331,
-        "start": 0.313,
-        "end": 0.3531
+        "marker": 0.331
       },
       "geometry": {
         "type": "Point",
@@ -968,19 +960,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "T5",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "T5"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.378,
-        "start": 0.3559,
-        "end": 0.4001
+        "marker": 0.378
       },
       "geometry": {
         "type": "Point",
@@ -994,19 +984,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "T6",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "T6"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.505,
-        "start": 0.49395,
-        "end": 0.51713
+        "marker": 0.505
       },
       "geometry": {
         "type": "Point",
@@ -1020,19 +1008,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "T7",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "T7"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.536,
-        "start": 0.51713,
-        "end": 0.55448
+        "marker": 0.536
       },
       "geometry": {
         "type": "Point",
@@ -1046,19 +1032,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "The Fountain",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "The Fountain"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.602,
-        "start": 0.55448,
-        "end": 0.64305
+        "marker": 0.602
       },
       "geometry": {
         "type": "Point",
@@ -1072,19 +1056,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "T9",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "T9"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.801,
-        "start": 0.76311,
-        "end": 0.82512
+        "marker": 0.801
       },
       "geometry": {
         "type": "Point",
@@ -1098,19 +1080,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "T10",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "T10"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.842,
-        "start": 0.82512,
-        "end": 0.85075
+        "marker": 0.842
       },
       "geometry": {
         "type": "Point",
@@ -1124,19 +1104,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "The Hairpin",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "The Hairpin"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.882,
-        "start": 0.85075,
-        "end": 0.93568
+        "marker": 0.882
       },
       "geometry": {
         "type": "Point",

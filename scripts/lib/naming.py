@@ -1,21 +1,24 @@
-"""Shared corner-naming conventions for the atlas pipeline.
+"""Shared label-layer conventions for the atlas pipeline.
 
-The naming model is a base identifier plus any number of sparse overlay layers:
+The naming model is a base identifier plus any number of sparse overlay label
+layers:
 
-  - Every corner has a ``code`` (the trackside identifier: "17", or "5a"/"5b"
-    when an apex is split) and an always-present ``numbered`` layer rendered as
-    "Turn <code>". That is the base layer; it covers unnamed corners too.
-  - Named overlays ("official", "driver", "historical", ...) appear on a corner
-    only when a name is actually known. An unnamed corner -- a kink drivers
-    don't talk about -- carries only ``numbered``.
-  - A layout picks a default display layer (``name_default``, usually "driver").
-    Display resolves in exactly two steps: the default layer if present, else
-    the ``numbered`` identifier. It does NOT fall through other named layers --
-    an absent default-layer name means drivers just use the number (e.g. Sebring
-    T17 is officially "Sunset Bend" but drivers say "Turn 17").
+  - Every corner point has a ``code`` (the trackside identifier: "17", or
+    "5a"/"5b" when an apex is split) and an always-present ``numbered`` label
+    rendered as "Turn <code>". That is the base layer; it covers unnamed corners
+    too.
+  - Named overlays ("official", "driver", "historical", ...) appear in an
+    item's ``labels`` only when a name is actually known. An unnamed corner -- a
+    kink drivers don't talk about -- carries only ``numbered``.
+  - A layout picks a default display layer (``label_default``, usually
+    "driver"). Display resolves in exactly two steps: the default layer if
+    present, else the ``numbered`` identifier. It does NOT fall through other
+    named layers -- an absent default-layer name means drivers just use the
+    number (e.g. Sebring T17 is officially "Sunset Bend" but drivers say
+    "Turn 17").
 
 Layer codes follow conventions so tracks don't diverge; clients enumerate a
-track's ``name_layers`` registry to offer the user a layer to display.
+track's ``label_layers`` registry to offer the user a layer to display.
 """
 from __future__ import annotations
 
@@ -60,8 +63,8 @@ def resolve_name(names: dict, default_layer: str = DEFAULT_LAYER) -> str:
 
 
 def build_registry(layer_codes) -> dict:
-    """Build a track-level name_layers registry from the set of layer codes that
-    actually appear on its corners, always including the mandatory layers and
+    """Build a track-level label_layers registry from the set of layer codes that
+    actually appear on its items, always including the mandatory layers and
     ordered by LAYER_ORDER (unknown codes appended alphabetically)."""
     present = set(layer_codes) | set(MANDATORY_LAYERS)
     ordered = [c for c in LAYER_ORDER if c in present]

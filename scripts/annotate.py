@@ -75,21 +75,26 @@ Rules:
 
 def build_prompt(slug: str) -> tuple[str, dict]:
     """Return (prompt_text, layout_dict) for the first layout of a track."""
-    track = json.loads((TRACKS / slug / "track.json").read_text())
+    track = json.loads((TRACKS / slug / "raw" / "track.json").read_text())
     lo = track["layouts"][0]
-    gj_path = TRACKS / slug / lo["geometry"]["outline"]
+    gj_path = TRACKS / slug / "raw" / lo["geometry"]["centerline"]
     gj = json.loads(gj_path.read_text())
 
     # Build a compact corner summary
     corners_summary = []
-    for c in lo.get("corners", []):
+    corners = next((l.get("items", []) for l in lo.get("point_layers", []) if l.get("id") == "corners"), [])
+    complex_by_id = {}
+    for comp in next((l.get("items", []) for l in lo.get("range_layers", []) if l.get("id") == "corner_complexes"), []):
+        for mid in comp.get("members", []):
+            complex_by_id[mid] = comp.get("label")
+    for c in corners:
         row = {
             "number": c["number"],
             "marker": c.get("marker"),
             "location": c.get("location"),
             "location_source": c.get("location_source", "osm-way"),
-            "current_names": c.get("names", {}),
-            "current_complex": c.get("complex"),
+            "current_labels": c.get("labels", {}),
+            "current_complex": complex_by_id.get(c.get("id")),
             "current_direction": c.get("direction"),
             "current_scale": c.get("scale"),
         }
@@ -119,7 +124,7 @@ Slug: {slug}
 Country: {track.get('country')}
 Series: {', '.join(track.get('series', []))}
 Layout: {lo['name']}  ({lo.get('length_m', '?')} m, {lo.get('direction', '?')})
-Total corners: {len(lo.get('corners', []))}
+Total corners: {len(corners)}
 
 --- CURRENT CORNER DATA ---
 {json.dumps(corners_summary, indent=2)}
@@ -240,16 +245,21 @@ def main():
         print(f"[annotate] errors_summary: {errors_summary}")
 
     # Show diff vs current
-    track = json.loads((TRACKS / slug / "track.json").read_text())
-    existing_corners = {str(c["number"]): c for c in track["layouts"][0].get("corners", [])}
+    track = json.loads((TRACKS / slug / "raw" / "track.json").read_text())
+    existing_items = next((l.get("items", []) for l in track["layouts"][0].get("point_layers", []) if l.get("id") == "corners"), [])
+    existing_corners = {str(c["number"]): c for c in existing_items}
+    existing_complex = {}
+    for comp in next((l.get("items", []) for l in track["layouts"][0].get("range_layers", []) if l.get("id") == "corner_complexes"), []):
+        for mid in comp.get("members", []):
+            existing_complex[mid] = comp.get("label")
     for num, patch in sorted(corners_annotated.items(), key=lambda x: int(x[0])):
         cur = existing_corners.get(num, {})
         changes = []
-        if patch.get("colloquial") and patch["colloquial"] != cur.get("names", {}).get("colloquial"):
+        if patch.get("colloquial") and patch["colloquial"] != cur.get("labels", {}).get("driver"):
             changes.append(f"colloquial: {patch['colloquial']!r}")
-        if patch.get("official") and patch["official"] != cur.get("names", {}).get("official"):
+        if patch.get("official") and patch["official"] != cur.get("labels", {}).get("official"):
             changes.append(f"official: {patch['official']!r}")
-        if patch.get("complex") and patch["complex"] != cur.get("complex"):
+        if patch.get("complex") and patch["complex"] != existing_complex.get(cur.get("id")):
             changes.append(f"complex: {patch['complex']!r}")
         if patch.get("direction") and patch["direction"] != cur.get("direction"):
             changes.append(f"direction: {patch['direction']!r}")
@@ -259,7 +269,7 @@ def main():
             changes.append(f"⚠ ERROR: {patch['error']}")
         if changes:
             cname = (patch.get("colloquial") or patch.get("official")
-                     or cur.get("names", {}).get("colloquial") or f"T{num}")
+                     or cur.get("labels", {}).get("driver") or f"T{num}")
             print(f"  T{num:>2} {cname:<22}  " + "  |  ".join(changes))
 
     if args.dry:

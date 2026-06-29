@@ -2820,6 +2820,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.912
       },
       "geometry": {
@@ -2834,6 +2835,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.06
       },
       "geometry": {
@@ -2848,20 +2850,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "San Donato",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "San Donato",
           "official": "San Donato"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.1415,
-        "start": 0.09384,
-        "end": 0.17019
+        "marker": 0.1415
       },
       "geometry": {
         "type": "Point",
@@ -2875,20 +2875,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Luco",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Luco",
           "official": "Luco"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.182,
-        "start": 0.17019,
-        "end": 0.19535
+        "marker": 0.182
       },
       "geometry": {
         "type": "Point",
@@ -2902,20 +2900,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Poggio Secco",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Poggio Secco",
           "official": "Poggio Secco"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.215,
-        "start": 0.20165,
-        "end": 0.22835
+        "marker": 0.215
       },
       "geometry": {
         "type": "Point",
@@ -2929,20 +2925,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Materassi",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Materassi",
           "official": "Materassi"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.281,
-        "start": 0.25812,
-        "end": 0.29659
+        "marker": 0.281
       },
       "geometry": {
         "type": "Point",
@@ -2956,20 +2950,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Borgo San Lorenzo",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Borgo San Lorenzo",
           "official": "Borgo San Lorenzo"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.3075,
-        "start": 0.29659,
-        "end": 0.32085
+        "marker": 0.3075
       },
       "geometry": {
         "type": "Point",
@@ -2983,20 +2975,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Casanova",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Casanova",
           "official": "Casanova-Savelli"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.3695,
-        "start": 0.36283,
-        "end": 0.37808
+        "marker": 0.3695
       },
       "geometry": {
         "type": "Point",
@@ -3010,20 +3000,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Savelli",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Savelli",
           "official": "Casanova-Savelli"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.405,
-        "start": 0.39833,
-        "end": 0.41358
+        "marker": 0.405
       },
       "geometry": {
         "type": "Point",
@@ -3037,20 +3025,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Arrabbiata 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Arrabbiata 1",
           "official": "Arrabbiata 1"
         },
-        "complex": "Arrabbiata",
         "direction": "left",
         "scale": 3,
-        "marker": 0.4605,
-        "start": 0.43762,
-        "end": 0.49256
+        "marker": 0.4605
       },
       "geometry": {
         "type": "Point",
@@ -3064,20 +3050,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Arrabbiata 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Arrabbiata 2",
           "official": "Arrabbiata 2"
         },
-        "complex": "Arrabbiata",
         "direction": "right",
         "scale": 4,
-        "marker": 0.515,
-        "start": 0.49256,
-        "end": 0.52835
+        "marker": 0.515
       },
       "geometry": {
         "type": "Point",
@@ -3091,20 +3075,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Scarperia",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Scarperia",
           "official": "Scarperia"
         },
-        "complex": null,
         "direction": "left",
         "scale": 5,
-        "marker": 0.58,
-        "start": 0.57333,
-        "end": 0.58858
+        "marker": 0.58
       },
       "geometry": {
         "type": "Point",
@@ -3118,20 +3100,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Palagio",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Palagio",
           "official": "Palagio"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.6085,
-        "start": 0.59515,
-        "end": 0.62185
+        "marker": 0.6085
       },
       "geometry": {
         "type": "Point",
@@ -3145,20 +3125,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Correntaio",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Correntaio",
           "official": "Correntaio"
         },
-        "complex": null,
         "direction": "right",
         "scale": 4,
-        "marker": 0.694,
-        "start": 0.68065,
-        "end": 0.70735
+        "marker": 0.694
       },
       "geometry": {
         "type": "Point",
@@ -3172,20 +3150,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Biondetti 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Biondetti 1",
           "official": "Biondetti 1"
         },
-        "complex": "Biondetti",
         "direction": "left",
         "scale": 3,
-        "marker": 0.7415,
-        "start": 0.71862,
-        "end": 0.75105
+        "marker": 0.7415
       },
       "geometry": {
         "type": "Point",
@@ -3199,20 +3175,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Biondetti 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Biondetti 2",
           "official": "Biondetti 2"
         },
-        "complex": "Biondetti",
         "direction": "left",
         "scale": 3,
-        "marker": 0.7625,
-        "start": 0.75105,
-        "end": 0.78157
+        "marker": 0.7625
       },
       "geometry": {
         "type": "Point",
@@ -3226,20 +3200,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Bucine",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Bucine",
           "official": "Bucine"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.865,
-        "start": 0.83068,
-        "end": 0.88979
+        "marker": 0.865
       },
       "geometry": {
         "type": "Point",

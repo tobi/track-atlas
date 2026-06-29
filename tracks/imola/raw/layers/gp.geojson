@@ -1332,6 +1332,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.93
       },
       "geometry": {
@@ -1346,6 +1347,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.04
       },
       "geometry": {
@@ -1360,19 +1362,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Variante Bassa",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Variante Bassa"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.01,
-        "start": 0.01,
-        "end": 0.01
+        "marker": 0.01
       },
       "geometry": {
         "type": "Point",
@@ -1386,20 +1386,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Tamburello",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "driver": "Tamburello",
           "official": "Variante Tamburello"
         },
-        "complex": "Tamburello",
         "direction": "left",
         "scale": 3,
-        "marker": 0.14,
-        "start": 0.11556,
-        "end": 0.14455
+        "marker": 0.14
       },
       "geometry": {
         "type": "Point",
@@ -1413,20 +1411,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Tamburello",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "official": "Variante Tamburello",
           "driver": "Tamburello"
         },
-        "complex": "Tamburello",
         "direction": "right",
         "scale": 3,
-        "marker": 0.15,
-        "start": 0.14455,
-        "end": 0.16765
+        "marker": 0.15
       },
       "geometry": {
         "type": "Point",
@@ -1440,20 +1436,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Tamburello",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "official": "Variante Tamburello",
           "driver": "Tamburello"
         },
-        "complex": "Tamburello",
         "direction": "left",
         "scale": 4,
-        "marker": 0.18,
-        "start": 0.16765,
-        "end": 0.19426
+        "marker": 0.18
       },
       "geometry": {
         "type": "Point",
@@ -1467,20 +1461,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Villeneuve",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Villeneuve",
           "official": "Variante Villeneuve"
         },
-        "complex": "Villeneuve",
         "direction": "left",
         "scale": 5,
-        "marker": 0.27,
-        "start": 0.26287,
-        "end": 0.27545
+        "marker": 0.27
       },
       "geometry": {
         "type": "Point",
@@ -1494,20 +1486,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Villeneuve",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "official": "Variante Villeneuve",
           "driver": "Villeneuve"
         },
-        "complex": "Villeneuve",
         "direction": "right",
         "scale": 3,
-        "marker": 0.29,
-        "start": 0.27545,
-        "end": 0.30429
+        "marker": 0.29
       },
       "geometry": {
         "type": "Point",
@@ -1521,20 +1511,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Tosa",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Tosa",
           "official": "Tosa"
         },
-        "complex": null,
         "direction": "left",
         "scale": 1,
-        "marker": 0.34,
-        "start": 0.30429,
-        "end": 0.37463
+        "marker": 0.34
       },
       "geometry": {
         "type": "Point",
@@ -1548,18 +1536,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Turn 8",
-        "names": {
+        "labels": {
           "numbered": "Turn 8"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.43,
-        "start": 0.43,
-        "end": 0.43
+        "marker": 0.43
       },
       "geometry": {
         "type": "Point",
@@ -1573,20 +1559,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Piratella",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Piratella",
           "official": "Piratella"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.47,
-        "start": 0.45574,
-        "end": 0.48426
+        "marker": 0.47
       },
       "geometry": {
         "type": "Point",
@@ -1600,18 +1584,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Turn 10",
-        "names": {
+        "labels": {
           "numbered": "Turn 10"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.51,
-        "start": 0.51,
-        "end": 0.51
+        "marker": 0.51
       },
       "geometry": {
         "type": "Point",
@@ -1625,20 +1607,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Acque Minerali 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "official": "Acque Minerali",
           "driver": "Acque Minerali 1"
         },
-        "complex": "Acque Minerali",
         "direction": "right",
         "scale": 4,
-        "marker": 0.55,
-        "start": 0.53574,
-        "end": 0.56105
+        "marker": 0.55
       },
       "geometry": {
         "type": "Point",
@@ -1652,20 +1632,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "Acque Minerali 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "Acque Minerali 2",
           "official": "Acque Minerali"
         },
-        "complex": "Acque Minerali",
         "direction": "right",
         "scale": 3,
-        "marker": 0.58,
-        "start": 0.56105,
-        "end": 0.59
+        "marker": 0.58
       },
       "geometry": {
         "type": "Point",
@@ -1679,18 +1657,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Turn 13",
-        "names": {
+        "labels": {
           "numbered": "Turn 13"
         },
-        "complex": null,
         "direction": "left",
         "scale": 6,
-        "marker": 0.59,
-        "start": 0.59,
-        "end": 0.59
+        "marker": 0.59
       },
       "geometry": {
         "type": "Point",
@@ -1704,20 +1680,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Variante Alta",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Variante Alta",
           "official": "Variante Alta"
         },
-        "complex": "Variante Alta",
         "direction": "right",
         "scale": 3,
-        "marker": 0.68,
-        "start": 0.65556,
-        "end": 0.68455
+        "marker": 0.68
       },
       "geometry": {
         "type": "Point",
@@ -1731,20 +1705,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Variante Alta",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "official": "Variante Alta",
           "driver": "Variante Alta"
         },
-        "complex": "Variante Alta",
         "direction": "left",
         "scale": 3,
-        "marker": 0.69,
-        "start": 0.68455,
-        "end": 0.71037
+        "marker": 0.69
       },
       "geometry": {
         "type": "Point",
@@ -1758,18 +1730,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Turn 16",
-        "names": {
+        "labels": {
           "numbered": "Turn 16"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.81,
-        "start": 0.81,
-        "end": 0.81
+        "marker": 0.81
       },
       "geometry": {
         "type": "Point",
@@ -1783,20 +1753,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t17",
         "number": 17,
         "code": "17",
         "display": "Rivazza 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 17",
           "driver": "Rivazza 1",
           "official": "Rivazza"
         },
-        "complex": "Rivazza",
         "direction": "left",
         "scale": 3,
-        "marker": 0.84,
-        "start": 0.81556,
-        "end": 0.85364
+        "marker": 0.84
       },
       "geometry": {
         "type": "Point",
@@ -1810,20 +1778,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t18",
         "number": 18,
         "code": "18",
         "display": "Rivazza 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 18",
           "official": "Rivazza",
           "driver": "Rivazza 2"
         },
-        "complex": "Rivazza",
         "direction": "left",
         "scale": 3,
-        "marker": 0.87,
-        "start": 0.85364,
-        "end": 0.89037
+        "marker": 0.87
       },
       "geometry": {
         "type": "Point",
@@ -1837,20 +1803,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t19",
         "number": 19,
         "code": "19",
         "display": "Variante Bassa",
-        "names": {
+        "labels": {
           "numbered": "Turn 19",
           "official": "Variante Bassa",
           "driver": "Variante Bassa"
         },
-        "complex": null,
         "direction": "right",
         "scale": 6,
-        "marker": 0.94,
-        "start": 0.94,
-        "end": 0.94
+        "marker": 0.94
       },
       "geometry": {
         "type": "Point",

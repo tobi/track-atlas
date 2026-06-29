@@ -1324,6 +1324,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.9
       },
       "geometry": {
@@ -1338,6 +1339,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.015
       },
       "geometry": {
@@ -1352,19 +1354,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "Horseshoe",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "Horseshoe"
         },
-        "complex": null,
         "direction": "right",
         "scale": 1,
-        "marker": 0.0815,
-        "start": 0.03399,
-        "end": 0.08316
+        "marker": 0.0815
       },
       "geometry": {
         "type": "Point",
@@ -1378,18 +1378,16 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "Turn 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 2"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.134,
-        "start": 0.1207,
-        "end": 0.14524
+        "marker": 0.134
       },
       "geometry": {
         "type": "Point",
@@ -1403,19 +1401,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "NASCAR",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "NASCAR"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.1645,
-        "start": 0.14524,
-        "end": 0.17486
+        "marker": 0.1645
       },
       "geometry": {
         "type": "Point",
@@ -1429,19 +1425,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Left Hook",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Left Hook"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.1935,
-        "start": 0.17486,
-        "end": 0.20813
+        "marker": 0.1935
       },
       "geometry": {
         "type": "Point",
@@ -1455,19 +1449,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Climbing Esses",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "driver": "Climbing Esses"
         },
-        "complex": "Climbing Esses",
         "direction": "right",
         "scale": 4,
-        "marker": 0.216,
-        "start": 0.20813,
-        "end": 0.22525
+        "marker": 0.216
       },
       "geometry": {
         "type": "Point",
@@ -1481,19 +1473,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Climbing Esses",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Climbing Esses"
         },
-        "complex": "Climbing Esses",
         "direction": "left",
         "scale": 4,
-        "marker": 0.2345,
-        "start": 0.22525,
-        "end": 0.24612
+        "marker": 0.2345
       },
       "geometry": {
         "type": "Point",
@@ -1507,19 +1497,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Snake",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "driver": "Snake"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.276,
-        "start": 0.24612,
-        "end": 0.30071
+        "marker": 0.276
       },
       "geometry": {
         "type": "Point",
@@ -1533,19 +1521,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Spiral",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Spiral"
         },
-        "complex": null,
         "direction": "right",
         "scale": 2,
-        "marker": 0.357,
-        "start": 0.32279,
-        "end": 0.3674
+        "marker": 0.357
       },
       "geometry": {
         "type": "Point",
@@ -1559,19 +1545,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Spiral",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "driver": "Spiral"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.377,
-        "start": 0.3674,
-        "end": 0.38541
+        "marker": 0.377
       },
       "geometry": {
         "type": "Point",
@@ -1585,19 +1569,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Spiral",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "driver": "Spiral"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.3955,
-        "start": 0.38541,
-        "end": 0.4055
+        "marker": 0.3955
       },
       "geometry": {
         "type": "Point",
@@ -1611,19 +1593,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Spiral",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Spiral"
         },
-        "complex": null,
         "direction": "left",
         "scale": 3,
-        "marker": 0.4175,
-        "start": 0.4055,
-        "end": 0.43614
+        "marker": 0.4175
       },
       "geometry": {
         "type": "Point",
@@ -1637,19 +1617,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t12",
         "number": 12,
         "code": "12",
         "display": "South Bend",
-        "names": {
+        "labels": {
           "numbered": "Turn 12",
           "driver": "South Bend"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.4585,
-        "start": 0.43614,
-        "end": 0.4775
+        "marker": 0.4585
       },
       "geometry": {
         "type": "Point",
@@ -1663,19 +1641,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t13",
         "number": 13,
         "code": "13",
         "display": "Oak Tree",
-        "names": {
+        "labels": {
           "numbered": "Turn 13",
           "driver": "Oak Tree"
         },
-        "complex": null,
         "direction": "left",
         "scale": 4,
-        "marker": 0.526,
-        "start": 0.5127,
-        "end": 0.5393
+        "marker": 0.526
       },
       "geometry": {
         "type": "Point",
@@ -1689,19 +1665,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t14",
         "number": 14,
         "code": "14",
         "display": "Roller Coaster",
-        "names": {
+        "labels": {
           "numbered": "Turn 14",
           "driver": "Roller Coaster"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.789,
-        "start": 0.78235,
-        "end": 0.79755
+        "marker": 0.789
       },
       "geometry": {
         "type": "Point",
@@ -1715,19 +1689,17 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t15",
         "number": 15,
         "code": "15",
         "display": "Hog Pen",
-        "names": {
+        "labels": {
           "numbered": "Turn 15",
           "driver": "Hog Pen"
         },
-        "complex": null,
         "direction": "left",
         "scale": 2,
-        "marker": 0.8655,
-        "start": 0.83129,
-        "end": 0.89021
+        "marker": 0.8655
       },
       "geometry": {
         "type": "Point",
@@ -1741,20 +1713,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t16",
         "number": 16,
         "code": "16",
         "display": "Turn 17",
-        "names": {
+        "labels": {
           "numbered": "Turn 16",
           "driver": "Turn 17",
           "official": "Turn 17"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.0835,
-        "start": 0.08316,
-        "end": 0.09205
+        "marker": 0.0835
       },
       "geometry": {
         "type": "Point",

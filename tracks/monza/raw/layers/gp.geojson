@@ -11,138 +11,6 @@
         "type": "LineString",
         "coordinates": [
           [
-            9.284992,
-            45.620951
-          ],
-          [
-            9.284948,
-            45.620699
-          ],
-          [
-            9.284903,
-            45.620448
-          ],
-          [
-            9.284859,
-            45.620196
-          ],
-          [
-            9.284815,
-            45.619944
-          ],
-          [
-            9.28477,
-            45.619692
-          ],
-          [
-            9.284726,
-            45.61944
-          ],
-          [
-            9.284682,
-            45.619189
-          ],
-          [
-            9.284645,
-            45.618941
-          ],
-          [
-            9.284608,
-            45.618693
-          ],
-          [
-            9.284571,
-            45.618445
-          ],
-          [
-            9.284534,
-            45.618197
-          ],
-          [
-            9.284497,
-            45.617949
-          ],
-          [
-            9.28446,
-            45.617701
-          ],
-          [
-            9.284423,
-            45.617453
-          ],
-          [
-            9.284386,
-            45.617205
-          ],
-          [
-            9.284349,
-            45.616957
-          ],
-          [
-            9.284312,
-            45.616709
-          ],
-          [
-            9.284275,
-            45.616461
-          ],
-          [
-            9.284238,
-            45.616213
-          ],
-          [
-            9.284201,
-            45.615965
-          ],
-          [
-            9.284162,
-            45.615701
-          ],
-          [
-            9.284123,
-            45.615437
-          ],
-          [
-            9.284084,
-            45.615173
-          ],
-          [
-            9.284045,
-            45.614909
-          ],
-          [
-            9.284006,
-            45.614645
-          ],
-          [
-            9.283967,
-            45.614381
-          ],
-          [
-            9.283928,
-            45.614117
-          ],
-          [
-            9.283889,
-            45.613853
-          ],
-          [
-            9.28385,
-            45.613589
-          ],
-          [
-            9.283811,
-            45.613325
-          ],
-          [
-            9.283772,
-            45.613061
-          ],
-          [
-            9.283733,
-            45.612797
-          ],
-          [
             9.283694,
             45.612533
           ],
@@ -1677,6 +1545,138 @@
           [
             9.284992,
             45.620951
+          ],
+          [
+            9.284948,
+            45.620699
+          ],
+          [
+            9.284903,
+            45.620448
+          ],
+          [
+            9.284859,
+            45.620196
+          ],
+          [
+            9.284815,
+            45.619944
+          ],
+          [
+            9.28477,
+            45.619692
+          ],
+          [
+            9.284726,
+            45.61944
+          ],
+          [
+            9.284682,
+            45.619189
+          ],
+          [
+            9.284645,
+            45.618941
+          ],
+          [
+            9.284608,
+            45.618693
+          ],
+          [
+            9.284571,
+            45.618445
+          ],
+          [
+            9.284534,
+            45.618197
+          ],
+          [
+            9.284497,
+            45.617949
+          ],
+          [
+            9.28446,
+            45.617701
+          ],
+          [
+            9.284423,
+            45.617453
+          ],
+          [
+            9.284386,
+            45.617205
+          ],
+          [
+            9.284349,
+            45.616957
+          ],
+          [
+            9.284312,
+            45.616709
+          ],
+          [
+            9.284275,
+            45.616461
+          ],
+          [
+            9.284238,
+            45.616213
+          ],
+          [
+            9.284201,
+            45.615965
+          ],
+          [
+            9.284162,
+            45.615701
+          ],
+          [
+            9.284123,
+            45.615437
+          ],
+          [
+            9.284084,
+            45.615173
+          ],
+          [
+            9.284045,
+            45.614909
+          ],
+          [
+            9.284006,
+            45.614645
+          ],
+          [
+            9.283967,
+            45.614381
+          ],
+          [
+            9.283928,
+            45.614117
+          ],
+          [
+            9.283889,
+            45.613853
+          ],
+          [
+            9.28385,
+            45.613589
+          ],
+          [
+            9.283811,
+            45.613325
+          ],
+          [
+            9.283772,
+            45.613061
+          ],
+          [
+            9.283733,
+            45.612797
+          ],
+          [
+            9.283694,
+            45.612533
           ]
         ]
       }
@@ -1700,6 +1700,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_entry",
+        "name": "Pit Entry",
         "marker": 0.98
       },
       "geometry": {
@@ -1714,6 +1715,7 @@
       "type": "Feature",
       "properties": {
         "role": "pit_exit",
+        "name": "Pit Exit",
         "marker": 0.05
       },
       "geometry": {
@@ -1728,20 +1730,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t1",
         "number": 1,
         "code": "1",
         "display": "First Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 1",
           "driver": "First Chicane",
           "official": "Variante del Rettifilo"
         },
-        "complex": "Variante del Rettifilo",
         "direction": "right",
         "scale": 2,
-        "marker": 0.16,
-        "start": 0.12893,
-        "end": 0.16419
+        "marker": 0.16
       },
       "geometry": {
         "type": "Point",
@@ -1755,20 +1755,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t2",
         "number": 2,
         "code": "2",
         "display": "First Chicane",
-        "names": {
+        "labels": {
           "numbered": "Turn 2",
           "official": "Variante del Rettifilo",
           "driver": "First Chicane"
         },
-        "complex": "Variante del Rettifilo",
         "direction": "left",
         "scale": 2,
-        "marker": 0.17,
-        "start": 0.16419,
-        "end": 0.19244
+        "marker": 0.17
       },
       "geometry": {
         "type": "Point",
@@ -1782,20 +1780,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t3",
         "number": 3,
         "code": "3",
         "display": "Curva Grande",
-        "names": {
+        "labels": {
           "numbered": "Turn 3",
           "driver": "Curva Grande",
           "official": "Curva Grande"
         },
-        "complex": null,
         "direction": "right",
         "scale": 5,
-        "marker": 0.24,
-        "start": 0.23396,
-        "end": 0.24777
+        "marker": 0.24
       },
       "geometry": {
         "type": "Point",
@@ -1809,20 +1805,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t4",
         "number": 4,
         "code": "4",
         "display": "Roggia",
-        "names": {
+        "labels": {
           "numbered": "Turn 4",
           "driver": "Roggia",
           "official": "Variante della Roggia"
         },
-        "complex": "Variante della Roggia",
         "direction": "right",
         "scale": 2,
-        "marker": 0.37,
-        "start": 0.33893,
-        "end": 0.37419
+        "marker": 0.37
       },
       "geometry": {
         "type": "Point",
@@ -1836,20 +1830,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t5",
         "number": 5,
         "code": "5",
         "display": "Roggia",
-        "names": {
+        "labels": {
           "numbered": "Turn 5",
           "official": "Variante della Roggia",
           "driver": "Roggia"
         },
-        "complex": "Variante della Roggia",
         "direction": "left",
         "scale": 2,
-        "marker": 0.38,
-        "start": 0.37419,
-        "end": 0.40244
+        "marker": 0.38
       },
       "geometry": {
         "type": "Point",
@@ -1863,20 +1855,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t6",
         "number": 6,
         "code": "6",
         "display": "Lesmo 1",
-        "names": {
+        "labels": {
           "numbered": "Turn 6",
           "driver": "Lesmo 1",
           "official": "Lesmo 1"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.44,
-        "start": 0.41929,
-        "end": 0.45726
+        "marker": 0.44
       },
       "geometry": {
         "type": "Point",
@@ -1890,20 +1880,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t7",
         "number": 7,
         "code": "7",
         "display": "Lesmo 2",
-        "names": {
+        "labels": {
           "numbered": "Turn 7",
           "official": "Lesmo 2",
           "driver": "Lesmo 2"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.49,
-        "start": 0.46929,
-        "end": 0.50726
+        "marker": 0.49
       },
       "geometry": {
         "type": "Point",
@@ -1917,20 +1905,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t8",
         "number": 8,
         "code": "8",
         "display": "Ascari",
-        "names": {
+        "labels": {
           "numbered": "Turn 8",
           "driver": "Ascari",
           "official": "Variante Ascari"
         },
-        "complex": "Variante Ascari",
         "direction": "right",
         "scale": 3,
-        "marker": 0.68,
-        "start": 0.65929,
-        "end": 0.68455
+        "marker": 0.68
       },
       "geometry": {
         "type": "Point",
@@ -1944,20 +1930,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t9",
         "number": 9,
         "code": "9",
         "display": "Ascari",
-        "names": {
+        "labels": {
           "numbered": "Turn 9",
           "official": "Variante Ascari",
           "driver": "Ascari"
         },
-        "complex": "Variante Ascari",
         "direction": "left",
         "scale": 3,
-        "marker": 0.69,
-        "start": 0.68455,
-        "end": 0.69909
+        "marker": 0.69
       },
       "geometry": {
         "type": "Point",
@@ -1971,20 +1955,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t10",
         "number": 10,
         "code": "10",
         "display": "Ascari",
-        "names": {
+        "labels": {
           "numbered": "Turn 10",
           "official": "Variante Ascari",
           "driver": "Ascari"
         },
-        "complex": "Variante Ascari",
         "direction": "left",
         "scale": 3,
-        "marker": 0.71,
-        "start": 0.69909,
-        "end": 0.72726
+        "marker": 0.71
       },
       "geometry": {
         "type": "Point",
@@ -1998,20 +1980,18 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
+        "id": "t11",
         "number": 11,
         "code": "11",
         "display": "Parabolica",
-        "names": {
+        "labels": {
           "numbered": "Turn 11",
           "driver": "Parabolica",
           "official": "Curva Parabolica"
         },
-        "complex": null,
         "direction": "right",
         "scale": 3,
-        "marker": 0.9,
-        "start": 0.87929,
-        "end": 0.91726
+        "marker": 0.9
       },
       "geometry": {
         "type": "Point",
