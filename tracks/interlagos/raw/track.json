@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -384,7 +384,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -632,7 +632,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "senna",
@@ -831,42 +831,6 @@
               ]
             },
             {
-              "id": "t13",
-              "label": "Juncao",
-              "start": 0.78652,
-              "end": 0.79348,
-              "members": [
-                "t13"
-              ],
-              "points": [
-                {
-                  "id": "t13-apex",
-                  "role": "apex",
-                  "label": "Juncao",
-                  "marker": 0.79,
-                  "point_ref": "t13"
-                }
-              ]
-            },
-            {
-              "id": "t14",
-              "label": "Subida dos Boxes",
-              "start": 0.85652,
-              "end": 0.86348,
-              "members": [
-                "t14"
-              ],
-              "points": [
-                {
-                  "id": "t14-apex",
-                  "role": "apex",
-                  "label": "Subida dos Boxes",
-                  "marker": 0.86,
-                  "point_ref": "t14"
-                }
-              ]
-            },
-            {
               "id": "t15",
               "label": "Arquibancadas",
               "start": 0.92375,
@@ -899,7 +863,7 @@
     "imsa_data": "sao-paulo"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:06.246248+00:00",
+    "generated_at": "2026-06-29T17:43:11.882082+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

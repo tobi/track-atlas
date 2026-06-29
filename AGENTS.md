@@ -32,13 +32,15 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   through `generation-config.json` or the read-only check `uv run python
   scripts/check_apexes.py <slug>`. It derives a smoothed `κ(s)` profile from the
   centerline and emits both apex candidate points and padded corner ranges;
-  apex points and corner ranges are intentionally distinct concepts. Put apexes
-  inside range items as `points: [{role: "apex", point_ref: "..."}]`, not by
-  narrowing the range to the apex. `corner_complexes` is intentionally complete:
-  it is the corner list with adjacent named complexes merged, so every corner
-  appears exactly once (solo corners have one member; Porsche Curves has several
-  apex points). `verify.py`, `suggest_phases.py`, and `annotate.py` also consume
-  these candidates for QA.
+  apex points and corner ranges are intentionally distinct concepts. Keep layer
+  names cohesive: point layer `Corner Apexes`, per-corner range layer `Each
+  Corner`, merged complete group layer `Corner Complexes`. Put apexes inside
+  range items as `points: [{role: "apex", point_ref: "..."}]`, not by
+  narrowing the range to the apex. `corner_complexes` is the corner list with
+  adjacent named complexes merged, but solo high-speed corners/kinks (scale 5/6)
+  are omitted to avoid UI clutter. Multi-apex complexes such as Porsche Curves
+  stay grouped even if their members are fast. `verify.py`, `suggest_phases.py`,
+  and `annotate.py` also consume these candidates for QA.
 - Known good sources:
   - IMSA / Al Kamel noticeboard `Timing 3 Sector Map.pdf` and
     `Timing All Sections Map.pdf` for timing sectors + microsectors.

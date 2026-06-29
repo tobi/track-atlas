@@ -78,7 +78,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -496,7 +496,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -840,26 +840,8 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
-            {
-              "id": "t1",
-              "label": "Dunlop Curve",
-              "start": 0.04743,
-              "end": 0.0533,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Dunlop Curve",
-                  "marker": 0.05,
-                  "point_ref": "t1"
-                }
-              ]
-            },
             {
               "id": "dunlop",
               "label": "Dunlop Chicane",
@@ -1025,24 +1007,6 @@
                   "label": "Arnage",
                   "marker": 0.74,
                   "point_ref": "t12"
-                }
-              ]
-            },
-            {
-              "id": "t13",
-              "label": "Turn 13",
-              "start": 0.8189,
-              "end": 0.8211,
-              "members": [
-                "t13"
-              ],
-              "points": [
-                {
-                  "id": "t13-apex",
-                  "role": "apex",
-                  "label": "Turn 13",
-                  "marker": 0.82,
-                  "point_ref": "t13"
                 }
               ]
             },
@@ -1270,7 +1234,7 @@
     "imsa_data": "le-mans"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:06.212469+00:00",
+    "generated_at": "2026-06-29T17:43:11.849923+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

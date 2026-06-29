@@ -56,7 +56,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -330,7 +330,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -546,7 +546,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -657,42 +657,6 @@
               ]
             },
             {
-              "id": "t7",
-              "label": "Sainte-Baume",
-              "start": 0.32093,
-              "end": 0.3348,
-              "members": [
-                "t7"
-              ],
-              "points": [
-                {
-                  "id": "t7-apex",
-                  "role": "apex",
-                  "label": "Sainte-Baume",
-                  "marker": 0.327,
-                  "point_ref": "t7"
-                }
-              ]
-            },
-            {
-              "id": "t8",
-              "label": "Signes",
-              "start": 0.6704,
-              "end": 0.6756,
-              "members": [
-                "t8"
-              ],
-              "points": [
-                {
-                  "id": "t8-apex",
-                  "role": "apex",
-                  "label": "Signes",
-                  "marker": 0.673,
-                  "point_ref": "t8"
-                }
-              ]
-            },
-            {
               "id": "t9",
               "label": "Beausset",
               "start": 0.74587,
@@ -725,24 +689,6 @@
                   "label": "Bendor",
                   "marker": 0.826,
                   "point_ref": "t10"
-                }
-              ]
-            },
-            {
-              "id": "t11",
-              "label": "Garbalan",
-              "start": 0.85993,
-              "end": 0.8738,
-              "members": [
-                "t11"
-              ],
-              "points": [
-                {
-                  "id": "t11-apex",
-                  "role": "apex",
-                  "label": "Garbalan",
-                  "marker": 0.866,
-                  "point_ref": "t11"
                 }
               ]
             },
@@ -796,7 +742,7 @@
     "imsa_data": "paul-ricard"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:13.455748+00:00",
+    "generated_at": "2026-06-29T17:43:18.959134+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

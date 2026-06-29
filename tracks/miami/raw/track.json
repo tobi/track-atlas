@@ -70,7 +70,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -428,7 +428,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -740,7 +740,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -775,24 +775,6 @@
                   "label": "Turn 2",
                   "marker": 0.1008,
                   "point_ref": "t2"
-                }
-              ]
-            },
-            {
-              "id": "t3",
-              "label": "Turn 3",
-              "start": 0.11236,
-              "end": 0.12471,
-              "members": [
-                "t3"
-              ],
-              "points": [
-                {
-                  "id": "t3-apex",
-                  "role": "apex",
-                  "label": "Turn 3",
-                  "marker": 0.1164,
-                  "point_ref": "t3"
                 }
               ]
             },
@@ -883,42 +865,6 @@
                   "label": "Turn 8",
                   "marker": 0.3176,
                   "point_ref": "t8"
-                }
-              ]
-            },
-            {
-              "id": "t9",
-              "label": "Turn 9",
-              "start": 0.40973,
-              "end": 0.42451,
-              "members": [
-                "t9"
-              ],
-              "points": [
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "Turn 9",
-                  "marker": 0.4162,
-                  "point_ref": "t9"
-                }
-              ]
-            },
-            {
-              "id": "t10",
-              "label": "Turn 10",
-              "start": 0.46903,
-              "end": 0.47457,
-              "members": [
-                "t10"
-              ],
-              "points": [
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Turn 10",
-                  "marker": 0.4718,
-                  "point_ref": "t10"
                 }
               ]
             },
@@ -1098,7 +1044,7 @@
     "imsa_data": "miami"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:13.434519+00:00",
+    "generated_at": "2026-06-29T17:43:18.938087+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

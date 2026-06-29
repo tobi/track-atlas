@@ -75,7 +75,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -372,7 +372,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -604,7 +604,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -643,24 +643,6 @@
               ]
             },
             {
-              "id": "t3",
-              "label": "Renault",
-              "start": 0.24458,
-              "end": 0.26176,
-              "members": [
-                "t3"
-              ],
-              "points": [
-                {
-                  "id": "t3-apex",
-                  "role": "apex",
-                  "label": "Renault",
-                  "marker": 0.2521,
-                  "point_ref": "t3"
-                }
-              ]
-            },
-            {
               "id": "t4",
               "label": "Repsol",
               "start": 0.36037,
@@ -693,24 +675,6 @@
                   "label": "Seat",
                   "marker": 0.4594,
                   "point_ref": "t5"
-                }
-              ]
-            },
-            {
-              "id": "t6",
-              "label": "T6",
-              "start": 0.50738,
-              "end": 0.51382,
-              "members": [
-                "t6"
-              ],
-              "points": [
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "T6",
-                  "marker": 0.5106,
-                  "point_ref": "t6"
                 }
               ]
             },
@@ -873,7 +837,7 @@
     "imsa_data": "barcelona-catalunya"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:18:58.574944+00:00",
+    "generated_at": "2026-06-29T17:43:04.261565+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

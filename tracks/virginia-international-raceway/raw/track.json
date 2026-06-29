@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -390,7 +390,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -654,7 +654,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -881,24 +881,6 @@
               ]
             },
             {
-              "id": "t14",
-              "label": "Roller Coaster",
-              "start": 0.78235,
-              "end": 0.79755,
-              "members": [
-                "t14"
-              ],
-              "points": [
-                {
-                  "id": "t14-apex",
-                  "role": "apex",
-                  "label": "Roller Coaster",
-                  "marker": 0.789,
-                  "point_ref": "t14"
-                }
-              ]
-            },
-            {
               "id": "t15",
               "label": "Hog Pen",
               "start": 0.83129,
@@ -913,24 +895,6 @@
                   "label": "Hog Pen",
                   "marker": 0.8655,
                   "point_ref": "t15"
-                }
-              ]
-            },
-            {
-              "id": "t16",
-              "label": "Turn 17",
-              "start": 0.08316,
-              "end": 0.09205,
-              "members": [
-                "t16"
-              ],
-              "points": [
-                {
-                  "id": "t16-apex",
-                  "role": "apex",
-                  "label": "Turn 17",
-                  "marker": 0.0835,
-                  "point_ref": "t16"
                 }
               ]
             }
@@ -948,7 +912,7 @@
     "imsa_data": "virginia-international-raceway"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:13.460650+00:00",
+    "generated_at": "2026-06-29T17:43:18.964119+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

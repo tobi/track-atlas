@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -415,7 +415,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -695,7 +695,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -884,24 +884,6 @@
               ]
             },
             {
-              "id": "t13",
-              "label": "T13",
-              "start": 0.65358,
-              "end": 0.65842,
-              "members": [
-                "t13"
-              ],
-              "points": [
-                {
-                  "id": "t13-apex",
-                  "role": "apex",
-                  "label": "T13",
-                  "marker": 0.656,
-                  "point_ref": "t13"
-                }
-              ]
-            },
-            {
               "id": "t14",
               "label": "End of the Strip",
               "start": 0.80957,
@@ -916,42 +898,6 @@
                   "label": "End of the Strip",
                   "marker": 0.8386,
                   "point_ref": "t14"
-                }
-              ]
-            },
-            {
-              "id": "t15",
-              "label": "T15",
-              "start": 0.84443,
-              "end": 0.85252,
-              "members": [
-                "t15"
-              ],
-              "points": [
-                {
-                  "id": "t15-apex",
-                  "role": "apex",
-                  "label": "T15",
-                  "marker": 0.846,
-                  "point_ref": "t15"
-                }
-              ]
-            },
-            {
-              "id": "t16",
-              "label": "T16",
-              "start": 0.85252,
-              "end": 0.86486,
-              "members": [
-                "t16"
-              ],
-              "points": [
-                {
-                  "id": "t16-apex",
-                  "role": "apex",
-                  "label": "T16",
-                  "marker": 0.8576,
-                  "point_ref": "t16"
                 }
               ]
             },
@@ -984,7 +930,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T17:19:06.254127+00:00",
+    "generated_at": "2026-06-29T17:43:11.889990+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

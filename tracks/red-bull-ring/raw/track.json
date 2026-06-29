@@ -75,7 +75,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -290,7 +290,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -458,7 +458,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -475,24 +475,6 @@
                   "label": "Niki Lauda Kurve",
                   "marker": 0.1067,
                   "point_ref": "t1"
-                }
-              ]
-            },
-            {
-              "id": "t2",
-              "label": "Remus Kurve",
-              "start": 0.25303,
-              "end": 0.25997,
-              "members": [
-                "t2"
-              ],
-              "points": [
-                {
-                  "id": "t2-apex",
-                  "role": "apex",
-                  "label": "Remus Kurve",
-                  "marker": 0.2565,
-                  "point_ref": "t2"
                 }
               ]
             },
@@ -655,7 +637,7 @@
     "imsa_data": "red-bull-ring"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:09.916840+00:00",
+    "generated_at": "2026-06-29T17:43:15.507927+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -201,7 +201,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -289,7 +289,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -362,24 +362,6 @@
                   "point_ref": "t4"
                 }
               ]
-            },
-            {
-              "id": "t5",
-              "label": "The Downhill",
-              "start": 0.80878,
-              "end": 0.84128,
-              "members": [
-                "t5"
-              ],
-              "points": [
-                {
-                  "id": "t5-apex",
-                  "role": "apex",
-                  "label": "The Downhill",
-                  "marker": 0.823,
-                  "point_ref": "t5"
-                }
-              ]
             }
           ]
         }
@@ -395,7 +377,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:09.928734+00:00",
+    "generated_at": "2026-06-29T17:43:15.518754+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

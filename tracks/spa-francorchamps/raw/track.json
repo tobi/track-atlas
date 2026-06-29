@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -472,7 +472,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -800,7 +800,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -817,24 +817,6 @@
                   "label": "La Source",
                   "marker": 0.04,
                   "point_ref": "t1"
-                }
-              ]
-            },
-            {
-              "id": "t2",
-              "label": "Turn 2",
-              "start": 0.07786,
-              "end": 0.08214,
-              "members": [
-                "t2"
-              ],
-              "points": [
-                {
-                  "id": "t2-apex",
-                  "role": "apex",
-                  "label": "Turn 2",
-                  "marker": 0.08,
-                  "point_ref": "t2"
                 }
               ]
             },
@@ -869,24 +851,6 @@
                   "label": "Raidillon",
                   "marker": 0.17,
                   "point_ref": "t5"
-                }
-              ]
-            },
-            {
-              "id": "t6",
-              "label": "Turn 6",
-              "start": 0.20786,
-              "end": 0.21214,
-              "members": [
-                "t6"
-              ],
-              "points": [
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "Turn 6",
-                  "marker": 0.21,
-                  "point_ref": "t6"
                 }
               ]
             },
@@ -1079,24 +1043,6 @@
               ]
             },
             {
-              "id": "t18",
-              "label": "Blanchimont",
-              "start": 0.855,
-              "end": 0.86642,
-              "members": [
-                "t18"
-              ],
-              "points": [
-                {
-                  "id": "t18-apex",
-                  "role": "apex",
-                  "label": "Blanchimont",
-                  "marker": 0.86,
-                  "point_ref": "t18"
-                }
-              ]
-            },
-            {
               "id": "busstop",
               "label": "Bus Stop",
               "start": 0.91431,
@@ -1138,7 +1084,7 @@
     "imsa_data": "spa-francorchamps"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:13.448842+00:00",
+    "generated_at": "2026-06-29T17:43:18.952372+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -77,7 +77,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -436,7 +436,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -732,26 +732,8 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
-            {
-              "id": "t1",
-              "label": "Abbey",
-              "start": 0.06666,
-              "end": 0.08024,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Abbey",
-                  "marker": 0.0726,
-                  "point_ref": "t1"
-                }
-              ]
-            },
             {
               "id": "abbeyfarm",
               "label": "Abbey / Farm",
@@ -855,24 +837,6 @@
                   "label": "Woodcote",
                   "marker": 0.4376,
                   "point_ref": "t8"
-                }
-              ]
-            },
-            {
-              "id": "t9",
-              "label": "Copse",
-              "start": 0.52116,
-              "end": 0.53474,
-              "members": [
-                "t9"
-              ],
-              "points": [
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "Copse",
-                  "marker": 0.5271,
-                  "point_ref": "t9"
                 }
               ]
             },
@@ -1006,7 +970,7 @@
     "imsa_data": "silverstone"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:12.485925+00:00",
+    "generated_at": "2026-06-29T17:43:18.007766+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

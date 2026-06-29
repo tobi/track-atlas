@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -446,7 +446,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -742,7 +742,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -903,24 +903,6 @@
               ]
             },
             {
-              "id": "t12",
-              "label": "Turn 12",
-              "start": 0.54267,
-              "end": 0.55645,
-              "members": [
-                "t12"
-              ],
-              "points": [
-                {
-                  "id": "t12-apex",
-                  "role": "apex",
-                  "label": "Turn 12",
-                  "marker": 0.5487,
-                  "point_ref": "t12"
-                }
-              ]
-            },
-            {
               "id": "spoon",
               "label": "Spoon",
               "start": 0.63674,
@@ -943,24 +925,6 @@
                   "label": "Spoon",
                   "marker": 0.6861,
                   "point_ref": "t14"
-                }
-              ]
-            },
-            {
-              "id": "t15",
-              "label": "130R",
-              "start": 0.85167,
-              "end": 0.86545,
-              "members": [
-                "t15"
-              ],
-              "points": [
-                {
-                  "id": "t15-apex",
-                  "role": "apex",
-                  "label": "130R",
-                  "marker": 0.8577,
-                  "point_ref": "t15"
                 }
               ]
             },
@@ -1019,7 +983,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T17:19:21.659474+00:00",
+    "generated_at": "2026-06-29T17:43:27.231513+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

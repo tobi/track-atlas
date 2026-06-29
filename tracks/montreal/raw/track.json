@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -355,7 +355,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -587,7 +587,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "senna",
@@ -760,42 +760,6 @@
               ]
             },
             {
-              "id": "t11",
-              "label": "Turn 11",
-              "start": 0.64295,
-              "end": 0.65742,
-              "members": [
-                "t11"
-              ],
-              "points": [
-                {
-                  "id": "t11-apex",
-                  "role": "apex",
-                  "label": "Turn 11",
-                  "marker": 0.6471,
-                  "point_ref": "t11"
-                }
-              ]
-            },
-            {
-              "id": "t12",
-              "label": "Turn 12",
-              "start": 0.73186,
-              "end": 0.73874,
-              "members": [
-                "t12"
-              ],
-              "points": [
-                {
-                  "id": "t12-apex",
-                  "role": "apex",
-                  "label": "Turn 12",
-                  "marker": 0.7353,
-                  "point_ref": "t12"
-                }
-              ]
-            },
-            {
               "id": "wallofchampions",
               "label": "Wall of Champions",
               "start": 0.85573,
@@ -835,7 +799,7 @@
     "imsa_data": "montreal"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:06.262479+00:00",
+    "generated_at": "2026-06-29T17:43:11.898371+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

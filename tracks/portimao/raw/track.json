@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -394,7 +394,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -642,7 +642,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -659,24 +659,6 @@
                   "label": "Curva 1",
                   "marker": 0.09,
                   "point_ref": "t1"
-                }
-              ]
-            },
-            {
-              "id": "t2",
-              "label": "Curva 2",
-              "start": 0.11678,
-              "end": 0.12322,
-              "members": [
-                "t2"
-              ],
-              "points": [
-                {
-                  "id": "t2-apex",
-                  "role": "apex",
-                  "label": "Curva 2",
-                  "marker": 0.12,
-                  "point_ref": "t2"
                 }
               ]
             },
@@ -735,42 +717,6 @@
               ]
             },
             {
-              "id": "t6",
-              "label": "Curva 6",
-              "start": 0.36678,
-              "end": 0.37322,
-              "members": [
-                "t6"
-              ],
-              "points": [
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "Curva 6",
-                  "marker": 0.37,
-                  "point_ref": "t6"
-                }
-              ]
-            },
-            {
-              "id": "t7",
-              "label": "Curva 7",
-              "start": 0.41248,
-              "end": 0.426,
-              "members": [
-                "t7"
-              ],
-              "points": [
-                {
-                  "id": "t7-apex",
-                  "role": "apex",
-                  "label": "Curva 7",
-                  "marker": 0.42,
-                  "point_ref": "t7"
-                }
-              ]
-            },
-            {
               "id": "t8",
               "label": "Samsung",
               "start": 0.426,
@@ -789,42 +735,6 @@
               ]
             },
             {
-              "id": "t9",
-              "label": "Craig Jones",
-              "start": 0.52248,
-              "end": 0.53967,
-              "members": [
-                "t9"
-              ],
-              "points": [
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "Craig Jones",
-                  "marker": 0.53,
-                  "point_ref": "t9"
-                }
-              ]
-            },
-            {
-              "id": "t10",
-              "label": "Portimão",
-              "start": 0.57678,
-              "end": 0.58322,
-              "members": [
-                "t10"
-              ],
-              "points": [
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Portimão",
-                  "marker": 0.58,
-                  "point_ref": "t10"
-                }
-              ]
-            },
-            {
               "id": "t11",
               "label": "Curva 11",
               "start": 0.58,
@@ -839,24 +749,6 @@
                   "label": "Curva 11",
                   "marker": 0.6,
                   "point_ref": "t11"
-                }
-              ]
-            },
-            {
-              "id": "t12",
-              "label": "Curva 12",
-              "start": 0.64248,
-              "end": 0.6561,
-              "members": [
-                "t12"
-              ],
-              "points": [
-                {
-                  "id": "t12-apex",
-                  "role": "apex",
-                  "label": "Curva 12",
-                  "marker": 0.65,
-                  "point_ref": "t12"
                 }
               ]
             },
@@ -895,24 +787,6 @@
                   "point_ref": "t14"
                 }
               ]
-            },
-            {
-              "id": "t15",
-              "label": "Galp",
-              "start": 0.82248,
-              "end": 0.83967,
-              "members": [
-                "t15"
-              ],
-              "points": [
-                {
-                  "id": "t15-apex",
-                  "role": "apex",
-                  "label": "Galp",
-                  "marker": 0.83,
-                  "point_ref": "t15"
-                }
-              ]
             }
           ]
         }
@@ -929,7 +803,7 @@
     "imsa_data": "portimao"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:21.654504+00:00",
+    "generated_at": "2026-06-29T17:43:27.226835+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

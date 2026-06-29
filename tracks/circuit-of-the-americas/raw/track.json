@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -451,7 +451,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -779,7 +779,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -964,24 +964,6 @@
               ]
             },
             {
-              "id": "t15",
-              "label": "Turn 15",
-              "start": 0.75365,
-              "end": 0.764,
-              "members": [
-                "t15"
-              ],
-              "points": [
-                {
-                  "id": "t15-apex",
-                  "role": "apex",
-                  "label": "Turn 15",
-                  "marker": 0.76,
-                  "point_ref": "t15"
-                }
-              ]
-            },
-            {
               "id": "t16",
               "label": "Turn 16",
               "start": 0.764,
@@ -996,42 +978,6 @@
                   "label": "Turn 16",
                   "marker": 0.78,
                   "point_ref": "t16"
-                }
-              ]
-            },
-            {
-              "id": "t17",
-              "label": "Turn 17",
-              "start": 0.80365,
-              "end": 0.81816,
-              "members": [
-                "t17"
-              ],
-              "points": [
-                {
-                  "id": "t17-apex",
-                  "role": "apex",
-                  "label": "Turn 17",
-                  "marker": 0.81,
-                  "point_ref": "t17"
-                }
-              ]
-            },
-            {
-              "id": "t18",
-              "label": "Turn 18",
-              "start": 0.85365,
-              "end": 0.86816,
-              "members": [
-                "t18"
-              ],
-              "points": [
-                {
-                  "id": "t18-apex",
-                  "role": "apex",
-                  "label": "Turn 18",
-                  "marker": 0.86,
-                  "point_ref": "t18"
                 }
               ]
             },
@@ -1086,7 +1032,7 @@
     "imsa_data": "circuit-of-the-americas"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:13.442986+00:00",
+    "generated_at": "2026-06-29T17:43:18.946242+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

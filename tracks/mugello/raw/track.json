@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -393,7 +393,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -641,7 +641,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -734,42 +734,6 @@
               ]
             },
             {
-              "id": "t6",
-              "label": "Casanova",
-              "start": 0.36283,
-              "end": 0.37808,
-              "members": [
-                "t6"
-              ],
-              "points": [
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "Casanova",
-                  "marker": 0.3695,
-                  "point_ref": "t6"
-                }
-              ]
-            },
-            {
-              "id": "t7",
-              "label": "Savelli",
-              "start": 0.39833,
-              "end": 0.41358,
-              "members": [
-                "t7"
-              ],
-              "points": [
-                {
-                  "id": "t7-apex",
-                  "role": "apex",
-                  "label": "Savelli",
-                  "marker": 0.405,
-                  "point_ref": "t7"
-                }
-              ]
-            },
-            {
               "id": "arrabbiata",
               "label": "Arrabbiata",
               "start": 0.43762,
@@ -792,24 +756,6 @@
                   "label": "Arrabbiata 2",
                   "marker": 0.515,
                   "point_ref": "t9"
-                }
-              ]
-            },
-            {
-              "id": "t10",
-              "label": "Scarperia",
-              "start": 0.57333,
-              "end": 0.58858,
-              "members": [
-                "t10"
-              ],
-              "points": [
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Scarperia",
-                  "marker": 0.58,
-                  "point_ref": "t10"
                 }
               ]
             },
@@ -907,7 +853,7 @@
     "imsa_data": "mugello"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:12.509681+00:00",
+    "generated_at": "2026-06-29T17:43:18.032226+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

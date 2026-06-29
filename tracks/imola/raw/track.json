@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -454,7 +454,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -766,26 +766,8 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
-            {
-              "id": "t1",
-              "label": "Variante Bassa",
-              "start": 0.00694,
-              "end": 0.01306,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Variante Bassa",
-                  "marker": 0.01,
-                  "point_ref": "t1"
-                }
-              ]
-            },
             {
               "id": "tamburello",
               "label": "Tamburello",
@@ -865,24 +847,6 @@
               ]
             },
             {
-              "id": "t8",
-              "label": "Turn 8",
-              "start": 0.42694,
-              "end": 0.43306,
-              "members": [
-                "t8"
-              ],
-              "points": [
-                {
-                  "id": "t8-apex",
-                  "role": "apex",
-                  "label": "Turn 8",
-                  "marker": 0.43,
-                  "point_ref": "t8"
-                }
-              ]
-            },
-            {
               "id": "t9",
               "label": "Piratella",
               "start": 0.45574,
@@ -897,24 +861,6 @@
                   "label": "Piratella",
                   "marker": 0.47,
                   "point_ref": "t9"
-                }
-              ]
-            },
-            {
-              "id": "t10",
-              "label": "Turn 10",
-              "start": 0.50694,
-              "end": 0.51306,
-              "members": [
-                "t10"
-              ],
-              "points": [
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Turn 10",
-                  "marker": 0.51,
-                  "point_ref": "t10"
                 }
               ]
             },
@@ -945,24 +891,6 @@
               ]
             },
             {
-              "id": "t13",
-              "label": "Turn 13",
-              "start": 0.58694,
-              "end": 0.59306,
-              "members": [
-                "t13"
-              ],
-              "points": [
-                {
-                  "id": "t13-apex",
-                  "role": "apex",
-                  "label": "Turn 13",
-                  "marker": 0.59,
-                  "point_ref": "t13"
-                }
-              ]
-            },
-            {
               "id": "variantealta",
               "label": "Variante Alta",
               "start": 0.65556,
@@ -985,24 +913,6 @@
                   "label": "Variante Alta",
                   "marker": 0.69,
                   "point_ref": "t15"
-                }
-              ]
-            },
-            {
-              "id": "t16",
-              "label": "Turn 16",
-              "start": 0.80694,
-              "end": 0.81306,
-              "members": [
-                "t16"
-              ],
-              "points": [
-                {
-                  "id": "t16-apex",
-                  "role": "apex",
-                  "label": "Turn 16",
-                  "marker": 0.81,
-                  "point_ref": "t16"
                 }
               ]
             },
@@ -1031,24 +941,6 @@
                   "point_ref": "t18"
                 }
               ]
-            },
-            {
-              "id": "t19",
-              "label": "Variante Bassa",
-              "start": 0.93694,
-              "end": 0.94306,
-              "members": [
-                "t19"
-              ],
-              "points": [
-                {
-                  "id": "t19-apex",
-                  "role": "apex",
-                  "label": "Variante Bassa",
-                  "marker": 0.94,
-                  "point_ref": "t19"
-                }
-              ]
             }
           ]
         }
@@ -1066,7 +958,7 @@
     "imsa_data": "imola"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:18:58.583050+00:00",
+    "generated_at": "2026-06-29T17:43:04.271455+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

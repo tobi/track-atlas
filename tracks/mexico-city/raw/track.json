@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -420,7 +420,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -700,7 +700,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "complex-1",
@@ -825,42 +825,6 @@
               ]
             },
             {
-              "id": "t10",
-              "label": "Turn 10",
-              "start": 0.69137,
-              "end": 0.70951,
-              "members": [
-                "t10"
-              ],
-              "points": [
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Turn 10",
-                  "marker": 0.6995,
-                  "point_ref": "t10"
-                }
-              ]
-            },
-            {
-              "id": "t11",
-              "label": "Turn 11",
-              "start": 0.70951,
-              "end": 0.72776,
-              "members": [
-                "t11"
-              ],
-              "points": [
-                {
-                  "id": "t11-apex",
-                  "role": "apex",
-                  "label": "Turn 11",
-                  "marker": 0.7173,
-                  "point_ref": "t11"
-                }
-              ]
-            },
-            {
               "id": "t12",
               "label": "Turn 12",
               "start": 0.82362,
@@ -915,24 +879,6 @@
               ]
             },
             {
-              "id": "t15",
-              "label": "Turn 15",
-              "start": 0.91091,
-              "end": 0.91789,
-              "members": [
-                "t15"
-              ],
-              "points": [
-                {
-                  "id": "t15-apex",
-                  "role": "apex",
-                  "label": "Turn 15",
-                  "marker": 0.9144,
-                  "point_ref": "t15"
-                }
-              ]
-            },
-            {
               "id": "t16",
               "label": "Turn 16",
               "start": 0.9144,
@@ -949,24 +895,6 @@
                   "point_ref": "t16"
                 }
               ]
-            },
-            {
-              "id": "t17",
-              "label": "Peraltada",
-              "start": 0.94543,
-              "end": 0.95846,
-              "members": [
-                "t17"
-              ],
-              "points": [
-                {
-                  "id": "t17-apex",
-                  "role": "apex",
-                  "label": "Peraltada",
-                  "marker": 0.948,
-                  "point_ref": "t17"
-                }
-              ]
             }
           ]
         }
@@ -979,7 +907,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T17:19:12.489505+00:00",
+    "generated_at": "2026-06-29T17:43:18.011319+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

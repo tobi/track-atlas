@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -287,7 +287,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -455,26 +455,8 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
-            {
-              "id": "t1",
-              "label": "Turn 1",
-              "start": 0.05834,
-              "end": 0.06666,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Turn 1",
-                  "marker": 0.0625,
-                  "point_ref": "t1"
-                }
-              ]
-            },
             {
               "id": "t2",
               "label": "Andretti Hairpin",
@@ -651,7 +633,7 @@
     "imsa_data": "laguna-seca"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:12.476810+00:00",
+    "generated_at": "2026-06-29T17:43:17.998438+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -406,7 +406,7 @@ def generate_track(slug: str) -> dict:
         point_layers = []
         if layout_points:
             point_layers.append({"id": "layout_points", "kind": "layout_points", "label": "Layout Points", "items": layout_points})
-        point_layers.append({"id": "corners", "kind": "corners", "label": "Corners", "items": corner_points})
+        point_layers.append({"id": "corners", "kind": "corners", "label": "Corner Apexes", "items": corner_points})
 
         range_layers = []
         sectors = sectors_s1s3(lovely)
@@ -446,7 +446,7 @@ def generate_track(slug: str) -> dict:
                     }]
                 corner_ranges.append(item)
         if corner_ranges:
-            range_layers.append({"id": "corner_ranges", "kind": "corner_ranges", "label": "Corners", "generated": True, "items": corner_ranges})
+            range_layers.append({"id": "corner_ranges", "kind": "corner_ranges", "label": "Each Corner", "generated": True, "items": corner_ranges})
 
         # Corner complexes are complete: one item per logical corner group.
         # Single-apex corners appear as one-member groups; named complexes merge
@@ -465,6 +465,11 @@ def generate_track(slug: str) -> dict:
                 base_id = normalize(comp) or f"complex-{len(groups) + 1}"
                 label = comp
             else:
+                # Corner Complexes are for meaningful named corner groups. Solo
+                # high-speed corners/kinks (scale 5/6) add UI clutter and can be
+                # represented by their apex + per-corner range only.
+                if (c.get("scale") or 0) >= 5:
+                    continue
                 group_key = ("corner", c["number"])
                 members = [c]
                 base_id = f"t{c['number']}"
@@ -496,7 +501,7 @@ def generate_track(slug: str) -> dict:
                 "points": points,
             })
         if groups:
-            range_layers.append({"id": "corner_complexes", "kind": "corner_complexes", "label": "Corner Groups", "items": groups})
+            range_layers.append({"id": "corner_complexes", "kind": "corner_complexes", "label": "Corner Complexes", "items": groups})
 
         slow_zones = layout.get("slow_zones", [])
         if slow_zones:

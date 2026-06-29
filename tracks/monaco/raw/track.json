@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -470,7 +470,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -782,7 +782,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -799,24 +799,6 @@
                   "label": "Sainte Devote",
                   "marker": 0.0663,
                   "point_ref": "t1"
-                }
-              ]
-            },
-            {
-              "id": "t2",
-              "label": "Beau Rivage",
-              "start": 0.1514,
-              "end": 0.1604,
-              "members": [
-                "t2"
-              ],
-              "points": [
-                {
-                  "id": "t2-apex",
-                  "role": "apex",
-                  "label": "Beau Rivage",
-                  "marker": 0.1559,
-                  "point_ref": "t2"
                 }
               ]
             },
@@ -925,24 +907,6 @@
                   "label": "Portier",
                   "marker": 0.4333,
                   "point_ref": "t8"
-                }
-              ]
-            },
-            {
-              "id": "t9",
-              "label": "Tunnel",
-              "start": 0.51621,
-              "end": 0.54019,
-              "members": [
-                "t9"
-              ],
-              "points": [
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "Tunnel",
-                  "marker": 0.5267,
-                  "point_ref": "t9"
                 }
               ]
             },
@@ -1097,7 +1061,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T17:19:12.598846+00:00",
+    "generated_at": "2026-06-29T17:43:18.118586+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

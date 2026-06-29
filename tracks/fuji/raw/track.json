@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -403,7 +403,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -667,7 +667,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -684,24 +684,6 @@
                   "label": "First Corner",
                   "marker": 0.17,
                   "point_ref": "t1"
-                }
-              ]
-            },
-            {
-              "id": "t2",
-              "label": "Turn 2",
-              "start": 0.1967,
-              "end": 0.2033,
-              "members": [
-                "t2"
-              ],
-              "points": [
-                {
-                  "id": "t2-apex",
-                  "role": "apex",
-                  "label": "Turn 2",
-                  "marker": 0.2,
-                  "point_ref": "t2"
                 }
               ]
             },
@@ -768,60 +750,6 @@
               ]
             },
             {
-              "id": "t7",
-              "label": "Turn 7",
-              "start": 0.4667,
-              "end": 0.4733,
-              "members": [
-                "t7"
-              ],
-              "points": [
-                {
-                  "id": "t7-apex",
-                  "role": "apex",
-                  "label": "Turn 7",
-                  "marker": 0.47,
-                  "point_ref": "t7"
-                }
-              ]
-            },
-            {
-              "id": "t8",
-              "label": "Turn 8",
-              "start": 0.5167,
-              "end": 0.5233,
-              "members": [
-                "t8"
-              ],
-              "points": [
-                {
-                  "id": "t8-apex",
-                  "role": "apex",
-                  "label": "Turn 8",
-                  "marker": 0.52,
-                  "point_ref": "t8"
-                }
-              ]
-            },
-            {
-              "id": "t9",
-              "label": "300R",
-              "start": 0.55231,
-              "end": 0.56989,
-              "members": [
-                "t9"
-              ],
-              "points": [
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "300R",
-                  "marker": 0.56,
-                  "point_ref": "t9"
-                }
-              ]
-            },
-            {
               "id": "dunlop",
               "label": "Dunlop Chicane",
               "start": 0.57504,
@@ -844,24 +772,6 @@
                   "label": "Turn 11",
                   "marker": 0.64,
                   "point_ref": "t11"
-                }
-              ]
-            },
-            {
-              "id": "t12",
-              "label": "Turn 12",
-              "start": 0.65576,
-              "end": 0.66989,
-              "members": [
-                "t12"
-              ],
-              "points": [
-                {
-                  "id": "t12-apex",
-                  "role": "apex",
-                  "label": "Turn 12",
-                  "marker": 0.66,
-                  "point_ref": "t12"
                 }
               ]
             },
@@ -941,7 +851,7 @@
     "imsa_data": "fuji"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:18:58.490848+00:00",
+    "generated_at": "2026-06-29T17:43:04.183890+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

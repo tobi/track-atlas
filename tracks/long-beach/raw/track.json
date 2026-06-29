@@ -56,7 +56,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -289,7 +289,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -473,7 +473,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -562,24 +562,6 @@
                   "label": "T5",
                   "marker": 0.378,
                   "point_ref": "t5"
-                }
-              ]
-            },
-            {
-              "id": "t6",
-              "label": "T6",
-              "start": 0.49395,
-              "end": 0.51713,
-              "members": [
-                "t6"
-              ],
-              "points": [
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "T6",
-                  "marker": 0.505,
-                  "point_ref": "t6"
                 }
               ]
             },
@@ -687,7 +669,7 @@
     "imsa_data": "long-beach"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:12.500127+00:00",
+    "generated_at": "2026-06-29T17:43:18.022678+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -75,7 +75,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -349,7 +349,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -581,7 +581,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -710,24 +710,6 @@
               ]
             },
             {
-              "id": "t8",
-              "label": "Turn 8",
-              "start": 0.40967,
-              "end": 0.42483,
-              "members": [
-                "t8"
-              ],
-              "points": [
-                {
-                  "id": "t8-apex",
-                  "role": "apex",
-                  "label": "Turn 8",
-                  "marker": 0.4163,
-                  "point_ref": "t8"
-                }
-              ]
-            },
-            {
               "id": "t9",
               "label": "Lakeside",
               "start": 0.61594,
@@ -846,7 +828,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T17:18:58.578499+00:00",
+    "generated_at": "2026-06-29T17:43:04.266849+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -75,7 +75,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -316,7 +316,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -500,7 +500,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "variantedelrettifilo",
@@ -525,24 +525,6 @@
                   "label": "First Chicane",
                   "marker": 0.17,
                   "point_ref": "t2"
-                }
-              ]
-            },
-            {
-              "id": "t3",
-              "label": "Curva Grande",
-              "start": 0.23396,
-              "end": 0.24777,
-              "members": [
-                "t3"
-              ],
-              "points": [
-                {
-                  "id": "t3-apex",
-                  "role": "apex",
-                  "label": "Curva Grande",
-                  "marker": 0.24,
-                  "point_ref": "t3"
                 }
               ]
             },
@@ -676,7 +658,7 @@
     "imsa_data": "monza"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:12.427681+00:00",
+    "generated_at": "2026-06-29T17:43:17.949348+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

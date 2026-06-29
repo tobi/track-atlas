@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -366,7 +366,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -614,7 +614,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -653,24 +653,6 @@
               ]
             },
             {
-              "id": "t3",
-              "label": "Turn 3",
-              "start": 0.16723,
-              "end": 0.17277,
-              "members": [
-                "t3"
-              ],
-              "points": [
-                {
-                  "id": "t3-apex",
-                  "role": "apex",
-                  "label": "Turn 3",
-                  "marker": 0.17,
-                  "point_ref": "t3"
-                }
-              ]
-            },
-            {
               "id": "t4",
               "label": "Turn 4",
               "start": 0.24674,
@@ -685,60 +667,6 @@
                   "label": "Turn 4",
                   "marker": 0.28,
                   "point_ref": "t4"
-                }
-              ]
-            },
-            {
-              "id": "t5",
-              "label": "Turn 5",
-              "start": 0.32723,
-              "end": 0.33277,
-              "members": [
-                "t5"
-              ],
-              "points": [
-                {
-                  "id": "t5-apex",
-                  "role": "apex",
-                  "label": "Turn 5",
-                  "marker": 0.33,
-                  "point_ref": "t5"
-                }
-              ]
-            },
-            {
-              "id": "t6",
-              "label": "Turn 6",
-              "start": 0.35353,
-              "end": 0.36831,
-              "members": [
-                "t6"
-              ],
-              "points": [
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "Turn 6",
-                  "marker": 0.36,
-                  "point_ref": "t6"
-                }
-              ]
-            },
-            {
-              "id": "t7",
-              "label": "Turn 7",
-              "start": 0.37353,
-              "end": 0.388,
-              "members": [
-                "t7"
-              ],
-              "points": [
-                {
-                  "id": "t7-apex",
-                  "role": "apex",
-                  "label": "Turn 7",
-                  "marker": 0.38,
-                  "point_ref": "t7"
                 }
               ]
             },
@@ -815,24 +743,6 @@
               ]
             },
             {
-              "id": "t12",
-              "label": "Turn 12",
-              "start": 0.69353,
-              "end": 0.70831,
-              "members": [
-                "t12"
-              ],
-              "points": [
-                {
-                  "id": "t12-apex",
-                  "role": "apex",
-                  "label": "Turn 12",
-                  "marker": 0.7,
-                  "point_ref": "t12"
-                }
-              ]
-            },
-            {
               "id": "t13",
               "label": "Turn 13",
               "start": 0.73783,
@@ -867,24 +777,6 @@
                   "point_ref": "t14"
                 }
               ]
-            },
-            {
-              "id": "t15",
-              "label": "Turn 15",
-              "start": 0.92723,
-              "end": 0.93277,
-              "members": [
-                "t15"
-              ],
-              "points": [
-                {
-                  "id": "t15-apex",
-                  "role": "apex",
-                  "label": "Turn 15",
-                  "marker": 0.93,
-                  "point_ref": "t15"
-                }
-              ]
             }
           ]
         }
@@ -901,7 +793,7 @@
     "imsa_data": "bahrain"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:10.009774+00:00",
+    "generated_at": "2026-06-29T17:43:15.596095+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

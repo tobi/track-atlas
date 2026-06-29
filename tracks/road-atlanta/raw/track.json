@@ -74,7 +74,7 @@
         {
           "id": "corners",
           "kind": "corners",
-          "label": "Corners",
+          "label": "Corner Apexes",
           "items": [
             {
               "id": "t1",
@@ -354,7 +354,7 @@
         {
           "id": "corner_ranges",
           "kind": "corner_ranges",
-          "label": "Corners",
+          "label": "Each Corner",
           "generated": true,
           "items": [
             {
@@ -586,7 +586,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Groups",
+          "label": "Corner Complexes",
           "items": [
             {
               "id": "t1",
@@ -675,24 +675,6 @@
                   "label": "Turn 5",
                   "marker": 0.296,
                   "point_ref": "t5"
-                }
-              ]
-            },
-            {
-              "id": "t6",
-              "label": "Turn 6",
-              "start": 0.34444,
-              "end": 0.36401,
-              "members": [
-                "t6"
-              ],
-              "points": [
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "Turn 6",
-                  "marker": 0.353,
-                  "point_ref": "t6"
                 }
               ]
             },
@@ -834,7 +816,7 @@
     "imsa_data": "road-atlanta"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:09.922589+00:00",
+    "generated_at": "2026-06-29T17:43:15.513088+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
