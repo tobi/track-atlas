@@ -541,8 +541,16 @@ def align_markers_to_centerline(loop, matched):
         cf, _ = nearest_fraction(loop, cum, total, loc)
         ctrl.append((marker, cf))
     ctrl.sort(key=lambda x: x[0])
-    if len(ctrl) < 2:
-        # not enough anchors to align; place by raw fraction
+    if len(ctrl) == 1:
+        # One anchor is enough to fix the lap origin (but not travel direction).
+        # This is common when a source pins start/finish manually but no corner
+        # names matched OSM. Preserve the oriented loop direction and apply a
+        # constant marker→centerline offset.
+        marker, cf = ctrl[0]
+        offset = (cf - marker) % 1.0
+        return (lambda m: point_at_fraction(loop, cum, total, (m + offset) % 1.0)), loop
+    if len(ctrl) < 1:
+        # no anchors to align; place by raw fraction
         return (lambda m: point_at_fraction(loop, cum, total, m)), loop
 
     # Determine travel direction by trying BOTH orientations and keeping the

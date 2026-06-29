@@ -51,7 +51,7 @@ emits `schema/track.schema.json` from them; `verify.py` validates via the models
 - [x] Corner layer cohesion applied repo-wide: `Corner Apexes`, `Each Corner`, `Corner Complexes`; solo scale-5/6 corners omitted from complexes.
 - [ ] Number-only tracks need real corner names if any exist: jeddah, miami, shanghai, losail, indianapolis.
 - [ ] Run manual curation passes from `check_corner_curation.py --all` output; do not blindly apply OSM names because many are facility/layout noise.
-- [ ] Barcelona is now explicitly flagged by checks: suspicious long centerline segment/backtracking at the northern tip, 8.2% length mismatch, and several apex markers far from curvature peaks / likely on straights.
+- [x] Barcelona geometry/start-origin fixed: relation included old/connector geometry, generator now chooses the cleaner stitched lap and Barcelona pins start/finish explicitly. Remaining signal is only T6, a scale-6 kink near Würth.
 
 ## DONE: poster size
 - [x] PNG compression in render.py (supersample -> downscale 1.5x -> octree palette + optimize): 23MB -> 4.1MB

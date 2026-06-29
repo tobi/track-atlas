@@ -34,7 +34,7 @@ from lib.osm import (  # noqa: E402
     centroid, named_corner_ways, normalize,
     relation_centerline, align_markers_to_centerline,
     stitch_circuit_ways, orient_loop, pit_lane_centroid, rotate_loop_to,
-    densify,
+    densify, haversine, loop_length_m,
 )
 from lib.naming import (  # noqa: E402
     DEFAULT_LAYER, build_registry, numbered_for, resolve_name as _resolve,
@@ -43,6 +43,44 @@ from lib.phases import compute_phases  # noqa: E402
 
 # Name layers an override may set (besides numbered, which is derived from code).
 OVERRIDE_NAME_LAYERS = ("official", "driver", "historical", "sponsor", "local")
+
+
+def _centerline_quality(loop: list, expected_m: float | None = None) -> tuple[float, list[str]]:
+    """Score candidate centerlines; lower is better.
+
+    Relation geometry is often the official lap, but some OSM relations include
+    old layouts or connector stubs. Densification means segments much over 30 m
+    or near-180° backtracks are strong stitch-smell penalties.
+    """
+    if not loop or len(loop) < 8:
+        return float("inf"), ["too short"]
+    reasons = []
+    length = loop_length_m(loop)
+    score = abs(length - expected_m) if expected_m else 0.0
+    if expected_m:
+        reasons.append(f"length {length:,.0f} m (Δ {abs(length - expected_m):,.0f} m)")
+    qloop = densify(loop)
+    closed = qloop + [qloop[0]] if qloop[0] != qloop[-1] else qloop
+    for i, (a, b) in enumerate(zip(closed, closed[1:])):
+        d = haversine(a, b)
+        if d > 60:
+            score += (d - 60) * 8
+            reasons.append(f"long seg {i} {d:.0f} m")
+    import math
+    for i in range(1, len(closed) - 1):
+        a, b, c = closed[i - 1], closed[i], closed[i + 1]
+        lat = math.radians(b[1]); k = math.cos(lat)
+        v1 = ((b[0] - a[0]) * k * 111320, (b[1] - a[1]) * 111320)
+        v2 = ((c[0] - b[0]) * k * 111320, (c[1] - b[1]) * 111320)
+        l1, l2 = math.hypot(*v1), math.hypot(*v2)
+        if l1 < 10 or l2 < 10:
+            continue
+        dot = max(-1.0, min(1.0, (v1[0] * v2[0] + v1[1] * v2[1]) / (l1 * l2)))
+        angle = math.degrees(math.acos(dot))
+        if angle > 145:
+            score += (angle - 145) * 25
+            reasons.append(f"backtrack {i} {angle:.0f}°")
+    return score, reasons
 
 
 def _osm_corner_index(osm: dict) -> dict:
@@ -245,23 +283,38 @@ def generate_track(slug: str) -> dict:
         outline_path = f"layers/{lid}.geojson"
         rel_file = raw / "osm-relation.json"
         centerline = None
+        candidates = []
+        rel_centerline = None
         if rel_file.exists():
             try:
-                centerline = relation_centerline(json.loads(rel_file.read_text()),
-                                                 expected_m=layout.get("length_m"))
-                # A relation can describe a DIFFERENT layout (Bahrain's circuit
-                # relation is the 6.3 km endurance loop, not the 5.4 km GP).
-                # If it's >10% off the declared length, fall through to stitch.
-                decl = layout.get("length_m")
-                if centerline and decl:
-                    from lib.osm import loop_length_m
-                    L = loop_length_m(centerline)
-                    if abs(L - decl) / decl > 0.10:
-                        print(f"[{slug}] relation centerline {L:,.0f} m is "
-                              f">10% off declared {decl:,.0f} m -- ignoring relation")
-                        centerline = None
-            except Exception:
-                centerline = None
+                rel_centerline = relation_centerline(json.loads(rel_file.read_text()),
+                                                     expected_m=layout.get("length_m"))
+                if rel_centerline:
+                    score, reasons = _centerline_quality(rel_centerline, layout.get("length_m"))
+                    candidates.append((score, "relation", rel_centerline, reasons))
+            except Exception as e:
+                print(f"[{slug}] relation centerline candidate failed: {e}")
+        # Only compare the stitched way graph here when there is a relation to
+        # challenge. If there is no relation, leave `centerline` unset and use
+        # the older stitch fallback below, which has pit-lane anchoring behavior
+        # for tracks with no matched corner anchors.
+        if rel_centerline:
+            try:
+                stitched_candidate = stitch_circuit_ways(osm.get("elements", []),
+                                                         expected_m=layout.get("length_m"))
+                if stitched_candidate:
+                    score, reasons = _centerline_quality(stitched_candidate, layout.get("length_m"))
+                    candidates.append((score, "stitched", stitched_candidate, reasons))
+            except Exception as e:
+                print(f"[{slug}] stitched centerline candidate failed during relation comparison: {e}")
+        if candidates:
+            candidates.sort(key=lambda x: x[0])
+            best_score, best_name, centerline, best_reasons = candidates[0]
+            for score, name, _, reasons in candidates[1:]:
+                if name == "relation" and score - best_score > 100:
+                    print(f"[{slug}] ignoring OSM relation centerline in favor of {best_name}: "
+                          f"relation quality {score:.0f} ({'; '.join(reasons[:3])}) vs "
+                          f"{best_name} {best_score:.0f} ({'; '.join(best_reasons[:3])})")
 
         outline_coords = None
         sf_point = None       # start/finish {marker, location}
@@ -276,6 +329,9 @@ def generate_track(slug: str) -> dict:
             centerline = densify(centerline)
             matched_pts = [(c["marker"], c["location"]) for c in corners
                            if "location" in c and "marker" in c]
+            sf_src = layout.get("start_finish")
+            if sf_src and sf_src.get("location"):
+                matched_pts.append((sf_src.get("marker", 0.0), sf_src["location"]))
             place, oriented = align_markers_to_centerline(centerline, matched_pts)
             # Place corners that never matched an OSM way, by lap fraction.
             for c in corners:
@@ -285,7 +341,6 @@ def generate_track(slug: str) -> dict:
                     c["location_source"] = "centerline"
             # Start/finish = lap fraction 0.0 (Lovely markers are measured from
             # the timing line), unless the source pins it manually.
-            sf_src = layout.get("start_finish")
             if sf_src and sf_src.get("location"):
                 sf_point = {"marker": sf_src.get("marker", 0.0),
                             "location": sf_src["location"]}
@@ -317,7 +372,10 @@ def generate_track(slug: str) -> dict:
                 stitched = densify(orient_loop(stitched, layout.get("direction")))
                 matched_pts = [(c["marker"], c["location"]) for c in corners
                                if "location" in c and "marker" in c]
-                if len(matched_pts) >= 2:
+                sf_src = layout.get("start_finish")
+                if sf_src and sf_src.get("location"):
+                    matched_pts.append((sf_src.get("marker", 0.0), sf_src["location"]))
+                if len(matched_pts) >= 1:
                     place, oriented = align_markers_to_centerline(stitched, matched_pts)
                 else:
                     # No named-corner anchors: anchor lap origin at the pit
