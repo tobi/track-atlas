@@ -54,7 +54,7 @@
   .map-wrap { display:grid; grid-template-columns:minmax(0, 1fr) minmax(260px, 310px); gap:12px; align-items:stretch; margin-top:16px; }
   @media (max-width:760px) { .map-wrap { grid-template-columns:1fr; } }
   #map { min-height:500px; height:58vh; border-radius:22px; border:1px solid rgba(255,255,255,.1); overflow:hidden; box-shadow:var(--shadow); background:#111; }
-  .map-readout { min-width:230px; max-width:320px; padding:10px 12px; border-radius:14px; background:rgba(8,10,15,.88); color:var(--text); border:1px solid rgba(255,255,255,.14); box-shadow:0 10px 32px rgba(0,0,0,.35); font:12px/1.35 Inter, ui-sans-serif, system-ui, sans-serif; backdrop-filter:blur(12px); }
+  .map-readout { width:100%; min-width:0; padding:10px 12px; border-radius:14px; background:rgba(8,10,15,.88); color:var(--text); border:1px solid rgba(255,255,255,.14); box-shadow:0 10px 32px rgba(0,0,0,.22); font:12px/1.35 Inter, ui-sans-serif, system-ui, sans-serif; backdrop-filter:blur(12px); }
   .map-readout .big { font-size:18px; font-weight:900; letter-spacing:-.3px; }
   .map-readout .muted { color:var(--muted); }
   .map-readout .hit { margin-top:6px; padding-top:6px; border-top:1px solid rgba(255,255,255,.08); }

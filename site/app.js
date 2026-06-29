@@ -16,7 +16,6 @@ let displayLayer = null;
 let layerState = {};   // layout id -> { outline, point:{id:bool}, range:{id:bool} }
 let mapGroups = [];
 let hoverCursorGroup = null;
-let readoutControl = null;
 let hoverLayer = null; // { type: 'point'|'range'|'outline', id?: string }
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
@@ -207,7 +206,9 @@ function renderLayerPanel(layout) {
   const st = currentState();
   const panel = document.getElementById("layerPanel");
   if (!panel) return;
-  panel.innerHTML = `<h4>Layers</h4>
+  panel.innerHTML = `<h4>Cursor</h4>
+    <div id="hoverReadout" class="map-readout"><span class="muted">Move over the track for lap position</span></div>
+    <h4 style="margin-top:14px">Layers</h4>
     <div class="mini-actions"><button onclick="setAllLayers(true)">all on</button><button onclick="setAllLayers(false)">all off</button></div>
     <div class="layer-toggle" onmouseenter="hoverMapLayer('outline')" onmouseleave="clearMapHover()"><input type="checkbox" ${st.outline ? "checked" : ""} onchange="toggleOutline(this.checked)">
       <div><b>Track centerline</b><div class="meta">GeoJSON layout over OpenStreetMap</div></div></div>
@@ -243,14 +244,6 @@ function renderMap(gj, track, layout) {
   const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors", maxZoom: 20 });
   dark.addTo(map);
   baseControl = L.control.layers({ "Dark verification": dark, "OpenStreetMap": osm }, {}, { position: "topleft" }).addTo(map);
-  readoutControl = L.control({ position: "bottomright" });
-  readoutControl.onAdd = () => {
-    const div = L.DomUtil.create("div", "map-readout");
-    div.innerHTML = `<span class="muted">Move over the track for lap position</span>`;
-    L.DomEvent.disableClickPropagation(div);
-    return div;
-  };
-  readoutControl.addTo(map);
   hoverCursorGroup = L.layerGroup().addTo(map);
   map.on("mousemove", updateMapReadout);
   map.on("mouseout", clearMapReadout);
@@ -412,14 +405,14 @@ function updateMapReadout(e) {
   const { rangeHits, pointHits } = hitsAtFraction(n.fraction, n.coord);
   const ranges = rangeHits.slice(0, 8).map((h) => `<div>↔ <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || h.item.id)} <span class="muted">${pct(h.item.start)}–${pct(h.item.end)}</span></div>`).join("");
   const points = pointHits.slice(0, 8).map((h) => `<div>• <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || resolveName(h.item, displayLayer))}</div>`).join("");
-  const el = document.querySelector(".map-readout");
+  const el = document.getElementById("hoverReadout");
   if (el) el.innerHTML = `<div class="big">${pct(n.fraction)}</div>
     <div class="muted">${n.distM.toFixed(1)} m · ${Math.round(inches).toLocaleString()} in · off ${n.offM.toFixed(0)} m</div>
     <div class="hit">${ranges || `<span class="muted">No range layer hit</span>`}${points ? `<div style="height:5px"></div>${points}` : ""}</div>`;
 }
 function clearMapReadout() {
   hoverCursorGroup?.clearLayers();
-  const el = document.querySelector(".map-readout");
+  const el = document.getElementById("hoverReadout");
   if (el) el.innerHTML = `<span class="muted">Move over the track for lap position</span>`;
 }
 
