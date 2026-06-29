@@ -1,66 +1,99 @@
 {
   "gp": {
-    "corners": {
-      "1": {
+    "replace_corners": [
+      {
+        "number": 1,
         "driver": "The 90",
-        "official": "Turn 1",
+        "official": "The Ninety",
+        "marker": 0.066,
         "direction": "right",
         "scale": 2
       },
-      "2": {
+      {
+        "number": 2,
         "driver": "Esses",
         "official": "The Esses",
+        "marker": 0.15,
+        "match_osm": false,
         "direction": "left",
-        "scale": 4
+        "scale": 4,
+        "complex": "Esses"
       },
-      "3": {
-        "driver": "Inner Loop",
+      {
+        "number": 3,
+        "driver": "Esses",
+        "official": "The Esses",
+        "marker": 0.22,
+        "match_osm": false,
+        "direction": "right",
+        "scale": 4,
+        "complex": "Esses"
+      },
+      {
+        "number": 4,
+        "driver": "Bus Stop",
         "official": "Inner Loop",
+        "marker": 0.366,
         "direction": "right",
         "scale": 2
       },
-      "4": {
-        "driver": "Outer Loop",
+      {
+        "number": 5,
+        "driver": "Carousel",
         "official": "Outer Loop",
+        "marker": 0.428,
         "direction": "right",
         "scale": 3
       },
-      "5": {
+      {
+        "number": 6,
         "driver": "Chute",
-        "official": "Chute",
+        "official": "The Chute",
+        "marker": 0.515,
         "direction": "left",
         "scale": 4
       },
-      "6": {
+      {
+        "number": 7,
         "driver": "Toe",
         "official": "Toe of the Boot",
+        "marker": 0.6085,
         "direction": "left",
         "scale": 2
       },
-      "7": {
+      {
+        "number": 8,
         "driver": "Heel",
         "official": "Heel of the Boot",
+        "marker": 0.74,
         "direction": "left",
         "scale": 3
       },
-      "8": {
+      {
+        "number": 9,
         "driver": "Turn 9",
         "official": "Turn 9",
+        "marker": 0.8005,
         "direction": "right",
         "scale": 2
       },
-      "9": {
+      {
+        "number": 10,
         "driver": "Turn 10",
         "official": "Turn 10",
+        "marker": 0.8695,
         "direction": "left",
         "scale": 2
       },
-      "10": {
+      {
+        "number": 11,
         "driver": "Turn 11",
         "official": "Turn 11",
+        "marker": 0.9365,
         "direction": "right",
         "scale": 4
       }
-    }
+    ],
+    "errors_summary": "iRacing/Lovely source collapses the Esses into one turn; this replacement expands Watkins Glen to the driver/common 11-turn full-course numbering."
   }
 }

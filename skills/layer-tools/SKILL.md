@@ -12,7 +12,7 @@ Track Atlas is layout-first:
 - `scripts/build_layers.py <slug>` reruns only `generation-config.json` against an existing `raw/track.json`.
 - Converter tools live in `scripts/layer_tools/*.py`.
 
-Generated layer output is merged into the target layout:
+Generated layer output is first written under `tracks/<slug>/raw/generated-layers/` and then merged into the target layout:
 
 - `point_layers[]` for discrete lap locations, e.g. timing loops, marshal posts.
 - `range_layers[]` for lap intervals, e.g. timing sectors, IMSA microsectors, slow zones.
@@ -32,9 +32,11 @@ Then it invokes the converter as a pure stdin/stdout process:
 ```text
 resolved local files + track/layout context JSON on stdin
 → produced point_layers/range_layers JSON on stdout
+→ raw/generated-layers/<config-id>.json
+→ merged into raw/track.json
 ```
 
-Converter tools must not assume current working directory, fetch URLs themselves, or read arbitrary repo files. If they need data, add it to `generation-config.json` as a resource or param so the runner resolves it first.
+Converter tools must not assume current working directory, fetch URLs themselves, or read arbitrary repo files. If they need data, add it to `generation-config.json` as a resource or param so the runner resolves it first. Generated layer JSON must exist in `raw/generated-layers/` as an inspectable artifact before it is baked into `raw/track.json`.
 
 ## generation-config.json format
 
@@ -210,13 +212,19 @@ uv run python scripts/generate.py <slug>
 uv run python scripts/build_layers.py <slug>
 ```
 
-5. Validate:
+5. Inspect the raw generated layer artifact:
+
+```text
+tracks/<slug>/raw/generated-layers/<config-id>.json
+```
+
+6. Validate:
 
 ```bash
 uv run python scripts/verify.py <slug>
 ```
 
-6. Inspect `tracks/<slug>/raw/track.json` and ensure the layer has provenance.
+7. Inspect `tracks/<slug>/raw/track.json` and ensure the layer has provenance.
 
 ## Rules for adding new tools
 

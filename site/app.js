@@ -15,6 +15,8 @@ let currentGeojson = null;
 let displayLayer = null;
 let layerState = {};   // layout id -> { outline, point:{id:bool}, range:{id:bool} }
 let mapGroups = [];
+let hoverCursorGroup = null;
+let readoutControl = null;
 let hoverLayer = null; // { type: 'point'|'range'|'outline', id?: string }
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
@@ -144,13 +146,11 @@ async function showLayout(layoutId) {
 }
 
 function renderStats(track, layout) {
-  const timingSectors = rangeLayer(layout, "timing_sectors").items;
-  const sectors = timingSectors.map((s) => `${s.label} ${pct(s.start)}–${pct(s.end)}`).join("  ");
   const stats = [
     ["Layout", layout.name], ["Length", fmtKm(layout.length_m)],
     ["Point layers", (layout.point_layers || []).length], ["Range layers", (layout.range_layers || []).length],
     ["Corners", cornerLayer(layout).length], ["Direction", layout.direction || "—"],
-    ["Sectors", sectors || "—"], ["Series", [...(track.series || []), ...(layout.series || [])].join(", ") || "—"],
+    ["Series", [...(track.series || []), ...(layout.series || [])].join(", ") || "—"],
   ];
   document.getElementById("statsWrap").innerHTML = `<div class="stats">${stats.map(([k, v]) =>
     `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>`;
@@ -233,10 +233,21 @@ function setAllLayers(v) {
 function renderMap(gj, track, layout) {
   if (map) { map.remove(); map = null; }
   map = L.map("map", { scrollWheelZoom: true, preferCanvas: false });
-  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors", maxZoom: 20 });
   const dark = L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", { attribution: "&copy; OpenStreetMap contributors &copy; CARTO", maxZoom: 20 });
-  osm.addTo(map);
-  baseControl = L.control.layers({ "OpenStreetMap": osm, "Dark verification": dark }, {}, { position: "topleft" }).addTo(map);
+  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors", maxZoom: 20 });
+  dark.addTo(map);
+  baseControl = L.control.layers({ "Dark verification": dark, "OpenStreetMap": osm }, {}, { position: "topleft" }).addTo(map);
+  readoutControl = L.control({ position: "bottomright" });
+  readoutControl.onAdd = () => {
+    const div = L.DomUtil.create("div", "map-readout");
+    div.innerHTML = `<span class="muted">Move over the track for lap position</span>`;
+    L.DomEvent.disableClickPropagation(div);
+    return div;
+  };
+  readoutControl.addTo(map);
+  hoverCursorGroup = L.layerGroup().addTo(map);
+  map.on("mousemove", updateMapReadout);
+  map.on("mouseout", clearMapReadout);
   renderLayerPanel(layout);
   redrawMapOverlays(true);
 }
@@ -263,9 +274,12 @@ function redrawMapOverlays(fit=false) {
     (layer.items || []).forEach((r) => {
       const seg = sliceLine(coords, r.start, r.end);
       if (seg.length < 2) return;
-      L.polyline(seg.map(ll), { color, weight: hot ? 13 : layer.coverage === "partition" ? 8 : 6, opacity: hot ? .98 : .68, lineCap:"round", className: hot ? "layer-range-highlight" : "" })
+      L.polyline(seg.map(ll), { color, weight: hot ? 14 : layer.coverage === "partition" ? 8 : 6, opacity: hot ? .98 : .68, lineCap:"round", className: hot ? "layer-range-highlight" : "" })
         .bindTooltip(`<b>${esc(layer.label || layer.id)} · ${esc(r.label || r.id)}</b><br>${pct(r.start)} → ${pct(r.end)}${r.entry_ref ? `<br>${esc(r.entry_ref)} → ${esc(r.exit_ref)}` : ""}`)
+        .on("mouseover", () => hoverMapLayer("range", layer.id))
+        .on("mouseout", clearMapHover)
         .addTo(group);
+      if (hot) addRangeEndpoints(group, seg, color, r);
     });
     mapGroups.push(group); boundsLayers.push(group);
   });
@@ -281,6 +295,15 @@ function redrawMapOverlays(fit=false) {
     if (outline) map.fitBounds(outline.getBounds(), { padding:[28,28] });
   }
 }
+function addRangeEndpoints(group, seg, color, r) {
+  const start = seg[0], end = seg[seg.length - 1];
+  [[start, "start"], [end, "end"]].forEach(([pt, which]) => {
+    L.circleMarker(ll(pt), { radius: 6, color: "#ffffff", weight: 2, fillColor: which === "start" ? "#35c759" : "#ff3b30", fillOpacity: 1 })
+      .bindTooltip(`${esc(r.label || r.id)} ${which}: ${which === "start" ? pct(r.start) : pct(r.end)}`)
+      .addTo(group);
+  });
+}
+
 function addPoint(group, layer, p, hot=false) {
   const isCorner = layer.id === "corners";
   const isSf = p.id === "start_finish";
@@ -288,7 +311,6 @@ function addPoint(group, layer, p, hot=false) {
     radius: hot ? (isSf ? 11 : isCorner ? 9 : 8) : isSf ? 8 : isCorner ? 6 : 5,
     color: hot ? "#ffffff" : isSf ? "#111722" : "#080a0f", weight: hot ? 3 : isSf ? 3 : 1.5,
     fillColor: isSf ? "#ffffff" : isCorner ? "#ff2d8d" : "#f6c945", fillOpacity: 1,
-    className: hot ? "layer-point-highlight" : "",
   });
   const label = isCorner ? `T${p.number} ${resolveName(p, displayLayer)}` : (p.label || p.id);
   marker.bindTooltip(`<b>${esc(label)}</b>${p.marker != null ? `<br>${pct(p.marker)}` : ""}<br><span class="muted">${esc(layer.label || layer.id)}</span>`);
@@ -323,6 +345,73 @@ function sliceLine(coords, start, end) {
   for (let i=1;i<coords.length-1;i++) if (cum[i] > a && cum[i] < b) out.push(coords[i]);
   out.push(pointAtDistance(coords,cum,b));
   return out.filter(Boolean);
+}
+function nearestOnLine(latlng, coords) {
+  if (!coords.length) return null;
+  const pt = [latlng.lng, latlng.lat];
+  const lat0 = latlng.lat * Math.PI / 180;
+  const k = Math.cos(lat0);
+  const toXY = (p) => [p[0] * k * 111320, p[1] * 111320];
+  const fromXY = (p) => [p[0] / (k * 111320), p[1] / 111320];
+  const P = toXY(pt);
+  let best = { d2: Infinity, seg: 0, t: 0, xy: toXY(coords[0]) };
+  for (let i = 0; i < coords.length - 1; i++) {
+    const A = toXY(coords[i]), B = toXY(coords[i + 1]);
+    const dx = B[0] - A[0], dy = B[1] - A[1];
+    const l2 = dx * dx + dy * dy || 1;
+    const t = Math.max(0, Math.min(1, ((P[0] - A[0]) * dx + (P[1] - A[1]) * dy) / l2));
+    const X = [A[0] + t * dx, A[1] + t * dy];
+    const d2 = (P[0] - X[0]) ** 2 + (P[1] - X[1]) ** 2;
+    if (d2 < best.d2) best = { d2, seg: i, t, xy: X };
+  }
+  const {cum,total} = lineMetrics(coords);
+  const segM = hav(coords[best.seg], coords[best.seg + 1]);
+  const distM = (cum[best.seg] || 0) + segM * best.t;
+  const snapped = fromXY(best.xy);
+  return { coord: snapped, distM, totalM: total, fraction: total ? distM / total : 0, offM: Math.sqrt(best.d2) };
+}
+function cyclicDelta(a, b) {
+  const d = Math.abs(a - b);
+  return Math.min(d, 1 - d);
+}
+function hitsAtFraction(frac, coord) {
+  const rangeHits = [];
+  for (const layer of currentLayout?.range_layers || []) {
+    for (const r of layer.items || []) {
+      if (frac >= r.start && frac <= r.end) rangeHits.push({ layer, item: r });
+    }
+  }
+  const pointHits = [];
+  for (const layer of currentLayout?.point_layers || []) {
+    for (const p of layer.items || []) {
+      const byMarker = p.marker != null && cyclicDelta(p.marker, frac) < 0.0035;
+      const byLocation = p.location && hav(coord, p.location) < 85;
+      if (byMarker || byLocation) pointHits.push({ layer, item: p });
+    }
+  }
+  return { rangeHits, pointHits };
+}
+function updateMapReadout(e) {
+  if (!map || !currentLayout) return;
+  const coords = outlineCoords();
+  const n = nearestOnLine(e.latlng, coords);
+  if (!n) return;
+  hoverCursorGroup?.clearLayers();
+  L.polyline([e.latlng, ll(n.coord)], { color: "#ffffff", weight: 1.5, opacity: .75, dashArray: "3 5" }).addTo(hoverCursorGroup);
+  L.circleMarker(ll(n.coord), { radius: 5, color: "#fff", weight: 2, fillColor: "#5eead4", fillOpacity: 1 }).addTo(hoverCursorGroup);
+  const inches = n.distM / 0.0254;
+  const { rangeHits, pointHits } = hitsAtFraction(n.fraction, n.coord);
+  const ranges = rangeHits.slice(0, 8).map((h) => `<div>↔ <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || h.item.id)} <span class="muted">${pct(h.item.start)}–${pct(h.item.end)}</span></div>`).join("");
+  const points = pointHits.slice(0, 8).map((h) => `<div>• <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || resolveName(h.item, displayLayer))}</div>`).join("");
+  const el = document.querySelector(".map-readout");
+  if (el) el.innerHTML = `<div class="big">${pct(n.fraction)}</div>
+    <div class="muted">${n.distM.toFixed(1)} m · ${Math.round(inches).toLocaleString()} in · off ${n.offM.toFixed(0)} m</div>
+    <div class="hit">${ranges || `<span class="muted">No range layer hit</span>`}${points ? `<div style="height:5px"></div>${points}` : ""}</div>`;
+}
+function clearMapReadout() {
+  hoverCursorGroup?.clearLayers();
+  const el = document.querySelector(".map-readout");
+  if (el) el.innerHTML = `<span class="muted">Move over the track for lap position</span>`;
 }
 
 function currentViewConfig() {

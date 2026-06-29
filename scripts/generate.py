@@ -57,6 +57,29 @@ def resolve_label(item: dict, default_layer: str) -> str:
     return _resolve(item["labels"], default_layer)
 
 
+def _corners_from_override(items: list[dict]) -> list[dict]:
+    """Manual replacement corner list in the internal pre-layer shape.
+
+    Use sparingly when an upstream source collapses or misnumbers corners (e.g.
+    Watkins Glen iRacing data models the Esses as one turn). Generated track.json
+    still flows through the normal placement/phases/layer pipeline.
+    """
+    out = []
+    for item in items:
+        num = item["number"]
+        code = str(item.get("code", num))
+        names = {"numbered": numbered_for(code)}
+        for layer in OVERRIDE_NAME_LAYERS:
+            if item.get(layer):
+                names[layer] = item[layer]
+        c = {"number": num, "code": code, "names": names}
+        for k in ("marker", "start", "end", "direction", "scale", "complex", "match_osm"):
+            if item.get(k) is not None:
+                c[k] = item[k]
+        out.append(c)
+    return out
+
+
 def _layer_geojson(layout_id: str, corners: list[dict], outline_coords=None,
                    default_layer: str = DEFAULT_LAYER, layout_points=None) -> dict:
     feats = []
@@ -135,16 +158,19 @@ def generate_track(slug: str) -> dict:
             if lf.exists():
                 lovely = json.loads(lf.read_text())
 
-        corners = corners_from_lovely(lovely)
-        # Join OSM coordinates onto corners by matching the corner's best known
-        # name (driver preferred, then official) against OSM way names, with
-        # a fuzzy fallback for upstream typos (Lovely "Arange" -> OSM "Arnage").
+        ov_file = tdir / "overrides.json"
+        ov_all = json.loads(ov_file.read_text()) if ov_file.exists() else {}
+        layout_ov = {**ov_all.get("*", {}), **ov_all.get(lid, {})}
+        corners = (_corners_from_override(layout_ov["replace_corners"])
+                   if layout_ov.get("replace_corners") else corners_from_lovely(lovely))
+        # Join OSM coordinates onto corners by matching any known display/official
+        # name against OSM way names, with a fuzzy fallback for upstream typos.
         import difflib
         osm_keys = list(osm_idx.keys())
         for c in corners:
             corner_total += 1
-            match_name = c["names"].get("driver") or c["names"].get("official")
-            if match_name:
+            candidates = [c["names"].get("driver"), c["names"].get("official")]
+            for match_name in ([] if c.get("match_osm") is False else [x for x in candidates if x]):
                 key = normalize(match_name)
                 hit = osm_idx.get(key)
                 if not hit and osm_keys:
@@ -154,6 +180,7 @@ def generate_track(slug: str) -> dict:
                 if hit:
                     c["location"] = [round(hit[1][0], 6), round(hit[1][1], 6)]
                     matched_total += 1
+                    break
 
         # Curated overrides: name layers + complex group / direction / scale /
         # code that upstream sources lack. tracks/<slug>/overrides.json, keyed
@@ -161,13 +188,11 @@ def generate_track(slug: str) -> dict:
         #   {"24h": {"corners": {"14": {"official": "Virage Porsche",
         #                               "driver": "Porsche Curves",
         #                               "complex": "Porsche Curves"}}}}
-        ov_file = tdir / "overrides.json"
         cleared_driver = set()   # corners whose driver layer an override cleared
-        if ov_file.exists():
+        if ov_all:
             # Overrides are keyed by layout id; a "*" block applies to every
             # layout (curation shared by series variants that use the same
             # geometry -- Sebring WEC/IMSA). Layout-specific fields win per corner.
-            ov_all = json.loads(ov_file.read_text())
             shared = ov_all.get("*", {}).get("corners", {})
             specific = ov_all.get(lid, {}).get("corners", {})
             ov = {n: {**shared.get(n, {}), **specific.get(n, {})}
@@ -412,23 +437,6 @@ def generate_track(slug: str) -> dict:
         if complexes:
             range_layers.append({"id": "corner_complexes", "kind": "corner_complexes", "label": "Corner Complexes", "items": complexes})
 
-        straights = [s for s in straights_from_lovely(lovely) if s.get("start") is not None and s.get("end") is not None and s["start"] < s["end"]]
-        if straights:
-            straight_items = []
-            used_ids = set()
-            for i, s in enumerate(straights):
-                base = normalize(s["name"]) or f"straight-{i+1}"
-                sid = base
-                n = 2
-                while sid in used_ids:
-                    sid = f"{base}-{n}"
-                    n += 1
-                used_ids.add(sid)
-                straight_items.append({"id": sid, "label": s["name"], "start": s["start"], "end": s["end"]})
-            range_layers.append({
-                "id": "straights", "kind": "straights", "label": "Straights",
-                "items": straight_items,
-            })
         slow_zones = layout.get("slow_zones", [])
         if slow_zones:
             range_layers.append({

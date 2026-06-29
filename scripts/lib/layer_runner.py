@@ -66,6 +66,10 @@ def _resolve_resource(slug: str, config_id: str, name: str, spec: dict[str, Any]
     raise ValueError(f"resource {name!r} must have url or path")
 
 
+def _generated_layer_path(slug: str, config_id: str) -> Path:
+    return raw_dir(slug) / "generated-layers" / f"{_safe_name(config_id)}.json"
+
+
 def _merge_layers(layout: dict, produced: dict) -> None:
     for kind in ("point_layers", "range_layers"):
         incoming = produced.get(kind) or []
@@ -78,6 +82,23 @@ def _merge_layers(layout: dict, produced: dict) -> None:
                 order.append(layer["id"])
             by_id[layer["id"]] = layer
         layout[kind] = [by_id[i] for i in order]
+
+
+def _write_generated_layer_artifact(slug: str, cfg: dict[str, Any], resources: dict[str, Any], produced: dict[str, Any]) -> Path:
+    cid = cfg.get("id") or cfg.get("tool")
+    path = _generated_layer_path(slug, cid)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    artifact = {
+        "id": cid,
+        "layout": cfg["layout"],
+        "tool": cfg["tool"],
+        "resources": resources,
+        "params": cfg.get("params") or {},
+        "point_layers": produced.get("point_layers", []),
+        "range_layers": produced.get("range_layers", []),
+    }
+    path.write_text(json.dumps(artifact, ensure_ascii=False, indent=2) + "\n")
+    return path
 
 
 def run_config(slug: str, cfg: dict[str, Any], track: dict[str, Any]) -> dict[str, Any]:
@@ -118,8 +139,13 @@ def run_config(slug: str, cfg: dict[str, Any], track: dict[str, Any]) -> dict[st
         produced = json.loads(proc.stdout)
     except json.JSONDecodeError as e:
         raise RuntimeError(f"layer tool {tool_name} did not print JSON: {e}\n{proc.stdout[:1000]}") from e
-    _merge_layers(layout, produced)
-    return produced
+    artifact_path = _write_generated_layer_artifact(slug, cfg, resources, produced)
+    # Merge from the raw artifact, not from the transient process result. This
+    # keeps generated layers as inspectable/reproducible raw build artifacts
+    # waiting to be picked up by the track bake.
+    artifact = json.loads(artifact_path.read_text())
+    _merge_layers(layout, artifact)
+    return artifact
 
 
 def run_layer_configs(slug: str, *, write: bool = True) -> dict[str, Any]:

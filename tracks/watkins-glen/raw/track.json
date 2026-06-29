@@ -47,8 +47,8 @@
               "label": "Start / Finish",
               "marker": 0.0,
               "location": [
-                -76.928851,
-                42.340779
+                -76.928831,
+                42.341003
               ]
             },
             {
@@ -56,8 +56,8 @@
               "label": "Pit Entry",
               "marker": 0.947,
               "location": [
-                -76.929072,
-                42.338216
+                -76.92906,
+                42.338395
               ]
             },
             {
@@ -65,8 +65,8 @@
               "label": "Pit Exit",
               "marker": 0.078,
               "location": [
-                -76.927975,
-                42.344267
+                -76.927579,
+                42.344226
               ]
             }
           ]
@@ -83,14 +83,14 @@
               "label": "The 90",
               "labels": {
                 "numbered": "Turn 1",
+                "official": "The Ninety",
                 "driver": "The 90"
               },
               "marker": 0.066,
               "location": [
-                -76.928561,
-                42.34397
+                -76.928259,
+                42.344124
               ],
-              "location_source": "centerline",
               "direction": "right",
               "scale": 2
             },
@@ -101,14 +101,15 @@
               "label": "Esses",
               "labels": {
                 "numbered": "Turn 2",
-                "driver": "Esses",
-                "official": "The Esses"
+                "official": "The Esses",
+                "driver": "Esses"
               },
-              "marker": 0.1835,
+              "marker": 0.15,
               "location": [
-                -76.923132,
-                42.341471
+                -76.923611,
+                42.342684
               ],
+              "location_source": "centerline",
               "direction": "left",
               "scale": 4
             },
@@ -116,11 +117,30 @@
               "id": "t3",
               "number": 3,
               "code": "3",
-              "label": "Inner Loop",
+              "label": "Esses",
               "labels": {
                 "numbered": "Turn 3",
-                "driver": "Inner Loop",
-                "official": "Inner Loop"
+                "official": "The Esses",
+                "driver": "Esses"
+              },
+              "marker": 0.22,
+              "location": [
+                -76.921243,
+                42.339836
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 4
+            },
+            {
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Bus Stop",
+              "labels": {
+                "numbered": "Turn 4",
+                "official": "Inner Loop",
+                "driver": "Bus Stop"
               },
               "marker": 0.366,
               "location": [
@@ -131,14 +151,14 @@
               "scale": 2
             },
             {
-              "id": "t4",
-              "number": 4,
-              "code": "4",
-              "label": "Outer Loop",
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Carousel",
               "labels": {
-                "numbered": "Turn 4",
-                "driver": "Outer Loop",
-                "official": "Outer Loop"
+                "numbered": "Turn 5",
+                "official": "Outer Loop",
+                "driver": "Carousel"
               },
               "marker": 0.428,
               "location": [
@@ -149,14 +169,14 @@
               "scale": 3
             },
             {
-              "id": "t5",
-              "number": 5,
-              "code": "5",
+              "id": "t6",
+              "number": 6,
+              "code": "6",
               "label": "Chute",
               "labels": {
-                "numbered": "Turn 5",
-                "driver": "Chute",
-                "official": "Chute"
+                "numbered": "Turn 6",
+                "official": "The Chute",
+                "driver": "Chute"
               },
               "marker": 0.515,
               "location": [
@@ -167,14 +187,14 @@
               "scale": 4
             },
             {
-              "id": "t6",
-              "number": 6,
-              "code": "6",
+              "id": "t7",
+              "number": 7,
+              "code": "7",
               "label": "Toe",
               "labels": {
-                "numbered": "Turn 6",
-                "driver": "Toe",
-                "official": "Toe of the Boot"
+                "numbered": "Turn 7",
+                "official": "Toe of the Boot",
+                "driver": "Toe"
               },
               "marker": 0.6085,
               "location": [
@@ -185,14 +205,14 @@
               "scale": 2
             },
             {
-              "id": "t7",
-              "number": 7,
-              "code": "7",
+              "id": "t8",
+              "number": 8,
+              "code": "8",
               "label": "Heel",
               "labels": {
-                "numbered": "Turn 7",
-                "driver": "Heel",
-                "official": "Heel of the Boot"
+                "numbered": "Turn 8",
+                "official": "Heel of the Boot",
+                "driver": "Heel"
               },
               "marker": 0.74,
               "location": [
@@ -203,57 +223,51 @@
               "scale": 3
             },
             {
-              "id": "t8",
-              "number": 8,
-              "code": "8",
+              "id": "t9",
+              "number": 9,
+              "code": "9",
               "label": "Turn 9",
               "labels": {
-                "numbered": "Turn 8",
-                "driver": "Turn 9",
-                "official": "Turn 9"
+                "numbered": "Turn 9"
               },
               "marker": 0.8005,
               "location": [
-                -76.924323,
-                42.333638
+                -76.924275,
+                42.333676
               ],
               "location_source": "centerline",
               "direction": "right",
               "scale": 2
             },
             {
-              "id": "t9",
-              "number": 9,
-              "code": "9",
+              "id": "t10",
+              "number": 10,
+              "code": "10",
               "label": "Turn 10",
               "labels": {
-                "numbered": "Turn 9",
-                "driver": "Turn 10",
-                "official": "Turn 10"
+                "numbered": "Turn 10"
               },
               "marker": 0.8695,
               "location": [
-                -76.925034,
-                42.336836
+                -76.925132,
+                42.336922
               ],
               "location_source": "centerline",
               "direction": "left",
               "scale": 2
             },
             {
-              "id": "t10",
-              "number": 10,
-              "code": "10",
+              "id": "t11",
+              "number": 11,
+              "code": "11",
               "label": "Turn 11",
               "labels": {
-                "numbered": "Turn 10",
-                "driver": "Turn 11",
-                "official": "Turn 11"
+                "numbered": "Turn 11"
               },
               "marker": 0.9365,
               "location": [
-                -76.929013,
-                42.337714
+                -76.929069,
+                42.337878
               ],
               "location_source": "centerline",
               "direction": "right",
@@ -324,78 +338,89 @@
             {
               "id": "t2",
               "label": "Esses",
-              "start": 0.17062,
-              "end": 0.19638,
+              "start": 0.13712,
+              "end": 0.185,
               "anchor": "t2"
             },
             {
               "id": "t3",
-              "label": "Inner Loop",
-              "start": 0.33288,
-              "end": 0.38992,
+              "label": "Esses",
+              "start": 0.185,
+              "end": 0.23288,
               "anchor": "t3"
             },
             {
               "id": "t4",
-              "label": "Outer Loop",
-              "start": 0.40592,
-              "end": 0.4464,
+              "label": "Bus Stop",
+              "start": 0.33288,
+              "end": 0.38992,
               "anchor": "t4"
             },
             {
               "id": "t5",
-              "label": "Chute",
-              "start": 0.50212,
-              "end": 0.52788,
+              "label": "Carousel",
+              "start": 0.40592,
+              "end": 0.4464,
               "anchor": "t5"
             },
             {
               "id": "t6",
-              "label": "Toe",
-              "start": 0.57538,
-              "end": 0.63242,
+              "label": "Chute",
+              "start": 0.50212,
+              "end": 0.52788,
               "anchor": "t6"
             },
             {
               "id": "t7",
-              "label": "Heel",
-              "start": 0.71792,
-              "end": 0.7584,
+              "label": "Toe",
+              "start": 0.57538,
+              "end": 0.63242,
               "anchor": "t7"
             },
             {
               "id": "t8",
-              "label": "Turn 9",
-              "start": 0.76738,
-              "end": 0.82442,
+              "label": "Heel",
+              "start": 0.71792,
+              "end": 0.7584,
               "anchor": "t8"
             },
             {
               "id": "t9",
-              "label": "Turn 10",
-              "start": 0.83638,
-              "end": 0.89342,
+              "label": "Turn 9",
+              "start": 0.76738,
+              "end": 0.82442,
               "anchor": "t9"
             },
             {
               "id": "t10",
+              "label": "Turn 10",
+              "start": 0.83638,
+              "end": 0.89342,
+              "anchor": "t10"
+            },
+            {
+              "id": "t11",
               "label": "Turn 11",
               "start": 0.92362,
               "end": 0.94938,
-              "anchor": "t10"
+              "anchor": "t11"
             }
           ]
         },
         {
-          "id": "straights",
-          "kind": "straights",
-          "label": "Straights",
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
           "items": [
             {
-              "id": "backstraight",
-              "label": "Back Straight",
-              "start": 0.255,
-              "end": 0.34
+              "id": "complex-1",
+              "label": "Esses",
+              "start": 0.13712,
+              "end": 0.23288,
+              "members": [
+                "t2",
+                "t3"
+              ]
             }
           ]
         },
@@ -528,7 +553,7 @@
     "imsa_data": "watkins-glen"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:31:33.704897+00:00",
+    "generated_at": "2026-06-29T16:43:14.496775+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -553,7 +578,7 @@
     ],
     "corner_match": {
       "matched": 6,
-      "total": 10
+      "total": 11
     }
   }
 }

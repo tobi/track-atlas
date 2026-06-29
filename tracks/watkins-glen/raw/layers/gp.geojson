@@ -1099,8 +1099,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.928851,
-          42.340779
+          -76.928831,
+          42.341003
         ]
       }
     },
@@ -1114,8 +1114,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.929072,
-          42.338216
+          -76.92906,
+          42.338395
         ]
       }
     },
@@ -1129,8 +1129,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.927975,
-          42.344267
+          -76.927579,
+          42.344226
         ]
       }
     },
@@ -1144,6 +1144,7 @@
         "display": "The 90",
         "labels": {
           "numbered": "Turn 1",
+          "official": "The Ninety",
           "driver": "The 90"
         },
         "direction": "right",
@@ -1153,8 +1154,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.928561,
-          42.34397
+          -76.928259,
+          42.344124
         ]
       }
     },
@@ -1168,18 +1169,18 @@
         "display": "Esses",
         "labels": {
           "numbered": "Turn 2",
-          "driver": "Esses",
-          "official": "The Esses"
+          "official": "The Esses",
+          "driver": "Esses"
         },
         "direction": "left",
         "scale": 4,
-        "marker": 0.1835
+        "marker": 0.15
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.923132,
-          42.341471
+          -76.923611,
+          42.342684
         ]
       }
     },
@@ -1190,11 +1191,36 @@
         "id": "t3",
         "number": 3,
         "code": "3",
-        "display": "Inner Loop",
+        "display": "Esses",
         "labels": {
           "numbered": "Turn 3",
-          "driver": "Inner Loop",
-          "official": "Inner Loop"
+          "official": "The Esses",
+          "driver": "Esses"
+        },
+        "direction": "right",
+        "scale": 4,
+        "marker": 0.22
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.921243,
+          42.339836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t4",
+        "number": 4,
+        "code": "4",
+        "display": "Bus Stop",
+        "labels": {
+          "numbered": "Turn 4",
+          "official": "Inner Loop",
+          "driver": "Bus Stop"
         },
         "direction": "right",
         "scale": 2,
@@ -1212,14 +1238,14 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t4",
-        "number": 4,
-        "code": "4",
-        "display": "Outer Loop",
+        "id": "t5",
+        "number": 5,
+        "code": "5",
+        "display": "Carousel",
         "labels": {
-          "numbered": "Turn 4",
-          "driver": "Outer Loop",
-          "official": "Outer Loop"
+          "numbered": "Turn 5",
+          "official": "Outer Loop",
+          "driver": "Carousel"
         },
         "direction": "right",
         "scale": 3,
@@ -1237,14 +1263,14 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t5",
-        "number": 5,
-        "code": "5",
+        "id": "t6",
+        "number": 6,
+        "code": "6",
         "display": "Chute",
         "labels": {
-          "numbered": "Turn 5",
-          "driver": "Chute",
-          "official": "Chute"
+          "numbered": "Turn 6",
+          "official": "The Chute",
+          "driver": "Chute"
         },
         "direction": "left",
         "scale": 4,
@@ -1262,14 +1288,14 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t6",
-        "number": 6,
-        "code": "6",
+        "id": "t7",
+        "number": 7,
+        "code": "7",
         "display": "Toe",
         "labels": {
-          "numbered": "Turn 6",
-          "driver": "Toe",
-          "official": "Toe of the Boot"
+          "numbered": "Turn 7",
+          "official": "Toe of the Boot",
+          "driver": "Toe"
         },
         "direction": "left",
         "scale": 2,
@@ -1287,14 +1313,14 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t7",
-        "number": 7,
-        "code": "7",
+        "id": "t8",
+        "number": 8,
+        "code": "8",
         "display": "Heel",
         "labels": {
-          "numbered": "Turn 7",
-          "driver": "Heel",
-          "official": "Heel of the Boot"
+          "numbered": "Turn 8",
+          "official": "Heel of the Boot",
+          "driver": "Heel"
         },
         "direction": "left",
         "scale": 3,
@@ -1312,14 +1338,12 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t8",
-        "number": 8,
-        "code": "8",
+        "id": "t9",
+        "number": 9,
+        "code": "9",
         "display": "Turn 9",
         "labels": {
-          "numbered": "Turn 8",
-          "driver": "Turn 9",
-          "official": "Turn 9"
+          "numbered": "Turn 9"
         },
         "direction": "right",
         "scale": 2,
@@ -1328,33 +1352,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.924323,
-          42.333638
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "role": "corner",
-        "id": "t9",
-        "number": 9,
-        "code": "9",
-        "display": "Turn 10",
-        "labels": {
-          "numbered": "Turn 9",
-          "driver": "Turn 10",
-          "official": "Turn 10"
-        },
-        "direction": "left",
-        "scale": 2,
-        "marker": 0.8695
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.925034,
-          42.336836
+          -76.924275,
+          42.333676
         ]
       }
     },
@@ -1365,11 +1364,32 @@
         "id": "t10",
         "number": 10,
         "code": "10",
+        "display": "Turn 10",
+        "labels": {
+          "numbered": "Turn 10"
+        },
+        "direction": "left",
+        "scale": 2,
+        "marker": 0.8695
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.925132,
+          42.336922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t11",
+        "number": 11,
+        "code": "11",
         "display": "Turn 11",
         "labels": {
-          "numbered": "Turn 10",
-          "driver": "Turn 11",
-          "official": "Turn 11"
+          "numbered": "Turn 11"
         },
         "direction": "right",
         "scale": 4,
@@ -1378,8 +1398,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -76.929013,
-          42.337714
+          -76.929069,
+          42.337878
         ]
       }
     }

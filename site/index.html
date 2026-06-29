@@ -54,6 +54,11 @@
   .map-wrap { display:grid; grid-template-columns:minmax(0, 1fr) 340px; gap:14px; align-items:stretch; margin-top:16px; }
   @media (max-width:1050px) { .map-wrap { grid-template-columns:1fr; } }
   #map { min-height:620px; height:68vh; border-radius:22px; border:1px solid rgba(255,255,255,.1); overflow:hidden; box-shadow:var(--shadow); background:#111; }
+  .map-readout { min-width:260px; max-width:360px; padding:10px 12px; border-radius:14px; background:rgba(8,10,15,.88); color:var(--text); border:1px solid rgba(255,255,255,.14); box-shadow:0 10px 32px rgba(0,0,0,.35); font:12px/1.35 Inter, ui-sans-serif, system-ui, sans-serif; backdrop-filter:blur(12px); }
+  .map-readout .big { font-size:18px; font-weight:900; letter-spacing:-.3px; }
+  .map-readout .muted { color:var(--muted); }
+  .map-readout .hit { margin-top:6px; padding-top:6px; border-top:1px solid rgba(255,255,255,.08); }
+  .map-readout b { color:#fff; }
   .layer-panel { background:rgba(17,23,34,.92); border:1px solid rgba(255,255,255,.08); border-radius:22px; padding:15px; overflow:auto; max-height:68vh; box-shadow:var(--shadow); }
   .layer-panel h4 { margin:2px 0 10px; font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); }
   .mini-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:0 0 14px; }
@@ -64,10 +69,8 @@
   .layer-toggle input { margin-top:2px; accent-color:var(--accent); }
   .layer-toggle b { font-size:13px; }
   .layer-toggle .meta { color:var(--muted); font-size:11px; margin-top:2px; line-height:1.35; }
-  .layer-range-highlight { stroke-dasharray: 16 10; animation: dash 650ms linear infinite; filter: drop-shadow(0 0 8px rgba(255,255,255,.55)); }
-  .layer-point-highlight { animation: pulse 900ms ease-in-out infinite; filter: drop-shadow(0 0 8px rgba(255,45,141,.75)); }
+  .layer-range-highlight { stroke-dasharray: 16 10; animation: dash 650ms linear infinite; filter: drop-shadow(0 0 10px rgba(255,255,255,.72)); }
   @keyframes dash { to { stroke-dashoffset: -26; } }
-  @keyframes pulse { 0%,100% { transform:scale(1); opacity:.85; } 50% { transform:scale(1.35); opacity:1; } }
   table { width:100%; border-collapse:collapse; margin-top:14px; font-size:13.5px; background:rgba(17,23,34,.56); border:1px solid rgba(255,255,255,.07); border-radius:16px; overflow:hidden; }
   th, td { text-align:left; padding:9px 10px; border-bottom:1px solid rgba(255,255,255,.06); }
   th { color:var(--muted); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; background:rgba(255,255,255,.025); }
