@@ -299,7 +299,12 @@ def generate_track(slug: str) -> dict:
                     p = place(m)
                     pit_points[role] = {"marker": m,
                                         "location": [round(p[0], 6), round(p[1], 6)]}
-            outline_coords = [[round(x, 6), round(y, 6)] for x, y in oriented]
+            # GeoJSON centerlines are the canonical lap coordinate frame for UI
+            # range layers, so vertex 0 must be marker 0.0 (start/finish), not
+            # OSM's arbitrary relation start node. `place()` was learned from the
+            # unrotated oriented loop, but rotation does not change geometry.
+            draw_loop = rotate_loop_to(oriented, sf_point["location"])
+            outline_coords = [[round(x, 6), round(y, 6)] for x, y in draw_loop]
             if outline_coords[0] != outline_coords[-1]:
                 outline_coords.append(outline_coords[0])  # close the loop
         else:
@@ -338,7 +343,8 @@ def generate_track(slug: str) -> dict:
                         p = place(m)
                         pit_points[role] = {"marker": m,
                                             "location": [round(p[0], 6), round(p[1], 6)]}
-                outline_coords = [[round(x, 6), round(y, 6)] for x, y in oriented]
+                draw_loop = rotate_loop_to(oriented, sf_point["location"])
+                outline_coords = [[round(x, 6), round(y, 6)] for x, y in draw_loop]
                 if outline_coords[0] != outline_coords[-1]:
                     outline_coords.append(outline_coords[0])
             else:
