@@ -635,7 +635,7 @@
     "imsa_data": "laguna-seca"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:39.722081+00:00",
+    "generated_at": "2026-06-29T19:38:49.576502+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -660,6 +660,22 @@
     "corner_match": {
       "matched": 2,
       "total": 10
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched_fallback",
+            "score": 1.147,
+            "reasons": [
+              "length 3,601 m (Δ 1 m)"
+            ]
+          }
+        ],
+        "selected": "stitched_fallback",
+        "selected_score": 1.147
+      }
+    ]
   }
 }

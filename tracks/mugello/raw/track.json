@@ -854,7 +854,7 @@
     "imsa_data": "mugello"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:00.017458+00:00",
+    "generated_at": "2026-06-29T19:39:10.424019+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -879,6 +879,29 @@
     "corner_match": {
       "matched": 1,
       "total": 15
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 0.236,
+            "reasons": [
+              "length 5,245 m (Δ 0 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 0.236,
+            "reasons": [
+              "length 5,245 m (Δ 0 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 0.236
+      }
+    ]
   }
 }

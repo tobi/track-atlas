@@ -669,7 +669,7 @@
     "imsa_data": "long-beach"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:43.871382+00:00",
+    "generated_at": "2026-06-29T19:38:53.844111+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -694,6 +694,22 @@
     "corner_match": {
       "matched": 0,
       "total": 11
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 91.939,
+            "reasons": [
+              "length 3,259 m (Δ 92 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 91.939
+      }
+    ]
   }
 }

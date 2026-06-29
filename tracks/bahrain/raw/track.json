@@ -793,7 +793,7 @@
     "imsa_data": "bahrain"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:33.910166+00:00",
+    "generated_at": "2026-06-29T19:38:43.472153+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -818,6 +818,29 @@
     "corner_match": {
       "matched": 0,
       "total": 15
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 7.624,
+            "reasons": [
+              "length 5,420 m (Δ 8 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 902.72,
+            "reasons": [
+              "length 6,315 m (Δ 903 m)"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 7.624
+      }
+    ]
   }
 }

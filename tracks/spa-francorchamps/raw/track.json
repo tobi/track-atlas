@@ -863,12 +863,13 @@
               ]
             },
             {
-              "id": "t7",
+              "id": "combes",
               "label": "Les Combes",
               "start": 0.31287,
-              "end": 0.33455,
+              "end": 0.35176,
               "members": [
-                "t7"
+                "t7",
+                "t8"
               ],
               "points": [
                 {
@@ -877,18 +878,7 @@
                   "label": "Les Combes",
                   "marker": 0.33,
                   "point_ref": "t7"
-                }
-              ]
-            },
-            {
-              "id": "t8",
-              "label": "Les Combes",
-              "start": 0.33455,
-              "end": 0.35176,
-              "members": [
-                "t8"
-              ],
-              "points": [
+                },
                 {
                   "id": "t8-apex",
                   "role": "apex",
@@ -1092,7 +1082,7 @@
     "imsa_data": "spa-francorchamps"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:07.482074+00:00",
+    "generated_at": "2026-06-29T19:39:17.908894+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1117,6 +1107,29 @@
     "corner_match": {
       "matched": 8,
       "total": 20
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 9.352,
+            "reasons": [
+              "length 6,995 m (Δ 9 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 9.352,
+            "reasons": [
+              "length 6,995 m (Δ 9 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 9.352
+      }
+    ]
   }
 }

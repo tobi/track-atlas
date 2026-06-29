@@ -857,7 +857,7 @@
     "imsa_data": "losail"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:17.672686+00:00",
+    "generated_at": "2026-06-29T19:38:26.225927+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -882,6 +882,22 @@
     "corner_match": {
       "matched": 0,
       "total": 16
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched_fallback",
+            "score": 6.635,
+            "reasons": [
+              "length 5,426 m (Δ 7 m)"
+            ]
+          }
+        ],
+        "selected": "stitched_fallback",
+        "selected_score": 6.635
+      }
+    ]
   }
 }

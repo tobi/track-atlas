@@ -837,7 +837,7 @@
     "imsa_data": "barcelona-catalunya"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:16:38.451280+00:00",
+    "generated_at": "2026-06-29T19:37:45.755352+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -862,6 +862,32 @@
     "corner_match": {
       "matched": 0,
       "total": 14
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 20.308,
+            "reasons": [
+              "length 4,677 m (Δ 20 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 1503.183,
+            "reasons": [
+              "length 4,893 m (Δ 236 m)",
+              "long seg 315 144 m",
+              "backtrack 295 149°",
+              "backtrack 315 165°"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 20.308
+      }
+    ]
   }
 }

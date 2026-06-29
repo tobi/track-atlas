@@ -817,7 +817,7 @@
     "imsa_data": "road-atlanta"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:25.902614+00:00",
+    "generated_at": "2026-06-29T19:38:35.088828+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -842,6 +842,22 @@
     "corner_match": {
       "matched": 1,
       "total": 14
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched_fallback",
+            "score": 1.997,
+            "reasons": [
+              "length 4,090 m (Δ 2 m)"
+            ]
+          }
+        ],
+        "selected": "stitched_fallback",
+        "selected_score": 1.997
+      }
+    ]
   }
 }

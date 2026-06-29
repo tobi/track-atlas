@@ -187,6 +187,7 @@ def generate_track(slug: str) -> dict:
 
     matched_total = 0
     corner_total = 0
+    geometry_summaries = []
     for layout in src["layouts"]:
         lid = layout["id"]
         lkey = layout.get("lovely")
@@ -307,9 +308,16 @@ def generate_track(slug: str) -> dict:
                     candidates.append((score, "stitched", stitched_candidate, reasons))
             except Exception as e:
                 print(f"[{slug}] stitched centerline candidate failed during relation comparison: {e}")
+        geometry_summary = {"layout": lid, "candidates": []}
         if candidates:
             candidates.sort(key=lambda x: x[0])
             best_score, best_name, centerline, best_reasons = candidates[0]
+            geometry_summary["selected"] = best_name
+            geometry_summary["selected_score"] = round(best_score, 3)
+            geometry_summary["candidates"] = [
+                {"source": name, "score": round(score, 3), "reasons": reasons[:8]}
+                for score, name, _, reasons in candidates
+            ]
             for score, name, _, reasons in candidates[1:]:
                 if name == "relation" and score - best_score > 100:
                     print(f"[{slug}] ignoring OSM relation centerline in favor of {best_name}: "
@@ -373,6 +381,10 @@ def generate_track(slug: str) -> dict:
             stitched = stitch_circuit_ways(osm.get("elements", []),
                                            expected_m=layout.get("length_m"))
             if stitched and len(stitched) >= 8:
+                geometry_summary.setdefault("selected", "stitched_fallback")
+                score, reasons = _centerline_quality(stitched, layout.get("length_m"))
+                geometry_summary.setdefault("selected_score", round(score, 3))
+                geometry_summary.setdefault("candidates", []).append({"source": "stitched_fallback", "score": round(score, 3), "reasons": reasons[:8]})
                 stitched = densify(orient_loop(stitched, layout.get("direction")))
                 matched_pts = [(c["marker"], c["location"]) for c in corners
                                if "location" in c and "marker" in c]
@@ -416,7 +428,10 @@ def generate_track(slug: str) -> dict:
                 )
                 outline_coords = [c["location"] for c in traced]
                 if len(outline_coords) >= 3:
+                    geometry_summary.setdefault("selected", "matched_corner_trace")
+                    geometry_summary.setdefault("selected_score", None)
                     outline_coords.append(outline_coords[0])  # close the loop
+        geometry_summaries.append(geometry_summary)
         # Final invariant: marker fractions are measured on the emitted GeoJSON
         # centerline. OSM way centroids and piecewise alignment are useful to
         # choose/orient the lap, but clients slice ranges directly by raw marker
@@ -529,39 +544,54 @@ def generate_track(slug: str) -> dict:
         if corner_ranges:
             range_layers.append({"id": "corner_ranges", "kind": "corner_ranges", "label": "Each Corner", "generated": True, "items": corner_ranges})
 
-        # Corner complexes are complete: one item per logical corner group.
-        # Single-apex corners appear as one-member groups; named complexes merge
-        # multiple apexes into one range with multiple internal apex points.
+        # Corner Complexes is the de-cluttered grouping layer: explicit complex
+        # overrides win; otherwise adjacent corners with the same real name are
+        # merged automatically. Solo scale 5/6 kinks are omitted unless they are
+        # part of a multi-apex complex.
         groups = []
-        seen_groups = set()
         sorted_corners = sorted(corners, key=lambda x: x["number"])
+        processed = set()
         used_ids = set()
+
+        def has_real_name(c):
+            return any(k != "numbered" for k in c.get("names", {}))
+
         for c in sorted_corners:
+            if c["number"] in processed:
+                continue
             comp = c.get("complex")
             if comp:
-                group_key = ("complex", comp)
-                if group_key in seen_groups:
-                    continue
                 members = [x for x in sorted_corners if x.get("complex") == comp]
+                if len(members) == 1 and (members[0].get("scale") or 0) >= 5:
+                    processed.add(c["number"])
+                    continue
                 base_id = normalize(comp) or f"complex-{len(groups) + 1}"
                 label = comp
             else:
-                # Corner Complexes are for meaningful named corner groups. Solo
-                # high-speed corners/kinks (scale 5/6) add UI clutter and can be
-                # represented by their apex + per-corner range only.
-                if (c.get("scale") or 0) >= 5:
-                    continue
-                group_key = ("corner", c["number"])
-                members = [c]
-                base_id = f"t{c['number']}"
                 label = _resolve(c["names"], default_layer)
-            seen_groups.add(group_key)
+                members = [c]
+                if has_real_name(c):
+                    idx = sorted_corners.index(c) + 1
+                    while idx < len(sorted_corners):
+                        nxt = sorted_corners[idx]
+                        if nxt.get("complex") or not has_real_name(nxt):
+                            break
+                        if _resolve(nxt["names"], default_layer) != label:
+                            break
+                        members.append(nxt)
+                        idx += 1
+                if len(members) == 1 and (c.get("scale") or 0) >= 5:
+                    processed.add(c["number"])
+                    continue
+                base_id = normalize(label) if len(members) > 1 else f"t{c['number']}"
 
+            for x in members:
+                processed.add(x["number"])
             bounds = usable_range_bounds(members)
             if not bounds:
                 continue
             start, end = bounds
-            group_id = base_id
+            group_id = base_id or f"complex-{len(groups) + 1}"
             suffix = 2
             while group_id in used_ids:
                 group_id = f"{base_id}-{suffix}"
@@ -622,6 +652,7 @@ def generate_track(slug: str) -> dict:
              "provides": ["geometry", "named-corner-coordinates"]},
         ],
         "corner_match": {"matched": matched_total, "total": corner_total},
+        "geometry": geometry_summaries,
     }
 
     (raw / "track.json").write_text(json.dumps(track, ensure_ascii=False, indent=2))

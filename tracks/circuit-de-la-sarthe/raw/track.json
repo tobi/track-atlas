@@ -1248,7 +1248,7 @@
     "imsa_data": "le-mans"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:09.037560+00:00",
+    "generated_at": "2026-06-29T19:38:16.969549+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1273,6 +1273,36 @@
     "corner_match": {
       "matched": 14,
       "total": 21
-    }
+    },
+    "geometry": [
+      {
+        "layout": "24h",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 13.592,
+            "reasons": [
+              "length 13,612 m (Δ 14 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 7054.073,
+            "reasons": [
+              "length 10,663 m (Δ 2,963 m)",
+              "long seg 1295 190 m",
+              "backtrack 137 180°",
+              "backtrack 171 173°",
+              "backtrack 896 147°",
+              "backtrack 1008 176°",
+              "backtrack 1054 151°",
+              "backtrack 1066 165°"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 13.592
+      }
+    ]
   }
 }

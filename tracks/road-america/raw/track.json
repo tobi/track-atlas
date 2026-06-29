@@ -784,7 +784,7 @@
     "imsa_data": "road-america"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:16:46.566107+00:00",
+    "generated_at": "2026-06-29T19:37:54.077587+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -809,6 +809,22 @@
     "corner_match": {
       "matched": 5,
       "total": 13
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched_fallback",
+            "score": 24.762,
+            "reasons": [
+              "length 6,539 m (Δ 25 m)"
+            ]
+          }
+        ],
+        "selected": "stitched_fallback",
+        "selected_score": 24.762
+      }
+    ]
   }
 }

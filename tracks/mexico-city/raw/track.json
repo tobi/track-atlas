@@ -737,12 +737,13 @@
               ]
             },
             {
-              "id": "t4",
+              "id": "esedellago",
               "label": "Ese del Lago",
               "start": 0.43858,
-              "end": 0.48728,
+              "end": 0.50857,
               "members": [
-                "t4"
+                "t4",
+                "t5"
               ],
               "points": [
                 {
@@ -751,18 +752,7 @@
                   "label": "Ese del Lago",
                   "marker": 0.4804,
                   "point_ref": "t4"
-                }
-              ]
-            },
-            {
-              "id": "t5",
-              "label": "Ese del Lago",
-              "start": 0.48728,
-              "end": 0.50857,
-              "members": [
-                "t5"
-              ],
-              "points": [
+                },
                 {
                   "id": "t5-apex",
                   "role": "apex",
@@ -907,7 +897,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T19:17:43.842557+00:00",
+    "generated_at": "2026-06-29T19:38:53.814255+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -932,6 +922,30 @@
     "corner_match": {
       "matched": 0,
       "total": 17
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 7.7,
+            "reasons": [
+              "length 4,312 m (Δ 8 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 943.94,
+            "reasons": [
+              "length 4,152 m (Δ 152 m)",
+              "long seg 274 159 m"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 7.7
+      }
+    ]
   }
 }

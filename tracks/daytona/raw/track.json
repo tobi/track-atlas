@@ -641,7 +641,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:02.327894+00:00",
+    "generated_at": "2026-06-29T19:39:12.709721+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -666,6 +666,29 @@
     "corner_match": {
       "matched": 0,
       "total": 12
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 0.308,
+            "reasons": [
+              "length 5,729 m (Δ 0 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 32.85,
+            "reasons": [
+              "length 5,762 m (Δ 33 m)"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 0.308
+      }
+    ]
   }
 }

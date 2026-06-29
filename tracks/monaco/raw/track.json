@@ -875,12 +875,13 @@
               ]
             },
             {
-              "id": "t7",
+              "id": "portier",
               "label": "Portier",
               "start": 0.39606,
-              "end": 0.41588,
+              "end": 0.47226,
               "members": [
-                "t7"
+                "t7",
+                "t8"
               ],
               "points": [
                 {
@@ -889,18 +890,7 @@
                   "label": "Portier",
                   "marker": 0.4062,
                   "point_ref": "t7"
-                }
-              ]
-            },
-            {
-              "id": "t8",
-              "label": "Portier",
-              "start": 0.41588,
-              "end": 0.47226,
-              "members": [
-                "t8"
-              ],
-              "points": [
+                },
                 {
                   "id": "t8-apex",
                   "role": "apex",
@@ -1015,12 +1005,13 @@
               ]
             },
             {
-              "id": "t18",
+              "id": "anthonynoghes",
               "label": "Anthony Noghes",
               "start": 0.89801,
-              "end": 0.91325,
+              "end": 0.93748,
               "members": [
-                "t18"
+                "t18",
+                "t19"
               ],
               "points": [
                 {
@@ -1029,18 +1020,7 @@
                   "label": "Anthony Noghes",
                   "marker": 0.9086,
                   "point_ref": "t18"
-                }
-              ]
-            },
-            {
-              "id": "t19",
-              "label": "Anthony Noghes",
-              "start": 0.91325,
-              "end": 0.93748,
-              "members": [
-                "t19"
-              ],
-              "points": [
+                },
                 {
                   "id": "t19-apex",
                   "role": "apex",
@@ -1061,7 +1041,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T19:18:00.358231+00:00",
+    "generated_at": "2026-06-29T19:39:10.731334+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1086,6 +1066,22 @@
     "corner_match": {
       "matched": 0,
       "total": 19
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 17.774,
+            "reasons": [
+              "length 3,319 m (Δ 18 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 17.774
+      }
+    ]
   }
 }

@@ -780,12 +780,15 @@
               ]
             },
             {
-              "id": "t8",
+              "id": "spiral",
               "label": "Spiral",
               "start": 0.32279,
-              "end": 0.3674,
+              "end": 0.43614,
               "members": [
-                "t8"
+                "t8",
+                "t9",
+                "t10",
+                "t11"
               ],
               "points": [
                 {
@@ -794,54 +797,21 @@
                   "label": "Spiral",
                   "marker": 0.357,
                   "point_ref": "t8"
-                }
-              ]
-            },
-            {
-              "id": "t9",
-              "label": "Spiral",
-              "start": 0.3674,
-              "end": 0.38541,
-              "members": [
-                "t9"
-              ],
-              "points": [
+                },
                 {
                   "id": "t9-apex",
                   "role": "apex",
                   "label": "Spiral",
                   "marker": 0.377,
                   "point_ref": "t9"
-                }
-              ]
-            },
-            {
-              "id": "t10",
-              "label": "Spiral",
-              "start": 0.38541,
-              "end": 0.4055,
-              "members": [
-                "t10"
-              ],
-              "points": [
+                },
                 {
                   "id": "t10-apex",
                   "role": "apex",
                   "label": "Spiral",
                   "marker": 0.3955,
                   "point_ref": "t10"
-                }
-              ]
-            },
-            {
-              "id": "t11",
-              "label": "Spiral",
-              "start": 0.4055,
-              "end": 0.43614,
-              "members": [
-                "t11"
-              ],
-              "points": [
+                },
                 {
                   "id": "t11-apex",
                   "role": "apex",
@@ -919,7 +889,7 @@
     "imsa_data": "virginia-international-raceway"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:25.131266+00:00",
+    "generated_at": "2026-06-29T19:39:35.508129+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -944,6 +914,29 @@
     "corner_match": {
       "matched": 7,
       "total": 16
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 0.184,
+            "reasons": [
+              "length 5,262 m (Δ 0 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 0.184,
+            "reasons": [
+              "length 5,262 m (Δ 0 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 0.184
+      }
+    ]
   }
 }

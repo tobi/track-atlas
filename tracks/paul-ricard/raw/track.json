@@ -557,12 +557,13 @@
           "label": "Corner Complexes",
           "items": [
             {
-              "id": "t1",
+              "id": "verrerie",
               "label": "Virage de la Verrerie",
               "start": 0.0792,
-              "end": 0.115,
+              "end": 0.15033,
               "members": [
-                "t1"
+                "t1",
+                "t2"
               ],
               "points": [
                 {
@@ -571,18 +572,7 @@
                   "label": "Virage de la Verrerie",
                   "marker": 0.1,
                   "point_ref": "t1"
-                }
-              ]
-            },
-            {
-              "id": "t2",
-              "label": "Virage de la Verrerie",
-              "start": 0.115,
-              "end": 0.15033,
-              "members": [
-                "t2"
-              ],
-              "points": [
+                },
                 {
                   "id": "t2-apex",
                   "role": "apex",
@@ -629,12 +619,13 @@
               ]
             },
             {
-              "id": "t5",
+              "id": "camp",
               "label": "Virage du Camp",
               "start": 0.25037,
-              "end": 0.27712,
+              "end": 0.29913,
               "members": [
-                "t5"
+                "t5",
+                "t6"
               ],
               "points": [
                 {
@@ -643,18 +634,7 @@
                   "label": "Virage du Camp",
                   "marker": 0.263,
                   "point_ref": "t5"
-                }
-              ]
-            },
-            {
-              "id": "t6",
-              "label": "Virage du Camp",
-              "start": 0.27712,
-              "end": 0.29913,
-              "members": [
-                "t6"
-              ],
-              "points": [
+                },
                 {
                   "id": "t6-apex",
                   "role": "apex",
@@ -750,7 +730,7 @@
     "imsa_data": "paul-ricard"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:24.861616+00:00",
+    "generated_at": "2026-06-29T19:39:35.236676+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -775,6 +755,29 @@
     "corner_match": {
       "matched": 8,
       "total": 13
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 0.996,
+            "reasons": [
+              "length 5,771 m (Δ 1 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 5.518,
+            "reasons": [
+              "length 5,764 m (Δ 6 m)"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 0.996
+      }
+    ]
   }
 }

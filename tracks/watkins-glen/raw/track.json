@@ -836,7 +836,7 @@
     "imsa_data": "watkins-glen"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:00.084623+00:00",
+    "generated_at": "2026-06-29T19:39:10.490559+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -861,6 +861,29 @@
     "corner_match": {
       "matched": 6,
       "total": 11
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 0.61,
+            "reasons": [
+              "length 5,434 m (Δ 1 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 37.77,
+            "reasons": [
+              "length 5,473 m (Δ 38 m)"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 0.61
+      }
+    ]
   }
 }

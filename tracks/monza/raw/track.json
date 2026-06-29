@@ -661,7 +661,7 @@
     "imsa_data": "monza"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:39.673213+00:00",
+    "generated_at": "2026-06-29T19:38:49.526765+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -686,6 +686,29 @@
     "corner_match": {
       "matched": 3,
       "total": 11
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 1.065,
+            "reasons": [
+              "length 5,794 m (Δ 1 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 1.065,
+            "reasons": [
+              "length 5,794 m (Δ 1 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 1.065
+      }
+    ]
   }
 }

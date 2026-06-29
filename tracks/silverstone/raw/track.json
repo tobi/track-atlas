@@ -753,24 +753,6 @@
           "label": "Corner Complexes",
           "items": [
             {
-              "id": "abbeyfarm",
-              "label": "Abbey / Farm",
-              "start": 0.10116,
-              "end": 0.11474,
-              "members": [
-                "t2"
-              ],
-              "points": [
-                {
-                  "id": "t2-apex",
-                  "role": "apex",
-                  "label": "Farm",
-                  "marker": 0.1071,
-                  "point_ref": "t2"
-                }
-              ]
-            },
-            {
               "id": "arena",
               "label": "Arena",
               "start": 0.12474,
@@ -927,13 +909,12 @@
               ]
             },
             {
-              "id": "vale",
+              "id": "t16",
               "label": "Vale",
               "start": 0.90974,
-              "end": 0.9687,
+              "end": 0.94563,
               "members": [
-                "t16",
-                "t17"
+                "t16"
               ],
               "points": [
                 {
@@ -942,31 +923,25 @@
                   "label": "Vale",
                   "marker": 0.9403,
                   "point_ref": "t16"
-                },
+                }
+              ]
+            },
+            {
+              "id": "club",
+              "label": "Club",
+              "start": 0.94563,
+              "end": 0.9687,
+              "members": [
+                "t17",
+                "t18"
+              ],
+              "points": [
                 {
                   "id": "t17-apex",
                   "role": "apex",
                   "label": "Club",
                   "marker": 0.953,
                   "point_ref": "t17"
-                }
-              ]
-            },
-            {
-              "id": "t18",
-              "label": "Club",
-              "start": 0.98065,
-              "end": 0.98575,
-              "members": [
-                "t18"
-              ],
-              "points": [
-                {
-                  "id": "t18-apex",
-                  "role": "apex",
-                  "label": "Club",
-                  "marker": 0.9832,
-                  "point_ref": "t18"
                 }
               ]
             }
@@ -988,7 +963,7 @@
     "imsa_data": "silverstone"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:43.827155+00:00",
+    "generated_at": "2026-06-29T19:38:53.798041+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1013,6 +988,29 @@
     "corner_match": {
       "matched": 18,
       "total": 18
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 10.385,
+            "reasons": [
+              "length 5,881 m (Δ 10 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 1992.059,
+            "reasons": [
+              "length 3,899 m (Δ 1,992 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 10.385
+      }
+    ]
   }
 }

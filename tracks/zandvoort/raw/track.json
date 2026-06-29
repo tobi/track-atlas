@@ -430,7 +430,7 @@
               "id": "t4",
               "label": "Hondenvlak",
               "start": 0.24938,
-              "end": 0.26817,
+              "end": 0.27298,
               "anchor": "t4",
               "points": [
                 {
@@ -445,7 +445,7 @@
             {
               "id": "t5",
               "label": "Hondenvlak",
-              "start": 0.28046,
+              "start": 0.27298,
               "end": 0.32323,
               "anchor": "t5",
               "points": [
@@ -666,13 +666,21 @@
             {
               "id": "hondenvlak",
               "label": "Hondenvlak",
-              "start": 0.28046,
+              "start": 0.24938,
               "end": 0.34697,
               "members": [
+                "t4",
                 "t5",
                 "t6"
               ],
               "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Hondenvlak",
+                  "marker": 0.2576,
+                  "point_ref": "t4"
+                },
                 {
                   "id": "t5-apex",
                   "role": "apex",
@@ -844,7 +852,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T19:17:22.408733+00:00",
+    "generated_at": "2026-06-29T19:38:31.298601+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -869,6 +877,30 @@
     "corner_match": {
       "matched": 0,
       "total": 14
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 5.816,
+            "reasons": [
+              "length 4,253 m (Δ 6 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 878.319,
+            "reasons": [
+              "length 4,256 m (Δ 3 m)",
+              "backtrack 83 180°"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 5.816
+      }
+    ]
   }
 }

@@ -57,7 +57,10 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   Use the way's lap fraction and distance-to-outline to decide which turn it
   names; many OSM ways are facility/infrastructure noise.
 - Put durable fixes in `tracks/<slug>/overrides.json`, never by editing
-  `raw/track.json` directly. Regenerate after each curation pass.
+  `raw/track.json` directly. Regenerate after each curation pass. Generated
+  `raw/track.json.provenance.geometry[]` records which centerline source won
+  (`relation`, `stitched`, or fallback) and why; inspect it when a track's origin
+  or shape looks suspicious.
 - Prefer `official` for circuit/OSM names and `driver` for what crews say on
   radio. If drivers just say the number, clear `driver` so display falls back to
   `numbered`.

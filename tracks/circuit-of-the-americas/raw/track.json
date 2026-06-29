@@ -1032,7 +1032,7 @@
     "imsa_data": "circuit-of-the-americas"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:06.359296+00:00",
+    "generated_at": "2026-06-29T19:39:16.849635+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1057,6 +1057,29 @@
     "corner_match": {
       "matched": 0,
       "total": 20
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 0.864,
+            "reasons": [
+              "length 5,514 m (Δ 1 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 12.795,
+            "reasons": [
+              "length 5,502 m (Δ 13 m)"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 0.864
+      }
+    ]
   }
 }

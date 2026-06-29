@@ -1044,7 +1044,7 @@
     "imsa_data": "miami"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:01.153352+00:00",
+    "generated_at": "2026-06-29T19:39:11.547074+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1069,6 +1069,22 @@
     "corner_match": {
       "matched": 0,
       "total": 19
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched_fallback",
+            "score": 2.226,
+            "reasons": [
+              "length 5,410 m (Δ 2 m)"
+            ]
+          }
+        ],
+        "selected": "stitched_fallback",
+        "selected_score": 2.226
+      }
+    ]
   }
 }

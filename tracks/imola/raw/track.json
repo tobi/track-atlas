@@ -965,7 +965,7 @@
     "imsa_data": "imola"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:16:39.270420+00:00",
+    "generated_at": "2026-06-29T19:37:46.576851+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -990,6 +990,29 @@
     "corner_match": {
       "matched": 7,
       "total": 19
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 4.509,
+            "reasons": [
+              "length 4,904 m (Δ 5 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 4.509,
+            "reasons": [
+              "length 4,904 m (Δ 5 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 4.509
+      }
+    ]
   }
 }

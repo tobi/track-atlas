@@ -937,7 +937,7 @@
     "imsa_data": "yas-marina"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:33.921610+00:00",
+    "generated_at": "2026-06-29T19:38:43.484340+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -962,6 +962,29 @@
     "corner_match": {
       "matched": 0,
       "total": 16
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 15.944,
+            "reasons": [
+              "length 5,297 m (Δ 16 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 15.944,
+            "reasons": [
+              "length 5,297 m (Δ 16 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 15.944
+      }
+    ]
   }
 }

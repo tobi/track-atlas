@@ -816,7 +816,7 @@
     "imsa_data": "indianapolis"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:25.909741+00:00",
+    "generated_at": "2026-06-29T19:38:35.097217+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -841,6 +841,30 @@
     "corner_match": {
       "matched": 0,
       "total": 14
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 13.934,
+            "reasons": [
+              "length 3,911 m (Δ 14 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 1288.913,
+            "reasons": [
+              "length 3,708 m (Δ 217 m)",
+              "long seg 266 194 m"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 13.934
+      }
+    ]
   }
 }

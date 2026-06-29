@@ -1077,7 +1077,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T19:17:22.420071+00:00",
+    "generated_at": "2026-06-29T19:38:31.309780+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1102,6 +1102,22 @@
     "corner_match": {
       "matched": 0,
       "total": 20
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 0.33,
+            "reasons": [
+              "length 6,003 m (Δ 0 m)"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 0.33
+      }
+    ]
   }
 }

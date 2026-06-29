@@ -643,7 +643,7 @@
     "imsa_data": "red-bull-ring"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:25.895817+00:00",
+    "generated_at": "2026-06-29T19:38:35.080610+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -668,6 +668,31 @@
     "corner_match": {
       "matched": 6,
       "total": 10
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 25.16,
+            "reasons": [
+              "length 4,293 m (Δ 25 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 5337.817,
+            "reasons": [
+              "length 7,595 m (Δ 3,277 m)",
+              "long seg 463 238 m",
+              "backtrack 315 170°"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 25.16
+      }
+    ]
   }
 }

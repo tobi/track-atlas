@@ -380,7 +380,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:33.829197+00:00",
+    "generated_at": "2026-06-29T19:38:43.357356+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -405,6 +405,31 @@
     "corner_match": {
       "matched": 3,
       "total": 5
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 96.785,
+            "reasons": [
+              "length 2,365 m (Δ 97 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 1060.016,
+            "reasons": [
+              "length 2,465 m (Δ 3 m)",
+              "backtrack 31 152°",
+              "backtrack 110 180°"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 96.785
+      }
+    ]
   }
 }

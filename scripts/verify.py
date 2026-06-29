@@ -329,6 +329,26 @@ def verify_track(slug: str) -> Report:
             empty_points = [g.get("id") for g in groups if not g.get("points")]
             if empty_points:
                 r.warn(f"{pre} corner_complexes groups without internal apex points: {empty_points[:8]}")
+            group_sets = [set(g.get("members", [])) for g in groups]
+            sorted_corners_for_merge = sorted(corners, key=lambda c: c.get("number") or 0)
+            merge_misses = []
+            run = []
+            last_label = None
+            for c in sorted_corners_for_merge + [None]:
+                label = None
+                if c and any(k != "numbered" for k in c.get("labels", {})):
+                    label = c.get("label") or next((v for k, v in c.get("labels", {}).items() if k != "numbered"), None)
+                if label and label == last_label:
+                    run.append(c)
+                    continue
+                if len(run) > 1:
+                    ids = {x.get("id") for x in run}
+                    if not any(ids <= gs for gs in group_sets):
+                        merge_misses.append(f"{last_label}({','.join(sorted(ids))})")
+                run = [c] if label else []
+                last_label = label
+            if merge_misses:
+                r.warn(f"{pre} adjacent repeated named corners not merged in corner_complexes: {merge_misses[:8]}")
 
         # Curvature-derived apexes are an independent geometry-only sanity check.
         # They should not be treated as authoritative corner names/numbers, but

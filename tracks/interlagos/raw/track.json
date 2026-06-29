@@ -751,12 +751,13 @@
               ]
             },
             {
-              "id": "t8",
+              "id": "pinheirinho",
               "label": "Pinheirinho",
               "start": 0.536,
-              "end": 0.56105,
+              "end": 0.60143,
               "members": [
-                "t8"
+                "t8",
+                "t9"
               ],
               "points": [
                 {
@@ -765,18 +766,7 @@
                   "label": "Pinheirinho",
                   "marker": 0.55,
                   "point_ref": "t8"
-                }
-              ]
-            },
-            {
-              "id": "t9",
-              "label": "Pinheirinho",
-              "start": 0.56105,
-              "end": 0.60143,
-              "members": [
-                "t9"
-              ],
-              "points": [
+                },
                 {
                   "id": "t9-apex",
                   "role": "apex",
@@ -823,12 +813,13 @@
               ]
             },
             {
-              "id": "t12",
+              "id": "juncao",
               "label": "Juncao",
               "start": 0.71823,
               "end": 0.79,
               "members": [
-                "t12"
+                "t12",
+                "t13"
               ],
               "points": [
                 {
@@ -837,6 +828,13 @@
                   "label": "Juncao",
                   "marker": 0.76,
                   "point_ref": "t12"
+                },
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Juncao",
+                  "marker": 0.79,
+                  "point_ref": "t13"
                 }
               ]
             },
@@ -873,7 +871,7 @@
     "imsa_data": "sao-paulo"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:17:17.666524+00:00",
+    "generated_at": "2026-06-29T19:38:26.220675+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -898,6 +896,29 @@
     "corner_match": {
       "matched": 10,
       "total": 15
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched",
+            "score": 0.196,
+            "reasons": [
+              "length 4,309 m (Δ 0 m)"
+            ]
+          },
+          {
+            "source": "relation",
+            "score": 1.462,
+            "reasons": [
+              "length 4,308 m (Δ 1 m)"
+            ]
+          }
+        ],
+        "selected": "stitched",
+        "selected_score": 0.196
+      }
+    ]
   }
 }

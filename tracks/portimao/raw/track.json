@@ -803,7 +803,7 @@
     "imsa_data": "portimao"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:18:33.046135+00:00",
+    "generated_at": "2026-06-29T19:39:43.630493+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -828,6 +828,23 @@
     "corner_match": {
       "matched": 0,
       "total": 15
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched_fallback",
+            "score": 59.211,
+            "reasons": [
+              "length 4,655 m (Δ 2 m)",
+              "backtrack 216 147°"
+            ]
+          }
+        ],
+        "selected": "stitched_fallback",
+        "selected_score": 59.211
+      }
+    ]
   }
 }

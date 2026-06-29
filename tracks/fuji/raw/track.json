@@ -851,7 +851,7 @@
     "imsa_data": "fuji"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:16:36.011394+00:00",
+    "generated_at": "2026-06-29T19:37:43.244978+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -876,6 +876,22 @@
     "corner_match": {
       "matched": 0,
       "total": 16
-    }
+    },
+    "geometry": [
+      {
+        "layout": "gp",
+        "candidates": [
+          {
+            "source": "stitched_fallback",
+            "score": 4.625,
+            "reasons": [
+              "length 4,554 m (Δ 5 m)"
+            ]
+          }
+        ],
+        "selected": "stitched_fallback",
+        "selected_score": 4.625
+      }
+    ]
   }
 }

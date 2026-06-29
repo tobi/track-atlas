@@ -1796,7 +1796,7 @@
     "imsa_data": "sebring"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:16:47.525526+00:00",
+    "generated_at": "2026-06-29T19:37:55.066888+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -1821,6 +1821,52 @@
     "corner_match": {
       "matched": 6,
       "total": 34
-    }
+    },
+    "geometry": [
+      {
+        "layout": "wec",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 88.327,
+            "reasons": [
+              "length 5,866 m (Δ 88 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 659.592,
+            "reasons": [
+              "length 5,955 m (Δ 1 m)",
+              "backtrack 45 171°"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 88.327
+      },
+      {
+        "layout": "imsa",
+        "candidates": [
+          {
+            "source": "relation",
+            "score": 88.327,
+            "reasons": [
+              "length 5,866 m (Δ 88 m)"
+            ]
+          },
+          {
+            "source": "stitched",
+            "score": 659.592,
+            "reasons": [
+              "length 5,955 m (Δ 1 m)",
+              "backtrack 45 171°"
+            ]
+          }
+        ],
+        "selected": "relation",
+        "selected_score": 88.327
+      }
+    ]
   }
 }
