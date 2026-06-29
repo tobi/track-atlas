@@ -513,6 +513,22 @@
               ]
             },
             {
+              "id": "t4",
+              "label": "T4",
+              "start": 0.14166,
+              "end": 0.14774,
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.1447,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
               "id": "t5",
               "label": "T5",
               "start": 0.17561,
@@ -525,6 +541,22 @@
                   "label": "Apex",
                   "marker": 0.1999,
                   "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "T6",
+              "start": 0.29346,
+              "end": 0.29954,
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.2965,
+                  "point_ref": "t6"
                 }
               ]
             },
@@ -719,6 +751,371 @@
                   "point_ref": "t18"
                 }
               ]
+            },
+            {
+              "id": "t19",
+              "label": "T19",
+              "start": 0.97536,
+              "end": 0.98144,
+              "anchor": "t19",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.9784,
+                  "point_ref": "t19"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Groups",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Sheares",
+              "start": 0.03919,
+              "end": 0.09873,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Sheares",
+                  "marker": 0.0898,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "T2",
+              "start": 0.09873,
+              "end": 0.1087,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "T2",
+                  "marker": 0.1024,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "T3",
+              "start": 0.1087,
+              "end": 0.13974,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "T3",
+                  "marker": 0.1195,
+                  "point_ref": "t3"
+                }
+              ]
+            },
+            {
+              "id": "t4",
+              "label": "T4",
+              "start": 0.14166,
+              "end": 0.14774,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "T4",
+                  "marker": 0.1447,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
+              "id": "t5",
+              "label": "T5",
+              "start": 0.17561,
+              "end": 0.22014,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "T5",
+                  "marker": 0.1999,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "T6",
+              "start": 0.29346,
+              "end": 0.29954,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "T6",
+                  "marker": 0.2965,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Memorial",
+              "start": 0.33286,
+              "end": 0.38737,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Memorial",
+                  "marker": 0.3693,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Stamford",
+              "start": 0.38737,
+              "end": 0.42863,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Stamford",
+                  "marker": 0.4124,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Padang",
+              "start": 0.42863,
+              "end": 0.47742,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Padang",
+                  "marker": 0.4511,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Singapore Sling",
+              "start": 0.50206,
+              "end": 0.55332,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Singapore Sling",
+                  "marker": 0.5385,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
+              "id": "t11",
+              "label": "T11",
+              "start": 0.55332,
+              "end": 0.57468,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "T11",
+                  "marker": 0.567,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "T12",
+              "start": 0.57468,
+              "end": 0.59553,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "T12",
+                  "marker": 0.5839,
+                  "point_ref": "t12"
+                }
+              ]
+            },
+            {
+              "id": "t13",
+              "label": "T13",
+              "start": 0.59553,
+              "end": 0.65901,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "T13",
+                  "marker": 0.6246,
+                  "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Connaught",
+              "start": 0.69746,
+              "end": 0.76022,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Connaught",
+                  "marker": 0.7339,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "T15",
+              "start": 0.77093,
+              "end": 0.79927,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "T15",
+                  "marker": 0.7851,
+                  "point_ref": "t15"
+                }
+              ]
+            },
+            {
+              "id": "t16",
+              "label": "Anderson Bridge",
+              "start": 0.84816,
+              "end": 0.89084,
+              "members": [
+                "t16"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Anderson Bridge",
+                  "marker": 0.8846,
+                  "point_ref": "t16"
+                }
+              ]
+            },
+            {
+              "id": "t17",
+              "label": "Esplanade",
+              "start": 0.89084,
+              "end": 0.91684,
+              "members": [
+                "t17"
+              ],
+              "points": [
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Esplanade",
+                  "marker": 0.8966,
+                  "point_ref": "t17"
+                }
+              ]
+            },
+            {
+              "id": "t18",
+              "label": "Raffles Boulevard",
+              "start": 0.92146,
+              "end": 0.9665,
+              "members": [
+                "t18"
+              ],
+              "points": [
+                {
+                  "id": "t18-apex",
+                  "role": "apex",
+                  "label": "Raffles Boulevard",
+                  "marker": 0.9579,
+                  "point_ref": "t18"
+                }
+              ]
+            },
+            {
+              "id": "t19",
+              "label": "T19",
+              "start": 0.97536,
+              "end": 0.98144,
+              "members": [
+                "t19"
+              ],
+              "points": [
+                {
+                  "id": "t19-apex",
+                  "role": "apex",
+                  "label": "T19",
+                  "marker": 0.9784,
+                  "point_ref": "t19"
+                }
+              ]
             }
           ]
         }
@@ -731,7 +1128,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T17:12:58.144072+00:00",
+    "generated_at": "2026-06-29T17:19:12.503668+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

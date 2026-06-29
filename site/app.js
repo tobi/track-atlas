@@ -27,7 +27,7 @@ const rangeLayer = (layout, id) => (layout?.range_layers || []).find((l) => l.id
 const layoutPoint = (layout, id) => pointLayer(layout, "layout_points").items.find((p) => p.id === id) || null;
 const cornerLayer = (layout) => pointLayer(layout, "corners").items;
 const cornerRange = (layout, corner) => rangeLayer(layout, "corner_ranges").items.find((r) => r.anchor === corner.id || r.id === corner.id) || null;
-const complexFor = (layout, corner) => rangeLayer(layout, "corner_complexes").items.find((r) => (r.members || []).includes(corner.id)) || null;
+const complexFor = (layout, corner) => rangeLayer(layout, "corner_complexes").items.find((r) => (r.members || []).length > 1 && (r.members || []).includes(corner.id)) || null;
 
 const RANGE_COLORS = ["#ff2d8d", "#5eead4", "#f6c945", "#60a5fa", "#a78bfa", "#fb7185", "#34d399", "#f97316", "#22d3ee", "#c084fc", "#bef264", "#fda4af"];
 

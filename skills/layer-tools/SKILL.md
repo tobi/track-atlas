@@ -143,6 +143,8 @@ A `range_layers[].items[]` object may include `points[]` for landmarks inside th
 
 Use this instead of overloading `start`/`end`: a corner range covers braking → apex → exit, while the apex remains a point inside it. `point_ref` should point to an item in a layout point layer when that point exists; otherwise generated tools can embed `marker` and/or `location` directly.
 
+`corner_complexes` is a complete corner-group layer, not just "the special multi-corner things". It should be the corners list after merging adjacent named complexes: solo corners have one `members[]` entry and one apex point; a complex like Porsche Curves has several `members[]` and several `points[{role:"apex"}]`. Do not create fake complexes for separated corners just because they share a straight or sector (Le Mans first/second Mulsanne chicanes stay separate).
+
 ## Existing tools
 
 ### `curvature_apexes`

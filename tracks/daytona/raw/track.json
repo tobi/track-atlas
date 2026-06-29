@@ -511,8 +511,134 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.05358,
+              "end": 0.1006,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Turn 1",
+                  "marker": 0.085,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.1006,
+              "end": 0.13043,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.115,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "International Horseshoe",
+              "start": 0.13043,
+              "end": 0.19867,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "International Horseshoe",
+                  "marker": 0.169,
+                  "point_ref": "t3"
+                }
+              ]
+            },
+            {
+              "id": "t4",
+              "label": "The Kink",
+              "start": 0.24889,
+              "end": 0.26285,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "The Kink",
+                  "marker": 0.255,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
+              "id": "t5",
+              "label": "West Horseshoe",
+              "start": 0.27758,
+              "end": 0.33169,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "West Horseshoe",
+                  "marker": 0.309,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "NASCAR 1",
+              "start": 0.36989,
+              "end": 0.38385,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "NASCAR 1",
+                  "marker": 0.376,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "NASCAR 2",
+              "start": 0.44489,
+              "end": 0.45885,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "NASCAR 2",
+                  "marker": 0.451,
+                  "point_ref": "t7"
+                }
+              ]
+            },
             {
               "id": "busstopmans",
               "label": "Bus Stop (Le Mans Chicane)",
@@ -523,6 +649,54 @@
                 "t9",
                 "t10",
                 "t11"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Bus Stop entry",
+                  "marker": 0.67,
+                  "point_ref": "t8"
+                },
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Bus Stop",
+                  "marker": 0.68,
+                  "point_ref": "t9"
+                },
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Bus Stop",
+                  "marker": 0.692,
+                  "point_ref": "t10"
+                },
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Bus Stop exit",
+                  "marker": 0.703,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "NASCAR 3",
+              "start": 0.80389,
+              "end": 0.81785,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "NASCAR 3",
+                  "marker": 0.81,
+                  "point_ref": "t12"
+                }
               ]
             }
           ]
@@ -539,7 +713,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:59.254770+00:00",
+    "generated_at": "2026-06-29T17:19:13.438692+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

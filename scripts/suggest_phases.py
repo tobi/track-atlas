@@ -58,6 +58,8 @@ def preview(slug: str) -> None:
                     "scale": c.get("scale")} for c in corners]
         by_id = {c["id"]: c for c in compact}
         for comp in next((l.get("items", []) for l in layout.get("range_layers", []) if l.get("id") == "corner_complexes"), []):
+            if len(comp.get("members", [])) <= 1:
+                continue
             for mid in comp.get("members", []):
                 if mid in by_id:
                     by_id[mid]["complex"] = comp.get("label")

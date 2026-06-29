@@ -599,7 +599,7 @@
               "id": "t7",
               "label": "First Chicane",
               "start": 0.28679,
-              "end": 0.3629,
+              "end": 0.30954,
               "anchor": "t7",
               "points": [
                 {
@@ -614,7 +614,7 @@
             {
               "id": "t8",
               "label": "Second Chicane",
-              "start": 0.3629,
+              "start": 0.43679,
               "end": 0.45954,
               "anchor": "t8",
               "points": [
@@ -688,6 +688,22 @@
                   "label": "Apex",
                   "marker": 0.74,
                   "point_ref": "t12"
+                }
+              ]
+            },
+            {
+              "id": "t13",
+              "label": "Turn 13",
+              "start": 0.8189,
+              "end": 0.8211,
+              "anchor": "t13",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.82,
+                  "point_ref": "t13"
                 }
               ]
             },
@@ -824,8 +840,26 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
+            {
+              "id": "t1",
+              "label": "Dunlop Curve",
+              "start": 0.04743,
+              "end": 0.0533,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Dunlop Curve",
+                  "marker": 0.05,
+                  "point_ref": "t1"
+                }
+              ]
+            },
             {
               "id": "dunlop",
               "label": "Dunlop Chicane",
@@ -834,6 +868,22 @@
               "members": [
                 "t2",
                 "t3"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Dunlop Chicane",
+                  "marker": 0.06,
+                  "point_ref": "t2"
+                },
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Dunlop Chicane",
+                  "marker": 0.07,
+                  "point_ref": "t3"
+                }
               ]
             },
             {
@@ -844,16 +894,94 @@
               "members": [
                 "t4",
                 "t5"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Esses de la Forêt",
+                  "marker": 0.11,
+                  "point_ref": "t4"
+                },
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Esses de la Forêt",
+                  "marker": 0.12,
+                  "point_ref": "t5"
+                }
               ]
             },
             {
-              "id": "mulsannestraightchicanes",
-              "label": "Mulsanne Straight Chicanes",
+              "id": "t6",
+              "label": "Tertre Rouge",
+              "start": 0.13486,
+              "end": 0.14514,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Tertre Rouge",
+                  "marker": 0.14,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "First Chicane",
               "start": 0.28679,
+              "end": 0.30954,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "First Chicane",
+                  "marker": 0.3,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Second Chicane",
+              "start": 0.43679,
               "end": 0.45954,
               "members": [
-                "t7",
                 "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Second Chicane",
+                  "marker": 0.45,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Mulsanne",
+              "start": 0.55165,
+              "end": 0.58248,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Mulsanne",
+                  "marker": 0.57,
+                  "point_ref": "t9"
+                }
               ]
             },
             {
@@ -864,6 +992,58 @@
               "members": [
                 "t10",
                 "t11"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Indianapolis",
+                  "marker": 0.7,
+                  "point_ref": "t10"
+                },
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Indianapolis",
+                  "marker": 0.72,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "Arnage",
+              "start": 0.72714,
+              "end": 0.74954,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Arnage",
+                  "marker": 0.74,
+                  "point_ref": "t12"
+                }
+              ]
+            },
+            {
+              "id": "t13",
+              "label": "Turn 13",
+              "start": 0.8189,
+              "end": 0.8211,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Turn 13",
+                  "marker": 0.82,
+                  "point_ref": "t13"
+                }
               ]
             },
             {
@@ -876,6 +1056,36 @@
                 "t15",
                 "t16",
                 "t17"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Porsche Curves",
+                  "marker": 0.85,
+                  "point_ref": "t14"
+                },
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "Porsche Curves",
+                  "marker": 0.87,
+                  "point_ref": "t15"
+                },
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Karting",
+                  "marker": 0.89,
+                  "point_ref": "t16"
+                },
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Corvette",
+                  "marker": 0.91,
+                  "point_ref": "t17"
+                }
               ]
             },
             {
@@ -888,6 +1098,36 @@
                 "t19",
                 "t20",
                 "t21"
+              ],
+              "points": [
+                {
+                  "id": "t18-apex",
+                  "role": "apex",
+                  "label": "Ford Chicane",
+                  "marker": 0.97,
+                  "point_ref": "t18"
+                },
+                {
+                  "id": "t19-apex",
+                  "role": "apex",
+                  "label": "Ford Chicane",
+                  "marker": 0.98,
+                  "point_ref": "t19"
+                },
+                {
+                  "id": "t20-apex",
+                  "role": "apex",
+                  "label": "Ford Chicane",
+                  "marker": 0.98,
+                  "point_ref": "t20"
+                },
+                {
+                  "id": "t21-apex",
+                  "role": "apex",
+                  "label": "Ford Chicane",
+                  "marker": 0.99,
+                  "point_ref": "t21"
+                }
               ]
             }
           ]
@@ -1030,7 +1270,7 @@
     "imsa_data": "le-mans"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:16:02.435953+00:00",
+    "generated_at": "2026-06-29T17:19:06.212469+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

@@ -289,15 +289,96 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
             {
-              "id": "complex-1",
+              "id": "t1",
+              "label": "Big Bend",
+              "start": 0.09926,
+              "end": 0.18862,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Big Bend",
+                  "marker": 0.148,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "complex-2",
               "label": "Esses",
               "start": 0.26026,
               "end": 0.34962,
               "members": [
                 "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "The Left-Hander",
+                  "marker": 0.309,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "The Uphill",
+              "start": 0.50157,
+              "end": 0.55843,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "The Uphill",
+                  "marker": 0.53,
+                  "point_ref": "t3"
+                }
+              ]
+            },
+            {
+              "id": "t4",
+              "label": "West Bend",
+              "start": 0.66357,
+              "end": 0.72043,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "West Bend",
+                  "marker": 0.692,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
+              "id": "t5",
+              "label": "The Downhill",
+              "start": 0.80878,
+              "end": 0.84128,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "The Downhill",
+                  "marker": 0.823,
+                  "point_ref": "t5"
+                }
               ]
             }
           ]
@@ -314,7 +395,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:55.450356+00:00",
+    "generated_at": "2026-06-29T17:19:09.928734+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

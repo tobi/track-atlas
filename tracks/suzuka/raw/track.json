@@ -742,8 +742,44 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
+            {
+              "id": "t1",
+              "label": "First Corner",
+              "start": 0.09864,
+              "end": 0.13489,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "First Corner",
+                  "marker": 0.1193,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Second Corner",
+              "start": 0.13489,
+              "end": 0.15785,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Second Corner",
+                  "marker": 0.1458,
+                  "point_ref": "t2"
+                }
+              ]
+            },
             {
               "id": "curves",
               "label": "S Curves",
@@ -754,6 +790,54 @@
                 "t4",
                 "t5",
                 "t6"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "S Curves",
+                  "marker": 0.1928,
+                  "point_ref": "t3"
+                },
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "S Curves",
+                  "marker": 0.2113,
+                  "point_ref": "t4"
+                },
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "S Curves",
+                  "marker": 0.2376,
+                  "point_ref": "t5"
+                },
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "S Curves",
+                  "marker": 0.2682,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Dunlop",
+              "start": 0.29095,
+              "end": 0.31505,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Dunlop",
+                  "marker": 0.303,
+                  "point_ref": "t7"
+                }
               ]
             },
             {
@@ -764,6 +848,76 @@
               "members": [
                 "t8",
                 "t9"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Degner 1",
+                  "marker": 0.396,
+                  "point_ref": "t8"
+                },
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Degner 2",
+                  "marker": 0.4241,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Turn 10",
+              "start": 0.46885,
+              "end": 0.486,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Turn 10",
+                  "marker": 0.4809,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
+              "id": "t11",
+              "label": "Hairpin",
+              "start": 0.486,
+              "end": 0.53348,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Hairpin",
+                  "marker": 0.5042,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.54267,
+              "end": 0.55645,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Turn 12",
+                  "marker": 0.5487,
+                  "point_ref": "t12"
+                }
               ]
             },
             {
@@ -774,6 +928,40 @@
               "members": [
                 "t13",
                 "t14"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Spoon",
+                  "marker": 0.6574,
+                  "point_ref": "t13"
+                },
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Spoon",
+                  "marker": 0.6861,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "130R",
+              "start": 0.85167,
+              "end": 0.86545,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "130R",
+                  "marker": 0.8577,
+                  "point_ref": "t15"
+                }
               ]
             },
             {
@@ -784,6 +972,40 @@
               "members": [
                 "t16",
                 "t17"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Casio Triangle",
+                  "marker": 0.9301,
+                  "point_ref": "t16"
+                },
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Casio Triangle",
+                  "marker": 0.939,
+                  "point_ref": "t17"
+                }
+              ]
+            },
+            {
+              "id": "t18",
+              "label": "Chicane",
+              "start": 0.94638,
+              "end": 0.97042,
+              "members": [
+                "t18"
+              ],
+              "points": [
+                {
+                  "id": "t18-apex",
+                  "role": "apex",
+                  "label": "Chicane",
+                  "marker": 0.9532,
+                  "point_ref": "t18"
+                }
               ]
             }
           ]
@@ -797,7 +1019,7 @@
     "f1"
   ],
   "provenance": {
-    "generated_at": "2026-06-29T17:13:07.983244+00:00",
+    "generated_at": "2026-06-29T17:19:21.659474+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

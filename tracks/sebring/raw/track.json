@@ -429,6 +429,22 @@
               ]
             },
             {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.13748,
+              "end": 0.14252,
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.14,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
               "id": "t3",
               "label": "Bend",
               "start": 0.14824,
@@ -505,6 +521,38 @@
                   "label": "Apex",
                   "marker": 0.34,
                   "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Bishop Bend",
+              "start": 0.38748,
+              "end": 0.39252,
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.39,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Cunningham",
+              "start": 0.41748,
+              "end": 0.42252,
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.42,
+                  "point_ref": "t9"
                 }
               ]
             },
@@ -631,6 +679,319 @@
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
+                  "marker": 0.93,
+                  "point_ref": "t17"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Groups",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Tower Turn",
+              "start": 0.06985,
+              "end": 0.1068,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Tower Turn",
+                  "marker": 0.09,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.13748,
+              "end": 0.14252,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.14,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "Bend",
+              "start": 0.14824,
+              "end": 0.16667,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Bend",
+                  "marker": 0.16,
+                  "point_ref": "t3"
+                }
+              ]
+            },
+            {
+              "id": "t4",
+              "label": "Turn 4",
+              "start": 0.16667,
+              "end": 0.174,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Turn 4",
+                  "marker": 0.17,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
+              "id": "t5",
+              "label": "Warehouse",
+              "start": 0.174,
+              "end": 0.21183,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Warehouse",
+                  "marker": 0.19,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Big Bend",
+              "start": 0.25412,
+              "end": 0.26756,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Big Bend",
+                  "marker": 0.26,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Hairpin",
+              "start": 0.29801,
+              "end": 0.36855,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Hairpin",
+                  "marker": 0.34,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Bishop Bend",
+              "start": 0.38748,
+              "end": 0.39252,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Bishop Bend",
+                  "marker": 0.39,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Cunningham",
+              "start": 0.41748,
+              "end": 0.42252,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Cunningham",
+                  "marker": 0.42,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Gendebien",
+              "start": 0.44985,
+              "end": 0.4868,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Gendebien",
+                  "marker": 0.47,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
+              "id": "t11",
+              "label": "Collier",
+              "start": 0.49824,
+              "end": 0.52176,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Collier",
+                  "marker": 0.51,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.52412,
+              "end": 0.53756,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Turn 12",
+                  "marker": 0.53,
+                  "point_ref": "t12"
+                }
+              ]
+            },
+            {
+              "id": "t13",
+              "label": "Tower",
+              "start": 0.54824,
+              "end": 0.57176,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Tower",
+                  "marker": 0.56,
+                  "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Bishop",
+              "start": 0.61824,
+              "end": 0.64176,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Bishop",
+                  "marker": 0.63,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "Coca-Cola",
+              "start": 0.67824,
+              "end": 0.70176,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "Coca-Cola",
+                  "marker": 0.69,
+                  "point_ref": "t15"
+                }
+              ]
+            },
+            {
+              "id": "t16",
+              "label": "Le Mans",
+              "start": 0.71824,
+              "end": 0.74176,
+              "members": [
+                "t16"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Le Mans",
+                  "marker": 0.73,
+                  "point_ref": "t16"
+                }
+              ]
+            },
+            {
+              "id": "t17",
+              "label": "Turn 17",
+              "start": 0.91824,
+              "end": 0.94176,
+              "members": [
+                "t17"
+              ],
+              "points": [
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Turn 17",
                   "marker": 0.93,
                   "point_ref": "t17"
                 }
@@ -1047,6 +1408,22 @@
               ]
             },
             {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.13748,
+              "end": 0.14252,
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.14,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
               "id": "t3",
               "label": "Bend",
               "start": 0.14824,
@@ -1123,6 +1500,38 @@
                   "label": "Apex",
                   "marker": 0.34,
                   "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Bishop Bend",
+              "start": 0.38748,
+              "end": 0.39252,
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.39,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Cunningham",
+              "start": 0.41748,
+              "end": 0.42252,
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.42,
+                  "point_ref": "t9"
                 }
               ]
             },
@@ -1255,6 +1664,319 @@
               ]
             }
           ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Groups",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Tower Turn",
+              "start": 0.06985,
+              "end": 0.1068,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Tower Turn",
+                  "marker": 0.09,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.13748,
+              "end": 0.14252,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.14,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "Bend",
+              "start": 0.14824,
+              "end": 0.16667,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Bend",
+                  "marker": 0.16,
+                  "point_ref": "t3"
+                }
+              ]
+            },
+            {
+              "id": "t4",
+              "label": "Turn 4",
+              "start": 0.16667,
+              "end": 0.174,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Turn 4",
+                  "marker": 0.17,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
+              "id": "t5",
+              "label": "Warehouse",
+              "start": 0.174,
+              "end": 0.21183,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Warehouse",
+                  "marker": 0.19,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Big Bend",
+              "start": 0.25412,
+              "end": 0.26756,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Big Bend",
+                  "marker": 0.26,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Hairpin",
+              "start": 0.29801,
+              "end": 0.36855,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Hairpin",
+                  "marker": 0.34,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Bishop Bend",
+              "start": 0.38748,
+              "end": 0.39252,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Bishop Bend",
+                  "marker": 0.39,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Cunningham",
+              "start": 0.41748,
+              "end": 0.42252,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Cunningham",
+                  "marker": 0.42,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Gendebien",
+              "start": 0.44985,
+              "end": 0.4868,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Gendebien",
+                  "marker": 0.47,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
+              "id": "t11",
+              "label": "Collier",
+              "start": 0.49824,
+              "end": 0.52176,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Collier",
+                  "marker": 0.51,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.52412,
+              "end": 0.53756,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Turn 12",
+                  "marker": 0.53,
+                  "point_ref": "t12"
+                }
+              ]
+            },
+            {
+              "id": "t13",
+              "label": "Tower",
+              "start": 0.54824,
+              "end": 0.57176,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Tower",
+                  "marker": 0.56,
+                  "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Bishop",
+              "start": 0.61824,
+              "end": 0.64176,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Bishop",
+                  "marker": 0.63,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "Coca-Cola",
+              "start": 0.67824,
+              "end": 0.70176,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "Coca-Cola",
+                  "marker": 0.69,
+                  "point_ref": "t15"
+                }
+              ]
+            },
+            {
+              "id": "t16",
+              "label": "Le Mans",
+              "start": 0.71824,
+              "end": 0.74176,
+              "members": [
+                "t16"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Le Mans",
+                  "marker": 0.73,
+                  "point_ref": "t16"
+                }
+              ]
+            },
+            {
+              "id": "t17",
+              "label": "Turn 17",
+              "start": 0.91824,
+              "end": 0.94176,
+              "members": [
+                "t17"
+              ],
+              "points": [
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Turn 17",
+                  "marker": 0.93,
+                  "point_ref": "t17"
+                }
+              ]
+            }
+          ]
         }
       ],
       "length_m": 5954,
@@ -1272,7 +1994,7 @@
     "imsa_data": "sebring"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:51.508432+00:00",
+    "generated_at": "2026-06-29T17:19:06.193299+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

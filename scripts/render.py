@@ -235,6 +235,9 @@ def build_svg(slug: str, layout_id: str | None) -> str:
         members = [corners_by_id[m] for m in comp.get("members", []) if m in corners_by_id]
         if not members:
             continue
+        if len(members) == 1 and not any(k != "numbered" for k in members[0].get("labels", {})):
+            complex_member_ids.update(c["id"] for c in members)
+            continue  # unnamed solo corner -> dot only, no label
         complex_member_ids.update(c["id"] for c in members)
         mid = sorted(members, key=lambda c: c["number"])[len(members) // 2]
         px, py = dot_pos[mid["number"]]

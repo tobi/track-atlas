@@ -291,6 +291,22 @@
           "generated": true,
           "items": [
             {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.05834,
+              "end": 0.06666,
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.0625,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
               "id": "t2",
               "label": "Andretti Hairpin",
               "start": 0.06709,
@@ -439,8 +455,116 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.05834,
+              "end": 0.06666,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Turn 1",
+                  "marker": 0.0625,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Andretti Hairpin",
+              "start": 0.06709,
+              "end": 0.1837,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Andretti Hairpin",
+                  "marker": 0.1365,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "Turn 3",
+              "start": 0.18469,
+              "end": 0.24576,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Turn 3",
+                  "marker": 0.218,
+                  "point_ref": "t3"
+                }
+              ]
+            },
+            {
+              "id": "t4",
+              "label": "Turn 4",
+              "start": 0.27357,
+              "end": 0.31243,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Turn 4",
+                  "marker": 0.293,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
+              "id": "t5",
+              "label": "Turn 5",
+              "start": 0.39919,
+              "end": 0.46026,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Turn 5",
+                  "marker": 0.4325,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Turn 6",
+              "start": 0.52807,
+              "end": 0.56693,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Turn 6",
+                  "marker": 0.5475,
+                  "point_ref": "t6"
+                }
+              ]
+            },
             {
               "id": "corkscrew",
               "label": "The Corkscrew",
@@ -448,6 +572,69 @@
               "end": 0.72659,
               "members": [
                 "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "The Corkscrew",
+                  "marker": 0.6905,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Rainey Curve",
+              "start": 0.73807,
+              "end": 0.77693,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Rainey Curve",
+                  "marker": 0.7575,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Turn 10",
+              "start": 0.79669,
+              "end": 0.85776,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Turn 10",
+                  "marker": 0.83,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Turn 11",
+              "start": 0.86503,
+              "end": 0.95109,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Turn 11",
+                  "marker": 0.915,
+                  "point_ref": "t10"
+                }
               ]
             }
           ]
@@ -464,7 +651,7 @@
     "imsa_data": "laguna-seca"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:58.111133+00:00",
+    "generated_at": "2026-06-29T17:19:12.476810+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

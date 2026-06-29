@@ -779,10 +779,46 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
             {
-              "id": "complex-1",
+              "id": "t1",
+              "label": "Big Red",
+              "start": 0.07467,
+              "end": 0.14833,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Big Red",
+                  "marker": 0.12,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.14833,
+              "end": 0.17269,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.16,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "complex-3",
               "label": "Esses",
               "start": 0.20365,
               "end": 0.39816,
@@ -795,6 +831,244 @@
                 "t8",
                 "t9",
                 "t10"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Turn 3",
+                  "marker": 0.21,
+                  "point_ref": "t3"
+                },
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Turn 4",
+                  "marker": 0.23,
+                  "point_ref": "t4"
+                },
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Turn 5",
+                  "marker": 0.25,
+                  "point_ref": "t5"
+                },
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Turn 6",
+                  "marker": 0.27,
+                  "point_ref": "t6"
+                },
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Turn 7",
+                  "marker": 0.31,
+                  "point_ref": "t7"
+                },
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Turn 8",
+                  "marker": 0.34,
+                  "point_ref": "t8"
+                },
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Turn 9",
+                  "marker": 0.36,
+                  "point_ref": "t9"
+                },
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Turn 10",
+                  "marker": 0.39,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
+              "id": "t11",
+              "label": "Hairpin",
+              "start": 0.42467,
+              "end": 0.50083,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Hairpin",
+                  "marker": 0.47,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.64467,
+              "end": 0.70457,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Turn 12",
+                  "marker": 0.69,
+                  "point_ref": "t12"
+                }
+              ]
+            },
+            {
+              "id": "t13",
+              "label": "Turn 13",
+              "start": 0.70457,
+              "end": 0.733,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Turn 13",
+                  "marker": 0.72,
+                  "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Turn 14",
+              "start": 0.733,
+              "end": 0.75269,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Turn 14",
+                  "marker": 0.74,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "Turn 15",
+              "start": 0.75365,
+              "end": 0.764,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "Turn 15",
+                  "marker": 0.76,
+                  "point_ref": "t15"
+                }
+              ]
+            },
+            {
+              "id": "t16",
+              "label": "Turn 16",
+              "start": 0.764,
+              "end": 0.80357,
+              "members": [
+                "t16"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Turn 16",
+                  "marker": 0.78,
+                  "point_ref": "t16"
+                }
+              ]
+            },
+            {
+              "id": "t17",
+              "label": "Turn 17",
+              "start": 0.80365,
+              "end": 0.81816,
+              "members": [
+                "t17"
+              ],
+              "points": [
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Turn 17",
+                  "marker": 0.81,
+                  "point_ref": "t17"
+                }
+              ]
+            },
+            {
+              "id": "t18",
+              "label": "Turn 18",
+              "start": 0.85365,
+              "end": 0.86816,
+              "members": [
+                "t18"
+              ],
+              "points": [
+                {
+                  "id": "t18-apex",
+                  "role": "apex",
+                  "label": "Turn 18",
+                  "marker": 0.86,
+                  "point_ref": "t18"
+                }
+              ]
+            },
+            {
+              "id": "t19",
+              "label": "Turn 19",
+              "start": 0.89731,
+              "end": 0.92269,
+              "members": [
+                "t19"
+              ],
+              "points": [
+                {
+                  "id": "t19-apex",
+                  "role": "apex",
+                  "label": "Turn 19",
+                  "marker": 0.91,
+                  "point_ref": "t19"
+                }
+              ]
+            },
+            {
+              "id": "t20",
+              "label": "Turn 20",
+              "start": 0.92736,
+              "end": 0.98357,
+              "members": [
+                "t20"
+              ],
+              "points": [
+                {
+                  "id": "t20-apex",
+                  "role": "apex",
+                  "label": "Turn 20",
+                  "marker": 0.96,
+                  "point_ref": "t20"
+                }
               ]
             }
           ]
@@ -812,7 +1086,7 @@
     "imsa_data": "circuit-of-the-americas"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:59.260329+00:00",
+    "generated_at": "2026-06-29T17:19:13.442986+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

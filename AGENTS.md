@@ -34,8 +34,11 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   centerline and emits both apex candidate points and padded corner ranges;
   apex points and corner ranges are intentionally distinct concepts. Put apexes
   inside range items as `points: [{role: "apex", point_ref: "..."}]`, not by
-  narrowing the range to the apex. `verify.py`, `suggest_phases.py`, and
-  `annotate.py` also consume these candidates for QA.
+  narrowing the range to the apex. `corner_complexes` is intentionally complete:
+  it is the corner list with adjacent named complexes merged, so every corner
+  appears exactly once (solo corners have one member; Porsche Curves has several
+  apex points). `verify.py`, `suggest_phases.py`, and `annotate.py` also consume
+  these candidates for QA.
 - Known good sources:
   - IMSA / Al Kamel noticeboard `Timing 3 Sector Map.pdf` and
     `Timing All Sections Map.pdf` for timing sectors + microsectors.

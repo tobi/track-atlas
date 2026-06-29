@@ -415,14 +415,31 @@ def generate_track(slug: str) -> dict:
                 "id": "timing_sectors", "kind": "timing_sectors", "label": "Timing Sectors", "coverage": "partition",
                 "items": [{"id": s["name"].lower(), "label": s["name"], "start": s["start"], "end": s["end"]} for s in sectors],
             })
+        def usable_range_bounds(member_list):
+            starts = [x.get("start", x.get("marker")) for x in member_list if x.get("start", x.get("marker")) is not None]
+            ends = [x.get("end", x.get("marker")) for x in member_list if x.get("end", x.get("marker")) is not None]
+            if starts and ends and min(starts) < max(ends):
+                return min(starts), max(ends)
+            markers = [x.get("marker") for x in member_list if x.get("marker") is not None]
+            if not markers:
+                return None
+            # Flat-out kinks can have no brake/exit phase but still need to be
+            # represented in complete corner-group layers. Give them a tiny
+            # inspectable interval around the apex rather than dropping them.
+            center = sum(markers) / len(markers)
+            half = (15.0 / total_m) if total_m else 0.001
+            return max(0.0, center - half), min(1.0, center + half)
+
         corner_ranges = []
         for c in sorted(corners, key=lambda x: x["number"]):
-            if c.get("start") is not None and c.get("end") is not None and c["start"] < c["end"]:
+            bounds = usable_range_bounds([c])
+            if bounds:
+                start, end = bounds
                 item = {
                     "id": f"t{c['number']}", "label": _resolve(c["names"], default_layer),
-                    "start": c["start"], "end": c["end"], "anchor": f"t{c['number']}",
+                    "start": round(start, 5), "end": round(end, 5), "anchor": f"t{c['number']}",
                 }
-                if c.get("marker") is not None and c["start"] <= c["marker"] <= c["end"]:
+                if c.get("marker") is not None and start <= c["marker"] <= end:
                     item["points"] = [{
                         "id": "apex", "role": "apex", "label": "Apex",
                         "marker": c["marker"], "point_ref": f"t{c['number']}",
@@ -431,23 +448,55 @@ def generate_track(slug: str) -> dict:
         if corner_ranges:
             range_layers.append({"id": "corner_ranges", "kind": "corner_ranges", "label": "Corners", "generated": True, "items": corner_ranges})
 
-        complexes = []
-        seen_complexes = []
-        for c in sorted(corners, key=lambda x: x["number"]):
+        # Corner complexes are complete: one item per logical corner group.
+        # Single-apex corners appear as one-member groups; named complexes merge
+        # multiple apexes into one range with multiple internal apex points.
+        groups = []
+        seen_groups = set()
+        sorted_corners = sorted(corners, key=lambda x: x["number"])
+        used_ids = set()
+        for c in sorted_corners:
             comp = c.get("complex")
-            if comp and comp not in seen_complexes:
-                seen_complexes.append(comp)
-                members = [x for x in corners if x.get("complex") == comp]
-                starts = [x.get("start", x.get("marker")) for x in members if x.get("start", x.get("marker")) is not None]
-                ends = [x.get("end", x.get("marker")) for x in members if x.get("end", x.get("marker")) is not None]
-                if starts and ends and min(starts) < max(ends):
-                    complexes.append({
-                        "id": normalize(comp) or f"complex-{len(complexes) + 1}", "label": comp,
-                        "start": min(starts), "end": max(ends),
-                        "members": [f"t{x['number']}" for x in sorted(members, key=lambda y: y["number"])],
+            if comp:
+                group_key = ("complex", comp)
+                if group_key in seen_groups:
+                    continue
+                members = [x for x in sorted_corners if x.get("complex") == comp]
+                base_id = normalize(comp) or f"complex-{len(groups) + 1}"
+                label = comp
+            else:
+                group_key = ("corner", c["number"])
+                members = [c]
+                base_id = f"t{c['number']}"
+                label = _resolve(c["names"], default_layer)
+            seen_groups.add(group_key)
+
+            bounds = usable_range_bounds(members)
+            if not bounds:
+                continue
+            start, end = bounds
+            group_id = base_id
+            suffix = 2
+            while group_id in used_ids:
+                group_id = f"{base_id}-{suffix}"
+                suffix += 1
+            used_ids.add(group_id)
+            points = []
+            for x in members:
+                if x.get("marker") is not None and start <= x["marker"] <= end:
+                    points.append({
+                        "id": f"t{x['number']}-apex", "role": "apex",
+                        "label": _resolve(x["names"], default_layer),
+                        "marker": x["marker"], "point_ref": f"t{x['number']}",
                     })
-        if complexes:
-            range_layers.append({"id": "corner_complexes", "kind": "corner_complexes", "label": "Corner Complexes", "items": complexes})
+            groups.append({
+                "id": group_id, "label": label,
+                "start": round(start, 5), "end": round(end, 5),
+                "members": [f"t{x['number']}" for x in members],
+                "points": points,
+            })
+        if groups:
+            range_layers.append({"id": "corner_complexes", "kind": "corner_complexes", "label": "Corner Groups", "items": groups})
 
         slow_zones = layout.get("slow_zones", [])
         if slow_zones:

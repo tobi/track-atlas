@@ -31,18 +31,16 @@
       "7": {
         "driver": "First Chicane",
         "official": "Chicane Daytona",
-        "complex": "Mulsanne Straight Chicanes",
         "direction": "right",
         "scale": 2,
-        "error": "complex 'Mulsanne Straight Chicanes' is invalid — the two chicanes are ~2 km apart and never spoken of as one unit (drivers say 'first chicane' / 'second chicane'); also this right-left chicane is represented by a single corner entry"
+        "error": "Do not group with the second chicane as 'Mulsanne Straight Chicanes' — the two chicanes are ~2 km apart and drivers call them first chicane / second chicane. This right-left chicane is currently represented by a single apex."
       },
       "8": {
         "driver": "Second Chicane",
         "official": "Chicane Michelin",
-        "complex": "Mulsanne Straight Chicanes",
         "direction": "left",
         "scale": 2,
-        "error": "complex 'Mulsanne Straight Chicanes' should be removed (not a contiguous complex); this left-right chicane is represented by a single corner entry"
+        "error": "Do not group with the first chicane as 'Mulsanne Straight Chicanes' — this left-right chicane is currently represented by a single apex."
       },
       "9": {
         "driver": "Mulsanne",
@@ -153,6 +151,6 @@
         "error": "T21 is the final right of the second Ford chicane (the Raccordement) — should be named and assigned to the Ford Chicanes complex"
       }
     },
-    "errors_summary": "Directions all verified correct against geometry; main issues: T1 coordinate duplicated from T2, T20 coordinate/marker duplicated from T19, chicane partner corners (T3, T5, T19, T21) left unnamed and outside their complexes, the two Mulsanne chicanes wrongly grouped as one complex despite being ~2 km apart (and each modelled as a single corner instead of two), and Mulsanne Corner severity overrated at 2 instead of 1."
+    "errors_summary": "Directions all verified correct against geometry; main issues: T1 coordinate duplicated from T2, T20 coordinate/marker duplicated from T19, chicane partner corners (T3, T5, T19, T21) were previously left unnamed and outside their complexes, the two Mulsanne chicanes must remain separate despite both being on the Hunaudières/Mulsanne straight, and Mulsanne Corner severity was overrated at 2 instead of 1."
   }
 }

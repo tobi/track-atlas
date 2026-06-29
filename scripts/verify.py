@@ -271,6 +271,22 @@ def verify_track(slug: str) -> Report:
         if len(gj_corners) != len(located):
             r.warn(f"{pre} geojson has {len(gj_corners)} corner features, track has {len(located)} located corners")
 
+        groups = range_layer(lo, "corner_complexes").get("items", [])
+        if groups:
+            member_counts = {}
+            for g in groups:
+                for mid in g.get("members", []):
+                    member_counts[mid] = member_counts.get(mid, 0) + 1
+            corner_ids = {c.get("id") for c in corners}
+            missing = sorted(corner_ids - set(member_counts))
+            dupes = sorted(mid for mid, n in member_counts.items() if n > 1)
+            extras = sorted(set(member_counts) - corner_ids)
+            if missing or dupes or extras:
+                r.err(f"{pre} corner_complexes must be complete one-level corner groups; missing={missing[:8]} dupes={dupes[:8]} extras={extras[:8]}")
+            empty_points = [g.get("id") for g in groups if not g.get("points")]
+            if empty_points:
+                r.warn(f"{pre} corner_complexes groups without internal apex points: {empty_points[:8]}")
+
         # Curvature-derived apexes are an independent geometry-only sanity check.
         # They should not be treated as authoritative corner names/numbers, but
         # they are very good at catching misplaced apex markers or collapsed

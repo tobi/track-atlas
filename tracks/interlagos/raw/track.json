@@ -580,6 +580,38 @@
               ]
             },
             {
+              "id": "t13",
+              "label": "Juncao",
+              "start": 0.78652,
+              "end": 0.79348,
+              "anchor": "t13",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.79,
+                  "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Subida dos Boxes",
+              "start": 0.85652,
+              "end": 0.86348,
+              "anchor": "t14",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.86,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
               "id": "t15",
               "label": "Arquibancadas",
               "start": 0.92375,
@@ -600,7 +632,7 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
             {
               "id": "senna",
@@ -610,6 +642,40 @@
               "members": [
                 "t1",
                 "t2"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Senna S",
+                  "marker": 0.09,
+                  "point_ref": "t1"
+                },
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Senna S",
+                  "marker": 0.11,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "Curva do Sol",
+              "start": 0.13375,
+              "end": 0.16625,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Curva do Sol",
+                  "marker": 0.15,
+                  "point_ref": "t3"
+                }
               ]
             },
             {
@@ -620,6 +686,202 @@
               "members": [
                 "t4",
                 "t5"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Descida do Lago",
+                  "marker": 0.33,
+                  "point_ref": "t4"
+                },
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Descida do Lago",
+                  "marker": 0.37,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Ferradura",
+              "start": 0.43823,
+              "end": 0.49258,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Ferradura",
+                  "marker": 0.48,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Laranjinha",
+              "start": 0.49258,
+              "end": 0.536,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Laranjinha",
+                  "marker": 0.51,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Pinheirinho",
+              "start": 0.536,
+              "end": 0.56105,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Pinheirinho",
+                  "marker": 0.55,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Pinheirinho",
+              "start": 0.56105,
+              "end": 0.60143,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Pinheirinho",
+                  "marker": 0.58,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Bico de Pato",
+              "start": 0.60143,
+              "end": 0.67017,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Bico de Pato",
+                  "marker": 0.64,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
+              "id": "t11",
+              "label": "Mergulho",
+              "start": 0.67375,
+              "end": 0.70625,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Mergulho",
+                  "marker": 0.69,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "Juncao",
+              "start": 0.71823,
+              "end": 0.79,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Juncao",
+                  "marker": 0.76,
+                  "point_ref": "t12"
+                }
+              ]
+            },
+            {
+              "id": "t13",
+              "label": "Juncao",
+              "start": 0.78652,
+              "end": 0.79348,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Juncao",
+                  "marker": 0.79,
+                  "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Subida dos Boxes",
+              "start": 0.85652,
+              "end": 0.86348,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Subida dos Boxes",
+                  "marker": 0.86,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "Arquibancadas",
+              "start": 0.92375,
+              "end": 0.95625,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "Arquibancadas",
+                  "marker": 0.94,
+                  "point_ref": "t15"
+                }
               ]
             }
           ]
@@ -637,7 +899,7 @@
     "imsa_data": "sao-paulo"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:51.573370+00:00",
+    "generated_at": "2026-06-29T17:19:06.246248+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

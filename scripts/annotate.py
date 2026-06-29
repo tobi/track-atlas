@@ -88,6 +88,8 @@ def build_prompt(slug: str) -> tuple[str, dict]:
     corners = next((l.get("items", []) for l in lo.get("point_layers", []) if l.get("id") == "corners"), [])
     complex_by_id = {}
     for comp in next((l.get("items", []) for l in lo.get("range_layers", []) if l.get("id") == "corner_complexes"), []):
+        if len(comp.get("members", [])) <= 1:
+            continue
         for mid in comp.get("members", []):
             complex_by_id[mid] = comp.get("label")
     for c in corners:
@@ -272,6 +274,8 @@ def main():
     existing_corners = {str(c["number"]): c for c in existing_items}
     existing_complex = {}
     for comp in next((l.get("items", []) for l in track["layouts"][0].get("range_layers", []) if l.get("id") == "corner_complexes"), []):
+        if len(comp.get("members", [])) <= 1:
+            continue
         for mid in comp.get("members", []):
             existing_complex[mid] = comp.get("label")
     for num, patch in sorted(corners_annotated.items(), key=lambda x: int(x[0])):

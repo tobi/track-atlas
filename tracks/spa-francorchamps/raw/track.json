@@ -492,6 +492,22 @@
               ]
             },
             {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.07786,
+              "end": 0.08214,
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.08,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
               "id": "t3",
               "label": "Eau Rouge",
               "start": 0.125,
@@ -536,6 +552,22 @@
                   "label": "Apex",
                   "marker": 0.17,
                   "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Turn 6",
+              "start": 0.20786,
+              "end": 0.21214,
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.21,
+                  "point_ref": "t6"
                 }
               ]
             },
@@ -768,8 +800,44 @@
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
+            {
+              "id": "t1",
+              "label": "La Source",
+              "start": 0.00431,
+              "end": 0.06427,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "La Source",
+                  "marker": 0.04,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.07786,
+              "end": 0.08214,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.08,
+                  "point_ref": "t2"
+                }
+              ]
+            },
             {
               "id": "eaurougeraidillon",
               "label": "Eau Rouge-Raidillon",
@@ -779,6 +847,155 @@
                 "t3",
                 "t4",
                 "t5"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Eau Rouge",
+                  "marker": 0.13,
+                  "point_ref": "t3"
+                },
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Eau Rouge-Raidillon",
+                  "marker": 0.15,
+                  "point_ref": "t4"
+                },
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Raidillon",
+                  "marker": 0.17,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Turn 6",
+              "start": 0.20786,
+              "end": 0.21214,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Turn 6",
+                  "marker": 0.21,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Les Combes",
+              "start": 0.31287,
+              "end": 0.33455,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Les Combes",
+                  "marker": 0.33,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Les Combes",
+              "start": 0.33455,
+              "end": 0.35176,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Les Combes",
+                  "marker": 0.34,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Malmedy",
+              "start": 0.35176,
+              "end": 0.36999,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Malmedy",
+                  "marker": 0.36,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Bruxelles",
+              "start": 0.38431,
+              "end": 0.44125,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Bruxelles",
+                  "marker": 0.42,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
+              "id": "t11",
+              "label": "Rivage",
+              "start": 0.44125,
+              "end": 0.45999,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Rivage",
+                  "marker": 0.45,
+                  "point_ref": "t11"
+                }
+              ]
+            },
+            {
+              "id": "t12",
+              "label": "Pouhon",
+              "start": 0.53001,
+              "end": 0.54999,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Pouhon",
+                  "marker": 0.54,
+                  "point_ref": "t12"
+                }
               ]
             },
             {
@@ -789,6 +1006,94 @@
               "members": [
                 "t13",
                 "t14"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Les Fagnes",
+                  "marker": 0.63,
+                  "point_ref": "t13"
+                },
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Stavelot",
+                  "marker": 0.65,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "Paul Frère",
+              "start": 0.67287,
+              "end": 0.70364,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "Paul Frère",
+                  "marker": 0.69,
+                  "point_ref": "t15"
+                }
+              ]
+            },
+            {
+              "id": "t16",
+              "label": "Campus",
+              "start": 0.70364,
+              "end": 0.73428,
+              "members": [
+                "t16"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Campus",
+                  "marker": 0.72,
+                  "point_ref": "t16"
+                }
+              ]
+            },
+            {
+              "id": "t17",
+              "label": "Stavelot",
+              "start": 0.78431,
+              "end": 0.84427,
+              "members": [
+                "t17"
+              ],
+              "points": [
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Stavelot",
+                  "marker": 0.82,
+                  "point_ref": "t17"
+                }
+              ]
+            },
+            {
+              "id": "t18",
+              "label": "Blanchimont",
+              "start": 0.855,
+              "end": 0.86642,
+              "members": [
+                "t18"
+              ],
+              "points": [
+                {
+                  "id": "t18-apex",
+                  "role": "apex",
+                  "label": "Blanchimont",
+                  "marker": 0.86,
+                  "point_ref": "t18"
+                }
               ]
             },
             {
@@ -799,6 +1104,22 @@
               "members": [
                 "t19",
                 "t20"
+              ],
+              "points": [
+                {
+                  "id": "t19-apex",
+                  "role": "apex",
+                  "label": "Bus Stop Chicane",
+                  "marker": 0.95,
+                  "point_ref": "t19"
+                },
+                {
+                  "id": "t20-apex",
+                  "role": "apex",
+                  "label": "Bus Stop Chicane",
+                  "marker": 0.96,
+                  "point_ref": "t20"
+                }
               ]
             }
           ]
@@ -817,7 +1138,7 @@
     "imsa_data": "spa-francorchamps"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:59.267402+00:00",
+    "generated_at": "2026-06-29T17:19:13.448842+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

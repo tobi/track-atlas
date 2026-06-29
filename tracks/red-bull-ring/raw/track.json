@@ -310,6 +310,22 @@
               ]
             },
             {
+              "id": "t2",
+              "label": "Remus Kurve",
+              "start": 0.25303,
+              "end": 0.25997,
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.2565,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
               "id": "t3",
               "label": "Remus",
               "start": 0.2672,
@@ -438,6 +454,193 @@
               ]
             }
           ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Groups",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Niki Lauda Kurve",
+              "start": 0.06501,
+              "end": 0.13681,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Niki Lauda Kurve",
+                  "marker": 0.1067,
+                  "point_ref": "t1"
+                }
+              ]
+            },
+            {
+              "id": "t2",
+              "label": "Remus Kurve",
+              "start": 0.25303,
+              "end": 0.25997,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Remus Kurve",
+                  "marker": 0.2565,
+                  "point_ref": "t2"
+                }
+              ]
+            },
+            {
+              "id": "t3",
+              "label": "Remus",
+              "start": 0.2672,
+              "end": 0.36447,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Remus",
+                  "marker": 0.3251,
+                  "point_ref": "t3"
+                }
+              ]
+            },
+            {
+              "id": "t4",
+              "label": "Schlossgold",
+              "start": 0.47321,
+              "end": 0.54259,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Schlossgold",
+                  "marker": 0.5149,
+                  "point_ref": "t4"
+                }
+              ]
+            },
+            {
+              "id": "t5",
+              "label": "Turn 5",
+              "start": 0.54259,
+              "end": 0.57371,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Turn 5",
+                  "marker": 0.5575,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Rauch Kurve",
+              "start": 0.60811,
+              "end": 0.65906,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Rauch Kurve",
+                  "marker": 0.6359,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Würth Kurve",
+              "start": 0.67991,
+              "end": 0.73086,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Würth Kurve",
+                  "marker": 0.7077,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Turn 8",
+              "start": 0.73499,
+              "end": 0.76741,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Turn 8",
+                  "marker": 0.7512,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Rindt",
+              "start": 0.85231,
+              "end": 0.89689,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Rindt",
+                  "marker": 0.8801,
+                  "point_ref": "t9"
+                }
+              ]
+            },
+            {
+              "id": "t10",
+              "label": "Mobilkurve",
+              "start": 0.89689,
+              "end": 0.95721,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Mobilkurve",
+                  "marker": 0.9271,
+                  "point_ref": "t10"
+                }
+              ]
+            }
+          ]
         }
       ],
       "length_m": 4318,
@@ -452,7 +655,7 @@
     "imsa_data": "red-bull-ring"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:55.435943+00:00",
+    "generated_at": "2026-06-29T17:19:09.916840+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

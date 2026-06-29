@@ -584,6 +584,22 @@
               ]
             },
             {
+              "id": "t10",
+              "label": "Maggotts",
+              "start": 0.61555,
+              "end": 0.62065,
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.6181,
+                  "point_ref": "t10"
+                }
+              ]
+            },
+            {
               "id": "t11",
               "label": "Becketts",
               "start": 0.6181,
@@ -694,14 +710,48 @@
                   "point_ref": "t17"
                 }
               ]
+            },
+            {
+              "id": "t18",
+              "label": "Club",
+              "start": 0.98065,
+              "end": 0.98575,
+              "anchor": "t18",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.9832,
+                  "point_ref": "t18"
+                }
+              ]
             }
           ]
         },
         {
           "id": "corner_complexes",
           "kind": "corner_complexes",
-          "label": "Corner Complexes",
+          "label": "Corner Groups",
           "items": [
+            {
+              "id": "t1",
+              "label": "Abbey",
+              "start": 0.06666,
+              "end": 0.08024,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Abbey",
+                  "marker": 0.0726,
+                  "point_ref": "t1"
+                }
+              ]
+            },
             {
               "id": "abbeyfarm",
               "label": "Abbey / Farm",
@@ -709,6 +759,15 @@
               "end": 0.11474,
               "members": [
                 "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Farm",
+                  "marker": 0.1071,
+                  "point_ref": "t2"
+                }
               ]
             },
             {
@@ -720,6 +779,101 @@
                 "t3",
                 "t4",
                 "t5"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Village",
+                  "marker": 0.1553,
+                  "point_ref": "t3"
+                },
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "The Loop",
+                  "marker": 0.1816,
+                  "point_ref": "t4"
+                },
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Aintree",
+                  "marker": 0.2151,
+                  "point_ref": "t5"
+                }
+              ]
+            },
+            {
+              "id": "t6",
+              "label": "Brooklands",
+              "start": 0.31973,
+              "end": 0.35399,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Brooklands",
+                  "marker": 0.3401,
+                  "point_ref": "t6"
+                }
+              ]
+            },
+            {
+              "id": "t7",
+              "label": "Luffield",
+              "start": 0.35399,
+              "end": 0.40107,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Luffield",
+                  "marker": 0.379,
+                  "point_ref": "t7"
+                }
+              ]
+            },
+            {
+              "id": "t8",
+              "label": "Woodcote",
+              "start": 0.42572,
+              "end": 0.44948,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Woodcote",
+                  "marker": 0.4376,
+                  "point_ref": "t8"
+                }
+              ]
+            },
+            {
+              "id": "t9",
+              "label": "Copse",
+              "start": 0.52116,
+              "end": 0.53474,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Copse",
+                  "marker": 0.5271,
+                  "point_ref": "t9"
+                }
               ]
             },
             {
@@ -733,6 +887,61 @@
                 "t12",
                 "t13",
                 "t14"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Maggotts",
+                  "marker": 0.6181,
+                  "point_ref": "t10"
+                },
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Becketts",
+                  "marker": 0.6345,
+                  "point_ref": "t11"
+                },
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Becketts",
+                  "marker": 0.6629,
+                  "point_ref": "t12"
+                },
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Becketts",
+                  "marker": 0.6877,
+                  "point_ref": "t13"
+                },
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Chapel Curve",
+                  "marker": 0.7138,
+                  "point_ref": "t14"
+                }
+              ]
+            },
+            {
+              "id": "t15",
+              "label": "Stowe",
+              "start": 0.85132,
+              "end": 0.87508,
+              "members": [
+                "t15"
+              ],
+              "points": [
+                {
+                  "id": "t15-apex",
+                  "role": "apex",
+                  "label": "Stowe",
+                  "marker": 0.8632,
+                  "point_ref": "t15"
+                }
               ]
             },
             {
@@ -743,6 +952,40 @@
               "members": [
                 "t16",
                 "t17"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Vale",
+                  "marker": 0.9403,
+                  "point_ref": "t16"
+                },
+                {
+                  "id": "t17-apex",
+                  "role": "apex",
+                  "label": "Club",
+                  "marker": 0.953,
+                  "point_ref": "t17"
+                }
+              ]
+            },
+            {
+              "id": "t18",
+              "label": "Club",
+              "start": 0.98065,
+              "end": 0.98575,
+              "members": [
+                "t18"
+              ],
+              "points": [
+                {
+                  "id": "t18-apex",
+                  "role": "apex",
+                  "label": "Club",
+                  "marker": 0.9832,
+                  "point_ref": "t18"
+                }
               ]
             }
           ]
@@ -763,7 +1006,7 @@
     "imsa_data": "silverstone"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:58.122423+00:00",
+    "generated_at": "2026-06-29T17:19:12.485925+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
