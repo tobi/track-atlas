@@ -45,6 +45,10 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 - Start every cleanup pass with:
   `uv run python scripts/check_corner_curation.py <slug>` and
   `uv run python scripts/check_apexes.py <slug>`.
+- Treat geometry alarms as blockers for data trust: suspicious long segments
+  after densify (>60 m), sharp backtracking kinks (>145°), or apex markers far
+  from curvature peaks usually mean the centerline is stitched wrong or corner
+  markers are sitting in straights. Fix geometry before trusting names/ranges.
 - Treat OSM named ways as strong positional evidence, not an automatic rename.
   Use the way's lap fraction and distance-to-outline to decide which turn it
   names; many OSM ways are facility/infrastructure noise.

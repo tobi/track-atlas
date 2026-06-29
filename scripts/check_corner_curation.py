@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -20,6 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS, raw_dir, track_json_path  # noqa: E402
 from lib.osm import arc_lengths, centroid, named_corner_ways, nearest_fraction, normalize  # noqa: E402
+from layer_tools.curvature_apexes import compute_layers as compute_curvature_layers  # noqa: E402
 
 INFRA = re.compile(
     r"(pit|lane|circuit|raceway|speedway|autodrome|autódromo|hungaroring|layout|track|course|"
@@ -27,6 +29,9 @@ INFRA = re.compile(
     r"club|moto|safety|paddock|stands|stand|sortie|voie)",
     re.I,
 )
+MAX_CENTERLINE_SEGMENT_M = 60.0
+MAX_BACKTRACK_ANGLE_DEG = 145.0
+MAX_CORNER_TO_CURVATURE_APEX_M = 180.0
 
 
 def labels_for(c: dict) -> list[str]:
@@ -36,6 +41,31 @@ def labels_for(c: dict) -> list[str]:
 def circular_delta(a: float, b: float) -> float:
     d = abs((a % 1.0) - (b % 1.0))
     return min(d, 1.0 - d)
+
+
+def centerline_anomalies(loop: list[list[float]]):
+    segs = []
+    for i, (a, b) in enumerate(zip(loop, loop[1:])):
+        # local import keeps this script's main signal imports obvious
+        from lib.osm import haversine
+        d = haversine(a, b)
+        if d > MAX_CENTERLINE_SEGMENT_M:
+            segs.append((i, d))
+    backtracks = []
+    for i in range(1, len(loop) - 1):
+        a, b, c = loop[i - 1], loop[i], loop[i + 1]
+        lat = math.radians(b[1])
+        k = math.cos(lat)
+        v1 = ((b[0] - a[0]) * k * 111320, (b[1] - a[1]) * 111320)
+        v2 = ((c[0] - b[0]) * k * 111320, (c[1] - b[1]) * 111320)
+        l1, l2 = math.hypot(*v1), math.hypot(*v2)
+        if l1 < 10 or l2 < 10:
+            continue
+        dot = max(-1.0, min(1.0, (v1[0] * v2[0] + v1[1] * v2[1]) / (l1 * l2)))
+        angle = math.degrees(math.acos(dot))
+        if angle > MAX_BACKTRACK_ANGLE_DEG:
+            backtracks.append((i, angle, l1, l2, b))
+    return segs, backtracks
 
 
 def audit(slug: str) -> int:
@@ -83,7 +113,40 @@ def audit(slug: str) -> int:
         if not outline:
             continue
         loop = outline["geometry"]["coordinates"]
+        long_segments, backtracks = centerline_anomalies(loop)
+        if long_segments:
+            issue_count += len(long_segments)
+            print("    suspicious centerline long segments:", ", ".join(f"seg{i} {d:.0f}m" for i, d in long_segments[:8]))
+        if backtracks:
+            issue_count += len(backtracks)
+            print("    suspicious centerline backtracking kinks:")
+            for i, angle, l1, l2, pt in backtracks[:8]:
+                print(f"      idx{i}: {angle:.0f}° ({l1:.0f}m→{l2:.0f}m) at {pt[0]:.6f},{pt[1]:.6f}")
         cum, total = arc_lengths(loop)
+        try:
+            curv = compute_curvature_layers(str(gpath), {
+                "max_apexes": max(16, len(corners) * 2),
+                "min_separation_m": 60.0,
+                "smooth_window_m": 70.0,
+                "curvature_percentile": 0.65,
+            }, {"relative_path": str(gpath)})
+            apexes = curv.get("point_layers", [{}])[0].get("items", [])
+            straightish = []
+            for c in corners:
+                if c.get("marker") is None or not apexes:
+                    continue
+                nearest = min(apexes, key=lambda a: circular_delta(c["marker"], a.get("marker", 0.0)))
+                dm = circular_delta(c["marker"], nearest.get("marker", 0.0)) * total
+                if dm > MAX_CORNER_TO_CURVATURE_APEX_M:
+                    straightish.append((c, nearest, dm))
+            if straightish:
+                issue_count += len(straightish)
+                print("    apex markers far from curvature peaks (possible straight-line markers):")
+                for c, apex, dm in straightish[:10]:
+                    print(f"      T{c.get('code', c['number'])}: {dm:.0f}m from {apex.get('label')} at {apex.get('marker'):.4f}")
+        except Exception as e:
+            print(f"    curvature apex check skipped: {e}")
+
         suggestions = []
         for name, coords in named_corner_ways(osm.get("elements", [])):
             if INFRA.search(name):

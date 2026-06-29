@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -22,7 +23,9 @@ from layer_tools.curvature_apexes import compute_layers as compute_curvature_lay
 from pydantic import ValidationError  # noqa: E402
 
 MAX_CORNER_OFF_TRACK_M = 80.0
-MAX_CORNER_TO_CURVATURE_APEX_M = 260.0
+MAX_CORNER_TO_CURVATURE_APEX_M = 180.0
+MAX_CENTERLINE_SEGMENT_M = 60.0
+MAX_BACKTRACK_ANGLE_DEG = 145.0
 LEN_WARN_PCT = 3.0
 LEN_ERR_PCT = 10.0
 
@@ -115,6 +118,34 @@ def fraction_along(pt, loop, cum, total):
         if d < best:
             best, bi = d, i
     return cum[bi] / total if total else 0.0
+
+
+def centerline_anomalies(loop):
+    """Detect stitching artifacts that can hide in a formally closed line.
+
+    Generated centerlines are densified to ~30 m, so a much longer segment or a
+    near-180° turn between consecutive segments is usually a broken stitch /
+    backtrack rather than real circuit geometry.
+    """
+    if len(loop) < 3:
+        return [], []
+    segs = [haversine(a, b) for a, b in zip(loop, loop[1:])]
+    long_segments = [(i, d) for i, d in enumerate(segs) if d > MAX_CENTERLINE_SEGMENT_M]
+    backtracks = []
+    for i in range(1, len(loop) - 1):
+        a, b, c = loop[i - 1], loop[i], loop[i + 1]
+        lat = math.radians(b[1])
+        k = math.cos(lat)
+        v1 = ((b[0] - a[0]) * k * 111320, (b[1] - a[1]) * 111320)
+        v2 = ((c[0] - b[0]) * k * 111320, (c[1] - b[1]) * 111320)
+        l1, l2 = math.hypot(*v1), math.hypot(*v2)
+        if l1 < 10 or l2 < 10:
+            continue
+        dot = max(-1.0, min(1.0, (v1[0] * v2[0] + v1[1] * v2[1]) / (l1 * l2)))
+        angle = math.degrees(math.acos(dot))
+        if angle > MAX_BACKTRACK_ANGLE_DEG:
+            backtracks.append((i, angle, l1, l2, b))
+    return long_segments, backtracks
 
 
 def circular_marker_distance(a: float, b: float) -> float:
@@ -225,6 +256,17 @@ def verify_track(slug: str) -> Report:
         else:
             r.bar_ok("outline")
 
+        long_segments, backtracks = centerline_anomalies(loop)
+        if long_segments:
+            examples = ", ".join(f"seg{i} {d:.0f}m" for i, d in long_segments[:6])
+            r.warn(f"{pre} centerline has suspicious long segment(s) after densify: {examples}")
+        if backtracks:
+            examples = ", ".join(
+                f"idx{i} {angle:.0f}° ({l1:.0f}m→{l2:.0f}m @ {pt[0]:.5f},{pt[1]:.5f})"
+                for i, angle, l1, l2, pt in backtracks[:6]
+            )
+            r.warn(f"{pre} centerline has sharp backtracking kink(s): {examples}")
+
         cum, total = arc_lengths(loop)
         if lo.get("length_m") and total:
             pct = abs(total - lo["length_m"]) / lo["length_m"] * 100
@@ -311,7 +353,7 @@ def verify_track(slug: str) -> Report:
                     if dist_m > MAX_CORNER_TO_CURVATURE_APEX_M:
                         far.append((c.get("number", c.get("id")), dist_m, nearest.get("label")))
                 if far:
-                    r.warn(f"{pre} corners far from curvature apex candidates: " +
+                    r.warn(f"{pre} corner apex markers may be on straights / away from curvature peaks: " +
                            ", ".join(f"T{n} {d:.0f}m from {label}" for n, d, label in far[:10]))
         except Exception as e:
             r.warn(f"{pre} curvature apex check skipped: {e}")
