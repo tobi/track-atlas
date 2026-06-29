@@ -41,6 +41,25 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   are omitted to avoid UI clutter. Multi-apex complexes such as Porsche Curves
   stay grouped even if their members are fast. `verify.py`, `suggest_phases.py`,
   and `annotate.py` also consume these candidates for QA.
+### Corner curation workflow
+- Start every cleanup pass with:
+  `uv run python scripts/check_corner_curation.py <slug>` and
+  `uv run python scripts/check_apexes.py <slug>`.
+- Treat OSM named ways as strong positional evidence, not an automatic rename.
+  Use the way's lap fraction and distance-to-outline to decide which turn it
+  names; many OSM ways are facility/infrastructure noise.
+- Put durable fixes in `tracks/<slug>/overrides.json`, never by editing
+  `raw/track.json` directly. Regenerate after each curation pass.
+- Prefer `official` for circuit/OSM names and `driver` for what crews say on
+  radio. If drivers just say the number, clear `driver` so display falls back to
+  `numbered`.
+- For pit entry/exit, use the actual pit-lane geometry when OSM provides it:
+  project the pit-lane endpoints to the lap centerline. Do not leave speculative
+  series-specific fractions in `source.json`.
+- After curation run: `uv run python scripts/generate.py <slug>` and
+  `uv run python scripts/verify.py <slug>`, then refresh `tracks.jsonl`/site
+  artifacts if the local preview is open.
+
 - Known good sources:
   - IMSA / Al Kamel noticeboard `Timing 3 Sector Map.pdf` and
     `Timing All Sections Map.pdf` for timing sectors + microsectors.

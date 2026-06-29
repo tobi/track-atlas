@@ -46,8 +46,11 @@ emits `schema/track.schema.json` from them; `verify.py` validates via the models
 - [x] Removed jsonschema + requirements.txt; structural checks de-duplicated into models
 
 ## Curation backlog (verify warns, doesn't fail)
-- [ ] Number-only tracks need real corner names if any exist: jeddah, miami, shanghai, losail, indianapolis
-- [ ] Inconsistent complex strings split groups (single-corner-complex warns): silverstone (Abbey/Farm, Maggotts/Becketts/Chapel), laguna-seca (Corkscrew, Esses), others
+- [x] Added repeatable curation workflow: `scripts/check_corner_curation.py`, `scripts/check_apexes.py`, and AGENTS playbook.
+- [x] Sebring high-confidence cleanup from OSM positional evidence: Tower/Fangio/Cunningham/Bishop/Gendebien/Sunset fixed; speculative IMSA pit markers replaced with projected pit-lane endpoints.
+- [x] Corner layer cohesion applied repo-wide: `Corner Apexes`, `Each Corner`, `Corner Complexes`; solo scale-5/6 corners omitted from complexes.
+- [ ] Number-only tracks need real corner names if any exist: jeddah, miami, shanghai, losail, indianapolis.
+- [ ] Run manual curation passes from `check_corner_curation.py --all` output; do not blindly apply OSM names because many are facility/layout noise.
 
 ## DONE: poster size
 - [x] PNG compression in render.py (supersample -> downscale 1.5x -> octree palette + optimize): 23MB -> 4.1MB
@@ -81,7 +84,7 @@ emits `schema/track.schema.json` from them; `verify.py` validates via the models
 ## DONE: layout-variant model (separate full layouts per series)
 - [x] Capability: per-layout `pit` override + `series` field in source.json; `"*"` shared-overrides key so variants share corner curation
 - [x] Sebring: two layouts (`wec`, `imsa`) sharing geometry, different pit; site browses both
-- [~] Sebring IMSA pit values (0.705/0.835) are SPECULATIVE placeholders — flagged in tracks/sebring/README.md, need an authoritative source
+- [x] Sebring IMSA pit values corrected from OSM pit-lane endpoints projected to the lap centerline (0.9675/0.0608).
 - note: only Sebring races both IMSA+WEC; other multi-series tracks (f1/wec/elms) use one shared layout, so no variants added
 
 ## Not actionable without input/data

@@ -165,9 +165,10 @@ This is the first practical piece of a minimum-lap-time / Frenet toolchain: unif
 The same engine is wired into check/QA tools:
 
 ```bash
-uv run python scripts/verify.py <slug>          # warns when named corners are far from κ apexes
-uv run python scripts/check_apexes.py <slug>    # detailed nearest-apex table
-uv run python scripts/suggest_phases.py <slug>  # includes κΔ column beside phase ranges
+uv run python scripts/verify.py <slug>                  # warns when named corners are far from κ apexes
+uv run python scripts/check_apexes.py <slug>            # detailed nearest-apex table
+uv run python scripts/check_corner_curation.py <slug>   # names/groups/OSM curation signals
+uv run python scripts/suggest_phases.py <slug>          # includes κΔ column beside phase ranges
 ```
 
 `annotate.py` also includes curvature-derived apex candidates in the model prompt so name/number cleanup can use geometry evidence.
