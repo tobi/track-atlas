@@ -1321,10 +1321,9 @@
         "id": "t1",
         "number": 1,
         "code": "1",
-        "display": "Tower Turn",
+        "display": "Turn 1",
         "labels": {
-          "numbered": "Turn 1",
-          "driver": "Tower Turn"
+          "numbered": "Turn 1"
         },
         "direction": "left",
         "scale": 3,
@@ -1368,10 +1367,9 @@
         "id": "t3",
         "number": 3,
         "code": "3",
-        "display": "Bend",
+        "display": "Turn 3",
         "labels": {
-          "numbered": "Turn 3",
-          "driver": "Bend"
+          "numbered": "Turn 3"
         },
         "direction": "left",
         "scale": 4,
@@ -1415,10 +1413,9 @@
         "id": "t5",
         "number": 5,
         "code": "5",
-        "display": "Warehouse",
+        "display": "Turn 5",
         "labels": {
-          "numbered": "Turn 5",
-          "driver": "Warehouse"
+          "numbered": "Turn 5"
         },
         "direction": "left",
         "scale": 2,
@@ -1442,7 +1439,8 @@
         "display": "Big Bend",
         "labels": {
           "numbered": "Turn 6",
-          "driver": "Big Bend"
+          "driver": "Big Bend",
+          "official": "Gurney Bend"
         },
         "direction": "right",
         "scale": 5,
@@ -1466,7 +1464,8 @@
         "display": "Hairpin",
         "labels": {
           "numbered": "Turn 7",
-          "driver": "Hairpin"
+          "driver": "Hairpin",
+          "official": "Hairpin"
         },
         "direction": "right",
         "scale": 1,
@@ -1487,10 +1486,11 @@
         "id": "t8",
         "number": 8,
         "code": "8",
-        "display": "Bishop Bend",
+        "display": "Fangio",
         "labels": {
           "numbered": "Turn 8",
-          "driver": "Bishop Bend"
+          "official": "Fangio",
+          "driver": "Fangio"
         },
         "direction": "right",
         "scale": 6,
@@ -1511,10 +1511,9 @@
         "id": "t9",
         "number": 9,
         "code": "9",
-        "display": "Cunningham",
+        "display": "Turn 9",
         "labels": {
-          "numbered": "Turn 9",
-          "driver": "Cunningham"
+          "numbered": "Turn 9"
         },
         "direction": "left",
         "scale": 6,
@@ -1535,10 +1534,11 @@
         "id": "t10",
         "number": 10,
         "code": "10",
-        "display": "Gendebien",
+        "display": "Cunningham",
         "labels": {
           "numbered": "Turn 10",
-          "driver": "Gendebien"
+          "official": "Cunningham Corner",
+          "driver": "Cunningham"
         },
         "direction": "right",
         "scale": 3,
@@ -1562,7 +1562,8 @@
         "display": "Collier",
         "labels": {
           "numbered": "Turn 11",
-          "driver": "Collier"
+          "driver": "Collier",
+          "official": "Collier Curve"
         },
         "direction": "left",
         "scale": 4,
@@ -1606,10 +1607,11 @@
         "id": "t13",
         "number": 13,
         "code": "13",
-        "display": "Tower",
+        "display": "Tower Turn",
         "labels": {
           "numbered": "Turn 13",
-          "driver": "Tower"
+          "driver": "Tower Turn",
+          "official": "Tower Turn"
         },
         "direction": "right",
         "scale": 4,
@@ -1630,10 +1632,11 @@
         "id": "t14",
         "number": 14,
         "code": "14",
-        "display": "Bishop",
+        "display": "Bishop Bend",
         "labels": {
           "numbered": "Turn 14",
-          "driver": "Bishop"
+          "driver": "Bishop Bend",
+          "official": "Bishop Bend"
         },
         "direction": "left",
         "scale": 4,
@@ -1654,10 +1657,11 @@
         "id": "t15",
         "number": 15,
         "code": "15",
-        "display": "Coca-Cola",
+        "display": "Gendebien",
         "labels": {
           "numbered": "Turn 15",
-          "driver": "Coca-Cola"
+          "official": "Gendebien Bend",
+          "driver": "Gendebien"
         },
         "direction": "right",
         "scale": 4,
@@ -1681,7 +1685,8 @@
         "display": "Le Mans",
         "labels": {
           "numbered": "Turn 16",
-          "driver": "Le Mans"
+          "driver": "Le Mans",
+          "official": "Le Mans Curve"
         },
         "direction": "right",
         "scale": 4,
@@ -1702,9 +1707,10 @@
         "id": "t17",
         "number": 17,
         "code": "17",
-        "display": "Turn 17",
+        "display": "Sunset Bend",
         "labels": {
           "numbered": "Turn 17",
+          "driver": "Sunset Bend",
           "official": "Sunset Bend"
         },
         "direction": "right",

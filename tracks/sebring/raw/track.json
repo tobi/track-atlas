@@ -80,10 +80,9 @@
               "id": "t1",
               "number": 1,
               "code": "1",
-              "label": "Tower Turn",
+              "label": "Turn 1",
               "labels": {
-                "numbered": "Turn 1",
-                "driver": "Tower Turn"
+                "numbered": "Turn 1"
               },
               "marker": 0.09,
               "location": [
@@ -115,10 +114,9 @@
               "id": "t3",
               "number": 3,
               "code": "3",
-              "label": "Bend",
+              "label": "Turn 3",
               "labels": {
-                "numbered": "Turn 3",
-                "driver": "Bend"
+                "numbered": "Turn 3"
               },
               "marker": 0.16,
               "location": [
@@ -150,10 +148,9 @@
               "id": "t5",
               "number": 5,
               "code": "5",
-              "label": "Warehouse",
+              "label": "Turn 5",
               "labels": {
-                "numbered": "Turn 5",
-                "driver": "Warehouse"
+                "numbered": "Turn 5"
               },
               "marker": 0.19,
               "location": [
@@ -171,7 +168,8 @@
               "label": "Big Bend",
               "labels": {
                 "numbered": "Turn 6",
-                "driver": "Big Bend"
+                "driver": "Big Bend",
+                "official": "Gurney Bend"
               },
               "marker": 0.26,
               "location": [
@@ -189,7 +187,8 @@
               "label": "Hairpin",
               "labels": {
                 "numbered": "Turn 7",
-                "driver": "Hairpin"
+                "driver": "Hairpin",
+                "official": "Hairpin"
               },
               "marker": 0.34,
               "location": [
@@ -203,10 +202,11 @@
               "id": "t8",
               "number": 8,
               "code": "8",
-              "label": "Bishop Bend",
+              "label": "Fangio",
               "labels": {
                 "numbered": "Turn 8",
-                "driver": "Bishop Bend"
+                "official": "Fangio",
+                "driver": "Fangio"
               },
               "marker": 0.39,
               "location": [
@@ -221,10 +221,9 @@
               "id": "t9",
               "number": 9,
               "code": "9",
-              "label": "Cunningham",
+              "label": "Turn 9",
               "labels": {
-                "numbered": "Turn 9",
-                "driver": "Cunningham"
+                "numbered": "Turn 9"
               },
               "marker": 0.42,
               "location": [
@@ -238,10 +237,11 @@
               "id": "t10",
               "number": 10,
               "code": "10",
-              "label": "Gendebien",
+              "label": "Cunningham",
               "labels": {
                 "numbered": "Turn 10",
-                "driver": "Gendebien"
+                "official": "Cunningham Corner",
+                "driver": "Cunningham"
               },
               "marker": 0.47,
               "location": [
@@ -259,7 +259,8 @@
               "label": "Collier",
               "labels": {
                 "numbered": "Turn 11",
-                "driver": "Collier"
+                "driver": "Collier",
+                "official": "Collier Curve"
               },
               "marker": 0.51,
               "location": [
@@ -291,10 +292,11 @@
               "id": "t13",
               "number": 13,
               "code": "13",
-              "label": "Tower",
+              "label": "Tower Turn",
               "labels": {
                 "numbered": "Turn 13",
-                "driver": "Tower"
+                "driver": "Tower Turn",
+                "official": "Tower Turn"
               },
               "marker": 0.56,
               "location": [
@@ -309,10 +311,11 @@
               "id": "t14",
               "number": 14,
               "code": "14",
-              "label": "Bishop",
+              "label": "Bishop Bend",
               "labels": {
                 "numbered": "Turn 14",
-                "driver": "Bishop"
+                "driver": "Bishop Bend",
+                "official": "Bishop Bend"
               },
               "marker": 0.63,
               "location": [
@@ -327,10 +330,11 @@
               "id": "t15",
               "number": 15,
               "code": "15",
-              "label": "Coca-Cola",
+              "label": "Gendebien",
               "labels": {
                 "numbered": "Turn 15",
-                "driver": "Coca-Cola"
+                "official": "Gendebien Bend",
+                "driver": "Gendebien"
               },
               "marker": 0.69,
               "location": [
@@ -348,7 +352,8 @@
               "label": "Le Mans",
               "labels": {
                 "numbered": "Turn 16",
-                "driver": "Le Mans"
+                "driver": "Le Mans",
+                "official": "Le Mans Curve"
               },
               "marker": 0.73,
               "location": [
@@ -363,9 +368,10 @@
               "id": "t17",
               "number": 17,
               "code": "17",
-              "label": "Turn 17",
+              "label": "Sunset Bend",
               "labels": {
                 "numbered": "Turn 17",
+                "driver": "Sunset Bend",
                 "official": "Sunset Bend"
               },
               "marker": 0.93,
@@ -414,7 +420,7 @@
           "items": [
             {
               "id": "t1",
-              "label": "Tower Turn",
+              "label": "Turn 1",
               "start": 0.06985,
               "end": 0.1068,
               "anchor": "t1",
@@ -446,7 +452,7 @@
             },
             {
               "id": "t3",
-              "label": "Bend",
+              "label": "Turn 3",
               "start": 0.14824,
               "end": 0.16667,
               "anchor": "t3",
@@ -478,7 +484,7 @@
             },
             {
               "id": "t5",
-              "label": "Warehouse",
+              "label": "Turn 5",
               "start": 0.174,
               "end": 0.21183,
               "anchor": "t5",
@@ -526,7 +532,7 @@
             },
             {
               "id": "t8",
-              "label": "Bishop Bend",
+              "label": "Fangio",
               "start": 0.38748,
               "end": 0.39252,
               "anchor": "t8",
@@ -542,7 +548,7 @@
             },
             {
               "id": "t9",
-              "label": "Cunningham",
+              "label": "Turn 9",
               "start": 0.41748,
               "end": 0.42252,
               "anchor": "t9",
@@ -558,7 +564,7 @@
             },
             {
               "id": "t10",
-              "label": "Gendebien",
+              "label": "Cunningham",
               "start": 0.44985,
               "end": 0.4868,
               "anchor": "t10",
@@ -606,7 +612,7 @@
             },
             {
               "id": "t13",
-              "label": "Tower",
+              "label": "Tower Turn",
               "start": 0.54824,
               "end": 0.57176,
               "anchor": "t13",
@@ -622,7 +628,7 @@
             },
             {
               "id": "t14",
-              "label": "Bishop",
+              "label": "Bishop Bend",
               "start": 0.61824,
               "end": 0.64176,
               "anchor": "t14",
@@ -638,7 +644,7 @@
             },
             {
               "id": "t15",
-              "label": "Coca-Cola",
+              "label": "Gendebien",
               "start": 0.67824,
               "end": 0.70176,
               "anchor": "t15",
@@ -670,7 +676,7 @@
             },
             {
               "id": "t17",
-              "label": "Turn 17",
+              "label": "Sunset Bend",
               "start": 0.91824,
               "end": 0.94176,
               "anchor": "t17",
@@ -693,7 +699,7 @@
           "items": [
             {
               "id": "t1",
-              "label": "Tower Turn",
+              "label": "Turn 1",
               "start": 0.06985,
               "end": 0.1068,
               "members": [
@@ -703,7 +709,7 @@
                 {
                   "id": "t1-apex",
                   "role": "apex",
-                  "label": "Tower Turn",
+                  "label": "Turn 1",
                   "marker": 0.09,
                   "point_ref": "t1"
                 }
@@ -729,7 +735,7 @@
             },
             {
               "id": "t3",
-              "label": "Bend",
+              "label": "Turn 3",
               "start": 0.14824,
               "end": 0.16667,
               "members": [
@@ -739,7 +745,7 @@
                 {
                   "id": "t3-apex",
                   "role": "apex",
-                  "label": "Bend",
+                  "label": "Turn 3",
                   "marker": 0.16,
                   "point_ref": "t3"
                 }
@@ -765,7 +771,7 @@
             },
             {
               "id": "t5",
-              "label": "Warehouse",
+              "label": "Turn 5",
               "start": 0.174,
               "end": 0.21183,
               "members": [
@@ -775,7 +781,7 @@
                 {
                   "id": "t5-apex",
                   "role": "apex",
-                  "label": "Warehouse",
+                  "label": "Turn 5",
                   "marker": 0.19,
                   "point_ref": "t5"
                 }
@@ -819,7 +825,7 @@
             },
             {
               "id": "t8",
-              "label": "Bishop Bend",
+              "label": "Fangio",
               "start": 0.38748,
               "end": 0.39252,
               "members": [
@@ -829,7 +835,7 @@
                 {
                   "id": "t8-apex",
                   "role": "apex",
-                  "label": "Bishop Bend",
+                  "label": "Fangio",
                   "marker": 0.39,
                   "point_ref": "t8"
                 }
@@ -837,7 +843,7 @@
             },
             {
               "id": "t9",
-              "label": "Cunningham",
+              "label": "Turn 9",
               "start": 0.41748,
               "end": 0.42252,
               "members": [
@@ -847,7 +853,7 @@
                 {
                   "id": "t9-apex",
                   "role": "apex",
-                  "label": "Cunningham",
+                  "label": "Turn 9",
                   "marker": 0.42,
                   "point_ref": "t9"
                 }
@@ -855,7 +861,7 @@
             },
             {
               "id": "t10",
-              "label": "Gendebien",
+              "label": "Cunningham",
               "start": 0.44985,
               "end": 0.4868,
               "members": [
@@ -865,7 +871,7 @@
                 {
                   "id": "t10-apex",
                   "role": "apex",
-                  "label": "Gendebien",
+                  "label": "Cunningham",
                   "marker": 0.47,
                   "point_ref": "t10"
                 }
@@ -909,7 +915,7 @@
             },
             {
               "id": "t13",
-              "label": "Tower",
+              "label": "Tower Turn",
               "start": 0.54824,
               "end": 0.57176,
               "members": [
@@ -919,7 +925,7 @@
                 {
                   "id": "t13-apex",
                   "role": "apex",
-                  "label": "Tower",
+                  "label": "Tower Turn",
                   "marker": 0.56,
                   "point_ref": "t13"
                 }
@@ -927,7 +933,7 @@
             },
             {
               "id": "t14",
-              "label": "Bishop",
+              "label": "Bishop Bend",
               "start": 0.61824,
               "end": 0.64176,
               "members": [
@@ -937,7 +943,7 @@
                 {
                   "id": "t14-apex",
                   "role": "apex",
-                  "label": "Bishop",
+                  "label": "Bishop Bend",
                   "marker": 0.63,
                   "point_ref": "t14"
                 }
@@ -945,7 +951,7 @@
             },
             {
               "id": "t15",
-              "label": "Coca-Cola",
+              "label": "Gendebien",
               "start": 0.67824,
               "end": 0.70176,
               "members": [
@@ -955,7 +961,7 @@
                 {
                   "id": "t15-apex",
                   "role": "apex",
-                  "label": "Coca-Cola",
+                  "label": "Gendebien",
                   "marker": 0.69,
                   "point_ref": "t15"
                 }
@@ -981,7 +987,7 @@
             },
             {
               "id": "t17",
-              "label": "Turn 17",
+              "label": "Sunset Bend",
               "start": 0.91824,
               "end": 0.94176,
               "members": [
@@ -991,7 +997,7 @@
                 {
                   "id": "t17-apex",
                   "role": "apex",
-                  "label": "Turn 17",
+                  "label": "Sunset Bend",
                   "marker": 0.93,
                   "point_ref": "t17"
                 }
@@ -1059,10 +1065,9 @@
               "id": "t1",
               "number": 1,
               "code": "1",
-              "label": "Tower Turn",
+              "label": "Turn 1",
               "labels": {
-                "numbered": "Turn 1",
-                "driver": "Tower Turn"
+                "numbered": "Turn 1"
               },
               "marker": 0.09,
               "location": [
@@ -1094,10 +1099,9 @@
               "id": "t3",
               "number": 3,
               "code": "3",
-              "label": "Bend",
+              "label": "Turn 3",
               "labels": {
-                "numbered": "Turn 3",
-                "driver": "Bend"
+                "numbered": "Turn 3"
               },
               "marker": 0.16,
               "location": [
@@ -1129,10 +1133,9 @@
               "id": "t5",
               "number": 5,
               "code": "5",
-              "label": "Warehouse",
+              "label": "Turn 5",
               "labels": {
-                "numbered": "Turn 5",
-                "driver": "Warehouse"
+                "numbered": "Turn 5"
               },
               "marker": 0.19,
               "location": [
@@ -1150,7 +1153,8 @@
               "label": "Big Bend",
               "labels": {
                 "numbered": "Turn 6",
-                "driver": "Big Bend"
+                "driver": "Big Bend",
+                "official": "Gurney Bend"
               },
               "marker": 0.26,
               "location": [
@@ -1168,7 +1172,8 @@
               "label": "Hairpin",
               "labels": {
                 "numbered": "Turn 7",
-                "driver": "Hairpin"
+                "driver": "Hairpin",
+                "official": "Hairpin"
               },
               "marker": 0.34,
               "location": [
@@ -1182,10 +1187,11 @@
               "id": "t8",
               "number": 8,
               "code": "8",
-              "label": "Bishop Bend",
+              "label": "Fangio",
               "labels": {
                 "numbered": "Turn 8",
-                "driver": "Bishop Bend"
+                "official": "Fangio",
+                "driver": "Fangio"
               },
               "marker": 0.39,
               "location": [
@@ -1200,10 +1206,9 @@
               "id": "t9",
               "number": 9,
               "code": "9",
-              "label": "Cunningham",
+              "label": "Turn 9",
               "labels": {
-                "numbered": "Turn 9",
-                "driver": "Cunningham"
+                "numbered": "Turn 9"
               },
               "marker": 0.42,
               "location": [
@@ -1217,10 +1222,11 @@
               "id": "t10",
               "number": 10,
               "code": "10",
-              "label": "Gendebien",
+              "label": "Cunningham",
               "labels": {
                 "numbered": "Turn 10",
-                "driver": "Gendebien"
+                "official": "Cunningham Corner",
+                "driver": "Cunningham"
               },
               "marker": 0.47,
               "location": [
@@ -1238,7 +1244,8 @@
               "label": "Collier",
               "labels": {
                 "numbered": "Turn 11",
-                "driver": "Collier"
+                "driver": "Collier",
+                "official": "Collier Curve"
               },
               "marker": 0.51,
               "location": [
@@ -1270,10 +1277,11 @@
               "id": "t13",
               "number": 13,
               "code": "13",
-              "label": "Tower",
+              "label": "Tower Turn",
               "labels": {
                 "numbered": "Turn 13",
-                "driver": "Tower"
+                "driver": "Tower Turn",
+                "official": "Tower Turn"
               },
               "marker": 0.56,
               "location": [
@@ -1288,10 +1296,11 @@
               "id": "t14",
               "number": 14,
               "code": "14",
-              "label": "Bishop",
+              "label": "Bishop Bend",
               "labels": {
                 "numbered": "Turn 14",
-                "driver": "Bishop"
+                "driver": "Bishop Bend",
+                "official": "Bishop Bend"
               },
               "marker": 0.63,
               "location": [
@@ -1306,10 +1315,11 @@
               "id": "t15",
               "number": 15,
               "code": "15",
-              "label": "Coca-Cola",
+              "label": "Gendebien",
               "labels": {
                 "numbered": "Turn 15",
-                "driver": "Coca-Cola"
+                "official": "Gendebien Bend",
+                "driver": "Gendebien"
               },
               "marker": 0.69,
               "location": [
@@ -1327,7 +1337,8 @@
               "label": "Le Mans",
               "labels": {
                 "numbered": "Turn 16",
-                "driver": "Le Mans"
+                "driver": "Le Mans",
+                "official": "Le Mans Curve"
               },
               "marker": 0.73,
               "location": [
@@ -1342,9 +1353,10 @@
               "id": "t17",
               "number": 17,
               "code": "17",
-              "label": "Turn 17",
+              "label": "Sunset Bend",
               "labels": {
                 "numbered": "Turn 17",
+                "driver": "Sunset Bend",
                 "official": "Sunset Bend"
               },
               "marker": 0.93,
@@ -1393,7 +1405,7 @@
           "items": [
             {
               "id": "t1",
-              "label": "Tower Turn",
+              "label": "Turn 1",
               "start": 0.06985,
               "end": 0.1068,
               "anchor": "t1",
@@ -1425,7 +1437,7 @@
             },
             {
               "id": "t3",
-              "label": "Bend",
+              "label": "Turn 3",
               "start": 0.14824,
               "end": 0.16667,
               "anchor": "t3",
@@ -1457,7 +1469,7 @@
             },
             {
               "id": "t5",
-              "label": "Warehouse",
+              "label": "Turn 5",
               "start": 0.174,
               "end": 0.21183,
               "anchor": "t5",
@@ -1505,7 +1517,7 @@
             },
             {
               "id": "t8",
-              "label": "Bishop Bend",
+              "label": "Fangio",
               "start": 0.38748,
               "end": 0.39252,
               "anchor": "t8",
@@ -1521,7 +1533,7 @@
             },
             {
               "id": "t9",
-              "label": "Cunningham",
+              "label": "Turn 9",
               "start": 0.41748,
               "end": 0.42252,
               "anchor": "t9",
@@ -1537,7 +1549,7 @@
             },
             {
               "id": "t10",
-              "label": "Gendebien",
+              "label": "Cunningham",
               "start": 0.44985,
               "end": 0.4868,
               "anchor": "t10",
@@ -1585,7 +1597,7 @@
             },
             {
               "id": "t13",
-              "label": "Tower",
+              "label": "Tower Turn",
               "start": 0.54824,
               "end": 0.57176,
               "anchor": "t13",
@@ -1601,7 +1613,7 @@
             },
             {
               "id": "t14",
-              "label": "Bishop",
+              "label": "Bishop Bend",
               "start": 0.61824,
               "end": 0.64176,
               "anchor": "t14",
@@ -1617,7 +1629,7 @@
             },
             {
               "id": "t15",
-              "label": "Coca-Cola",
+              "label": "Gendebien",
               "start": 0.67824,
               "end": 0.70176,
               "anchor": "t15",
@@ -1649,7 +1661,7 @@
             },
             {
               "id": "t17",
-              "label": "Turn 17",
+              "label": "Sunset Bend",
               "start": 0.91824,
               "end": 0.94176,
               "anchor": "t17",
@@ -1672,7 +1684,7 @@
           "items": [
             {
               "id": "t1",
-              "label": "Tower Turn",
+              "label": "Turn 1",
               "start": 0.06985,
               "end": 0.1068,
               "members": [
@@ -1682,7 +1694,7 @@
                 {
                   "id": "t1-apex",
                   "role": "apex",
-                  "label": "Tower Turn",
+                  "label": "Turn 1",
                   "marker": 0.09,
                   "point_ref": "t1"
                 }
@@ -1708,7 +1720,7 @@
             },
             {
               "id": "t3",
-              "label": "Bend",
+              "label": "Turn 3",
               "start": 0.14824,
               "end": 0.16667,
               "members": [
@@ -1718,7 +1730,7 @@
                 {
                   "id": "t3-apex",
                   "role": "apex",
-                  "label": "Bend",
+                  "label": "Turn 3",
                   "marker": 0.16,
                   "point_ref": "t3"
                 }
@@ -1744,7 +1756,7 @@
             },
             {
               "id": "t5",
-              "label": "Warehouse",
+              "label": "Turn 5",
               "start": 0.174,
               "end": 0.21183,
               "members": [
@@ -1754,7 +1766,7 @@
                 {
                   "id": "t5-apex",
                   "role": "apex",
-                  "label": "Warehouse",
+                  "label": "Turn 5",
                   "marker": 0.19,
                   "point_ref": "t5"
                 }
@@ -1798,7 +1810,7 @@
             },
             {
               "id": "t8",
-              "label": "Bishop Bend",
+              "label": "Fangio",
               "start": 0.38748,
               "end": 0.39252,
               "members": [
@@ -1808,7 +1820,7 @@
                 {
                   "id": "t8-apex",
                   "role": "apex",
-                  "label": "Bishop Bend",
+                  "label": "Fangio",
                   "marker": 0.39,
                   "point_ref": "t8"
                 }
@@ -1816,7 +1828,7 @@
             },
             {
               "id": "t9",
-              "label": "Cunningham",
+              "label": "Turn 9",
               "start": 0.41748,
               "end": 0.42252,
               "members": [
@@ -1826,7 +1838,7 @@
                 {
                   "id": "t9-apex",
                   "role": "apex",
-                  "label": "Cunningham",
+                  "label": "Turn 9",
                   "marker": 0.42,
                   "point_ref": "t9"
                 }
@@ -1834,7 +1846,7 @@
             },
             {
               "id": "t10",
-              "label": "Gendebien",
+              "label": "Cunningham",
               "start": 0.44985,
               "end": 0.4868,
               "members": [
@@ -1844,7 +1856,7 @@
                 {
                   "id": "t10-apex",
                   "role": "apex",
-                  "label": "Gendebien",
+                  "label": "Cunningham",
                   "marker": 0.47,
                   "point_ref": "t10"
                 }
@@ -1888,7 +1900,7 @@
             },
             {
               "id": "t13",
-              "label": "Tower",
+              "label": "Tower Turn",
               "start": 0.54824,
               "end": 0.57176,
               "members": [
@@ -1898,7 +1910,7 @@
                 {
                   "id": "t13-apex",
                   "role": "apex",
-                  "label": "Tower",
+                  "label": "Tower Turn",
                   "marker": 0.56,
                   "point_ref": "t13"
                 }
@@ -1906,7 +1918,7 @@
             },
             {
               "id": "t14",
-              "label": "Bishop",
+              "label": "Bishop Bend",
               "start": 0.61824,
               "end": 0.64176,
               "members": [
@@ -1916,7 +1928,7 @@
                 {
                   "id": "t14-apex",
                   "role": "apex",
-                  "label": "Bishop",
+                  "label": "Bishop Bend",
                   "marker": 0.63,
                   "point_ref": "t14"
                 }
@@ -1924,7 +1936,7 @@
             },
             {
               "id": "t15",
-              "label": "Coca-Cola",
+              "label": "Gendebien",
               "start": 0.67824,
               "end": 0.70176,
               "members": [
@@ -1934,7 +1946,7 @@
                 {
                   "id": "t15-apex",
                   "role": "apex",
-                  "label": "Coca-Cola",
+                  "label": "Gendebien",
                   "marker": 0.69,
                   "point_ref": "t15"
                 }
@@ -1960,7 +1972,7 @@
             },
             {
               "id": "t17",
-              "label": "Turn 17",
+              "label": "Sunset Bend",
               "start": 0.91824,
               "end": 0.94176,
               "members": [
@@ -1970,7 +1982,7 @@
                 {
                   "id": "t17-apex",
                   "role": "apex",
-                  "label": "Turn 17",
+                  "label": "Sunset Bend",
                   "marker": 0.93,
                   "point_ref": "t17"
                 }
@@ -1994,7 +2006,7 @@
     "imsa_data": "sebring"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:19:06.193299+00:00",
+    "generated_at": "2026-06-29T17:38:54.815395+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
