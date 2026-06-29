@@ -250,9 +250,9 @@ members and duplicated way refs in the relation are filtered out.
 
 ## generation-config.json (optional generated layers)
 
-Use this when an external source can be transformed into extra layout layers,
+Use this when an external source or deterministic analysis can be transformed into extra layout layers,
 for example IMSA microsectors, official timing sectors, WEC slow zones, timing
-loops, or speed traps. A config names the layout, converter tool, input URLs or
+loops, speed traps, or curvature-derived apex/corner candidates. A config names the layout, converter tool, input URLs or
 files, and all parameters the tool needs. The runner downloads/copies resources
 into `raw/layer-sources/<config-id>/` before invoking the tool, so tools are pure
 stdin→stdout transforms.

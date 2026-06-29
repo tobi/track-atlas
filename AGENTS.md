@@ -28,6 +28,10 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 - Range-layer fractions assume the GeoJSON centerline begins at marker `0.0` /
   start-finish. `generate.py` rotates generated centerlines to that origin; keep
   this invariant or every sector/microsector/slow-zone overlay will be offset.
+- For corner discovery/apex QA, use `scripts/layer_tools/curvature_apexes.py`
+  through `generation-config.json`. It derives a smoothed `κ(s)` profile from
+  the centerline and emits both apex candidate points and padded corner ranges;
+  apex points and corner ranges are intentionally distinct concepts.
 - Known good sources:
   - IMSA / Al Kamel noticeboard `Timing 3 Sector Map.pdf` and
     `Timing All Sections Map.pdf` for timing sectors + microsectors.

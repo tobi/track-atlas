@@ -126,6 +126,49 @@ No prose, no markdown, stdout must be JSON. Diagnostics go to stderr.
 
 ## Existing tools
 
+### `curvature_apexes`
+
+Computes a smooth 1D curvature profile `κ(s)` from a layout centerline GeoJSON and emits:
+
+- `point_layers[id="curvature_apexes"]`: candidate apex points with marker, location, direction, and severity scale.
+- `range_layers[id="curvature_corner_ranges"]`: candidate corner influence ranges around each apex.
+
+This is the first practical piece of a minimum-lap-time / Frenet toolchain: uniform arc-length resampling, finite-difference curvature, circular smoothing, local curvature maxima, then thresholded ranges padded before/after the apex. It is meant for verification and curation, not as an authoritative corner source.
+
+Example config:
+
+```jsonc
+{
+  "id": "curvature_apexes_gp",
+  "layout": "gp",
+  "tool": "curvature_apexes",
+  "resources": {
+    "centerline": {"path": "raw/layers/gp.geojson"}
+  },
+  "params": {
+    "max_apexes": 20,
+    "step_m": 4,
+    "smooth_window_m": 90,
+    "min_separation_m": 90,
+    "pre_brake_m": 75,
+    "post_accel_m": 55
+  }
+}
+```
+
+Useful params:
+
+- `resource`: resource key, default `centerline`.
+- `point_layer_id`, `range_layer_id`: override output layer ids.
+- `max_apexes`: cap candidates after strength sorting and separation filtering.
+- `step_m`: centerline resample spacing.
+- `smooth_window_m`: curvature smoothing window. Increase for noisy OSM or long fast complexes.
+- `min_abs_curvature`: explicit threshold; if omitted the tool chooses one from a curvature percentile.
+- `curvature_percentile`: auto-threshold percentile, default `0.82`.
+- `min_separation_m`: minimum distance between apex candidates.
+- `range_threshold_ratio`, `range_min_abs_curvature`: range-growth threshold around each apex.
+- `pre_brake_m`, `post_accel_m`: padding before/after the thresholded corner body. These exist because Track Atlas corner ranges should start before the brake zone and last a bit into acceleration, while the apex remains a distinct point.
+
 ### `imsa_timing_pdf`
 
 Converts IMSA / Al Kamel timing-section PDFs into a partition `range_layer` by parsing the official `Length (Inches)` column with `pdftotext`.
@@ -234,6 +277,7 @@ uv run python scripts/verify.py <slug>
 - The site is layer-first. Timing sectors are just `range_layers[id="timing_sectors"]`; do not add separate sector-only UI/data paths.
 - For tracks with many range items (microsectors/slow zones), keep item controls compact (chips/swatches) and use hover to preview individual segments.
 - Avoid competing map popups. The app uses one cursor readout in the side panel plus map highlights.
+- Corners have two related but different shapes: an apex is a point; the corner/range starts before the braking zone and ends after initial acceleration. Curvature-derived tools should output both when possible.
 - If an upstream source collapses/misnumbers corners (Watkins Glen iRacing did), use a curated `replace_corners` override rather than trying to patch names one-by-one.
 
 ## Rules for adding new tools
