@@ -220,7 +220,7 @@ function renderLayerPanel(layout) {
       <label class="layer-toggle" onmouseenter='hoverMapLayer("range", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.range[l.id] ? "checked" : ""} onchange='toggleRangeLayer(${JSON.stringify(l.id)}, this.checked)'>
         <div><b><span style="color:${RANGE_COLORS[i % RANGE_COLORS.length]}">●</span> ${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>
       <div class="layer-items">
-        ${(l.items || []).map((it, j) => `<div class="layer-item" title="${esc(it.label || it.id)} · ${pct(it.start)}–${pct(it.end)}" onmouseenter='hoverRangeItem(${JSON.stringify(l.id)}, ${JSON.stringify(it.id)})' onmouseleave="clearMapHover()"><i class="swatch" style="background:${RANGE_COLORS[j % RANGE_COLORS.length]}"></i><span>${esc(it.label || it.id)}</span><span class="range-pct">${pct(it.start)}–${pct(it.end)}</span></div>`).join("")}
+        ${(l.items || []).map((it, j) => `<div class="layer-item" title="${esc(it.label || it.id)}${it.labels?.official ? ` · ${esc(it.labels.official)}` : ""} · ${pct(it.start)}–${pct(it.end)}" onmouseenter='hoverRangeItem(${JSON.stringify(l.id)}, ${JSON.stringify(it.id)})' onmouseleave="clearMapHover()"><i class="swatch" style="background:${RANGE_COLORS[j % RANGE_COLORS.length]}"></i><span>${esc(it.label || it.id)}</span><span class="range-pct">${pct(it.start)}–${pct(it.end)}</span></div>`).join("")}
       </div>
     </div>`).join("") || `<div class="muted">No range layers</div>`}`;
 }
@@ -428,7 +428,7 @@ function updateMapReadout(e) {
   L.circleMarker(ll(n.coord), { radius: 5, color: "#fff", weight: 2, fillColor: "#5eead4", fillOpacity: 1 }).addTo(hoverCursorGroup);
   const inches = n.distM / 0.0254;
   const { rangeHits, rangePointHits, pointHits } = hitsAtFraction(n.fraction, n.coord);
-  const ranges = rangeHits.slice(0, 8).map((h) => `<div>↔ <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || h.item.id)} <span class="muted">${pct(h.item.start)}–${pct(h.item.end)}</span></div>`).join("");
+  const ranges = rangeHits.slice(0, 8).map((h) => `<div>↔ <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || h.item.id)}${h.item.labels?.official ? ` <span class="muted">${esc(h.item.labels.official)}</span>` : ""} <span class="muted">${pct(h.item.start)}–${pct(h.item.end)}</span></div>`).join("");
   const rangePoints = rangePointHits.slice(0, 8).map((h) => `<div>◆ <b>${esc(h.item.label || h.item.role || h.item.id)}</b> inside ${esc(h.range.label || h.range.id)} <span class="muted">${esc(h.layer.label || h.layer.id)}</span></div>`).join("");
   const points = pointHits.slice(0, 8).map((h) => `<div>• <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || resolveName(h.item, displayLayer))}</div>`).join("");
   const el = document.getElementById("hoverReadout");

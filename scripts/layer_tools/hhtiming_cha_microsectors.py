@@ -71,14 +71,22 @@ def main() -> None:
             start, end = meta.get("start"), meta.get("end")
         if start is None or end is None:
             raise ValueError(f"No start/end supplied for {seg['id']}")
-        items.append({
+        item = {
             "id": seg["id"],
             "label": meta.get("label") or seg["label"],
             "start": start,
             "end": end,
             "entry_ref": seg["entry_ref"],
             "exit_ref": seg["exit_ref"],
-        })
+        }
+        labels = dict(meta.get("labels") or {})
+        if meta.get("official"):
+            labels["official"] = meta["official"]
+        if meta.get("driver"):
+            labels["driver"] = meta["driver"]
+        if labels:
+            item["labels"] = labels
+        items.append(item)
     if items:
         items[0]["start"] = 0.0
         items[-1]["end"] = 1.0

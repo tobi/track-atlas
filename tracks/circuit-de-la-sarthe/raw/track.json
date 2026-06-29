@@ -908,75 +908,111 @@
           "items": [
             {
               "id": "sz1",
-              "label": "Dunlop",
+              "label": "SZ1",
               "start": 0.0,
               "end": 0.1,
               "entry_ref": "FL",
-              "exit_ref": "Z4"
+              "exit_ref": "Z4",
+              "labels": {
+                "official": "Dunlop",
+                "driver": "SZ1"
+              }
             },
             {
               "id": "sz2",
-              "label": "Tertre Rouge",
+              "label": "SZ2",
               "start": 0.1,
               "end": 0.16,
               "entry_ref": "Z4",
-              "exit_ref": "IP1"
+              "exit_ref": "IP1",
+              "labels": {
+                "official": "Tertre Rouge",
+                "driver": "SZ2"
+              }
             },
             {
               "id": "sz3",
-              "label": "Hunaudières (1st chicane)",
+              "label": "SZ3",
               "start": 0.16,
               "end": 0.31,
               "entry_ref": "IP1",
-              "exit_ref": "Z12"
+              "exit_ref": "Z12",
+              "labels": {
+                "official": "Hunaudières (1st chicane)",
+                "driver": "SZ3"
+              }
             },
             {
               "id": "sz4",
-              "label": "Hunaudières (2nd chicane)",
+              "label": "SZ4",
               "start": 0.31,
               "end": 0.46,
               "entry_ref": "Z12",
-              "exit_ref": "A7-1"
+              "exit_ref": "A7-1",
+              "labels": {
+                "official": "Hunaudières (2nd chicane)",
+                "driver": "SZ4"
+              }
             },
             {
               "id": "sz5",
-              "label": "Mulsanne corner",
+              "label": "SZ5",
               "start": 0.46,
               "end": 0.58,
               "entry_ref": "A7-1",
-              "exit_ref": "A8-1"
+              "exit_ref": "A8-1",
+              "labels": {
+                "official": "Mulsanne corner",
+                "driver": "SZ5"
+              }
             },
             {
               "id": "sz6",
-              "label": "Indianapolis",
+              "label": "SZ6",
               "start": 0.58,
               "end": 0.71,
               "entry_ref": "A8-1",
-              "exit_ref": "SCLB"
+              "exit_ref": "SCLB",
+              "labels": {
+                "official": "Indianapolis",
+                "driver": "SZ6"
+              }
             },
             {
               "id": "sz7",
-              "label": "Arnage",
+              "label": "SZ7",
               "start": 0.71,
               "end": 0.78,
               "entry_ref": "SCLB",
-              "exit_ref": "PORIN"
+              "exit_ref": "PORIN",
+              "labels": {
+                "official": "Arnage",
+                "driver": "SZ7"
+              }
             },
             {
               "id": "sz8",
-              "label": "Porsche Curves",
+              "label": "SZ8",
               "start": 0.78,
               "end": 0.93,
               "entry_ref": "PORIN",
-              "exit_ref": "POROUT"
+              "exit_ref": "POROUT",
+              "labels": {
+                "official": "Porsche Curves",
+                "driver": "SZ8"
+              }
             },
             {
               "id": "sz9",
-              "label": "Ford Chicanes",
+              "label": "SZ9",
               "start": 0.93,
               "end": 1.0,
               "entry_ref": "POROUT",
-              "exit_ref": "FL"
+              "exit_ref": "FL",
+              "labels": {
+                "official": "Ford Chicanes",
+                "driver": "SZ9"
+              }
             }
           ]
         }
@@ -994,7 +1030,7 @@
     "imsa_data": "le-mans"
   },
   "provenance": {
-    "generated_at": "2026-06-29T17:12:51.532672+00:00",
+    "generated_at": "2026-06-29T17:16:02.435953+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
