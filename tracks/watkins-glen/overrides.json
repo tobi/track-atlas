@@ -2,79 +2,65 @@
   "gp": {
     "corners": {
       "1": {
-        "driver": "Turn 1",
+        "driver": "The 90",
         "official": "Turn 1",
         "direction": "right",
         "scale": 2
       },
       "2": {
-        "driver": "The Esses",
-        "official": "Turn 2",
-        "complex": "The Esses",
+        "driver": "Esses",
+        "official": "The Esses",
         "direction": "left",
         "scale": 4
       },
       "3": {
-        "driver": "The Esses",
-        "official": "Turn 3",
-        "complex": "The Esses",
+        "driver": "Inner Loop",
+        "official": "Inner Loop",
         "direction": "right",
-        "scale": 4
+        "scale": 2
       },
       "4": {
-        "driver": "The Esses",
-        "official": "Turn 4",
-        "complex": "The Esses",
-        "direction": "left",
-        "scale": 4
+        "driver": "Outer Loop",
+        "official": "Outer Loop",
+        "direction": "right",
+        "scale": 3
       },
       "5": {
-        "driver": "The Esses",
-        "official": "Turn 5",
-        "complex": "The Esses",
-        "direction": "right",
+        "driver": "Chute",
+        "official": "Chute",
+        "direction": "left",
         "scale": 4
       },
       "6": {
-        "driver": "The Loop",
-        "official": "Turn 6",
-        "complex": "The Loop",
+        "driver": "Toe",
+        "official": "Toe of the Boot",
         "direction": "left",
-        "scale": 2,
-        "error": "Turn 6 is commonly called 'The Loop' not 'Toe' - this may be confusion with NASCAR terminology where the inner section is sometimes called the 'toe of the boot'"
+        "scale": 2
       },
       "7": {
-        "driver": "The Loop",
-        "official": "Turn 7",
-        "complex": "The Loop",
+        "driver": "Heel",
+        "official": "Heel of the Boot",
         "direction": "left",
-        "scale": 3,
-        "error": "Turn 7 is part of 'The Loop' complex, not 'Heel' - the entire Boot section (T6-T7) is collectively called 'The Loop' or 'The Boot'"
+        "scale": 3
       },
       "8": {
-        "driver": "The Bus Stop",
-        "official": "Turn 8",
-        "complex": "The Bus Stop",
+        "driver": "Turn 9",
+        "official": "Turn 9",
         "direction": "right",
-        "scale": 2,
-        "error": "Corner 8 colloquial name should be 'The Bus Stop' not 'Turn 9' - numbering appears off by one"
+        "scale": 2
       },
       "9": {
-        "driver": "The Bus Stop",
-        "official": "Turn 9",
-        "complex": "The Bus Stop",
-        "direction": "left",
-        "scale": 2,
-        "error": "Corner 9 is second part of 'The Bus Stop' chicane, not 'Turn 10'"
-      },
-      "10": {
         "driver": "Turn 10",
         "official": "Turn 10",
+        "direction": "left",
+        "scale": 2
+      },
+      "10": {
+        "driver": "Turn 11",
+        "official": "Turn 11",
         "direction": "right",
-        "scale": 4,
-        "error": "Corner 10 colloquial should be 'Turn 10' not 'Turn 11' - final corner before start/finish straight"
+        "scale": 4
       }
-    },
-    "errors_summary": "Colloquial names show systematic numbering confusion (off by one for T8-10). The Boot section corners (T6-T7) incorrectly named 'Toe/Heel' instead of 'The Loop'. Esses complex (T2-T5) not marked. Bus Stop chicane (T8-T9) not marked as complex."
+    }
   }
 }

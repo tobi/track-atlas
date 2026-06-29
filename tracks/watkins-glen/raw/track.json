@@ -80,9 +80,10 @@
               "id": "t1",
               "number": 1,
               "code": "1",
-              "label": "Turn 1",
+              "label": "The 90",
               "labels": {
-                "numbered": "Turn 1"
+                "numbered": "Turn 1",
+                "driver": "The 90"
               },
               "marker": 0.066,
               "location": [
@@ -97,10 +98,11 @@
               "id": "t2",
               "number": 2,
               "code": "2",
-              "label": "The Esses",
+              "label": "Esses",
               "labels": {
                 "numbered": "Turn 2",
-                "driver": "The Esses"
+                "driver": "Esses",
+                "official": "The Esses"
               },
               "marker": 0.1835,
               "location": [
@@ -114,10 +116,11 @@
               "id": "t3",
               "number": 3,
               "code": "3",
-              "label": "The Esses",
+              "label": "Inner Loop",
               "labels": {
                 "numbered": "Turn 3",
-                "driver": "The Esses"
+                "driver": "Inner Loop",
+                "official": "Inner Loop"
               },
               "marker": 0.366,
               "location": [
@@ -125,50 +128,53 @@
                 42.33282
               ],
               "direction": "right",
-              "scale": 4
+              "scale": 2
             },
             {
               "id": "t4",
               "number": 4,
               "code": "4",
-              "label": "The Esses",
+              "label": "Outer Loop",
               "labels": {
                 "numbered": "Turn 4",
-                "driver": "The Esses"
+                "driver": "Outer Loop",
+                "official": "Outer Loop"
               },
               "marker": 0.428,
               "location": [
                 -76.921381,
                 42.330634
               ],
-              "direction": "left",
-              "scale": 4
+              "direction": "right",
+              "scale": 3
             },
             {
               "id": "t5",
               "number": 5,
               "code": "5",
-              "label": "The Esses",
+              "label": "Chute",
               "labels": {
                 "numbered": "Turn 5",
-                "driver": "The Esses"
+                "driver": "Chute",
+                "official": "Chute"
               },
               "marker": 0.515,
               "location": [
                 -76.925721,
                 42.332298
               ],
-              "direction": "right",
+              "direction": "left",
               "scale": 4
             },
             {
               "id": "t6",
               "number": 6,
               "code": "6",
-              "label": "The Loop",
+              "label": "Toe",
               "labels": {
                 "numbered": "Turn 6",
-                "driver": "The Loop"
+                "driver": "Toe",
+                "official": "Toe of the Boot"
               },
               "marker": 0.6085,
               "location": [
@@ -182,10 +188,11 @@
               "id": "t7",
               "number": 7,
               "code": "7",
-              "label": "The Loop",
+              "label": "Heel",
               "labels": {
                 "numbered": "Turn 7",
-                "driver": "The Loop"
+                "driver": "Heel",
+                "official": "Heel of the Boot"
               },
               "marker": 0.74,
               "location": [
@@ -199,10 +206,11 @@
               "id": "t8",
               "number": 8,
               "code": "8",
-              "label": "The Bus Stop",
+              "label": "Turn 9",
               "labels": {
                 "numbered": "Turn 8",
-                "driver": "The Bus Stop"
+                "driver": "Turn 9",
+                "official": "Turn 9"
               },
               "marker": 0.8005,
               "location": [
@@ -217,10 +225,11 @@
               "id": "t9",
               "number": 9,
               "code": "9",
-              "label": "The Bus Stop",
+              "label": "Turn 10",
               "labels": {
                 "numbered": "Turn 9",
-                "driver": "The Bus Stop"
+                "driver": "Turn 10",
+                "official": "Turn 10"
               },
               "marker": 0.8695,
               "location": [
@@ -235,9 +244,11 @@
               "id": "t10",
               "number": 10,
               "code": "10",
-              "label": "Turn 10",
+              "label": "Turn 11",
               "labels": {
-                "numbered": "Turn 10"
+                "numbered": "Turn 10",
+                "driver": "Turn 11",
+                "official": "Turn 11"
               },
               "marker": 0.9365,
               "location": [
@@ -305,112 +316,73 @@
           "items": [
             {
               "id": "t1",
-              "label": "Turn 1",
+              "label": "The 90",
               "start": 0.03288,
               "end": 0.08992,
               "anchor": "t1"
             },
             {
               "id": "t2",
-              "label": "The Esses",
+              "label": "Esses",
               "start": 0.17062,
-              "end": 0.27475,
+              "end": 0.19638,
               "anchor": "t2"
             },
             {
               "id": "t3",
-              "label": "The Esses",
-              "start": 0.27475,
-              "end": 0.397,
+              "label": "Inner Loop",
+              "start": 0.33288,
+              "end": 0.38992,
               "anchor": "t3"
             },
             {
               "id": "t4",
-              "label": "The Esses",
-              "start": 0.397,
-              "end": 0.4715,
+              "label": "Outer Loop",
+              "start": 0.40592,
+              "end": 0.4464,
               "anchor": "t4"
             },
             {
               "id": "t5",
-              "label": "The Esses",
-              "start": 0.4715,
+              "label": "Chute",
+              "start": 0.50212,
               "end": 0.52788,
               "anchor": "t5"
             },
             {
               "id": "t6",
-              "label": "The Loop",
+              "label": "Toe",
               "start": 0.57538,
-              "end": 0.67688,
+              "end": 0.63242,
               "anchor": "t6"
             },
             {
               "id": "t7",
-              "label": "The Loop",
-              "start": 0.67688,
+              "label": "Heel",
+              "start": 0.71792,
               "end": 0.7584,
               "anchor": "t7"
             },
             {
               "id": "t8",
-              "label": "The Bus Stop",
+              "label": "Turn 9",
               "start": 0.76738,
-              "end": 0.82944,
+              "end": 0.82442,
               "anchor": "t8"
             },
             {
               "id": "t9",
-              "label": "The Bus Stop",
-              "start": 0.82944,
+              "label": "Turn 10",
+              "start": 0.83638,
               "end": 0.89342,
               "anchor": "t9"
             },
             {
               "id": "t10",
-              "label": "Turn 10",
+              "label": "Turn 11",
               "start": 0.92362,
               "end": 0.94938,
               "anchor": "t10"
-            }
-          ]
-        },
-        {
-          "id": "corner_complexes",
-          "kind": "corner_complexes",
-          "label": "Corner Complexes",
-          "items": [
-            {
-              "id": "complex-1",
-              "label": "The Esses",
-              "start": 0.17062,
-              "end": 0.52788,
-              "members": [
-                "t2",
-                "t3",
-                "t4",
-                "t5"
-              ]
-            },
-            {
-              "id": "loop",
-              "label": "The Loop",
-              "start": 0.57538,
-              "end": 0.7584,
-              "members": [
-                "t6",
-                "t7"
-              ]
-            },
-            {
-              "id": "busstop",
-              "label": "The Bus Stop",
-              "start": 0.76738,
-              "end": 0.89342,
-              "members": [
-                "t8",
-                "t9"
-              ]
             }
           ]
         },
@@ -556,7 +528,7 @@
     "imsa_data": "watkins-glen"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:17:54.364685+00:00",
+    "generated_at": "2026-06-29T16:31:33.704897+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

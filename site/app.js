@@ -15,6 +15,7 @@ let currentGeojson = null;
 let displayLayer = null;
 let layerState = {};   // layout id -> { outline, point:{id:bool}, range:{id:bool} }
 let mapGroups = [];
+let hoverLayer = null; // { type: 'point'|'range'|'outline', id?: string }
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
   (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -41,7 +42,6 @@ function route() {
   const slug = location.hash.replace(/^#\/?/, "");
   if (slug) showDetail(slug);
   else {
-    if (window.TrackSim) TrackSim.dispose();
     if (map) { map.remove(); map = null; }
     $detail.style.display = "none"; $grid.style.display = "grid";
     $search.style.display = "block"; renderGrid($search.value);
@@ -108,21 +108,6 @@ async function showDetail(slug) {
       <div id="map"></div>
       <aside id="layerPanel" class="layer-panel"></aside>
     </div>
-    <div class="drive">
-      <div class="sim-bar">
-        <span class="lbl">Drive</span>
-        <button data-sim-cls="lmph" onclick="TrackSim.setClass('lmph')">LMPh</button>
-        <button data-sim-cls="gt3" onclick="TrackSim.setClass('gt3')">GT3</button>
-        <button data-sim-cls="bmw328" onclick="TrackSim.setClass('bmw328')">BMW 328</button>
-        <span class="lbl" style="margin-left:8px">view</span>
-        <button data-sim-cam="chase" onclick="TrackSim.setCamera('chase')">Chase</button>
-        <button data-sim-cam="iso" onclick="TrackSim.setCamera('iso')">Isometric</button>
-        <button id="simPlay" onclick="TrackSim.toggle()">⏸ pause</button>
-        <span id="simHud" class="lbl"></span>
-        <span class="legend"><i style="background:#ff3b30"></i>brake<i style="background:#ffd60a"></i>corner<i style="background:#35c759"></i>throttle</span>
-      </div>
-      <div id="sim"></div>
-    </div>
     <h3 class="section-title">Corners</h3>
     <div id="cornersWrap"></div>
     <div class="copy-wrap">
@@ -146,11 +131,16 @@ async function showLayout(layoutId) {
 
   renderStats(track, layout);
   renderCorners();
-  const gj = await (await fetch(`geojson/${track.slug}_${layout.id}.geojson`)).json();
-  currentGeojson = gj;
   ensureLayerState(layout);
-  renderMap(gj, track, layout);
-  if (window.TrackSim) { TrackSim.load(gj); TrackSim.syncButtons(); }
+  renderLayerPanel(layout);
+  try {
+    const gj = await (await fetch(`geojson/${track.slug}_${layout.id}.geojson`)).json();
+    currentGeojson = gj;
+    renderMap(gj, track, layout);
+  } catch (e) {
+    currentGeojson = null;
+    document.getElementById("map").innerHTML = `<div style="padding:18px;color:var(--muted)">Could not load layout GeoJSON: ${esc(e.message || e)}</div>`;
+  }
 }
 
 function renderStats(track, layout) {
@@ -216,17 +206,20 @@ function layerMeta(layer) {
 function renderLayerPanel(layout) {
   const st = currentState();
   const panel = document.getElementById("layerPanel");
-  panel.innerHTML = `<h4>Map layers</h4>
+  if (!panel) return;
+  panel.innerHTML = `<h4>Layers</h4>
     <div class="mini-actions"><button onclick="setAllLayers(true)">all on</button><button onclick="setAllLayers(false)">all off</button></div>
-    <div class="layer-toggle"><input type="checkbox" ${st.outline ? "checked" : ""} onchange="toggleOutline(this.checked)">
-      <div><b>OSM centerline</b><div class="meta">layout geometry overlay</div></div></div>
+    <div class="layer-toggle" onmouseenter="hoverMapLayer('outline')" onmouseleave="clearMapHover()"><input type="checkbox" ${st.outline ? "checked" : ""} onchange="toggleOutline(this.checked)">
+      <div><b>Track centerline</b><div class="meta">GeoJSON layout over OpenStreetMap</div></div></div>
     <div class="layer-group-title">Point layers</div>
-    ${(layout.point_layers || []).map((l) => `<label class="layer-toggle"><input type="checkbox" ${st.point[l.id] ? "checked" : ""} onchange='togglePointLayer(${JSON.stringify(l.id)}, this.checked)'>
+    ${(layout.point_layers || []).map((l) => `<label class="layer-toggle" onmouseenter='hoverMapLayer("point", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.point[l.id] ? "checked" : ""} onchange='togglePointLayer(${JSON.stringify(l.id)}, this.checked)'>
       <div><b>${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>`).join("") || `<div class="muted">No point layers</div>`}
     <div class="layer-group-title">Range layers</div>
-    ${(layout.range_layers || []).map((l, i) => `<label class="layer-toggle"><input type="checkbox" ${st.range[l.id] ? "checked" : ""} onchange='toggleRangeLayer(${JSON.stringify(l.id)}, this.checked)'>
+    ${(layout.range_layers || []).map((l, i) => `<label class="layer-toggle" onmouseenter='hoverMapLayer("range", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.range[l.id] ? "checked" : ""} onchange='toggleRangeLayer(${JSON.stringify(l.id)}, this.checked)'>
       <div><b><span style="color:${RANGE_COLORS[i % RANGE_COLORS.length]}">●</span> ${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>`).join("") || `<div class="muted">No range layers</div>`}`;
 }
+function hoverMapLayer(type, id=null) { hoverLayer = { type, id }; redrawMapOverlays(); }
+function clearMapHover() { hoverLayer = null; redrawMapOverlays(); }
 function toggleOutline(v) { currentState().outline = v; redrawMapOverlays(); }
 function togglePointLayer(id, v) { currentState().point[id] = v; redrawMapOverlays(); }
 function toggleRangeLayer(id, v) { currentState().range[id] = v; redrawMapOverlays(); }
@@ -239,7 +232,7 @@ function setAllLayers(v) {
 
 function renderMap(gj, track, layout) {
   if (map) { map.remove(); map = null; }
-  map = L.map("map", { scrollWheelZoom: true, preferCanvas: true });
+  map = L.map("map", { scrollWheelZoom: true, preferCanvas: false });
   const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors", maxZoom: 20 });
   const dark = L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", { attribution: "&copy; OpenStreetMap contributors &copy; CARTO", maxZoom: 20 });
   osm.addTo(map);
@@ -257,27 +250,30 @@ function redrawMapOverlays(fit=false) {
   const st = currentState();
   const coords = outlineCoords();
   const boundsLayers = [];
-  if (st.outline && coords.length) {
-    const g = L.polyline(coords.map(ll), { color:"#ffffff", weight:5, opacity:.85 }).addTo(map).bindTooltip("OSM centerline");
+  const outlineHot = hoverLayer?.type === "outline";
+  if ((st.outline || outlineHot) && coords.length) {
+    const g = L.polyline(coords.map(ll), { color: outlineHot ? "#5eead4" : "#ffffff", weight: outlineHot ? 8 : 5, opacity: outlineHot ? 1 : .85, className: outlineHot ? "layer-range-highlight" : "" }).addTo(map).bindTooltip("Track centerline");
     mapGroups.push(g); boundsLayers.push(g);
   }
   (currentLayout.range_layers || []).forEach((layer, i) => {
-    if (!st.range[layer.id]) return;
+    const hot = hoverLayer?.type === "range" && hoverLayer.id === layer.id;
+    if (!st.range[layer.id] && !hot) return;
     const group = L.layerGroup().addTo(map);
-    const color = RANGE_COLORS[i % RANGE_COLORS.length];
+    const color = hot ? "#ffffff" : RANGE_COLORS[i % RANGE_COLORS.length];
     (layer.items || []).forEach((r) => {
       const seg = sliceLine(coords, r.start, r.end);
       if (seg.length < 2) return;
-      L.polyline(seg.map(ll), { color, weight: layer.coverage === "partition" ? 8 : 6, opacity:.68, lineCap:"round" })
+      L.polyline(seg.map(ll), { color, weight: hot ? 13 : layer.coverage === "partition" ? 8 : 6, opacity: hot ? .98 : .68, lineCap:"round", className: hot ? "layer-range-highlight" : "" })
         .bindTooltip(`<b>${esc(layer.label || layer.id)} · ${esc(r.label || r.id)}</b><br>${pct(r.start)} → ${pct(r.end)}${r.entry_ref ? `<br>${esc(r.entry_ref)} → ${esc(r.exit_ref)}` : ""}`)
         .addTo(group);
     });
     mapGroups.push(group); boundsLayers.push(group);
   });
   (currentLayout.point_layers || []).forEach((layer) => {
-    if (!st.point[layer.id]) return;
+    const hot = hoverLayer?.type === "point" && hoverLayer.id === layer.id;
+    if (!st.point[layer.id] && !hot) return;
     const group = L.layerGroup().addTo(map);
-    (layer.items || []).filter((p) => p.location).forEach((p) => addPoint(group, layer, p));
+    (layer.items || []).filter((p) => p.location).forEach((p) => addPoint(group, layer, p, hot));
     mapGroups.push(group); boundsLayers.push(group);
   });
   if (fit) {
@@ -285,13 +281,14 @@ function redrawMapOverlays(fit=false) {
     if (outline) map.fitBounds(outline.getBounds(), { padding:[28,28] });
   }
 }
-function addPoint(group, layer, p) {
+function addPoint(group, layer, p, hot=false) {
   const isCorner = layer.id === "corners";
   const isSf = p.id === "start_finish";
   const marker = L.circleMarker(ll(p.location), {
-    radius: isSf ? 8 : isCorner ? 6 : 5,
-    color: isSf ? "#111722" : "#080a0f", weight: isSf ? 3 : 1.5,
+    radius: hot ? (isSf ? 11 : isCorner ? 9 : 8) : isSf ? 8 : isCorner ? 6 : 5,
+    color: hot ? "#ffffff" : isSf ? "#111722" : "#080a0f", weight: hot ? 3 : isSf ? 3 : 1.5,
     fillColor: isSf ? "#ffffff" : isCorner ? "#ff2d8d" : "#f6c945", fillOpacity: 1,
+    className: hot ? "layer-point-highlight" : "",
   });
   const label = isCorner ? `T${p.number} ${resolveName(p, displayLayer)}` : (p.label || p.id);
   marker.bindTooltip(`<b>${esc(label)}</b>${p.marker != null ? `<br>${pct(p.marker)}` : ""}<br><span class="muted">${esc(layer.label || layer.id)}</span>`);

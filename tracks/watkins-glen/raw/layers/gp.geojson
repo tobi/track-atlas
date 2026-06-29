@@ -1141,9 +1141,10 @@
         "id": "t1",
         "number": 1,
         "code": "1",
-        "display": "Turn 1",
+        "display": "The 90",
         "labels": {
-          "numbered": "Turn 1"
+          "numbered": "Turn 1",
+          "driver": "The 90"
         },
         "direction": "right",
         "scale": 2,
@@ -1164,10 +1165,11 @@
         "id": "t2",
         "number": 2,
         "code": "2",
-        "display": "The Esses",
+        "display": "Esses",
         "labels": {
           "numbered": "Turn 2",
-          "driver": "The Esses"
+          "driver": "Esses",
+          "official": "The Esses"
         },
         "direction": "left",
         "scale": 4,
@@ -1188,13 +1190,14 @@
         "id": "t3",
         "number": 3,
         "code": "3",
-        "display": "The Esses",
+        "display": "Inner Loop",
         "labels": {
           "numbered": "Turn 3",
-          "driver": "The Esses"
+          "driver": "Inner Loop",
+          "official": "Inner Loop"
         },
         "direction": "right",
-        "scale": 4,
+        "scale": 2,
         "marker": 0.366
       },
       "geometry": {
@@ -1212,13 +1215,14 @@
         "id": "t4",
         "number": 4,
         "code": "4",
-        "display": "The Esses",
+        "display": "Outer Loop",
         "labels": {
           "numbered": "Turn 4",
-          "driver": "The Esses"
+          "driver": "Outer Loop",
+          "official": "Outer Loop"
         },
-        "direction": "left",
-        "scale": 4,
+        "direction": "right",
+        "scale": 3,
         "marker": 0.428
       },
       "geometry": {
@@ -1236,12 +1240,13 @@
         "id": "t5",
         "number": 5,
         "code": "5",
-        "display": "The Esses",
+        "display": "Chute",
         "labels": {
           "numbered": "Turn 5",
-          "driver": "The Esses"
+          "driver": "Chute",
+          "official": "Chute"
         },
-        "direction": "right",
+        "direction": "left",
         "scale": 4,
         "marker": 0.515
       },
@@ -1260,10 +1265,11 @@
         "id": "t6",
         "number": 6,
         "code": "6",
-        "display": "The Loop",
+        "display": "Toe",
         "labels": {
           "numbered": "Turn 6",
-          "driver": "The Loop"
+          "driver": "Toe",
+          "official": "Toe of the Boot"
         },
         "direction": "left",
         "scale": 2,
@@ -1284,10 +1290,11 @@
         "id": "t7",
         "number": 7,
         "code": "7",
-        "display": "The Loop",
+        "display": "Heel",
         "labels": {
           "numbered": "Turn 7",
-          "driver": "The Loop"
+          "driver": "Heel",
+          "official": "Heel of the Boot"
         },
         "direction": "left",
         "scale": 3,
@@ -1308,10 +1315,11 @@
         "id": "t8",
         "number": 8,
         "code": "8",
-        "display": "The Bus Stop",
+        "display": "Turn 9",
         "labels": {
           "numbered": "Turn 8",
-          "driver": "The Bus Stop"
+          "driver": "Turn 9",
+          "official": "Turn 9"
         },
         "direction": "right",
         "scale": 2,
@@ -1332,10 +1340,11 @@
         "id": "t9",
         "number": 9,
         "code": "9",
-        "display": "The Bus Stop",
+        "display": "Turn 10",
         "labels": {
           "numbered": "Turn 9",
-          "driver": "The Bus Stop"
+          "driver": "Turn 10",
+          "official": "Turn 10"
         },
         "direction": "left",
         "scale": 2,
@@ -1356,9 +1365,11 @@
         "id": "t10",
         "number": 10,
         "code": "10",
-        "display": "Turn 10",
+        "display": "Turn 11",
         "labels": {
-          "numbered": "Turn 10"
+          "numbered": "Turn 10",
+          "driver": "Turn 11",
+          "official": "Turn 11"
         },
         "direction": "right",
         "scale": 4,
