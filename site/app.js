@@ -263,7 +263,7 @@ function redrawMapOverlays(fit=false) {
   const boundsLayers = [];
   const outlineHot = hoverLayer?.type === "outline";
   if ((st.outline || outlineHot) && coords.length) {
-    const g = L.polyline(coords.map(ll), { color: outlineHot ? "#5eead4" : "#ffffff", weight: outlineHot ? 8 : 5, opacity: outlineHot ? 1 : .85, className: outlineHot ? "layer-range-highlight" : "" }).addTo(map).bindTooltip("Track centerline");
+    const g = L.polyline(coords.map(ll), { color: outlineHot ? "#5eead4" : "#ffffff", weight: outlineHot ? 8 : 5, opacity: outlineHot ? 1 : .85, className: outlineHot ? "layer-range-highlight" : "" }).addTo(map);
     mapGroups.push(g); boundsLayers.push(g);
   }
   (currentLayout.range_layers || []).forEach((layer, i) => {
@@ -275,7 +275,6 @@ function redrawMapOverlays(fit=false) {
       const seg = sliceLine(coords, r.start, r.end);
       if (seg.length < 2) return;
       L.polyline(seg.map(ll), { color, weight: hot ? 14 : layer.coverage === "partition" ? 8 : 6, opacity: hot ? .98 : .68, lineCap:"round", className: hot ? "layer-range-highlight" : "" })
-        .bindTooltip(`<b>${esc(layer.label || layer.id)} · ${esc(r.label || r.id)}</b><br>${pct(r.start)} → ${pct(r.end)}${r.entry_ref ? `<br>${esc(r.entry_ref)} → ${esc(r.exit_ref)}` : ""}`)
         .on("mouseover", () => hoverMapLayer("range", layer.id))
         .on("mouseout", clearMapHover)
         .addTo(group);
@@ -299,7 +298,6 @@ function addRangeEndpoints(group, seg, color, r) {
   const start = seg[0], end = seg[seg.length - 1];
   [[start, "start"], [end, "end"]].forEach(([pt, which]) => {
     L.circleMarker(ll(pt), { radius: 6, color: "#ffffff", weight: 2, fillColor: which === "start" ? "#35c759" : "#ff3b30", fillOpacity: 1 })
-      .bindTooltip(`${esc(r.label || r.id)} ${which}: ${which === "start" ? pct(r.start) : pct(r.end)}`)
       .addTo(group);
   });
 }
@@ -312,8 +310,6 @@ function addPoint(group, layer, p, hot=false) {
     color: hot ? "#ffffff" : isSf ? "#111722" : "#080a0f", weight: hot ? 3 : isSf ? 3 : 1.5,
     fillColor: isSf ? "#ffffff" : isCorner ? "#ff2d8d" : "#f6c945", fillOpacity: 1,
   });
-  const label = isCorner ? `T${p.number} ${resolveName(p, displayLayer)}` : (p.label || p.id);
-  marker.bindTooltip(`<b>${esc(label)}</b>${p.marker != null ? `<br>${pct(p.marker)}` : ""}<br><span class="muted">${esc(layer.label || layer.id)}</span>`);
   marker.addTo(group);
 }
 function ll(c) { return [c[1], c[0]]; }
