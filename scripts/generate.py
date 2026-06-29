@@ -418,10 +418,16 @@ def generate_track(slug: str) -> dict:
         corner_ranges = []
         for c in sorted(corners, key=lambda x: x["number"]):
             if c.get("start") is not None and c.get("end") is not None and c["start"] < c["end"]:
-                corner_ranges.append({
+                item = {
                     "id": f"t{c['number']}", "label": _resolve(c["names"], default_layer),
                     "start": c["start"], "end": c["end"], "anchor": f"t{c['number']}",
-                })
+                }
+                if c.get("marker") is not None and c["start"] <= c["marker"] <= c["end"]:
+                    item["points"] = [{
+                        "id": "apex", "role": "apex", "label": "Apex",
+                        "marker": c["marker"], "point_ref": f"t{c['number']}",
+                    }]
+                corner_ranges.append(item)
         if corner_ranges:
             range_layers.append({"id": "corner_ranges", "kind": "corner_ranges", "label": "Corners", "generated": True, "items": corner_ranges})
 

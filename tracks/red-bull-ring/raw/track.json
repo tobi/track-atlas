@@ -298,63 +298,144 @@
               "label": "Niki Lauda Kurve",
               "start": 0.06501,
               "end": 0.13681,
-              "anchor": "t1"
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.1067,
+                  "point_ref": "t1"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "Remus",
               "start": 0.2672,
               "end": 0.36447,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.3251,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "Schlossgold",
               "start": 0.47321,
               "end": 0.54259,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.5149,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "Turn 5",
               "start": 0.54259,
               "end": 0.57371,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.5575,
+                  "point_ref": "t5"
+                }
+              ]
             },
             {
               "id": "t6",
               "label": "Rauch Kurve",
               "start": 0.60811,
               "end": 0.65906,
-              "anchor": "t6"
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.6359,
+                  "point_ref": "t6"
+                }
+              ]
             },
             {
               "id": "t7",
               "label": "Würth Kurve",
               "start": 0.67991,
               "end": 0.73086,
-              "anchor": "t7"
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.7077,
+                  "point_ref": "t7"
+                }
+              ]
             },
             {
               "id": "t8",
               "label": "Turn 8",
               "start": 0.73499,
               "end": 0.76741,
-              "anchor": "t8"
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.7512,
+                  "point_ref": "t8"
+                }
+              ]
             },
             {
               "id": "t9",
               "label": "Rindt",
               "start": 0.85231,
               "end": 0.89689,
-              "anchor": "t9"
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.8801,
+                  "point_ref": "t9"
+                }
+              ]
             },
             {
               "id": "t10",
               "label": "Mobilkurve",
               "start": 0.89689,
               "end": 0.95721,
-              "anchor": "t10"
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.9271,
+                  "point_ref": "t10"
+                }
+              ]
             }
           ]
         }
@@ -371,7 +452,7 @@
     "imsa_data": "red-bull-ring"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:29.377614+00:00",
+    "generated_at": "2026-06-29T17:12:55.435943+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

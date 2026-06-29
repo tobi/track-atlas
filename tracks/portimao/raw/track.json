@@ -402,84 +402,192 @@
               "label": "Curva 1",
               "start": 0.07496,
               "end": 0.10504,
-              "anchor": "t1"
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.09,
+                  "point_ref": "t1"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "Lagos",
               "start": 0.12,
               "end": 0.18125,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.16,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "Curva 4",
               "start": 0.18125,
               "end": 0.20504,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.19,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "Torre VIP",
               "start": 0.25627,
               "end": 0.34654,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.31,
+                  "point_ref": "t5"
+                }
+              ]
             },
             {
               "id": "t7",
               "label": "Curva 7",
               "start": 0.41248,
               "end": 0.426,
-              "anchor": "t7"
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.42,
+                  "point_ref": "t7"
+                }
+              ]
             },
             {
               "id": "t8",
               "label": "Samsung",
               "start": 0.426,
               "end": 0.47794,
-              "anchor": "t8"
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.45,
+                  "point_ref": "t8"
+                }
+              ]
             },
             {
               "id": "t9",
               "label": "Craig Jones",
               "start": 0.52248,
               "end": 0.53967,
-              "anchor": "t9"
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.53,
+                  "point_ref": "t9"
+                }
+              ]
             },
             {
               "id": "t11",
               "label": "Curva 11",
               "start": 0.58,
               "end": 0.62149,
-              "anchor": "t11"
+              "anchor": "t11",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.6,
+                  "point_ref": "t11"
+                }
+              ]
             },
             {
               "id": "t12",
               "label": "Curva 12",
               "start": 0.64248,
               "end": 0.6561,
-              "anchor": "t12"
+              "anchor": "t12",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.65,
+                  "point_ref": "t12"
+                }
+              ]
             },
             {
               "id": "t13",
               "label": "Curva 13",
               "start": 0.6561,
               "end": 0.71429,
-              "anchor": "t13"
+              "anchor": "t13",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.69,
+                  "point_ref": "t13"
+                }
+              ]
             },
             {
               "id": "t14",
               "label": "Sagres",
               "start": 0.71429,
               "end": 0.76794,
-              "anchor": "t14"
+              "anchor": "t14",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.74,
+                  "point_ref": "t14"
+                }
+              ]
             },
             {
               "id": "t15",
               "label": "Galp",
               "start": 0.82248,
               "end": 0.83967,
-              "anchor": "t15"
+              "anchor": "t15",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.83,
+                  "point_ref": "t15"
+                }
+              ]
             }
           ]
         }
@@ -496,7 +604,7 @@
     "imsa_data": "portimao"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:40.783836+00:00",
+    "generated_at": "2026-06-29T17:13:07.977176+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

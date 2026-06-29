@@ -116,6 +116,22 @@ class PointLayer(Strict):
         return self
 
 
+class RangePoint(Strict):
+    """A point that lives inside a range item.
+
+    Use this when a range has meaningful internal landmarks: the apex inside a
+    corner range, timing-loop lines inside a sector, a speed trap inside a slow
+    zone. `point_ref` links to a point item when one exists; `marker`/`location`
+    let generated tools embed a lightweight point directly in the range.
+    """
+    id: ItemId
+    role: LayerId = Field(description="Semantic role inside the range, e.g. apex, entry_loop, exit_loop, speed_trap.")
+    label: Optional[str] = None
+    marker: Optional[Fraction] = None
+    location: Optional[LonLat] = None
+    point_ref: Optional[ItemId] = Field(None, description="Point-layer item this nested range point references, when available.")
+
+
 class RangeItem(Strict):
     """A lap interval annotation."""
     id: ItemId
@@ -123,11 +139,19 @@ class RangeItem(Strict):
     start: Fraction
     end: Fraction
     labels: dict[LayerCode, str] = Field(default_factory=dict)
-    anchor: Optional[ItemId] = Field(None, description="Point item this range is derived from, e.g. a corner apex id.")
+    anchor: Optional[ItemId] = Field(None, description="Primary point item this range is derived from, e.g. a corner apex id.")
     members: list[ItemId] = Field(default=[], description="Point items contained in this range, e.g. corners in a complex.")
+    points: list[RangePoint] = Field(default=[], description="Ordered point landmarks inside this range, e.g. the apex inside a corner range.")
     entry_ref: Optional[str] = Field(None, description="Upstream timing loop / line where the range starts, when known.")
     exit_ref: Optional[str] = Field(None, description="Upstream timing loop / line where the range ends, when known.")
     length_m: Optional[float] = Field(None, description="Official/source length of this range in metres, when known.")
+
+    @model_validator(mode="after")
+    def _nested_points_inside_range(self) -> "RangeItem":
+        for p in self.points:
+            if p.marker is not None and not (self.start <= p.marker <= self.end):
+                raise ValueError(f"range point '{p.id}' marker {p.marker} outside range {self.start}→{self.end}")
+        return self
 
 
 class RangeLayer(Strict):
@@ -236,7 +260,7 @@ class Track(Strict):
                     if undeclared:
                         raise ValueError(
                             f"layout '{lo.id}' range layer '{layer.id}' item '{item.id}' uses undeclared label layer(s) {sorted(undeclared)}")
-                    refs = ([item.anchor] if item.anchor else []) + item.members
+                    refs = ([item.anchor] if item.anchor else []) + item.members + [p.point_ref for p in item.points if p.point_ref]
                     missing = [ref for ref in refs if ref not in point_ids]
                     if missing:
                         raise ValueError(

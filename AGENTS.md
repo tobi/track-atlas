@@ -32,8 +32,10 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   through `generation-config.json` or the read-only check `uv run python
   scripts/check_apexes.py <slug>`. It derives a smoothed `κ(s)` profile from the
   centerline and emits both apex candidate points and padded corner ranges;
-  apex points and corner ranges are intentionally distinct concepts. `verify.py`,
-  `suggest_phases.py`, and `annotate.py` also consume these candidates for QA.
+  apex points and corner ranges are intentionally distinct concepts. Put apexes
+  inside range items as `points: [{role: "apex", point_ref: "..."}]`, not by
+  narrowing the range to the apex. `verify.py`, `suggest_phases.py`, and
+  `annotate.py` also consume these candidates for QA.
 - Known good sources:
   - IMSA / Al Kamel noticeboard `Timing 3 Sector Map.pdf` and
     `Timing All Sections Map.pdf` for timing sectors + microsectors.

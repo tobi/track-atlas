@@ -362,91 +362,208 @@
               "label": "Turn 1",
               "start": 0.07265,
               "end": 0.12646,
-              "anchor": "t1"
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.102,
+                  "point_ref": "t1"
+                }
+              ]
             },
             {
               "id": "t2",
               "label": "Turn 2",
               "start": 0.14615,
               "end": 0.19256,
-              "anchor": "t2"
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.1755,
+                  "point_ref": "t2"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "Turn 3",
               "start": 0.19256,
               "end": 0.21445,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.2045,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "Turn 4",
               "start": 0.21445,
               "end": 0.25596,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.2315,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "Turn 5",
               "start": 0.27888,
               "end": 0.31312,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.296,
+                  "point_ref": "t5"
+                }
+              ]
             },
             {
               "id": "t6",
               "label": "Turn 6",
               "start": 0.34444,
               "end": 0.36401,
-              "anchor": "t6"
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.353,
+                  "point_ref": "t6"
+                }
+              ]
             },
             {
               "id": "t7",
               "label": "Turn 7",
               "start": 0.42435,
               "end": 0.50711,
-              "anchor": "t7"
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.4855,
+                  "point_ref": "t7"
+                }
+              ]
             },
             {
               "id": "t8",
               "label": "Turn 8",
               "start": 0.50711,
               "end": 0.5618,
-              "anchor": "t8"
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.53,
+                  "point_ref": "t8"
+                }
+              ]
             },
             {
               "id": "t9",
               "label": "Turn 9",
               "start": 0.56565,
               "end": 0.61946,
-              "anchor": "t9"
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.595,
+                  "point_ref": "t9"
+                }
+              ]
             },
             {
               "id": "t10",
               "label": "Turn 10",
               "start": 0.73015,
               "end": 0.79859,
-              "anchor": "t10"
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.7595,
+                  "point_ref": "t10"
+                }
+              ]
             },
             {
               "id": "t11",
               "label": "Turn 10A",
               "start": 0.79859,
               "end": 0.86697,
-              "anchor": "t11"
+              "anchor": "t11",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.8455,
+                  "point_ref": "t11"
+                }
+              ]
             },
             {
               "id": "t12",
               "label": "Turn 10B",
               "start": 0.86697,
               "end": 0.8939,
-              "anchor": "t12"
+              "anchor": "t12",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.882,
+                  "point_ref": "t12"
+                }
+              ]
             },
             {
               "id": "t13",
               "label": "Turn 11",
               "start": 0.8939,
               "end": 0.9531,
-              "anchor": "t13"
+              "anchor": "t13",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.9245,
+                  "point_ref": "t13"
+                }
+              ]
             }
           ]
         },
@@ -480,7 +597,7 @@
     "imsa_data": "road-atlanta"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:29.382562+00:00",
+    "generated_at": "2026-06-29T17:12:55.442382+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

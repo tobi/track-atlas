@@ -265,6 +265,14 @@ def compute_layers(centerline_path: str, params: dict[str, Any] | None = None, r
                 "start": round(start, 8),
                 "end": round(end, 8),
                 "anchor": item_id,
+                "points": [{
+                    "id": "apex",
+                    "role": "apex",
+                    "label": "Apex",
+                    "marker": round(marker, 8),
+                    "location": point_at_s(ll, total, ss[i]),
+                    "point_ref": item_id,
+                }],
             })
 
     source = params.get("source", "centerline curvature profile")

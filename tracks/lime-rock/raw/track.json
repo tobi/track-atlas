@@ -209,35 +209,80 @@
               "label": "Big Bend",
               "start": 0.09926,
               "end": 0.18862,
-              "anchor": "t1"
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.148,
+                  "point_ref": "t1"
+                }
+              ]
             },
             {
               "id": "t2",
               "label": "The Left-Hander",
               "start": 0.26026,
               "end": 0.34962,
-              "anchor": "t2"
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.309,
+                  "point_ref": "t2"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "The Uphill",
               "start": 0.50157,
               "end": 0.55843,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.53,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "West Bend",
               "start": 0.66357,
               "end": 0.72043,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.692,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "The Downhill",
               "start": 0.80878,
               "end": 0.84128,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.823,
+                  "point_ref": "t5"
+                }
+              ]
             }
           ]
         },
@@ -269,7 +314,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:29.387333+00:00",
+    "generated_at": "2026-06-29T17:12:55.450356+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

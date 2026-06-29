@@ -295,63 +295,144 @@
               "label": "Andretti Hairpin",
               "start": 0.06709,
               "end": 0.1837,
-              "anchor": "t2"
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.1365,
+                  "point_ref": "t2"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "Turn 3",
               "start": 0.18469,
               "end": 0.24576,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.218,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "Turn 4",
               "start": 0.27357,
               "end": 0.31243,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.293,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "Turn 5",
               "start": 0.39919,
               "end": 0.46026,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.4325,
+                  "point_ref": "t5"
+                }
+              ]
             },
             {
               "id": "t6",
               "label": "Turn 6",
               "start": 0.52807,
               "end": 0.56693,
-              "anchor": "t6"
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.5475,
+                  "point_ref": "t6"
+                }
+              ]
             },
             {
               "id": "t7",
               "label": "The Corkscrew",
               "start": 0.64053,
               "end": 0.72659,
-              "anchor": "t7"
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.6905,
+                  "point_ref": "t7"
+                }
+              ]
             },
             {
               "id": "t8",
               "label": "Rainey Curve",
               "start": 0.73807,
               "end": 0.77693,
-              "anchor": "t8"
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.7575,
+                  "point_ref": "t8"
+                }
+              ]
             },
             {
               "id": "t9",
               "label": "Turn 10",
               "start": 0.79669,
               "end": 0.85776,
-              "anchor": "t9"
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.83,
+                  "point_ref": "t9"
+                }
+              ]
             },
             {
               "id": "t10",
               "label": "Turn 11",
               "start": 0.86503,
               "end": 0.95109,
-              "anchor": "t10"
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.915,
+                  "point_ref": "t10"
+                }
+              ]
             }
           ]
         },
@@ -383,7 +464,7 @@
     "imsa_data": "laguna-seca"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:31.868261+00:00",
+    "generated_at": "2026-06-29T17:12:58.111133+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

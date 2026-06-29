@@ -392,91 +392,208 @@
               "label": "Senna S",
               "start": 0.04823,
               "end": 0.1004,
-              "anchor": "t1"
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.09,
+                  "point_ref": "t1"
+                }
+              ]
             },
             {
               "id": "t2",
               "label": "Senna S",
               "start": 0.1004,
               "end": 0.13321,
-              "anchor": "t2"
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.11,
+                  "point_ref": "t2"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "Curva do Sol",
               "start": 0.13375,
               "end": 0.16625,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.15,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "Descida do Lago",
               "start": 0.31375,
               "end": 0.35667,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.33,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "Descida do Lago",
               "start": 0.35667,
               "end": 0.38044,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.37,
+                  "point_ref": "t5"
+                }
+              ]
             },
             {
               "id": "t6",
               "label": "Ferradura",
               "start": 0.43823,
               "end": 0.49258,
-              "anchor": "t6"
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.48,
+                  "point_ref": "t6"
+                }
+              ]
             },
             {
               "id": "t7",
               "label": "Laranjinha",
               "start": 0.49258,
               "end": 0.536,
-              "anchor": "t7"
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.51,
+                  "point_ref": "t7"
+                }
+              ]
             },
             {
               "id": "t8",
               "label": "Pinheirinho",
               "start": 0.536,
               "end": 0.56105,
-              "anchor": "t8"
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.55,
+                  "point_ref": "t8"
+                }
+              ]
             },
             {
               "id": "t9",
               "label": "Pinheirinho",
               "start": 0.56105,
               "end": 0.60143,
-              "anchor": "t9"
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.58,
+                  "point_ref": "t9"
+                }
+              ]
             },
             {
               "id": "t10",
               "label": "Bico de Pato",
               "start": 0.60143,
               "end": 0.67017,
-              "anchor": "t10"
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.64,
+                  "point_ref": "t10"
+                }
+              ]
             },
             {
               "id": "t11",
               "label": "Mergulho",
               "start": 0.67375,
               "end": 0.70625,
-              "anchor": "t11"
+              "anchor": "t11",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.69,
+                  "point_ref": "t11"
+                }
+              ]
             },
             {
               "id": "t12",
               "label": "Juncao",
               "start": 0.71823,
               "end": 0.79,
-              "anchor": "t12"
+              "anchor": "t12",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.76,
+                  "point_ref": "t12"
+                }
+              ]
             },
             {
               "id": "t15",
               "label": "Arquibancadas",
               "start": 0.92375,
               "end": 0.95625,
-              "anchor": "t15"
+              "anchor": "t15",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.94,
+                  "point_ref": "t15"
+                }
+              ]
             }
           ]
         },
@@ -520,7 +637,7 @@
     "imsa_data": "sao-paulo"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:25.811596+00:00",
+    "generated_at": "2026-06-29T17:12:51.573370+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

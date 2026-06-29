@@ -284,6 +284,7 @@ function redrawMapOverlays(fit=false) {
         .on("mouseover", () => hoverRangeItem(layer.id, r.id))
         .on("mouseout", clearMapHover)
         .addTo(group);
+      addRangePoints(group, coords, r, color, itemHot || layerHot);
       if (itemHot) addRangeEndpoints(group, seg, color, r);
     });
     mapGroups.push(group); boundsLayers.push(group);
@@ -299,6 +300,24 @@ function redrawMapOverlays(fit=false) {
     const outline = coords.length ? L.polyline(coords.map(ll)) : null;
     if (outline) map.fitBounds(outline.getBounds(), { padding:[28,28] });
   }
+}
+function rangePointCoord(coords, p) {
+  if (p.location) return p.location;
+  if (p.marker == null || !coords.length) return null;
+  const { cum, total } = lineMetrics(coords);
+  return pointAtDistance(coords, cum, p.marker * total);
+}
+function addRangePoints(group, coords, r, color, hot=false) {
+  (r.points || []).forEach((p) => {
+    const coord = rangePointCoord(coords, p);
+    if (!coord) return;
+    const isApex = p.role === "apex";
+    L.circleMarker(ll(coord), {
+      radius: hot ? (isApex ? 7 : 5) : (isApex ? 4 : 3),
+      color: "#ffffff", weight: hot ? 2.5 : 1.5,
+      fillColor: isApex ? "#ff2d8d" : color, fillOpacity: hot ? 1 : .82,
+    }).addTo(group);
+  });
 }
 function addRangeEndpoints(group, seg, color, r) {
   const start = seg[0], end = seg[seg.length - 1];
@@ -378,9 +397,15 @@ function cyclicDelta(a, b) {
 }
 function hitsAtFraction(frac, coord) {
   const rangeHits = [];
+  const rangePointHits = [];
   for (const layer of currentLayout?.range_layers || []) {
     for (const r of layer.items || []) {
       if (frac >= r.start && frac <= r.end) rangeHits.push({ layer, item: r });
+      for (const p of r.points || []) {
+        const byMarker = p.marker != null && cyclicDelta(p.marker, frac) < 0.0035;
+        const byLocation = p.location && hav(coord, p.location) < 85;
+        if (byMarker || byLocation) rangePointHits.push({ layer, range: r, item: p });
+      }
     }
   }
   const pointHits = [];
@@ -391,7 +416,7 @@ function hitsAtFraction(frac, coord) {
       if (byMarker || byLocation) pointHits.push({ layer, item: p });
     }
   }
-  return { rangeHits, pointHits };
+  return { rangeHits, rangePointHits, pointHits };
 }
 function updateMapReadout(e) {
   if (!map || !currentLayout) return;
@@ -402,13 +427,14 @@ function updateMapReadout(e) {
   L.polyline([e.latlng, ll(n.coord)], { color: "#ffffff", weight: 1.5, opacity: .75, dashArray: "3 5" }).addTo(hoverCursorGroup);
   L.circleMarker(ll(n.coord), { radius: 5, color: "#fff", weight: 2, fillColor: "#5eead4", fillOpacity: 1 }).addTo(hoverCursorGroup);
   const inches = n.distM / 0.0254;
-  const { rangeHits, pointHits } = hitsAtFraction(n.fraction, n.coord);
+  const { rangeHits, rangePointHits, pointHits } = hitsAtFraction(n.fraction, n.coord);
   const ranges = rangeHits.slice(0, 8).map((h) => `<div>↔ <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || h.item.id)} <span class="muted">${pct(h.item.start)}–${pct(h.item.end)}</span></div>`).join("");
+  const rangePoints = rangePointHits.slice(0, 8).map((h) => `<div>◆ <b>${esc(h.item.label || h.item.role || h.item.id)}</b> inside ${esc(h.range.label || h.range.id)} <span class="muted">${esc(h.layer.label || h.layer.id)}</span></div>`).join("");
   const points = pointHits.slice(0, 8).map((h) => `<div>• <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || resolveName(h.item, displayLayer))}</div>`).join("");
   const el = document.getElementById("hoverReadout");
   if (el) el.innerHTML = `<div class="big">${pct(n.fraction)}</div>
     <div class="muted">${n.distM.toFixed(1)} m · ${Math.round(inches).toLocaleString()} in · off ${n.offM.toFixed(0)} m</div>
-    <div class="hit">${ranges || `<span class="muted">No range layer hit</span>`}${points ? `<div style="height:5px"></div>${points}` : ""}</div>`;
+    <div class="hit">${ranges || `<span class="muted">No range layer hit</span>`}${rangePoints ? `<div style="height:5px"></div>${rangePoints}` : ""}${points ? `<div style="height:5px"></div>${points}` : ""}</div>`;
 }
 function clearMapReadout() {
   hoverCursorGroup?.clearLayers();

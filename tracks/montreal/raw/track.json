@@ -363,91 +363,208 @@
               "label": "Senna S",
               "start": 0.01833,
               "end": 0.06639,
-              "anchor": "t1"
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.0596,
+                  "point_ref": "t1"
+                }
+              ]
             },
             {
               "id": "t2",
               "label": "Senna S",
               "start": 0.06639,
               "end": 0.10561,
-              "anchor": "t2"
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.0758,
+                  "point_ref": "t2"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "Turn 3",
               "start": 0.12863,
               "end": 0.17624,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.1699,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "Turn 4",
               "start": 0.17624,
               "end": 0.20503,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.1821,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "T5",
               "start": 0.22425,
               "end": 0.25461,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.2403,
+                  "point_ref": "t5"
+                }
+              ]
             },
             {
               "id": "t6",
               "label": "Turn 6",
               "start": 0.25461,
               "end": 0.29863,
-              "anchor": "t6"
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.2914,
+                  "point_ref": "t6"
+                }
+              ]
             },
             {
               "id": "t7",
               "label": "Turn 7",
               "start": 0.29863,
               "end": 0.32823,
-              "anchor": "t7"
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.3053,
+                  "point_ref": "t7"
+                }
+              ]
             },
             {
               "id": "t8",
               "label": "Hairpin",
               "start": 0.40667,
               "end": 0.46957,
-              "anchor": "t8"
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.464,
+                  "point_ref": "t8"
+                }
+              ]
             },
             {
               "id": "t9",
               "label": "Turn 9",
               "start": 0.46957,
               "end": 0.49643,
-              "anchor": "t9"
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.4735,
+                  "point_ref": "t9"
+                }
+              ]
             },
             {
               "id": "t10",
               "label": "Hairpin",
               "start": 0.56547,
               "end": 0.64295,
-              "anchor": "t10"
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.6228,
+                  "point_ref": "t10"
+                }
+              ]
             },
             {
               "id": "t11",
               "label": "Turn 11",
               "start": 0.64295,
               "end": 0.65742,
-              "anchor": "t11"
+              "anchor": "t11",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.6471,
+                  "point_ref": "t11"
+                }
+              ]
             },
             {
               "id": "t13",
               "label": "Wall of Champions",
               "start": 0.85573,
               "end": 0.89994,
-              "anchor": "t13"
+              "anchor": "t13",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.897,
+                  "point_ref": "t13"
+                }
+              ]
             },
             {
               "id": "t14",
               "label": "Wall of Champions",
               "start": 0.89994,
               "end": 0.93381,
-              "anchor": "t14"
+              "anchor": "t14",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.904,
+                  "point_ref": "t14"
+                }
+              ]
             }
           ]
         },
@@ -490,7 +607,7 @@
     "imsa_data": "montreal"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:25.825275+00:00",
+    "generated_at": "2026-06-29T17:12:51.592501+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

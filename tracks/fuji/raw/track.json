@@ -411,91 +411,208 @@
               "label": "First Corner",
               "start": 0.11504,
               "end": 0.2,
-              "anchor": "t1"
+              "anchor": "t1",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.17,
+                  "point_ref": "t1"
+                }
+              ]
             },
             {
               "id": "t3",
               "label": "Coca-Cola",
               "start": 0.27461,
               "end": 0.30539,
-              "anchor": "t3"
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.29,
+                  "point_ref": "t3"
+                }
+              ]
             },
             {
               "id": "t4",
               "label": "100R",
               "start": 0.32461,
               "end": 0.37333,
-              "anchor": "t4"
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.34,
+                  "point_ref": "t4"
+                }
+              ]
             },
             {
               "id": "t5",
               "label": "100R exit",
               "start": 0.37333,
               "end": 0.39763,
-              "anchor": "t5"
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.39,
+                  "point_ref": "t5"
+                }
+              ]
             },
             {
               "id": "t6",
               "label": "Hairpin",
               "start": 0.39763,
               "end": 0.47,
-              "anchor": "t6"
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.44,
+                  "point_ref": "t6"
+                }
+              ]
             },
             {
               "id": "t9",
               "label": "300R",
               "start": 0.55231,
               "end": 0.56989,
-              "anchor": "t9"
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.56,
+                  "point_ref": "t9"
+                }
+              ]
             },
             {
               "id": "t10",
               "label": "Dunlop",
               "start": 0.57504,
               "end": 0.63486,
-              "anchor": "t10"
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.63,
+                  "point_ref": "t10"
+                }
+              ]
             },
             {
               "id": "t11",
               "label": "Turn 11",
               "start": 0.63486,
               "end": 0.65576,
-              "anchor": "t11"
+              "anchor": "t11",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.64,
+                  "point_ref": "t11"
+                }
+              ]
             },
             {
               "id": "t12",
               "label": "Turn 12",
               "start": 0.65576,
               "end": 0.66989,
-              "anchor": "t12"
+              "anchor": "t12",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.66,
+                  "point_ref": "t12"
+                }
+              ]
             },
             {
               "id": "t13",
               "label": "13th Corner",
               "start": 0.67362,
               "end": 0.71176,
-              "anchor": "t13"
+              "anchor": "t13",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.7,
+                  "point_ref": "t13"
+                }
+              ]
             },
             {
               "id": "t14",
               "label": "Netz Corner",
               "start": 0.71176,
               "end": 0.7284,
-              "anchor": "t14"
+              "anchor": "t14",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.72,
+                  "point_ref": "t14"
+                }
+              ]
             },
             {
               "id": "t15",
               "label": "Netz",
               "start": 0.7284,
               "end": 0.77395,
-              "anchor": "t15"
+              "anchor": "t15",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.75,
+                  "point_ref": "t15"
+                }
+              ]
             },
             {
               "id": "t16",
               "label": "Panasonic",
               "start": 0.77395,
               "end": 0.85737,
-              "anchor": "t16"
+              "anchor": "t16",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.82,
+                  "point_ref": "t16"
+                }
+              ]
             }
           ]
         },
@@ -548,7 +665,7 @@
     "imsa_data": "fuji"
   },
   "provenance": {
-    "generated_at": "2026-06-29T16:52:18.405233+00:00",
+    "generated_at": "2026-06-29T17:12:43.357224+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

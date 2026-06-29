@@ -124,6 +124,25 @@ It prints JSON on stdout:
 
 No prose, no markdown, stdout must be JSON. Diagnostics go to stderr.
 
+## Range-internal points
+
+A `range_layers[].items[]` object may include `points[]` for landmarks inside the interval:
+
+```jsonc
+{
+  "id": "t1",
+  "label": "The 90",
+  "start": 0.03288,
+  "end": 0.08992,
+  "anchor": "t1",
+  "points": [
+    {"id": "apex", "role": "apex", "label": "Apex", "marker": 0.066, "point_ref": "t1"}
+  ]
+}
+```
+
+Use this instead of overloading `start`/`end`: a corner range covers braking → apex → exit, while the apex remains a point inside it. `point_ref` should point to an item in a layout point layer when that point exists; otherwise generated tools can embed `marker` and/or `location` directly.
+
 ## Existing tools
 
 ### `curvature_apexes`
@@ -287,7 +306,7 @@ uv run python scripts/verify.py <slug>
 - The site is layer-first. Timing sectors are just `range_layers[id="timing_sectors"]`; do not add separate sector-only UI/data paths.
 - For tracks with many range items (microsectors/slow zones), keep item controls compact (chips/swatches) and use hover to preview individual segments.
 - Avoid competing map popups. The app uses one cursor readout in the side panel plus map highlights.
-- Corners have two related but different shapes: an apex is a point; the corner/range starts before the braking zone and ends after initial acceleration. Curvature-derived tools should output both when possible.
+- Corners have two related but different shapes: an apex is a point; the corner/range starts before the braking zone and ends after initial acceleration. Use `range_layers[].items[].points[]` for internal landmarks such as `role: "apex"`, usually with `point_ref` back to the corner point item.
 - If an upstream source collapses/misnumbers corners (Watkins Glen iRacing did), use a curated `replace_corners` override rather than trying to patch names one-by-one.
 
 ## Rules for adding new tools

@@ -171,7 +171,7 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `range_layers` | range_layer[] | | Lap interval annotations: `timing_sectors`, `imsa_microsectors`, `corner_ranges`, `corner_complexes`, `slow_zones`, etc. |
 | `label_default` | string | | Label layer code (a key in `label_layers`) shown by default (usually `driver`). Resolution is two steps: `labels[label_default]` if present, else `labels.numbered` — no fall-through to other layers |
 | `point_layers[].items` | point_item[] | | Each item has `id`, optional `label`, `marker`, `location`, and optional corner fields (`number`, `code`, `labels`, `direction`, `scale`). |
-| `range_layers[].items` | range_item[] | | Each item has `id`, optional `label`, `start`, `end`, and optional `anchor` / `members` references to point item ids. |
+| `range_layers[].items` | range_item[] | | Each item has `id`, optional `label`, `start`, `end`, optional `anchor` / `members` references to point item ids, and optional `points[]` landmarks inside the range (for example `{role:"apex", point_ref:"t1"}`). |
 
 ### Corner
 

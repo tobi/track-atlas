@@ -516,7 +516,7 @@
             }
           ],
           "default": null,
-          "description": "Point item this range is derived from, e.g. a corner apex id.",
+          "description": "Primary point item this range is derived from, e.g. a corner apex id.",
           "title": "Anchor"
         },
         "members": {
@@ -527,6 +527,15 @@
             "type": "string"
           },
           "title": "Members",
+          "type": "array"
+        },
+        "points": {
+          "default": [],
+          "description": "Ordered point landmarks inside this range, e.g. the apex inside a corner range.",
+          "items": {
+            "$ref": "#/$defs/RangePoint"
+          },
+          "title": "Points",
           "type": "array"
         },
         "entry_ref": {
@@ -664,6 +673,88 @@
         "label"
       ],
       "title": "RangeLayer",
+      "type": "object"
+    },
+    "RangePoint": {
+      "additionalProperties": false,
+      "description": "A point that lives inside a range item.\n\nUse this when a range has meaningful internal landmarks: the apex inside a\ncorner range, timing-loop lines inside a sector, a speed trap inside a slow\nzone. `point_ref` links to a point item when one exists; `marker`/`location`\nlet generated tools embed a lightweight point directly in the range.",
+      "properties": {
+        "id": {
+          "pattern": "^[a-z0-9][a-z0-9_-]*$",
+          "title": "Id",
+          "type": "string"
+        },
+        "role": {
+          "description": "Semantic role inside the range, e.g. apex, entry_loop, exit_loop, speed_trap.",
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "title": "Role",
+          "type": "string"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Label"
+        },
+        "marker": {
+          "anyOf": [
+            {
+              "description": "Lap fraction in [0,1].",
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Marker"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "point_ref": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z0-9][a-z0-9_-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Point-layer item this nested range point references, when available.",
+          "title": "Point Ref"
+        }
+      },
+      "required": [
+        "id",
+        "role"
+      ],
+      "title": "RangePoint",
       "type": "object"
     }
   },
