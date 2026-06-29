@@ -271,7 +271,9 @@ stdin→stdout transforms.
 
 See `skills/layer-tools/SKILL.md` for the contract and source patterns. Run
 `uv run python scripts/build_layers.py <slug>` after editing only this file;
-`generate.py` also applies it automatically.
+`generate.py` also applies it automatically. For geometry-derived apex QA, run
+`uv run python scripts/check_apexes.py <slug>`; `verify.py` and `suggest_phases.py`
+also consume the same curvature candidates.
 
 ## Adding a new track
 

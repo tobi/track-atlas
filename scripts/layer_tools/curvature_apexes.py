@@ -214,12 +214,11 @@ def scale_for_curvature(abs_k: float) -> int:
     return 6
 
 
-def main() -> None:
-    payload = json.load(sys.stdin)
-    params = payload.get("params") or {}
-    resource_name = params.get("resource", "centerline")
-    resource = payload["resources"][resource_name]
-    coords = load_outline(resource["local_path"])
+def compute_layers(centerline_path: str, params: dict[str, Any] | None = None, resource_meta: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Return Track Atlas point/range layers derived from centerline curvature."""
+    params = params or {}
+    resource_meta = resource_meta or {}
+    coords = load_outline(centerline_path)
 
     step_m = float(params.get("step_m", 4.0))
     smooth_window_m = float(params.get("smooth_window_m", 90.0))
@@ -271,14 +270,14 @@ def main() -> None:
     source = params.get("source", "centerline curvature profile")
     provenance = {
         "source": source,
-        "local_path": resource.get("relative_path") or resource.get("local_path"),
+        "local_path": resource_meta.get("relative_path") or resource_meta.get("local_path") or centerline_path,
         "method": "uniform resample → finite-difference curvature → circular moving-average smoothing → local curvature maxima",
         "step_m": step_m,
         "smooth_window_m": smooth_window_m,
         "min_abs_curvature": min_k,
         "lap_length_m": total,
     }
-    produced = {
+    return {
         "point_layers": [{
             "id": params.get("point_layer_id", "curvature_apexes"),
             "kind": "apex_candidates",
@@ -299,7 +298,14 @@ def main() -> None:
             "items": range_items,
         }],
     }
-    print(json.dumps(produced, ensure_ascii=False))
+
+
+def main() -> None:
+    payload = json.load(sys.stdin)
+    params = payload.get("params") or {}
+    resource_name = params.get("resource", "centerline")
+    resource = payload["resources"][resource_name]
+    print(json.dumps(compute_layers(resource["local_path"], params, resource), ensure_ascii=False))
 
 
 if __name__ == "__main__":

@@ -18,9 +18,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS, track_json_path  # noqa: E402
 from lib.osm import haversine, arc_lengths  # noqa: E402
 from lib.models import Track  # noqa: E402
+from layer_tools.curvature_apexes import compute_layers as compute_curvature_layers  # noqa: E402
 from pydantic import ValidationError  # noqa: E402
 
 MAX_CORNER_OFF_TRACK_M = 80.0
+MAX_CORNER_TO_CURVATURE_APEX_M = 260.0
 LEN_WARN_PCT = 3.0
 LEN_ERR_PCT = 10.0
 
@@ -113,6 +115,11 @@ def fraction_along(pt, loop, cum, total):
         if d < best:
             best, bi = d, i
     return cum[bi] / total if total else 0.0
+
+
+def circular_marker_distance(a: float, b: float) -> float:
+    d = abs((a % 1.0) - (b % 1.0))
+    return min(d, 1.0 - d)
 
 
 def kendall_disagreements(markers, fracs):
@@ -263,6 +270,34 @@ def verify_track(slug: str) -> Report:
         gj_corners = [f for f in gj.get("features", []) if f.get("properties", {}).get("role") == "corner"]
         if len(gj_corners) != len(located):
             r.warn(f"{pre} geojson has {len(gj_corners)} corner features, track has {len(located)} located corners")
+
+        # Curvature-derived apexes are an independent geometry-only sanity check.
+        # They should not be treated as authoritative corner names/numbers, but
+        # they are very good at catching misplaced apex markers or collapsed
+        # corner data: a named corner apex far from any κ(s) peak is suspicious.
+        try:
+            curv = compute_curvature_layers(str(gj_f), {
+                "max_apexes": max(16, len(corners) * 2),
+                "min_separation_m": 60.0,
+                "smooth_window_m": 70.0,
+                "curvature_percentile": 0.65,
+            }, {"relative_path": geom_path})
+            apexes = curv.get("point_layers", [{}])[0].get("items", [])
+            if apexes and total:
+                far = []
+                for c in ordered:
+                    cm = c.get("marker")
+                    if cm is None:
+                        continue
+                    nearest = min(apexes, key=lambda a: circular_marker_distance(cm, a.get("marker", 0.0)))
+                    dist_m = circular_marker_distance(cm, nearest.get("marker", 0.0)) * total
+                    if dist_m > MAX_CORNER_TO_CURVATURE_APEX_M:
+                        far.append((c.get("number", c.get("id")), dist_m, nearest.get("label")))
+                if far:
+                    r.warn(f"{pre} corners far from curvature apex candidates: " +
+                           ", ".join(f"T{n} {d:.0f}m from {label}" for n, d, label in far[:10]))
+        except Exception as e:
+            r.warn(f"{pre} curvature apex check skipped: {e}")
 
     svg = tdir / "raw" / "render" / f"{slug}.svg"
     png = tdir / "raw" / "render" / f"{slug}.png"

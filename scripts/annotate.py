@@ -29,6 +29,9 @@ from typing import Optional
 
 import anthropic
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from layer_tools.curvature_apexes import compute_layers as compute_curvature_layers  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 TRACKS = ROOT / "tracks"
 
@@ -118,6 +121,20 @@ def build_prompt(slug: str) -> tuple[str, dict]:
         if f["properties"].get("role") == "corner"
     ]
 
+    try:
+        curvature_layers = compute_curvature_layers(str(gj_path), {
+            "max_apexes": max(16, len(corners) * 2),
+            "min_separation_m": 60.0,
+            "smooth_window_m": 70.0,
+            "curvature_percentile": 0.65,
+        }, {"relative_path": str(gj_path.relative_to(TRACKS / slug))})
+        curvature_apexes = [
+            {"marker": a.get("marker"), "location": a.get("location"), "direction": a.get("direction"), "scale": a.get("scale")}
+            for a in curvature_layers.get("point_layers", [{}])[0].get("items", [])
+        ]
+    except Exception:
+        curvature_apexes = []
+
     prompt = f"""
 Circuit: {track['name']}
 Slug: {slug}
@@ -134,6 +151,11 @@ Total corners: {len(corners)}
 
 --- GEOJSON CORNER POINTS ---
 {json.dumps(corner_pts)}
+
+--- CURVATURE-DERIVED APEX CANDIDATES ---
+These are geometry-only candidates from a smoothed κ(s) profile. Use them to spot
+misplaced/missing apexes, but do not treat labels/numbers as authoritative.
+{json.dumps(curvature_apexes)}
 
 --- YOUR TASK ---
 {CORNER_FIELDS}

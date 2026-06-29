@@ -135,6 +135,16 @@ Computes a smooth 1D curvature profile `κ(s)` from a layout centerline GeoJSON 
 
 This is the first practical piece of a minimum-lap-time / Frenet toolchain: uniform arc-length resampling, finite-difference curvature, circular smoothing, local curvature maxima, then thresholded ranges padded before/after the apex. It is meant for verification and curation, not as an authoritative corner source.
 
+The same engine is wired into check/QA tools:
+
+```bash
+uv run python scripts/verify.py <slug>          # warns when named corners are far from κ apexes
+uv run python scripts/check_apexes.py <slug>    # detailed nearest-apex table
+uv run python scripts/suggest_phases.py <slug>  # includes κΔ column beside phase ranges
+```
+
+`annotate.py` also includes curvature-derived apex candidates in the model prompt so name/number cleanup can use geometry evidence.
+
 Example config:
 
 ```jsonc
