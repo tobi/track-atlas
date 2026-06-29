@@ -30,7 +30,7 @@ const cornerLayer = (layout) => pointLayer(layout, "corners").items;
 const cornerRange = (layout, corner) => rangeLayer(layout, "corner_ranges").items.find((r) => r.anchor === corner.id || r.id === corner.id) || null;
 const complexFor = (layout, corner) => rangeLayer(layout, "corner_complexes").items.find((r) => (r.members || []).includes(corner.id)) || null;
 
-const RANGE_COLORS = ["#ff2d8d", "#5eead4", "#f6c945", "#60a5fa", "#a78bfa", "#fb7185", "#34d399"];
+const RANGE_COLORS = ["#ff2d8d", "#5eead4", "#f6c945", "#60a5fa", "#a78bfa", "#fb7185", "#34d399", "#f97316", "#22d3ee", "#c084fc", "#bef264", "#fda4af"];
 
 async function boot() {
   const txt = await (await fetch("tracks.jsonl")).text();
@@ -215,10 +215,16 @@ function renderLayerPanel(layout) {
     ${(layout.point_layers || []).map((l) => `<label class="layer-toggle" onmouseenter='hoverMapLayer("point", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.point[l.id] ? "checked" : ""} onchange='togglePointLayer(${JSON.stringify(l.id)}, this.checked)'>
       <div><b>${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>`).join("") || `<div class="muted">No point layers</div>`}
     <div class="layer-group-title">Range layers</div>
-    ${(layout.range_layers || []).map((l, i) => `<label class="layer-toggle" onmouseenter='hoverMapLayer("range", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.range[l.id] ? "checked" : ""} onchange='toggleRangeLayer(${JSON.stringify(l.id)}, this.checked)'>
-      <div><b><span style="color:${RANGE_COLORS[i % RANGE_COLORS.length]}">●</span> ${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>`).join("") || `<div class="muted">No range layers</div>`}`;
+    ${(layout.range_layers || []).map((l, i) => `<div>
+      <label class="layer-toggle" onmouseenter='hoverMapLayer("range", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.range[l.id] ? "checked" : ""} onchange='toggleRangeLayer(${JSON.stringify(l.id)}, this.checked)'>
+        <div><b><span style="color:${RANGE_COLORS[i % RANGE_COLORS.length]}">●</span> ${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>
+      <div class="layer-items">
+        ${(l.items || []).map((it, j) => `<div class="layer-item" onmouseenter='hoverRangeItem(${JSON.stringify(l.id)}, ${JSON.stringify(it.id)})' onmouseleave="clearMapHover()"><span><i class="swatch" style="background:${RANGE_COLORS[j % RANGE_COLORS.length]}"></i>${esc(it.label || it.id)}</span><span>${pct(it.start)}–${pct(it.end)}</span></div>`).join("")}
+      </div>
+    </div>`).join("") || `<div class="muted">No range layers</div>`}`;
 }
 function hoverMapLayer(type, id=null) { hoverLayer = { type, id }; redrawMapOverlays(); }
+function hoverRangeItem(layerId, itemId) { hoverLayer = { type: "rangeItem", layerId, itemId }; redrawMapOverlays(); }
 function clearMapHover() { hoverLayer = null; redrawMapOverlays(); }
 function toggleOutline(v) { currentState().outline = v; redrawMapOverlays(); }
 function togglePointLayer(id, v) { currentState().point[id] = v; redrawMapOverlays(); }
@@ -267,18 +273,25 @@ function redrawMapOverlays(fit=false) {
     mapGroups.push(g); boundsLayers.push(g);
   }
   (currentLayout.range_layers || []).forEach((layer, i) => {
-    const hot = hoverLayer?.type === "range" && hoverLayer.id === layer.id;
-    if (!st.range[layer.id] && !hot) return;
+    const layerHot = hoverLayer?.type === "range" && hoverLayer.id === layer.id;
+    const itemHotInLayer = hoverLayer?.type === "rangeItem" && hoverLayer.layerId === layer.id;
+    if (!st.range[layer.id] && !layerHot && !itemHotInLayer) return;
     const group = L.layerGroup().addTo(map);
-    const color = hot ? "#ffffff" : RANGE_COLORS[i % RANGE_COLORS.length];
-    (layer.items || []).forEach((r) => {
+    (layer.items || []).forEach((r, j) => {
+      const itemHot = hoverLayer?.type === "rangeItem" && hoverLayer.layerId === layer.id && hoverLayer.itemId === r.id;
+      if (itemHotInLayer && !itemHot && !st.range[layer.id]) return;
       const seg = sliceLine(coords, r.start, r.end);
       if (seg.length < 2) return;
-      L.polyline(seg.map(ll), { color, weight: hot ? 14 : layer.coverage === "partition" ? 8 : 6, opacity: hot ? .98 : .68, lineCap:"round", className: hot ? "layer-range-highlight" : "" })
-        .on("mouseover", () => hoverMapLayer("range", layer.id))
+      const itemColor = RANGE_COLORS[j % RANGE_COLORS.length];
+      const normalColor = layer.coverage === "partition" ? itemColor : RANGE_COLORS[i % RANGE_COLORS.length];
+      const color = (layerHot || itemHot) ? itemColor : normalColor;
+      const weight = itemHot ? 15 : layerHot ? 10 : layer.coverage === "partition" ? 7 : 6;
+      const opacity = itemHot ? 1 : layerHot ? .92 : .62;
+      L.polyline(seg.map(ll), { color, weight, opacity, lineCap:"round", className: itemHot ? "layer-range-highlight" : "" })
+        .on("mouseover", () => hoverRangeItem(layer.id, r.id))
         .on("mouseout", clearMapHover)
         .addTo(group);
-      if (hot) addRangeEndpoints(group, seg, color, r);
+      if (itemHot) addRangeEndpoints(group, seg, color, r);
     });
     mapGroups.push(group); boundsLayers.push(group);
   });
