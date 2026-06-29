@@ -28,7 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS, load_source, track_dir  # noqa: E402
 from lib.lovely import (  # noqa: E402
-    corners_from_lovely, pit_from_lovely, sectors_s1s3, straights_from_lovely,
+    corners_from_lovely, pit_from_lovely, sectors_s1s3,
 )
 from lib.osm import (  # noqa: E402
     centroid, named_corner_ways, normalize,
@@ -469,7 +469,7 @@ def generate_track(slug: str) -> dict:
         "sources": [
             {"name": "Lovely-Sim-Racing/lovely-track-data",
              "url": "https://github.com/Lovely-Sim-Racing/lovely-track-data",
-             "license": "see upstream", "provides": ["corners", "straights", "sectors", "pit"]},
+             "license": "see upstream", "provides": ["corners", "sectors", "pit"]},
             {"name": "OpenStreetMap (Overpass)",
              "url": "https://www.openstreetmap.org", "license": "ODbL",
              "provides": ["geometry", "named-corner-coordinates"]},

@@ -3,8 +3,8 @@
 Clean, source-agnostic metadata for racing circuits: facilities with one or
 more layouts, layout-owned point layers (corners, start/finish, pit markers,
 marshal posts), layout-owned range layers (timing sectors, IMSA microsectors,
-corner ranges, complexes, slow zones, straights), real-geometry GeoJSON per
-layout, and a generated poster per track.
+corner ranges, complexes, slow zones), real-geometry GeoJSON per layout, and a
+generated poster per track.
 
 The goal is the dataset that doesn't exist yet: **one place where a corner has
 both its official name *and* what drivers actually call it, pinned to a real
@@ -168,7 +168,7 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `active_years` | string | | Free-form (`"2018-"`, `"1972,1979-1989"`) |
 | `geometry` | object | ✓ | `{centerline: "layers/<id>.geojson", crs: "EPSG:4326"}` |
 | `point_layers` | point_layer[] | | Discrete layout annotations. Required conventional layers: `layout_points` for start/finish + pit in/out when known, and `corners` for corner apexes. |
-| `range_layers` | range_layer[] | | Lap interval annotations: `timing_sectors`, `imsa_microsectors`, `corner_ranges`, `corner_complexes`, `slow_zones`, `straights`, etc. |
+| `range_layers` | range_layer[] | | Lap interval annotations: `timing_sectors`, `imsa_microsectors`, `corner_ranges`, `corner_complexes`, `slow_zones`, etc. |
 | `label_default` | string | | Label layer code (a key in `label_layers`) shown by default (usually `driver`). Resolution is two steps: `labels[label_default]` if present, else `labels.numbered` — no fall-through to other layers |
 | `point_layers[].items` | point_item[] | | Each item has `id`, optional `label`, `marker`, `location`, and optional corner fields (`number`, `code`, `labels`, `direction`, `scale`). |
 | `range_layers[].items` | range_item[] | | Each item has `id`, optional `label`, `start`, `end`, and optional `anchor` / `members` references to point item ids. |

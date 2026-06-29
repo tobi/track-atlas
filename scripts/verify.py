@@ -3,7 +3,7 @@
 
 The schema is layout-first: each layout owns point_layers (corner apexes,
 start/finish, pit in/out, marshal posts) and range_layers (timing sectors,
-microsectors, corner ranges, complexes, slow zones, straights).
+microsectors, corner ranges, complexes, slow zones).
 
 Exit code 0 = all tracks pass (warnings allowed), 1 = any error.
 """

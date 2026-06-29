@@ -7,7 +7,7 @@ come in two shapes:
   * point_layers: discrete lap locations (corner apexes, start/finish, pit in/out,
     marshal posts, timing loops)
   * range_layers: lap intervals (timing sectors, IMSA microsectors, corner
-    phases, complexes, slow zones, straights)
+    phases, complexes, slow zones)
 
 These models define the schema: `scripts/build_schema.py` emits
 `schema/track.schema.json` from them, and `scripts/verify.py` validates every
