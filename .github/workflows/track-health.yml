@@ -1,0 +1,33 @@
+name: track-health
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * 1"
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Verify all tracks
+        run: |
+          mkdir -p health-reports
+          uv run python scripts/verify.py 2>&1 | tee health-reports/verify.txt
+      - name: Curvature apex audit
+        if: always()
+        run: |
+          mkdir -p health-reports
+          uv run python scripts/check_apexes.py --all 2>&1 | tee health-reports/check-apexes.txt
+      - name: Corner curation audit
+        if: always()
+        run: |
+          mkdir -p health-reports
+          uv run python scripts/check_corner_curation.py --all 2>&1 | tee health-reports/check-corner-curation.txt
+      - name: Upload health reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: track-health-reports
+          path: health-reports/
