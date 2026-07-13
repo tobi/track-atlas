@@ -1,0 +1,121 @@
+{
+  "gp": {
+    "replace_corners": [
+      {
+        "number": 1,
+        "code": "1",
+        "driver": "Clayton",
+        "official": "Clayton Corner",
+        "marker": 0.094,
+        "direction": "left",
+        "scale": 3
+      },
+      {
+        "number": 2,
+        "code": "2",
+        "marker": 0.134,
+        "direction": "left",
+        "scale": 3,
+        "match_osm": false
+      },
+      {
+        "number": 3,
+        "code": "2a",
+        "driver": "Quebec",
+        "official": "Quebec Corner",
+        "marker": 0.209,
+        "direction": "right",
+        "scale": 2
+      },
+      {
+        "number": 4,
+        "code": "3",
+        "marker": 0.260,
+        "direction": "right",
+        "scale": 3,
+        "match_osm": false
+      },
+      {
+        "number": 5,
+        "code": "4",
+        "marker": 0.364,
+        "direction": "left",
+        "scale": 3,
+        "match_osm": false
+      },
+      {
+        "number": 6,
+        "code": "5",
+        "driver": "Moss",
+        "official": "Moss Corner",
+        "marker": 0.413,
+        "direction": "right",
+        "scale": 1,
+        "complex": "Moss Corner"
+      },
+      {
+        "number": 7,
+        "code": "5c",
+        "marker": 0.432,
+        "direction": "right",
+        "scale": 1,
+        "complex": "Moss Corner",
+        "match_osm": false
+      },
+      {
+        "number": 8,
+        "code": "6",
+        "marker": 0.484,
+        "direction": "left",
+        "scale": 5,
+        "match_osm": false
+      },
+      {
+        "number": 9,
+        "code": "7",
+        "marker": 0.60,
+        "direction": "right",
+        "scale": 6,
+        "match_osm": false
+      },
+      {
+        "number": 10,
+        "code": "8",
+        "driver": "Esses",
+        "official": "Esses",
+        "marker": 0.778,
+        "direction": "right",
+        "scale": 3,
+        "complex": "Esses"
+      },
+      {
+        "number": 11,
+        "code": "9a",
+        "driver": "Esses",
+        "official": "Esses",
+        "marker": 0.828,
+        "direction": "left",
+        "scale": 2,
+        "complex": "Esses"
+      },
+      {
+        "number": 12,
+        "code": "9b",
+        "driver": "Whites",
+        "official": "Whites Corner",
+        "marker": 0.870,
+        "direction": "right",
+        "scale": 2
+      },
+      {
+        "number": 13,
+        "code": "10",
+        "marker": 0.968,
+        "direction": "right",
+        "scale": 4,
+        "match_osm": false
+      }
+    ],
+    "errors_summary": "No Lovely-Sim-Racing data exists for Mosport/CTMP. Corner list built from the IMSA 2026 Timing All Sections Map (official section lengths, total 3957m) for S/F placement and section structure, the IMSA 04_Track Map.pdf for turn numbering (10 turns with sub-apexes 2/2A, 5/5C, 9A/9B, plus Turn 10), OSM named raceway ways (Clayton Corner, Quebec Corner, Moss Corner, Esses, Whites Corner, Mario Andretti Straight) for named-corner coordinates, and curvature_apexes for apex marker refinement. Turn 10 is an unnamed fast sweeper on the front straight whose apex sits just before the start/finish line. Turns 6 and 7 are gentle kinks on the Mario Andretti Straight. The Esses complex spans Turns 8 and 9A; Whites Corner is 9B."
+  }
+}

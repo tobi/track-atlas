@@ -1,0 +1,495 @@
+{
+  "id": "curvature_apexes_gp",
+  "layout": "gp",
+  "tool": "curvature_apexes",
+  "resources": {
+    "centerline": {
+      "name": "centerline",
+      "local_path": "/Users/tobi/src/tries/2026-06-29-tobi-track-atlas/tracks/mosport/raw/layers/gp.geojson",
+      "relative_path": "tracks/mosport/raw/layers/gp.geojson",
+      "content_type": null
+    }
+  },
+  "params": {
+    "max_apexes": 24,
+    "step_m": 4,
+    "smooth_window_m": 60,
+    "min_separation_m": 60,
+    "curvature_percentile": 0.7,
+    "pre_brake_m": 75,
+    "post_accel_m": 55
+  },
+  "point_layers": [
+    {
+      "id": "curvature_apexes",
+      "kind": "apex_candidates",
+      "label": "Curvature Apex Candidates",
+      "description": "Computed apex candidates from the smoothed centerline curvature profile; intended for verification/curation.",
+      "series": [],
+      "items": [
+        {
+          "id": "apex1",
+          "label": "Apex 1 (R)",
+          "marker": 0.0,
+          "location": [
+            -78.67178,
+            44.052774
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 3
+        },
+        {
+          "id": "apex2",
+          "label": "Apex 2 (L)",
+          "marker": 0.09432049,
+          "location": [
+            -78.673854,
+            44.049806
+          ],
+          "location_source": "centerline",
+          "direction": "left",
+          "scale": 3
+        },
+        {
+          "id": "apex3",
+          "label": "Apex 3 (L)",
+          "marker": 0.13387424,
+          "location": [
+            -78.673048,
+            44.048579
+          ],
+          "location_source": "centerline",
+          "direction": "left",
+          "scale": 3
+        },
+        {
+          "id": "apex4",
+          "label": "Apex 4 (R)",
+          "marker": 0.20892495,
+          "location": [
+            -78.669455,
+            44.048106
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 2
+        },
+        {
+          "id": "apex5",
+          "label": "Apex 5 (R)",
+          "marker": 0.22718053,
+          "location": [
+            -78.66894,
+            44.047593
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 2
+        },
+        {
+          "id": "apex6",
+          "label": "Apex 6 (R)",
+          "marker": 0.25963489,
+          "location": [
+            -78.669419,
+            44.046533
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 4
+        },
+        {
+          "id": "apex7",
+          "label": "Apex 7 (L)",
+          "marker": 0.36409736,
+          "location": [
+            -78.672923,
+            44.043908
+          ],
+          "location_source": "centerline",
+          "direction": "left",
+          "scale": 3
+        },
+        {
+          "id": "apex8",
+          "label": "Apex 8 (R)",
+          "marker": 0.4127789,
+          "location": [
+            -78.672965,
+            44.042228
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 1
+        },
+        {
+          "id": "apex9",
+          "label": "Apex 9 (R)",
+          "marker": 0.43204868,
+          "location": [
+            -78.673848,
+            44.042156
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 1
+        },
+        {
+          "id": "apex10",
+          "label": "Apex 10 (R)",
+          "marker": 0.75659229,
+          "location": [
+            -78.68055,
+            44.0523
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 3
+        },
+        {
+          "id": "apex11",
+          "label": "Apex 11 (R)",
+          "marker": 0.77789047,
+          "location": [
+            -78.680002,
+            44.052935
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 3
+        },
+        {
+          "id": "apex12",
+          "label": "Apex 12 (R)",
+          "marker": 0.79614604,
+          "location": [
+            -78.679229,
+            44.053253
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 3
+        },
+        {
+          "id": "apex13",
+          "label": "Apex 13 (L)",
+          "marker": 0.82758621,
+          "location": [
+            -78.677742,
+            44.05349
+          ],
+          "location_source": "centerline",
+          "direction": "left",
+          "scale": 2
+        },
+        {
+          "id": "apex14",
+          "label": "Apex 14 (R)",
+          "marker": 0.87018256,
+          "location": [
+            -78.676819,
+            44.054804
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 1
+        },
+        {
+          "id": "apex15",
+          "label": "Apex 15 (R)",
+          "marker": 0.96754564,
+          "location": [
+            -78.672268,
+            44.053823
+          ],
+          "location_source": "centerline",
+          "direction": "right",
+          "scale": 3
+        }
+      ]
+    }
+  ],
+  "range_layers": [
+    {
+      "id": "curvature_corner_ranges",
+      "kind": "corner_candidates",
+      "label": "Curvature Corner Ranges",
+      "description": "Computed corner influence ranges: thresholded curvature region with brake/accel padding.",
+      "series": [],
+      "coverage": "partial",
+      "generated": true,
+      "provenance": {
+        "source": "centerline curvature profile",
+        "local_path": "tracks/mosport/raw/layers/gp.geojson",
+        "method": "uniform resample → finite-difference curvature → circular moving-average smoothing → local curvature maxima",
+        "step_m": 4.0,
+        "smooth_window_m": 60.0,
+        "min_abs_curvature": 0.005812779263413152,
+        "lap_length_m": 3943.3196453943824
+      },
+      "items": [
+        {
+          "id": "corner2",
+          "label": "Corner candidate 2",
+          "start": 0.0590738,
+          "end": 0.16912005,
+          "anchor": "apex2",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.09432049,
+              "location": [
+                -78.673854,
+                44.049806
+              ],
+              "point_ref": "apex2"
+            }
+          ]
+        },
+        {
+          "id": "corner3",
+          "label": "Corner candidate 3",
+          "start": 0.0590738,
+          "end": 0.16912005,
+          "anchor": "apex3",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.13387424,
+              "location": [
+                -78.673048,
+                44.048579
+              ],
+              "point_ref": "apex3"
+            }
+          ]
+        },
+        {
+          "id": "corner4",
+          "label": "Corner candidate 4",
+          "start": 0.17570666,
+          "end": 0.28068192,
+          "anchor": "apex4",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.20892495,
+              "location": [
+                -78.669455,
+                44.048106
+              ],
+              "point_ref": "apex4"
+            }
+          ]
+        },
+        {
+          "id": "corner5",
+          "label": "Corner candidate 5",
+          "start": 0.17570666,
+          "end": 0.28068192,
+          "anchor": "apex5",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.22718053,
+              "location": [
+                -78.66894,
+                44.047593
+              ],
+              "point_ref": "apex5"
+            }
+          ]
+        },
+        {
+          "id": "corner6",
+          "label": "Corner candidate 6",
+          "start": 0.17266406,
+          "end": 0.28271032,
+          "anchor": "apex6",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.25963489,
+              "location": [
+                -78.669419,
+                44.046533
+              ],
+              "point_ref": "apex6"
+            }
+          ]
+        },
+        {
+          "id": "corner7",
+          "label": "Corner candidate 7",
+          "start": 0.3055241,
+          "end": 0.39325798,
+          "anchor": "apex7",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.36409736,
+              "location": [
+                -78.672923,
+                44.043908
+              ],
+              "point_ref": "apex7"
+            }
+          ]
+        },
+        {
+          "id": "corner8",
+          "label": "Corner candidate 8",
+          "start": 0.37854641,
+          "end": 0.45613831,
+          "anchor": "apex8",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.4127789,
+              "location": [
+                -78.672965,
+                44.042228
+              ],
+              "point_ref": "apex8"
+            }
+          ]
+        },
+        {
+          "id": "corner9",
+          "label": "Corner candidate 9",
+          "start": 0.38057481,
+          "end": 0.45512411,
+          "anchor": "apex9",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.43204868,
+              "location": [
+                -78.673848,
+                44.042156
+              ],
+              "point_ref": "apex9"
+            }
+          ]
+        },
+        {
+          "id": "corner10",
+          "label": "Corner candidate 10",
+          "start": 0.71526041,
+          "end": 0.81922147,
+          "anchor": "apex10",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.75659229,
+              "location": [
+                -78.68055,
+                44.0523
+              ],
+              "point_ref": "apex10"
+            }
+          ]
+        },
+        {
+          "id": "corner11",
+          "label": "Corner candidate 11",
+          "start": 0.71323201,
+          "end": 0.82124987,
+          "anchor": "apex11",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.77789047,
+              "location": [
+                -78.680002,
+                44.052935
+              ],
+              "point_ref": "apex11"
+            }
+          ]
+        },
+        {
+          "id": "corner12",
+          "label": "Corner candidate 12",
+          "start": 0.71424621,
+          "end": 0.82023567,
+          "anchor": "apex12",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.79614604,
+              "location": [
+                -78.679229,
+                44.053253
+              ],
+              "point_ref": "apex12"
+            }
+          ]
+        },
+        {
+          "id": "corner13",
+          "label": "Corner candidate 13",
+          "start": 0.79436792,
+          "end": 0.85471843,
+          "anchor": "apex13",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.82758621,
+              "location": [
+                -78.677742,
+                44.05349
+              ],
+              "point_ref": "apex13"
+            }
+          ]
+        },
+        {
+          "id": "corner14",
+          "label": "Corner candidate 14",
+          "start": 0.84000686,
+          "end": 0.89427218,
+          "anchor": "apex14",
+          "points": [
+            {
+              "id": "apex",
+              "role": "apex",
+              "label": "Apex",
+              "marker": 0.87018256,
+              "location": [
+                -78.676819,
+                44.054804
+              ],
+              "point_ref": "apex14"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

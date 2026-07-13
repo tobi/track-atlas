@@ -1,0 +1,72 @@
+{
+  "layers": [
+    {
+      "id": "imsa_timing_sectors_2026",
+      "layout": "gp",
+      "tool": "imsa_timing_pdf",
+      "resources": {
+        "pdf": {
+          "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%203%20Sector%20Map.pdf",
+          "filename": "imsa-2026-timing-3-sector-map.pdf"
+        }
+      },
+      "params": {
+        "resource": "pdf",
+        "layer_id": "timing_sectors",
+        "kind": "timing_sectors",
+        "label": "Timing Sectors",
+        "series": ["imsa"],
+        "coverage": "partition",
+        "count": 3,
+        "item_prefix": "s",
+        "item_label_prefix": "S",
+        "source": "IMSA / Al Kamel Timing 3 Sector Map",
+        "segment_refs": [["FL", "i1"], ["i1", "i2"], ["i2", "FL"]]
+      }
+    },
+    {
+      "id": "imsa_microsectors_2026",
+      "layout": "gp",
+      "tool": "imsa_timing_pdf",
+      "resources": {
+        "pdf": {
+          "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%20All%20Sections%20Map%20REVISED.pdf",
+          "filename": "imsa-2026-timing-all-sections-map.pdf"
+        }
+      },
+      "params": {
+        "resource": "pdf",
+        "layer_id": "imsa_microsectors",
+        "kind": "microsectors",
+        "label": "IMSA Microsectors",
+        "series": ["imsa"],
+        "coverage": "partition",
+        "count": 8,
+        "item_prefix": "ms",
+        "item_label_prefix": "MS",
+        "source": "IMSA / Al Kamel Timing All Sections Map",
+        "segment_refs": [
+          ["T1", "T2"], ["T2", "T3"], ["T3", "T4"], ["T4", "T5"],
+          ["T5", "T6"], ["T6", "T7"], ["T7", "T8"], ["T8", "T1"]
+        ]
+      }
+    },
+    {
+      "id": "curvature_apexes_gp",
+      "layout": "gp",
+      "tool": "curvature_apexes",
+      "resources": {
+        "centerline": {"path": "raw/layers/gp.geojson"}
+      },
+      "params": {
+        "max_apexes": 24,
+        "step_m": 4,
+        "smooth_window_m": 60,
+        "min_separation_m": 60,
+        "curvature_percentile": 0.70,
+        "pre_brake_m": 75,
+        "post_accel_m": 55
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "id": "imsa_microsectors_2026",
+  "layout": "gp",
+  "tool": "imsa_timing_pdf",
+  "resources": {
+    "pdf": {
+      "name": "pdf",
+      "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%20All%20Sections%20Map%20REVISED.pdf",
+      "local_path": "/Users/tobi/src/tries/2026-06-29-tobi-track-atlas/tracks/mosport/raw/layer-sources/imsa_microsectors_2026/imsa-2026-timing-all-sections-map.pdf",
+      "relative_path": "tracks/mosport/raw/layer-sources/imsa_microsectors_2026/imsa-2026-timing-all-sections-map.pdf",
+      "content_type": null
+    }
+  },
+  "params": {
+    "resource": "pdf",
+    "layer_id": "imsa_microsectors",
+    "kind": "microsectors",
+    "label": "IMSA Microsectors",
+    "series": [
+      "imsa"
+    ],
+    "coverage": "partition",
+    "count": 8,
+    "item_prefix": "ms",
+    "item_label_prefix": "MS",
+    "source": "IMSA / Al Kamel Timing All Sections Map",
+    "segment_refs": [
+      [
+        "T1",
+        "T2"
+      ],
+      [
+        "T2",
+        "T3"
+      ],
+      [
+        "T3",
+        "T4"
+      ],
+      [
+        "T4",
+        "T5"
+      ],
+      [
+        "T5",
+        "T6"
+      ],
+      [
+        "T6",
+        "T7"
+      ],
+      [
+        "T7",
+        "T8"
+      ],
+      [
+        "T8",
+        "T1"
+      ]
+    ]
+  },
+  "point_layers": [],
+  "range_layers": [
+    {
+      "id": "imsa_microsectors",
+      "kind": "microsectors",
+      "label": "IMSA Microsectors",
+      "series": [
+        "imsa"
+      ],
+      "coverage": "partition",
+      "provenance": {
+        "source": "IMSA / Al Kamel Timing All Sections Map",
+        "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%20All%20Sections%20Map%20REVISED.pdf",
+        "local_path": "tracks/mosport/raw/layer-sources/imsa_microsectors_2026/imsa-2026-timing-all-sections-map.pdf",
+        "length_unit": "inch",
+        "total_length_m": 3957.345
+      },
+      "items": [
+        {
+          "id": "ms1",
+          "label": "MS1",
+          "start": 0.0,
+          "end": 0.04078279,
+          "length_m": 161.392,
+          "entry_ref": "T1",
+          "exit_ref": "T2"
+        },
+        {
+          "id": "ms2",
+          "label": "MS2",
+          "start": 0.04078279,
+          "end": 0.31055641,
+          "length_m": 1067.587,
+          "entry_ref": "T2",
+          "exit_ref": "T3"
+        },
+        {
+          "id": "ms3",
+          "label": "MS3",
+          "start": 0.31055641,
+          "end": 0.59156231,
+          "length_m": 1112.037,
+          "entry_ref": "T3",
+          "exit_ref": "T4"
+        },
+        {
+          "id": "ms4",
+          "label": "MS4",
+          "start": 0.59156231,
+          "end": 0.7764135,
+          "length_m": 731.52,
+          "entry_ref": "T4",
+          "exit_ref": "T5"
+        },
+        {
+          "id": "ms5",
+          "label": "MS5",
+          "start": 0.7764135,
+          "end": 0.7837562,
+          "length_m": 29.058,
+          "entry_ref": "T5",
+          "exit_ref": "T6"
+        },
+        {
+          "id": "ms6",
+          "label": "MS6",
+          "start": 0.7837562,
+          "end": 0.8950456,
+          "length_m": 440.411,
+          "entry_ref": "T6",
+          "exit_ref": "T7"
+        },
+        {
+          "id": "ms7",
+          "label": "MS7",
+          "start": 0.8950456,
+          "end": 0.93963453,
+          "length_m": 176.454,
+          "entry_ref": "T7",
+          "exit_ref": "T8"
+        },
+        {
+          "id": "ms8",
+          "label": "MS8",
+          "start": 0.93963453,
+          "end": 1.0,
+          "length_m": 238.887,
+          "entry_ref": "T8",
+          "exit_ref": "T1"
+        }
+      ]
+    }
+  ]
+}

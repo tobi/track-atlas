@@ -1,0 +1,90 @@
+{
+  "id": "imsa_timing_sectors_2026",
+  "layout": "gp",
+  "tool": "imsa_timing_pdf",
+  "resources": {
+    "pdf": {
+      "name": "pdf",
+      "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%203%20Sector%20Map.pdf",
+      "local_path": "/Users/tobi/src/tries/2026-06-29-tobi-track-atlas/tracks/mosport/raw/layer-sources/imsa_timing_sectors_2026/imsa-2026-timing-3-sector-map.pdf",
+      "relative_path": "tracks/mosport/raw/layer-sources/imsa_timing_sectors_2026/imsa-2026-timing-3-sector-map.pdf",
+      "content_type": null
+    }
+  },
+  "params": {
+    "resource": "pdf",
+    "layer_id": "timing_sectors",
+    "kind": "timing_sectors",
+    "label": "Timing Sectors",
+    "series": [
+      "imsa"
+    ],
+    "coverage": "partition",
+    "count": 3,
+    "item_prefix": "s",
+    "item_label_prefix": "S",
+    "source": "IMSA / Al Kamel Timing 3 Sector Map",
+    "segment_refs": [
+      [
+        "FL",
+        "i1"
+      ],
+      [
+        "i1",
+        "i2"
+      ],
+      [
+        "i2",
+        "FL"
+      ]
+    ]
+  },
+  "point_layers": [],
+  "range_layers": [
+    {
+      "id": "timing_sectors",
+      "kind": "timing_sectors",
+      "label": "Timing Sectors",
+      "series": [
+        "imsa"
+      ],
+      "coverage": "partition",
+      "provenance": {
+        "source": "IMSA / Al Kamel Timing 3 Sector Map",
+        "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%203%20Sector%20Map.pdf",
+        "local_path": "tracks/mosport/raw/layer-sources/imsa_timing_sectors_2026/imsa-2026-timing-3-sector-map.pdf",
+        "length_unit": "inch",
+        "total_length_m": 3957.345
+      },
+      "items": [
+        {
+          "id": "s1",
+          "label": "S1",
+          "start": 0.0,
+          "end": 0.31055641,
+          "length_m": 1228.979,
+          "entry_ref": "FL",
+          "exit_ref": "i1"
+        },
+        {
+          "id": "s2",
+          "label": "S2",
+          "start": 0.31055641,
+          "end": 0.7764135,
+          "length_m": 1843.557,
+          "entry_ref": "i1",
+          "exit_ref": "i2"
+        },
+        {
+          "id": "s3",
+          "label": "S3",
+          "start": 0.7764135,
+          "end": 1.0,
+          "length_m": 884.809,
+          "entry_ref": "i2",
+          "exit_ref": "FL"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "mosport",
+  "name": "Canadian Tire Motorsport Park",
+  "aka": [
+    "Mosport",
+    "Mosport International Raceway",
+    "Mosport Park",
+    "CTMP"
+  ],
+  "country": "CA",
+  "series": [
+    "imsa"
+  ],
+  "location": {
+    "lat": 44.0491,
+    "lon": -78.6745,
+    "locality": "Bowmanville, Ontario",
+    "region": "Ontario",
+    "timezone": "America/Toronto"
+  },
+  "wikidata": "Q171570",
+  "osm": {
+    "bbox": [
+      44.038,
+      -78.695,
+      44.060,
+      -78.663
+    ]
+  },
+  "layouts": [
+    {
+      "id": "gp",
+      "name": "Grand Prix Circuit",
+      "length_m": 3957,
+      "direction": "clockwise",
+      "start_finish": {
+        "marker": 0.0,
+        "location": [-78.6718, 44.0527]
+      },
+      "pit": {
+        "entry": 0.852,
+        "exit": 0.041
+      }
+    }
+  ],
+  "external_ids": {
+    "imsa_data": "canadian-tire-motorsport-park"
+  }
+}
