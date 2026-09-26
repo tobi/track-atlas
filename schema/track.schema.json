@@ -1431,6 +1431,20 @@
           "default": null,
           "description": "How the absolute position was established: frame and epoch, the reference it was registered to, the shifts applied, the error budget and independent checks."
         },
+        "selection": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Imagery sources tried for this measurement, their scores and which was chosen.",
+          "title": "Selection"
+        },
         "unnamed_corners": {
           "default": [],
           "description": "Curvature peaks tighter than 80 m that no atlas corner claimed: candidates for curation.",

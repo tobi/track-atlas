@@ -41,6 +41,7 @@ NAIP_SERVICE = "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPIma
 # registration to a reference). accuracy_basis says where the number comes from.
 SOURCES: dict[str, dict] = {
     "naip": {
+        "coverage": [-125.0, 24.4, -66.9, 49.4],  # conterminous US
         "name": "USDA NAIP via USGS The National Map", "service": NAIP_SERVICE,
         "rgb": "0,1,2", "nir": "3", "gsd_m": 0.5, "frame": "WGS84-service",
         "license": "public domain (US federal)",
@@ -48,6 +49,7 @@ SOURCES: dict[str, dict] = {
         "catalog": True,
     },
     "ct-2023": {
+        "coverage": [-73.73, 40.95, -71.78, 42.06],  # Connecticut
         "name": "Connecticut 2023 statewide orthoimagery (CT ECO, UConn CLEAR / CT DEEP)",
         "service": "https://cteco.uconn.edu/ctraster/rest/services/images/Ortho_2023/ImageServer",
         "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.0762, "frame": "WGS84-service",
@@ -56,6 +58,7 @@ SOURCES: dict[str, dict] = {
         "acquisition_dates": ["2023-03-27", "2023-04-13"],
     },
     "indiana-2025": {
+        "coverage": [-88.10, 37.77, -84.78, 41.77],  # Indiana
         "name": "Indiana 2025 statewide orthoimagery (IGIO / IndianaMap)",
         "service": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2025_Imagery/ImageServer",
         "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.0762, "frame": "WGS84-service",
@@ -64,6 +67,7 @@ SOURCES: dict[str, dict] = {
         "acquisition_dates": ["2025"],
     },
     "txgio-2021-caparea": {
+        "coverage": [-100.0, 29.4, -95.8, 31.6],  # Austin / Brazos / Kerr (approx.)
         "name": "TxGIO StratMap 2021 CapArea/Brazos/Kerr 6-inch natural colour + CIR",
         "service": "https://imagery.geographic.texas.gov/server/rest/services/StratMap/StratMap21_NCCIR_CapArea_Brazos_Kerr/ImageServer",
         "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "WGS84-service",
@@ -72,6 +76,7 @@ SOURCES: dict[str, dict] = {
         "acquisition_dates": ["2021-01-03"],
     },
     "fdep-2020": {
+        "coverage": [-87.64, 24.4, -79.97, 31.0],  # Florida (per county; gaps)
         "name": "Florida DOR county orthoimagery 2020 (FDOT yearly aerials, served by FDEP)",
         "service": "https://ca.dep.state.fl.us/image/rest/services/FDOT_Yearly_Aerials/Aerial_Imagery_2020/ImageServer",
         "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "WGS84-service",
@@ -80,6 +85,7 @@ SOURCES: dict[str, dict] = {
         "acquisition_dates": ["2019/2020 season"],
     },
     "fdep-2021": {
+        "coverage": [-87.64, 24.4, -79.97, 31.0],  # Florida (per county; gaps)
         "name": "Florida DOR county orthoimagery 2021 (FDOT yearly aerials, served by FDEP)",
         "service": "https://ca.dep.state.fl.us/image/rest/services/FDOT_Yearly_Aerials/Aerial_Imagery_2021/ImageServer",
         "rgb": "0,1,2", "nir": None, "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "WGS84-service",
@@ -115,6 +121,15 @@ def _get(url: str, timeout: int = 180, retries: int = 5) -> bytes:
             last = e
             time.sleep(5 * (attempt + 1))
     raise RuntimeError(f"imagery request failed: {last!r} ({url[:160]})")
+
+
+def covering(lonlat) -> list[str]:
+    """Imagery sources whose coverage box contains the whole lap (NAIP last)."""
+    ll = np.asarray(lonlat, dtype=float)
+    lo, hi = ll.min(axis=0), ll.max(axis=0)
+    ids = [k for k, v in SOURCES.items()
+           if v["coverage"][0] <= lo[0] and v["coverage"][1] <= lo[1] and hi[0] <= v["coverage"][2] and hi[1] <= v["coverage"][3]]
+    return sorted(ids, key=lambda k: k == "naip")
 
 
 def _export(service: str, bbox_merc, w: int, h: int, bands: str) -> np.ndarray:

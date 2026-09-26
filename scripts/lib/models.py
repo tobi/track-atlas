@@ -318,6 +318,8 @@ class Surface(Strict):
     position: Optional[Position] = Field(
         None, description="How the absolute position was established: frame and epoch, the reference it was "
                           "registered to, the shifts applied, the error budget and independent checks.")
+    selection: Optional[dict[str, Any]] = Field(
+        None, description="Imagery sources tried for this measurement, their scores and which was chosen.")
     unnamed_corners: list[UnnamedCorner] = Field(
         default=[], description="Curvature peaks tighter than 80 m that no atlas corner claimed: candidates for curation.")
     sources: dict[str, Any] = Field(description="imagery (id, licence, tiles), reference (lidar surveys) and seed.")

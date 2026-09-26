@@ -1,7 +1,7 @@
 # Surface geometry: track edges, crossing lines and corner geometry
 
-The centerline (`layers/<id>.geojson`, role `outline`) says where the lap goes.
-It does not say where the track *is*: how wide it is, where its edges run, where
+The OSM centerline says roughly where the lap goes. It does not say where the
+track *is*: how wide it is, where its edges run, where
 a corner turns in, where its apex sits on the inside edge. This document
 specifies the per-layout **surface geometry** that answers that, how it is
 measured, and how good it is.
@@ -24,22 +24,31 @@ peak it gets no entry/apex/exit.
 Pipeline for one track:
 
 ```bash
-uv run python scripts/measure_surface.py road-atlanta   # network: NAIP -> raw/surface-<layout>.json
+uv run python scripts/measure_surface.py road-atlanta   # network: imagery + lidar -> raw/surface-<layout>.json
 uv run python scripts/generate.py road-atlanta          # offline: applies it (or build_geometry.py for surface-only)
 uv run python scripts/verify.py road-atlanta
 ```
 
 A track opts in with `source.json`:
 
-```json
-"surface": {"imagery": "naip"}                        // every layout
-"surface": {"imagery": "naip", "layouts": ["imsa"]}   // only these
-"surface": {"imagery": "naip", "lidar": ["GA_Statewide_B3_2018", "ARRA-GA_LakeLanier_2010"]}
+```jsonc
+"surface": {}                                        // auto imagery, auto lidar, every layout
+"surface": {"layouts": ["imsa"]}                     // only these layouts
+"surface": {"imagery": "naip", "lidar": ["GA_Statewide_B3_2018"]}   // pinned (debugging only)
 ```
 
-`imagery` is a key of `lib/imagery.SOURCES`; `lidar` lists USGS 3DEP EPT
-surveys used as the position reference (best first). `measure_surface.py
-<slug> --find-lidar` lists the surveys covering the lap.
+**Auto selection** (the default; pin only to investigate a source):
+
+- *Imagery*: every `lib/imagery.SOURCES` entry whose coverage box contains the
+  lap is measured (`imagery.covering`, NAIP last). A candidate whose edges are
+  seen on less than 20% of either side is refused (no real coverage). The rest
+  are scored `absolute CE95 + 4 m x (1 - seen_both)` and the lowest wins: one
+  number of metres for position and coverage. Every candidate's result is
+  recorded in the measurement's `selection` (and `layout.surface.selection`).
+- *Lidar*: the USGS 3DEP surveys covering at least 95% of the lap
+  (`lidar.pick`): stated accuracy first (sharpest first), then newest; at most
+  three. The first that registers is the reference, the others are checks.
+  `measure_surface.py <slug> --find-lidar` lists every survey covering the lap.
 
 ## Conventions
 
@@ -48,10 +57,11 @@ surveys used as the position reference (best first). `measure_surface.py
   position" below). US sources are delivered in NAD83(2011) and are moved.
 - **Left / right are in the driving direction.** Every edge polyline starts at
   the lap origin (start/finish) and runs in the driving direction.
-- Every lap fraction (`marker`) stays on the **layout centerline's basis**, the
-  same basis as every legacy marker, so new and old fields are comparable.
-  (The measured midline has its own length, `surface.lap_length_m`; stations
-  are mapped to centerline fractions by projection.)
+- On a measured layout the **midline is the geometry and the lap-fraction
+  basis** (`geometry.basis: "midline"`): the layout's outline GeoJSON is the
+  midline rotated to start/finish, and every `marker` is a fraction of its
+  length (`surface.lap_length_m`). Unmeasured layouts (outside the US) stay on
+  the OSM centerline (`basis: "centerline"`).
 - A **crossing line** is a 2-point segment `[left_point, right_point]`, from the
   left edge to the right edge, perpendicular to the midline.
 
@@ -151,37 +161,34 @@ Example (Road Atlanta Turn 7):
 | `complex_entry`, `complex_exit` | LineString (crossing) | `complex` (only complexes of two or more corners) |
 | `sector_boundary` | LineString (crossing) | `range` (the timing sector starting there) |
 
-## The centerline: proposal to retire it as the basis
+## The midline is the basis (`lib/surface.apply_layout`)
 
-Evidence from the measurements: the OSM centerline sits up to ~5 m off the
-asphalt centre (`quality.seed_offset_m` p95: Daytona 5.1 m), its length differs
-from the measured midline by up to a few percent (Lime Rock, Long Beach), and
-it is in whatever frame its tracer used. The measured midline is centred on
-the asphalt, in the atlas frame, with a stated accuracy. The centerline's only
-remaining jobs are (1) seeding the edge search, which it does well, and (2)
-being the lap-fraction basis of every marker.
+The OSM centerline sits up to ~5 m off the asphalt centre
+(`quality.seed_offset_m` p95: Daytona 5.1 m), its length differs from the
+measured midline by up to a few percent, and it is in whatever frame its
+tracer used. The measured midline is centred on the asphalt, in the atlas
+frame, with a stated accuracy. So on a measured layout:
 
-**Proposal (schema v2, not yet applied):**
+1. The OSM centerline only **seeds** the edge search. The layout's outline is
+   the midline, rotated so fraction 0 is start/finish (the seed's origin
+   projected onto the midline), simplified at 2 cm and densified to segments
+   of at most 20 m.
+2. Every input marker (Lovely, overrides, OSM, layer tools: all on the seed's
+   basis) is **re-expressed by projection**, not rescaling:
+   `m' = s_mid(project(P_seed(m))) / L_mid`. Range ends at 1.0 stay 1.0.
+3. A corner the surface places (a curvature lobe) takes the **apex station** as
+   its marker, the midline point there as its `location` (`location_source:
+   "midline"`) and entry..exit as its `start`/`end`. How far the input marker
+   was from the apex stays in `placement.marker_offset_m`. Unplaced corners and
+   other point layers are projected.
+4. Corner ranges with a placed corner use its entry..exit; a complex runs from
+   its first member's entry to its last member's exit when those are placed,
+   otherwise its projected bounds.
+5. Re-applying to an already rebased `track.json` (`build_geometry.py`) is
+   idempotent: drift < 0.1 m.
 
-1. The **midline becomes the lap-fraction basis** for every layout with a
-   measured surface; the OSM centerline stays as `geometry.seed` only.
-2. The origin (`0.0`) is the `start_finish` crossing line, the midline runs in
-   the driving direction (both already true).
-3. Every marker is **re-expressed by projection**, not by rescaling:
-   `m' = s_mid(project(P_centerline(m))) / L_mid`, where `P_centerline(m)` is the
-   point at fraction `m` on the old centerline and `project` is the nearest point
-   on the midline. Corner entry/apex/exit are already measured on the midline,
-   so they simply switch to their native stations.
-4. Where the surface places a corner (curvature lobe), the marker becomes the
-   **apex station**; legacy Lovely markers (often 50-100 m off) are kept as
-   `placement.legacy_marker` for traceability.
-5. Consumers that prefer coordinates should use the crossing lines and apex
-   points (GPS) directly: they do not depend on any basis.
-6. Tracks without a surface (non-US) keep the centerline basis, flagged
-   `basis: "centerline"`, until they are measured.
-
-Until then the centerline stays the basis (so legacy and new fields remain
-comparable) and the midline is published alongside it.
+Consumers that prefer coordinates should use the crossing lines and apex
+points directly; they do not depend on any basis.
 
 ## Measuring the edges (`lib/edges.py`, `measure_surface.py`)
 

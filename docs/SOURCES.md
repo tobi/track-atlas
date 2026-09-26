@@ -26,10 +26,16 @@ position reference to the atlas frame (WGS 84 (G2139) ~ ITRF2014, epoch
 
 Served frame, measured by registration onto NAD83(2011) lidar: `naip`
 (all ten venues), `ct-2023` and `txgio-2021-caparea` are transformed to WGS 84
-(`WGS84-service`); `indiana-2025` is identity-labelled NAD83(2011). `fdep-2020`
-was tried and rejected: at Sebring its edges were seen on 35/55 % of the lap
-(NAIP 61/69 %) and it would not register coherently; it does not cover Volusia
-(Daytona).
+(`WGS84-service`); `indiana-2025` is identity-labelled NAD83(2011). `fdep-2021`
+(RGB only, Volusia) is the reference on its specification at Daytona (it wins
+the selection: sharper, and it sees the outside wall that NAIP misses); its
+weak pseudo-NIR registration puts it 0.86 m from where the lidar puts it, but
+positioned NAIP agrees with it to 0.09 m (median). `fdep-2020` does not cover
+Volusia; at Sebring it loses to NAIP (edges seen on 26 % of the lap on both
+sides) and `fdep-2021` does not cover Highlands.
+
+Which source a track uses is chosen by `measure_surface.py` (see
+docs/GEOMETRY.md, auto selection) and recorded in `layout.surface.selection`.
 
 Only `ct-2023` has a tested accuracy better than the lidar references; it
 can be the reference itself. The others are sharper than NAIP (better edge

@@ -19,11 +19,13 @@ Spec: docs/GEOMETRY.md.
 - [ ] Remaining US tracks
 - [ ] Non-US imagery source (NAIP is US-only; Mosport and every non-US track have no surface)
 - [x] Absolute position: 3DEP lidar registration + NAD83(2011) -> ITRF2014 datum step, CE95 budget in `layout.surface.position` (lib/lidar, register, datum, position; docs/SOURCES.md)
-- [ ] Re-measure the 9 other US venues with the position pipeline
-- [ ] State orthos as primary imagery where sharper: ct-2023 (Lime Rock, tested 0.16 m), indiana-2025, fdep-2020 (Sebring), txgio (COTA); check band order / NDVI visually
+- [x] Re-measure the 9 other US venues with the position pipeline
+- [x] State orthos as imagery where better: ct-2023 (Lime Rock), indiana-2025, txgio (COTA); fdep-2020 rejected at Sebring, no Volusia coverage
+- [x] Auto selection: every covering imagery source measured, best `CE95 + 4 m x unseen` kept; lidar picked by coverage, stated accuracy, recency (`"surface": {}`)
+- [x] Tooling docs: AGENTS.md surface section, skills/surface-tools/SKILL.md
 - [ ] Most 3DEP surveys state no horizontal accuracy (1.0 m CE95 assumed): find the project reports, or ground control (NGS marks / CORS GNSS) to get below 1 m
 - [ ] Registration term: model a smooth shift field along the lap instead of one translation (non-rigid imagery distortion dominates it)
-- [ ] Decide: make the measured midline the lap-fraction basis (re-express legacy markers)
+- [x] The measured midline is the geometry and lap-fraction basis of measured layouts (markers re-expressed by projection; placed corners = apex)
 - [ ] Road Atlanta: t8/t9/t10 sit on the back straight with no curvature peak; confirm or drop
 
 ## DONE: Three.js driving sim on the detail page

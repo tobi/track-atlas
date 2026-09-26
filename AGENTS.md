@@ -79,27 +79,42 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   - HH Timing Le Mans docs / `.cha` configs for WEC slow-zone loop pairs:
     `https://help.hhtiming.com/series-specific-info/lm24/`.
 
-### Track surface (edges, crossing lines, apexes)
-- Spec and algorithm: [docs/GEOMETRY.md](docs/GEOMETRY.md). OSM has almost no
-  usable track-surface data at the IMSA venues (no `area:highway=raceway`
-  polygons, no `width` tags; the only raceway areas are karting tracks), so the
-  edges are **measured from USDA NAIP imagery** (public domain, ODbL-safe).
-  Never trace Esri/Google/Bing imagery into the atlas.
-- Opt in per track with `source.json` `"surface": {"imagery": "naip"}`, then
-  `uv run python scripts/measure_surface.py <slug>` (network; caches imagery in
-  the gitignored `raw/imagery/`, writes the committed `raw/surface-<layout>.json`),
-  then `generate.py <slug>` (offline, applies it) and `verify.py <slug>`.
-- NAIP covers the conterminous US only (not Canada: Mosport has no surface).
-  Its absolute accuracy is a 4 m CE95 contract: never claim better than that.
-- Inspect the result visually before committing: edges over the imagery at every
-  corner (entry lines green, exit red, apex on the inside edge). Paved run-off
-  without a painted line, pit merges, bridges and tree shadow are the usual
-  failure spots; they show up as `unseen_spans`.
+### Track surface: the measured geometry (edges, midline, corners, position)
+- Use the project skill at `skills/surface-tools/SKILL.md`. Spec and algorithm:
+  [docs/GEOMETRY.md](docs/GEOMETRY.md); sources, licences and served frames:
+  [docs/SOURCES.md](docs/SOURCES.md).
+- OSM has almost no usable track-surface data (no `area:highway=raceway`, no
+  `width`), and its centerline is 2-10 m off. The edges are **measured from
+  open orthoimagery** (NAIP, or a sharper state programme) and **positioned by
+  registration onto USGS 3DEP lidar**, then moved from NAD83(2011) to the atlas
+  frame (WGS 84 ~ ITRF2014, epoch 2026.0). Never trace Esri/Google/Bing imagery.
+- On a measured layout the **midline replaces the OSM centerline** as geometry
+  and lap basis; placed corners take their apex as marker and entry..exit as
+  range. Legacy markers are only inputs.
+- Opt in with `source.json` `"surface": {}`: imagery and lidar are chosen
+  automatically (every covering imagery source is measured and the best
+  `CE95 + 4 m x unseen share` wins; lidar = covering surveys, stated accuracy
+  first, then newest). Pin `imagery`/`lidar` only to investigate a source.
+- Workflow: `uv run python scripts/measure_surface.py <slug>` (network; caches
+  in the gitignored `raw/imagery/` and `raw/lidar/`, writes the committed
+  `raw/surface-<layout>.json`), then `generate.py <slug>` (offline) and
+  `verify.py <slug>` (must stay green: the position budget must add up).
+- Adding an imagery source: an entry in `lib/imagery.SOURCES` with licence,
+  stated accuracy, served `frame` and `coverage` box; the frame is then checked
+  against lidar on every measurement (`position.imagery_frame_basis`).
+- Coverage: US only today (NAIP, 3DEP). Mosport, Silverstone, Le Mans have no
+  surface; docs/SOURCES.md lists the open European programmes to integrate.
+- Accuracy is stated, never claimed: `layout.surface.absolute_accuracy_ce95_m`
+  = hypot(reference, registration, datum). Only a tested source (e.g. CT 2023,
+  Indiana 2025 spec) gets below ~1 m; untested lidar is assumed 1.0 m CE95 and
+  flagged.
+- Inspect visually before committing: edges over the imagery at every corner.
+  Paved run-off without a painted line, pit merges, bridges and tree shadow
+  are the usual failure spots; they show up as `unseen_spans`.
 - The measured curvature is authoritative for a corner's direction. `verify.py`
   warns when the curated direction disagrees (`placement.declared_direction`):
-  fix `direction` in `overrides.json`, never in `raw/track.json`. Legacy Lovely
-  markers are often 50-100 m off the geometric apex; `placement.marker_offset_m`
-  records by how much.
+  fix `direction` in `overrides.json`, never in `raw/track.json`.
+  `placement.marker_offset_m` records how far the input marker was from the apex.
 - `surface.unnamed_corners` lists tight curvature peaks no atlas corner claimed:
   usually a missing or mis-numbered corner.
 

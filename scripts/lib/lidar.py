@@ -28,6 +28,7 @@ from __future__ import annotations
 import io
 import json
 import math
+import re
 import time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -88,6 +89,33 @@ def find_projects(lonlat_lap) -> list[tuple[str, float]]:
         if g.intersects(line):
             out.append((f["properties"]["name"], round(g.intersection(line).length / line.length, 3)))
     return sorted(out, key=lambda t: -t[1])
+
+
+MIN_COVER = 0.95              # a reference must cover this share of the lap
+MAX_REFERENCES = 3            # the reference plus independent checks
+
+
+def pick(lonlat_lap) -> list[str]:
+    """3DEP surveys to use for a lap, best first.
+
+    Surveys covering the whole lap; those with a stated horizontal accuracy
+    first (sharpest first), then the rest newest first. The first that
+    registers becomes the reference (lib/position.py), the others are checks.
+    """
+    found = [n for n, frac in find_projects(lonlat_lap) if frac >= MIN_COVER]
+
+    def key(n):
+        ce95, _, stated = project_accuracy(n)
+        year = PROJECTS.get(n, {}).get("year") or _year_of(n)
+        return (not stated, ce95 if stated else 0.0, -year)
+    return sorted(found, key=key)[:MAX_REFERENCES]
+
+
+def _year_of(name: str) -> int:
+    years = [int(y) for y in re.findall(r"(?<!\d)(19[89]\d|20[0-3]\d)(?!\d)", name)]
+    return max(years) if years else 0
+
+
 CORRIDOR_M = 40.0             # lateral half-width of the fetched corridor
 
 

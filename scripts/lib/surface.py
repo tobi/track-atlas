@@ -588,6 +588,7 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
         "relative_precision_m": q["relative_precision_m"],
         "absolute_accuracy_ce95_m": q["absolute_accuracy_ce95_m"],
         "position": meas["position"],
+        "selection": meas.get("selection"),
         "unnamed_corners": unclaimed,
         "sources": sources,
     }
