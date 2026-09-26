@@ -2,6 +2,20 @@
 
 Running checklist of requested work. Keep updated; don't drop anything.
 
+## In progress: track surface geometry (edges, crossing lines, apexes)
+Spec: docs/GEOMETRY.md.
+- [x] Schema: `Quality`, `Crossing`, `Apex`, `Placement`, `Surface`; corner entry/apex/exit, layout-point line, range start/end lines, complex entry/exit
+- [x] NAIP edge measurement (`measure_surface.py`, `lib/edges.py`), offline application (`lib/surface.py`, `build_geometry.py`, hooked into generate/build_layers)
+- [x] Curvature-lobe corner placement with order-preserving matching to atlas corners
+- [x] verify.py surface checks (`lib/surface_checks.py`)
+- [x] Road Atlanta measured; corner directions corrected from geometry
+- [ ] IMSA US venues: daytona, sebring, long-beach, laguna-seca, watkins-glen, lime-rock, road-america, virginia-international-raceway, indianapolis, circuit-of-the-americas
+- [ ] Remaining US tracks
+- [ ] Non-US imagery source (NAIP is US-only; Mosport and every non-US track have no surface)
+- [ ] Absolute registration better than NAIP's 4 m CE95 (GPS-trace or survey control)
+- [ ] Decide: make the measured midline the lap-fraction basis (re-express legacy markers)
+- [ ] Road Atlanta: t8/t9/t10 sit on the back straight with no curvature peak; confirm or drop
+
 ## DONE: Three.js driving sim on the detail page
 - [x] site/sim.js: drives the real centerline; quasi-static speed solver (curvature -> cornering limit, brake pass, traction pass)
 - [x] 3 car classes (GT3 / LMPh / BMW 328) with distinct grip/brake/accel/top-speed; chase + isometric cameras

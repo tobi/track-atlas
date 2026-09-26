@@ -79,6 +79,30 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   - HH Timing Le Mans docs / `.cha` configs for WEC slow-zone loop pairs:
     `https://help.hhtiming.com/series-specific-info/lm24/`.
 
+### Track surface (edges, crossing lines, apexes)
+- Spec and algorithm: [docs/GEOMETRY.md](docs/GEOMETRY.md). OSM has almost no
+  usable track-surface data at the IMSA venues (no `area:highway=raceway`
+  polygons, no `width` tags; the only raceway areas are karting tracks), so the
+  edges are **measured from USDA NAIP imagery** (public domain, ODbL-safe).
+  Never trace Esri/Google/Bing imagery into the atlas.
+- Opt in per track with `source.json` `"surface": {"imagery": "naip"}`, then
+  `uv run python scripts/measure_surface.py <slug>` (network; caches imagery in
+  the gitignored `raw/imagery/`, writes the committed `raw/surface-<layout>.json`),
+  then `generate.py <slug>` (offline, applies it) and `verify.py <slug>`.
+- NAIP covers the conterminous US only (not Canada: Mosport has no surface).
+  Its absolute accuracy is a 4 m CE95 contract: never claim better than that.
+- Inspect the result visually before committing: edges over the imagery at every
+  corner (entry lines green, exit red, apex on the inside edge). Paved run-off
+  without a painted line, pit merges, bridges and tree shadow are the usual
+  failure spots; they show up as `unseen_spans`.
+- The measured curvature is authoritative for a corner's direction. `verify.py`
+  warns when the curated direction disagrees (`placement.declared_direction`):
+  fix `direction` in `overrides.json`, never in `raw/track.json`. Legacy Lovely
+  markers are often 50-100 m off the geometric apex; `placement.marker_offset_m`
+  records by how much.
+- `surface.unnamed_corners` lists tight curvature peaks no atlas corner claimed:
+  usually a missing or mis-numbered corner.
+
 ### Lovely-Sim-Racing/lovely-track-data
 - Manifest: `https://raw.githubusercontent.com/Lovely-Sim-Racing/lovely-track-data/main/data/manifest.json`
 - Per track: `.../main/data/{simId}/{trackId}.json` (the manifest gives the `path`).

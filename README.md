@@ -166,7 +166,8 @@ coordinates are GeoJSON axis order: `[longitude, latitude]`, WGS84.
 | `length_m` | number | | Official lap length in metres |
 | `direction` | enum | | `clockwise` \| `anticlockwise` |
 | `active_years` | string | | Free-form (`"2018-"`, `"1972,1979-1989"`) |
-| `geometry` | object | ✓ | `{centerline: "layers/<id>.geojson", crs: "EPSG:4326"}` |
+| `geometry` | object | ✓ | `{centerline: "layers/<id>.geojson", surface?: "layers/<id>.surface.geojson", crs: "EPSG:4326"}` |
+| `surface` | object | | Measured track surface summary: width, seen fraction, precision, absolute accuracy, sources. See [docs/GEOMETRY.md](docs/GEOMETRY.md) |
 | `point_layers` | point_layer[] | | Discrete layout annotations. Required conventional layers: `layout_points` for start/finish + pit in/out when known, and `corners` for corner apexes. |
 | `range_layers` | range_layer[] | | Lap interval annotations: `timing_sectors`, `imsa_microsectors`, `corner_ranges`, `corner_complexes`, `slow_zones`, etc. Conventional labels are `Corner Apexes` for point apexes, `Each Corner` for per-corner ranges, and `Corner Complexes` for the merged corner-group layer. `corner_complexes` merges multi-apex complexes into one item and omits solo scale-5/6 fast corners/kinks to avoid clutter. |
 | `label_default` | string | | Label layer code (a key in `label_layers`) shown by default (usually `driver`). Resolution is two steps: `labels[label_default]` if present, else `labels.numbered` — no fall-through to other layers |
@@ -206,6 +207,20 @@ identifier — it does **not** fall through other layers. So an absent default-l
 name means drivers just use the number (Sebring T17 is officially *Sunset Bend*
 but drivers say *Turn 17* → its `driver` layer is cleared). By default `driver`
 inherits the `official` name unless a distinct nickname is set or it's cleared.
+
+## Surface geometry (edges, crossing lines, apexes)
+
+Where a layout has a measured surface (`source.json` `"surface": {"imagery": "naip"}`,
+US tracks), `raw/layers/<id>.surface.geojson` holds the left and right track
+edges (driving direction), the derived midline, the surface polygon, the OSM pit
+lane, and lines across the track for start/finish, pit entry/exit, sector
+boundaries and every corner's entry and exit, plus each corner's geometric apex
+on its inside edge. The same crossings appear in `track.json` on the items
+(`corner.entry` / `apex` / `exit` / `placement`, layout-point `line`, range
+`start_line` / `end_line`, complex `entry` / `exit`), each with a `quality`
+(source, accuracy in metres, measured or bridged, date). Lap fractions stay on
+the centerline basis. The full spec, the measurement algorithm and what the
+accuracy figures mean are in **[docs/GEOMETRY.md](docs/GEOMETRY.md)**.
 
 ## layers/<id>.geojson spec
 
