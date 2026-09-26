@@ -419,70 +419,70 @@
                 "driver": "West Horseshoe",
                 "official": "West Horseshoe"
               },
-              "marker": 0.29099,
+              "marker": 0.31189,
               "location": [
-                -81.0719381,
-                29.1809864
+                -81.0721546,
+                29.1799999
               ],
               "location_source": "midline",
-              "direction": "left",
+              "direction": "right",
               "scale": 2,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
-                "direction": "left",
-                "radius_m": 63.9,
-                "marker_offset_m": -115.2
+                "direction": "right",
+                "radius_m": 31.2,
+                "marker_offset_m": 3.8
               },
               "entry": {
-                "marker": 0.28924,
+                "marker": 0.30666,
                 "line": [
                   [
-                    -81.0718656,
-                    29.1810738
+                    -81.071901,
+                    29.180175
                   ],
                   [
-                    -81.072013,
-                    29.1810794
+                    -81.0720101,
+                    29.1802176
                   ]
                 ],
-                "width_m": 14.34,
+                "width_m": 11.62,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               },
               "exit": {
-                "marker": 0.29255,
+                "marker": 0.32635,
                 "line": [
                   [
-                    -81.0718523,
-                    29.1809258
+                    -81.0728751,
+                    29.1803233
                   ],
                   [
-                    -81.0719741,
-                    29.1808909
+                    -81.0727736,
+                    29.180354
                   ]
                 ],
-                "width_m": 12.47,
+                "width_m": 10.44,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               },
               "apex": {
-                "marker": 0.29099,
+                "marker": 0.31189,
                 "location": [
-                  -81.0718646,
-                  29.1809948
+                  -81.072176,
+                  29.1800457
                 ],
-                "edge": "left",
+                "edge": "right",
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 0.81,
@@ -1466,57 +1466,57 @@
             {
               "id": "t5",
               "label": "West Horseshoe",
-              "start": 0.28924,
-              "end": 0.29255,
+              "start": 0.30666,
+              "end": 0.32635,
               "anchor": "t5",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.29099,
+                  "marker": 0.31189,
                   "point_ref": "t5"
                 }
               ],
               "start_line": {
-                "marker": 0.28924,
+                "marker": 0.30666,
                 "line": [
                   [
-                    -81.0718656,
-                    29.1810738
+                    -81.071901,
+                    29.180175
                   ],
                   [
-                    -81.072013,
-                    29.1810794
+                    -81.0720101,
+                    29.1802176
                   ]
                 ],
-                "width_m": 14.34,
+                "width_m": 11.62,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               },
               "end_line": {
-                "marker": 0.29255,
+                "marker": 0.32635,
                 "line": [
                   [
-                    -81.0718523,
-                    29.1809258
+                    -81.0728751,
+                    29.1803233
                   ],
                   [
-                    -81.0719741,
-                    29.1808909
+                    -81.0727736,
+                    29.180354
                   ]
                 ],
-                "width_m": 12.47,
+                "width_m": 10.44,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               }
@@ -2243,8 +2243,8 @@
             {
               "id": "t5",
               "label": "West Horseshoe",
-              "start": 0.28924,
-              "end": 0.29255,
+              "start": 0.30666,
+              "end": 0.32635,
               "members": [
                 "t5"
               ],
@@ -2253,91 +2253,91 @@
                   "id": "t5-apex",
                   "role": "apex",
                   "label": "West Horseshoe",
-                  "marker": 0.29099,
+                  "marker": 0.31189,
                   "point_ref": "t5"
                 }
               ],
               "entry": {
-                "marker": 0.28924,
+                "marker": 0.30666,
                 "line": [
                   [
-                    -81.0718656,
-                    29.1810738
+                    -81.071901,
+                    29.180175
                   ],
                   [
-                    -81.072013,
-                    29.1810794
+                    -81.0720101,
+                    29.1802176
                   ]
                 ],
-                "width_m": 14.34,
+                "width_m": 11.62,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               },
               "exit": {
-                "marker": 0.29255,
+                "marker": 0.32635,
                 "line": [
                   [
-                    -81.0718523,
-                    29.1809258
+                    -81.0728751,
+                    29.1803233
                   ],
                   [
-                    -81.0719741,
-                    29.1808909
+                    -81.0727736,
+                    29.180354
                   ]
                 ],
-                "width_m": 12.47,
+                "width_m": 10.44,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               },
               "start_line": {
-                "marker": 0.28924,
+                "marker": 0.30666,
                 "line": [
                   [
-                    -81.0718656,
-                    29.1810738
+                    -81.071901,
+                    29.180175
                   ],
                   [
-                    -81.072013,
-                    29.1810794
+                    -81.0720101,
+                    29.1802176
                   ]
                 ],
-                "width_m": 14.34,
+                "width_m": 11.62,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               },
               "end_line": {
-                "marker": 0.29255,
+                "marker": 0.32635,
                 "line": [
                   [
-                    -81.0718523,
-                    29.1809258
+                    -81.0728751,
+                    29.1803233
                   ],
                   [
-                    -81.0719741,
-                    29.1808909
+                    -81.0727736,
+                    29.180354
                   ]
                 ],
-                "width_m": 12.47,
+                "width_m": 10.44,
                 "quality": {
                   "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2021"
                 }
               }
@@ -2590,9 +2590,9 @@
             "radius_m": 56.8
           },
           {
-            "marker": 0.3117,
-            "direction": "right",
-            "radius_m": 31.2
+            "marker": 0.291,
+            "direction": "left",
+            "radius_m": 63.9
           },
           {
             "marker": 0.4089,
@@ -2660,7 +2660,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:56:44.568686+00:00",
+    "generated_at": "2026-09-26T20:58:49.109343+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

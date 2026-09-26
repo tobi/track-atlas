@@ -312,6 +312,55 @@ STITCH_DROP = re.compile(
 )
 
 
+def _heading(pts, reverse=False, min_m=15.0):
+    """(east, north) vector in metres over the first >= min_m of pts, or
+    over the last >= min_m (still in travel direction) when reverse."""
+    n = len(pts)
+    idx = range(n - 1, -1, -1) if reverse else range(n)
+    it = iter(idx)
+    a = pts[next(it)]
+    b = pts[idx[-1]]
+    for i in it:
+        if haversine(a, pts[i]) >= min_m:
+            b = pts[i]
+            break
+    if reverse:
+        a, b = b, a
+    k = math.cos(math.radians(a[1]))
+    return ((b[0] - a[0]) * k * 111320.0, (b[1] - a[1]) * 111320.0)
+
+
+def _turn_deg(v1, v2):
+    l1, l2 = math.hypot(*v1), math.hypot(*v2)
+    if l1 < 1e-6 or l2 < 1e-6:
+        return 0.0
+    dot = (v1[0] * v2[0] + v1[1] * v2[1]) / (l1 * l2)
+    return math.degrees(math.acos(max(-1.0, min(1.0, dot))))
+
+
+# A gap join that turns the lap back on itself is almost never a racing line:
+# it is how the DFS pads a short lap toward expected_m with a there-and-back
+# detour (Road America Canada Corner: the corner way run backwards between two
+# 64 m chords, +128 m and a fake 360 deg loop). Soft, not a hard reject: some
+# fragmented OSM laps (Portimao) only close through one such join.
+STITCH_MAX_JOIN_TURN = 120.0
+STITCH_REVERSAL_PENALTY_M = 150.0
+
+
+def _join_ok(loop, cc, d):
+    """A gap-bridging join (d >= 5 m) must not reverse direction onto or off
+    its chord. Contiguous joins (shared node) are real geometry -- a hairpin
+    split at its apex turns ~180 deg legitimately -- and are always allowed."""
+    if d < 5.0:
+        return True
+    tail = _heading(loop, reverse=True)
+    head = _heading(cc)
+    k = math.cos(math.radians(loop[-1][1]))
+    chord = ((cc[0][0] - loop[-1][0]) * k * 111320.0, (cc[0][1] - loop[-1][1]) * 111320.0)
+    return (_turn_deg(tail, chord) <= STITCH_MAX_JOIN_TURN
+            and _turn_deg(chord, head) <= STITCH_MAX_JOIN_TURN)
+
+
 def stitch_circuit_ways(elements, drop=STITCH_DROP, expected_m=None):
     """Spatially chain bbox raceway ways into one closed lap.
 
@@ -376,22 +425,22 @@ def stitch_circuit_ways(elements, drop=STITCH_DROP, expected_m=None):
         budget = {"n": 20000}
         sys.setrecursionlimit(10000)
 
-        def consider(loop):
+        def consider(loop, pen):
             gap = haversine(loop[0], loop[-1])
             if gap > 300:
                 return
             length = loop_length_m(loop) + gap
             if expected_m and not (0.6 * expected_m <= length <= 1.5 * expected_m):
                 return
-            score = gap + (abs(length - expected_m) if expected_m else 0)
+            score = gap + (abs(length - expected_m) if expected_m else 0) + pen
             if score < best["score"]:
                 best["loop"], best["score"] = list(loop), score
 
-        def dfs(loop, used, depth, branch):
+        def dfs(loop, used, depth, branch, pen):
             if budget["n"] <= 0:
                 return
             budget["n"] -= 1
-            consider(loop)
+            consider(loop, pen)
             if depth > len(pool):
                 return
             if expected_m and loop_length_m(loop) > 1.6 * expected_m:
@@ -409,15 +458,16 @@ def stitch_circuit_ways(elements, drop=STITCH_DROP, expected_m=None):
             conts.sort()
             for d, idx, flip in conts[:branch]:
                 c = pool[idx][::-1] if flip else pool[idx]
+                step = 0.0 if _join_ok(loop, c, d) else STITCH_REVERSAL_PENALTY_M
                 added = c[1:] if d < 1.0 else c
                 loop.extend(added)
                 used.add(idx)
                 # full branching near the seed, greedy deeper in
-                dfs(loop, used, depth + 1, branch if depth < 6 else 1)
+                dfs(loop, used, depth + 1, branch if depth < 6 else 1, pen + step)
                 used.discard(idx)
                 del loop[len(loop) - len(added):]
 
-        dfs(list(seed), {seed_idx}, 0, 3)
+        dfs(list(seed), {seed_idx}, 0, 3, 0.0)
         return best["loop"], best["score"]
 
     best_loop, best_score = None, float("inf")

@@ -2464,8 +2464,8 @@
         "display": "Andretti Hairpin",
         "labels": {
           "numbered": "Turn 2",
-          "driver": "Andretti Hairpin",
-          "official": "Andretti Hairpin"
+          "official": "Andretti Hairpin",
+          "driver": "Andretti Hairpin"
         },
         "direction": "left",
         "scale": 1,
@@ -2514,7 +2514,7 @@
           "numbered": "Turn 4"
         },
         "direction": "right",
-        "scale": 4,
+        "scale": 3,
         "marker": 0.29419
       },
       "geometry": {
@@ -2560,7 +2560,7 @@
           "numbered": "Turn 6"
         },
         "direction": "left",
-        "scale": 4,
+        "scale": 3,
         "marker": 0.54112
       },
       "geometry": {
@@ -2578,11 +2578,34 @@
         "id": "t7",
         "number": 7,
         "code": "7",
+        "display": "Turn 7",
+        "labels": {
+          "numbered": "Turn 7"
+        },
+        "direction": "right",
+        "scale": 5,
+        "marker": 0.65306
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7492145,
+          36.5838749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t8",
+        "number": 8,
+        "code": "8",
         "display": "The Corkscrew",
         "labels": {
-          "numbered": "Turn 7",
-          "driver": "The Corkscrew",
-          "official": "The Corkscrew (Turn 8/8a)"
+          "numbered": "Turn 8",
+          "official": "The Corkscrew",
+          "driver": "The Corkscrew"
         },
         "direction": "left",
         "scale": 2,
@@ -2600,17 +2623,42 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t8",
-        "number": 8,
-        "code": "8",
+        "id": "t9",
+        "number": 9,
+        "code": "8A",
+        "display": "The Corkscrew",
+        "labels": {
+          "numbered": "Turn 8A",
+          "official": "The Corkscrew",
+          "driver": "The Corkscrew"
+        },
+        "direction": "right",
+        "scale": 2,
+        "marker": 0.69667
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7494677,
+          36.5849876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t10",
+        "number": 10,
+        "code": "9",
         "display": "Rainey Curve",
         "labels": {
-          "numbered": "Turn 8",
-          "driver": "Rainey Curve",
-          "official": "Rainey Curve (Turn 9)"
+          "numbered": "Turn 9",
+          "official": "Rainey Curve",
+          "driver": "Rainey Curve"
         },
         "direction": "left",
-        "scale": 4,
+        "scale": 3,
         "marker": 0.77167
       },
       "geometry": {
@@ -2625,14 +2673,12 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t9",
-        "number": 9,
-        "code": "9",
+        "id": "t11",
+        "number": 11,
+        "code": "10",
         "display": "Turn 10",
         "labels": {
-          "numbered": "Turn 9",
-          "driver": "Turn 10",
-          "official": "Turn 10"
+          "numbered": "Turn 10"
         },
         "direction": "right",
         "scale": 3,
@@ -2650,14 +2696,12 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t10",
-        "number": 10,
-        "code": "10",
+        "id": "t12",
+        "number": 12,
+        "code": "11",
         "display": "Turn 11",
         "labels": {
-          "numbered": "Turn 10",
-          "driver": "Turn 11",
-          "official": "Turn 11"
+          "numbered": "Turn 11"
         },
         "direction": "left",
         "scale": 2,

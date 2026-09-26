@@ -1577,8 +1577,33 @@
         "display": "Big Bend",
         "labels": {
           "numbered": "Turn 1",
-          "driver": "Big Bend",
-          "official": "Big Bend"
+          "official": "Big Bend",
+          "driver": "Big Bend"
+        },
+        "direction": "right",
+        "scale": 3,
+        "marker": 0.09064
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.3783359,
+          41.9277018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t2",
+        "number": 2,
+        "code": "2",
+        "display": "Big Bend",
+        "labels": {
+          "numbered": "Turn 2",
+          "official": "Big Bend",
+          "driver": "Big Bend"
         },
         "direction": "right",
         "scale": 3,
@@ -1596,14 +1621,14 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t2",
-        "number": 2,
-        "code": "2",
+        "id": "t3",
+        "number": 3,
+        "code": "3",
         "display": "The Left-Hander",
         "labels": {
-          "numbered": "Turn 2",
-          "driver": "The Left-Hander",
-          "official": "Left Hander"
+          "numbered": "Turn 3",
+          "official": "The Lefthander",
+          "driver": "The Left-Hander"
         },
         "direction": "left",
         "scale": 3,
@@ -1621,24 +1646,24 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t3",
-        "number": 3,
-        "code": "3",
-        "display": "The Uphill",
+        "id": "t4",
+        "number": 4,
+        "code": "4",
+        "display": "The Right-Hander",
         "labels": {
-          "numbered": "Turn 3",
-          "driver": "The Uphill",
-          "official": "Uphill"
+          "numbered": "Turn 4",
+          "official": "The Righthander",
+          "driver": "The Right-Hander"
         },
         "direction": "right",
-        "scale": 4,
-        "marker": 0.52842
+        "scale": 3,
+        "marker": 0.33085
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.3868218,
-          41.9255293
+          -73.3816529,
+          41.9256313
         ]
       }
     },
@@ -1646,17 +1671,42 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t4",
-        "number": 4,
-        "code": "4",
-        "display": "West Bend",
+        "id": "t5",
+        "number": 5,
+        "code": "5",
+        "display": "The Uphill",
         "labels": {
-          "numbered": "Turn 4",
-          "driver": "West Bend",
-          "official": "West Bend"
+          "numbered": "Turn 5",
+          "official": "Climbing Turn",
+          "driver": "The Uphill"
         },
         "direction": "right",
-        "scale": 4,
+        "scale": 2,
+        "marker": 0.49887
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.3862673,
+          41.9251362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t6",
+        "number": 6,
+        "code": "6",
+        "display": "West Bend",
+        "labels": {
+          "numbered": "Turn 6",
+          "official": "West Bend",
+          "driver": "West Bend"
+        },
+        "direction": "right",
+        "scale": 3,
         "marker": 0.65253
       },
       "geometry": {
@@ -1671,24 +1721,24 @@
       "type": "Feature",
       "properties": {
         "role": "corner",
-        "id": "t5",
-        "number": 5,
-        "code": "5",
+        "id": "t7",
+        "number": 7,
+        "code": "7",
         "display": "The Downhill",
         "labels": {
-          "numbered": "Turn 5",
-          "driver": "The Downhill",
-          "official": "Diving Turn"
+          "numbered": "Turn 7",
+          "official": "Diving Turn",
+          "driver": "The Downhill"
         },
         "direction": "right",
-        "scale": 5,
-        "marker": 0.81971
+        "scale": 4,
+        "marker": 0.79058
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.3853958,
-          41.9300494
+          -73.3862131,
+          41.9299815
         ]
       }
     }

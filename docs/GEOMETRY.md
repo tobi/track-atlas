@@ -352,6 +352,23 @@ against the applied shift) disagree by more than 1 m, or when a surface has no
 position record. Info: the budget line; absolute accuracy above the 2 m
 racing-line gate.
 
+A curator who has checked an unnamed peak or an unplaceable corner records the
+verdict in `tracks/<slug>/overrides.json` (per layout, or `"*"`):
+
+```json
+{"gp": {"surface_review": {
+  "unnamed": [{"marker": 0.0515, "direction": "left", "verdict": "artefact",
+               "note": "pit-lane split pulls the midline"}],
+  "corners": {"9": "straight-line kink, R 350 m / 6 deg"}}}}
+```
+
+Review markers are on the output (midline) basis, as `surface.unnamed_corners`
+reports them. An unnamed peak matches a review entry of the same direction within 25 m; the
+warning becomes an info line. Verdicts: `artefact` (edge/midline error, not a
+bend), `part_of_corner` (a second apex or lobe of a numbered corner),
+`unnumbered_bend` (a real bend the numbering skips). The evidence belongs in
+the track README "Curation notes".
+
 ## Accuracy, honestly
 
 - **Relative** geometry (width, edge shape, where the apex sits against the

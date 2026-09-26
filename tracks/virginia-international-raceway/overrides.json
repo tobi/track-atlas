@@ -1,106 +1,162 @@
 {
   "gp": {
-    "corners": {
-      "1": {
+    "replace_corners": [
+      {
+        "number": 1,
         "driver": "Horseshoe",
-        "official": "Turn 1",
+        "official": "Horseshoe",
+        "marker": 0.0735,
         "direction": "right",
-        "scale": 1
+        "scale": 2
       },
-      "2": {
-        "driver": "Turn 2",
-        "official": "Turn 2",
+      {
+        "number": 2,
+        "marker": 0.1311,
         "direction": "left",
         "scale": 4
       },
-      "3": {
+      {
+        "number": 3,
         "driver": "NASCAR",
-        "official": "Turn 3",
-        "direction": "right",
+        "official": "NASCAR Bend",
+        "marker": 0.1556,
+        "direction": "left",
         "scale": 3
       },
-      "4": {
+      {
+        "number": 4,
         "driver": "Left Hook",
-        "official": "Turn 4",
+        "official": "Left Hook",
+        "marker": 0.1946,
         "direction": "left",
         "scale": 2
       },
-      "5": {
-        "driver": "Climbing Esses",
-        "official": "Turn 5",
-        "complex": "Climbing Esses",
+      {
+        "number": 5,
+        "marker": 0.2075,
         "direction": "right",
-        "scale": 4
+        "scale": 3
       },
-      "6": {
-        "driver": "Climbing Esses",
-        "official": "Turn 6",
-        "complex": "Climbing Esses",
-        "direction": "left",
-        "scale": 4
+      {
+        "number": 6,
+        "marker": 0.2332,
+        "direction": "right",
+        "scale": 3
       },
-      "7": {
+      {
+        "number": 7,
         "driver": "Snake",
-        "official": "Turn 7",
-        "direction": "left",
-        "scale": 2
-      },
-      "8": {
-        "driver": "Spiral",
-        "official": "Turn 8",
-        "direction": "right",
-        "scale": 2
-      },
-      "9": {
-        "driver": "Spiral",
-        "official": "Turn 9",
-        "direction": "left",
-        "scale": 3
-      },
-      "10": {
-        "driver": "Spiral",
-        "official": "Turn 10",
-        "direction": "right",
-        "scale": 3
-      },
-      "11": {
-        "driver": "Spiral",
-        "official": "Turn 11",
-        "direction": "left",
-        "scale": 3
-      },
-      "12": {
-        "driver": "South Bend",
-        "official": "Turn 12",
-        "direction": "right",
-        "scale": 3
-      },
-      "13": {
-        "driver": "Oak Tree",
-        "official": "Turn 13",
+        "official": "Snake",
+        "marker": 0.2681,
         "direction": "left",
         "scale": 4
       },
-      "14": {
-        "driver": "Roller Coaster",
-        "official": "Turn 14",
-        "direction": "right",
-        "scale": 5
-      },
-      "15": {
-        "driver": "Hog Pen",
-        "official": "Turn 15",
+      {
+        "number": 8,
+        "driver": "Climbing Esses",
+        "marker": 0.3535,
         "direction": "left",
-        "scale": 2
+        "scale": 5,
+        "complex": "Climbing Esses"
       },
-      "16": {
-        "driver": "Turn 17",
-        "official": "Turn 17",
+      {
+        "number": 9,
+        "driver": "Climbing Esses",
+        "marker": 0.3786,
         "direction": "right",
         "scale": 5,
-        "error": "marker 0.0835 appears before T1 marker 0.0815 — should be ~0.98+ as final corner before start/finish"
+        "complex": "Climbing Esses"
+      },
+      {
+        "number": 10,
+        "driver": "Climbing Esses",
+        "marker": 0.3961,
+        "direction": "left",
+        "scale": 5,
+        "complex": "Climbing Esses"
+      },
+      {
+        "number": 11,
+        "driver": "Climbing Esses",
+        "marker": 0.41,
+        "direction": "right",
+        "scale": 4,
+        "complex": "Climbing Esses"
+      },
+      {
+        "number": 12,
+        "driver": "South Bend",
+        "official": "South Bend",
+        "marker": 0.4551,
+        "direction": "left",
+        "scale": 4
+      },
+      {
+        "number": 13,
+        "driver": "Oak Tree",
+        "official": "Oak Tree Curve",
+        "marker": 0.5309,
+        "direction": "right",
+        "scale": 2
+      },
+      {
+        "number": 14,
+        "driver": "Roller Coaster",
+        "official": "Roller Coaster",
+        "marker": 0.7803,
+        "direction": "right",
+        "scale": 3,
+        "complex": "Roller Coaster"
+      },
+      {
+        "number": 15,
+        "driver": "Roller Coaster",
+        "official": "Roller Coaster",
+        "marker": 0.7964,
+        "direction": "left",
+        "scale": 4,
+        "complex": "Roller Coaster"
+      },
+      {
+        "number": 16,
+        "driver": "Hog Pen",
+        "official": "Hog Pen",
+        "marker": 0.8392,
+        "direction": "left",
+        "scale": 4,
+        "complex": "Hog Pen"
+      },
+      {
+        "number": 17,
+        "driver": "Hog Pen",
+        "official": "Hog Pen",
+        "marker": 0.8547,
+        "direction": "right",
+        "scale": 4,
+        "complex": "Hog Pen"
       }
-    },
-    "errors_summary": "Turn 16 marker (0.0835) overlaps with T1 (0.0815), should be ~0.98 as final corner; turns 5-6 are collectively 'Climbing Esses'; turns 8-11 form 'Spiral' descent complex but each has distinct apex"
+    ],
+    "surface_review": {
+      "unnamed": [
+        {
+          "marker": 0.0838,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "second apex of T1 Horseshoe (R50, -76 deg; OSM Horseshoe way 0.0614-0.1088)"
+        },
+        {
+          "marker": 0.2449,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "first lobe of T7 Snake (R75, +29 deg; OSM Snake way 0.2255-0.2703)"
+        },
+        {
+          "marker": 0.5139,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "first apex of T13 Oak Tree (R47, -63 deg) before its R24 apex at 0.5309"
+        }
+      ]
+    }
   }
 }

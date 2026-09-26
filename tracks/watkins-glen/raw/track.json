@@ -247,7 +247,7 @@
                 "shape": "corner",
                 "direction": "left",
                 "radius_m": 145.6,
-                "marker_offset_m": 104.3
+                "marker_offset_m": 2.3
               },
               "entry": {
                 "marker": 0.16371,
@@ -330,7 +330,7 @@
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 129.9,
-                "marker_offset_m": -69.3
+                "marker_offset_m": 4.1
               },
               "entry": {
                 "marker": 0.20583,
@@ -413,7 +413,7 @@
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 43.5,
-                "marker_offset_m": -84.0
+                "marker_offset_m": -0.4
               },
               "entry": {
                 "marker": 0.34768,
@@ -649,17 +649,77 @@
                 "official": "Toe of the Boot",
                 "driver": "Toe"
               },
-              "marker": 0.60818,
+              "marker": 0.59821,
               "location": [
-                -76.9268867,
-                42.3284709
+                -76.926341,
+                42.3287247
               ],
               "location_source": "midline",
-              "direction": "left",
+              "direction": "right",
               "scale": 2,
               "placement": {
-                "basis": "none",
-                "note": "no curvature peak near the marker; marker projected from the source data"
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 57.3,
+                "marker_offset_m": -51.7
+              },
+              "entry": {
+                "marker": 0.59074,
+                "line": [
+                  [
+                    -76.9261588,
+                    42.3290823
+                  ],
+                  [
+                    -76.9263073,
+                    42.3290767
+                  ]
+                ],
+                "width_m": 12.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.1,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.62903,
+                "line": [
+                  [
+                    -76.9278991,
+                    42.3290773
+                  ],
+                  [
+                    -76.9277479,
+                    42.3290973
+                  ]
+                ],
+                "width_m": 12.66,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.19,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.59821,
+                "location": [
+                  -76.9264096,
+                  42.3287549
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.1,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
               }
             },
             {
@@ -678,15 +738,14 @@
                 42.3343201
               ],
               "location_source": "midline",
-              "direction": "left",
+              "direction": "right",
               "scale": 3,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 43.5,
-                "marker_offset_m": -12.5,
-                "declared_direction": "left"
+                "marker_offset_m": 34.6
               },
               "entry": {
                 "marker": 0.72657,
@@ -760,15 +819,14 @@
                 42.3339963
               ],
               "location_source": "midline",
-              "direction": "right",
+              "direction": "left",
               "scale": 2,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "left",
                 "radius_m": 50.2,
-                "marker_offset_m": 35.0,
-                "declared_direction": "right"
+                "marker_offset_m": 35.0
               },
               "entry": {
                 "marker": 0.7851,
@@ -930,7 +988,7 @@
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 55.3,
-                "marker_offset_m": -75.4
+                "marker_offset_m": 0.2
               },
               "entry": {
                 "marker": 0.91839,
@@ -1522,31 +1580,31 @@
             {
               "id": "t7",
               "label": "Toe",
-              "start": 0.57521,
-              "end": 0.63228,
+              "start": 0.59074,
+              "end": 0.62903,
               "anchor": "t7",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.60818,
+                  "marker": 0.59821,
                   "point_ref": "t7"
                 }
               ],
               "start_line": {
-                "marker": 0.57521,
+                "marker": 0.59074,
                 "line": [
                   [
-                    -76.9262127,
-                    42.3298462
+                    -76.9261588,
+                    42.3290823
                   ],
                   [
-                    -76.9263549,
-                    42.3298415
+                    -76.9263073,
+                    42.3290767
                   ]
                 ],
-                "width_m": 11.73,
+                "width_m": 12.26,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 2.1,
@@ -1556,18 +1614,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.63228,
+                "marker": 0.62903,
                 "line": [
                   [
-                    -76.9279364,
-                    42.3292399
+                    -76.9278991,
+                    42.3290773
                   ],
                   [
-                    -76.9277699,
-                    42.3292558
+                    -76.9277479,
+                    42.3290973
                   ]
                 ],
-                "width_m": 13.83,
+                "width_m": 12.66,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.19,
@@ -2337,8 +2395,8 @@
             {
               "id": "t7",
               "label": "Toe",
-              "start": 0.57521,
-              "end": 0.63228,
+              "start": 0.59074,
+              "end": 0.62903,
               "members": [
                 "t7"
               ],
@@ -2347,23 +2405,65 @@
                   "id": "t7-apex",
                   "role": "apex",
                   "label": "Toe",
-                  "marker": 0.60818,
+                  "marker": 0.59821,
                   "point_ref": "t7"
                 }
               ],
-              "start_line": {
-                "marker": 0.57521,
+              "entry": {
+                "marker": 0.59074,
                 "line": [
                   [
-                    -76.9262127,
-                    42.3298462
+                    -76.9261588,
+                    42.3290823
                   ],
                   [
-                    -76.9263549,
-                    42.3298415
+                    -76.9263073,
+                    42.3290767
                   ]
                 ],
-                "width_m": 11.73,
+                "width_m": 12.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.1,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.62903,
+                "line": [
+                  [
+                    -76.9278991,
+                    42.3290773
+                  ],
+                  [
+                    -76.9277479,
+                    42.3290973
+                  ]
+                ],
+                "width_m": 12.66,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.19,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "start_line": {
+                "marker": 0.59074,
+                "line": [
+                  [
+                    -76.9261588,
+                    42.3290823
+                  ],
+                  [
+                    -76.9263073,
+                    42.3290767
+                  ]
+                ],
+                "width_m": 12.26,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 2.1,
@@ -2373,18 +2473,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.63228,
+                "marker": 0.62903,
                 "line": [
                   [
-                    -76.9279364,
-                    42.3292399
+                    -76.9278991,
+                    42.3290773
                   ],
                   [
-                    -76.9277699,
-                    42.3292558
+                    -76.9277479,
+                    42.3290973
                   ]
                 ],
-                "width_m": 13.83,
+                "width_m": 12.66,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.19,
@@ -3544,11 +3644,6 @@
             "radius_m": 63.9
           },
           {
-            "marker": 0.5988,
-            "direction": "right",
-            "radius_m": 57.3
-          },
-          {
             "marker": 0.7543,
             "direction": "right",
             "radius_m": 60.2
@@ -3629,7 +3724,7 @@
     "imsa_data": "watkins-glen"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:56:51.489492+00:00",
+    "generated_at": "2026-09-26T20:58:56.050116+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

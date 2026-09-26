@@ -2,104 +2,119 @@
   "gp": {
     "corners": {
       "1": {
-        "driver": "Turn 1",
-        "official": "Turn 1",
+        "code": "1",
+        "official": null,
+        "driver": null,
         "direction": "right",
-        "scale": 3,
-        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
+        "marker": 0.0858,
+        "scale": 3
       },
       "2": {
-        "driver": "Turn 2",
-        "official": "Turn 2",
+        "code": "2",
+        "official": null,
+        "driver": null,
         "direction": "left",
-        "scale": 3,
-        "direction_note": "direction measured from NAIP track edges (clockwise lap); was right"
+        "marker": 0.1713,
+        "scale": 4
       },
       "3": {
-        "driver": "Turn 3",
-        "official": "Turn 3",
+        "code": "3",
+        "official": null,
+        "driver": null,
         "direction": "right",
-        "scale": 4,
-        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
+        "marker": 0.1856,
+        "scale": 3
       },
       "4": {
-        "driver": "Turn 4",
-        "official": "Turn 4",
+        "code": "4",
+        "official": null,
+        "driver": null,
         "direction": "left",
-        "scale": 3
+        "marker": 0.2209,
+        "scale": 4
       },
       "5": {
-        "driver": "Turn 5",
-        "official": "Turn 5",
+        "code": "Esses",
+        "official": "The Esses",
+        "driver": "The Esses",
         "direction": "right",
-        "scale": 4,
-        "error": "current_names shows 'The Esses' but this is a single corner, not the esses section"
+        "marker": 0.2559,
+        "scale": 4
       },
       "6": {
-        "driver": "Turn 6",
-        "official": "Turn 6",
+        "code": "5",
+        "official": null,
+        "driver": null,
         "direction": "left",
-        "scale": 5,
-        "error": "current_names shows 'Turn 5' but should be 'Turn 6'"
-      },
-      "7": {
-        "driver": "Turn 7",
-        "official": "Turn 7",
-        "direction": "right",
-        "scale": 1,
-        "error": "current_names shows 'Turn 6' but should be 'Turn 7'"
-      },
-      "8": {
-        "driver": "Turn 8",
-        "official": "Turn 8",
-        "direction": "left",
-        "scale": 2,
-        "error": "current_names shows 'Turn 7' but should be 'Turn 8'"
-      },
-      "9": {
-        "driver": "Turn 9",
-        "official": "Turn 9",
-        "direction": "left",
-        "scale": 3,
-        "error": "current_names shows 'Turn 8' but should be 'Turn 9'"
-      },
-      "10": {
-        "driver": "Turn 10",
-        "official": "Turn 10",
-        "complex": "Turn 10",
-        "direction": "right",
-        "scale": 3,
-        "error": "current_names shows 'Turn 9' but should be 'Turn 10'; part of Turn 10 complex (10A/10B)"
-      },
-      "11": {
-        "driver": "Turn 10A",
-        "official": "Turn 10A",
-        "complex": "Turn 10",
-        "direction": "left",
+        "marker": 0.3323,
         "scale": 3
       },
-      "12": {
-        "driver": "Turn 10B",
-        "official": "Turn 10B",
-        "complex": "Turn 10",
+      "7": {
+        "code": "6",
+        "official": null,
+        "driver": null,
         "direction": "right",
-        "scale": 4,
-        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
+        "marker": 0.4718,
+        "scale": 3
+      },
+      "8": {
+        "code": "7",
+        "official": null,
+        "driver": null,
+        "direction": "right",
+        "marker": 0.5092,
+        "scale": 1
+      },
+      "9": {
+        "code": "8",
+        "official": null,
+        "driver": null,
+        "direction": "left",
+        "marker": 0.5638,
+        "scale": 6
+      },
+      "10": {
+        "code": "9",
+        "official": null,
+        "driver": null,
+        "direction": "right",
+        "marker": 0.7213,
+        "scale": 6
+      },
+      "11": {
+        "code": "10A",
+        "official": null,
+        "driver": null,
+        "direction": "left",
+        "marker": 0.842,
+        "scale": 2,
+        "complex": "Turn 10"
+      },
+      "12": {
+        "code": "10B",
+        "official": null,
+        "driver": null,
+        "direction": "right",
+        "marker": 0.8617,
+        "scale": 3,
+        "complex": "Turn 10"
       },
       "13": {
-        "driver": "Turn 11",
-        "official": "Turn 11",
+        "code": "11",
+        "official": null,
+        "driver": null,
         "direction": "right",
-        "scale": 2
+        "marker": 0.8985,
+        "scale": 3
       },
       "14": {
-        "driver": "Turn 12",
-        "official": "Turn 12",
+        "code": "12",
+        "official": null,
+        "driver": null,
         "direction": "right",
-        "scale": 3,
-        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
+        "marker": 0.9574,
+        "scale": 3
       }
-    },
-    "errors_summary": "Corners 6-9 have off-by-one numbering in colloquial names (showing previous turn number); Corner 5 mislabeled as 'The Esses'; Corner 10 missing from complex grouping with 10A/10B"
+    }
   }
 }

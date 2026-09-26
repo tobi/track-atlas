@@ -30,7 +30,12 @@
       "name": "Classic",
       "length_m": 2462,
       "direction": "clockwise",
-      "lovely": "gp"
+      "lovely": "gp",
+      "centerline": "relation",
+      "start_finish": {
+        "location": [-73.380692, 41.928495],
+        "note": "Pinned at the relation's lap origin (Sam Posey Straight) so the curated replace_corners markers (geometry fractions on this frame) cannot move. Not a surveyed timing line."
+      }
     }
   ],
   "surface": {},

@@ -228,6 +228,7 @@ def generate_track(slug: str) -> dict:
         #                               "driver": "Porsche Curves",
         #                               "complex": "Porsche Curves"}}}}
         cleared_driver = set()   # corners whose driver layer an override cleared
+        marker_ov = {}           # corner number -> curated apex marker (applied post-geometry)
         if ov_all:
             # Overrides are keyed by layout id; a "*" block applies to every
             # layout (curation shared by series variants that use the same
@@ -256,6 +257,8 @@ def generate_track(slug: str) -> dict:
                 for k in ("complex", "direction", "scale"):
                     if k in o:
                         c[k] = o[k]
+                if o.get("marker") is not None:
+                    marker_ov[c["number"]] = float(o["marker"])
 
         # Normalize the name layers:
         #   - 'numbered' always tracks the (possibly overridden) code;
@@ -438,6 +441,12 @@ def generate_track(slug: str) -> dict:
                     geometry_summary.setdefault("selected_score", None)
                     outline_coords.append(outline_coords[0])  # close the loop
         geometry_summaries.append(geometry_summary)
+        # Curated apex markers (overrides.json "marker") replace the Lovely lap
+        # fraction only AFTER the lap origin/orientation has been learned from
+        # the upstream markers, so a marker fix never shifts start/finish.
+        for c in corners:
+            if c["number"] in marker_ov:
+                c["marker"] = marker_ov[c["number"]]
         # Final invariant: marker fractions are measured on the emitted GeoJSON
         # centerline. OSM way centroids and piecewise alignment are useful to
         # choose/orient the lap, but clients slice ranges directly by raw marker

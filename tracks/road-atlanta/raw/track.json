@@ -162,7 +162,7 @@
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 48.7,
-                "marker_offset_m": -67.5
+                "marker_offset_m": -1.3
               },
               "entry": {
                 "marker": 0.0827,
@@ -237,13 +237,13 @@
               ],
               "location_source": "midline",
               "direction": "left",
-              "scale": 3,
+              "scale": 4,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "left",
                 "radius_m": 121.0,
-                "marker_offset_m": -16.4
+                "marker_offset_m": 0.8
               },
               "entry": {
                 "marker": 0.14832,
@@ -318,13 +318,13 @@
               ],
               "location_source": "midline",
               "direction": "right",
-              "scale": 4,
+              "scale": 3,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 36.9,
-                "marker_offset_m": -89.1
+                "marker_offset_m": -12.3
               },
               "entry": {
                 "marker": 0.17942,
@@ -399,13 +399,13 @@
               ],
               "location_source": "midline",
               "direction": "left",
-              "scale": 3,
+              "scale": 4,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "left",
                 "radius_m": 101.1,
-                "marker_offset_m": -43.5
+                "marker_offset_m": -0.1
               },
               "entry": {
                 "marker": 0.19533,
@@ -468,15 +468,17 @@
             {
               "id": "t5",
               "number": 5,
-              "code": "5",
-              "label": "Turn 5",
+              "code": "Esses",
+              "label": "The Esses",
               "labels": {
-                "numbered": "Turn 5"
+                "numbered": "Turn Esses",
+                "driver": "The Esses",
+                "official": "The Esses"
               },
-              "marker": 0.30405,
+              "marker": 0.25752,
               "location": [
-                -83.8154281,
-                34.1419619
+                -83.8138741,
+                34.1430312
               ],
               "location_source": "midline",
               "direction": "right",
@@ -485,56 +487,56 @@
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "right",
-                "radius_m": 78.3,
-                "marker_offset_m": 35.5
+                "radius_m": 75.8,
+                "marker_offset_m": -0.0
               },
               "entry": {
-                "marker": 0.3016,
+                "marker": 0.25116,
                 "line": [
                   [
-                    -83.8153087,
-                    34.1420012
+                    -83.813706,
+                    34.143234
                   ],
                   [
-                    -83.8154144,
-                    34.1420648
+                    -83.8138361,
+                    34.1432627
                   ]
                 ],
-                "width_m": 12.04,
+                "width_m": 12.41,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               },
               "exit": {
-                "marker": 0.31164,
+                "marker": 0.27295,
                 "line": [
                   [
-                    -83.8156637,
-                    34.1417489
+                    -83.8143507,
+                    34.14261
                   ],
                   [
-                    -83.8157296,
-                    34.1418415
+                    -83.8144038,
+                    34.1427129
                   ]
                 ],
-                "width_m": 11.93,
+                "width_m": 12.42,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               },
               "apex": {
-                "marker": 0.30405,
+                "marker": 0.25752,
                 "location": [
-                  -83.8154752,
-                  34.1419983
+                  -83.8139319,
+                  34.1430612
                 ],
                 "edge": "right",
                 "quality": {
@@ -549,10 +551,10 @@
             {
               "id": "t6",
               "number": 6,
-              "code": "6",
-              "label": "Turn 6",
+              "code": "5",
+              "label": "Turn 5",
               "labels": {
-                "numbered": "Turn 6"
+                "numbered": "Turn 5"
               },
               "marker": 0.33049,
               "location": [
@@ -561,13 +563,13 @@
               ],
               "location_source": "midline",
               "direction": "left",
-              "scale": 5,
+              "scale": 3,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "left",
                 "radius_m": 45.0,
-                "marker_offset_m": -84.9
+                "marker_offset_m": -0.0
               },
               "entry": {
                 "marker": 0.32045,
@@ -630,6 +632,87 @@
             {
               "id": "t7",
               "number": 7,
+              "code": "6",
+              "label": "Turn 6",
+              "labels": {
+                "numbered": "Turn 6"
+              },
+              "marker": 0.47324,
+              "location": [
+                -83.8167882,
+                34.1362965
+              ],
+              "location_source": "midline",
+              "direction": "right",
+              "scale": 3,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 55.2,
+                "marker_offset_m": 2.7
+              },
+              "entry": {
+                "marker": 0.45684,
+                "line": [
+                  [
+                    -83.8164144,
+                    34.1368147
+                  ],
+                  [
+                    -83.8165484,
+                    34.1368094
+                  ]
+                ],
+                "width_m": 12.38,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
+              "exit": {
+                "marker": 0.48034,
+                "line": [
+                  [
+                    -83.8170763,
+                    34.1361637
+                  ],
+                  [
+                    -83.8170938,
+                    34.1362709
+                  ]
+                ],
+                "width_m": 12.01,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
+              "apex": {
+                "marker": 0.47324,
+                "location": [
+                  -83.8168238,
+                  34.1363443
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              }
+            },
+            {
+              "id": "t8",
+              "number": 8,
               "code": "7",
               "label": "Turn 7",
               "labels": {
@@ -648,7 +731,7 @@
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 23.3,
-                "marker_offset_m": 96.4
+                "marker_offset_m": -0.2
               },
               "entry": {
                 "marker": 0.50312,
@@ -709,93 +792,12 @@
               }
             },
             {
-              "id": "t8",
-              "number": 8,
+              "id": "t9",
+              "number": 9,
               "code": "8",
               "label": "Turn 8",
               "labels": {
                 "numbered": "Turn 8"
-              },
-              "marker": 0.52442,
-              "location": [
-                -83.8183468,
-                34.1367637
-              ],
-              "location_source": "midline",
-              "direction": "left",
-              "scale": 2,
-              "placement": {
-                "basis": "curvature",
-                "shape": "kink",
-                "direction": "left",
-                "radius_m": 349.5,
-                "marker_offset_m": -20.2
-              },
-              "entry": {
-                "marker": 0.52344,
-                "line": [
-                  [
-                    -83.8184201,
-                    34.1367369
-                  ],
-                  [
-                    -83.8182871,
-                    34.1367193
-                  ]
-                ],
-                "width_m": 12.42,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.09,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-10-22"
-                }
-              },
-              "exit": {
-                "marker": 0.52589,
-                "line": [
-                  [
-                    -83.8184095,
-                    34.1368207
-                  ],
-                  [
-                    -83.8182766,
-                    34.1368146
-                  ]
-                ],
-                "width_m": 12.28,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.09,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-10-22"
-                }
-              },
-              "apex": {
-                "marker": 0.52442,
-                "location": [
-                  -83.8184143,
-                  34.1367706
-                ],
-                "edge": "left",
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.09,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-10-22"
-                }
-              }
-            },
-            {
-              "id": "t9",
-              "number": 9,
-              "code": "9",
-              "label": "Turn 9",
-              "labels": {
-                "numbered": "Turn 9"
               },
               "marker": 0.56408,
               "location": [
@@ -804,13 +806,13 @@
               ],
               "location_source": "midline",
               "direction": "left",
-              "scale": 3,
+              "scale": 6,
               "placement": {
                 "basis": "curvature",
                 "shape": "kink",
                 "direction": "left",
                 "radius_m": 333.8,
-                "marker_offset_m": -126.6
+                "marker_offset_m": 0.8
               },
               "entry": {
                 "marker": 0.56017,
@@ -873,33 +875,91 @@
             {
               "id": "t10",
               "number": 10,
-              "code": "10",
-              "label": "Turn 10",
+              "code": "9",
+              "label": "Turn 9",
               "labels": {
-                "numbered": "Turn 10"
+                "numbered": "Turn 9"
               },
-              "marker": 0.75935,
+              "marker": 0.69973,
               "location": [
-                -83.8187099,
-                34.1453427
+                -83.8186957,
+                34.1431682
               ],
               "location_source": "midline",
               "direction": "right",
-              "scale": 3,
+              "scale": 6,
               "placement": {
-                "basis": "none",
-                "note": "no curvature peak near the marker; marker projected from the source data"
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 77.8,
+                "marker_offset_m": -88.2
+              },
+              "entry": {
+                "marker": 0.69704,
+                "line": [
+                  [
+                    -83.8187458,
+                    34.1430599
+                  ],
+                  [
+                    -83.8186092,
+                    34.1430807
+                  ]
+                ],
+                "width_m": 12.8,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
+              "exit": {
+                "marker": 0.7012,
+                "line": [
+                  [
+                    -83.8187723,
+                    34.1432303
+                  ],
+                  [
+                    -83.8186085,
+                    34.1432139
+                  ]
+                ],
+                "width_m": 15.21,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.05,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2023-10-22"
+                }
+              },
+              "apex": {
+                "marker": 0.69973,
+                "location": [
+                  -83.8186204,
+                  34.1431689
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
               }
             },
             {
               "id": "t11",
               "number": 11,
-              "code": "11",
+              "code": "10A",
               "label": "Turn 10A",
               "labels": {
-                "numbered": "Turn 11",
-                "driver": "Turn 10A",
-                "official": "Turn 10A"
+                "numbered": "Turn 10A"
               },
               "marker": 0.84077,
               "location": [
@@ -908,13 +968,13 @@
               ],
               "location_source": "midline",
               "direction": "left",
-              "scale": 3,
+              "scale": 2,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "left",
                 "radius_m": 23.8,
-                "marker_offset_m": -13.0
+                "marker_offset_m": 0.6
               },
               "entry": {
                 "marker": 0.83857,
@@ -977,12 +1037,10 @@
             {
               "id": "t12",
               "number": 12,
-              "code": "12",
+              "code": "10B",
               "label": "Turn 10B",
               "labels": {
-                "numbered": "Turn 12",
-                "driver": "Turn 10B",
-                "official": "Turn 10B"
+                "numbered": "Turn 10B"
               },
               "marker": 0.86183,
               "location": [
@@ -991,13 +1049,13 @@
               ],
               "location_source": "midline",
               "direction": "right",
-              "scale": 4,
+              "scale": 3,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 34.3,
-                "marker_offset_m": -83.4
+                "marker_offset_m": -0.2
               },
               "entry": {
                 "marker": 0.85204,
@@ -1060,12 +1118,10 @@
             {
               "id": "t13",
               "number": 13,
-              "code": "13",
+              "code": "11",
               "label": "Turn 11",
               "labels": {
-                "numbered": "Turn 13",
-                "driver": "Turn 11",
-                "official": "Turn 11"
+                "numbered": "Turn 11"
               },
               "marker": 0.8988,
               "location": [
@@ -1074,13 +1130,13 @@
               ],
               "location_source": "midline",
               "direction": "right",
-              "scale": 2,
+              "scale": 3,
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 47.7,
-                "marker_offset_m": -107.7
+                "marker_offset_m": -1.5
               },
               "entry": {
                 "marker": 0.89391,
@@ -1143,12 +1199,10 @@
             {
               "id": "t14",
               "number": 14,
-              "code": "14",
+              "code": "12",
               "label": "Turn 12",
               "labels": {
-                "numbered": "Turn 14",
-                "driver": "Turn 12",
-                "official": "Turn 12"
+                "numbered": "Turn 12"
               },
               "marker": 0.95928,
               "location": [
@@ -1163,7 +1217,7 @@
                 "shape": "corner",
                 "direction": "right",
                 "radius_m": 72.6,
-                "marker_offset_m": -89.5
+                "marker_offset_m": 0.8
               },
               "entry": {
                 "marker": 0.95316,
@@ -1619,65 +1673,65 @@
             },
             {
               "id": "t5",
-              "label": "Turn 5",
-              "start": 0.3016,
-              "end": 0.31164,
+              "label": "The Esses",
+              "start": 0.25116,
+              "end": 0.27295,
               "anchor": "t5",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.30405,
+                  "marker": 0.25752,
                   "point_ref": "t5"
                 }
               ],
               "start_line": {
-                "marker": 0.3016,
+                "marker": 0.25116,
                 "line": [
                   [
-                    -83.8153087,
-                    34.1420012
+                    -83.813706,
+                    34.143234
                   ],
                   [
-                    -83.8154144,
-                    34.1420648
+                    -83.8138361,
+                    34.1432627
                   ]
                 ],
-                "width_m": 12.04,
+                "width_m": 12.41,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               },
               "end_line": {
-                "marker": 0.31164,
+                "marker": 0.27295,
                 "line": [
                   [
-                    -83.8156637,
-                    34.1417489
+                    -83.8143507,
+                    34.14261
                   ],
                   [
-                    -83.8157296,
-                    34.1418415
+                    -83.8144038,
+                    34.1427129
                   ]
                 ],
-                "width_m": 11.93,
+                "width_m": 12.42,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               }
             },
             {
               "id": "t6",
-              "label": "Turn 6",
+              "label": "Turn 5",
               "start": 0.32045,
               "end": 0.33539,
               "anchor": "t6",
@@ -1735,17 +1789,75 @@
             },
             {
               "id": "t7",
-              "label": "Turn 7",
-              "start": 0.50312,
-              "end": 0.51487,
+              "label": "Turn 6",
+              "start": 0.45684,
+              "end": 0.48034,
               "anchor": "t7",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.51242,
+                  "marker": 0.47324,
                   "point_ref": "t7"
+                }
+              ],
+              "start_line": {
+                "marker": 0.45684,
+                "line": [
+                  [
+                    -83.8164144,
+                    34.1368147
+                  ],
+                  [
+                    -83.8165484,
+                    34.1368094
+                  ]
+                ],
+                "width_m": 12.38,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
+              "end_line": {
+                "marker": 0.48034,
+                "line": [
+                  [
+                    -83.8170763,
+                    34.1361637
+                  ],
+                  [
+                    -83.8170938,
+                    34.1362709
+                  ]
+                ],
+                "width_m": 12.01,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              }
+            },
+            {
+              "id": "t8",
+              "label": "Turn 7",
+              "start": 0.50312,
+              "end": 0.51487,
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.51242,
+                  "point_ref": "t8"
                 }
               ],
               "start_line": {
@@ -1792,66 +1904,8 @@
               }
             },
             {
-              "id": "t8",
-              "label": "Turn 8",
-              "start": 0.52344,
-              "end": 0.52589,
-              "anchor": "t8",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.52442,
-                  "point_ref": "t8"
-                }
-              ],
-              "start_line": {
-                "marker": 0.52344,
-                "line": [
-                  [
-                    -83.8184201,
-                    34.1367369
-                  ],
-                  [
-                    -83.8182871,
-                    34.1367193
-                  ]
-                ],
-                "width_m": 12.42,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.09,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-10-22"
-                }
-              },
-              "end_line": {
-                "marker": 0.52589,
-                "line": [
-                  [
-                    -83.8184095,
-                    34.1368207
-                  ],
-                  [
-                    -83.8182766,
-                    34.1368146
-                  ]
-                ],
-                "width_m": 12.28,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.09,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-10-22"
-                }
-              }
-            },
-            {
               "id": "t9",
-              "label": "Turn 9",
+              "label": "Turn 8",
               "start": 0.56017,
               "end": 0.56727,
               "anchor": "t9",
@@ -1909,32 +1963,32 @@
             },
             {
               "id": "t10",
-              "label": "Turn 10",
-              "start": 0.72995,
-              "end": 0.79847,
+              "label": "Turn 9",
+              "start": 0.69704,
+              "end": 0.7012,
               "anchor": "t10",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.75935,
+                  "marker": 0.69973,
                   "point_ref": "t10"
                 }
               ],
               "start_line": {
-                "marker": 0.72995,
+                "marker": 0.69704,
                 "line": [
                   [
-                    -83.8188899,
-                    34.1442654
+                    -83.8187458,
+                    34.1430599
                   ],
                   [
-                    -83.8187525,
-                    34.1442683
+                    -83.8186092,
+                    34.1430807
                   ]
                 ],
-                "width_m": 12.68,
+                "width_m": 12.8,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -1944,18 +1998,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.79847,
+                "marker": 0.7012,
                 "line": [
                   [
-                    -83.8183384,
-                    34.1467528
+                    -83.8187723,
+                    34.1432303
                   ],
                   [
-                    -83.8182078,
-                    34.1467231
+                    -83.8186085,
+                    34.1432139
                   ]
                 ],
-                "width_m": 12.49,
+                "width_m": 15.21,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 2.05,
@@ -2614,9 +2668,9 @@
             },
             {
               "id": "t5",
-              "label": "Turn 5",
-              "start": 0.3016,
-              "end": 0.31164,
+              "label": "The Esses",
+              "start": 0.25116,
+              "end": 0.27295,
               "members": [
                 "t5"
               ],
@@ -2624,101 +2678,203 @@
                 {
                   "id": "t5-apex",
                   "role": "apex",
-                  "label": "Turn 5",
-                  "marker": 0.30405,
+                  "label": "The Esses",
+                  "marker": 0.25752,
                   "point_ref": "t5"
                 }
               ],
               "entry": {
-                "marker": 0.3016,
+                "marker": 0.25116,
                 "line": [
                   [
-                    -83.8153087,
-                    34.1420012
+                    -83.813706,
+                    34.143234
                   ],
                   [
-                    -83.8154144,
-                    34.1420648
+                    -83.8138361,
+                    34.1432627
                   ]
                 ],
-                "width_m": 12.04,
+                "width_m": 12.41,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               },
               "exit": {
-                "marker": 0.31164,
+                "marker": 0.27295,
                 "line": [
                   [
-                    -83.8156637,
-                    34.1417489
+                    -83.8143507,
+                    34.14261
                   ],
                   [
-                    -83.8157296,
-                    34.1418415
+                    -83.8144038,
+                    34.1427129
                   ]
                 ],
-                "width_m": 11.93,
+                "width_m": 12.42,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               },
               "start_line": {
-                "marker": 0.3016,
+                "marker": 0.25116,
                 "line": [
                   [
-                    -83.8153087,
-                    34.1420012
+                    -83.813706,
+                    34.143234
                   ],
                   [
-                    -83.8154144,
-                    34.1420648
+                    -83.8138361,
+                    34.1432627
                   ]
                 ],
-                "width_m": 12.04,
+                "width_m": 12.41,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               },
               "end_line": {
-                "marker": 0.31164,
+                "marker": 0.27295,
                 "line": [
                   [
-                    -83.8156637,
-                    34.1417489
+                    -83.8143507,
+                    34.14261
                   ],
                   [
-                    -83.8157296,
-                    34.1418415
+                    -83.8144038,
+                    34.1427129
                   ]
                 ],
-                "width_m": 11.93,
+                "width_m": 12.42,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              }
+            },
+            {
+              "id": "t6",
+              "label": "Turn 5",
+              "start": 0.32045,
+              "end": 0.33539,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Turn 5",
+                  "marker": 0.33049,
+                  "point_ref": "t6"
+                }
+              ],
+              "entry": {
+                "marker": 0.32045,
+                "line": [
+                  [
+                    -83.8160406,
+                    34.1416149
+                  ],
+                  [
+                    -83.8160677,
+                    34.1417273
+                  ]
+                ],
+                "width_m": 12.72,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
+              "exit": {
+                "marker": 0.33539,
+                "line": [
+                  [
+                    -83.8163709,
+                    34.1412726
+                  ],
+                  [
+                    -83.8164998,
+                    34.1412707
+                  ]
+                ],
+                "width_m": 11.89,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
+              "start_line": {
+                "marker": 0.32045,
+                "line": [
+                  [
+                    -83.8160406,
+                    34.1416149
+                  ],
+                  [
+                    -83.8160677,
+                    34.1417273
+                  ]
+                ],
+                "width_m": 12.72,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
+              "end_line": {
+                "marker": 0.33539,
+                "line": [
+                  [
+                    -83.8163709,
+                    34.1412726
+                  ],
+                  [
+                    -83.8164998,
+                    34.1412707
+                  ]
+                ],
+                "width_m": 11.89,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
                   "date": "2023-10-22"
                 }
               }
             },
             {
               "id": "t7",
-              "label": "Turn 7",
-              "start": 0.50312,
-              "end": 0.51487,
+              "label": "Turn 6",
+              "start": 0.45684,
+              "end": 0.48034,
               "members": [
                 "t7"
               ],
@@ -2726,24 +2882,24 @@
                 {
                   "id": "t7-apex",
                   "role": "apex",
-                  "label": "Turn 7",
-                  "marker": 0.51242,
+                  "label": "Turn 6",
+                  "marker": 0.47324,
                   "point_ref": "t7"
                 }
               ],
               "entry": {
-                "marker": 0.50312,
+                "marker": 0.45684,
                 "line": [
                   [
-                    -83.818088,
-                    34.1360921
+                    -83.8164144,
+                    34.1368147
                   ],
                   [
-                    -83.8180916,
-                    34.1362047
+                    -83.8165484,
+                    34.1368094
                   ]
                 ],
-                "width_m": 12.5,
+                "width_m": 12.38,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -2753,18 +2909,18 @@
                 }
               },
               "exit": {
-                "marker": 0.51487,
+                "marker": 0.48034,
                 "line": [
                   [
-                    -83.8184656,
-                    34.1364197
+                    -83.8170763,
+                    34.1361637
                   ],
                   [
-                    -83.8183319,
-                    34.13641
+                    -83.8170938,
+                    34.1362709
                   ]
                 ],
-                "width_m": 12.38,
+                "width_m": 12.01,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -2774,18 +2930,18 @@
                 }
               },
               "start_line": {
-                "marker": 0.50312,
+                "marker": 0.45684,
                 "line": [
                   [
-                    -83.818088,
-                    34.1360921
+                    -83.8164144,
+                    34.1368147
                   ],
                   [
-                    -83.8180916,
-                    34.1362047
+                    -83.8165484,
+                    34.1368094
                   ]
                 ],
-                "width_m": 12.5,
+                "width_m": 12.38,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -2795,18 +2951,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.51487,
+                "marker": 0.48034,
                 "line": [
                   [
-                    -83.8184656,
-                    34.1364197
+                    -83.8170763,
+                    34.1361637
                   ],
                   [
-                    -83.8183319,
-                    34.13641
+                    -83.8170938,
+                    34.1362709
                   ]
                 ],
-                "width_m": 12.38,
+                "width_m": 12.01,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -2818,9 +2974,9 @@
             },
             {
               "id": "t8",
-              "label": "Turn 8",
-              "start": 0.52344,
-              "end": 0.52589,
+              "label": "Turn 7",
+              "start": 0.50312,
+              "end": 0.51487,
               "members": [
                 "t8"
               ],
@@ -2828,24 +2984,24 @@
                 {
                   "id": "t8-apex",
                   "role": "apex",
-                  "label": "Turn 8",
-                  "marker": 0.52442,
+                  "label": "Turn 7",
+                  "marker": 0.51242,
                   "point_ref": "t8"
                 }
               ],
               "entry": {
-                "marker": 0.52344,
+                "marker": 0.50312,
                 "line": [
                   [
-                    -83.8184201,
-                    34.1367369
+                    -83.818088,
+                    34.1360921
                   ],
                   [
-                    -83.8182871,
-                    34.1367193
+                    -83.8180916,
+                    34.1362047
                   ]
                 ],
-                "width_m": 12.42,
+                "width_m": 12.5,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -2855,18 +3011,18 @@
                 }
               },
               "exit": {
-                "marker": 0.52589,
+                "marker": 0.51487,
                 "line": [
                   [
-                    -83.8184095,
-                    34.1368207
+                    -83.8184656,
+                    34.1364197
                   ],
                   [
-                    -83.8182766,
-                    34.1368146
+                    -83.8183319,
+                    34.13641
                   ]
                 ],
-                "width_m": 12.28,
+                "width_m": 12.38,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -2876,18 +3032,18 @@
                 }
               },
               "start_line": {
-                "marker": 0.52344,
+                "marker": 0.50312,
                 "line": [
                   [
-                    -83.8184201,
-                    34.1367369
+                    -83.818088,
+                    34.1360921
                   ],
                   [
-                    -83.8182871,
-                    34.1367193
+                    -83.8180916,
+                    34.1362047
                   ]
                 ],
-                "width_m": 12.42,
+                "width_m": 12.5,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -2897,125 +3053,23 @@
                 }
               },
               "end_line": {
-                "marker": 0.52589,
+                "marker": 0.51487,
                 "line": [
                   [
-                    -83.8184095,
-                    34.1368207
+                    -83.8184656,
+                    34.1364197
                   ],
                   [
-                    -83.8182766,
-                    34.1368146
+                    -83.8183319,
+                    34.13641
                   ]
                 ],
-                "width_m": 12.28,
+                "width_m": 12.38,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
                   "relative_accuracy_m": 0.25,
                   "measured": true,
-                  "date": "2023-10-22"
-                }
-              }
-            },
-            {
-              "id": "t9",
-              "label": "Turn 9",
-              "start": 0.56017,
-              "end": 0.56727,
-              "members": [
-                "t9"
-              ],
-              "points": [
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "Turn 9",
-                  "marker": 0.56408,
-                  "point_ref": "t9"
-                }
-              ],
-              "entry": {
-                "marker": 0.56017,
-                "line": [
-                  [
-                    -83.818172,
-                    34.1380711
-                  ],
-                  [
-                    -83.8180436,
-                    34.1380565
-                  ]
-                ],
-                "width_m": 11.95,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
-                  "date": "2023-10-22"
-                }
-              },
-              "exit": {
-                "marker": 0.56727,
-                "line": [
-                  [
-                    -83.8181429,
-                    34.1383271
-                  ],
-                  [
-                    -83.8180141,
-                    34.1383209
-                  ]
-                ],
-                "width_m": 11.9,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
-                  "date": "2023-10-22"
-                }
-              },
-              "start_line": {
-                "marker": 0.56017,
-                "line": [
-                  [
-                    -83.818172,
-                    34.1380711
-                  ],
-                  [
-                    -83.8180436,
-                    34.1380565
-                  ]
-                ],
-                "width_m": 11.95,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
-                  "date": "2023-10-22"
-                }
-              },
-              "end_line": {
-                "marker": 0.56727,
-                "line": [
-                  [
-                    -83.8181429,
-                    34.1383271
-                  ],
-                  [
-                    -83.8180141,
-                    34.1383209
-                  ]
-                ],
-                "width_m": 11.9,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.05,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
                   "date": "2023-10-22"
                 }
               }
@@ -3023,21 +3077,13 @@
             {
               "id": "turn10",
               "label": "Turn 10",
-              "start": 0.72995,
+              "start": 0.83857,
               "end": 0.86526,
               "members": [
-                "t10",
                 "t11",
                 "t12"
               ],
               "points": [
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Turn 10",
-                  "marker": 0.75935,
-                  "point_ref": "t10"
-                },
                 {
                   "id": "t11-apex",
                   "role": "apex",
@@ -3053,6 +3099,27 @@
                   "point_ref": "t12"
                 }
               ],
+              "entry": {
+                "marker": 0.83857,
+                "line": [
+                  [
+                    -83.817869,
+                    34.1481787
+                  ],
+                  [
+                    -83.8177321,
+                    34.1481471
+                  ]
+                ],
+                "width_m": 13.1,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.09,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-10-22"
+                }
+              },
               "exit": {
                 "marker": 0.86526,
                 "line": [
@@ -3075,18 +3142,18 @@
                 }
               },
               "start_line": {
-                "marker": 0.72995,
+                "marker": 0.83857,
                 "line": [
                   [
-                    -83.8188899,
-                    34.1442654
+                    -83.817869,
+                    34.1481787
                   ],
                   [
-                    -83.8187525,
-                    34.1442683
+                    -83.8177321,
+                    34.1481471
                   ]
                 ],
-                "width_m": 12.68,
+                "width_m": 13.1,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.09,
@@ -3444,19 +3511,9 @@
         },
         "unnamed_corners": [
           {
-            "marker": 0.2558,
+            "marker": 0.3045,
             "direction": "right",
-            "radius_m": 75.8
-          },
-          {
-            "marker": 0.4723,
-            "direction": "right",
-            "radius_m": 55.2
-          },
-          {
-            "marker": 0.6995,
-            "direction": "right",
-            "radius_m": 77.8
+            "radius_m": 78.3
           },
           {
             "marker": 0.7044,
@@ -3530,7 +3587,7 @@
     "imsa_data": "road-atlanta"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:56:42.388994+00:00",
+    "generated_at": "2026-09-26T20:58:46.915447+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
