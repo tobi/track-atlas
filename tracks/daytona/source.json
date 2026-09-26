@@ -29,10 +29,18 @@
       "id": "gp",
       "name": "Road Course",
       "length_m": 5729,
-      "direction": "clockwise",
-      "lovely": "gp"
+      "direction": "anticlockwise",
+      "lovely": "gp",
+      "centerline": "relation",
+      "start_finish": {
+        "location": [-81.072622, 29.1879],
+        "note": "Pinned where the Lovely corner markers line up with the measured curvature peaks (T1, T2, International Horseshoe, the Kink, West Horseshoe, Bus Stop, NASCAR 3-4 within ~40 m); the OSM-derived origin was on the back straight. Not a surveyed timing line."
+      }
     }
   ],
+  "surface": {
+    "imagery": "naip"
+  },
   "external_ids": {
     "imsa_data": "daytona"
   },
