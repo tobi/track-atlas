@@ -187,3 +187,52 @@ def simplify_closed(xy: np.ndarray, tol: float) -> np.ndarray:
 
 def lonlat_list(ll: np.ndarray, nd: int = 7) -> list[list[float]]:
     return [[round(float(a), nd), round(float(b), nd)] for a, b in ll]
+
+
+def remove_loops(xy: np.ndarray, max_loop_m: float = 150.0) -> tuple[np.ndarray, int]:
+    """Cut small self-intersection loops out of a closed ring (open form, (N,2)).
+
+    An edge offset from a centreline forms a swallowtail loop on the inside of a
+    turn tighter than the offset. Each crossing of two non-adjacent segments
+    whose shorter side is at most max_loop_m long is resolved by dropping the
+    vertices in between and inserting the crossing point. Returns the ring and
+    the number of loops removed.
+    """
+    from shapely.geometry import LineString
+    from shapely.strtree import STRtree
+    pts = [tuple(p) for p in open_ring(xy)]
+    removed = 0
+    for _ in range(200):
+        n = len(pts)
+        ring = pts + pts[:1]
+        segs = [LineString(ring[i:i + 2]) for i in range(n)]
+        tree = STRtree(segs)
+        cum = cumulative(np.asarray(pts))
+        found = None
+        for i, sg in enumerate(segs):
+            for j in tree.query(sg):
+                j = int(j)
+                if j <= i + 1 or (i == 0 and j == n - 1):
+                    continue
+                if not sg.intersects(segs[j]):
+                    continue
+                inner = cum[j] - cum[i + 1]
+                outer = cum[-1] - inner
+                if min(inner, outer) > max_loop_m:
+                    continue
+                x = sg.intersection(segs[j])
+                if x.geom_type != "Point":
+                    continue
+                found = (i, j, (x.x, x.y), inner <= outer)
+                break
+            if found:
+                break
+        if not found:
+            return np.asarray(pts), removed
+        i, j, p, inner_is_loop = found
+        if inner_is_loop:
+            pts = pts[:i + 1] + [p] + pts[j + 1:]
+        else:  # the loop wraps the seam
+            pts = [p] + pts[i + 1:j + 1]
+        removed += 1
+    return np.asarray(pts), removed

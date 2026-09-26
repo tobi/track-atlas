@@ -86,7 +86,11 @@ def measure(slug: str, layout_id: str) -> dict:
     # ground pixel of quantisation
     precision = float(np.sqrt((1.4826 * np.median(np.abs(resid))) ** 2 + (manifest["gsd_m"] / 2) ** 2))
 
-    def ring(xy):
+    loops = {}
+
+    def ring(xy, side=None):
+        if side:  # an inside edge tighter than its offset forms a swallowtail loop
+            xy, loops[side] = geo.remove_loops(xy)
         return geo.lonlat_list(F.to_lonlat(geo.simplify_closed(xy, EDGE_SIMPLIFY_M)))
 
     gsd = sorted({c["gsd_m"] for c in manifest.get("catalog", []) if c.get("gsd_m")})
@@ -96,7 +100,7 @@ def measure(slug: str, layout_id: str) -> dict:
         "method": "naip-edges/1",
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "lap_length_m": round(res.total_m, 1),
-        "edges": {"left": ring(res.left_xy), "right": ring(res.right_xy)},
+        "edges": {"left": ring(res.left_xy, "left"), "right": ring(res.right_xy, "right")},
         "midline": ring(res.mid_xy),
         "quality": {
             "width_m": {"p05": round(float(np.percentile(width, 5)), 2),
@@ -108,6 +112,7 @@ def measure(slug: str, layout_id: str) -> dict:
             "unseen_spans": {"left": _spans(res.seen_left, res.total_m),
                              "right": _spans(res.seen_right, res.total_m)},
             "relative_precision_m": round(precision, 2),
+            "loops_removed": loops,
             "absolute_accuracy_ce95_m": NAIP_CE95_M,
             "seed_offset_m": {"median_abs": round(float(np.median(np.abs(res.seed_shift_m))), 2),
                               "p95_abs": round(float(np.percentile(np.abs(res.seed_shift_m), 95)), 2)},

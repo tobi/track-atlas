@@ -43,6 +43,7 @@ STRENGTH_WEIGHT = 1.5      # preference for tighter peaks (per ln of curvature)
 UNMATCHED_COST = 1.0       # cost of leaving a corner without a geometric peak
 APEX_REFINE_M = 15.0       # m, inside-edge peak search around the midline peak
 MIN_ARM_M = 3.0            # m, apex at least this far from entry/exit
+MAX_HALF_WIDTH_M = 40.0    # m, an edge hit further than this from the midline is another piece of edge
 INTERPOLATED_PENALTY_M = 1.5  # m added to precision where an edge was not seen
 PIT_NAME = r"(?i)\bpit\s*-?\s*(lane|road)?\b|pitlane"
 
@@ -69,6 +70,15 @@ def _ray_hits(p: np.ndarray, n: np.ndarray, seg_a: np.ndarray, seg_b: np.ndarray
         u = (w[:, 0] * n[1] - w[:, 1] * n[0]) / denom
     ok = (np.abs(denom) > 1e-12) & (u >= 0) & (u <= 1)
     return np.where(ok, t, np.nan)
+
+
+def _nearest_on(p: np.ndarray, seg_a: np.ndarray, seg_b: np.ndarray) -> np.ndarray:
+    """The point of the polyline segments closest to p."""
+    d = seg_b - seg_a
+    L2 = np.maximum((d * d).sum(1), 1e-12)
+    u = np.clip(((p - seg_a) * d).sum(1) / L2, 0.0, 1.0)
+    q = seg_a + d * u[:, None]
+    return q[int(np.argmin(((q - p) ** 2).sum(1)))]
 
 
 class LapGeometry:
@@ -118,16 +128,11 @@ class LapGeometry:
         out = np.zeros_like(self.mid)
         for i in range(self.N):
             t = _ray_hits(self.mid[i], self.nrm[i], a, b) * sign
-            t = t[np.isfinite(t) & (t > 0)]
+            t = t[np.isfinite(t) & (t > 0) & (t < MAX_HALF_WIDTH_M)]
             if len(t):
                 out[i] = self.mid[i] + self.nrm[i] * (sign * t.min())
-            else:
-                out[i] = np.nan
-        bad = ~np.isfinite(out[:, 0])
-        if bad.any():  # fill from neighbours (rare: degenerate normals)
-            idx = np.arange(self.N)
-            for k in (0, 1):
-                out[bad, k] = np.interp(idx[bad], idx[~bad], out[~bad, k], period=self.N)
+            else:  # no edge along the normal (a removed loop, a sharp kink): nearest edge point
+                out[i] = _nearest_on(self.mid[i], a, b)
         return out
 
     def _edge_kappa(self, E: np.ndarray) -> np.ndarray:

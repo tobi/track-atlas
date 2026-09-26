@@ -187,12 +187,21 @@ years), natural colour plus the near-infrared band, and cached.
    0.5 m) over the stations that were seen. Unseen spans (weak contrast,
    occlusion) are bridged linearly between seen neighbours and listed in
    `unseen_spans`, never hidden.
-7. **Precision.** `relative_precision_m` = robust spread of the raw DP path
+7. **Loop removal.** Offsetting a tight inside edge (or a V-shaped kink in the
+   seed) can fold it into a swallowtail. `geo.remove_loops` cuts every loop
+   shorter than 150 m at the self-intersection of non-adjacent segments;
+   `quality.loops_removed` counts them per side.
+8. **Precision.** `relative_precision_m` = robust spread of the raw DP path
    against the smoothed edge, combined with half a ground pixel.
 
 The edges are stored simplified (Douglas-Peucker, 0.05 m).
 
 ## Placing corners (`lib/surface.py`)
+
+Edge points per midline station are the nearest hit of the station normal on
+each edge within 40 m (`MAX_HALF_WIDTH_M`); where the normal hits nothing (a
+removed loop, a sharp kink) the nearest point on that edge is used, so every
+crossing line ends on both edges.
 
 1. **Curvature** of the measured midline, smoothed with sigma 8 m.
 2. **Lobes**: maximal runs of one turning sign with |kappa| > 1/600 m.

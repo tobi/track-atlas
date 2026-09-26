@@ -107,7 +107,8 @@ def check_layout(raw: Path, lo: dict) -> tuple[list[str], list[str], list[str]]:
                 d = edge.distance(Point(F.to_xy(np.asarray(ap["location"], dtype=float))))
                 if d > LINE_TO_EDGE_M:
                     errs.append(f"{it['id']} apex is {d:.2f} m off its {ap['edge']} edge")
-                if it.get("direction") and it["direction"] != ap["edge"]:
+                declared = (it.get("placement") or {}).get("declared_direction")
+                if it.get("direction") and it["direction"] != ap["edge"] and not declared:
                     errs.append(f"{it['id']} is a {it['direction']}-hander but its apex is on the {ap['edge']} edge")
             pl = it.get("placement") or {}
             if pl.get("declared_direction"):
