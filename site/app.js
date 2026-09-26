@@ -1,525 +1,552 @@
-/* Track Atlas static browser. */
-const REPO = "tobi/track-atlas";
-const BRANCH = "main";
+/* Track Atlas site. Light-DOM lit components; data from atlas.json + tracks.jsonl. */
+import { LitElement, html, svg, nothing } from "https://esm.sh/lit@3.2.1";
+import { TrackMap, RANGE_COLORS } from "./map.js";
+import { BRANCH, FLAGS, GH, Lap, TIERS, cornerName, corners, inRange, km, m1, pct, place, tierOf, turnCode } from "./lib.js";
 
-const $grid = document.getElementById("grid");
-const $detail = document.getElementById("detail");
-const $search = document.getElementById("search");
-const $dlg = document.getElementById("editDlg");
+class Light extends LitElement { createRenderRoot() { return this; } }
 
-let CATALOG = [];
-let map = null;
-let baseControl = null;
-let currentLayout = null;
-let currentGeojson = null;
-let displayLayer = null;
-let layerState = {};   // layout id -> { outline, point:{id:bool}, range:{id:bool} }
-let mapGroups = [];
-let hoverCursorGroup = null;
-let hoverLayer = null; // { type: 'point'|'range'|'outline', id?: string }
+// --- data ------------------------------------------------------------------------
+let ATLAS = null, TRACKS = null;
+const atlas = async () => (ATLAS ??= await (await fetch("atlas.json")).json());
+async function track(slug) {
+  TRACKS ??= fetch("tracks.jsonl").then((r) => r.text()).then((t) =>
+    new Map(t.trim().split("\n").filter(Boolean).map((l) => { const j = JSON.parse(l); return [j.slug, j]; })));
+  return (await TRACKS).get(slug);
+}
+const geo = (slug, name) => fetch(`geojson/${slug}_${name}`).then((r) => (r.ok ? r.json() : null));
 
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g,
-  (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const fmtKm = (m) => m ? (m / 1000).toFixed(3) + " km" : "—";
-const pct = (x) => x == null ? "—" : `${(x * 100).toFixed(1)}%`;
-const pointLayer = (layout, id) => (layout?.point_layers || []).find((l) => l.id === id) || { items: [] };
-const rangeLayer = (layout, id) => (layout?.range_layers || []).find((l) => l.id === id) || { items: [] };
-const layoutPoint = (layout, id) => pointLayer(layout, "layout_points").items.find((p) => p.id === id) || null;
-const cornerLayer = (layout) => pointLayer(layout, "corners").items;
-const cornerRange = (layout, corner) => rangeLayer(layout, "corner_ranges").items.find((r) => r.anchor === corner.id || r.id === corner.id) || null;
-const complexFor = (layout, corner) => rangeLayer(layout, "corner_complexes").items.find((r) => (r.members || []).length > 1 && (r.members || []).includes(corner.id)) || null;
+const bestLayout = (a) => a.layouts.reduce((b, l) => (l.measured && (!b.measured || l.ce95_m < b.ce95_m) ? l : b), a.layouts[0]);
+const tierBadge = (s) => { const t = tierOf(s); return html`<span class="tier" style="--c:${t.color}">${t.label}${s?.measured ? html` <b>${m1(s.ce95_m)}</b>` : nothing}</span>`; };
 
-const RANGE_COLORS = ["#ff2d8d", "#5eead4", "#f6c945", "#60a5fa", "#a78bfa", "#fb7185", "#34d399", "#f97316", "#22d3ee", "#c084fc", "#bef264", "#fda4af"];
-
-async function boot() {
-  const txt = await (await fetch("tracks.jsonl")).text();
-  CATALOG = txt.trim().split("\n").filter(Boolean).map((l) => JSON.parse(l));
-  route();
-  window.addEventListener("hashchange", route);
-  $search.addEventListener("input", () => renderGrid($search.value));
+function silhouette(pts, color, w = 2.2) {
+  if (!pts?.length) return nothing;
+  return svg`<svg viewBox="-6 -6 112 112" class="sil"><path d="M${pts.map((p) => p.join(",")).join("L")}Z"
+    fill="none" stroke="${color}" stroke-width="${w}" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>`;
 }
 
-function route() {
-  const slug = location.hash.replace(/^#\/?/, "");
-  if (slug) showDetail(slug);
-  else {
-    if (map) { map.remove(); map = null; }
-    $detail.style.display = "none"; $grid.style.display = "grid";
-    $search.style.display = "block"; renderGrid($search.value);
+// --- app shell / router -------------------------------------------------------------
+class AtlasApp extends Light {
+  static properties = { route: { state: true } };
+  constructor() { super(); this.route = this.parse(); addEventListener("hashchange", () => { this.route = this.parse(); scrollTo(0, 0); }); }
+  parse() {
+    const [a, b] = location.hash.replace(/^#\/?/, "").split("/");
+    if (!a) return { page: "home" };
+    if (a === "method") return { page: "method" };
+    return { page: "track", slug: decodeURIComponent(a), layout: b && decodeURIComponent(b) };
+  }
+  render() {
+    const r = this.route;
+    return html`
+      <header class="top ${r.page === "track" ? "compact" : ""}">
+        <a href="#/" class="brand"><span class="mark">${svg`<svg viewBox="0 0 24 24"><path d="M4 16c0-6 5-11 11-11 3 0 5 2 5 4s-2 3-4 3-3 1-3 3 1 4-2 5-7 0-7-4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>`}</span>Track Atlas</a>
+        <nav>
+          <a href="#/" class=${r.page === "home" ? "on" : ""}>Atlas</a>
+          <a href="#/method" class=${r.page === "method" ? "on" : ""}>Method</a>
+          <a href="tracks.jsonl" download>tracks.jsonl</a>
+          <a href=${GH} target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </header>
+      ${r.page === "home" ? html`<atlas-home></atlas-home>`
+        : r.page === "method" ? html`<atlas-method></atlas-method>`
+        : html`<track-page .slug=${r.slug} .layoutId=${r.layout}></track-page>`}`;
   }
 }
 
-function renderGrid(q) {
-  q = (q || "").toLowerCase().trim();
-  const hits = CATALOG.filter((t) => {
-    if (!q) return true;
-    const hay = [t.name, t.slug, t.country, ...(t.aka || []), ...(t.series || []),
-                 t.location?.locality, t.location?.region].join(" ").toLowerCase();
-    return q.split(/\s+/).every((w) => hay.includes(w));
-  });
-  $grid.innerHTML = hits.map((t) => {
-    const first = t.layouts[0] || {};
-    const corners = cornerLayer(first).length;
-    const ranges = (first.range_layers || []).length;
-    return `<div class="card" onclick="location.hash='/${t.slug}'">
-      <div class="body">
-        <h3>${esc(t.name)}</h3>
-        <div class="meta">${esc(t.location?.locality || "")} · ${esc(t.country || "")}
-          · ${t.layouts.map((l) => `${esc(l.name)} ${fmtKm(l.length_m)}`).join(" · ")}
-          · ${corners} corners · ${ranges} range layers</div>
-        <div style="margin-top:10px">${(t.series || []).map((s) => `<span class="chip">${esc(s)}</span>`).join("")}</div>
-      </div>
-    </div>`;
-  }).join("") || `<p class="muted">No tracks match.</p>`;
-}
+// --- home ---------------------------------------------------------------------------
+class AtlasHome extends Light {
+  static properties = { data: { state: true }, q: { state: true }, tier: { state: true }, sort: { state: true }, hot: { state: true } };
+  constructor() { super(); this.q = ""; this.tier = "all"; this.sort = "accuracy"; atlas().then((d) => (this.data = d)); }
 
-async function showDetail(slug) {
-  const track = CATALOG.find((t) => t.slug === slug);
-  if (!track) { location.hash = ""; return; }
-  $grid.style.display = "none"; $search.style.display = "none"; $detail.style.display = "block";
-  window.__track = track;
-  const ghBase = `https://github.com/${REPO}`;
-
-  $detail.innerHTML = `
-    <span class="back" onclick="location.hash=''">← all tracks</span>
-    <div class="hero">
-      <div>
-        <h2>${esc(track.name)}</h2>
-        <div class="aka">${esc((track.aka || []).join(", "))}</div>
-      </div>
-      <div class="det-actions">
-        <button class="btn" onclick="window.open('${ghBase}/blob/${BRANCH}/tracks/${slug}/raw/track.json','_blank')">track.json</button>
-        <button class="btn" onclick="window.open('${ghBase}/edit/${BRANCH}/tracks/${slug}/generation-config.json','_blank')">generation config</button>
-        <button class="btn" onclick="window.open('${ghBase}/edit/${BRANCH}/tracks/${slug}/overrides.json','_blank')">overrides</button>
-        <button class="btn" onclick="proposeTrackIssue('${slug}')">report</button>
-      </div>
-    </div>
-    <div id="statsWrap"></div>
-    <div class="toolbar" style="margin:16px 0 0">
-      <label class="control">layout
-        <select id="layoutPick" onchange="showLayout(this.value)">
-          ${track.layouts.map((l) => `<option value="${esc(l.id)}">${esc(l.name)}${l.series?.length ? ` — ${esc(l.series.join("/").toUpperCase())}` : ""} · ${fmtKm(l.length_m)}</option>`).join("")}
-        </select>
-      </label>
-      <label class="control">label
-        <select id="layerPick" onchange="setDisplayLayer(this.value)"></select>
-      </label>
-    </div>
-    <div class="map-wrap">
-      <div id="map"></div>
-      <aside id="layerPanel" class="layer-panel"></aside>
-    </div>
-    <h3 class="section-title">Corners</h3>
-    <div id="cornersWrap"></div>
-    <div class="copy-wrap">
-      <div><b>Export current view</b><br><code>Copies full track JSON plus _view_config for selected layout/layers.</code></div>
-      <div style="display:flex;gap:10px;align-items:center"><span id="copyStatus" class="muted"></span><button class="btn primary" onclick="copyCurrentTrackJson()">Copy JSON</button></div>
-    </div>`;
-
-  showLayout(track.layouts[0].id);
-}
-
-async function showLayout(layoutId) {
-  const track = window.__track;
-  const layout = track.layouts.find((l) => l.id === layoutId) || track.layouts[0];
-  currentLayout = layout;
-  displayLayer = layout.label_default;
-
-  const labelRegistry = track.label_layers || {numbered: 1};
-  const layers = Object.keys(labelRegistry);
-  document.getElementById("layerPick").innerHTML = layers.map((code) =>
-    `<option value="${esc(code)}" ${code === displayLayer ? "selected" : ""}>${esc((labelRegistry[code] || {}).label || code)}</option>`).join("");
-
-  renderStats(track, layout);
-  renderCorners();
-  ensureLayerState(layout);
-  renderLayerPanel(layout);
-  try {
-    const gj = await (await fetch(`geojson/${track.slug}_${layout.id}.geojson`)).json();
-    currentGeojson = gj;
-    renderMap(gj, track, layout);
-  } catch (e) {
-    currentGeojson = null;
-    document.getElementById("map").innerHTML = `<div style="padding:18px;color:var(--muted)">Could not load layout GeoJSON: ${esc(e.message || e)}</div>`;
-  }
-}
-
-function renderStats(track, layout) {
-  const stats = [
-    ["Layout", layout.name], ["Length", fmtKm(layout.length_m)],
-    ["Point layers", (layout.point_layers || []).length], ["Range layers", (layout.range_layers || []).length],
-    ["Corners", cornerLayer(layout).length], ["Direction", layout.direction || "—"],
-    ["Series", [...(track.series || []), ...(layout.series || [])].join(", ") || "—"],
-  ];
-  document.getElementById("statsWrap").innerHTML = `<div class="stats">${stats.map(([k, v]) =>
-    `<div class="stat"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("")}</div>`;
-}
-
-const SCALE_LABELS = {1:"Hairpin", 2:"Slow", 3:"Medium", 4:"Fast", 5:"Very fast", 6:"Kink"};
-const scaleLabel = (s) => s == null ? "" : `${s} ${SCALE_LABELS[s] || ""}`.trim();
-function resolveName(c, def) { const n = c.labels || {}; return n[def] || n.numbered || c.label || c.id; }
-function nameLayerColumns(track) { return Object.keys(track.label_layers || {}).filter((code) => code !== "numbered"); }
-function setDisplayLayer(code) { displayLayer = code; renderCorners(); redrawMapOverlays(); }
-function sectorOf(c, layout) {
-  const m = c.marker; if (m == null) return "";
-  const s = rangeLayer(layout, "timing_sectors").items.find((x) => m >= x.start && m < x.end);
-  return s ? s.label : "";
-}
-function phaseText(c, layout) {
-  const r = cornerRange(layout, c);
-  if (!r || r.start == null || r.end == null) return "—";
-  return `${pct(r.start)} → ${pct(r.end)}`;
-}
-function renderCorners() {
-  const track = window.__track, layout = currentLayout || track.layouts[0];
-  const cols = nameLayerColumns(track), corners = cornerLayer(layout);
-  document.getElementById("cornersWrap").innerHTML = `<table id="cornersTbl">
-    <tr><th>#</th><th>code</th><th>display</th>${cols.map((c) => `<th>${esc((track.label_layers[c] || {}).label || c)}</th>`).join("")}
-      <th>complex</th><th>sec</th><th>dir</th><th>scale</th><th>apex</th><th>range</th><th></th></tr>
-    ${corners.map((c) => `<tr>
-      <td>${c.number}</td><td class="muted">${esc(c.code ?? c.number)}</td><td><b>${esc(resolveName(c, displayLayer))}</b></td>
-      ${cols.map((L) => `<td>${esc((c.labels || {})[L] || "")}</td>`).join("")}
-      <td>${esc(complexFor(layout, c)?.label || "")}</td><td class="muted">${esc(sectorOf(c, layout))}</td>
-      <td>${c.direction === "left" ? "←" : c.direction === "right" ? "→" : ""}</td><td>${esc(scaleLabel(c.scale))}</td>
-      <td class="muted">${pct(c.marker)}</td><td class="muted">${phaseText(c, layout)}</td>
-      <td><span class="edit" onclick='openEdit(${JSON.stringify(track.slug)}, ${JSON.stringify(layout.id)}, ${c.number})'>✎ edit</span></td>
-    </tr>`).join("")}</table>`;
-}
-
-function ensureLayerState(layout) {
-  if (layerState[layout.id]) return;
-  const state = { outline: true, point: {}, range: {} };
-  (layout.point_layers || []).forEach((l) => state.point[l.id] = true);
-  (layout.range_layers || []).forEach((l) => state.range[l.id] = ["timing_sectors", "imsa_microsectors", "slow_zones"].includes(l.id));
-  layerState[layout.id] = state;
-}
-function currentState() { ensureLayerState(currentLayout); return layerState[currentLayout.id]; }
-function layerCount(layer) { return (layer.items || []).length; }
-function layerMeta(layer) {
-  const bits = [`${layerCount(layer)} item${layerCount(layer) === 1 ? "" : "s"}`];
-  if (layer.series?.length) bits.push(layer.series.join("/"));
-  if (layer.coverage) bits.push(layer.coverage);
-  if (layer.provenance?.source) bits.push(layer.provenance.source);
-  return bits.join(" · ");
-}
-function renderLayerPanel(layout) {
-  const st = currentState();
-  const panel = document.getElementById("layerPanel");
-  if (!panel) return;
-  panel.innerHTML = `<h4>Cursor</h4>
-    <div id="hoverReadout" class="map-readout"><span class="muted">Move over the track for lap position</span></div>
-    <h4 style="margin-top:14px">Layers</h4>
-    <div class="mini-actions"><button onclick="setAllLayers(true)">all on</button><button onclick="setAllLayers(false)">all off</button></div>
-    <div class="layer-toggle" onmouseenter="hoverMapLayer('outline')" onmouseleave="clearMapHover()"><input type="checkbox" ${st.outline ? "checked" : ""} onchange="toggleOutline(this.checked)">
-      <div><b>Track centerline</b><div class="meta">GeoJSON layout over OpenStreetMap</div></div></div>
-    <div class="layer-group-title">Point layers</div>
-    ${(layout.point_layers || []).map((l) => `<label class="layer-toggle" onmouseenter='hoverMapLayer("point", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.point[l.id] ? "checked" : ""} onchange='togglePointLayer(${JSON.stringify(l.id)}, this.checked)'>
-      <div><b>${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>`).join("") || `<div class="muted">No point layers</div>`}
-    <div class="layer-group-title">Range layers</div>
-    ${(layout.range_layers || []).map((l, i) => `<div>
-      <label class="layer-toggle" onmouseenter='hoverMapLayer("range", ${JSON.stringify(l.id)})' onmouseleave="clearMapHover()"><input type="checkbox" ${st.range[l.id] ? "checked" : ""} onchange='toggleRangeLayer(${JSON.stringify(l.id)}, this.checked)'>
-        <div><b><span style="color:${RANGE_COLORS[i % RANGE_COLORS.length]}">●</span> ${esc(l.label || l.id)}</b><div class="meta">${esc(layerMeta(l))}</div></div></label>
-      <div class="layer-items">
-        ${(l.items || []).map((it, j) => `<div class="layer-item" title="${esc(it.label || it.id)}${it.labels?.official ? ` · ${esc(it.labels.official)}` : ""} · ${pct(it.start)}–${pct(it.end)}" onmouseenter='hoverRangeItem(${JSON.stringify(l.id)}, ${JSON.stringify(it.id)})' onmouseleave="clearMapHover()"><i class="swatch" style="background:${RANGE_COLORS[j % RANGE_COLORS.length]}"></i><span>${esc(it.label || it.id)}</span><span class="range-pct">${pct(it.start)}–${pct(it.end)}</span></div>`).join("")}
-      </div>
-    </div>`).join("") || `<div class="muted">No range layers</div>`}`;
-}
-function hoverMapLayer(type, id=null) { hoverLayer = { type, id }; redrawMapOverlays(); }
-function hoverRangeItem(layerId, itemId) { hoverLayer = { type: "rangeItem", layerId, itemId }; redrawMapOverlays(); }
-function clearMapHover() { hoverLayer = null; redrawMapOverlays(); }
-function toggleOutline(v) { currentState().outline = v; redrawMapOverlays(); }
-function togglePointLayer(id, v) { currentState().point[id] = v; redrawMapOverlays(); }
-function toggleRangeLayer(id, v) { currentState().range[id] = v; redrawMapOverlays(); }
-function setAllLayers(v) {
-  const st = currentState(); st.outline = v;
-  Object.keys(st.point).forEach((k) => st.point[k] = v);
-  Object.keys(st.range).forEach((k) => st.range[k] = v);
-  renderLayerPanel(currentLayout); redrawMapOverlays();
-}
-
-function renderMap(gj, track, layout) {
-  if (map) { map.remove(); map = null; }
-  map = L.map("map", { scrollWheelZoom: true, preferCanvas: false });
-  const dark = L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", { attribution: "&copy; OpenStreetMap contributors &copy; CARTO", maxZoom: 20 });
-  const osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "&copy; OpenStreetMap contributors", maxZoom: 20 });
-  dark.addTo(map);
-  baseControl = L.control.layers({ "Dark verification": dark, "OpenStreetMap": osm }, {}, { position: "topleft" }).addTo(map);
-  hoverCursorGroup = L.layerGroup().addTo(map);
-  map.on("mousemove", updateMapReadout);
-  map.on("mouseout", clearMapReadout);
-  renderLayerPanel(layout);
-  redrawMapOverlays(true);
-}
-function outlineCoords() {
-  const f = (currentGeojson?.features || []).find((x) => x.properties?.role === "outline");
-  return f?.geometry?.coordinates || [];
-}
-function redrawMapOverlays(fit=false) {
-  if (!map || !currentGeojson || !currentLayout) return;
-  mapGroups.forEach((g) => map.removeLayer(g)); mapGroups = [];
-  const st = currentState();
-  const coords = outlineCoords();
-  const boundsLayers = [];
-  const outlineHot = hoverLayer?.type === "outline";
-  if ((st.outline || outlineHot) && coords.length) {
-    const g = L.polyline(coords.map(ll), { color: outlineHot ? "#5eead4" : "#ffffff", weight: outlineHot ? 8 : 5, opacity: outlineHot ? 1 : .85, className: outlineHot ? "layer-range-highlight" : "" }).addTo(map);
-    mapGroups.push(g); boundsLayers.push(g);
-  }
-  (currentLayout.range_layers || []).forEach((layer, i) => {
-    const layerHot = hoverLayer?.type === "range" && hoverLayer.id === layer.id;
-    const itemHotInLayer = hoverLayer?.type === "rangeItem" && hoverLayer.layerId === layer.id;
-    if (!st.range[layer.id] && !layerHot && !itemHotInLayer) return;
-    const group = L.layerGroup().addTo(map);
-    (layer.items || []).forEach((r, j) => {
-      const itemHot = hoverLayer?.type === "rangeItem" && hoverLayer.layerId === layer.id && hoverLayer.itemId === r.id;
-      if (itemHotInLayer && !itemHot && !st.range[layer.id]) return;
-      const seg = sliceLine(coords, r.start, r.end);
-      if (seg.length < 2) return;
-      const itemColor = RANGE_COLORS[j % RANGE_COLORS.length];
-      const normalColor = layer.coverage === "partition" ? itemColor : RANGE_COLORS[i % RANGE_COLORS.length];
-      const color = (layerHot || itemHot) ? itemColor : normalColor;
-      const weight = itemHot ? 15 : layerHot ? 10 : layer.coverage === "partition" ? 7 : 6;
-      const opacity = itemHot ? 1 : layerHot ? .92 : .62;
-      L.polyline(seg.map(ll), { color, weight, opacity, lineCap:"round", className: itemHot ? "layer-range-highlight" : "" })
-        .on("mouseover", () => hoverRangeItem(layer.id, r.id))
-        .on("mouseout", clearMapHover)
-        .addTo(group);
-      addRangePoints(group, coords, r, color, itemHot || layerHot);
-      if (itemHot) addRangeEndpoints(group, seg, color, r);
+  filtered() {
+    const q = this.q.toLowerCase().trim();
+    let xs = this.data.filter((a) => {
+      const s = bestLayout(a), t = tierOf(s).id;
+      if (this.tier === "measured" && !s.measured) return false;
+      if (this.tier === "survey" && t !== "survey") return false;
+      if (this.tier === "traced" && s.measured) return false;
+      if (!q) return true;
+      const hay = [a.name, a.slug, a.country, a.locality, a.region, ...(a.aka || []), ...(a.series || [])].join(" ").toLowerCase();
+      return q.split(/\s+/).every((w) => hay.includes(w));
     });
-    mapGroups.push(group); boundsLayers.push(group);
-  });
-  (currentLayout.point_layers || []).forEach((layer) => {
-    const hot = hoverLayer?.type === "point" && hoverLayer.id === layer.id;
-    if (!st.point[layer.id] && !hot) return;
-    const group = L.layerGroup().addTo(map);
-    (layer.items || []).filter((p) => p.location).forEach((p) => addPoint(group, layer, p, hot));
-    mapGroups.push(group); boundsLayers.push(group);
-  });
-  if (fit) {
-    const outline = coords.length ? L.polyline(coords.map(ll)) : null;
-    if (outline) map.fitBounds(outline.getBounds(), { padding:[28,28] });
+    const acc = (a) => { const s = bestLayout(a); return s.measured ? s.ce95_m : 99; };
+    const cmp = { accuracy: (a, b) => acc(a) - acc(b) || a.name.localeCompare(b.name),
+                  name: (a, b) => a.name.localeCompare(b.name),
+                  country: (a, b) => (a.country || "").localeCompare(b.country || "") || a.name.localeCompare(b.name) }[this.sort];
+    return xs.sort(cmp);
   }
-}
-function rangePointCoord(coords, p) {
-  if (p.location) return p.location;
-  if (p.marker == null || !coords.length) return null;
-  const { cum, total } = lineMetrics(coords);
-  return pointAtDistance(coords, cum, p.marker * total);
-}
-function addRangePoints(group, coords, r, color, hot=false) {
-  (r.points || []).forEach((p) => {
-    const coord = rangePointCoord(coords, p);
-    if (!coord) return;
-    const isApex = p.role === "apex";
-    L.circleMarker(ll(coord), {
-      radius: hot ? (isApex ? 7 : 5) : (isApex ? 4 : 3),
-      color: "#ffffff", weight: hot ? 2.5 : 1.5,
-      fillColor: isApex ? "#ff2d8d" : color, fillOpacity: hot ? 1 : .82,
-    }).addTo(group);
-  });
-}
-function addRangeEndpoints(group, seg, color, r) {
-  const start = seg[0], end = seg[seg.length - 1];
-  [[start, "start"], [end, "end"]].forEach(([pt, which]) => {
-    L.circleMarker(ll(pt), { radius: 6, color: "#ffffff", weight: 2, fillColor: which === "start" ? "#35c759" : "#ff3b30", fillOpacity: 1 })
-      .addTo(group);
-  });
+
+  ladder() {
+    const measured = this.data.map((a) => [a, bestLayout(a)]).filter(([, s]) => s.measured).sort((x, y) => x[1].ce95_m - y[1].ce95_m);
+    const W = 640, x = (m) => 30 + ((Math.log10(m) + 1) / 2) * (W - 60);   // 0.1 m .. 10 m, log
+    const short = (n) => n.replace(/ (International|Motor|Raceway|Speedway|Circuit|Park|Grand Prix|Street).*$/, "");
+    // greedy lanes so no two labels overlap
+    const ends = [];
+    const dots = measured.map(([a, s]) => {
+      const cx = x(s.ce95_m), label = `${short(a.name)} ${s.ce95_m.toFixed(2)}`, w = label.length * 6.1 + 14;
+      let lane = ends.findIndex((e) => e < cx - 4);
+      if (lane < 0) { lane = ends.length; ends.push(0); }
+      ends[lane] = cx + w;
+      return { a, s, cx, label, lane };
+    });
+    const top = 40, lh = 15, axis = top + ends.length * lh + 4, H = axis + 44;
+    const ticks = [0.1, 0.2, 0.5, 1, 2, 5, 10];
+    return html`
+      <figure class="ladder">
+        <figcaption>Absolute accuracy, 95% (CE95), log scale</figcaption>
+        <svg viewBox="0 0 ${W} ${H}">
+          ${svg`
+          <rect x=${x(2)} y="26" width=${x(10) - x(2)} height=${axis - 26} rx="6" class="osm-band"/>
+          <text x=${(x(2) + x(10)) / 2} y=${axis + 18} class="band-label" text-anchor="middle">OpenStreetMap trace: 2–10 m, unstated</text>
+          <rect x=${x(0.1)} y="26" width=${x(0.5) - x(0.1)} height=${axis - 26} rx="6" class="survey-band"/>
+          <text x=${(x(0.1) + x(0.5)) / 2} y=${axis + 18} class="band-label" text-anchor="middle">survey grade</text>
+          <line x1="30" x2=${W - 30} y1=${axis} y2=${axis} class="axis"/>
+          ${ticks.map((t) => svg`<line x1=${x(t)} x2=${x(t)} y1=${axis - 4} y2=${axis + 4} class="axis"/><text x=${x(t)} y=${axis + 36} text-anchor="middle" class="tick">${t} m</text>`)}
+          <line x1=${x(1)} x2=${x(1)} y1="20" y2=${axis} class="goal"/><text x=${x(1) + 4} y="18" class="goal-label">sub-metre goal</text>
+          ${dots.map(({ a, s, cx, label, lane }) => {
+            const cy = top + lane * lh, t = tierOf(s);
+            return svg`<g class="dot ${this.hot === a.slug ? "hot" : ""}" @mouseenter=${() => (this.hot = a.slug)} @mouseleave=${() => (this.hot = null)}
+                         @click=${() => (location.hash = `/${a.slug}`)}>
+              <line x1=${cx} x2=${cx} y1=${cy} y2=${axis} class="stem"/>
+              <circle cx=${cx} cy=${cy} r="5" fill=${t.color}/>
+              <text x=${cx + 8} y=${cy + 4} class="dot-label">${label}</text></g>`;
+          })}`}
+        </svg>
+      </figure>`;
+  }
+
+  render() {
+    if (!this.data) return html`<div class="loading">Loading the atlas…</div>`;
+    const all = this.data, meas = all.filter((a) => bestLayout(a).measured);
+    const best = Math.min(...meas.map((a) => bestLayout(a).ce95_m));
+    const corners = all.reduce((n, a) => n + a.layouts[0].corners, 0);
+    const list = this.filtered();
+    return html`
+      <section class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">Open racing-circuit geometry · ODbL</p>
+          <h1>Every corner, <em>measured</em>,<br>with its error bar.</h1>
+          <p class="lede">${all.length} circuits, ${corners} named corners. ${meas.length} US circuits have measured track edges.
+            They are traced from open orthoimagery and positioned against USGS lidar, down to ${best.toFixed(2)} m absolute accuracy.
+            Each corner has its turn-in, apex and exit, and every figure states its own accuracy.</p>
+          <div class="cta">
+            <a class="btn primary" href="tracks.jsonl" download>Download tracks.jsonl</a>
+            <a class="btn" href="#/method">How it is measured</a>
+          </div>
+        </div>
+        ${this.ladder()}
+      </section>
+
+      <section class="filters">
+        <input type="search" placeholder="Search circuit, country, series…" .value=${this.q} @input=${(e) => (this.q = e.target.value)}>
+        <div class="seg">
+          ${[["all", "All", all.length], ["measured", "Measured", meas.length],
+             ["survey", "Survey grade", all.filter((a) => tierOf(bestLayout(a)).id === "survey").length],
+             ["traced", "OSM trace", all.length - meas.length]].map(([id, label, n]) =>
+            html`<button class=${this.tier === id ? "on" : ""} @click=${() => (this.tier = id)}>${label} <span>${n}</span></button>`)}
+        </div>
+        <label class="sort">Sort
+          <select @change=${(e) => (this.sort = e.target.value)}>
+            <option value="accuracy">by accuracy</option><option value="name">by name</option><option value="country">by country</option>
+          </select></label>
+      </section>
+
+      <section class="grid">
+        ${list.map((a) => {
+          const s = bestLayout(a), t = tierOf(s);
+          return html`<a class="card ${this.hot === a.slug ? "hot" : ""}" href="#/${a.slug}" @mouseenter=${() => (this.hot = a.slug)} @mouseleave=${() => (this.hot = null)}>
+            <div class="card-sil" style="--c:${t.color}">${silhouette(a.silhouette, t.color)}</div>
+            <div class="card-body">
+              <h3>${a.name}</h3>
+              <div class="where">${FLAGS(a.country)} ${place(a.locality, a.country)}</div>
+              <div class="facts"><span>${km(s.length_m)}</span><span>${s.corners} corners</span>${a.layouts.length > 1 ? html`<span>${a.layouts.length} layouts</span>` : nothing}</div>
+              <div class="card-q">${tierBadge(s)}
+                ${s.measured ? html`<span class="seen" title="share of the lap where both edges were seen in the imagery">
+                  <i style="width:${Math.round((s.seen?.both ?? 0) * 100)}%"></i></span><small>${pct(s.seen?.both)} seen</small>` : nothing}</div>
+            </div></a>`;
+        })}
+        ${list.length ? nothing : html`<p class="muted">No circuit matches.</p>`}
+      </section>
+
+      <section class="legend">
+        ${TIERS.map((t) => html`<div><span class="tier" style="--c:${t.color}">${t.label}</span><p>${t.blurb}</p></div>`)}
+      </section>`;
+  }
 }
 
-function addPoint(group, layer, p, hot=false) {
-  const isCorner = layer.id === "corners";
-  const isSf = p.id === "start_finish";
-  const marker = L.circleMarker(ll(p.location), {
-    radius: hot ? (isSf ? 11 : isCorner ? 9 : 8) : isSf ? 8 : isCorner ? 6 : 5,
-    color: hot ? "#ffffff" : isSf ? "#111722" : "#080a0f", weight: hot ? 3 : isSf ? 3 : 1.5,
-    fillColor: isSf ? "#ffffff" : isCorner ? "#ff2d8d" : "#f6c945", fillOpacity: 1,
-  });
-  marker.addTo(group);
-}
-function ll(c) { return [c[1], c[0]]; }
-function hav(a,b) {
-  const R=6371000, toRad=(x)=>x*Math.PI/180;
-  const dLat=toRad(b[1]-a[1]), dLon=toRad(b[0]-a[0]);
-  const lat1=toRad(a[1]), lat2=toRad(b[1]);
-  const s=Math.sin(dLat/2)**2 + Math.cos(lat1)*Math.cos(lat2)*Math.sin(dLon/2)**2;
-  return 2*R*Math.asin(Math.sqrt(s));
-}
-function lineMetrics(coords) {
-  const cum=[0]; let total=0;
-  for (let i=0;i<coords.length-1;i++) { total += hav(coords[i], coords[i+1]); cum.push(total); }
-  return {cum,total};
-}
-function pointAtDistance(coords, cum, dist) {
-  if (!coords.length) return null;
-  if (dist <= 0) return coords[0];
-  if (dist >= cum[cum.length-1]) return coords[coords.length-1];
-  let i=0; while (i < cum.length-1 && cum[i+1] < dist) i++;
-  const seg = cum[i+1]-cum[i] || 1, t=(dist-cum[i])/seg;
-  return [coords[i][0] + (coords[i+1][0]-coords[i][0])*t, coords[i][1] + (coords[i+1][1]-coords[i][1])*t];
-}
-function sliceLine(coords, start, end) {
-  if (!coords.length || start == null || end == null || start >= end) return [];
-  const {cum,total} = lineMetrics(coords);
-  const a = start*total, b = end*total;
-  const out = [pointAtDistance(coords,cum,a)];
-  for (let i=1;i<coords.length-1;i++) if (cum[i] > a && cum[i] < b) out.push(coords[i]);
-  out.push(pointAtDistance(coords,cum,b));
-  return out.filter(Boolean);
-}
-function nearestOnLine(latlng, coords) {
-  if (!coords.length) return null;
-  const pt = [latlng.lng, latlng.lat];
-  const lat0 = latlng.lat * Math.PI / 180;
-  const k = Math.cos(lat0);
-  const toXY = (p) => [p[0] * k * 111320, p[1] * 111320];
-  const fromXY = (p) => [p[0] / (k * 111320), p[1] / 111320];
-  const P = toXY(pt);
-  let best = { d2: Infinity, seg: 0, t: 0, xy: toXY(coords[0]) };
-  for (let i = 0; i < coords.length - 1; i++) {
-    const A = toXY(coords[i]), B = toXY(coords[i + 1]);
-    const dx = B[0] - A[0], dy = B[1] - A[1];
-    const l2 = dx * dx + dy * dy || 1;
-    const t = Math.max(0, Math.min(1, ((P[0] - A[0]) * dx + (P[1] - A[1]) * dy) / l2));
-    const X = [A[0] + t * dx, A[1] + t * dy];
-    const d2 = (P[0] - X[0]) ** 2 + (P[1] - X[1]) ** 2;
-    if (d2 < best.d2) best = { d2, seg: i, t, xy: X };
+// --- track page -------------------------------------------------------------------------
+const LAYER_TOGGLES = [["edges", "Edges"], ["crossings", "Entry / exit"], ["apexes", "Apexes"], ["midline", "Midline"],
+                       ["surface", "Asphalt"], ["sectors", "Sector lines"], ["labels", "Labels"]];
+
+class TrackPage extends Light {
+  static properties = { slug: {}, layoutId: {}, t: { state: true }, tab: { state: true }, sel: { state: true },
+                        hover: { state: true }, base: { state: true }, show: { state: true }, label: { state: true }, range: { state: true } };
+  constructor() { super(); this.tab = "quality"; this.show = {}; this.range = null; }
+
+  get layout() { return this.t?.layouts.find((l) => l.id === this.layoutId) || this.t?.layouts[0]; }
+
+  async willUpdate(ch) {
+    if (ch.has("slug")) {
+      this.t = await track(this.slug);
+      if (!this.t) { location.hash = "/"; return; }
+      this.label = this.layout.label_default || "numbered";
+      document.title = `${this.t.name} · Track Atlas`;
+    }
   }
-  const {cum,total} = lineMetrics(coords);
-  const segM = hav(coords[best.seg], coords[best.seg + 1]);
-  const distM = (cum[best.seg] || 0) + segM * best.t;
-  const snapped = fromXY(best.xy);
-  return { coord: snapped, distM, totalM: total, fraction: total ? distM / total : 0, offM: Math.sqrt(best.d2) };
-}
-function cyclicDelta(a, b) {
-  const d = Math.abs(a - b);
-  return Math.min(d, 1 - d);
-}
-function hitsAtFraction(frac, coord) {
-  const rangeHits = [];
-  const rangePointHits = [];
-  for (const layer of currentLayout?.range_layers || []) {
-    for (const r of layer.items || []) {
-      if (frac >= r.start && frac <= r.end) rangeHits.push({ layer, item: r });
-      for (const p of r.points || []) {
-        const byMarker = p.marker != null && cyclicDelta(p.marker, frac) < 0.0035;
-        const byLocation = p.location && hav(coord, p.location) < 85;
-        if (byMarker || byLocation) rangePointHits.push({ layer, range: r, item: p });
+
+  async updated(ch) {
+    if (!this.t) return;
+    if (ch.has("t") || ch.has("layoutId")) await this.loadMap();
+    if (ch.has("show") || ch.has("label") || ch.has("base")) this.redraw();
+    if (ch.has("range") || ch.has("t") || ch.has("layoutId")) this.map?.drawRanges(this.rangeSpec());
+  }
+
+  disconnectedCallback() { super.disconnectedCallback(); this.map?.destroy(); this.map = null; }
+
+  async loadMap() {
+    const lo = this.layout, el = this.querySelector("#map");
+    if (!el) return;
+    if (!this.map) this.map = new TrackMap(el, { onHover: (h) => (this.hover = h), onCorner: (id) => this.pick(id, true) });
+    const outline = await geo(this.t.slug, lo.geometry.centerline.split("/").pop());
+    const surface = lo.geometry.surface ? await geo(this.t.slug, lo.geometry.surface.split("/").pop()) : null;
+    this.lap = new Lap(outline.features.find((f) => f.properties.role === "outline").geometry.coordinates);
+    this.map.load(this.t, lo, outline, surface);
+    this.base = this.map.baseId;
+    this.redraw();
+    this.map.drawRanges(this.rangeSpec());
+    this.requestUpdate();
+  }
+
+  redraw() { this.map?.draw({ labels: this.show.labels !== false, labelLayer: this.label, show: this.show }); }
+
+  rangeSpec() {
+    const lo = this.layout;
+    const L_ = (lo?.range_layers || []).find((r) => r.id === this.range);
+    if (!L_) return null;
+    const items = L_.items.map((it, k) => {
+      if (L_.kind === "corner_ranges") {
+        const c = corners(lo).find((c) => c.id === (it.anchor || it.id));
+        return { ...it, color: c?.direction === "left" ? "#7dd3fc" : c?.direction === "right" ? "#fbbf24" : "#94a3b8" };
       }
-    }
+      return it;
+    });
+    return { items };
   }
-  const pointHits = [];
-  for (const layer of currentLayout?.point_layers || []) {
-    for (const p of layer.items || []) {
-      const byMarker = p.marker != null && cyclicDelta(p.marker, frac) < 0.0035;
-      const byLocation = p.location && hav(coord, p.location) < 85;
-      if (byMarker || byLocation) pointHits.push({ layer, item: p });
-    }
+
+  pick(id, fromMap = false) {
+    this.sel = this.sel === id && !fromMap ? null : id;
+    const c = corners(this.layout).find((c) => c.id === this.sel);
+    this.map?.focusCorner(c || null);
+    if (!c) this.map?.fit();
+    if (fromMap) { this.tab = "corners"; this.updateComplete.then(() => this.querySelector(`[data-c="${id}"]`)?.scrollIntoView({ block: "nearest", behavior: "smooth" })); }
   }
-  return { rangeHits, rangePointHits, pointHits };
-}
-function updateMapReadout(e) {
-  if (!map || !currentLayout) return;
-  const coords = outlineCoords();
-  const n = nearestOnLine(e.latlng, coords);
-  if (!n) return;
-  hoverCursorGroup?.clearLayers();
-  L.polyline([e.latlng, ll(n.coord)], { color: "#ffffff", weight: 1.5, opacity: .75, dashArray: "3 5" }).addTo(hoverCursorGroup);
-  L.circleMarker(ll(n.coord), { radius: 5, color: "#fff", weight: 2, fillColor: "#5eead4", fillOpacity: 1 }).addTo(hoverCursorGroup);
-  const inches = n.distM / 0.0254;
-  const { rangeHits, rangePointHits, pointHits } = hitsAtFraction(n.fraction, n.coord);
-  const ranges = rangeHits.slice(0, 8).map((h) => `<div>↔ <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || h.item.id)}${h.item.labels?.official ? ` <span class="muted">${esc(h.item.labels.official)}</span>` : ""} <span class="muted">${pct(h.item.start)}–${pct(h.item.end)}</span></div>`).join("");
-  const rangePoints = rangePointHits.slice(0, 8).map((h) => `<div>◆ <b>${esc(h.item.label || h.item.role || h.item.id)}</b> inside ${esc(h.range.label || h.range.id)} <span class="muted">${esc(h.layer.label || h.layer.id)}</span></div>`).join("");
-  const points = pointHits.slice(0, 8).map((h) => `<div>• <b>${esc(h.layer.label || h.layer.id)}</b> · ${esc(h.item.label || resolveName(h.item, displayLayer))}</div>`).join("");
-  const el = document.getElementById("hoverReadout");
-  if (el) el.innerHTML = `<div class="big">${pct(n.fraction)}</div>
-    <div class="muted">${n.distM.toFixed(1)} m · ${Math.round(inches).toLocaleString()} in · off ${n.offM.toFixed(0)} m</div>
-    <div class="hit">${ranges || `<span class="muted">No range layer hit</span>`}${rangePoints ? `<div style="height:5px"></div>${rangePoints}` : ""}${points ? `<div style="height:5px"></div>${points}` : ""}</div>`;
-}
-function clearMapReadout() {
-  hoverCursorGroup?.clearLayers();
-  const el = document.getElementById("hoverReadout");
-  if (el) el.innerHTML = `<span class="muted">Move over the track for lap position</span>`;
+
+  setLayout(id) { location.hash = `/${this.t.slug}/${id}`; this.sel = null; }
+
+  render() {
+    if (!this.t) return html`<div class="loading">Loading…</div>`;
+    const t = this.t, lo = this.layout, s = lo.surface;
+    const summary = s ? { measured: true, ce95_m: s.absolute_accuracy_ce95_m } : { measured: false };
+    return html`
+      <div class="track">
+        <div class="mapcol">
+          <div id="map"></div>
+          <div class="map-title">
+            <a href="#/" class="back">← Atlas</a>
+            <h1>${t.name}</h1>
+            <div class="where">${FLAGS(t.country)} ${place(t.location?.locality, t.location?.region, t.country)}
+              ${(t.series || []).map((x) => html`<span class="series">${x}</span>`)}</div>
+            <div class="title-row">
+              ${t.layouts.length > 1 ? html`<select @change=${(e) => this.setLayout(e.target.value)}>
+                ${t.layouts.map((l) => html`<option value=${l.id} ?selected=${l.id === lo.id}>${l.name}${l.series?.length ? ` · ${l.series.join("/").toUpperCase()}` : ""}</option>`)}</select>`
+                : html`<span class="muted">${lo.name}</span>`}
+              <span class="muted">${km(lo.length_m)} · ${lo.direction || ""}</span>
+              ${tierBadge(summary)}
+            </div>
+          </div>
+          <div class="map-tools">
+            <div class="seg small">
+              ${s ? html`<button class=${this.base === "source" ? "on" : ""} @click=${() => { this.map.setBase("source"); this.base = "source"; }}
+                   title="The open orthophoto the edges were measured on, moved by the recorded registration and datum step">Source imagery</button>` : nothing}
+              <button class=${this.base === "esri" ? "on" : ""} @click=${() => { this.map.setBase("esri"); this.base = "esri"; }} title="Esri World Imagery: for viewing only, never traced">Satellite</button>
+              <button class=${this.base === "dark" ? "on" : ""} @click=${() => { this.map.setBase("dark"); this.base = "dark"; }}>Dark</button>
+            </div>
+            <details class="toggles"><summary>Layers</summary>
+              ${LAYER_TOGGLES.filter(([k]) => s || k === "labels").map(([k, label]) => html`<label>
+                <input type="checkbox" .checked=${this.show[k] !== false} @change=${(e) => (this.show = { ...this.show, [k]: e.target.checked })}> ${label}</label>`)}
+            </details>
+          </div>
+          ${s ? html`<div class="map-key">
+            <span><i class="k-edge"></i>edge, seen</span><span><i class="k-unseen"></i>edge, bridged</span>
+            <span><i class="k-entry"></i>turn-in</span><span><i class="k-exit"></i>exit</span><span><i class="k-apex"></i>apex</span></div>` : nothing}
+          <lap-strip .layout=${lo} .lap=${this.lap} .hover=${this.hover} .sel=${this.sel} .range=${this.rangeSpec()} .label=${this.label}
+            @pick=${(e) => this.pick(e.detail)} @seek=${(e) => this.map?.focusFraction(e.detail)}></lap-strip>
+        </div>
+        <aside class="panel">
+          <nav class="tabs">
+            ${[["quality", "Quality"], ["corners", `Corners ${corners(lo).length}`], ["layers", "Layers"], ["data", "Data"]].map(([id, label]) =>
+              html`<button class=${this.tab === id ? "on" : ""} @click=${() => (this.tab = id)}>${label}</button>`)}
+          </nav>
+          <div class="panel-body">
+            ${this.tab === "quality" ? html`<quality-panel .track=${t} .layout=${lo}></quality-panel>`
+              : this.tab === "corners" ? this.cornersTab(lo)
+              : this.tab === "layers" ? this.layersTab(lo)
+              : this.dataTab(t, lo)}
+          </div>
+        </aside>
+      </div>`;
+  }
+
+  cornersTab(lo) {
+    const cs = corners(lo), layers = Object.keys(this.t.label_layers || { numbered: 1 });
+    const placed = cs.filter((c) => c.placement?.basis === "curvature").length;
+    return html`
+      <div class="row-between">
+        <p class="muted small">${lo.surface ? `${placed} of ${cs.length} placed on a measured curvature peak.` : "Positions come from lap-fraction markers on the OSM centerline."}</p>
+        <label class="sort">Names <select @change=${(e) => (this.label = e.target.value)}>
+          ${layers.map((k) => html`<option value=${k} ?selected=${k === this.label}>${this.t.label_layers?.[k]?.label || k}</option>`)}</select></label>
+      </div>
+      <ol class="corner-list">
+        ${cs.map((c) => {
+          const pl = c.placement, open = this.sel === c.id;
+          const len = c.entry && c.exit ? (((c.exit.marker - c.entry.marker + 1) % 1) * (lo.surface?.lap_length_m || lo.length_m)) : null;
+          return html`<li data-c=${c.id} class=${open ? "open" : ""}>
+            <button class="corner-row" @click=${() => this.pick(c.id)}>
+              <span class="code ${c.direction || ""}">${turnCode(c)}</span>
+              <span class="cname">${cornerName(c, this.label)}</span>
+              <span class="dir" title=${c.direction || "direction unknown"}>${c.direction === "left" ? "↰" : c.direction === "right" ? "↱" : "·"}</span>
+              <span class="rad">${pl?.radius_m ? `R ${Math.round(pl.radius_m)}` : ""}</span>
+              <span class="state ${pl?.basis === "curvature" ? "ok" : lo.surface ? "warn" : ""}">${pl?.basis === "curvature" ? (pl.shape === "kink" ? "kink" : "measured") : lo.surface ? "no peak" : "marker"}</span>
+            </button>
+            ${open ? html`<div class="corner-detail">
+              <dl>
+                ${c.entry ? html`<dt>Turn-in</dt><dd>${pct(c.entry.marker)} of lap · ${m1(c.entry.width_m)} wide</dd>` : nothing}
+                ${c.apex ? html`<dt>Apex</dt><dd>${pct(c.apex.marker)} · on the ${c.apex.edge} edge · <code>${c.apex.location.map((v) => v.toFixed(6)).join(", ")}</code></dd>`
+                  : c.location ? html`<dt>Location</dt><dd><code>${c.location.map((v) => v.toFixed(6)).join(", ")}</code> (${c.location_source})</dd>` : nothing}
+                ${c.exit ? html`<dt>Exit</dt><dd>${pct(c.exit.marker)} · ${m1(c.exit.width_m)} wide</dd>` : nothing}
+                ${len ? html`<dt>Length</dt><dd>${Math.round(len)} m turn-in to exit</dd>` : nothing}
+                ${pl?.radius_m ? html`<dt>Radius</dt><dd>${pl.radius_m} m minimum (midline)</dd>` : nothing}
+                ${pl?.marker_offset_m != null ? html`<dt>Legacy marker</dt><dd>${Math.abs(pl.marker_offset_m).toFixed(0)} m ${pl.marker_offset_m > 0 ? "before" : "after"} the measured apex</dd>` : nothing}
+                ${c.apex?.quality ? html`<dt>Accuracy</dt><dd>${m1(c.apex.quality.accuracy_m)} absolute · ${m1(c.apex.quality.relative_accuracy_m)} relative · ${c.apex.quality.source} ${c.apex.quality.date || ""}</dd>` : nothing}
+                <dt>Names</dt><dd>${Object.entries(c.labels || {}).map(([k, v]) => html`<span class="nm"><small>${k}</small> ${v}</span>`)}</dd>
+                ${pl?.declared_direction ? html`<dt>Conflict</dt><dd class="warn-text">curated ${pl.declared_direction}, geometry turns ${pl.direction}</dd>` : nothing}
+              </dl>
+              <a class="small" target="_blank" rel="noopener" href=${this.issueUrl(c)}>Suggest a correction →</a>
+            </div>` : nothing}
+          </li>`;
+        })}
+      </ol>`;
+  }
+
+  issueUrl(c) {
+    const lo = this.layout;
+    const body = `Track: ${this.t.slug} / layout ${lo.id}\nCorner: ${turnCode(c)} (${c.id})\n\nCurrent: ${JSON.stringify({ labels: c.labels, direction: c.direction, marker: c.marker })}\n\nProposed \`overrides.json\` patch:\n\n\`\`\`json\n${JSON.stringify({ [lo.id]: { corners: { [c.number]: { official: c.labels?.official || "", direction: c.direction } } } }, null, 2)}\n\`\`\`\n\nEvidence / source:\n`;
+    return `${GH}/issues/new?${new URLSearchParams({ title: `${this.t.name}: ${turnCode(c)} ${cornerName(c, "official")}`, body })}`;
+  }
+
+  layersTab(lo) {
+    const rl = lo.range_layers || [], pl = (lo.point_layers || []).filter((p) => p.kind !== "corners");
+    const cur = rl.find((r) => r.id === this.range);
+    return html`
+      <h3 class="h">Range layers</h3>
+      <p class="muted small">Lap intervals drawn on the track. Fractions are of the ${lo.geometry?.basis === "midline" ? "measured midline" : "OSM centerline"}, from the start/finish line.</p>
+      <div class="radio-list">
+        <label><input type="radio" name="rl" .checked=${!cur} @change=${() => (this.range = null)}> None</label>
+        ${rl.map((r) => html`<label><input type="radio" name="rl" .checked=${this.range === r.id} @change=${() => (this.range = r.id)}>
+          ${r.label} <span class="muted">${r.items.length}${r.series?.length ? ` · ${r.series.join("/").toUpperCase()}` : ""}</span></label>`)}
+      </div>
+      ${cur ? html`<table class="mini">
+        <thead><tr><th></th><th>Item</th><th>Start</th><th>End</th><th>Length</th></tr></thead>
+        <tbody>${cur.items.map((it, k) => html`<tr>
+          <td><i class="sw" style="background:${this.rangeSpec()?.items[k]?.color || RANGE_COLORS[k % RANGE_COLORS.length]}"></i></td>
+          <td>${it.label || it.id}</td><td>${pct(it.start)}</td><td>${pct(it.end)}</td>
+          <td>${it.start != null ? `${Math.round((((it.end - it.start + 1) % 1) || 1) * (lo.surface?.lap_length_m || lo.length_m))} m` : ""}</td></tr>`)}</tbody></table>
+        ${cur.provenance ? html`<p class="muted small">Source: ${cur.provenance.url ? html`<a href=${cur.provenance.url} target="_blank" rel="noopener">${cur.provenance.source}</a>` : cur.provenance.source}</p>` : nothing}` : nothing}
+      ${pl.map((p) => html`<h3 class="h">${p.label}</h3>
+        <table class="mini"><tbody>${p.items.map((it) => html`<tr><td>${it.label || it.id}</td><td>${pct(it.marker)}</td>
+          <td>${it.line ? html`<span class="ok-text">measured line</span>` : it.location ? "point" : ""}</td></tr>`)}</tbody></table>`)}`;
+  }
+
+  dataTab(t, lo) {
+    const raw = `${GH}/blob/${BRANCH}/tracks/${t.slug}`;
+    const outline = `geojson/${t.slug}_${lo.geometry.centerline.split("/").pop()}`;
+    const surf = lo.geometry.surface ? `geojson/${t.slug}_${lo.geometry.surface.split("/").pop()}` : null;
+    return html`
+      <h3 class="h">Download</h3>
+      <ul class="links">
+        <li><a href=${`${raw}/raw/track.json`} target="_blank" rel="noopener">track.json</a><span>the full record for this circuit</span></li>
+        <li><a href=${outline} download>${lo.id}.geojson</a><span>${lo.geometry.basis === "midline" ? "measured midline" : "OSM centerline"} + points</span></li>
+        ${surf ? html`<li><a href=${surf} download>${lo.id}.surface.geojson</a><span>edges, asphalt, turn-in/exit lines, apexes</span></li>` : nothing}
+        <li><a href="tracks.jsonl" download>tracks.jsonl</a><span>every circuit, one JSON per line</span></li>
+      </ul>
+      <button class="btn" @click=${(e) => navigator.clipboard.writeText(JSON.stringify(t, null, 2)).then(() => (e.target.textContent = "Copied"))}>Copy track JSON</button>
+      <h3 class="h">Improve it</h3>
+      <ul class="links">
+        <li><a href=${`${GH}/edit/${BRANCH}/tracks/${t.slug}/overrides.json`} target="_blank" rel="noopener">Edit overrides.json</a><span>names, directions, markers</span></li>
+        <li><a href=${`${GH}/edit/${BRANCH}/tracks/${t.slug}/source.json`} target="_blank" rel="noopener">Edit source.json</a><span>layouts, start/finish, sources</span></li>
+        <li><a href=${`${raw}/README.md`} target="_blank" rel="noopener">Curation notes</a><span>what was checked and why</span></li>
+      </ul>
+      <h3 class="h">Licence</h3>
+      <p class="muted small">Open Database License (ODbL). Geometry © OpenStreetMap contributors; measured edges from public-domain / open orthoimagery and USGS 3DEP lidar; corner data from Lovely-Sim-Racing plus curation.</p>`;
+  }
 }
 
-function currentViewConfig() {
-  const st = currentState();
-  return {
-    layout: currentLayout?.id,
-    label_layer: displayLayer,
-    visible: {
-      outline: !!st.outline,
-      point_layers: Object.fromEntries(Object.entries(st.point).filter(([,v]) => v)),
-      range_layers: Object.fromEntries(Object.entries(st.range).filter(([,v]) => v)),
-    },
-  };
-}
-async function copyCurrentTrackJson() {
-  const payload = { ...window.__track, _view_config: currentViewConfig() };
-  const text = JSON.stringify(payload, null, 2);
-  const status = document.getElementById("copyStatus");
-  try {
-    await navigator.clipboard.writeText(text);
-    if (status) status.textContent = "copied";
-  } catch {
-    if (status) status.textContent = "copy failed";
+// --- quality panel ------------------------------------------------------------------------
+class QualityPanel extends Light {
+  static properties = { track: {}, layout: {} };
+  render() {
+    const s = this.layout.surface;
+    if (!s) return this.unmeasured();
+    const pos = s.position || {}, b = pos.budget_ce95_m || {}, ref = pos.reference || {};
+    const img = s.sources?.imagery || {}, tier = tierOf({ measured: true, ce95_m: s.absolute_accuracy_ce95_m });
+    const parts = [["Reference", b.reference, ref.kind === "imagery" ? `${ref.name}: the imagery's own tested accuracy` : `USGS lidar ${ref.name}${ref.stated ? "" : " (accuracy not stated, 1 m assumed)"}`],
+                   ["Registration", b.registration, pos.registration_model],
+                   ["Datum", b.datum, `${pos.source_frame} → ${pos.frame} @ ${pos.epoch}`]];
+    const tot2 = parts.reduce((n, p) => n + (p[1] || 0) ** 2, 0) || 1;
+    const checks = (pos.checks || []).filter((c) => c.reference_agreement);
+    return html`
+      <div class="big-q" style="--c:${tier.color}">
+        <div class="num">${(s.absolute_accuracy_ce95_m).toFixed(2)}<small> m</small></div>
+        <div><span class="tier" style="--c:${tier.color}">${tier.label}</span>
+          <p class="small">95% of the measured geometry is within this distance of its true position (CE95). Edge shape is precise to ${m1(s.relative_precision_m)}.</p></div>
+      </div>
+
+      <h3 class="h">Error budget <span class="muted">√(Σ²)</span></h3>
+      <div class="budget">
+        <div class="stack">${parts.map(([k, v], i) => html`<i class="b${i}" style="flex:${(v || 0) ** 2 / tot2}" title="${k} ${m1(v)}"></i>`)}</div>
+        ${parts.map(([k, v, d], i) => html`<div class="brow"><i class="sw b${i}"></i><b>${k}</b><span class="mono">${m1(v)}</span><p>${d}</p></div>`)}
+      </div>
+
+      <h3 class="h">Edges</h3>
+      <div class="seenbars">
+        ${["left", "right"].map((side) => html`<div><span>${side}</span><span class="bar"><i style="width:${(s.seen_fraction?.[side] || 0) * 100}%"></i></span><b class="mono">${pct(s.seen_fraction?.[side])}</b></div>`)}
+      </div>
+      <p class="muted small">Share of the lap where the edge was seen in the imagery; the rest is bridged (dashed amber on the map) and flagged in the data.</p>
+      <dl class="kv">
+        <dt>Width</dt><dd>${m1(s.width_m?.median)} median · ${m1(s.width_m?.p05)} – ${m1(s.width_m?.p95)}</dd>
+        <dt>Lap</dt><dd>${km(s.lap_length_m)} measured midline</dd>
+        <dt>Measured</dt><dd>${(s.measured_at || "").slice(0, 10)} · ${s.method}</dd>
+      </dl>
+
+      <h3 class="h">Sources</h3>
+      <dl class="kv">
+        <dt>Imagery</dt><dd><a href=${img.url} target="_blank" rel="noopener">${img.name}</a><br>
+          <span class="muted">${(img.acquisition_dates || []).join(", ")} · ${img.gsd_m ? `${img.gsd_m.map((g) => `${g} m`).join("/")} GSD` : ""} · ${img.license}</span><br>
+          <span class="muted">${img.horizontal_accuracy}</span></dd>
+        <dt>Position</dt><dd>${(s.sources?.reference || []).map((r) => html`<div>${r.name} <span class="muted">${r.year || ""} · ${r.horizontal_accuracy}</span></div>`)}</dd>
+        <dt>Shift</dt><dd class="mono">${pos.applied_shift_m ? `E ${pos.applied_shift_m.east.toFixed(2)} m · N ${pos.applied_shift_m.north.toFixed(2)} m` : "—"}
+          <span class="muted"> (registration ${pos.registration_shift_m?.east?.toFixed(2)}/${pos.registration_shift_m?.north?.toFixed(2)} + datum ${pos.datum_shift_m?.east?.toFixed(2)}/${pos.datum_shift_m?.north?.toFixed(2)})</span></dd>
+        <dt>Seed</dt><dd>OpenStreetMap centerline, only to start the edge search</dd>
+      </dl>
+      ${checks.map((c) => html`<p class="small check">Two independent lidar surveys agree to <b>${m1(c.difference_m)}</b> (${c.reference_agreement.join(" vs ")}).</p>`)}
+
+      ${s.selection?.candidates?.length > 1 ? html`
+        <h3 class="h">Imagery chosen</h3>
+        <table class="mini">
+          <thead><tr><th>Source</th><th>CE95</th><th>Seen</th><th>Score</th></tr></thead>
+          <tbody>${s.selection.candidates.map((c) => html`<tr class=${c.chosen ? "chosen" : ""}>
+            <td>${c.imagery}${c.chosen ? " ✓" : ""}</td>
+            ${c.result ? html`<td colspan="3" class="muted">${c.result.replace(/^refused: /, "refused: ")}</td>`
+              : html`<td class="mono">${m1(c.absolute_accuracy_ce95_m)}</td><td class="mono">${pct(c.seen_both)}</td><td class="mono">${c.score_m}</td>`}</tr>`)}</tbody>
+        </table>
+        <p class="muted small">Score = CE95 + 4 m × unseen share: position and coverage in one number.</p>` : nothing}
+
+      ${s.unnamed_corners?.length ? html`<h3 class="h">Unclaimed curvature peaks</h3>
+        <p class="muted small">${s.unnamed_corners.length} tight bends in the measured midline match no atlas corner. They are either missing corners or second apexes; the curation notes say which.</p>` : nothing}`;
   }
-  setTimeout(() => { if (status) status.textContent = ""; }, 1800);
+  unmeasured() {
+    return html`
+      <div class="big-q" style="--c:var(--t-traced)">
+        <div class="num">—</div>
+        <div><span class="tier" style="--c:var(--t-traced)">OSM trace</span>
+          <p class="small">This layout is the OpenStreetMap centerline. It has no measured edges and no stated accuracy; OSM traces at the venues checked are typically 2–10 m off.</p></div>
+      </div>
+      <h3 class="h">What is missing</h3>
+      <ul class="plain small">
+        <li>An open orthoimagery source for ${this.track.country} with a licence that allows derived geometry (ODbL).</li>
+        <li>An open lidar or tested reference to position it.</li>
+        <li>Corner markers are lap fractions from Lovely-Sim-Racing plus curation, not measured apexes.</li>
+      </ul>
+      <p class="muted small">See the <a href="#/method">method</a> for the European programmes (IGN, PNOA, PDOK…) that could be integrated next.</p>`;
+  }
 }
 
-/* ---------------- editing ---------------- */
-function openEdit(slug, layoutId, number) {
-  const track = window.__track;
-  const layout = track.layouts.find((l) => l.id === layoutId);
-  const c = cornerLayer(layout).find((x) => x.number === number);
-  const cols = nameLayerColumns(window.__track);
-  const reg = window.__track.label_layers || {};
-  $dlg.innerHTML = `<h3>Edit T${c.number} — ${esc(resolveName(c, layout.label_default))}</h3>
-    <p>Changes become an <code>overrides.json</code> patch delivered as a GitHub issue or PR.</p>
-    <div class="row"><div><label>Code</label><input id="e_code" value="${esc(c.code ?? c.number)}"></div>
-      ${cols.map((L) => `<div><label>${esc((reg[L] || {}).label || L)}</label><input id="e_name_${esc(L)}" value="${esc((c.labels || {})[L] || "")}"></div>`).join("")}</div>
-    <div class="row"><div><label>Complex</label><input id="e_comp" value="${esc(complexFor(layout, c)?.label || "")}"></div>
-      <div><label>Direction</label><select id="e_dir"><option value="" ${!c.direction ? "selected" : ""}>—</option><option value="left" ${c.direction === "left" ? "selected" : ""}>left</option><option value="right" ${c.direction === "right" ? "selected" : ""}>right</option></select></div>
-      <div><label>Scale 1–6</label><input id="e_scale" type="number" min="1" max="6" value="${c.scale ?? ""}"></div></div>
-    <div class="actions"><button class="btn" onclick="editDlg.close()">Cancel</button>
-      <button class="btn" onclick='submitEdit(${JSON.stringify(slug)}, ${JSON.stringify(layoutId)}, ${number}, "issue")'>Propose via issue</button>
-      <button class="btn primary" onclick='submitEdit(${JSON.stringify(slug)}, ${JSON.stringify(layoutId)}, ${number}, "pr")'>Edit on GitHub</button></div>`;
-  $dlg.showModal();
-}
-function collectEdit(slug, layoutId, number) {
-  const track = window.__track, layout = track.layouts.find((l) => l.id === layoutId);
-  const c = cornerLayer(layout).find((x) => x.number === number) || { labels: {} };
-  const v = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ""; };
-  const patch = {};
-  const code = v("e_code"); if (code && code !== String(c.code ?? c.number)) patch.code = code;
-  for (const L of nameLayerColumns(track)) {
-    const el = document.getElementById(`e_name_${L}`); if (!el) continue;
-    const val = el.value.trim(), cur = (c.labels || {})[L] || "";
-    if (val !== cur) patch[L] = val === "" ? null : val;
+// --- lap strip ---------------------------------------------------------------------------
+class LapStrip extends Light {
+  static properties = { layout: {}, lap: {}, hover: {}, sel: {}, range: {}, label: {}, local: { state: true } };
+  frac(e) { const r = e.currentTarget.getBoundingClientRect(); return Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)); }
+  render() {
+    const lo = this.layout;
+    if (!lo) return nothing;
+    const W = 1000, cs = corners(lo), s = lo.surface, L = s?.lap_length_m || lo.length_m;
+    const x = (f) => f * W;
+    const spans = (a, b) => (b >= a ? [[a, b]] : [[a, 1], [0, b]]);
+    const cur = this.local ?? this.hover?.frac;
+    const at = cur != null ? cs.find((c) => c.start != null && inRange(cur, c.start, c.end)) : null;
+    return html`
+      <div class="strip">
+        <div class="strip-read">${cur != null ? html`<b class="mono">${(cur * 100).toFixed(1)}%</b> <span class="mono">${Math.round(cur * L)} m</span>
+          ${at ? html`· <b>${turnCode(at)}</b> ${cornerName(at, this.label)}` : nothing}` : html`<span class="muted">Lap: hover the track or this strip · click to jump</span>`}</div>
+        <svg viewBox="0 0 ${W} 46" preserveAspectRatio="none"
+             @mousemove=${(e) => (this.local = this.frac(e))} @mouseleave=${() => (this.local = null)}
+             @click=${(e) => this.dispatchEvent(new CustomEvent("seek", { detail: this.frac(e) }))}>
+          ${svg`
+          <rect x="0" y="0" width=${W} height="46" class="strip-bg"/>
+          ${(this.range?.items || []).map((it, k) => it.start == null ? nothing : spans(it.start, it.end).map(([a, b]) =>
+            svg`<rect x=${x(a)} y="4" width=${Math.max(0.5, x(b) - x(a))} height="8" fill=${it.color || RANGE_COLORS[k % RANGE_COLORS.length]} opacity=".85"/>`))}
+          ${cs.map((c) => {
+            const a = c.entry?.marker ?? c.start, b = c.exit?.marker ?? c.end;
+            const sel = this.sel === c.id;
+            return svg`<g class="sc ${sel ? "sel" : ""}" @click=${(e) => { e.stopPropagation(); this.dispatchEvent(new CustomEvent("pick", { detail: c.id })); }}>
+              ${a != null && b != null ? spans(a, b).map(([p, q]) => svg`<rect x=${x(p)} y="16" width=${Math.max(1, x(q) - x(p))} height="14"
+                   class="cr ${c.direction || ""} ${c.placement?.basis === "curvature" ? "" : "unplaced"}"/>`) : nothing}
+              ${c.marker != null ? svg`<line x1=${x(c.marker)} x2=${x(c.marker)} y1="14" y2="32" class="apx"/>` : nothing}
+            </g>`;
+          })}
+          ${s ? svg`<rect x="0" y="36" width=${W} height="3" class="seen-l"/><rect x="0" y="41" width=${W} height="3" class="seen-r"/>` : nothing}
+          ${(s?.unseen_spans?.left || []).map(([a, b]) => spans(a, b).map(([p, q]) => svg`<rect x=${x(p)} y="36" width=${Math.max(0.6, x(q) - x(p))} height="3" class="unseen"/>`))}
+          ${(s?.unseen_spans?.right || []).map(([a, b]) => spans(a, b).map(([p, q]) => svg`<rect x=${x(p)} y="41" width=${Math.max(0.6, x(q) - x(p))} height="3" class="unseen"/>`))}
+          ${cur != null ? svg`<line x1=${x(cur)} x2=${x(cur)} y1="0" y2="46" class="cursor"/>` : nothing}`}
+        </svg>
+        <div class="strip-axis mono"><span>S/F</span><span>25%</span><span>50%</span><span>75%</span><span>S/F</span></div>
+      </div>`;
   }
-  if (v("e_comp")) patch.complex = v("e_comp");
-  if (v("e_dir")) patch.direction = v("e_dir");
-  if (v("e_scale")) patch.scale = Number(v("e_scale"));
-  return { [layoutId]: { corners: { [String(number)]: patch } } };
-}
-function submitEdit(slug, layoutId, number, mode) {
-  const ov = collectEdit(slug, layoutId, number);
-  const snippet = JSON.stringify(ov, null, 2);
-  if (mode === "issue") {
-    const title = `[${slug}] corner data: T${number} (${layoutId})`;
-    const body = [`Proposed correction for \`tracks/${slug}\`, layout \`${layoutId}\`, turn ${number}.`, "", "Merge this into `tracks/" + slug + "/overrides.json`:", "```json", snippet, "```", "", "Then re-run: `generate.py && render.py && verify.py " + slug + "`.", "", "_Filed from the Track Atlas site._"].join("\n");
-    window.open(`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=data`, "_blank");
-  } else {
-    navigator.clipboard?.writeText(snippet).catch(() => {});
-    window.open(`https://github.com/${REPO}/edit/${BRANCH}/tracks/${slug}/overrides.json`, "_blank");
-    alert("Override snippet copied to clipboard — merge it into overrides.json in the GitHub editor, then commit.");
-  }
-  $dlg.close();
-}
-function proposeTrackIssue(slug) {
-  const title = `[${slug}] data problem`;
-  const body = [`Track: \`tracks/${slug}\``, "", "**What's wrong?** (misplaced corner, wrong length, missing layout, geometry glitch…)", "", "", "_Filed from the Track Atlas site._"].join("\n");
-  window.open(`https://github.com/${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=data`, "_blank");
 }
 
-boot();
+// --- method ----------------------------------------------------------------------------------
+class AtlasMethod extends Light {
+  render() {
+    return html`<article class="method">
+      <p class="eyebrow">Method</p>
+      <h1>How a circuit gets measured</h1>
+      <p class="lede">OpenStreetMap shows roughly where a lap goes. It does not show where the asphalt is, and at the venues we checked it is 2–10 m off.
+        So each US circuit is measured again from open sources. Every figure keeps the budget of its own error.</p>
+      <ol class="steps">
+        <li><h3>Trace the edges</h3><p>Open orthoimagery is sampled along the lap: USDA NAIP, or a sharper state programme where one covers the circuit (Connecticut 2023, Indiana 2025, Texas 2021, Florida 2021).
+          A self-calibrated asphalt model finds both edges. Where an edge is not visible (shadow, paved run-off, a bridge) it is bridged and flagged, never hidden.</p></li>
+        <li><h3>Position them on lidar</h3><p>The imagery is registered onto USGS 3DEP lidar intensity: grass is bright and asphalt dark in both.
+          The lidar is surveyed with GNSS and ground control. Where two independent surveys exist, their agreement is recorded as a check.</p></li>
+        <li><h3>Move to today's frame</h3><p>US sources are in NAD83(2011). Each result is moved to WGS 84 (G2139) ≈ ITRF2014 at epoch 2026.0, the frame a GNSS receiver reports today. That step is 0.9–1.6 m, and before this work it was silently ignored.</p></li>
+        <li><h3>Place the corners</h3><p>The curvature of the measured midline gives each corner a turn-in line, an apex on the inside edge and an exit line.
+          The midline becomes the lap: markers are fractions of it, measured from the start/finish line.</p></li>
+        <li><h3>Choose the best source</h3><p>Every imagery source that covers the circuit is measured. The one with the lowest score wins, where score = CE95 + 4 m × unseen share. The comparison is published with the data.</p></li>
+      </ol>
+      <h2>Accuracy tiers</h2>
+      <div class="legend">${TIERS.map((t) => html`<div><span class="tier" style="--c:${t.color}">${t.label}</span><p>${t.blurb}</p></div>`)}</div>
+      <h2>What the numbers mean</h2>
+      <p><b>CE95</b> is the radius that contains 95% of position errors. It is computed as √(reference² + registration² + datum²).
+        <b>Relative precision</b> is how well the edge <i>shape</i> is known: it matters for widths and racing lines, independent of where the whole circuit sits.</p>
+      <p>Most 3DEP lidar surveys do not state a horizontal accuracy. Where they don't, 1.0 m CE95 is assumed and flagged, so a measured circuit rarely claims better than about 1 m unless the imagery has its own tested accuracy (Connecticut: 0.16 m on 179 checkpoints).</p>
+      <h2>Never used</h2>
+      <p>No commercial basemap is ever traced: Esri, Google and Bing imagery appear here for viewing only. No private telemetry or GPS logs are used.</p>
+      <p><a href=${`${GH}/blob/${BRANCH}/docs/GEOMETRY.md`} target="_blank" rel="noopener">Full specification (GEOMETRY.md)</a> ·
+         <a href=${`${GH}/blob/${BRANCH}/docs/SOURCES.md`} target="_blank" rel="noopener">Sources and licences (SOURCES.md)</a></p>
+    </article>`;
+  }
+}
+
+customElements.define("atlas-app", AtlasApp);
+customElements.define("atlas-home", AtlasHome);
+customElements.define("track-page", TrackPage);
+customElements.define("quality-panel", QualityPanel);
+customElements.define("lap-strip", LapStrip);
+customElements.define("atlas-method", AtlasMethod);
