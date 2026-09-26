@@ -5,113 +5,148 @@
         "driver": "Big Red",
         "official": "Turn 1",
         "direction": "left",
-        "scale": 1
+        "scale": 1,
+        "marker": 0.1194
       },
       "2": {
         "official": "Turn 2",
         "direction": "right",
-        "scale": 4
+        "scale": 4,
+        "marker": 0.1536
       },
       "3": {
         "official": "Turn 3",
         "complex": "Esses",
         "direction": "left",
-        "scale": 5
+        "scale": 5,
+        "marker": 0.2119
       },
       "4": {
         "official": "Turn 4",
         "complex": "Esses",
         "direction": "right",
-        "scale": 5
+        "scale": 5,
+        "marker": 0.2299
       },
       "5": {
         "official": "Turn 5",
         "complex": "Esses",
         "direction": "left",
-        "scale": 5
+        "scale": 5,
+        "marker": 0.2454
       },
       "6": {
         "official": "Turn 6",
         "complex": "Esses",
         "direction": "right",
-        "scale": 4
+        "scale": 4,
+        "marker": 0.2647
       },
       "7": {
         "official": "Turn 7",
         "complex": "Esses",
         "direction": "left",
-        "scale": 4
+        "scale": 4,
+        "marker": 0.3123
       },
       "8": {
         "official": "Turn 8",
         "complex": "Esses",
         "direction": "right",
-        "scale": 2
+        "scale": 2,
+        "marker": 0.3463
       },
       "9": {
         "official": "Turn 9",
         "complex": "Esses",
         "direction": "left",
-        "scale": 3
+        "scale": 3,
+        "marker": 0.3591
       },
       "10": {
         "official": "Turn 10",
         "complex": "Esses",
         "direction": "left",
-        "scale": 5
+        "scale": 5,
+        "marker": 0.3962
       },
       "11": {
         "driver": "Hairpin",
         "official": "Turn 11",
         "direction": "left",
-        "scale": 1
+        "scale": 1,
+        "marker": 0.4699
       },
       "12": {
         "official": "Turn 12",
         "direction": "left",
-        "scale": 1
+        "scale": 1,
+        "marker": 0.6871
       },
       "13": {
         "official": "Turn 13",
         "direction": "right",
-        "scale": 2
+        "scale": 2,
+        "marker": 0.7281
       },
       "14": {
         "official": "Turn 14",
         "direction": "right",
-        "scale": 4
+        "scale": 4,
+        "marker": 0.7455
       },
       "15": {
         "official": "Turn 15",
         "direction": "left",
-        "scale": 5
+        "scale": 5,
+        "marker": 0.7703
       },
       "16": {
         "official": "Turn 16",
         "direction": "left",
-        "scale": 2
+        "scale": 2,
+        "marker": 0.7803
       },
       "17": {
         "official": "Turn 17",
         "direction": "right",
-        "scale": 5
+        "scale": 5,
+        "marker": 0.8366
       },
       "18": {
         "official": "Turn 18",
         "direction": "right",
-        "scale": 5
+        "scale": 5,
+        "marker": 0.8543
       },
       "19": {
         "official": "Turn 19",
         "direction": "left",
-        "scale": 4
+        "scale": 4,
+        "marker": 0.917
       },
       "20": {
         "official": "Turn 20",
         "direction": "left",
-        "scale": 2
+        "scale": 2,
+        "marker": 0.9722
       }
     },
-    "errors_summary": null
+    "surface_review": {
+      "unnamed": [
+        {
+          "marker": 0.2874,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "second apex of T6 (R65, -59 deg); both T6 apexes lie inside the OSM 'Turn 6' way 0.2555-0.3023"
+        },
+        {
+          "marker": 0.8171,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "first apex of T17 (R70, -50 deg) before its R53 apex; OSM 'Turn 17' way 0.8099-0.8468"
+        }
+      ]
+    }
   }
 }
