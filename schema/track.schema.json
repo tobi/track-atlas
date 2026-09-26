@@ -6,7 +6,7 @@
   "$defs": {
     "Apex": {
       "additionalProperties": false,
-      "description": "The geometric apex: the point of greatest curvature on the inside edge.",
+      "description": "An apex on the inside edge.\n\n`apex` is the racing-line apex: where the modelled racing line clips the\ninside edge. `geometric_apex` is the point of greatest curvature of the\ninside edge itself.",
       "properties": {
         "marker": {
           "description": "Lap fraction in [0,1].",
@@ -34,6 +34,35 @@
           "title": "Edge",
           "type": "string"
         },
+        "basis": {
+          "anyOf": [
+            {
+              "enum": [
+                "racing_line",
+                "curvature"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Basis"
+        },
+        "gap_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Racing line: clearance between the car's side and the edge at the apex.",
+          "title": "Gap M"
+        },
         "quality": {
           "$ref": "#/$defs/Quality"
         }
@@ -45,6 +74,46 @@
         "quality"
       ],
       "title": "Apex",
+      "type": "object"
+    },
+    "BrakePoint": {
+      "additionalProperties": false,
+      "properties": {
+        "marker": {
+          "description": "Lap fraction in [0,1].",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Marker",
+          "type": "number"
+        },
+        "line": {
+          "description": "A 2-point line across the track: [point on the left edge, point on the right edge], left/right in the driving direction.",
+          "items": {
+            "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
+            "items": {
+              "type": "number"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Line",
+          "type": "array"
+        },
+        "speed_kmh": {
+          "description": "Modelled speed where braking starts.",
+          "title": "Speed Kmh",
+          "type": "number"
+        }
+      },
+      "required": [
+        "marker",
+        "line",
+        "speed_kmh"
+      ],
+      "title": "BrakePoint",
       "type": "object"
     },
     "Crossing": {
@@ -91,6 +160,88 @@
         "quality"
       ],
       "title": "Crossing",
+      "type": "object"
+    },
+    "Dynamics": {
+      "additionalProperties": false,
+      "description": "A corner on the modelled racing line with the reference car (lib/racing.py).\n\nA model, not a measurement: no elevation, no kerbs, a generic car.",
+      "properties": {
+        "model": {
+          "description": "Reference car id, e.g. gt3.",
+          "title": "Model",
+          "type": "string"
+        },
+        "character": {
+          "enum": [
+            "kink",
+            "high_speed",
+            "medium",
+            "slow"
+          ],
+          "title": "Character",
+          "type": "string"
+        },
+        "min_speed_kmh": {
+          "title": "Min Speed Kmh",
+          "type": "number"
+        },
+        "min_speed_marker": {
+          "description": "Lap fraction in [0,1].",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Min Speed Marker",
+          "type": "number"
+        },
+        "brake": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BrakePoint"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Where braking starts; absent when the corner needs none (or under 10 m)."
+        },
+        "brake_m": {
+          "description": "Braking (and trail-braking) distance to the minimum-speed point.",
+          "title": "Brake M",
+          "type": "number"
+        },
+        "full_throttle_marker": {
+          "description": "First point after the minimum where the car is power-limited again.",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Full Throttle Marker",
+          "type": "number"
+        },
+        "start": {
+          "description": "Range start: 0.5 s before braking (or turn-in, if earlier / no braking).",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "description": "Range end: 0.5 s after full throttle (or track-out, if later).",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "End",
+          "type": "number"
+        }
+      },
+      "required": [
+        "model",
+        "character",
+        "min_speed_kmh",
+        "min_speed_marker",
+        "brake_m",
+        "full_throttle_marker",
+        "start",
+        "end"
+      ],
+      "title": "Dynamics",
       "type": "object"
     },
     "Geometry": {
@@ -628,7 +779,49 @@
             }
           ],
           "default": null,
-          "description": "Corners: the geometric apex on the inside edge."
+          "description": "Corners: the racing-line apex on the inside edge (or the geometric one when no racing line)."
+        },
+        "geometric_apex": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Apex"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Corners: the point of greatest inside-edge curvature."
+        },
+        "character": {
+          "anyOf": [
+            {
+              "enum": [
+                "kink",
+                "high_speed",
+                "medium",
+                "slow"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Corners: from the modelled lap (dynamics). kink = taken flat; high_speed = minimum >= 160 km/h.",
+          "title": "Character"
+        },
+        "dynamics": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Dynamics"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         },
         "exit": {
           "anyOf": [
@@ -1466,6 +1659,20 @@
           "default": null,
           "description": "Imagery sources tried for this measurement, their scores and which was chosen.",
           "title": "Selection"
+        },
+        "racing_line": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The modelled racing line and lap: reference car, lap time, length, method. Geometry in the surface GeoJSON (role racing_line).",
+          "title": "Racing Line"
         },
         "unnamed_corners": {
           "default": [],

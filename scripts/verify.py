@@ -321,7 +321,11 @@ def verify_track(slug: str) -> Report:
                 for mid in g.get("members", []):
                     member_counts[mid] = member_counts.get(mid, 0) + 1
             all_corner_ids = {c.get("id") for c in corners}
-            required_corner_ids = {c.get("id") for c in corners if (c.get("scale") or 0) < 5}
+            # kinks and high-speed corners are tagged, not grouped: from the modelled
+            # lap (character) when there is one, else from the curated scale
+            required_corner_ids = {c.get("id") for c in corners
+                                   if (c["character"] not in ("kink", "high_speed") if c.get("character")
+                                       else (c.get("scale") or 0) < 5)}
             missing = sorted(required_corner_ids - set(member_counts))
             dupes = sorted(mid for mid, n in member_counts.items() if n > 1)
             extras = sorted(set(member_counts) - all_corner_ids)

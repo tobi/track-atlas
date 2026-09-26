@@ -28,7 +28,7 @@ from pathlib import Path
 
 import numpy as np
 
-from . import geo
+from . import geo, racing
 
 STEP = 1.0                 # m, midline station spacing
 KAPPA_SIGMA_M = 5.0        # m, smoothing of midline curvature
@@ -398,6 +398,132 @@ def place_corners(G: LapGeometry, corners: list[dict]) -> tuple[list[dict | None
     return out, unclaimed
 
 
+# --- racing line: corner dynamics, ranges, complexes -----------------------------
+FAST = ("kink", "high_speed")
+
+
+def _corner_dynamics(G: LapGeometry, lap: "racing.Lap", corners: list[dict], placed: list, sources: dict,
+                     q: dict, feats: list) -> dict:
+    """Racing apex, braking, character and range bounds for every placed corner.
+
+    Returns corner id -> the lap.corner() phases plus i_lo/i_hi, the Each Corner
+    bounds: the phase range, split at the fastest point where neighbours overlap.
+    """
+    fr = lambda i: round(G.out_fraction(float(lap.station[i])), 5)
+    phases = {}
+    for c, p in zip(corners, placed):
+        if p is None:
+            continue
+        ph = lap.corner(p["entry"] % G.total, p["exit"] % G.total, p["direction"])
+        phases[c["id"]] = ph
+        inside = p["direction"]
+        c["geometric_apex"] = {**c["apex"], "basis": "curvature"}
+        ia = G.idx(float(lap.station[ph["i_apex"]]))
+        pt = (G.left if inside == "left" else G.right)[ia]
+        c["apex"] = {"marker": fr(ph["i_apex"]), "location": geo.lonlat_list(G.F.to_lonlat(pt[None, :]))[0],
+                     "edge": inside, "basis": "racing_line", "gap_m": ph["apex_gap_m"],
+                     "quality": _quality(sources, q, bool(G.seen[inside][ia]))}
+        c["marker"] = c["apex"]["marker"]
+        c["location"] = G.point(float(lap.station[ph["i_apex"]]))
+        c["character"] = ph["character"]
+        start, end = _clamped(G, lap, ph, ph["i_start"], ph["i_end"])
+        dyn = {"model": lap.car.id, "character": ph["character"], "min_speed_kmh": ph["min_speed_kmh"],
+               "min_speed_marker": fr(ph["i_min"]), "brake_m": ph["brake_m"],
+               "full_throttle_marker": fr(ph["i_full"]), "start": start, "end": end}
+        if ph["i_brake"] is not None:
+            cr = G.crossing(float(lap.station[ph["i_brake"]]), sources)
+            dyn["brake"] = {"marker": cr["marker"], "line": cr["line"], "speed_kmh": ph["entry_speed_kmh"]}
+            feats.append(_line_feature(f"{c['id']}-brake", "brake_point", cr, corner=c["id"],
+                                       speed_kmh=ph["entry_speed_kmh"]))
+        c["dynamics"] = dyn
+    # Each Corner: neighbours that overlap meet at the fastest point between them
+    order = sorted(phases, key=lambda k: phases[k]["i_apex"])
+    for k in order:
+        phases[k]["i_lo"], phases[k]["i_hi"] = phases[k]["i_start"], phases[k]["i_end"]
+    for a, b in zip(order, order[1:] + order[:1]):
+        if a == b:
+            continue
+        pa, pb = phases[a], phases[b]
+        ahead = lambda i: (i - pa["i_apex"]) % lap.n
+        if ahead(pb["i_lo"]) < ahead(pa["i_hi"]) and ahead(pb["i_apex"]) > 0:
+            seg = np.arange(pa["i_apex"], pa["i_apex"] + ahead(pb["i_apex"]) + 1) % lap.n
+            cut = int(seg[np.argmax(lap.v[seg])])
+            pa["i_hi"] = pb["i_lo"] = cut
+    # the racing line itself, with its speed
+    thin = np.arange(0, lap.n, 2)
+    feats.append({"type": "Feature", "properties": {
+        "role": "racing_line", "model": lap.car.id, "lap_time_s": round(lap.prof["lap_s"], 2),
+        "speed_kmh": [round(float(v) * 3.6) for v in lap.v[thin]],
+        "quality": {"source": "model", "measured": False,
+                    "note": "minimum-curvature line inside the measured edges; not driven, no elevation"}},
+        "geometry": {"type": "LineString", "coordinates": geo.lonlat_list(G.F.to_lonlat(lap.xy[thin]))}})
+    return phases
+
+
+def _clamped(G: LapGeometry, lap: "racing.Lap", ph: dict, i_start: int, i_end: int) -> tuple[float, float]:
+    """Range bounds as lap fractions around the corner's apex; ranges do not wrap start/finish."""
+    apex = G.out_fraction(float(lap.station[ph["i_apex"]]))
+    a = G.out_fraction(float(lap.station[i_start]))
+    b = G.out_fraction(float(lap.station[i_end]))
+    return round(0.0 if a > apex else a, 5), round(1.0 if b < apex else b, 5)
+
+
+def _regroup_complexes(items: list[dict], corners: list[dict], phases: dict, lap: "racing.Lap") -> list[dict]:
+    """Corner Complexes from the modelled lap.
+
+    Members are the corners that are not kinks or high-speed corners (these
+    are tagged, not grouped). Consecutive members share a complex when their
+    phase ranges overlap (the car never reaches full throttle + 0.5 s between
+    them) or when curation grouped them. A corner without dynamics keeps its
+    curated grouping.
+    """
+    was = {m: it for it in items for m in it.get("members", [])}
+
+    def member(c):
+        return c.get("character") not in FAST if c.get("character") else (c.get("scale") or 0) < 5
+
+    def overlap(a, b):
+        pa, pb = phases.get(a["id"]), phases.get(b["id"])
+        if not (pa and pb):
+            return False
+        ahead = lambda i: (i - pa["i_apex"]) % lap.n
+        return ahead(pb["i_start"]) < ahead(pa["i_end"])
+
+    groups: list[list[dict]] = []
+    for c in sorted(corners, key=lambda c: c.get("number", 0)):
+        if c.get("marker") is None or not member(c):
+            continue
+        prev = groups[-1][-1] if groups else None
+        if prev and ((was.get(prev["id"]) is not None and was.get(prev["id"]) is was.get(c["id"])) or overlap(prev, c)):
+            groups[-1].append(c)
+        else:
+            groups.append([c])
+    out, used = [], set()
+    for g in groups:
+        ids = [c["id"] for c in g]
+        olds = list(dict.fromkeys(id(was[i]) for i in ids if i in was))
+        old = was.get(ids[0])
+        if len(olds) == 1 and old is not None and old.get("members") == ids:
+            gid, label, labels = old["id"], old.get("label"), old.get("labels", {})
+        else:
+            gid = "-".join(ids)
+            label = g[0].get("label") if len(g) == 1 else f"{g[0].get('label')} – {g[-1].get('label')}"
+            labels = {}
+        while gid in used:
+            gid += "-2"
+        used.add(gid)
+        pa, pb = phases.get(ids[0]), phases.get(ids[-1])
+        start = g[0]["dynamics"]["start"] if pa else (old or {}).get("start", g[0]["marker"])
+        end = g[-1]["dynamics"]["end"] if pb else (was.get(ids[-1]) or {}).get("end", g[-1]["marker"])
+        item = {"id": gid, "label": label, "start": start, "end": end, "members": ids,
+                "points": [{"id": f"{c['id']}-apex", "role": "apex", "label": c.get("label"), "marker": c["marker"],
+                            "point_ref": c["id"]} for c in g if start <= c["marker"] <= end]}
+        if labels:
+            item["labels"] = labels
+        out.append(item)
+    return out
+
+
 # --- pit lane -----------------------------------------------------------------
 def pit_lane_features(osm: dict, G: LapGeometry) -> list[dict]:
     import re
@@ -515,7 +641,7 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
     old_offsets = {c["id"]: (c.get("placement") or {}).get("marker_offset_m") for c in corners}
     placed, unclaimed = place_corners(G, corners)
     for c, p in zip(corners, placed):
-        for k in ("entry", "apex", "exit", "placement"):
+        for k in ("entry", "apex", "exit", "placement", "geometric_apex", "character", "dynamics"):
             c.pop(k, None)
         if p is None:
             if c.get("marker") is not None:
@@ -555,10 +681,18 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
             c["end"] = c["exit"]["marker"]
         feats.append(_line_feature(f"{c['id']}-entry", "corner_entry", c["entry"], corner=c["id"]))
         feats.append(_line_feature(f"{c['id']}-exit", "corner_exit", c["exit"], corner=c["id"]))
-        feats.append({"type": "Feature", "properties": {
-            "role": "apex", "id": f"{c['id']}-apex", "corner": c["id"], "edge": inside,
-            "marker": c["apex"]["marker"], "quality": c["apex"]["quality"]},
-            "geometry": {"type": "Point", "coordinates": c["apex"]["location"]}})
+
+    # the racing line and the modelled lap: racing apex, braking, character
+    lap = racing.Lap(G) if any(p is not None for p in placed) else None
+    phases = _corner_dynamics(G, lap, corners, placed, sources, q, feats) if lap else {}
+    for c in corners:
+        for k, basis in (("apex", "apex"), ("geometric_apex", "geometric_apex")):
+            a = c.get(k)
+            if a:
+                feats.append({"type": "Feature", "properties": {
+                    "role": basis, "id": f"{c['id']}-{basis.replace('_', '-')}", "corner": c["id"], "edge": a["edge"],
+                    "marker": a["marker"], "quality": a["quality"]},
+                    "geometry": {"type": "Point", "coordinates": a["location"]}})
 
     by_id = {c["id"]: c for c in corners}
     # every other point layer: markers (and locations) onto the midline
@@ -576,12 +710,19 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
     # ranges: re-expressed; a corner's range is its geometric entry..exit, a
     # complex's the entry of its first placed member .. exit of its last
     for L in layout.get("range_layers", []):
+        if L.get("kind") == "corner_complexes" and phases:
+            L["items"] = _regroup_complexes(L.get("items", []), corners, phases, lap)
         for it in L.get("items", []):
             it.pop("entry", None)
             it.pop("exit", None)
             start_line = end_line = None
             anchor = by_id.get(it.get("anchor"))
-            if L.get("kind") == "corner_ranges" and anchor and "entry" in anchor:
+            if L.get("kind") == "corner_ranges" and anchor and anchor["id"] in phases:
+                ph = phases[anchor["id"]]
+                start_line = G.crossing(float(lap.station[ph["i_lo"]]), sources)
+                end_line = G.crossing(float(lap.station[ph["i_hi"]]), sources)
+                start_line["marker"], end_line["marker"] = _clamped(G, lap, ph, ph["i_lo"], ph["i_hi"])
+            elif L.get("kind") == "corner_ranges" and anchor and "entry" in anchor:
                 start_line, end_line = anchor["entry"], anchor["exit"]
             elif L.get("kind") == "corner_complexes" and it.get("members"):
                 # bounded by the first member's entry and the last member's exit;
@@ -595,6 +736,13 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
                     it["exit"] = end_line = last["exit"]
                     if len(it["members"]) > 1:
                         feats.append(_line_feature(f"{it['id']}-exit", "complex_exit", it["exit"], complex=it["id"]))
+                # the range itself: braking of the first member .. full throttle of the last
+                if first and last and first["id"] in phases and last["id"] in phases:
+                    pa, pb = phases[first["id"]], phases[last["id"]]
+                    start_line = G.crossing(float(lap.station[pa["i_start"]]), sources)
+                    end_line = G.crossing(float(lap.station[pb["i_end"]]), sources)
+                    start_line["marker"] = _clamped(G, lap, pa, pa["i_start"], pa["i_end"])[0]
+                    end_line["marker"] = _clamped(G, lap, pb, pb["i_start"], pb["i_end"])[1]
             it["start_line"] = start_line or G.crossing(G.station(it["start"]), sources, frac=G.remap(it["start"]))
             it["end_line"] = end_line or G.crossing(G.station(it["end"]), sources, frac=G.remap(it["end"]))
             it["start"], it["end"] = it["start_line"]["marker"], it["end_line"]["marker"]
@@ -626,6 +774,15 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
         "absolute_accuracy_ce95_m": q["absolute_accuracy_ce95_m"],
         "position": meas["position"],
         "selection": meas.get("selection"),
+        "racing_line": lap and {
+            "method": "minimum curvature inside the measured edges (car half width kept off each edge), "
+                      "quasi-steady-state lap: grip with downforce, power, braking, friction ellipse",
+            "car": {k: getattr(lap.car, k) for k in ("id", "name", "mass_kg", "power_w", "mu", "cla_m2", "cda_m2", "width_m")},
+            "lap_time_s": round(lap.prof["lap_s"], 2),
+            "length_m": round(lap.length, 1),
+            "top_speed_kmh": round(float(lap.v.max()) * 3.6, 1),
+            "limitations": "model, not a measurement: no elevation, no kerbs, a generic car",
+        },
         "unnamed_corners": unclaimed,
         "sources": sources,
     }

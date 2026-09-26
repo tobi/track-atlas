@@ -89,10 +89,10 @@
               "labels": {
                 "numbered": "Turn 1"
               },
-              "marker": 0.08403,
+              "marker": 0.08683,
               "location": [
-                -81.0735983,
-                29.1838616
+                -81.0734498,
+                29.1838012
               ],
               "location_source": "midline",
               "direction": "left",
@@ -147,6 +147,23 @@
                 }
               },
               "apex": {
+                "marker": 0.08683,
+                "location": [
+                  -81.073434,
+                  29.1838496
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": 0.08,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.08403,
                 "location": [
                   -81.0735649,
@@ -159,6 +176,32 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
+                },
+                "basis": "curvature"
+              },
+              "character": "medium",
+              "dynamics": {
+                "model": "gt3",
+                "character": "medium",
+                "min_speed_kmh": 104.6,
+                "min_speed_marker": 0.08683,
+                "brake_m": 196.0,
+                "full_throttle_marker": 0.09634,
+                "start": 0.04481,
+                "end": 0.09987,
+                "brake": {
+                  "marker": 0.05243,
+                  "line": [
+                    [
+                      -81.0738365,
+                      29.1854155
+                    ],
+                    [
+                      -81.0739543,
+                      29.1853982
+                    ]
+                  ],
+                  "speed_kmh": 289.0
                 }
               }
             },
@@ -170,10 +213,10 @@
               "labels": {
                 "numbered": "Turn 2"
               },
-              "marker": 0.12619,
+              "marker": 0.12582,
               "location": [
-                -81.0715033,
-                29.1847795
+                -81.0715178,
+                29.1847667
               ],
               "location_source": "midline",
               "direction": "left",
@@ -228,6 +271,23 @@
                 }
               },
               "apex": {
+                "marker": 0.12582,
+                "location": [
+                  -81.0715557,
+                  29.1848005
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": -0.02,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.12619,
                 "location": [
                   -81.0715404,
@@ -240,7 +300,19 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
-                }
+                },
+                "basis": "curvature"
+              },
+              "character": "kink",
+              "dynamics": {
+                "model": "gt3",
+                "character": "kink",
+                "min_speed_kmh": 178.5,
+                "min_speed_marker": 0.11789,
+                "brake_m": 0.0,
+                "full_throttle_marker": 0.11789,
+                "start": 0.11617,
+                "end": 0.13599
               }
             },
             {
@@ -253,10 +325,10 @@
                 "driver": "International Horseshoe",
                 "official": "International Horseshoe"
               },
-              "marker": 0.17305,
+              "marker": 0.17201,
               "location": [
-                -81.0696625,
-                29.1863882
+                -81.0697162,
+                29.1864145
               ],
               "location_source": "midline",
               "direction": "right",
@@ -311,6 +383,23 @@
                 }
               },
               "apex": {
+                "marker": 0.17201,
+                "location": [
+                  -81.0697465,
+                  29.1863537
+                ],
+                "edge": "right",
+                "basis": "racing_line",
+                "gap_m": 0.07,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.17305,
                 "location": [
                   -81.0697076,
@@ -323,6 +412,32 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
+                },
+                "basis": "curvature"
+              },
+              "character": "slow",
+              "dynamics": {
+                "model": "gt3",
+                "character": "slow",
+                "min_speed_kmh": 80.6,
+                "min_speed_marker": 0.17291,
+                "brake_m": 130.0,
+                "full_throttle_marker": 0.18431,
+                "start": 0.14433,
+                "end": 0.18737,
+                "brake": {
+                  "marker": 0.14952,
+                  "line": [
+                    [
+                      -81.0707426,
+                      29.1857885
+                    ],
+                    [
+                      -81.0706207,
+                      29.185706
+                    ]
+                  ],
+                  "speed_kmh": 215.2
                 }
               }
             },
@@ -336,10 +451,10 @@
                 "driver": "The Kink",
                 "official": "Turn 4 (Kink)"
               },
-              "marker": 0.25719,
+              "marker": 0.25821,
               "location": [
-                -81.0720038,
-                29.1827256
+                -81.0720203,
+                29.1826735
               ],
               "location_source": "midline",
               "direction": "left",
@@ -394,6 +509,23 @@
                 }
               },
               "apex": {
+                "marker": 0.25821,
+                "location": [
+                  -81.0719583,
+                  29.1826613
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": 0.01,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.25719,
                 "location": [
                   -81.0719416,
@@ -406,7 +538,19 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
-                }
+                },
+                "basis": "curvature"
+              },
+              "character": "kink",
+              "dynamics": {
+                "model": "gt3",
+                "character": "kink",
+                "min_speed_kmh": 221.8,
+                "min_speed_marker": 0.24857,
+                "brake_m": 0.0,
+                "full_throttle_marker": 0.24857,
+                "start": 0.24545,
+                "end": 0.26633
               }
             },
             {
@@ -419,10 +563,10 @@
                 "driver": "West Horseshoe",
                 "official": "West Horseshoe"
               },
-              "marker": 0.31189,
+              "marker": 0.31324,
               "location": [
-                -81.0721546,
-                29.1799999
+                -81.0722343,
+                29.179983
               ],
               "location_source": "midline",
               "direction": "right",
@@ -477,6 +621,23 @@
                 }
               },
               "apex": {
+                "marker": 0.31324,
+                "location": [
+                  -81.0722408,
+                  29.1800312
+                ],
+                "edge": "right",
+                "basis": "racing_line",
+                "gap_m": -0.02,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.31189,
                 "location": [
                   -81.072176,
@@ -489,6 +650,32 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
+                },
+                "basis": "curvature"
+              },
+              "character": "slow",
+              "dynamics": {
+                "model": "gt3",
+                "character": "slow",
+                "min_speed_kmh": 88.4,
+                "min_speed_marker": 0.31363,
+                "brake_m": 160.0,
+                "full_throttle_marker": 0.32736,
+                "start": 0.27958,
+                "end": 0.33079,
+                "brake": {
+                  "marker": 0.28552,
+                  "line": [
+                    [
+                      -81.0718682,
+                      29.1812768
+                    ],
+                    [
+                      -81.0720162,
+                      29.1812547
+                    ]
+                  ],
+                  "speed_kmh": 244.0
                 }
               }
             },
@@ -502,10 +689,10 @@
                 "driver": "NASCAR 1",
                 "official": "Turn 6 (NASCAR Turn 1)"
               },
-              "marker": 0.38035,
+              "marker": 0.38106,
               "location": [
-                -81.0733559,
-                29.1830903
+                -81.0733802,
+                29.1831193
               ],
               "location_source": "midline",
               "direction": "left",
@@ -560,6 +747,23 @@
                 }
               },
               "apex": {
+                "marker": 0.38106,
+                "location": [
+                  -81.0734359,
+                  29.1830747
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": 0.01,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.38035,
                 "location": [
                   -81.0734135,
@@ -572,6 +776,32 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
+                },
+                "basis": "curvature"
+              },
+              "character": "slow",
+              "dynamics": {
+                "model": "gt3",
+                "character": "slow",
+                "min_speed_kmh": 93.6,
+                "min_speed_marker": 0.37941,
+                "brake_m": 84.0,
+                "full_throttle_marker": 0.39239,
+                "start": 0.36005,
+                "end": 0.39544,
+                "brake": {
+                  "marker": 0.36494,
+                  "line": [
+                    [
+                      -81.0732099,
+                      29.1823036
+                    ],
+                    [
+                      -81.0731037,
+                      29.1823138
+                    ]
+                  ],
+                  "speed_kmh": 200.5
                 }
               }
             },
@@ -585,10 +815,10 @@
                 "driver": "NASCAR 2",
                 "official": "Turn 7 (NASCAR Turn 2)"
               },
-              "marker": 0.45126,
+              "marker": 0.45083,
               "location": [
-                -81.0747073,
-                29.1803723
+                -81.0747197,
+                29.180397
               ],
               "location_source": "midline",
               "direction": "left",
@@ -643,6 +873,23 @@
                 }
               },
               "apex": {
+                "marker": 0.45083,
+                "location": [
+                  -81.0746635,
+                  29.1804169
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": -0.05,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.45126,
                 "location": [
                   -81.0746514,
@@ -655,7 +902,19 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
-                }
+                },
+                "basis": "curvature"
+              },
+              "character": "kink",
+              "dynamics": {
+                "model": "gt3",
+                "character": "kink",
+                "min_speed_kmh": 215.3,
+                "min_speed_marker": 0.44621,
+                "brake_m": 0.0,
+                "full_throttle_marker": 0.44621,
+                "start": 0.44375,
+                "end": 0.45827
               }
             },
             {
@@ -667,10 +926,10 @@
                 "numbered": "Turn 8",
                 "driver": "Bus Stop entry"
               },
-              "marker": 0.6732,
+              "marker": 0.67494,
               "location": [
-                -81.0654173,
-                29.1843582
+                -81.0654005,
+                29.1844469
               ],
               "location_source": "midline",
               "direction": "left",
@@ -725,6 +984,23 @@
                 }
               },
               "apex": {
+                "marker": 0.67494,
+                "location": [
+                  -81.0654829,
+                  29.1844489
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": -0.0,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.6732,
                 "location": [
                   -81.0654984,
@@ -737,6 +1013,32 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
+                },
+                "basis": "curvature"
+              },
+              "character": "high_speed",
+              "dynamics": {
+                "model": "gt3",
+                "character": "high_speed",
+                "min_speed_kmh": 160.9,
+                "min_speed_marker": 0.67159,
+                "brake_m": 112.0,
+                "full_throttle_marker": 0.67265,
+                "start": 0.64527,
+                "end": 0.68207,
+                "brake": {
+                  "marker": 0.65227,
+                  "line": [
+                    [
+                      -81.0661719,
+                      29.1835053
+                    ],
+                    [
+                      -81.0660647,
+                      29.1834328
+                    ]
+                  ],
+                  "speed_kmh": 281.7
                 }
               }
             },
@@ -749,10 +1051,10 @@
                 "numbered": "Turn 9",
                 "driver": "Bus Stop"
               },
-              "marker": 0.6847,
+              "marker": 0.68415,
               "location": [
-                -81.0654901,
-                29.1849365
+                -81.0655002,
+                29.1849109
               ],
               "location_source": "midline",
               "direction": "right",
@@ -807,6 +1109,23 @@
                 }
               },
               "apex": {
+                "marker": 0.68415,
+                "location": [
+                  -81.0654457,
+                  29.1848982
+                ],
+                "edge": "right",
+                "basis": "racing_line",
+                "gap_m": -0.05,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.6847,
                 "location": [
                   -81.0654415,
@@ -819,6 +1138,32 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
+                },
+                "basis": "curvature"
+              },
+              "character": "medium",
+              "dynamics": {
+                "model": "gt3",
+                "character": "medium",
+                "min_speed_kmh": 135.1,
+                "min_speed_marker": 0.687,
+                "brake_m": 40.0,
+                "full_throttle_marker": 0.69707,
+                "start": 0.67537,
+                "end": 0.70115,
+                "brake": {
+                  "marker": 0.67967,
+                  "line": [
+                    [
+                      -81.0655215,
+                      29.1846631
+                    ],
+                    [
+                      -81.0654011,
+                      29.1847027
+                    ]
+                  ],
+                  "speed_kmh": 174.0
                 }
               }
             },
@@ -831,10 +1176,10 @@
                 "numbered": "Turn 10",
                 "driver": "Bus Stop"
               },
-              "marker": 0.69811,
+              "marker": 0.69797,
               "location": [
-                -81.0650687,
-                29.1855187
+                -81.0650777,
+                29.1855144
               ],
               "location_source": "midline",
               "direction": "right",
@@ -889,6 +1234,23 @@
                 }
               },
               "apex": {
+                "marker": 0.69797,
+                "location": [
+                  -81.0650517,
+                  29.1854737
+                ],
+                "edge": "right",
+                "basis": "racing_line",
+                "gap_m": 0.08,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.69811,
                 "location": [
                   -81.0650453,
@@ -901,6 +1263,32 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
+                },
+                "basis": "curvature"
+              },
+              "character": "medium",
+              "dynamics": {
+                "model": "gt3",
+                "character": "medium",
+                "min_speed_kmh": 139.9,
+                "min_speed_marker": 0.69493,
+                "brake_m": 12.0,
+                "full_throttle_marker": 0.69707,
+                "start": 0.68941,
+                "end": 0.70352,
+                "brake": {
+                  "marker": 0.69288,
+                  "line": [
+                    [
+                      -81.0652871,
+                      29.1853233
+                    ],
+                    [
+                      -81.0652021,
+                      29.1852796
+                    ]
+                  ],
+                  "speed_kmh": 142.6
                 }
               }
             },
@@ -913,10 +1301,10 @@
                 "numbered": "Turn 11",
                 "driver": "Bus Stop exit"
               },
-              "marker": 0.70717,
+              "marker": 0.70537,
               "location": [
-                -81.0645574,
-                29.1856415
+                -81.0646575,
+                29.1855964
               ],
               "location_source": "midline",
               "direction": "left",
@@ -971,6 +1359,23 @@
                 }
               },
               "apex": {
+                "marker": 0.70537,
+                "location": [
+                  -81.0646843,
+                  29.1856707
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": -0.02,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.70717,
                 "location": [
                   -81.0646123,
@@ -983,7 +1388,19 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
-                }
+                },
+                "basis": "curvature"
+              },
+              "character": "kink",
+              "dynamics": {
+                "model": "gt3",
+                "character": "kink",
+                "min_speed_kmh": 153.0,
+                "min_speed_marker": 0.70115,
+                "brake_m": 0.0,
+                "full_throttle_marker": 0.70115,
+                "start": 0.70016,
+                "end": 0.71239
               }
             },
             {
@@ -996,10 +1413,10 @@
                 "driver": "NASCAR 3",
                 "official": "Turn 12 (NASCAR Turns 3-4)"
               },
-              "marker": 0.80281,
+              "marker": 0.85756,
               "location": [
-                -81.0629116,
-                29.1900043
+                -81.0654992,
+                29.1914724
               ],
               "location_source": "midline",
               "direction": "left",
@@ -1054,6 +1471,23 @@
                 }
               },
               "apex": {
+                "marker": 0.85756,
+                "location": [
+                  -81.0655032,
+                  29.1913918
+                ],
+                "edge": "left",
+                "basis": "racing_line",
+                "gap_m": 0.05,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "geometric_apex": {
                 "marker": 0.80281,
                 "location": [
                   -81.0629947,
@@ -1066,7 +1500,19 @@
                   "relative_accuracy_m": 0.14,
                   "measured": true,
                   "date": "2021"
-                }
+                },
+                "basis": "curvature"
+              },
+              "character": "kink",
+              "dynamics": {
+                "model": "gt3",
+                "character": "kink",
+                "min_speed_kmh": 247.5,
+                "min_speed_marker": 0.79885,
+                "brake_m": 0.0,
+                "full_throttle_marker": 0.79885,
+                "start": 0.79528,
+                "end": 0.87613
               }
             }
           ]
@@ -1234,19 +1680,724 @@
             {
               "id": "t1",
               "label": "Turn 1",
-              "start": 0.07932,
-              "end": 0.09448,
+              "start": 0.04481,
+              "end": 0.09987,
               "anchor": "t1",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.08403,
+                  "marker": 0.08683,
                   "point_ref": "t1"
                 }
               ],
               "start_line": {
+                "marker": 0.04481,
+                "line": [
+                  [
+                    -81.0737336,
+                    29.1857782
+                  ],
+                  [
+                    -81.0738496,
+                    29.1858051
+                  ]
+                ],
+                "width_m": 11.68,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.09987,
+                "line": [
+                  [
+                    -81.0727762,
+                    29.1840375
+                  ],
+                  [
+                    -81.072703,
+                    29.1839567
+                  ]
+                ],
+                "width_m": 11.44,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.11617,
+              "end": 0.13599,
+              "anchor": "t2",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.12582,
+                  "point_ref": "t2"
+                }
+              ],
+              "start_line": {
+                "marker": 0.11617,
+                "line": [
+                  [
+                    -81.0720532,
+                    29.1845967
+                  ],
+                  [
+                    -81.0720013,
+                    29.184489
+                  ]
+                ],
+                "width_m": 12.95,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.13599,
+                "line": [
+                  [
+                    -81.071232,
+                    29.1852308
+                  ],
+                  [
+                    -81.0711137,
+                    29.1851511
+                  ]
+                ],
+                "width_m": 14.51,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t3",
+              "label": "International Horseshoe",
+              "start": 0.14433,
+              "end": 0.18737,
+              "anchor": "t3",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.17201,
+                  "point_ref": "t3"
+                }
+              ],
+              "start_line": {
+                "marker": 0.14433,
+                "line": [
+                  [
+                    -81.0709312,
+                    29.1855743
+                  ],
+                  [
+                    -81.0708094,
+                    29.1854919
+                  ]
+                ],
+                "width_m": 14.96,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.18737,
+                "line": [
+                  [
+                    -81.0696329,
+                    29.1856844
+                  ],
+                  [
+                    -81.0697829,
+                    29.1857494
+                  ]
+                ],
+                "width_m": 16.27,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t4",
+              "label": "The Kink",
+              "start": 0.24545,
+              "end": 0.26633,
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.25821,
+                  "point_ref": "t4"
+                }
+              ],
+              "start_line": {
+                "marker": 0.24545,
+                "line": [
+                  [
+                    -81.0715968,
+                    29.183208
+                  ],
+                  [
+                    -81.0716787,
+                    29.1832615
+                  ]
+                ],
+                "width_m": 9.92,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.26633,
+                "line": [
+                  [
+                    -81.0720094,
+                    29.1822602
+                  ],
+                  [
+                    -81.0721003,
+                    29.1822601
+                  ]
+                ],
+                "width_m": 8.84,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t5",
+              "label": "West Horseshoe",
+              "start": 0.27958,
+              "end": 0.33079,
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.31324,
+                  "point_ref": "t5"
+                }
+              ],
+              "start_line": {
+                "marker": 0.27958,
+                "line": [
+                  [
+                    -81.0719638,
+                    29.1815812
+                  ],
+                  [
+                    -81.0720378,
+                    29.1815721
+                  ]
+                ],
+                "width_m": 7.27,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.33079,
+                "line": [
+                  [
+                    -81.072934,
+                    29.1805512
+                  ],
+                  [
+                    -81.0728248,
+                    29.1805662
+                  ]
+                ],
+                "width_m": 10.75,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t6",
+              "label": "NASCAR 1",
+              "start": 0.36005,
+              "end": 0.39544,
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.38106,
+                  "point_ref": "t6"
+                }
+              ],
+              "start_line": {
+                "marker": 0.36005,
+                "line": [
+                  [
+                    -81.0731699,
+                    29.1820529
+                  ],
+                  [
+                    -81.0730785,
+                    29.1820627
+                  ]
+                ],
+                "width_m": 8.95,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.39544,
+                "line": [
+                  [
+                    -81.0741163,
+                    29.1829346
+                  ],
+                  [
+                    -81.0742092,
+                    29.183079
+                  ]
+                ],
+                "width_m": 18.38,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t7",
+              "label": "NASCAR 2",
+              "start": 0.44375,
+              "end": 0.45827,
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.45083,
+                  "point_ref": "t7"
+                }
+              ],
+              "start_line": {
+                "marker": 0.44375,
+                "line": [
+                  [
+                    -81.0747811,
+                    29.1807542
+                  ],
+                  [
+                    -81.0748996,
+                    29.1807293
+                  ]
+                ],
+                "width_m": 11.86,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.45827,
+                "line": [
+                  [
+                    -81.0744028,
+                    29.1801108
+                  ],
+                  [
+                    -81.0745723,
+                    29.1800271
+                  ]
+                ],
+                "width_m": 18.92,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t8",
+              "label": "Bus Stop entry",
+              "start": 0.64527,
+              "end": 0.67967,
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.67494,
+                  "point_ref": "t8"
+                }
+              ],
+              "start_line": {
+                "marker": 0.64527,
+                "line": [
+                  [
+                    -81.0664209,
+                    29.1832046
+                  ],
+                  [
+                    -81.0663261,
+                    29.1831451
+                  ]
+                ],
+                "width_m": 11.34,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.67967,
+                "line": [
+                  [
+                    -81.0655215,
+                    29.1846631
+                  ],
+                  [
+                    -81.0654011,
+                    29.1847027
+                  ]
+                ],
+                "width_m": 12.51,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t9",
+              "label": "Bus Stop",
+              "start": 0.67967,
+              "end": 0.69797,
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.68415,
+                  "point_ref": "t9"
+                }
+              ],
+              "start_line": {
+                "marker": 0.67967,
+                "line": [
+                  [
+                    -81.0655215,
+                    29.1846631
+                  ],
+                  [
+                    -81.0654011,
+                    29.1847027
+                  ]
+                ],
+                "width_m": 12.51,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.69797,
+                "line": [
+                  [
+                    -81.0651038,
+                    29.1855554
+                  ],
+                  [
+                    -81.0650517,
+                    29.1854737
+                  ]
+                ],
+                "width_m": 10.37,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t10",
+              "label": "Bus Stop",
+              "start": 0.69797,
+              "end": 0.70537,
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.69797,
+                  "point_ref": "t10"
+                }
+              ],
+              "start_line": {
+                "marker": 0.69797,
+                "line": [
+                  [
+                    -81.0651038,
+                    29.1855554
+                  ],
+                  [
+                    -81.0650517,
+                    29.1854737
+                  ]
+                ],
+                "width_m": 10.37,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.70537,
+                "line": [
+                  [
+                    -81.0646843,
+                    29.1856707
+                  ],
+                  [
+                    -81.0646309,
+                    29.1855229
+                  ]
+                ],
+                "width_m": 17.19,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 1.82,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t11",
+              "label": "Bus Stop exit",
+              "start": 0.70537,
+              "end": 0.71239,
+              "anchor": "t11",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.70537,
+                  "point_ref": "t11"
+                }
+              ],
+              "start_line": {
+                "marker": 0.70537,
+                "line": [
+                  [
+                    -81.0646843,
+                    29.1856707
+                  ],
+                  [
+                    -81.0646309,
+                    29.1855229
+                  ]
+                ],
+                "width_m": 17.19,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 1.82,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.71239,
+                "line": [
+                  [
+                    -81.064371,
+                    29.1858782
+                  ],
+                  [
+                    -81.064266,
+                    29.1857433
+                  ]
+                ],
+                "width_m": 18.11,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 1.82,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2021"
+                }
+              }
+            },
+            {
+              "id": "t12",
+              "label": "NASCAR 3",
+              "start": 0.79528,
+              "end": 0.87613,
+              "anchor": "t12",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.85756,
+                  "point_ref": "t12"
+                }
+              ],
+              "start_line": {
+                "marker": 0.79528,
+                "line": [
+                  [
+                    -81.0628288,
+                    29.189621
+                  ],
+                  [
+                    -81.0626695,
+                    29.1896665
+                  ]
+                ],
+                "width_m": 16.3,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.87613,
+                "line": [
+                  [
+                    -81.0665532,
+                    29.1912663
+                  ],
+                  [
+                    -81.0666116,
+                    29.191422
+                  ]
+                ],
+                "width_m": 18.17,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.04481,
+              "end": 0.09987,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Turn 1",
+                  "marker": 0.08683,
+                  "point_ref": "t1"
+                }
+              ],
+              "entry": {
                 "marker": 0.07932,
                 "line": [
                   [
@@ -1267,7 +2418,7 @@
                   "date": "2021"
                 }
               },
-              "end_line": {
+              "exit": {
                 "marker": 0.09448,
                 "line": [
                   [
@@ -1287,36 +2438,20 @@
                   "measured": true,
                   "date": "2021"
                 }
-              }
-            },
-            {
-              "id": "t2",
-              "label": "Turn 2",
-              "start": 0.12061,
-              "end": 0.13106,
-              "anchor": "t2",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.12619,
-                  "point_ref": "t2"
-                }
-              ],
+              },
               "start_line": {
-                "marker": 0.12061,
+                "marker": 0.04481,
                 "line": [
                   [
-                    -81.0717999,
-                    29.184684
+                    -81.0737336,
+                    29.1857782
                   ],
                   [
-                    -81.0717568,
-                    29.1845705
+                    -81.0738496,
+                    29.1858051
                   ]
                 ],
-                "width_m": 13.25,
+                "width_m": 11.68,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 0.81,
@@ -1326,18 +2461,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.13106,
+                "marker": 0.09987,
                 "line": [
                   [
-                    -81.0713718,
-                    29.1850003
+                    -81.0727762,
+                    29.1840375
                   ],
                   [
-                    -81.0712828,
-                    29.1849572
+                    -81.072703,
+                    29.1839567
                   ]
                 ],
-                "width_m": 9.89,
+                "width_m": 11.44,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 0.81,
@@ -1350,19 +2485,21 @@
             {
               "id": "t3",
               "label": "International Horseshoe",
-              "start": 0.16277,
-              "end": 0.18106,
-              "anchor": "t3",
+              "start": 0.14433,
+              "end": 0.18737,
+              "members": [
+                "t3"
+              ],
               "points": [
                 {
-                  "id": "apex",
+                  "id": "t3-apex",
                   "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.17305,
+                  "label": "International Horseshoe",
+                  "marker": 0.17201,
                   "point_ref": "t3"
                 }
               ],
-              "start_line": {
+              "entry": {
                 "marker": 0.16277,
                 "line": [
                   [
@@ -1383,7 +2520,7 @@
                   "date": "2021"
                 }
               },
-              "end_line": {
+              "exit": {
                 "marker": 0.18106,
                 "line": [
                   [
@@ -1403,36 +2540,20 @@
                   "measured": true,
                   "date": "2021"
                 }
-              }
-            },
-            {
-              "id": "t4",
-              "label": "The Kink",
-              "start": 0.25109,
-              "end": 0.26033,
-              "anchor": "t4",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.25719,
-                  "point_ref": "t4"
-                }
-              ],
+              },
               "start_line": {
-                "marker": 0.25109,
+                "marker": 0.14433,
                 "line": [
                   [
-                    -81.0717857,
-                    29.1829738
+                    -81.0709312,
+                    29.1855743
                   ],
                   [
-                    -81.0718823,
-                    29.1830323
+                    -81.0708094,
+                    29.1854919
                   ]
                 ],
-                "width_m": 11.41,
+                "width_m": 14.96,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 0.81,
@@ -1442,18 +2563,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.26033,
+                "marker": 0.18737,
                 "line": [
                   [
-                    -81.0719763,
-                    29.1825612
+                    -81.0696329,
+                    29.1856844
                   ],
                   [
-                    -81.072098,
-                    29.1825714
+                    -81.0697829,
+                    29.1857494
                   ]
                 ],
-                "width_m": 11.89,
+                "width_m": 16.27,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 0.81,
@@ -1466,19 +2587,21 @@
             {
               "id": "t5",
               "label": "West Horseshoe",
-              "start": 0.30666,
-              "end": 0.32635,
-              "anchor": "t5",
+              "start": 0.27958,
+              "end": 0.33079,
+              "members": [
+                "t5"
+              ],
               "points": [
                 {
-                  "id": "apex",
+                  "id": "t5-apex",
                   "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.31189,
+                  "label": "West Horseshoe",
+                  "marker": 0.31324,
                   "point_ref": "t5"
                 }
               ],
-              "start_line": {
+              "entry": {
                 "marker": 0.30666,
                 "line": [
                   [
@@ -1499,7 +2622,7 @@
                   "date": "2021"
                 }
               },
-              "end_line": {
+              "exit": {
                 "marker": 0.32635,
                 "line": [
                   [
@@ -1519,24 +2642,68 @@
                   "measured": true,
                   "date": "2021"
                 }
+              },
+              "start_line": {
+                "marker": 0.27958,
+                "line": [
+                  [
+                    -81.0719638,
+                    29.1815812
+                  ],
+                  [
+                    -81.0720378,
+                    29.1815721
+                  ]
+                ],
+                "width_m": 7.27,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
+              },
+              "end_line": {
+                "marker": 0.33079,
+                "line": [
+                  [
+                    -81.072934,
+                    29.1805512
+                  ],
+                  [
+                    -81.0728248,
+                    29.1805662
+                  ]
+                ],
+                "width_m": 10.75,
+                "quality": {
+                  "source": "fdep-2021",
+                  "accuracy_m": 0.81,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2021"
+                }
               }
             },
             {
               "id": "t6",
               "label": "NASCAR 1",
-              "start": 0.37844,
-              "end": 0.38697,
-              "anchor": "t6",
+              "start": 0.36005,
+              "end": 0.39544,
+              "members": [
+                "t6"
+              ],
               "points": [
                 {
-                  "id": "apex",
+                  "id": "t6-apex",
                   "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.38035,
+                  "label": "NASCAR 1",
+                  "marker": 0.38106,
                   "point_ref": "t6"
                 }
               ],
-              "start_line": {
+              "entry": {
                 "marker": 0.37844,
                 "line": [
                   [
@@ -1557,7 +2724,7 @@
                   "date": "2021"
                 }
               },
-              "end_line": {
+              "exit": {
                 "marker": 0.38697,
                 "line": [
                   [
@@ -1577,36 +2744,20 @@
                   "measured": true,
                   "date": "2021"
                 }
-              }
-            },
-            {
-              "id": "t7",
-              "label": "NASCAR 2",
-              "start": 0.44899,
-              "end": 0.45282,
-              "anchor": "t7",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.45126,
-                  "point_ref": "t7"
-                }
-              ],
+              },
               "start_line": {
-                "marker": 0.44899,
+                "marker": 0.36005,
                 "line": [
                   [
-                    -81.0746963,
-                    29.1804993
+                    -81.0731699,
+                    29.1820529
                   ],
                   [
-                    -81.0748103,
-                    29.1804652
+                    -81.0730785,
+                    29.1820627
                   ]
                 ],
-                "width_m": 11.72,
+                "width_m": 8.95,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 0.81,
@@ -1616,55 +2767,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.45282,
+                "marker": 0.39544,
                 "line": [
                   [
-                    -81.0745914,
-                    29.1803491
+                    -81.0741163,
+                    29.1829346
                   ],
                   [
-                    -81.0747189,
-                    29.1802615
+                    -81.0742092,
+                    29.183079
                   ]
                 ],
-                "width_m": 15.75,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2021"
-                }
-              }
-            },
-            {
-              "id": "t8",
-              "label": "Bus Stop entry",
-              "start": 0.67163,
-              "end": 0.6779,
-              "anchor": "t8",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.6732,
-                  "point_ref": "t8"
-                }
-              ],
-              "start_line": {
-                "marker": 0.67163,
-                "line": [
-                  [
-                    -81.0655358,
-                    29.1843305
-                  ],
-                  [
-                    -81.0653934,
-                    29.1842472
-                  ]
-                ],
-                "width_m": 16.64,
+                "width_m": 18.38,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 0.81,
@@ -1672,45 +2786,34 @@
                   "measured": true,
                   "date": "2021"
                 }
-              },
-              "end_line": {
-                "marker": 0.6779,
-                "line": [
-                  [
-                    -81.0654921,
-                    29.1845817
-                  ],
-                  [
-                    -81.0653635,
-                    29.1846137
-                  ]
-                ],
-                "width_m": 13.01,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2021"
-                }
               }
             },
             {
-              "id": "t9",
-              "label": "Bus Stop",
-              "start": 0.68086,
-              "end": 0.68626,
-              "anchor": "t9",
+              "id": "t9-t10",
+              "label": "Bus Stop – Bus Stop",
+              "start": 0.67537,
+              "end": 0.70352,
+              "members": [
+                "t9",
+                "t10"
+              ],
               "points": [
                 {
-                  "id": "apex",
+                  "id": "t9-apex",
                   "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.6847,
+                  "label": "Bus Stop",
+                  "marker": 0.68415,
                   "point_ref": "t9"
+                },
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Bus Stop",
+                  "marker": 0.69797,
+                  "point_ref": "t10"
                 }
               ],
-              "start_line": {
+              "entry": {
                 "marker": 0.68086,
                 "line": [
                   [
@@ -1731,65 +2834,7 @@
                   "date": "2021"
                 }
               },
-              "end_line": {
-                "marker": 0.68626,
-                "line": [
-                  [
-                    -81.0654851,
-                    29.185029
-                  ],
-                  [
-                    -81.0654063,
-                    29.1849861
-                  ]
-                ],
-                "width_m": 9.03,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              }
-            },
-            {
-              "id": "t10",
-              "label": "Bus Stop",
-              "start": 0.69532,
-              "end": 0.69985,
-              "anchor": "t10",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.69811,
-                  "point_ref": "t10"
-                }
-              ],
-              "start_line": {
-                "marker": 0.69532,
-                "line": [
-                  [
-                    -81.0652169,
-                    29.1854322
-                  ],
-                  [
-                    -81.0651328,
-                    29.1853917
-                  ]
-                ],
-                "width_m": 9.33,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "end_line": {
+              "exit": {
                 "marker": 0.69985,
                 "line": [
                   [
@@ -1809,614 +2854,20 @@
                   "measured": true,
                   "date": "2021"
                 }
-              }
-            },
-            {
-              "id": "t11",
-              "label": "Bus Stop exit",
-              "start": 0.70386,
-              "end": 0.70821,
-              "anchor": "t11",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.70717,
-                  "point_ref": "t11"
-                }
-              ],
-              "start_line": {
-                "marker": 0.70386,
-                "line": [
-                  [
-                    -81.0647534,
-                    29.1856451
-                  ],
-                  [
-                    -81.0647215,
-                    29.1855138
-                  ]
-                ],
-                "width_m": 14.88,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "end_line": {
-                "marker": 0.70821,
-                "line": [
-                  [
-                    -81.0645756,
-                    29.1857354
-                  ],
-                  [
-                    -81.0644452,
-                    29.1856177
-                  ]
-                ],
-                "width_m": 18.2,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 1.82,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2021"
-                }
-              }
-            },
-            {
-              "id": "t12",
-              "label": "NASCAR 3",
-              "start": 0.80159,
-              "end": 0.86953,
-              "anchor": "t12",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.80281,
-                  "point_ref": "t12"
-                }
-              ],
-              "start_line": {
-                "marker": 0.80159,
-                "line": [
-                  [
-                    -81.0629645,
-                    29.1899158
-                  ],
-                  [
-                    -81.0628052,
-                    29.1899755
-                  ]
-                ],
-                "width_m": 16.84,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "end_line": {
-                "marker": 0.86953,
-                "line": [
-                  [
-                    -81.0661884,
-                    29.1913493
-                  ],
-                  [
-                    -81.0662227,
-                    29.1915116
-                  ]
-                ],
-                "width_m": 18.29,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "corner_complexes",
-          "kind": "corner_complexes",
-          "label": "Corner Complexes",
-          "items": [
-            {
-              "id": "t1",
-              "label": "Turn 1",
-              "start": 0.07932,
-              "end": 0.09448,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Turn 1",
-                  "marker": 0.08403,
-                  "point_ref": "t1"
-                }
-              ],
-              "entry": {
-                "marker": 0.07932,
-                "line": [
-                  [
-                    -81.0737102,
-                    29.1840752
-                  ],
-                  [
-                    -81.0738102,
-                    29.1840366
-                  ]
-                ],
-                "width_m": 10.63,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "exit": {
-                "marker": 0.09448,
-                "line": [
-                  [
-                    -81.0730357,
-                    29.1838984
-                  ],
-                  [
-                    -81.0729866,
-                    29.1838062
-                  ]
-                ],
-                "width_m": 11.28,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
               },
               "start_line": {
-                "marker": 0.07932,
+                "marker": 0.67537,
                 "line": [
                   [
-                    -81.0737102,
-                    29.1840752
+                    -81.0654809,
+                    29.1844632
                   ],
                   [
-                    -81.0738102,
-                    29.1840366
+                    -81.0653189,
+                    29.1844667
                   ]
                 ],
-                "width_m": 10.63,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "end_line": {
-                "marker": 0.09448,
-                "line": [
-                  [
-                    -81.0730357,
-                    29.1838984
-                  ],
-                  [
-                    -81.0729866,
-                    29.1838062
-                  ]
-                ],
-                "width_m": 11.28,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              }
-            },
-            {
-              "id": "t2",
-              "label": "Turn 2",
-              "start": 0.12061,
-              "end": 0.13106,
-              "members": [
-                "t2"
-              ],
-              "points": [
-                {
-                  "id": "t2-apex",
-                  "role": "apex",
-                  "label": "Turn 2",
-                  "marker": 0.12619,
-                  "point_ref": "t2"
-                }
-              ],
-              "entry": {
-                "marker": 0.12061,
-                "line": [
-                  [
-                    -81.0717999,
-                    29.184684
-                  ],
-                  [
-                    -81.0717568,
-                    29.1845705
-                  ]
-                ],
-                "width_m": 13.25,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "exit": {
-                "marker": 0.13106,
-                "line": [
-                  [
-                    -81.0713718,
-                    29.1850003
-                  ],
-                  [
-                    -81.0712828,
-                    29.1849572
-                  ]
-                ],
-                "width_m": 9.89,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "start_line": {
-                "marker": 0.12061,
-                "line": [
-                  [
-                    -81.0717999,
-                    29.184684
-                  ],
-                  [
-                    -81.0717568,
-                    29.1845705
-                  ]
-                ],
-                "width_m": 13.25,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "end_line": {
-                "marker": 0.13106,
-                "line": [
-                  [
-                    -81.0713718,
-                    29.1850003
-                  ],
-                  [
-                    -81.0712828,
-                    29.1849572
-                  ]
-                ],
-                "width_m": 9.89,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              }
-            },
-            {
-              "id": "t3",
-              "label": "International Horseshoe",
-              "start": 0.16277,
-              "end": 0.18106,
-              "members": [
-                "t3"
-              ],
-              "points": [
-                {
-                  "id": "t3-apex",
-                  "role": "apex",
-                  "label": "International Horseshoe",
-                  "marker": 0.17305,
-                  "point_ref": "t3"
-                }
-              ],
-              "entry": {
-                "marker": 0.16277,
-                "line": [
-                  [
-                    -81.0702601,
-                    29.1863322
-                  ],
-                  [
-                    -81.0701462,
-                    29.1862459
-                  ]
-                ],
-                "width_m": 14.64,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "exit": {
-                "marker": 0.18106,
-                "line": [
-                  [
-                    -81.0694868,
-                    29.1859893
-                  ],
-                  [
-                    -81.0696308,
-                    29.1860382
-                  ]
-                ],
-                "width_m": 15.02,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "start_line": {
-                "marker": 0.16277,
-                "line": [
-                  [
-                    -81.0702601,
-                    29.1863322
-                  ],
-                  [
-                    -81.0701462,
-                    29.1862459
-                  ]
-                ],
-                "width_m": 14.64,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "end_line": {
-                "marker": 0.18106,
-                "line": [
-                  [
-                    -81.0694868,
-                    29.1859893
-                  ],
-                  [
-                    -81.0696308,
-                    29.1860382
-                  ]
-                ],
-                "width_m": 15.02,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              }
-            },
-            {
-              "id": "t5",
-              "label": "West Horseshoe",
-              "start": 0.30666,
-              "end": 0.32635,
-              "members": [
-                "t5"
-              ],
-              "points": [
-                {
-                  "id": "t5-apex",
-                  "role": "apex",
-                  "label": "West Horseshoe",
-                  "marker": 0.31189,
-                  "point_ref": "t5"
-                }
-              ],
-              "entry": {
-                "marker": 0.30666,
-                "line": [
-                  [
-                    -81.071901,
-                    29.180175
-                  ],
-                  [
-                    -81.0720101,
-                    29.1802176
-                  ]
-                ],
-                "width_m": 11.62,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "exit": {
-                "marker": 0.32635,
-                "line": [
-                  [
-                    -81.0728751,
-                    29.1803233
-                  ],
-                  [
-                    -81.0727736,
-                    29.180354
-                  ]
-                ],
-                "width_m": 10.44,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "start_line": {
-                "marker": 0.30666,
-                "line": [
-                  [
-                    -81.071901,
-                    29.180175
-                  ],
-                  [
-                    -81.0720101,
-                    29.1802176
-                  ]
-                ],
-                "width_m": 11.62,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "end_line": {
-                "marker": 0.32635,
-                "line": [
-                  [
-                    -81.0728751,
-                    29.1803233
-                  ],
-                  [
-                    -81.0727736,
-                    29.180354
-                  ]
-                ],
-                "width_m": 10.44,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              }
-            },
-            {
-              "id": "busstopmans",
-              "label": "Bus Stop (Le Mans Chicane)",
-              "start": 0.67163,
-              "end": 0.70821,
-              "members": [
-                "t8",
-                "t9",
-                "t10",
-                "t11"
-              ],
-              "points": [
-                {
-                  "id": "t8-apex",
-                  "role": "apex",
-                  "label": "Bus Stop entry",
-                  "marker": 0.6732,
-                  "point_ref": "t8"
-                },
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "Bus Stop",
-                  "marker": 0.6847,
-                  "point_ref": "t9"
-                },
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Bus Stop",
-                  "marker": 0.69811,
-                  "point_ref": "t10"
-                },
-                {
-                  "id": "t11-apex",
-                  "role": "apex",
-                  "label": "Bus Stop exit",
-                  "marker": 0.70717,
-                  "point_ref": "t11"
-                }
-              ],
-              "entry": {
-                "marker": 0.67163,
-                "line": [
-                  [
-                    -81.0655358,
-                    29.1843305
-                  ],
-                  [
-                    -81.0653934,
-                    29.1842472
-                  ]
-                ],
-                "width_m": 16.64,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
-              "exit": {
-                "marker": 0.70821,
-                "line": [
-                  [
-                    -81.0645756,
-                    29.1857354
-                  ],
-                  [
-                    -81.0644452,
-                    29.1856177
-                  ]
-                ],
-                "width_m": 18.2,
+                "width_m": 15.76,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 1.82,
@@ -2425,40 +2876,19 @@
                   "date": "2021"
                 }
               },
-              "start_line": {
-                "marker": 0.67163,
-                "line": [
-                  [
-                    -81.0655358,
-                    29.1843305
-                  ],
-                  [
-                    -81.0653934,
-                    29.1842472
-                  ]
-                ],
-                "width_m": 16.64,
-                "quality": {
-                  "source": "fdep-2021",
-                  "accuracy_m": 0.81,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2021"
-                }
-              },
               "end_line": {
-                "marker": 0.70821,
+                "marker": 0.70352,
                 "line": [
                   [
-                    -81.0645756,
-                    29.1857354
+                    -81.0647729,
+                    29.1856399
                   ],
                   [
-                    -81.0644452,
-                    29.1856177
+                    -81.0647422,
+                    29.1855117
                   ]
                 ],
-                "width_m": 18.2,
+                "width_m": 14.52,
                 "quality": {
                   "source": "fdep-2021",
                   "accuracy_m": 1.82,
@@ -2707,6 +3137,23 @@
             }
           ]
         },
+        "racing_line": {
+          "method": "minimum curvature inside the measured edges (car half width kept off each edge), quasi-steady-state lap: grip with downforce, power, braking, friction ellipse",
+          "car": {
+            "id": "gt3",
+            "name": "GT3 (IMSA GTD class), generic",
+            "mass_kg": 1350.0,
+            "power_w": 330000.0,
+            "mu": 1.5,
+            "cla_m2": 2.8,
+            "cda_m2": 1.0,
+            "width_m": 2.05
+          },
+          "lap_time_s": 101.92,
+          "length_m": 5676.9,
+          "top_speed_kmh": 289.0,
+          "limitations": "model, not a measurement: no elevation, no kerbs, a generic car"
+        },
         "unnamed_corners": [
           {
             "marker": 0.0521,
@@ -2794,7 +3241,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-09-26T21:19:19.848527+00:00",
+    "generated_at": "2026-09-26T23:14:42.445765+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

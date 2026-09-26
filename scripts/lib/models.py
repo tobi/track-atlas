@@ -108,11 +108,40 @@ class Crossing(Strict):
 
 
 class Apex(Strict):
-    """The geometric apex: the point of greatest curvature on the inside edge."""
+    """An apex on the inside edge.
+
+    `apex` is the racing-line apex: where the modelled racing line clips the
+    inside edge. `geometric_apex` is the point of greatest curvature of the
+    inside edge itself.
+    """
     marker: Fraction
     location: LonLat
     edge: Literal["left", "right"] = Field(description="The inside edge the apex lies on.")
+    basis: Optional[Literal["racing_line", "curvature"]] = None
+    gap_m: Optional[float] = Field(None, description="Racing line: clearance between the car's side and the edge at the apex.")
     quality: Quality
+
+
+class BrakePoint(Strict):
+    marker: Fraction
+    line: LineAcross
+    speed_kmh: float = Field(description="Modelled speed where braking starts.")
+
+
+class Dynamics(Strict):
+    """A corner on the modelled racing line with the reference car (lib/racing.py).
+
+    A model, not a measurement: no elevation, no kerbs, a generic car.
+    """
+    model: str = Field(description="Reference car id, e.g. gt3.")
+    character: Literal["kink", "high_speed", "medium", "slow"]
+    min_speed_kmh: float
+    min_speed_marker: Fraction
+    brake: Optional[BrakePoint] = Field(None, description="Where braking starts; absent when the corner needs none (or under 10 m).")
+    brake_m: float = Field(description="Braking (and trail-braking) distance to the minimum-speed point.")
+    full_throttle_marker: Fraction = Field(description="First point after the minimum where the car is power-limited again.")
+    start: Fraction = Field(description="Range start: 0.5 s before braking (or turn-in, if earlier / no braking).")
+    end: Fraction = Field(description="Range end: 0.5 s after full throttle (or track-out, if later).")
 
 
 class Placement(Strict):
@@ -147,7 +176,11 @@ class PointItem(Strict):
     direction: Optional[Literal["left", "right"]] = None
     line: Optional[Crossing] = Field(None, description="Layout points (start/finish, pit entry/exit): the line across the track at the marker.")
     entry: Optional[Crossing] = Field(None, description="Corners: the geometric turn-in line (curvature onset).")
-    apex: Optional[Apex] = Field(None, description="Corners: the geometric apex on the inside edge.")
+    apex: Optional[Apex] = Field(None, description="Corners: the racing-line apex on the inside edge (or the geometric one when no racing line).")
+    geometric_apex: Optional[Apex] = Field(None, description="Corners: the point of greatest inside-edge curvature.")
+    character: Optional[Literal["kink", "high_speed", "medium", "slow"]] = Field(
+        None, description="Corners: from the modelled lap (dynamics). kink = taken flat; high_speed = minimum >= 160 km/h.")
+    dynamics: Optional[Dynamics] = None
     exit: Optional[Crossing] = Field(None, description="Corners: the geometric track-out line (curvature release).")
     placement: Optional[Placement] = None
     scale: Optional[int] = Field(None, ge=1, le=6,
@@ -322,6 +355,8 @@ class Surface(Strict):
                           "registered to, the shifts applied, the error budget and independent checks.")
     selection: Optional[dict[str, Any]] = Field(
         None, description="Imagery sources tried for this measurement, their scores and which was chosen.")
+    racing_line: Optional[dict[str, Any]] = Field(
+        None, description="The modelled racing line and lap: reference car, lap time, length, method. Geometry in the surface GeoJSON (role racing_line).")
     unnamed_corners: list[UnnamedCorner] = Field(
         default=[], description="Curvature peaks tighter than 80 m that no atlas corner claimed: candidates for curation.")
     sources: dict[str, Any] = Field(description="imagery (id, licence, tiles), reference (lidar surveys) and seed.")

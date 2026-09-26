@@ -98,7 +98,7 @@ def audit(slug: str) -> int:
         for g in groups:
             for mid in g.get("members", []):
                 member_counts[mid] = member_counts.get(mid, 0) + 1
-        required = {c["id"] for c in corners if (c.get("scale") or 0) < 5}
+        required = {c["id"] for c in corners if (c["character"] not in ("kink", "high_speed") if c.get("character") else (c.get("scale") or 0) < 5)}
         missing = sorted(required - set(member_counts))
         dupes = sorted(mid for mid, n in member_counts.items() if n > 1)
         if missing or dupes:
