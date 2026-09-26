@@ -2,65 +2,99 @@
   "gp": {
     "corners": {
       "1": {
-        "driver": "Shoreline",
         "official": "Turn 1",
-        "direction": "right",
-        "scale": 3
+        "driver": null,
+        "direction": "left",
+        "scale": 2
       },
       "2": {
-        "driver": "Aquarium",
         "official": "Turn 2",
-        "direction": "left",
+        "driver": null,
+        "direction": "right",
         "scale": 2
       },
       "3": {
         "official": "Turn 3",
-        "direction": "right",
-        "scale": 4
+        "driver": null,
+        "direction": "left",
+        "scale": 3
       },
       "4": {
         "official": "Turn 4",
-        "direction": "left",
-        "scale": 4
+        "driver": null,
+        "direction": "right",
+        "scale": 3
       },
       "5": {
         "official": "Turn 5",
-        "direction": "left",
-        "scale": 4
+        "driver": null,
+        "direction": "right",
+        "scale": 2
       },
       "6": {
         "official": "Turn 6",
-        "direction": "right",
-        "scale": 5
+        "driver": null,
+        "direction": "left",
+        "scale": 2
       },
       "7": {
         "official": "Turn 7",
+        "driver": null,
         "direction": "left",
-        "scale": 4
+        "scale": 5
       },
       "8": {
-        "driver": "The Fountain",
         "official": "Turn 8",
-        "direction": "left",
+        "driver": null,
+        "direction": "right",
         "scale": 2
       },
       "9": {
         "official": "Turn 9",
+        "driver": null,
         "direction": "right",
         "scale": 3
       },
       "10": {
         "official": "Turn 10",
+        "driver": null,
         "direction": "left",
-        "scale": 4
+        "scale": 3
       },
       "11": {
-        "driver": "The Hairpin",
         "official": "Turn 11",
+        "driver": "The Hairpin",
         "direction": "right",
         "scale": 1
       }
     },
-    "errors_summary": null
+    "surface_review": {
+      "unnamed": [
+        {
+          "marker": 0.2442,
+          "direction": "right",
+          "verdict": "unnumbered_bend",
+          "note": "R73, -44 deg, 70 m after T1; real (OSM centerline R76 here) but between Lovely T1 0.223 and T2 0.283, and the circuit has 11 numbered turns"
+        },
+        {
+          "marker": 0.2675,
+          "direction": "left",
+          "verdict": "unnumbered_bend",
+          "note": "R24.5, +39 deg, 45 m before T2; real (centerline R22) but unnumbered in Lovely's 11-turn list"
+        },
+        {
+          "marker": 0.7647,
+          "direction": "left",
+          "verdict": "artefact",
+          "note": "R78, +14 deg; centerline straight (R925), left edge seen on 20% of it"
+        },
+        {
+          "marker": 0.8693,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "second lobe of the T10 left (+57 deg) 37 m before the hairpin; OSM Hairpin way starts at 0.8775"
+        }
+      ]
+    }
   }
 }
