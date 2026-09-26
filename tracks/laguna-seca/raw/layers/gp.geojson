@@ -1083,13 +1083,13 @@
         },
         "direction": "left",
         "scale": 6,
-        "marker": 0.0625
+        "marker": 0.0669
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.757716,
-          36.584637
+          -121.757752,
+          36.584497
         ]
       }
     },
@@ -1103,18 +1103,18 @@
         "display": "Andretti Hairpin",
         "labels": {
           "numbered": "Turn 2",
-          "driver": "Andretti Hairpin",
-          "official": "Andretti Hairpin"
+          "official": "Andretti Hairpin",
+          "driver": "Andretti Hairpin"
         },
         "direction": "left",
         "scale": 1,
-        "marker": 0.1365
+        "marker": 0.1452
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.757278,
-          36.582481
+          -121.756966,
+          36.582595
         ]
       }
     },
@@ -1131,13 +1131,13 @@
         },
         "direction": "right",
         "scale": 3,
-        "marker": 0.218
+        "marker": 0.2195
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.756837,
-          36.584864
+          -121.75679,
+          36.584895
         ]
       }
     },
@@ -1153,14 +1153,14 @@
           "numbered": "Turn 4"
         },
         "direction": "right",
-        "scale": 4,
-        "marker": 0.293
+        "scale": 3,
+        "marker": 0.2959
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.753964,
-          36.584402
+          -121.75389,
+          36.584329
         ]
       }
     },
@@ -1177,13 +1177,13 @@
         },
         "direction": "left",
         "scale": 3,
-        "marker": 0.4325
+        "marker": 0.4298
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.754213,
-          36.580041
+          -121.754284,
+          36.580107
         ]
       }
     },
@@ -1199,14 +1199,14 @@
           "numbered": "Turn 6"
         },
         "direction": "left",
-        "scale": 4,
-        "marker": 0.5475
+        "scale": 3,
+        "marker": 0.5419
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.749783,
-          36.580536
+          -121.749908,
+          36.580387
         ]
       }
     },
@@ -1217,21 +1217,19 @@
         "id": "t7",
         "number": 7,
         "code": "7",
-        "display": "The Corkscrew",
+        "display": "Turn 7",
         "labels": {
-          "numbered": "Turn 7",
-          "driver": "The Corkscrew",
-          "official": "The Corkscrew (Turn 8/8a)"
+          "numbered": "Turn 7"
         },
-        "direction": "left",
-        "scale": 2,
-        "marker": 0.6905
+        "direction": "right",
+        "scale": 5,
+        "marker": 0.6541
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.749215,
-          36.584941
+          -121.749217,
+          36.583899
         ]
       }
     },
@@ -1242,21 +1240,21 @@
         "id": "t8",
         "number": 8,
         "code": "8",
-        "display": "Rainey Curve",
+        "display": "The Corkscrew",
         "labels": {
           "numbered": "Turn 8",
-          "driver": "Rainey Curve",
-          "official": "Rainey Curve (Turn 9)"
+          "official": "The Corkscrew",
+          "driver": "The Corkscrew"
         },
         "direction": "left",
-        "scale": 4,
-        "marker": 0.7575
+        "scale": 2,
+        "marker": 0.6856
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.74998,
-          36.586831
+          -121.749036,
+          36.584887
         ]
       }
     },
@@ -1266,22 +1264,22 @@
         "role": "corner",
         "id": "t9",
         "number": 9,
-        "code": "9",
-        "display": "Turn 10",
+        "code": "8A",
+        "display": "The Corkscrew",
         "labels": {
-          "numbered": "Turn 9",
-          "driver": "Turn 10",
-          "official": "Turn 10"
+          "numbered": "Turn 8A",
+          "official": "The Corkscrew",
+          "driver": "The Corkscrew"
         },
         "direction": "right",
-        "scale": 3,
-        "marker": 0.83
+        "scale": 2,
+        "marker": 0.6963
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.752769,
-          36.58647
+          -121.749442,
+          36.58498
         ]
       }
     },
@@ -1291,22 +1289,68 @@
         "role": "corner",
         "id": "t10",
         "number": 10,
-        "code": "10",
-        "display": "Turn 11",
+        "code": "9",
+        "display": "Rainey Curve",
         "labels": {
-          "numbered": "Turn 10",
-          "driver": "Turn 11",
-          "official": "Turn 11"
+          "numbered": "Turn 9",
+          "official": "Rainey Curve",
+          "driver": "Rainey Curve"
         },
         "direction": "left",
-        "scale": 2,
-        "marker": 0.915
+        "scale": 3,
+        "marker": 0.7706
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -121.754609,
-          36.588672
+          -121.750463,
+          36.586968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t11",
+        "number": 11,
+        "code": "10",
+        "display": "Turn 10",
+        "labels": {
+          "numbered": "Turn 10"
+        },
+        "direction": "right",
+        "scale": 3,
+        "marker": 0.836
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.75299,
+          36.586544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t12",
+        "number": 12,
+        "code": "11",
+        "display": "Turn 11",
+        "labels": {
+          "numbered": "Turn 11"
+        },
+        "direction": "left",
+        "scale": 2,
+        "marker": 0.913
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.75453,
+          36.58868
         ]
       }
     }
