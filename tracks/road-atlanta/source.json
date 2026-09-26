@@ -33,7 +33,11 @@
     }
   ],
   "surface": {
-    "imagery": "naip"
+    "imagery": "naip",
+    "lidar": [
+      "GA_Statewide_B3_2018",
+      "ARRA-GA_LakeLanier_2010"
+    ]
   },
   "external_ids": {
     "imsa_data": "road-atlanta"

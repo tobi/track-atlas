@@ -35,7 +35,11 @@
     }
   ],
   "surface": {
-    "imagery": "naip"
+    "imagery": "naip",
+    "lidar": [
+      "NY_FingerLakes_1_2020",
+      "USGS_LPC_NY_FEMA_R2_Seneca_2012_LAS_2015"
+    ]
   },
   "external_ids": {
     "imsa_data": "watkins-glen"

@@ -33,7 +33,11 @@
     }
   ],
   "surface": {
-    "imagery": "naip"
+    "imagery": "naip",
+    "lidar": [
+      "CA_FEMA_Z4_B1_2018",
+      "ARRA-CA_CentralCoast-Z4_2010"
+    ]
   },
   "external_ids": {
     "imsa_data": "laguna-seca"

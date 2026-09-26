@@ -78,26 +78,47 @@ def _robust(x: np.ndarray) -> tuple[float, float]:
     return med, max(mad, 1e-3)
 
 
-def _features(S: np.ndarray) -> np.ndarray:
+def _features(S: np.ndarray, kind: str = "rgbn") -> np.ndarray:
+    """Per-sample features (chroma-like, vegetation-like, brightness).
+
+    rgbn (orthoimagery): chroma (max-min RGB), NDVI, brightness.
+    lidar (ground-return raster, see lib/lidar.py): bands are (intensity,
+    canopy fraction, 0, intensity); features are (0, canopy, intensity): no
+    chroma, canopy stands in for vegetation, intensity is the brightness.
+    """
+    if kind == "lidar":
+        return np.stack([np.zeros_like(S[..., 0]), S[..., 1], S[..., 0]], axis=-1)
     r, g, b, n = S[..., 0], S[..., 1], S[..., 2], S[..., 3]
+    if kind == "rgb":  # no NIR band: no NDVI
+        chroma = S[..., :3].max(-1) - S[..., :3].min(-1)
+        return np.stack([chroma, np.zeros_like(r), (r + g + b) / 3.0], axis=-1)
     chroma = S[..., :3].max(-1) - S[..., :3].min(-1)
     ndvi = (n - r) / (n + r + 1.0)
     bright = (r + g + b) / 3.0
     return np.stack([chroma, ndvi * 100.0, bright], axis=-1)
 
 
-def asphalt_probability(S: np.ndarray, t: np.ndarray) -> np.ndarray:
-    f = _features(S)
+FEATURE_WEIGHTS = {
+    "rgbn": (1.0, 1.0, 0.35),   # brightness is shadow-sensitive: weigh it less
+    "rgb": (1.0, 0.0, 0.5),     # no NIR: chroma carries vegetation, brightness a bit more
+    "lidar": (0.0, 1.0, 1.0),   # lidar intensity has no shadows
+}
+
+
+def asphalt_probability(S: np.ndarray, t: np.ndarray, kind: str = "rgbn") -> np.ndarray:
+    f = _features(S, kind)
     inner = np.abs(t) <= 1.5
     outer = (np.abs(t) >= 16) & (np.abs(t) <= 26)
     llr = np.zeros(f.shape[:2])
-    weights = (1.0, 1.0, 0.35)  # brightness is shadow-sensitive: weigh it less
+    weights = FEATURE_WEIGHTS[kind]
     for k in range(f.shape[-1]):
         mi, si = _robust(f[:, inner, k].ravel())
         mo, so = _robust(f[:, outer, k].ravel())
         # a feature that does not separate the classes carries no weight
         sep = abs(mi - mo) / math.hypot(si, so)
         w = weights[k] * min(1.0, sep)
+        if w == 0.0:
+            continue
         zi = (f[..., k] - mi) / si
         zo = (f[..., k] - mo) / so
         # Cauchy-ish tails: one odd channel must not dominate
@@ -195,8 +216,9 @@ def _extract_once(R: Raster, frame: geo.Frame, seed_xy: np.ndarray, typical=None
     mid = geo.circular_gaussian(mid, SEED_SIGMA / STEP_S)
     t = np.arange(-T_MAX, T_MAX + 1e-9, STEP_T)
     S, nrm = _profile(R, frame, mid, t)
-    p = asphalt_probability(S, t)
-    f = _features(S)
+    kind = R.kind
+    p = asphalt_probability(S, t, kind)
+    f = _features(S, kind)
     bright = np.nan_to_num(f[..., 2])
     chroma = np.nan_to_num(f[..., 0], nan=255)
     kappa = geo.circular_gaussian(geo.curvature(mid, STEP_S), 8)

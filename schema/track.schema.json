@@ -718,6 +718,141 @@
       "title": "PointLayer",
       "type": "object"
     },
+    "Position": {
+      "additionalProperties": false,
+      "description": "Absolute positioning of a surface measurement (lib/position.py).",
+      "properties": {
+        "frame": {
+          "description": "Coordinate frame of every published coordinate: WGS 84 (G2139) ~ ITRF2014.",
+          "title": "Frame",
+          "type": "string"
+        },
+        "epoch": {
+          "description": "Coordinate epoch (decimal year); plate motion moves ground a few cm/yr in this frame.",
+          "title": "Epoch",
+          "type": "number"
+        },
+        "source_frame": {
+          "description": "Frame the imagery and references were delivered in, e.g. NAD83(2011).",
+          "title": "Source Frame",
+          "type": "string"
+        },
+        "datum_shift_m": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "east/north metres added for source_frame -> frame.",
+          "title": "Datum Shift M",
+          "type": "object"
+        },
+        "registration_shift_m": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "east/north metres added to move the imagery onto the reference.",
+          "title": "Registration Shift M",
+          "type": "object"
+        },
+        "applied_shift_m": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "Sum of the two, as applied to the traced geometry.",
+          "title": "Applied Shift M",
+          "type": "object"
+        },
+        "reference": {
+          "$ref": "#/$defs/PositionReference"
+        },
+        "budget_ce95_m": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "description": "95% horizontal error budget: reference, registration, datum, total.",
+          "title": "Budget Ce95 M",
+          "type": "object"
+        },
+        "imagery_stated_ce95_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Imagery Stated Ce95 M"
+        },
+        "registration_model": {
+          "description": "How the registration term of the budget was derived.",
+          "title": "Registration Model",
+          "type": "string"
+        },
+        "checks": {
+          "default": [],
+          "description": "Registration against every lidar survey and their mutual agreement.",
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Checks",
+          "type": "array"
+        }
+      },
+      "required": [
+        "frame",
+        "epoch",
+        "source_frame",
+        "datum_shift_m",
+        "registration_shift_m",
+        "applied_shift_m",
+        "reference",
+        "budget_ce95_m",
+        "registration_model"
+      ],
+      "title": "Position",
+      "type": "object"
+    },
+    "PositionReference": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "lidar",
+            "imagery"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "ce95_m": {
+          "title": "Ce95 M",
+          "type": "number"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        },
+        "stated": {
+          "description": "False when the reference's accuracy is an assumption (not stated by its producer).",
+          "title": "Stated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "name",
+        "ce95_m",
+        "basis",
+        "stated"
+      ],
+      "title": "PositionReference",
+      "type": "object"
+    },
     "Provenance": {
       "additionalProperties": true,
       "properties": {
@@ -771,18 +906,13 @@
       "description": "Provenance and estimated positional accuracy of one geometric feature.",
       "properties": {
         "source": {
-          "description": "What the position was measured from: naip (USDA NAIP orthoimagery), osm (OpenStreetMap trace), survey (a surveyed dataset), derived (computed from other features).",
-          "enum": [
-            "naip",
-            "osm",
-            "survey",
-            "derived"
-          ],
+          "description": "What the position was measured from: an imagery source id (naip, ct-2023, indiana-2025, ... see layout.surface.sources.imagery), osm (OpenStreetMap trace), survey (a surveyed dataset), or derived (computed from other features).",
+          "pattern": "^[a-z0-9][a-z0-9-]*$",
           "title": "Source",
           "type": "string"
         },
         "accuracy_m": {
-          "description": "Estimated absolute horizontal accuracy in metres (95%): the imagery's own CE95 combined with the relative accuracy.",
+          "description": "Estimated absolute horizontal accuracy in metres (95%), in the atlas frame (layout.surface.position): the measurement's position CE95 combined with this feature's relative accuracy.",
           "minimum": 0,
           "title": "Accuracy M",
           "type": "number"
@@ -1223,7 +1353,7 @@
           "type": "string"
         },
         "method": {
-          "description": "Measurement method and version, e.g. naip-edges/1.",
+          "description": "Measurement method and version, e.g. edges/2.",
           "title": "Method",
           "type": "string"
         },
@@ -1248,9 +1378,21 @@
           "type": "number"
         },
         "absolute_accuracy_ce95_m": {
-          "description": "The imagery's absolute horizontal accuracy (95%).",
+          "description": "Absolute horizontal accuracy (95%) of the measured geometry in the atlas frame: reference, registration and datum step combined (budget in `position`).",
           "title": "Absolute Accuracy Ce95 M",
           "type": "number"
+        },
+        "position": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Position"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "How the absolute position was established: frame and epoch, the reference it was registered to, the shifts applied, the error budget and independent checks."
         },
         "unnamed_corners": {
           "default": [],
@@ -1262,10 +1404,8 @@
           "type": "array"
         },
         "sources": {
-          "additionalProperties": {
-            "additionalProperties": true,
-            "type": "object"
-          },
+          "additionalProperties": true,
+          "description": "imagery (id, licence, tiles), reference (lidar surveys) and seed.",
           "title": "Sources",
           "type": "object"
         }

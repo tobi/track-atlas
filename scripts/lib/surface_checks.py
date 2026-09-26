@@ -20,6 +20,8 @@ LINE_TO_EDGE_M = 0.3        # crossing endpoints / apex within this of their edg
 MIN_WIDTH_M, MAX_WIDTH_M = 4.0, 45.0
 MIN_SEEN_FRACTION = 0.8     # warn when less of an edge than this was seen
 GPS_GATE_M = 2.0            # Omatrack draws racing lines / apexes at <= 2 m only
+TARGET_CE95_M = 1.0         # the atlas aims for sub-metre absolute accuracy
+REFERENCE_DISAGREE_M = 1.0  # two lidar surveys (or a check) further apart than this
 
 
 def _circ(a: float, b: float) -> float:
@@ -129,7 +131,42 @@ def check_layout(raw: Path, lo: dict) -> tuple[list[str], list[str], list[str]]:
         if seen.get(side, 1.0) < MIN_SEEN_FRACTION:
             warns.append(f"edge_{side} seen on only {seen[side]:.0%} of the lap (rest bridged)")
     ab = s.get("absolute_accuracy_ce95_m")
+    errs_p, warns_p, infos_p = _check_position(s)
+    errs += errs_p
+    warns += warns_p
+    infos += infos_p
     if ab is not None and ab > GPS_GATE_M:
         infos.append(f"surface absolute accuracy {ab} m (CE95) is above the {GPS_GATE_M:g} m racing-line gate; "
                      f"relative precision {s.get('relative_precision_m')} m")
+    return errs, warns, infos
+
+
+def _check_position(s: dict) -> tuple[list[str], list[str], list[str]]:
+    """The absolute-position record: budget consistent, reference trustworthy."""
+    errs: list[str] = []
+    warns: list[str] = []
+    infos: list[str] = []
+    pos = s.get("position")
+    if not s:
+        return errs, warns, infos
+    if not pos:
+        warns.append("surface has no position record (absolute accuracy is the imagery contract, datum not corrected)")
+        return errs, warns, infos
+    b = pos["budget_ce95_m"]
+    total = float(np.sqrt(b["reference"] ** 2 + b["registration"] ** 2 + b["datum"] ** 2))
+    if abs(total - b["total"]) > 0.01 or abs(b["total"] - s["absolute_accuracy_ce95_m"]) > 0.01:
+        errs.append(f"position budget {b} does not add up to absolute_accuracy_ce95_m {s['absolute_accuracy_ce95_m']}")
+    app, reg, dat = pos["applied_shift_m"], pos["registration_shift_m"], pos["datum_shift_m"]
+    if any(abs(app[k] - reg[k] - dat[k]) > 0.002 for k in ("east", "north")):
+        errs.append("position applied shift is not registration + datum")
+    ref = pos["reference"]
+    if not ref["stated"]:
+        warns.append(f"position reference {ref['name']} has no stated accuracy; {ref['ce95_m']} m CE95 is assumed")
+    for c in pos.get("checks", []):
+        if "difference_m" in c and c["difference_m"] > REFERENCE_DISAGREE_M:
+            warns.append(f"lidar surveys {' vs '.join(c['reference_agreement'])} disagree by {c['difference_m']} m")
+        if c.get("residual_vs_applied_m", 0) > REFERENCE_DISAGREE_M:
+            warns.append(f"registration to {c['reference']} is {c['residual_vs_applied_m']} m from the applied shift")
+    infos.append(f"position: {ref['kind']} {ref['name']}; CE95 {b['total']} m = reference {b['reference']} "
+                 f"+ registration {b['registration']} + datum {b['datum']} (target {TARGET_CE95_M:g} m)")
     return errs, warns, infos

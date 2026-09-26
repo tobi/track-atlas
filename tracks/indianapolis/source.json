@@ -35,7 +35,11 @@
     }
   ],
   "surface": {
-    "imagery": "naip"
+    "imagery": "naip",
+    "lidar": [
+      "USGS_LPC_IN_Central_MarionCo_2016_LAS_2018",
+      "USGS_LPC_IN_MarionCo_2011_LAS_2016"
+    ]
   },
   "external_ids": {
     "imsa_data": "indianapolis"

@@ -49,11 +49,17 @@ PIT_NAME = r"(?i)\bpit\s*-?\s*(lane|road)?\b|pitlane"
 
 
 # --- helpers ----------------------------------------------------------------
-def _quality(sources: dict, q: dict, measured: bool, source: str = "naip") -> dict:
+def _quality(sources: dict, q: dict, measured: bool) -> dict:
+    """Quality of a feature placed on the measured edges.
+
+    accuracy_m (95 %) = hypot(position CE95 of the whole measurement, the
+    feature's relative precision); see lib/position.py for the budget.
+    """
+    img = sources["imagery"]
     rel = float(q["relative_precision_m"]) + (0.0 if measured else INTERPOLATED_PENALTY_M)
     ab = math.hypot(float(q["absolute_accuracy_ce95_m"]), rel)
-    dates = sources.get(source, {}).get("acquisition_dates") or []
-    out = {"source": source, "accuracy_m": round(ab, 1), "relative_accuracy_m": round(rel, 2),
+    dates = img.get("acquisition_dates") or []
+    out = {"source": img["id"], "accuracy_m": round(ab, 2), "relative_accuracy_m": round(rel, 2),
            "measured": bool(measured)}
     if dates:
         out["date"] = dates[-1]
@@ -492,6 +498,7 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
         "seen_fraction": q["seen_fraction"],
         "relative_precision_m": q["relative_precision_m"],
         "absolute_accuracy_ce95_m": q["absolute_accuracy_ce95_m"],
+        "position": meas["position"],
         "unnamed_corners": unclaimed,
         "sources": sources,
     }

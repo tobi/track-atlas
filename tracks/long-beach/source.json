@@ -34,7 +34,11 @@
     }
   ],
   "surface": {
-    "imagery": "naip"
+    "imagery": "naip",
+    "lidar": [
+      "CA_LosAngeles_1_B23",
+      "USGS_LPC_CA_LosAngeles_2016_LAS_2018"
+    ]
   },
   "external_ids": {
     "imsa_data": "long-beach"

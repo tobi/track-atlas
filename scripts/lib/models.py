@@ -77,11 +77,14 @@ LineAcross = Annotated[
 
 class Quality(Strict):
     """Provenance and estimated positional accuracy of one geometric feature."""
-    source: Literal["naip", "osm", "survey", "derived"] = Field(
-        description="What the position was measured from: naip (USDA NAIP orthoimagery), osm (OpenStreetMap "
-                    "trace), survey (a surveyed dataset), derived (computed from other features).")
-    accuracy_m: float = Field(ge=0, description="Estimated absolute horizontal accuracy in metres (95%): the "
-                                                "imagery's own CE95 combined with the relative accuracy.")
+    source: str = Field(
+        pattern=r"^[a-z0-9][a-z0-9-]*$",
+        description="What the position was measured from: an imagery source id (naip, ct-2023, indiana-2025, "
+                    "... see layout.surface.sources.imagery), osm (OpenStreetMap trace), survey (a surveyed "
+                    "dataset), or derived (computed from other features).")
+    accuracy_m: float = Field(ge=0, description="Estimated absolute horizontal accuracy in metres (95%), in the "
+                                                "atlas frame (layout.surface.position): the measurement's position "
+                                                "CE95 combined with this feature's relative accuracy.")
     relative_accuracy_m: Optional[float] = Field(
         None, ge=0, description="Estimated accuracy relative to the rest of this layout's geometry, in metres "
                                 "(what matters for widths, lines and apexes against the edges).")
@@ -271,19 +274,47 @@ class UnnamedCorner(Strict):
     radius_m: float
 
 
+class PositionReference(Strict):
+    kind: Literal["lidar", "imagery"]
+    name: str
+    ce95_m: float
+    basis: str
+    stated: bool = Field(description="False when the reference's accuracy is an assumption (not stated by its producer).")
+
+
+class Position(Strict):
+    """Absolute positioning of a surface measurement (lib/position.py)."""
+    frame: str = Field(description="Coordinate frame of every published coordinate: WGS 84 (G2139) ~ ITRF2014.")
+    epoch: float = Field(description="Coordinate epoch (decimal year); plate motion moves ground a few cm/yr in this frame.")
+    source_frame: str = Field(description="Frame the imagery and references were delivered in, e.g. NAD83(2011).")
+    datum_shift_m: dict[str, float] = Field(description="east/north metres added for source_frame -> frame.")
+    registration_shift_m: dict[str, float] = Field(description="east/north metres added to move the imagery onto the reference.")
+    applied_shift_m: dict[str, float] = Field(description="Sum of the two, as applied to the traced geometry.")
+    reference: PositionReference
+    budget_ce95_m: dict[str, float] = Field(description="95% horizontal error budget: reference, registration, datum, total.")
+    imagery_stated_ce95_m: Optional[float] = None
+    registration_model: str = Field(description="How the registration term of the budget was derived.")
+    checks: list[dict[str, Any]] = Field(default=[], description="Registration against every lidar survey and their mutual agreement.")
+
+
 class Surface(Strict):
     """Summary of the layout's measured surface (the geometry is in `geometry.surface`)."""
     file: str
-    method: str = Field(description="Measurement method and version, e.g. naip-edges/1.")
+    method: str = Field(description="Measurement method and version, e.g. edges/2.")
     measured_at: str
     lap_length_m: float = Field(description="Lap length along the measured midline.")
     width_m: Percentiles
     seen_fraction: SeenFraction = Field(description="Share of the lap where each edge was actually seen in the imagery.")
     relative_precision_m: float
-    absolute_accuracy_ce95_m: float = Field(description="The imagery's absolute horizontal accuracy (95%).")
+    absolute_accuracy_ce95_m: float = Field(
+        description="Absolute horizontal accuracy (95%) of the measured geometry in the atlas frame: reference, "
+                    "registration and datum step combined (budget in `position`).")
+    position: Optional[Position] = Field(
+        None, description="How the absolute position was established: frame and epoch, the reference it was "
+                          "registered to, the shifts applied, the error budget and independent checks.")
     unnamed_corners: list[UnnamedCorner] = Field(
         default=[], description="Curvature peaks tighter than 80 m that no atlas corner claimed: candidates for curation.")
-    sources: dict[str, dict[str, Any]]
+    sources: dict[str, Any] = Field(description="imagery (id, licence, tiles), reference (lidar surveys) and seed.")
 
 
 class Layout(Strict):
