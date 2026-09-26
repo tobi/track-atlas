@@ -60,7 +60,66 @@ class LabelLayer(Strict):
 
 class Geometry(Strict):
     centerline: str = Field(description="Path (relative to track dir) to the layout's GeoJSON centerline/layer file.")
+    surface: Optional[str] = Field(
+        None, description="Path (relative to the track's raw dir) to the layout's surface GeoJSON: edges, "
+                          "midline, surface polygon, pit lane, crossing lines and apexes (docs/GEOMETRY.md).")
     crs: str = "EPSG:4326"
+
+
+# --- surface geometry (docs/GEOMETRY.md) ---------------------------------------
+LineAcross = Annotated[
+    list[LonLat],
+    Field(min_length=2, max_length=2,
+          description="A 2-point line across the track: [point on the left edge, point on the right edge], "
+                      "left/right in the driving direction."),
+]
+
+
+class Quality(Strict):
+    """Provenance and estimated positional accuracy of one geometric feature."""
+    source: Literal["naip", "osm", "survey", "derived"] = Field(
+        description="What the position was measured from: naip (USDA NAIP orthoimagery), osm (OpenStreetMap "
+                    "trace), survey (a surveyed dataset), derived (computed from other features).")
+    accuracy_m: float = Field(ge=0, description="Estimated absolute horizontal accuracy in metres (95%): the "
+                                                "imagery's own CE95 combined with the relative accuracy.")
+    relative_accuracy_m: Optional[float] = Field(
+        None, ge=0, description="Estimated accuracy relative to the rest of this layout's geometry, in metres "
+                                "(what matters for widths, lines and apexes against the edges).")
+    measured: bool = Field(description="True when the feature rests on edges actually seen in the imagery; "
+                                       "false when it was bridged across an unseen span (shadow, bridge, "
+                                       "run-off) or taken from a trace.")
+    date: Optional[str] = Field(None, description="Acquisition date of the source (ISO date).")
+    note: Optional[str] = None
+
+
+class Crossing(Strict):
+    """A line across the track at one lap position (edge to edge)."""
+    marker: Fraction
+    line: LineAcross
+    width_m: float = Field(ge=0, description="Track width along the line.")
+    quality: Quality
+
+
+class Apex(Strict):
+    """The geometric apex: the point of greatest curvature on the inside edge."""
+    marker: Fraction
+    location: LonLat
+    edge: Literal["left", "right"] = Field(description="The inside edge the apex lies on.")
+    quality: Quality
+
+
+class Placement(Strict):
+    """How a corner's entry/apex/exit were placed on the measured surface."""
+    basis: Literal["curvature", "none"] = Field(
+        description="curvature: matched to a curvature peak of the measured midline; none: no peak near the "
+                    "legacy marker, so the corner has no entry/apex/exit.")
+    shape: Optional[Literal["corner", "kink"]] = Field(None, description="kink when the peak radius exceeds 250 m.")
+    direction: Optional[Literal["left", "right"]] = Field(None, description="Turning direction measured from the geometry.")
+    declared_direction: Optional[Literal["left", "right"]] = Field(
+        None, description="Present only when the curated direction disagrees with the measured one.")
+    radius_m: Optional[float] = Field(None, description="Minimum radius of the midline (8 m smoothing).")
+    marker_offset_m: Optional[float] = Field(None, description="Curvature peak minus the legacy marker, in metres along the lap.")
+    note: Optional[str] = None
 
 
 class PointItem(Strict):
@@ -79,6 +138,11 @@ class PointItem(Strict):
     number: Optional[int] = None
     code: Optional[str] = None
     direction: Optional[Literal["left", "right"]] = None
+    line: Optional[Crossing] = Field(None, description="Layout points (start/finish, pit entry/exit): the line across the track at the marker.")
+    entry: Optional[Crossing] = Field(None, description="Corners: the geometric turn-in line (curvature onset).")
+    apex: Optional[Apex] = Field(None, description="Corners: the geometric apex on the inside edge.")
+    exit: Optional[Crossing] = Field(None, description="Corners: the geometric track-out line (curvature release).")
+    placement: Optional[Placement] = None
     scale: Optional[int] = Field(None, ge=1, le=6,
                                 description="Severity 1-6: 1=Hairpin, 2=Slow, 3=Medium, 4=Fast, 5=Very fast, 6=Kink.")
 
@@ -145,6 +209,10 @@ class RangeItem(Strict):
     entry_ref: Optional[str] = Field(None, description="Upstream timing loop / line where the range starts, when known.")
     exit_ref: Optional[str] = Field(None, description="Upstream timing loop / line where the range ends, when known.")
     length_m: Optional[float] = Field(None, description="Official/source length of this range in metres, when known.")
+    start_line: Optional[Crossing] = Field(None, description="The line across the track at `start`.")
+    end_line: Optional[Crossing] = Field(None, description="The line across the track at `end`.")
+    entry: Optional[Crossing] = Field(None, description="Complexes: the geometric entry line of the first member corner.")
+    exit: Optional[Crossing] = Field(None, description="Complexes: the geometric exit line of the last member corner.")
 
     @model_validator(mode="after")
     def _nested_points_inside_range(self) -> "RangeItem":
@@ -185,6 +253,39 @@ class RangeLayer(Strict):
 
 
 # --- layout ------------------------------------------------------------------
+class Percentiles(Strict):
+    p05: float
+    median: float
+    p95: float
+
+
+class SeenFraction(Strict):
+    left: float = Field(ge=0, le=1)
+    right: float = Field(ge=0, le=1)
+    both: float = Field(ge=0, le=1)
+
+
+class UnnamedCorner(Strict):
+    marker: Fraction
+    direction: Literal["left", "right"]
+    radius_m: float
+
+
+class Surface(Strict):
+    """Summary of the layout's measured surface (the geometry is in `geometry.surface`)."""
+    file: str
+    method: str = Field(description="Measurement method and version, e.g. naip-edges/1.")
+    measured_at: str
+    lap_length_m: float = Field(description="Lap length along the measured midline.")
+    width_m: Percentiles
+    seen_fraction: SeenFraction = Field(description="Share of the lap where each edge was actually seen in the imagery.")
+    relative_precision_m: float
+    absolute_accuracy_ce95_m: float = Field(description="The imagery's absolute horizontal accuracy (95%).")
+    unnamed_corners: list[UnnamedCorner] = Field(
+        default=[], description="Curvature peaks tighter than 80 m that no atlas corner claimed: candidates for curation.")
+    sources: dict[str, dict[str, Any]]
+
+
 class Layout(Strict):
     id: Slug
     name: str
@@ -199,6 +300,7 @@ class Layout(Strict):
         description="Label layer code used as the default display name. Resolution is two steps: item.labels[label_default] if present, else item.labels.numbered.")
     point_layers: list[PointLayer] = []
     range_layers: list[RangeLayer] = []
+    surface: Optional[Surface] = None
 
     @model_validator(mode="after")
     def _layer_ids_unique(self) -> "Layout":

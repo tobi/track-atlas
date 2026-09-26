@@ -4,6 +4,95 @@
   "title": "Track",
   "description": "Clean, source-agnostic metadata for a single racing circuit (tracks/<slug>/track.json). GENERATED from scripts/lib/models.py — do not edit by hand; run scripts/build_schema.py.",
   "$defs": {
+    "Apex": {
+      "additionalProperties": false,
+      "description": "The geometric apex: the point of greatest curvature on the inside edge.",
+      "properties": {
+        "marker": {
+          "description": "Lap fraction in [0,1].",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Marker",
+          "type": "number"
+        },
+        "location": {
+          "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Location",
+          "type": "array"
+        },
+        "edge": {
+          "description": "The inside edge the apex lies on.",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "title": "Edge",
+          "type": "string"
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality"
+        }
+      },
+      "required": [
+        "marker",
+        "location",
+        "edge",
+        "quality"
+      ],
+      "title": "Apex",
+      "type": "object"
+    },
+    "Crossing": {
+      "additionalProperties": false,
+      "description": "A line across the track at one lap position (edge to edge).",
+      "properties": {
+        "marker": {
+          "description": "Lap fraction in [0,1].",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Marker",
+          "type": "number"
+        },
+        "line": {
+          "description": "A 2-point line across the track: [point on the left edge, point on the right edge], left/right in the driving direction.",
+          "items": {
+            "description": "[longitude, latitude] in GeoJSON axis order (WGS84).",
+            "items": {
+              "type": "number"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "title": "Line",
+          "type": "array"
+        },
+        "width_m": {
+          "description": "Track width along the line.",
+          "minimum": 0,
+          "title": "Width M",
+          "type": "number"
+        },
+        "quality": {
+          "$ref": "#/$defs/Quality"
+        }
+      },
+      "required": [
+        "marker",
+        "line",
+        "width_m",
+        "quality"
+      ],
+      "title": "Crossing",
+      "type": "object"
+    },
     "Geometry": {
       "additionalProperties": false,
       "properties": {
@@ -11,6 +100,19 @@
           "description": "Path (relative to track dir) to the layout's GeoJSON centerline/layer file.",
           "title": "Centerline",
           "type": "string"
+        },
+        "surface": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Path (relative to the track's raw dir) to the layout's surface GeoJSON: edges, midline, surface polygon, pit lane, crossing lines and apexes (docs/GEOMETRY.md).",
+          "title": "Surface"
         },
         "crs": {
           "default": "EPSG:4326",
@@ -152,6 +254,17 @@
           },
           "title": "Range Layers",
           "type": "array"
+        },
+        "surface": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Surface"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         }
       },
       "required": [
@@ -215,6 +328,139 @@
         "lon"
       ],
       "title": "Location",
+      "type": "object"
+    },
+    "Percentiles": {
+      "additionalProperties": false,
+      "properties": {
+        "p05": {
+          "title": "P05",
+          "type": "number"
+        },
+        "median": {
+          "title": "Median",
+          "type": "number"
+        },
+        "p95": {
+          "title": "P95",
+          "type": "number"
+        }
+      },
+      "required": [
+        "p05",
+        "median",
+        "p95"
+      ],
+      "title": "Percentiles",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "description": "How a corner's entry/apex/exit were placed on the measured surface.",
+      "properties": {
+        "basis": {
+          "description": "curvature: matched to a curvature peak of the measured midline; none: no peak near the legacy marker, so the corner has no entry/apex/exit.",
+          "enum": [
+            "curvature",
+            "none"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "shape": {
+          "anyOf": [
+            {
+              "enum": [
+                "corner",
+                "kink"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "kink when the peak radius exceeds 250 m.",
+          "title": "Shape"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "left",
+                "right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Turning direction measured from the geometry.",
+          "title": "Direction"
+        },
+        "declared_direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "left",
+                "right"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Present only when the curated direction disagrees with the measured one.",
+          "title": "Declared Direction"
+        },
+        "radius_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Minimum radius of the midline (8 m smoothing).",
+          "title": "Radius M"
+        },
+        "marker_offset_m": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Curvature peak minus the legacy marker, in metres along the lap.",
+          "title": "Marker Offset M"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "basis"
+      ],
+      "title": "Placement",
       "type": "object"
     },
     "PointItem": {
@@ -336,6 +582,65 @@
           ],
           "default": null,
           "title": "Direction"
+        },
+        "line": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Crossing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Layout points (start/finish, pit entry/exit): the line across the track at the marker."
+        },
+        "entry": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Crossing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Corners: the geometric turn-in line (curvature onset)."
+        },
+        "apex": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Apex"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Corners: the geometric apex on the inside edge."
+        },
+        "exit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Crossing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Corners: the geometric track-out line (curvature release)."
+        },
+        "placement": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Placement"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         },
         "scale": {
           "anyOf": [
@@ -461,6 +766,80 @@
       "title": "Provenance",
       "type": "object"
     },
+    "Quality": {
+      "additionalProperties": false,
+      "description": "Provenance and estimated positional accuracy of one geometric feature.",
+      "properties": {
+        "source": {
+          "description": "What the position was measured from: naip (USDA NAIP orthoimagery), osm (OpenStreetMap trace), survey (a surveyed dataset), derived (computed from other features).",
+          "enum": [
+            "naip",
+            "osm",
+            "survey",
+            "derived"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "accuracy_m": {
+          "description": "Estimated absolute horizontal accuracy in metres (95%): the imagery's own CE95 combined with the relative accuracy.",
+          "minimum": 0,
+          "title": "Accuracy M",
+          "type": "number"
+        },
+        "relative_accuracy_m": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Estimated accuracy relative to the rest of this layout's geometry, in metres (what matters for widths, lines and apexes against the edges).",
+          "title": "Relative Accuracy M"
+        },
+        "measured": {
+          "description": "True when the feature rests on edges actually seen in the imagery; false when it was bridged across an unseen span (shadow, bridge, run-off) or taken from a trace.",
+          "title": "Measured",
+          "type": "boolean"
+        },
+        "date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Acquisition date of the source (ISO date).",
+          "title": "Date"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "source",
+        "accuracy_m",
+        "measured"
+      ],
+      "title": "Quality",
+      "type": "object"
+    },
     "RangeItem": {
       "additionalProperties": false,
       "description": "A lap interval annotation.",
@@ -576,6 +955,54 @@
           "default": null,
           "description": "Official/source length of this range in metres, when known.",
           "title": "Length M"
+        },
+        "start_line": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Crossing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The line across the track at `start`."
+        },
+        "end_line": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Crossing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "The line across the track at `end`."
+        },
+        "entry": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Crossing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Complexes: the geometric entry line of the first member corner."
+        },
+        "exit": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Crossing"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Complexes: the geometric exit line of the last member corner."
         }
       },
       "required": [
@@ -755,6 +1182,137 @@
         "role"
       ],
       "title": "RangePoint",
+      "type": "object"
+    },
+    "SeenFraction": {
+      "additionalProperties": false,
+      "properties": {
+        "left": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Left",
+          "type": "number"
+        },
+        "right": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Right",
+          "type": "number"
+        },
+        "both": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Both",
+          "type": "number"
+        }
+      },
+      "required": [
+        "left",
+        "right",
+        "both"
+      ],
+      "title": "SeenFraction",
+      "type": "object"
+    },
+    "Surface": {
+      "additionalProperties": false,
+      "description": "Summary of the layout's measured surface (the geometry is in `geometry.surface`).",
+      "properties": {
+        "file": {
+          "title": "File",
+          "type": "string"
+        },
+        "method": {
+          "description": "Measurement method and version, e.g. naip-edges/1.",
+          "title": "Method",
+          "type": "string"
+        },
+        "measured_at": {
+          "title": "Measured At",
+          "type": "string"
+        },
+        "lap_length_m": {
+          "description": "Lap length along the measured midline.",
+          "title": "Lap Length M",
+          "type": "number"
+        },
+        "width_m": {
+          "$ref": "#/$defs/Percentiles"
+        },
+        "seen_fraction": {
+          "$ref": "#/$defs/SeenFraction",
+          "description": "Share of the lap where each edge was actually seen in the imagery."
+        },
+        "relative_precision_m": {
+          "title": "Relative Precision M",
+          "type": "number"
+        },
+        "absolute_accuracy_ce95_m": {
+          "description": "The imagery's absolute horizontal accuracy (95%).",
+          "title": "Absolute Accuracy Ce95 M",
+          "type": "number"
+        },
+        "unnamed_corners": {
+          "default": [],
+          "description": "Curvature peaks tighter than 80 m that no atlas corner claimed: candidates for curation.",
+          "items": {
+            "$ref": "#/$defs/UnnamedCorner"
+          },
+          "title": "Unnamed Corners",
+          "type": "array"
+        },
+        "sources": {
+          "additionalProperties": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Sources",
+          "type": "object"
+        }
+      },
+      "required": [
+        "file",
+        "method",
+        "measured_at",
+        "lap_length_m",
+        "width_m",
+        "seen_fraction",
+        "relative_precision_m",
+        "absolute_accuracy_ce95_m",
+        "sources"
+      ],
+      "title": "Surface",
+      "type": "object"
+    },
+    "UnnamedCorner": {
+      "additionalProperties": false,
+      "properties": {
+        "marker": {
+          "description": "Lap fraction in [0,1].",
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Marker",
+          "type": "number"
+        },
+        "direction": {
+          "enum": [
+            "left",
+            "right"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "radius_m": {
+          "title": "Radius M",
+          "type": "number"
+        }
+      },
+      "required": [
+        "marker",
+        "direction",
+        "radius_m"
+      ],
+      "title": "UnnamedCorner",
       "type": "object"
     }
   },
