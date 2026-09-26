@@ -4,20 +4,23 @@
       "1": {
         "driver": "Turn 1",
         "official": "Turn 1",
-        "direction": "left",
-        "scale": 3
+        "direction": "right",
+        "scale": 3,
+        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
       },
       "2": {
         "driver": "Turn 2",
         "official": "Turn 2",
-        "direction": "right",
-        "scale": 3
+        "direction": "left",
+        "scale": 3,
+        "direction_note": "direction measured from NAIP track edges (clockwise lap); was right"
       },
       "3": {
         "driver": "Turn 3",
         "official": "Turn 3",
-        "direction": "left",
-        "scale": 4
+        "direction": "right",
+        "scale": 4,
+        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
       },
       "4": {
         "driver": "Turn 4",
@@ -79,8 +82,9 @@
         "driver": "Turn 10B",
         "official": "Turn 10B",
         "complex": "Turn 10",
-        "direction": "left",
-        "scale": 4
+        "direction": "right",
+        "scale": 4,
+        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
       },
       "13": {
         "driver": "Turn 11",
@@ -91,8 +95,9 @@
       "14": {
         "driver": "Turn 12",
         "official": "Turn 12",
-        "direction": "left",
-        "scale": 3
+        "direction": "right",
+        "scale": 3,
+        "direction_note": "direction measured from NAIP track edges (clockwise lap); was left"
       }
     },
     "errors_summary": "Corners 6-9 have off-by-one numbering in colloquial names (showing previous turn number); Corner 5 mislabeled as 'The Esses'; Corner 10 missing from complex grouping with 10A/10B"
