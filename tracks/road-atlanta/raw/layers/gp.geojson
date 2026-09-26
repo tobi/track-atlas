@@ -1219,13 +1219,13 @@
         },
         "direction": "right",
         "scale": 3,
-        "marker": 0.102
+        "marker": 0.0858
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.810299,
-          34.147616
+          -83.810426,
+          34.148182
         ]
       }
     },
@@ -1241,14 +1241,14 @@
           "numbered": "Turn 2"
         },
         "direction": "left",
-        "scale": 3,
-        "marker": 0.1755
+        "scale": 4,
+        "marker": 0.1713
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.812008,
-          34.145373
+          -83.811964,
+          34.145523
         ]
       }
     },
@@ -1264,14 +1264,14 @@
           "numbered": "Turn 3"
         },
         "direction": "right",
-        "scale": 4,
-        "marker": 0.2045
+        "scale": 3,
+        "marker": 0.1856
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.812926,
-          34.144761
+          -83.812154,
+          34.14503
         ]
       }
     },
@@ -1287,14 +1287,14 @@
           "numbered": "Turn 4"
         },
         "direction": "left",
-        "scale": 3,
-        "marker": 0.2315
+        "scale": 4,
+        "marker": 0.2209
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.813534,
-          34.143939
+          -83.813396,
+          34.144312
         ]
       }
     },
@@ -1304,20 +1304,22 @@
         "role": "corner",
         "id": "t5",
         "number": 5,
-        "code": "5",
-        "display": "Turn 5",
+        "code": "Esses",
+        "display": "The Esses",
         "labels": {
-          "numbered": "Turn 5"
+          "numbered": "Turn Esses",
+          "driver": "The Esses",
+          "official": "The Esses"
         },
         "direction": "right",
         "scale": 4,
-        "marker": 0.296
+        "marker": 0.2559
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.815211,
-          34.142195
+          -83.813833,
+          34.143078
         ]
       }
     },
@@ -1327,20 +1329,20 @@
         "role": "corner",
         "id": "t6",
         "number": 6,
-        "code": "6",
-        "display": "Turn 6",
+        "code": "5",
+        "display": "Turn 5",
         "labels": {
-          "numbered": "Turn 6"
+          "numbered": "Turn 5"
         },
         "direction": "left",
-        "scale": 5,
-        "marker": 0.353
+        "scale": 3,
+        "marker": 0.3323
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.816466,
-          34.140625
+          -83.81641,
+          34.141384
         ]
       }
     },
@@ -1350,20 +1352,20 @@
         "role": "corner",
         "id": "t7",
         "number": 7,
-        "code": "7",
-        "display": "Turn 7",
+        "code": "6",
+        "display": "Turn 6",
         "labels": {
-          "numbered": "Turn 7"
+          "numbered": "Turn 6"
         },
         "direction": "right",
-        "scale": 1,
-        "marker": 0.4855
+        "scale": 3,
+        "marker": 0.4718
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.8173,
-          34.136191
+          -83.816728,
+          34.136326
         ]
       }
     },
@@ -1373,20 +1375,20 @@
         "role": "corner",
         "id": "t8",
         "number": 8,
-        "code": "8",
-        "display": "Turn 8",
+        "code": "7",
+        "display": "Turn 7",
         "labels": {
-          "numbered": "Turn 8"
+          "numbered": "Turn 7"
         },
-        "direction": "left",
-        "scale": 2,
-        "marker": 0.53
+        "direction": "right",
+        "scale": 1,
+        "marker": 0.5092
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.818323,
-          34.136959
+          -83.81833,
+          34.136213
         ]
       }
     },
@@ -1396,20 +1398,20 @@
         "role": "corner",
         "id": "t9",
         "number": 9,
-        "code": "9",
-        "display": "Turn 9",
+        "code": "8",
+        "display": "Turn 8",
         "labels": {
-          "numbered": "Turn 9"
+          "numbered": "Turn 8"
         },
         "direction": "left",
-        "scale": 3,
-        "marker": 0.595
+        "scale": 6,
+        "marker": 0.5638
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.8181,
-          34.139332
+          -83.818087,
+          34.138186
         ]
       }
     },
@@ -1419,20 +1421,20 @@
         "role": "corner",
         "id": "t10",
         "number": 10,
-        "code": "10",
-        "display": "Turn 10",
+        "code": "9",
+        "display": "Turn 9",
         "labels": {
-          "numbered": "Turn 10"
+          "numbered": "Turn 9"
         },
         "direction": "right",
-        "scale": 3,
-        "marker": 0.7595
+        "scale": 6,
+        "marker": 0.7213
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.818703,
-          34.14534
+          -83.818797,
+          34.143941
         ]
       }
     },
@@ -1442,22 +1444,20 @@
         "role": "corner",
         "id": "t11",
         "number": 11,
-        "code": "11",
+        "code": "10A",
         "display": "Turn 10A",
         "labels": {
-          "numbered": "Turn 11",
-          "driver": "Turn 10A",
-          "official": "Turn 10A"
+          "numbered": "Turn 10A"
         },
         "direction": "left",
-        "scale": 3,
-        "marker": 0.8455
+        "scale": 2,
+        "marker": 0.842
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.817864,
-          34.148376
+          -83.81778,
+          34.148275
         ]
       }
     },
@@ -1467,22 +1467,20 @@
         "role": "corner",
         "id": "t12",
         "number": 12,
-        "code": "12",
+        "code": "10B",
         "display": "Turn 10B",
         "labels": {
-          "numbered": "Turn 12",
-          "driver": "Turn 10B",
-          "official": "Turn 10B"
+          "numbered": "Turn 10B"
         },
         "direction": "right",
-        "scale": 4,
-        "marker": 0.882
+        "scale": 3,
+        "marker": 0.8617
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.817921,
-          34.149504
+          -83.818282,
+          34.148825
         ]
       }
     },
@@ -1492,22 +1490,20 @@
         "role": "corner",
         "id": "t13",
         "number": 13,
-        "code": "13",
+        "code": "11",
         "display": "Turn 11",
         "labels": {
-          "numbered": "Turn 13",
-          "driver": "Turn 11",
-          "official": "Turn 11"
+          "numbered": "Turn 11"
         },
         "direction": "right",
-        "scale": 2,
-        "marker": 0.9245
+        "scale": 3,
+        "marker": 0.8985
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.816537,
-          34.1505
+          -83.817523,
+          34.150011
         ]
       }
     },
@@ -1517,22 +1513,20 @@
         "role": "corner",
         "id": "t14",
         "number": 14,
-        "code": "14",
+        "code": "12",
         "display": "Turn 12",
         "labels": {
-          "numbered": "Turn 14",
-          "driver": "Turn 12",
-          "official": "Turn 12"
+          "numbered": "Turn 12"
         },
         "direction": "right",
         "scale": 3,
-        "marker": 0.9795
+        "marker": 0.9574
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.814282,
-          34.150411
+          -83.815153,
+          34.150772
         ]
       }
     }
