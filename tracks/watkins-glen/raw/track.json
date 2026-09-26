@@ -34,7 +34,8 @@
       "label_default": "driver",
       "geometry": {
         "centerline": "layers/gp.geojson",
-        "crs": "EPSG:4326"
+        "crs": "EPSG:4326",
+        "surface": "layers/gp.surface.geojson"
       },
       "point_layers": [
         {
@@ -49,25 +50,88 @@
               "location": [
                 -76.928834,
                 42.340977
-              ]
+              ],
+              "line": {
+                "marker": 0.0,
+                "line": [
+                  [
+                    -76.9289326,
+                    42.3409819
+                  ],
+                  [
+                    -76.9287525,
+                    42.3409729
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "pit_entry",
               "label": "Pit Entry",
               "marker": 0.947,
               "location": [
-                -76.929061,
-                42.338392
-              ]
+                -76.929063,
+                42.338374
+              ],
+              "line": {
+                "marker": 0.947,
+                "line": [
+                  [
+                    -76.9291508,
+                    42.338378
+                  ],
+                  [
+                    -76.9289265,
+                    42.3383559
+                  ]
+                ],
+                "width_m": 18.65,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "pit_exit",
               "label": "Pit Exit",
               "marker": 0.078,
               "location": [
-                -76.927667,
-                42.344237
-              ]
+                -76.927631,
+                42.344233
+              ],
+              "line": {
+                "marker": 0.078,
+                "line": [
+                  [
+                    -76.9276102,
+                    42.3442987
+                  ],
+                  [
+                    -76.9276502,
+                    42.3441552
+                  ]
+                ],
+                "width_m": 16.28,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             }
           ]
         },
@@ -88,12 +152,76 @@
               },
               "marker": 0.066,
               "location": [
-                -76.928422,
-                42.344164
+                -76.928399,
+                42.344179
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 2
+              "scale": 2,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 37.6,
+                "marker_offset_m": -15.9
+              },
+              "entry": {
+                "marker": 0.05993,
+                "line": [
+                  [
+                    -76.9286744,
+                    42.3439279
+                  ],
+                  [
+                    -76.9284836,
+                    42.343919
+                  ]
+                ],
+                "width_m": 15.76,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.07288,
+                "line": [
+                  [
+                    -76.9279545,
+                    42.3443314
+                  ],
+                  [
+                    -76.9279762,
+                    42.3442037
+                  ]
+                ],
+                "width_m": 14.29,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.06155,
+                "location": [
+                  -76.9284765,
+                  42.3439879
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t2",
@@ -107,12 +235,76 @@
               },
               "marker": 0.15,
               "location": [
-                -76.923657,
-                42.342801
+                -76.923635,
+                42.342752
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 145.4,
+                "marker_offset_m": 101.7
+              },
+              "entry": {
+                "marker": 0.16364,
+                "line": [
+                  [
+                    -76.92343,
+                    42.3420981
+                  ],
+                  [
+                    -76.923575,
+                    42.3420881
+                  ]
+                ],
+                "width_m": 12.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.19216,
+                "line": [
+                  [
+                    -76.9225787,
+                    42.340927
+                  ],
+                  [
+                    -76.9226638,
+                    42.3408515
+                  ]
+                ],
+                "width_m": 10.94,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.16892,
+                "location": [
+                  -76.9233736,
+                  42.34185
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t3",
@@ -126,12 +318,76 @@
               },
               "marker": 0.22,
               "location": [
-                -76.921376,
-                42.339983
+                -76.921318,
+                42.33992
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 147.7,
+                "marker_offset_m": -73.6
+              },
+              "entry": {
+                "marker": 0.20457,
+                "line": [
+                  [
+                    -76.9219422,
+                    42.340543
+                  ],
+                  [
+                    -76.9220284,
+                    42.3404568
+                  ]
+                ],
+                "width_m": 11.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.22518,
+                "line": [
+                  [
+                    -76.9210752,
+                    42.3397334
+                  ],
+                  [
+                    -76.9211992,
+                    42.3396847
+                  ]
+                ],
+                "width_m": 11.57,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.20549,
+                "location": [
+                  -76.9219805,
+                  42.3404325
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t4",
@@ -145,12 +401,76 @@
               },
               "marker": 0.366,
               "location": [
-                -76.92084,
-                42.333058
+                -76.920836,
+                42.332932
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 2
+              "scale": 2,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 47.3,
+                "marker_offset_m": -83.7
+              },
+              "entry": {
+                "marker": 0.34759,
+                "line": [
+                  [
+                    -76.9203461,
+                    42.3337405
+                  ],
+                  [
+                    -76.9205238,
+                    42.3337399
+                  ]
+                ],
+                "width_m": 14.65,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.3557,
+                "line": [
+                  [
+                    -76.9205631,
+                    42.3333379
+                  ],
+                  [
+                    -76.9206921,
+                    42.3334305
+                  ]
+                ],
+                "width_m": 14.79,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.35086,
+                "location": [
+                  -76.9205411,
+                  42.3336002
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t5",
@@ -164,12 +484,76 @@
               },
               "marker": 0.428,
               "location": [
-                -76.921081,
-                42.330335
+                -76.921259,
+                42.330273
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 3
+              "scale": 3,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 88.5,
+                "marker_offset_m": 41.4
+              },
+              "entry": {
+                "marker": 0.41421,
+                "line": [
+                  [
+                    -76.9205122,
+                    42.3306654
+                  ],
+                  [
+                    -76.9206352,
+                    42.3307312
+                  ]
+                ],
+                "width_m": 12.5,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.43907,
+                "line": [
+                  [
+                    -76.9219999,
+                    42.3301468
+                  ],
+                  [
+                    -76.9219677,
+                    42.3302927
+                  ]
+                ],
+                "width_m": 16.42,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.43485,
+                "location": [
+                  -76.9217134,
+                  42.3302831
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t6",
@@ -183,12 +567,76 @@
               },
               "marker": 0.515,
               "location": [
-                -76.925428,
-                42.332557
+                -76.925667,
+                42.332543
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 58.7,
+                "marker_offset_m": -14.1
+              },
+              "entry": {
+                "marker": 0.49888,
+                "line": [
+                  [
+                    -76.9247693,
+                    42.3322436
+                  ],
+                  [
+                    -76.9246564,
+                    42.332312
+                  ]
+                ],
+                "width_m": 12.01,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.51644,
+                "line": [
+                  [
+                    -76.9257341,
+                    42.3324781
+                  ],
+                  [
+                    -76.9257793,
+                    42.3325831
+                  ]
+                ],
+                "width_m": 12.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.51246,
+                "location": [
+                  -76.925494,
+                  42.3325142
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t7",
@@ -202,12 +650,77 @@
               },
               "marker": 0.6085,
               "location": [
-                -76.926609,
-                42.328543
+                -76.92688,
+                42.328482
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 2
+              "scale": 2,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 55.9,
+                "marker_offset_m": -32.1,
+                "declared_direction": "left"
+              },
+              "entry": {
+                "marker": 0.59115,
+                "line": [
+                  [
+                    -76.9261509,
+                    42.3290764
+                  ],
+                  [
+                    -76.9262982,
+                    42.3290714
+                  ]
+                ],
+                "width_m": 12.15,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.62923,
+                "line": [
+                  [
+                    -76.927891,
+                    42.3290756
+                  ],
+                  [
+                    -76.9277398,
+                    42.3290958
+                  ]
+                ],
+                "width_m": 12.66,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.60272,
+                "location": [
+                  -76.9265649,
+                  42.3286222
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t8",
@@ -221,12 +734,76 @@
               },
               "marker": 0.74,
               "location": [
-                -76.927793,
-                42.333989
+                -76.927936,
+                42.334367
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 3
+              "scale": 3,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 212.7,
+                "marker_offset_m": 104.4
+              },
+              "entry": {
+                "marker": 0.75718,
+                "line": [
+                  [
+                    -76.9267737,
+                    42.3342373
+                  ],
+                  [
+                    -76.9269039,
+                    42.3341074
+                  ]
+                ],
+                "width_m": 17.99,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.76125,
+                "line": [
+                  [
+                    -76.9265671,
+                    42.3341233
+                  ],
+                  [
+                    -76.9266602,
+                    42.3340094
+                  ]
+                ],
+                "width_m": 14.8,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.75773,
+                "location": [
+                  -76.9267464,
+                  42.3342211
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t9",
@@ -238,12 +815,77 @@
               },
               "marker": 0.8005,
               "location": [
-                -76.924216,
-                42.333722
+                -76.92428,
+                42.333672
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 2
+              "scale": 2,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 51.7,
+                "marker_offset_m": 37.2,
+                "declared_direction": "right"
+              },
+              "entry": {
+                "marker": 0.78537,
+                "line": [
+                  [
+                    -76.9251437,
+                    42.3335895
+                  ],
+                  [
+                    -76.9252125,
+                    42.3334917
+                  ]
+                ],
+                "width_m": 12.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.81053,
+                "line": [
+                  [
+                    -76.9241857,
+                    42.3341139
+                  ],
+                  [
+                    -76.9240416,
+                    42.3341319
+                  ]
+                ],
+                "width_m": 12.05,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.80554,
+                "location": [
+                  -76.9241971,
+                  42.3338998
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t10",
@@ -255,12 +897,76 @@
               },
               "marker": 0.8695,
               "location": [
-                -76.925161,
-                42.336946
+                -76.925121,
+                42.336912
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 2
+              "scale": 2,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 46.9,
+                "marker_offset_m": 11.8
+              },
+              "entry": {
+                "marker": 0.86183,
+                "line": [
+                  [
+                    -76.924935,
+                    42.3365757
+                  ],
+                  [
+                    -76.924761,
+                    42.3366066
+                  ]
+                ],
+                "width_m": 14.74,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.87322,
+                "line": [
+                  [
+                    -76.9253271,
+                    42.3369864
+                  ],
+                  [
+                    -76.9252699,
+                    42.3371054
+                  ]
+                ],
+                "width_m": 14.03,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.87201,
+                "location": [
+                  -76.9252713,
+                  42.3369597
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t11",
@@ -272,12 +978,76 @@
               },
               "marker": 0.9365,
               "location": [
-                -76.92907,
-                42.33788
+                -76.929065,
+                42.337858
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 56.5,
+                "marker_offset_m": -75.1
+              },
+              "entry": {
+                "marker": 0.91872,
+                "line": [
+                  [
+                    -76.928285,
+                    42.337238
+                  ],
+                  [
+                    -76.9282769,
+                    42.3373393
+                  ]
+                ],
+                "width_m": 11.27,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.94082,
+                "line": [
+                  [
+                    -76.9291776,
+                    42.3380688
+                  ],
+                  [
+                    -76.9289926,
+                    42.3380569
+                  ]
+                ],
+                "width_m": 15.31,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "apex": {
+                "marker": 0.92261,
+                "location": [
+                  -76.9284997,
+                  42.3373817
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             }
           ]
         }
@@ -306,7 +1076,49 @@
               "end": 0.26201083,
               "length_m": 1438.554,
               "entry_ref": "FL",
-              "exit_ref": "i1"
+              "exit_ref": "i1",
+              "start_line": {
+                "marker": 0.0,
+                "line": [
+                  [
+                    -76.9289326,
+                    42.3409819
+                  ],
+                  [
+                    -76.9287525,
+                    42.3409729
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.26201,
+                "line": [
+                  [
+                    -76.920572,
+                    42.3379518
+                  ],
+                  [
+                    -76.9207205,
+                    42.3379485
+                  ]
+                ],
+                "width_m": 12.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "s2",
@@ -315,7 +1127,49 @@
               "end": 0.63663785,
               "length_m": 2056.867,
               "entry_ref": "i1",
-              "exit_ref": "i2"
+              "exit_ref": "i2",
+              "start_line": {
+                "marker": 0.26201,
+                "line": [
+                  [
+                    -76.920572,
+                    42.3379518
+                  ],
+                  [
+                    -76.9207205,
+                    42.3379485
+                  ]
+                ],
+                "width_m": 12.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.63664,
+                "line": [
+                  [
+                    -76.9279535,
+                    42.3294475
+                  ],
+                  [
+                    -76.9277921,
+                    42.3294569
+                  ]
+                ],
+                "width_m": 13.34,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "s3",
@@ -324,7 +1178,49 @@
               "end": 1.0,
               "length_m": 1995.018,
               "entry_ref": "i2",
-              "exit_ref": "FL"
+              "exit_ref": "FL",
+              "start_line": {
+                "marker": 0.63664,
+                "line": [
+                  [
+                    -76.9279535,
+                    42.3294475
+                  ],
+                  [
+                    -76.9277921,
+                    42.3294569
+                  ]
+                ],
+                "width_m": 13.34,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 1.0,
+                "line": [
+                  [
+                    -76.9289326,
+                    42.3409819
+                  ],
+                  [
+                    -76.9287525,
+                    42.3409729
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             }
           ]
         },
@@ -348,7 +1244,49 @@
                   "marker": 0.066,
                   "point_ref": "t1"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.03288,
+                "line": [
+                  [
+                    -76.9287949,
+                    42.3425987
+                  ],
+                  [
+                    -76.9286133,
+                    42.3425902
+                  ]
+                ],
+                "width_m": 15.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.08992,
+                "line": [
+                  [
+                    -76.9268378,
+                    42.3441856
+                  ],
+                  [
+                    -76.9268665,
+                    42.3440845
+                  ]
+                ],
+                "width_m": 11.48,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t2",
@@ -364,7 +1302,49 @@
                   "marker": 0.15,
                   "point_ref": "t2"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.13712,
+                "line": [
+                  [
+                    -76.923936,
+                    42.3433577
+                  ],
+                  [
+                    -76.9240554,
+                    42.3432954
+                  ]
+                ],
+                "width_m": 12.03,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.185,
+                "line": [
+                  [
+                    -76.9228994,
+                    42.3411717
+                  ],
+                  [
+                    -76.9230056,
+                    42.3411066
+                  ]
+                ],
+                "width_m": 11.36,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t3",
@@ -380,7 +1360,49 @@
                   "marker": 0.22,
                   "point_ref": "t3"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.185,
+                "line": [
+                  [
+                    -76.9228994,
+                    42.3411717
+                  ],
+                  [
+                    -76.9230056,
+                    42.3411066
+                  ]
+                ],
+                "width_m": 11.36,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.23288,
+                "line": [
+                  [
+                    -76.9208579,
+                    42.339385
+                  ],
+                  [
+                    -76.9209894,
+                    42.3393472
+                  ]
+                ],
+                "width_m": 11.63,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t4",
@@ -396,7 +1418,49 @@
                   "marker": 0.366,
                   "point_ref": "t4"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.33288,
+                "line": [
+                  [
+                    -76.9203839,
+                    42.3344713
+                  ],
+                  [
+                    -76.9205579,
+                    42.3344664
+                  ]
+                ],
+                "width_m": 14.35,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.38992,
+                "line": [
+                  [
+                    -76.9202678,
+                    42.3318565
+                  ],
+                  [
+                    -76.9204339,
+                    42.3318454
+                  ]
+                ],
+                "width_m": 13.75,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t5",
@@ -412,7 +1476,49 @@
                   "marker": 0.428,
                   "point_ref": "t5"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.40592,
+                "line": [
+                  [
+                    -76.9202091,
+                    42.3310448
+                  ],
+                  [
+                    -76.9204271,
+                    42.3310769
+                  ]
+                ],
+                "width_m": 18.31,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.4464,
+                "line": [
+                  [
+                    -76.9225144,
+                    42.3302434
+                  ],
+                  [
+                    -76.9224047,
+                    42.3303937
+                  ]
+                ],
+                "width_m": 18.98,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t6",
@@ -428,7 +1534,49 @@
                   "marker": 0.515,
                   "point_ref": "t6"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.50212,
+                "line": [
+                  [
+                    -76.9249119,
+                    42.3323538
+                  ],
+                  [
+                    -76.9248147,
+                    42.3324361
+                  ]
+                ],
+                "width_m": 12.15,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.52788,
+                "line": [
+                  [
+                    -76.9262483,
+                    42.3321584
+                  ],
+                  [
+                    -76.9263813,
+                    42.3322061
+                  ]
+                ],
+                "width_m": 12.17,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t7",
@@ -444,7 +1592,49 @@
                   "marker": 0.6085,
                   "point_ref": "t7"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.57538,
+                "line": [
+                  [
+                    -76.9262003,
+                    42.329849
+                  ],
+                  [
+                    -76.9263443,
+                    42.3298455
+                  ]
+                ],
+                "width_m": 11.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.63242,
+                "line": [
+                  [
+                    -76.927928,
+                    42.3292385
+                  ],
+                  [
+                    -76.9277623,
+                    42.3292539
+                  ]
+                ],
+                "width_m": 13.77,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t8",
@@ -460,7 +1650,49 @@
                   "marker": 0.74,
                   "point_ref": "t8"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.71792,
+                "line": [
+                  [
+                    -76.9283855,
+                    42.3334394
+                  ],
+                  [
+                    -76.928247,
+                    42.3334491
+                  ]
+                ],
+                "width_m": 11.46,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.7584,
+                "line": [
+                  [
+                    -76.9267113,
+                    42.3342009
+                  ],
+                  [
+                    -76.9268285,
+                    42.3340701
+                  ]
+                ],
+                "width_m": 17.45,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t9",
@@ -476,7 +1708,49 @@
                   "marker": 0.8005,
                   "point_ref": "t9"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.76738,
+                "line": [
+                  [
+                    -76.9262295,
+                    42.3339755
+                  ],
+                  [
+                    -76.9262914,
+                    42.3338783
+                  ]
+                ],
+                "width_m": 11.94,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.82442,
+                "line": [
+                  [
+                    -76.9243766,
+                    42.3347808
+                  ],
+                  [
+                    -76.9242479,
+                    42.3348007
+                  ]
+                ],
+                "width_m": 10.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t10",
@@ -492,7 +1766,49 @@
                   "marker": 0.8695,
                   "point_ref": "t10"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.83638,
+                "line": [
+                  [
+                    -76.9245707,
+                    42.3353561
+                  ],
+                  [
+                    -76.92442,
+                    42.33538
+                  ]
+                ],
+                "width_m": 12.7,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.89342,
+                "line": [
+                  [
+                    -76.9266125,
+                    42.3371588
+                  ],
+                  [
+                    -76.9266076,
+                    42.3372596
+                  ]
+                ],
+                "width_m": 11.21,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t11",
@@ -508,7 +1824,49 @@
                   "marker": 0.9365,
                   "point_ref": "t11"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.92362,
+                "line": [
+                  [
+                    -76.9286226,
+                    42.3372919
+                  ],
+                  [
+                    -76.9285462,
+                    42.3374
+                  ]
+                ],
+                "width_m": 13.56,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.94938,
+                "line": [
+                  [
+                    -76.9291384,
+                    42.3384961
+                  ],
+                  [
+                    -76.9288998,
+                    42.33847
+                  ]
+                ],
+                "width_m": 19.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             }
           ]
         },
@@ -533,7 +1891,91 @@
                   "marker": 0.066,
                   "point_ref": "t1"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.03288,
+                "line": [
+                  [
+                    -76.9287949,
+                    42.3425987
+                  ],
+                  [
+                    -76.9286133,
+                    42.3425902
+                  ]
+                ],
+                "width_m": 15.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.08992,
+                "line": [
+                  [
+                    -76.9268378,
+                    42.3441856
+                  ],
+                  [
+                    -76.9268665,
+                    42.3440845
+                  ]
+                ],
+                "width_m": 11.48,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.05993,
+                "line": [
+                  [
+                    -76.9286744,
+                    42.3439279
+                  ],
+                  [
+                    -76.9284836,
+                    42.343919
+                  ]
+                ],
+                "width_m": 15.76,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.07288,
+                "line": [
+                  [
+                    -76.9279545,
+                    42.3443314
+                  ],
+                  [
+                    -76.9279762,
+                    42.3442037
+                  ]
+                ],
+                "width_m": 14.29,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "complex-2",
@@ -559,7 +2001,91 @@
                   "marker": 0.22,
                   "point_ref": "t3"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.13712,
+                "line": [
+                  [
+                    -76.923936,
+                    42.3433577
+                  ],
+                  [
+                    -76.9240554,
+                    42.3432954
+                  ]
+                ],
+                "width_m": 12.03,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.23288,
+                "line": [
+                  [
+                    -76.9208579,
+                    42.339385
+                  ],
+                  [
+                    -76.9209894,
+                    42.3393472
+                  ]
+                ],
+                "width_m": 11.63,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.16364,
+                "line": [
+                  [
+                    -76.92343,
+                    42.3420981
+                  ],
+                  [
+                    -76.923575,
+                    42.3420881
+                  ]
+                ],
+                "width_m": 12.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.22518,
+                "line": [
+                  [
+                    -76.9210752,
+                    42.3397334
+                  ],
+                  [
+                    -76.9211992,
+                    42.3396847
+                  ]
+                ],
+                "width_m": 11.57,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t4",
@@ -577,7 +2103,91 @@
                   "marker": 0.366,
                   "point_ref": "t4"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.33288,
+                "line": [
+                  [
+                    -76.9203839,
+                    42.3344713
+                  ],
+                  [
+                    -76.9205579,
+                    42.3344664
+                  ]
+                ],
+                "width_m": 14.35,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.38992,
+                "line": [
+                  [
+                    -76.9202678,
+                    42.3318565
+                  ],
+                  [
+                    -76.9204339,
+                    42.3318454
+                  ]
+                ],
+                "width_m": 13.75,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.34759,
+                "line": [
+                  [
+                    -76.9203461,
+                    42.3337405
+                  ],
+                  [
+                    -76.9205238,
+                    42.3337399
+                  ]
+                ],
+                "width_m": 14.65,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.3557,
+                "line": [
+                  [
+                    -76.9205631,
+                    42.3333379
+                  ],
+                  [
+                    -76.9206921,
+                    42.3334305
+                  ]
+                ],
+                "width_m": 14.79,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t5",
@@ -595,7 +2205,91 @@
                   "marker": 0.428,
                   "point_ref": "t5"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.40592,
+                "line": [
+                  [
+                    -76.9202091,
+                    42.3310448
+                  ],
+                  [
+                    -76.9204271,
+                    42.3310769
+                  ]
+                ],
+                "width_m": 18.31,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.4464,
+                "line": [
+                  [
+                    -76.9225144,
+                    42.3302434
+                  ],
+                  [
+                    -76.9224047,
+                    42.3303937
+                  ]
+                ],
+                "width_m": 18.98,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.41421,
+                "line": [
+                  [
+                    -76.9205122,
+                    42.3306654
+                  ],
+                  [
+                    -76.9206352,
+                    42.3307312
+                  ]
+                ],
+                "width_m": 12.5,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.43907,
+                "line": [
+                  [
+                    -76.9219999,
+                    42.3301468
+                  ],
+                  [
+                    -76.9219677,
+                    42.3302927
+                  ]
+                ],
+                "width_m": 16.42,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t6",
@@ -613,7 +2307,91 @@
                   "marker": 0.515,
                   "point_ref": "t6"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.50212,
+                "line": [
+                  [
+                    -76.9249119,
+                    42.3323538
+                  ],
+                  [
+                    -76.9248147,
+                    42.3324361
+                  ]
+                ],
+                "width_m": 12.15,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.52788,
+                "line": [
+                  [
+                    -76.9262483,
+                    42.3321584
+                  ],
+                  [
+                    -76.9263813,
+                    42.3322061
+                  ]
+                ],
+                "width_m": 12.17,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.49888,
+                "line": [
+                  [
+                    -76.9247693,
+                    42.3322436
+                  ],
+                  [
+                    -76.9246564,
+                    42.332312
+                  ]
+                ],
+                "width_m": 12.01,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.51644,
+                "line": [
+                  [
+                    -76.9257341,
+                    42.3324781
+                  ],
+                  [
+                    -76.9257793,
+                    42.3325831
+                  ]
+                ],
+                "width_m": 12.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t7",
@@ -631,7 +2409,91 @@
                   "marker": 0.6085,
                   "point_ref": "t7"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.57538,
+                "line": [
+                  [
+                    -76.9262003,
+                    42.329849
+                  ],
+                  [
+                    -76.9263443,
+                    42.3298455
+                  ]
+                ],
+                "width_m": 11.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.63242,
+                "line": [
+                  [
+                    -76.927928,
+                    42.3292385
+                  ],
+                  [
+                    -76.9277623,
+                    42.3292539
+                  ]
+                ],
+                "width_m": 13.77,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.59115,
+                "line": [
+                  [
+                    -76.9261509,
+                    42.3290764
+                  ],
+                  [
+                    -76.9262982,
+                    42.3290714
+                  ]
+                ],
+                "width_m": 12.15,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.62923,
+                "line": [
+                  [
+                    -76.927891,
+                    42.3290756
+                  ],
+                  [
+                    -76.9277398,
+                    42.3290958
+                  ]
+                ],
+                "width_m": 12.66,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t8",
@@ -649,7 +2511,91 @@
                   "marker": 0.74,
                   "point_ref": "t8"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.71792,
+                "line": [
+                  [
+                    -76.9283855,
+                    42.3334394
+                  ],
+                  [
+                    -76.928247,
+                    42.3334491
+                  ]
+                ],
+                "width_m": 11.46,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.7584,
+                "line": [
+                  [
+                    -76.9267113,
+                    42.3342009
+                  ],
+                  [
+                    -76.9268285,
+                    42.3340701
+                  ]
+                ],
+                "width_m": 17.45,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.75718,
+                "line": [
+                  [
+                    -76.9267737,
+                    42.3342373
+                  ],
+                  [
+                    -76.9269039,
+                    42.3341074
+                  ]
+                ],
+                "width_m": 17.99,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.76125,
+                "line": [
+                  [
+                    -76.9265671,
+                    42.3341233
+                  ],
+                  [
+                    -76.9266602,
+                    42.3340094
+                  ]
+                ],
+                "width_m": 14.8,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t9",
@@ -667,7 +2613,91 @@
                   "marker": 0.8005,
                   "point_ref": "t9"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.76738,
+                "line": [
+                  [
+                    -76.9262295,
+                    42.3339755
+                  ],
+                  [
+                    -76.9262914,
+                    42.3338783
+                  ]
+                ],
+                "width_m": 11.94,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.82442,
+                "line": [
+                  [
+                    -76.9243766,
+                    42.3347808
+                  ],
+                  [
+                    -76.9242479,
+                    42.3348007
+                  ]
+                ],
+                "width_m": 10.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.78537,
+                "line": [
+                  [
+                    -76.9251437,
+                    42.3335895
+                  ],
+                  [
+                    -76.9252125,
+                    42.3334917
+                  ]
+                ],
+                "width_m": 12.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.81053,
+                "line": [
+                  [
+                    -76.9241857,
+                    42.3341139
+                  ],
+                  [
+                    -76.9240416,
+                    42.3341319
+                  ]
+                ],
+                "width_m": 12.05,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t10",
@@ -685,7 +2715,91 @@
                   "marker": 0.8695,
                   "point_ref": "t10"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.83638,
+                "line": [
+                  [
+                    -76.9245707,
+                    42.3353561
+                  ],
+                  [
+                    -76.92442,
+                    42.33538
+                  ]
+                ],
+                "width_m": 12.7,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.89342,
+                "line": [
+                  [
+                    -76.9266125,
+                    42.3371588
+                  ],
+                  [
+                    -76.9266076,
+                    42.3372596
+                  ]
+                ],
+                "width_m": 11.21,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.86183,
+                "line": [
+                  [
+                    -76.924935,
+                    42.3365757
+                  ],
+                  [
+                    -76.924761,
+                    42.3366066
+                  ]
+                ],
+                "width_m": 14.74,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.87322,
+                "line": [
+                  [
+                    -76.9253271,
+                    42.3369864
+                  ],
+                  [
+                    -76.9252699,
+                    42.3371054
+                  ]
+                ],
+                "width_m": 14.03,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "t11",
@@ -703,7 +2817,91 @@
                   "marker": 0.9365,
                   "point_ref": "t11"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.92362,
+                "line": [
+                  [
+                    -76.9286226,
+                    42.3372919
+                  ],
+                  [
+                    -76.9285462,
+                    42.3374
+                  ]
+                ],
+                "width_m": 13.56,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.94938,
+                "line": [
+                  [
+                    -76.9291384,
+                    42.3384961
+                  ],
+                  [
+                    -76.9288998,
+                    42.33847
+                  ]
+                ],
+                "width_m": 19.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "entry": {
+                "marker": 0.91872,
+                "line": [
+                  [
+                    -76.928285,
+                    42.337238
+                  ],
+                  [
+                    -76.9282769,
+                    42.3373393
+                  ]
+                ],
+                "width_m": 11.27,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "exit": {
+                "marker": 0.94082,
+                "line": [
+                  [
+                    -76.9291776,
+                    42.3380688
+                  ],
+                  [
+                    -76.9289926,
+                    42.3380569
+                  ]
+                ],
+                "width_m": 15.31,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             }
           ]
         },
@@ -730,7 +2928,49 @@
               "end": 0.03926739,
               "length_m": 215.595,
               "entry_ref": "T1",
-              "exit_ref": "T2"
+              "exit_ref": "T2",
+              "start_line": {
+                "marker": 0.0,
+                "line": [
+                  [
+                    -76.9289326,
+                    42.3409819
+                  ],
+                  [
+                    -76.9287525,
+                    42.3409729
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.03927,
+                "line": [
+                  [
+                    -76.9287655,
+                    42.3429132
+                  ],
+                  [
+                    -76.9285893,
+                    42.3429046
+                  ]
+                ],
+                "width_m": 14.56,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms2",
@@ -739,7 +2979,49 @@
               "end": 0.11400867,
               "length_m": 410.362,
               "entry_ref": "T2",
-              "exit_ref": "T3"
+              "exit_ref": "T3",
+              "start_line": {
+                "marker": 0.03927,
+                "line": [
+                  [
+                    -76.9287655,
+                    42.3429132
+                  ],
+                  [
+                    -76.9285893,
+                    42.3429046
+                  ]
+                ],
+                "width_m": 14.56,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.11401,
+                "line": [
+                  [
+                    -76.9252856,
+                    42.343967
+                  ],
+                  [
+                    -76.925272,
+                    42.343806
+                  ]
+                ],
+                "width_m": 17.91,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms3",
@@ -748,7 +3030,49 @@
               "end": 0.26201083,
               "length_m": 812.597,
               "entry_ref": "T3",
-              "exit_ref": "T4"
+              "exit_ref": "T4",
+              "start_line": {
+                "marker": 0.11401,
+                "line": [
+                  [
+                    -76.9252856,
+                    42.343967
+                  ],
+                  [
+                    -76.925272,
+                    42.343806
+                  ]
+                ],
+                "width_m": 17.91,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.26201,
+                "line": [
+                  [
+                    -76.920572,
+                    42.3379518
+                  ],
+                  [
+                    -76.9207205,
+                    42.3379485
+                  ]
+                ],
+                "width_m": 12.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms4",
@@ -757,7 +3081,49 @@
               "end": 0.31307047,
               "length_m": 280.34,
               "entry_ref": "T4",
-              "exit_ref": "T5"
+              "exit_ref": "T5",
+              "start_line": {
+                "marker": 0.26201,
+                "line": [
+                  [
+                    -76.920572,
+                    42.3379518
+                  ],
+                  [
+                    -76.9207205,
+                    42.3379485
+                  ]
+                ],
+                "width_m": 12.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.31307,
+                "line": [
+                  [
+                    -76.9204371,
+                    42.3354427
+                  ],
+                  [
+                    -76.9206036,
+                    42.335438
+                  ]
+                ],
+                "width_m": 13.74,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms5",
@@ -766,7 +3132,49 @@
               "end": 0.31975999,
               "length_m": 36.728,
               "entry_ref": "T5",
-              "exit_ref": "T6"
+              "exit_ref": "T6",
+              "start_line": {
+                "marker": 0.31307,
+                "line": [
+                  [
+                    -76.9204371,
+                    42.3354427
+                  ],
+                  [
+                    -76.9206036,
+                    42.335438
+                  ]
+                ],
+                "width_m": 13.74,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.31976,
+                "line": [
+                  [
+                    -76.9204189,
+                    42.3351099
+                  ],
+                  [
+                    -76.920588,
+                    42.3351051
+                  ]
+                ],
+                "width_m": 13.95,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms6",
@@ -775,7 +3183,49 @@
               "end": 0.45146859,
               "length_m": 723.138,
               "entry_ref": "T6",
-              "exit_ref": "T7"
+              "exit_ref": "T7",
+              "start_line": {
+                "marker": 0.31976,
+                "line": [
+                  [
+                    -76.9204189,
+                    42.3351099
+                  ],
+                  [
+                    -76.920588,
+                    42.3351051
+                  ]
+                ],
+                "width_m": 13.95,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.45147,
+                "line": [
+                  [
+                    -76.922815,
+                    42.3303965
+                  ],
+                  [
+                    -76.9226656,
+                    42.3305225
+                  ]
+                ],
+                "width_m": 18.63,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms7",
@@ -784,7 +3234,49 @@
               "end": 0.63663785,
               "length_m": 1016.66,
               "entry_ref": "T7",
-              "exit_ref": "T8"
+              "exit_ref": "T8",
+              "start_line": {
+                "marker": 0.45147,
+                "line": [
+                  [
+                    -76.922815,
+                    42.3303965
+                  ],
+                  [
+                    -76.9226656,
+                    42.3305225
+                  ]
+                ],
+                "width_m": 18.63,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.63664,
+                "line": [
+                  [
+                    -76.9279535,
+                    42.3294475
+                  ],
+                  [
+                    -76.9277921,
+                    42.3294569
+                  ]
+                ],
+                "width_m": 13.34,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms8",
@@ -793,7 +3285,49 @@
               "end": 0.7615644,
               "length_m": 685.902,
               "entry_ref": "T8",
-              "exit_ref": "T9"
+              "exit_ref": "T9",
+              "start_line": {
+                "marker": 0.63664,
+                "line": [
+                  [
+                    -76.9279535,
+                    42.3294475
+                  ],
+                  [
+                    -76.9277921,
+                    42.3294569
+                  ]
+                ],
+                "width_m": 13.34,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.76156,
+                "line": [
+                  [
+                    -76.9265473,
+                    42.3341126
+                  ],
+                  [
+                    -76.9266385,
+                    42.3340013
+                  ]
+                ],
+                "width_m": 14.47,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms9",
@@ -802,7 +3336,49 @@
               "end": 0.91110248,
               "length_m": 821.03,
               "entry_ref": "T9",
-              "exit_ref": "TA"
+              "exit_ref": "TA",
+              "start_line": {
+                "marker": 0.76156,
+                "line": [
+                  [
+                    -76.9265473,
+                    42.3341126
+                  ],
+                  [
+                    -76.9266385,
+                    42.3340013
+                  ]
+                ],
+                "width_m": 14.47,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.9111,
+                "line": [
+                  [
+                    -76.9277769,
+                    42.3372129
+                  ],
+                  [
+                    -76.9277678,
+                    42.3373164
+                  ]
+                ],
+                "width_m": 11.52,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms10",
@@ -811,7 +3387,49 @@
               "end": 0.96301334,
               "length_m": 285.013,
               "entry_ref": "TA",
-              "exit_ref": "TB"
+              "exit_ref": "TB",
+              "start_line": {
+                "marker": 0.9111,
+                "line": [
+                  [
+                    -76.9277769,
+                    42.3372129
+                  ],
+                  [
+                    -76.9277678,
+                    42.3373164
+                  ]
+                ],
+                "width_m": 11.52,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 0.96301,
+                "line": [
+                  [
+                    -76.9290376,
+                    42.339146
+                  ],
+                  [
+                    -76.9288227,
+                    42.3391934
+                  ]
+                ],
+                "width_m": 18.48,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             },
             {
               "id": "ms11",
@@ -820,13 +3438,163 @@
               "end": 1.0,
               "length_m": 203.073,
               "entry_ref": "TB",
-              "exit_ref": "T1"
+              "exit_ref": "T1",
+              "start_line": {
+                "marker": 0.96301,
+                "line": [
+                  [
+                    -76.9290376,
+                    42.339146
+                  ],
+                  [
+                    -76.9288227,
+                    42.3391934
+                  ]
+                ],
+                "width_m": 18.48,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              },
+              "end_line": {
+                "marker": 1.0,
+                "line": [
+                  [
+                    -76.9289326,
+                    42.3409819
+                  ],
+                  [
+                    -76.9287525,
+                    42.3409729
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2019-09-18"
+                }
+              }
             }
           ]
         }
       ],
       "length_m": 5435,
-      "direction": "clockwise"
+      "direction": "clockwise",
+      "surface": {
+        "file": "layers/gp.surface.geojson",
+        "method": "naip-edges/1",
+        "measured_at": "2026-09-26T19:03:10+00:00",
+        "lap_length_m": 5484.9,
+        "width_m": {
+          "p05": 11.04,
+          "median": 12.65,
+          "p95": 18.98
+        },
+        "seen_fraction": {
+          "left": 0.412,
+          "right": 0.513,
+          "both": 0.228
+        },
+        "relative_precision_m": 0.25,
+        "absolute_accuracy_ce95_m": 4.0,
+        "unnamed_corners": [
+          {
+            "marker": 0.1173,
+            "direction": "right",
+            "radius_m": 49.2
+          },
+          {
+            "marker": 0.3604,
+            "direction": "left",
+            "radius_m": 36.5
+          },
+          {
+            "marker": 0.375,
+            "direction": "left",
+            "radius_m": 33.2
+          },
+          {
+            "marker": 0.3849,
+            "direction": "right",
+            "radius_m": 79.6
+          },
+          {
+            "marker": 0.4089,
+            "direction": "right",
+            "radius_m": 59.4
+          },
+          {
+            "marker": 0.4443,
+            "direction": "right",
+            "radius_m": 75.1
+          },
+          {
+            "marker": 0.5201,
+            "direction": "left",
+            "radius_m": 62.8
+          },
+          {
+            "marker": 0.7315,
+            "direction": "right",
+            "radius_m": 44.4
+          },
+          {
+            "marker": 0.7549,
+            "direction": "right",
+            "radius_m": 77.5
+          },
+          {
+            "marker": 0.9622,
+            "direction": "left",
+            "radius_m": 46.4
+          },
+          {
+            "marker": 0.9662,
+            "direction": "right",
+            "radius_m": 56.6
+          }
+        ],
+        "sources": {
+          "naip": {
+            "kind": "imagery",
+            "name": "USDA NAIP via USGS The National Map",
+            "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+            "license": "public domain (US federal)",
+            "gsd_m": [
+              0.6
+            ],
+            "acquisition_dates": [
+              "2019-09-18"
+            ],
+            "rasters": [
+              "m_4207641_ne_18_060_20190918"
+            ],
+            "request": {
+              "crs": "EPSG:3857",
+              "x0": -8563787.506363988,
+              "y0": 5212771.071045489,
+              "px": 0.6764012873398523,
+              "width": 1682,
+              "height": 3758
+            },
+            "horizontal_accuracy": "NAIP contract: 95% of well-defined points within 4 m of true ground"
+          },
+          "seed": {
+            "kind": "osm",
+            "name": "layout centerline (OpenStreetMap)",
+            "file": "layers/gp.geojson",
+            "license": "ODbL",
+            "use": "seed only: fixes lap order, origin and direction; the edges are measured"
+          }
+        }
+      }
     }
   ],
   "series": [
@@ -836,7 +3604,7 @@
     "imsa_data": "watkins-glen"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:39:10.490559+00:00",
+    "generated_at": "2026-09-26T19:00:38.657071+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -867,22 +3635,23 @@
         "layout": "gp",
         "candidates": [
           {
-            "source": "stitched",
-            "score": 0.61,
-            "reasons": [
-              "length 5,434 m (Δ 1 m)"
-            ]
-          },
-          {
             "source": "relation",
             "score": 37.77,
             "reasons": [
               "length 5,473 m (Δ 38 m)"
             ]
+          },
+          {
+            "source": "stitched",
+            "score": 0.61,
+            "reasons": [
+              "length 5,434 m (Δ 1 m)"
+            ]
           }
         ],
-        "selected": "stitched",
-        "selected_score": 0.61
+        "forced": "relation",
+        "selected": "relation",
+        "selected_score": 37.77
       }
     ]
   }
