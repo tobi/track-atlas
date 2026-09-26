@@ -9,7 +9,13 @@ Spec: docs/GEOMETRY.md.
 - [x] Curvature-lobe corner placement with order-preserving matching to atlas corners
 - [x] verify.py surface checks (`lib/surface_checks.py`)
 - [x] Road Atlanta measured; corner directions corrected from geometry
-- [ ] IMSA US venues: daytona, sebring, long-beach, laguna-seca, watkins-glen, lime-rock, road-america, virginia-international-raceway, indianapolis, circuit-of-the-americas
+- [x] IMSA US venues measured: daytona, sebring, long-beach, laguna-seca, watkins-glen, lime-rock, virginia-international-raceway, indianapolis, circuit-of-the-americas
+- [ ] Road America: corner markers sit up to ~400 m from their bends (T3 405 m from its apex) and the Canada Corner edges loop; re-curate the markers, then measure (no surface committed)
+- [ ] Curate corner directions the geometry contradicts: Daytona T5 (West Horseshoe declared left, turns right), Watkins Glen T7/T9, VIR T11-T13
+- [ ] Unplaced corners (no curvature peak near the marker): Road Atlanta t8/t10, Long Beach t2, COTA t9/t13/t17/t19
+- [ ] Measured midline vs declared length: Sebring -1.8 %, Lime Rock -4 % (chicane variant?), Long Beach +2.3 %
+- [ ] Low edge coverage (seen < 60 %): Long Beach 36/25 %, Watkins Glen 47/54 %, Lime Rock 59/66 % (trees, shadows, street furniture)
+- [ ] Daytona start/finish is pinned where the Lovely markers fit the curvature peaks, not a surveyed timing line
 - [ ] Remaining US tracks
 - [ ] Non-US imagery source (NAIP is US-only; Mosport and every non-US track have no surface)
 - [ ] Absolute registration better than NAIP's 4 m CE95 (GPS-trace or survey control)

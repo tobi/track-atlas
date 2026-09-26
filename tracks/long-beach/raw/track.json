@@ -34,7 +34,8 @@
       "label_default": "driver",
       "geometry": {
         "centerline": "layers/gp.geojson",
-        "crs": "EPSG:4326"
+        "crs": "EPSG:4326",
+        "surface": "layers/gp.surface.geojson"
       },
       "point_layers": [
         {
@@ -49,7 +50,28 @@
               "location": [
                 -118.185888,
                 33.765664
-              ]
+              ],
+              "line": {
+                "marker": 0.0,
+                "line": [
+                  [
+                    -118.1858695,
+                    33.7657606
+                  ],
+                  [
+                    -118.1858957,
+                    33.7655996
+                  ]
+                ],
+                "width_m": 18.02,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             }
           ]
         },
@@ -74,7 +96,71 @@
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 3
+              "scale": 3,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 113.9,
+                "marker_offset_m": 16.7
+              },
+              "entry": {
+                "marker": 0.22382,
+                "line": [
+                  [
+                    -118.1876745,
+                    33.7619798
+                  ],
+                  [
+                    -118.1877429,
+                    33.7620871
+                  ]
+                ],
+                "width_m": 13.49,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.232,
+                "line": [
+                  [
+                    -118.1879609,
+                    33.7618832
+                  ],
+                  [
+                    -118.1879965,
+                    33.7620051
+                  ]
+                ],
+                "width_m": 13.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.22716,
+                "location": [
+                  -118.187842,
+                  33.7620421
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t2",
@@ -92,7 +178,11 @@
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 2
+              "scale": 2,
+              "placement": {
+                "basis": "none",
+                "note": "no curvature peak near the marker; kept at the legacy marker only"
+              }
             },
             {
               "id": "t3",
@@ -110,7 +200,71 @@
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 96.0,
+                "marker_offset_m": -83.6
+              },
+              "entry": {
+                "marker": 0.26575,
+                "line": [
+                  [
+                    -118.1891338,
+                    33.7617001
+                  ],
+                  [
+                    -118.1891551,
+                    33.7618397
+                  ]
+                ],
+                "width_m": 15.61,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.27333,
+                "line": [
+                  [
+                    -118.1894254,
+                    33.7617018
+                  ],
+                  [
+                    -118.189401,
+                    33.761843
+                  ]
+                ],
+                "width_m": 15.82,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.2703,
+                "location": [
+                  -118.1893022,
+                  33.7618352
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t4",
@@ -128,7 +282,71 @@
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 249.3,
+                "marker_offset_m": -16.2
+              },
+              "entry": {
+                "marker": 0.32303,
+                "line": [
+                  [
+                    -118.1910997,
+                    33.7621614
+                  ],
+                  [
+                    -118.1910315,
+                    33.7622631
+                  ]
+                ],
+                "width_m": 12.93,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.32972,
+                "line": [
+                  [
+                    -118.1913053,
+                    33.7622475
+                  ],
+                  [
+                    -118.1912521,
+                    33.7623516
+                  ]
+                ],
+                "width_m": 12.55,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.32484,
+                "location": [
+                  -118.1911537,
+                  33.7621872
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t5",
@@ -146,7 +364,71 @@
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 86.9,
+                "marker_offset_m": -33.9
+              },
+              "entry": {
+                "marker": 0.36408,
+                "line": [
+                  [
+                    -118.1924051,
+                    33.7626786
+                  ],
+                  [
+                    -118.1923338,
+                    33.76279
+                  ]
+                ],
+                "width_m": 14.01,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.37057,
+                "line": [
+                  [
+                    -118.1925986,
+                    33.7627315
+                  ],
+                  [
+                    -118.1925585,
+                    33.7628785
+                  ]
+                ],
+                "width_m": 16.72,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.36806,
+                "location": [
+                  -118.1925245,
+                  33.7627203
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t6",
@@ -164,7 +446,71 @@
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 5
+              "scale": 5,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 19.9,
+                "marker_offset_m": -32.8
+              },
+              "entry": {
+                "marker": 0.48561,
+                "line": [
+                  [
+                    -118.1958111,
+                    33.7628802
+                  ],
+                  [
+                    -118.195931,
+                    33.7629494
+                  ]
+                ],
+                "width_m": 13.51,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.50029,
+                "line": [
+                  [
+                    -118.1963287,
+                    33.7629512
+                  ],
+                  [
+                    -118.1961944,
+                    33.7629861
+                  ]
+                ],
+                "width_m": 13.03,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.49439,
+                "location": [
+                  -118.1961056,
+                  33.7629
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t7",
@@ -182,7 +528,71 @@
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 29.9,
+                "marker_offset_m": -95.9
+              },
+              "entry": {
+                "marker": 0.50249,
+                "line": [
+                  [
+                    -118.1963466,
+                    33.7630165
+                  ],
+                  [
+                    -118.1962097,
+                    33.7630439
+                  ]
+                ],
+                "width_m": 13.04,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.51078,
+                "line": [
+                  [
+                    -118.196476,
+                    33.7631244
+                  ],
+                  [
+                    -118.1964012,
+                    33.7632315
+                  ]
+                ],
+                "width_m": 13.75,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.50549,
+                "location": [
+                  -118.1963645,
+                  33.7630569
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t8",
@@ -200,7 +610,71 @@
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 2
+              "scale": 2,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 189.7,
+                "marker_offset_m": 67.2
+              },
+              "entry": {
+                "marker": 0.61959,
+                "line": [
+                  [
+                    -118.19564,
+                    33.7645602
+                  ],
+                  [
+                    -118.1957458,
+                    33.7644142
+                  ]
+                ],
+                "width_m": 18.93,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.6255,
+                "line": [
+                  [
+                    -118.1954726,
+                    33.7644855
+                  ],
+                  [
+                    -118.195551,
+                    33.7643293
+                  ]
+                ],
+                "width_m": 18.79,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.62392,
+                "location": [
+                  -118.195518,
+                  33.7645008
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t9",
@@ -218,7 +692,71 @@
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 3
+              "scale": 3,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "right",
+                "radius_m": 16.2,
+                "marker_offset_m": 48.6
+              },
+              "entry": {
+                "marker": 0.81031,
+                "line": [
+                  [
+                    -118.1925011,
+                    33.7656825
+                  ],
+                  [
+                    -118.1922831,
+                    33.765672
+                  ]
+                ],
+                "width_m": 20.23,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.82015,
+                "line": [
+                  [
+                    -118.1922077,
+                    33.7659453
+                  ],
+                  [
+                    -118.1922067,
+                    33.7657641
+                  ]
+                ],
+                "width_m": 20.11,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.81118,
+                "location": [
+                  -118.1922806,
+                  33.7656959
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t10",
@@ -236,7 +774,71 @@
               ],
               "location_source": "centerline",
               "direction": "left",
-              "scale": 4
+              "scale": 4,
+              "placement": {
+                "basis": "curvature",
+                "shape": "corner",
+                "direction": "left",
+                "radius_m": 120.4,
+                "marker_offset_m": 62.7
+              },
+              "entry": {
+                "marker": 0.85752,
+                "line": [
+                  [
+                    -118.1908876,
+                    33.7659555
+                  ],
+                  [
+                    -118.1908948,
+                    33.7657806
+                  ]
+                ],
+                "width_m": 19.41,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.86407,
+                "line": [
+                  [
+                    -118.1906829,
+                    33.765965
+                  ],
+                  [
+                    -118.1906477,
+                    33.7657852
+                  ]
+                ],
+                "width_m": 20.21,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.86187,
+                "location": [
+                  -118.1907471,
+                  33.7659543
+                ],
+                "edge": "left",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t11",
@@ -254,7 +856,71 @@
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 1
+              "scale": 1,
+              "placement": {
+                "basis": "curvature",
+                "shape": "kink",
+                "direction": "right",
+                "radius_m": 281.1,
+                "marker_offset_m": 25.3
+              },
+              "entry": {
+                "marker": 0.88608,
+                "line": [
+                  [
+                    -118.1898967,
+                    33.7660117
+                  ],
+                  [
+                    -118.1898836,
+                    33.7658223
+                  ]
+                ],
+                "width_m": 21.05,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.90065,
+                "line": [
+                  [
+                    -118.1893646,
+                    33.7659869
+                  ],
+                  [
+                    -118.1893804,
+                    33.7658281
+                  ]
+                ],
+                "width_m": 17.67,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "apex": {
+                "marker": 0.88759,
+                "location": [
+                  -118.189832,
+                  33.7658244
+                ],
+                "edge": "right",
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             }
           ]
         }
@@ -270,19 +936,145 @@
               "id": "s1",
               "label": "S1",
               "start": 0.0,
-              "end": 0.312
+              "end": 0.312,
+              "start_line": {
+                "marker": 0.0,
+                "line": [
+                  [
+                    -118.1858695,
+                    33.7657606
+                  ],
+                  [
+                    -118.1858957,
+                    33.7655996
+                  ]
+                ],
+                "width_m": 18.02,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.312,
+                "line": [
+                  [
+                    -118.1907499,
+                    33.7620097
+                  ],
+                  [
+                    -118.1906864,
+                    33.7621249
+                  ]
+                ],
+                "width_m": 14.06,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "s2",
               "label": "S2",
               "start": 0.312,
-              "end": 0.726
+              "end": 0.726,
+              "start_line": {
+                "marker": 0.312,
+                "line": [
+                  [
+                    -118.1907499,
+                    33.7620097
+                  ],
+                  [
+                    -118.1906864,
+                    33.7621249
+                  ]
+                ],
+                "width_m": 14.06,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.726,
+                "line": [
+                  [
+                    -118.1926439,
+                    33.7632853
+                  ],
+                  [
+                    -118.1924839,
+                    33.7632152
+                  ]
+                ],
+                "width_m": 16.73,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "s3",
               "label": "S3",
               "start": 0.726,
-              "end": 1.0
+              "end": 1.0,
+              "start_line": {
+                "marker": 0.726,
+                "line": [
+                  [
+                    -118.1926439,
+                    33.7632853
+                  ],
+                  [
+                    -118.1924839,
+                    33.7632152
+                  ]
+                ],
+                "width_m": 16.73,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 1.0,
+                "line": [
+                  [
+                    -118.1858695,
+                    33.7657606
+                  ],
+                  [
+                    -118.1858957,
+                    33.7655996
+                  ]
+                ],
+                "width_m": 18.02,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             }
           ]
         },
@@ -306,7 +1098,49 @@
                   "marker": 0.223,
                   "point_ref": "t1"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.18511,
+                "line": [
+                  [
+                    -118.1865151,
+                    33.7625887
+                  ],
+                  [
+                    -118.1866018,
+                    33.7626852
+                  ]
+                ],
+                "width_m": 13.38,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.24443,
+                "line": [
+                  [
+                    -118.1883789,
+                    33.7617861
+                  ],
+                  [
+                    -118.188413,
+                    33.7619172
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t2",
@@ -322,7 +1156,49 @@
                   "marker": 0.283,
                   "point_ref": "t2"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.24443,
+                "line": [
+                  [
+                    -118.1883789,
+                    33.7617861
+                  ],
+                  [
+                    -118.188413,
+                    33.7619172
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.2908,
+                "line": [
+                  [
+                    -118.1900412,
+                    33.7617865
+                  ],
+                  [
+                    -118.1899981,
+                    33.761925
+                  ]
+                ],
+                "width_m": 15.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t3",
@@ -338,7 +1214,49 @@
                   "marker": 0.295,
                   "point_ref": "t3"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.2908,
+                "line": [
+                  [
+                    -118.1900412,
+                    33.7617865
+                  ],
+                  [
+                    -118.1899981,
+                    33.761925
+                  ]
+                ],
+                "width_m": 15.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.313,
+                "line": [
+                  [
+                    -118.1907792,
+                    33.7620212
+                  ],
+                  [
+                    -118.190716,
+                    33.7621359
+                  ]
+                ],
+                "width_m": 14.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t4",
@@ -354,7 +1272,49 @@
                   "marker": 0.331,
                   "point_ref": "t4"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.313,
+                "line": [
+                  [
+                    -118.1907792,
+                    33.7620212
+                  ],
+                  [
+                    -118.190716,
+                    33.7621359
+                  ]
+                ],
+                "width_m": 14.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.3531,
+                "line": [
+                  [
+                    -118.1920515,
+                    33.7625377
+                  ],
+                  [
+                    -118.1919942,
+                    33.7626377
+                  ]
+                ],
+                "width_m": 12.3,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t5",
@@ -370,7 +1330,49 @@
                   "marker": 0.378,
                   "point_ref": "t5"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.3559,
+                "line": [
+                  [
+                    -118.1921383,
+                    33.7625737
+                  ],
+                  [
+                    -118.1920825,
+                    33.7626721
+                  ]
+                ],
+                "width_m": 12.08,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.4001,
+                "line": [
+                  [
+                    -118.1935391,
+                    33.7631275
+                  ],
+                  [
+                    -118.1934506,
+                    33.7632977
+                  ]
+                ],
+                "width_m": 20.58,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t6",
@@ -386,7 +1388,49 @@
                   "marker": 0.505,
                   "point_ref": "t6"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.49395,
+                "line": [
+                  [
+                    -118.1961398,
+                    33.7627879
+                  ],
+                  [
+                    -118.1960989,
+                    33.7628982
+                  ]
+                ],
+                "width_m": 12.81,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.51713,
+                "line": [
+                  [
+                    -118.1966724,
+                    33.7632202
+                  ],
+                  [
+                    -118.1966017,
+                    33.7633187
+                  ]
+                ],
+                "width_m": 12.73,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t7",
@@ -402,7 +1446,49 @@
                   "marker": 0.536,
                   "point_ref": "t7"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.51713,
+                "line": [
+                  [
+                    -118.1966724,
+                    33.7632202
+                  ],
+                  [
+                    -118.1966017,
+                    33.7633187
+                  ]
+                ],
+                "width_m": 12.73,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.55448,
+                "line": [
+                  [
+                    -118.1972705,
+                    33.7640903
+                  ],
+                  [
+                    -118.1971509,
+                    33.7640507
+                  ]
+                ],
+                "width_m": 11.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t8",
@@ -418,7 +1504,49 @@
                   "marker": 0.602,
                   "point_ref": "t8"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.55448,
+                "line": [
+                  [
+                    -118.1972705,
+                    33.7640903
+                  ],
+                  [
+                    -118.1971509,
+                    33.7640507
+                  ]
+                ],
+                "width_m": 11.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.64305,
+                "line": [
+                  [
+                    -118.1949002,
+                    33.7642409
+                  ],
+                  [
+                    -118.1950239,
+                    33.7640771
+                  ]
+                ],
+                "width_m": 21.48,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t9",
@@ -434,7 +1562,49 @@
                   "marker": 0.801,
                   "point_ref": "t9"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.76311,
+                "line": [
+                  [
+                    -118.1925147,
+                    33.7642906
+                  ],
+                  [
+                    -118.1923626,
+                    33.7642908
+                  ]
+                ],
+                "width_m": 14.09,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.82512,
+                "line": [
+                  [
+                    -118.1920355,
+                    33.765944
+                  ],
+                  [
+                    -118.1920335,
+                    33.7657652
+                  ]
+                ],
+                "width_m": 19.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t10",
@@ -450,7 +1620,49 @@
                   "marker": 0.842,
                   "point_ref": "t10"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.82512,
+                "line": [
+                  [
+                    -118.1920355,
+                    33.765944
+                  ],
+                  [
+                    -118.1920335,
+                    33.7657652
+                  ]
+                ],
+                "width_m": 19.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.85075,
+                "line": [
+                  [
+                    -118.1911302,
+                    33.7659648
+                  ],
+                  [
+                    -118.1911266,
+                    33.7657821
+                  ]
+                ],
+                "width_m": 20.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t11",
@@ -466,7 +1678,49 @@
                   "marker": 0.882,
                   "point_ref": "t11"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.85075,
+                "line": [
+                  [
+                    -118.1911302,
+                    33.7659648
+                  ],
+                  [
+                    -118.1911266,
+                    33.7657821
+                  ]
+                ],
+                "width_m": 20.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.93568,
+                "line": [
+                  [
+                    -118.1881386,
+                    33.7658966
+                  ],
+                  [
+                    -118.1881576,
+                    33.7657612
+                  ]
+                ],
+                "width_m": 15.12,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             }
           ]
         },
@@ -491,7 +1745,91 @@
                   "marker": 0.223,
                   "point_ref": "t1"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.18511,
+                "line": [
+                  [
+                    -118.1865151,
+                    33.7625887
+                  ],
+                  [
+                    -118.1866018,
+                    33.7626852
+                  ]
+                ],
+                "width_m": 13.38,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.24443,
+                "line": [
+                  [
+                    -118.1883789,
+                    33.7617861
+                  ],
+                  [
+                    -118.188413,
+                    33.7619172
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.22382,
+                "line": [
+                  [
+                    -118.1876745,
+                    33.7619798
+                  ],
+                  [
+                    -118.1877429,
+                    33.7620871
+                  ]
+                ],
+                "width_m": 13.49,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.232,
+                "line": [
+                  [
+                    -118.1879609,
+                    33.7618832
+                  ],
+                  [
+                    -118.1879965,
+                    33.7620051
+                  ]
+                ],
+                "width_m": 13.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t2",
@@ -509,7 +1847,49 @@
                   "marker": 0.283,
                   "point_ref": "t2"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.24443,
+                "line": [
+                  [
+                    -118.1883789,
+                    33.7617861
+                  ],
+                  [
+                    -118.188413,
+                    33.7619172
+                  ]
+                ],
+                "width_m": 14.88,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.2908,
+                "line": [
+                  [
+                    -118.1900412,
+                    33.7617865
+                  ],
+                  [
+                    -118.1899981,
+                    33.761925
+                  ]
+                ],
+                "width_m": 15.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t3",
@@ -527,7 +1907,91 @@
                   "marker": 0.295,
                   "point_ref": "t3"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.2908,
+                "line": [
+                  [
+                    -118.1900412,
+                    33.7617865
+                  ],
+                  [
+                    -118.1899981,
+                    33.761925
+                  ]
+                ],
+                "width_m": 15.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.313,
+                "line": [
+                  [
+                    -118.1907792,
+                    33.7620212
+                  ],
+                  [
+                    -118.190716,
+                    33.7621359
+                  ]
+                ],
+                "width_m": 14.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.26575,
+                "line": [
+                  [
+                    -118.1891338,
+                    33.7617001
+                  ],
+                  [
+                    -118.1891551,
+                    33.7618397
+                  ]
+                ],
+                "width_m": 15.61,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.27333,
+                "line": [
+                  [
+                    -118.1894254,
+                    33.7617018
+                  ],
+                  [
+                    -118.189401,
+                    33.761843
+                  ]
+                ],
+                "width_m": 15.82,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t4",
@@ -545,7 +2009,91 @@
                   "marker": 0.331,
                   "point_ref": "t4"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.313,
+                "line": [
+                  [
+                    -118.1907792,
+                    33.7620212
+                  ],
+                  [
+                    -118.190716,
+                    33.7621359
+                  ]
+                ],
+                "width_m": 14.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.3531,
+                "line": [
+                  [
+                    -118.1920515,
+                    33.7625377
+                  ],
+                  [
+                    -118.1919942,
+                    33.7626377
+                  ]
+                ],
+                "width_m": 12.3,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.32303,
+                "line": [
+                  [
+                    -118.1910997,
+                    33.7621614
+                  ],
+                  [
+                    -118.1910315,
+                    33.7622631
+                  ]
+                ],
+                "width_m": 12.93,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.32972,
+                "line": [
+                  [
+                    -118.1913053,
+                    33.7622475
+                  ],
+                  [
+                    -118.1912521,
+                    33.7623516
+                  ]
+                ],
+                "width_m": 12.55,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t5",
@@ -563,7 +2111,91 @@
                   "marker": 0.378,
                   "point_ref": "t5"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.3559,
+                "line": [
+                  [
+                    -118.1921383,
+                    33.7625737
+                  ],
+                  [
+                    -118.1920825,
+                    33.7626721
+                  ]
+                ],
+                "width_m": 12.08,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.4001,
+                "line": [
+                  [
+                    -118.1935391,
+                    33.7631275
+                  ],
+                  [
+                    -118.1934506,
+                    33.7632977
+                  ]
+                ],
+                "width_m": 20.58,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.36408,
+                "line": [
+                  [
+                    -118.1924051,
+                    33.7626786
+                  ],
+                  [
+                    -118.1923338,
+                    33.76279
+                  ]
+                ],
+                "width_m": 14.01,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.37057,
+                "line": [
+                  [
+                    -118.1925986,
+                    33.7627315
+                  ],
+                  [
+                    -118.1925585,
+                    33.7628785
+                  ]
+                ],
+                "width_m": 16.72,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t7",
@@ -581,7 +2213,91 @@
                   "marker": 0.536,
                   "point_ref": "t7"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.51713,
+                "line": [
+                  [
+                    -118.1966724,
+                    33.7632202
+                  ],
+                  [
+                    -118.1966017,
+                    33.7633187
+                  ]
+                ],
+                "width_m": 12.73,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.55448,
+                "line": [
+                  [
+                    -118.1972705,
+                    33.7640903
+                  ],
+                  [
+                    -118.1971509,
+                    33.7640507
+                  ]
+                ],
+                "width_m": 11.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.50249,
+                "line": [
+                  [
+                    -118.1963466,
+                    33.7630165
+                  ],
+                  [
+                    -118.1962097,
+                    33.7630439
+                  ]
+                ],
+                "width_m": 13.04,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.51078,
+                "line": [
+                  [
+                    -118.196476,
+                    33.7631244
+                  ],
+                  [
+                    -118.1964012,
+                    33.7632315
+                  ]
+                ],
+                "width_m": 13.75,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t8",
@@ -599,7 +2315,91 @@
                   "marker": 0.602,
                   "point_ref": "t8"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.55448,
+                "line": [
+                  [
+                    -118.1972705,
+                    33.7640903
+                  ],
+                  [
+                    -118.1971509,
+                    33.7640507
+                  ]
+                ],
+                "width_m": 11.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.64305,
+                "line": [
+                  [
+                    -118.1949002,
+                    33.7642409
+                  ],
+                  [
+                    -118.1950239,
+                    33.7640771
+                  ]
+                ],
+                "width_m": 21.48,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.61959,
+                "line": [
+                  [
+                    -118.19564,
+                    33.7645602
+                  ],
+                  [
+                    -118.1957458,
+                    33.7644142
+                  ]
+                ],
+                "width_m": 18.93,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.6255,
+                "line": [
+                  [
+                    -118.1954726,
+                    33.7644855
+                  ],
+                  [
+                    -118.195551,
+                    33.7643293
+                  ]
+                ],
+                "width_m": 18.79,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t9",
@@ -617,7 +2417,91 @@
                   "marker": 0.801,
                   "point_ref": "t9"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.76311,
+                "line": [
+                  [
+                    -118.1925147,
+                    33.7642906
+                  ],
+                  [
+                    -118.1923626,
+                    33.7642908
+                  ]
+                ],
+                "width_m": 14.09,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.82512,
+                "line": [
+                  [
+                    -118.1920355,
+                    33.765944
+                  ],
+                  [
+                    -118.1920335,
+                    33.7657652
+                  ]
+                ],
+                "width_m": 19.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.81031,
+                "line": [
+                  [
+                    -118.1925011,
+                    33.7656825
+                  ],
+                  [
+                    -118.1922831,
+                    33.765672
+                  ]
+                ],
+                "width_m": 20.23,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.82015,
+                "line": [
+                  [
+                    -118.1922077,
+                    33.7659453
+                  ],
+                  [
+                    -118.1922067,
+                    33.7657641
+                  ]
+                ],
+                "width_m": 20.11,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t10",
@@ -635,7 +2519,91 @@
                   "marker": 0.842,
                   "point_ref": "t10"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.82512,
+                "line": [
+                  [
+                    -118.1920355,
+                    33.765944
+                  ],
+                  [
+                    -118.1920335,
+                    33.7657652
+                  ]
+                ],
+                "width_m": 19.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.85075,
+                "line": [
+                  [
+                    -118.1911302,
+                    33.7659648
+                  ],
+                  [
+                    -118.1911266,
+                    33.7657821
+                  ]
+                ],
+                "width_m": 20.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.85752,
+                "line": [
+                  [
+                    -118.1908876,
+                    33.7659555
+                  ],
+                  [
+                    -118.1908948,
+                    33.7657806
+                  ]
+                ],
+                "width_m": 19.41,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.86407,
+                "line": [
+                  [
+                    -118.1906829,
+                    33.765965
+                  ],
+                  [
+                    -118.1906477,
+                    33.7657852
+                  ]
+                ],
+                "width_m": 20.21,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.0,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
             },
             {
               "id": "t11",
@@ -653,13 +2621,211 @@
                   "marker": 0.882,
                   "point_ref": "t11"
                 }
-              ]
+              ],
+              "start_line": {
+                "marker": 0.85075,
+                "line": [
+                  [
+                    -118.1911302,
+                    33.7659648
+                  ],
+                  [
+                    -118.1911266,
+                    33.7657821
+                  ]
+                ],
+                "width_m": 20.26,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.93568,
+                "line": [
+                  [
+                    -118.1881386,
+                    33.7658966
+                  ],
+                  [
+                    -118.1881576,
+                    33.7657612
+                  ]
+                ],
+                "width_m": 15.12,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "entry": {
+                "marker": 0.88608,
+                "line": [
+                  [
+                    -118.1898967,
+                    33.7660117
+                  ],
+                  [
+                    -118.1898836,
+                    33.7658223
+                  ]
+                ],
+                "width_m": 21.05,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.90065,
+                "line": [
+                  [
+                    -118.1893646,
+                    33.7659869
+                  ],
+                  [
+                    -118.1893804,
+                    33.7658281
+                  ]
+                ],
+                "width_m": 17.67,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 4.4,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
             }
           ]
         }
       ],
       "length_m": 3167,
-      "direction": "clockwise"
+      "direction": "clockwise",
+      "surface": {
+        "file": "layers/gp.surface.geojson",
+        "method": "naip-edges/1",
+        "measured_at": "2026-09-26T19:03:04+00:00",
+        "lap_length_m": 3239.4,
+        "width_m": {
+          "p05": 12.01,
+          "median": 15.72,
+          "p95": 20.93
+        },
+        "seen_fraction": {
+          "left": 0.357,
+          "right": 0.247,
+          "both": 0.089
+        },
+        "relative_precision_m": 0.28,
+        "absolute_accuracy_ce95_m": 4.0,
+        "unnamed_corners": [
+          {
+            "marker": 0.0085,
+            "direction": "right",
+            "radius_m": 31.8
+          },
+          {
+            "marker": 0.0518,
+            "direction": "left",
+            "radius_m": 42.6
+          },
+          {
+            "marker": 0.0816,
+            "direction": "left",
+            "radius_m": 54.8
+          },
+          {
+            "marker": 0.0927,
+            "direction": "right",
+            "radius_m": 11.5
+          },
+          {
+            "marker": 0.4364,
+            "direction": "left",
+            "radius_m": 16.7
+          },
+          {
+            "marker": 0.4562,
+            "direction": "right",
+            "radius_m": 72.7
+          },
+          {
+            "marker": 0.4795,
+            "direction": "left",
+            "radius_m": 24.5
+          },
+          {
+            "marker": 0.5398,
+            "direction": "right",
+            "radius_m": 26.5
+          },
+          {
+            "marker": 0.5893,
+            "direction": "right",
+            "radius_m": 14.7
+          },
+          {
+            "marker": 0.7192,
+            "direction": "left",
+            "radius_m": 15.7
+          },
+          {
+            "marker": 0.7417,
+            "direction": "left",
+            "radius_m": 64.8
+          },
+          {
+            "marker": 0.9769,
+            "direction": "left",
+            "radius_m": 77.7
+          }
+        ],
+        "sources": {
+          "naip": {
+            "kind": "imagery",
+            "name": "USDA NAIP via USGS The National Map",
+            "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+            "license": "public domain (US federal)",
+            "gsd_m": [
+              0.6
+            ],
+            "acquisition_dates": [
+              "2022-05-11"
+            ],
+            "rasters": [
+              "m_3311815_se_11_060_20220511",
+              "m_3311815_sw_11_060_20220511"
+            ],
+            "request": {
+              "crs": "EPSG:3857",
+              "x0": -13157738.385028748,
+              "y0": 3997482.1507606776,
+              "px": 0.601442860079419,
+              "width": 2689,
+              "height": 1157
+            },
+            "horizontal_accuracy": "NAIP contract: 95% of well-defined points within 4 m of true ground"
+          },
+          "seed": {
+            "kind": "osm",
+            "name": "layout centerline (OpenStreetMap)",
+            "file": "layers/gp.geojson",
+            "license": "ODbL",
+            "use": "seed only: fixes lap order, origin and direction; the edges are measured"
+          }
+        }
+      }
     }
   ],
   "series": [
