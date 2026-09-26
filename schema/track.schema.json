@@ -750,6 +750,19 @@
           "description": "Frame the imagery was served in.",
           "title": "Imagery Frame"
         },
+        "imagery_frame_basis": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "How the imagery's frame was established (inferred from lidar, or catalog default).",
+          "title": "Imagery Frame Basis"
+        },
         "datum_shift_m": {
           "additionalProperties": {
             "type": "number"

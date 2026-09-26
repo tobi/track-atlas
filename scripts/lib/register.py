@@ -14,7 +14,8 @@ parabolic sub-pixel refinement of the peak. A window is kept when its peak is
 distinct (peak NCC >= MIN_NCC and clearly above the best shift outside
 PEAK_EXCL_M). The shift field is the robust (Tukey) weighted mean of the kept
 windows' shifts, smoothed along the lap; with fewer than MIN_WINDOWS kept
-windows no registration is claimed.
+windows, or a per-axis spread above MAX_SPREAD_M (no consistent shift), no
+registration is claimed.
 """
 from __future__ import annotations
 
@@ -32,6 +33,7 @@ MAX_SHIFT_M = 8.0
 MIN_NCC = 0.12
 PEAK_EXCL_M = 2.0
 MIN_WINDOWS = 6
+MAX_SPREAD_M = 1.5      # robust per-axis spread of the kept windows above which no shift is claimed
 CANOPY_MAX = 0.25       # canopy fraction above which a pixel is excluded
 DEBUG = False
 HIGHPASS_M = 3.0
@@ -170,6 +172,8 @@ def register(image: Raster, ref: Raster, lap_lonlat, ground_m_per_px: float) -> 
             w["kept"] = False
             w["reason"] = "outlier shift"
     sd = 1.4826 * np.median(np.abs(S[good] - mu), axis=0)
+    if sd.max() > MAX_SPREAD_M:
+        return None
     n_eff = float(good.sum())
     se = float(math.hypot(*sd) / math.sqrt(max(n_eff, 1)))
     return Registration(float(mu[0]), float(mu[1]), float(sd[0]), float(sd[1]), se, windows, int(good.sum()))

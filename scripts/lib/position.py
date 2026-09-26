@@ -81,6 +81,29 @@ def _window_noise(usable: list[dict]) -> tuple[float, float] | None:
     return tuple(float(v) for v in 1.4826 * np.median(np.abs(d - np.median(d, axis=0)), axis=0) / math.sqrt(2))
 
 
+def _infer_frame(default: str, usable: list[dict], lon: float, lat: float) -> tuple[str, str]:
+    """Which frame an imagery service really delivers, from the lidar registrations.
+
+    Services convert the producer's NAD83(2011) to Web Mercator either with a
+    real NAD83 -> WGS 84 transformation (NAIP, CT) or with the identity step
+    (Indiana). The two hypotheses are ~1 m apart; the lidar (NAD83(2011)) says
+    which one the imagery matches: under the identity hypothesis the imagery
+    registers onto the lidar with ~zero shift, under the transformed one with
+    about minus the NAD83 -> ITRF2014 step.
+    """
+    if not usable:
+        return default, "catalog default (no lidar to test it)"
+    l = datum.shift_m(lon, lat, lidar.FRAME)
+    res = {}
+    for f in ("WGS84-service", "NAD83(2011)"):
+        d = datum.shift_m(lon, lat, f)
+        res[f] = float(np.mean([math.hypot(r["registration"].de + l[0] - d[0], r["registration"].dn + l[1] - d[1])
+                                for r in usable]))
+    best = min(res, key=res.get)
+    txt = ", ".join(f"{k} {v:.2f} m" for k, v in res.items())
+    return best, f"inferred from registration to {len(usable)} lidar survey(s): mean residual {txt}"
+
+
 def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str], cache_dir: Path) -> dict:
     """Registration, datum and error budget for a measurement.
 
@@ -106,6 +129,7 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
     img_ce95 = src.get("ce95_m")
     best_lidar = min(usable, key=lambda r: (not r["stated"], r["ce95_m"])) if usable else None
     noise = _window_noise(usable)
+    frame_basis = None
     if best_lidar and (img_ce95 is None or best_lidar["ce95_m"] < img_ce95):
         reg = best_lidar["registration"]
         shift = (reg.de, reg.dn)
@@ -123,7 +147,7 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
         reference = {"kind": "imagery", "name": source_id, "ce95_m": img_ce95,
                      "basis": src["accuracy_basis"], "stated": True}
         reg_ce95 = 0.0
-        frame = src["frame"]
+        frame, frame_basis = _infer_frame(src["frame"], usable, lon_c, lat_c)
     else:
         raise RuntimeError(f"{source_id}: no stated accuracy and no lidar reference registered")
 
@@ -157,7 +181,8 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
         "summary": {
             "frame": datum.ATLAS_FRAME, "epoch": datum.ATLAS_EPOCH,
             "source_frame": frame,
-            "imagery_frame": src["frame"],
+            "imagery_frame": frame if reference["kind"] == "imagery" else src["frame"],
+            "imagery_frame_basis": frame_basis,
             "datum_shift_m": {"east": round(d_e, 3), "north": round(d_n, 3)},
             "registration_shift_m": {"east": round(shift[0], 3), "north": round(shift[1], 3)},
             "applied_shift_m": {"east": round(shift[0] + d_e, 3), "north": round(shift[1] + d_n, 3)},

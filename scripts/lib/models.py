@@ -288,6 +288,7 @@ class Position(Strict):
     epoch: float = Field(description="Coordinate epoch (decimal year); plate motion moves ground a few cm/yr in this frame.")
     source_frame: str = Field(description="Frame of the position reference, stepped to `frame`: NAD83(2011) for 3DEP lidar, WGS84-service for imagery served in Web Mercator.")
     imagery_frame: Optional[str] = Field(None, description="Frame the imagery was served in.")
+    imagery_frame_basis: Optional[str] = Field(None, description="How the imagery's frame was established (inferred from lidar, or catalog default).")
     datum_shift_m: dict[str, float] = Field(description="east/north metres added for source_frame -> frame.")
     registration_shift_m: dict[str, float] = Field(description="east/north metres added to move the imagery onto the reference.")
     applied_shift_m: dict[str, float] = Field(description="Sum of the two, as applied to the traced geometry.")

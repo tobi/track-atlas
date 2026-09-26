@@ -75,6 +75,9 @@ def _spans(flags: np.ndarray, total: float, min_len: int = 5) -> list[list[float
     return sorted(out)
 
 
+MIN_SEEN = 0.2   # refuse a measurement whose edges were barely seen
+
+
 def measure(slug: str, layout_id: str, cfg: dict) -> dict:
     source_id = cfg["imagery"]
     src = SOURCES[source_id]
@@ -84,6 +87,10 @@ def measure(slug: str, layout_id: str, cfg: dict) -> dict:
     R, manifest = load_raster(cache)
     F = geo.Frame.around(seed_ll)
     res = edges.extract_edges(R, F, geo.open_ring(F.to_xy(seed_ll)))
+    if min(res.seen_left.mean(), res.seen_right.mean()) < MIN_SEEN:
+        raise SystemExit(f"[{slug}/{layout_id}] {source_id}: edges seen on only "
+                         f"{res.seen_left.mean():.0%}/{res.seen_right.mean():.0%} of the lap "
+                         "(no coverage, or the wrong imagery): nothing written")
     # where the image frame really is (registration to lidar) + datum step
     pos = position.locate(R, source_id, seed_ll, cfg.get("lidar", []), raw_dir(slug) / "lidar")
     shift = np.asarray(pos["shift_m"])
