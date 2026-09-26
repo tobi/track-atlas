@@ -7,9 +7,11 @@ Mapbox satellite) may be viewed but **never traced**. Accuracies are the
 producer's own statements; "specification" means a design target, "tested" a
 checkpoint report. CE95 = 2.4477 x per-axis RMSE (circular, equal axes).
 
-All US sources below are delivered in **NAD83(2011)**. They are moved to the
-atlas frame (WGS 84 (G2139) ~ ITRF2014, epoch 2026.0) by `lib/datum.py`; the
-step is 0.9-1.6 m and was silently ignored before.
+The producers deliver in **NAD83(2011)**. 3DEP lidar reaches us still in
+NAD83(2011) (EPT labels it WGS 84 by the identity step); the imagery services
+already converted it to WGS 84 (`WGS84-service`). `lib/datum.py` moves the
+position reference to the atlas frame (WGS 84 (G2139) ~ ITRF2014, epoch
+2026.0); the NAD83 step is 0.9-1.6 m and was silently ignored before.
 
 ## Imagery (traces the edges): `lib/imagery.SOURCES`
 

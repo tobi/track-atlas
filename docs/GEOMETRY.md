@@ -247,11 +247,20 @@ Earth is decided separately, in three steps, each recorded in
    search-limit peaks are dropped; the kept shifts give a Tukey-robust mean.
    Lidar is the reference, not the tracer: at 2-20 returns/m2 it cannot draw
    a sharp edge, but its absolute position is sub-metre.
-3. **Datum.** NAIP, 3DEP and state orthos are NAD83(2011). Web services label
-   that "WGS 84" through PROJ's identity step, which is off by 0.9-1.6 m in the
-   conterminous US. `lib/datum.py` applies the NGS NAD83(2011) -> ITRF2014
-   time-dependent transformation at epoch 2026.0 (constant over a circuit, so a
-   translation).
+3. **Datum.** The *reference's* frame is stepped to the atlas frame
+   (`lib/datum.py`):
+   - 3DEP lidar is delivered in NAD83(2011) and EPT relabels it "WGS 84"
+     through PROJ's identity step (checked against a raw LAZ tile: 0.000 m).
+     That is 0.9-1.6 m off in the conterminous US, so the NGS NAD83(2011) ->
+     ITRF2014 time-dependent transformation at epoch 2026.0 is applied.
+   - Imagery from ArcGIS ImageServers (NAIP, the state orthos) is stored in Web
+     Mercator: the producer converted NAD83(2011) to WGS 84 when building the
+     service, with an unstated transformation. At all ten venues NAIP registers
+     onto the NAD83 lidar with a shift close to *minus* the step above, so a
+     real transformation was applied. This frame is `WGS84-service`: assumed
+     ITRF at epoch 2010.0, plate motion since then applied (~0.3 m), and the
+     epoch (2002-2010) and transformation ambiguity carried in the budget
+     (~0.3 m CE95). It matters only when the imagery is its own reference.
 
 The applied shift (registration + datum) is added to every traced coordinate.
 
