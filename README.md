@@ -259,9 +259,14 @@ members and duplicated way refs in the relation are filtered out.
   "layouts": [
     {"id": "24h", "name": "Circuit des 24 Heures", "length_m": 13626,
      "direction": "clockwise", "active_years": "2018-", "lovely": "24h"}
-  ]
+  ],
+  "surface": {"imagery": "naip"}   // optional: measure track edges (US only), docs/GEOMETRY.md
 }
 ```
+
+Optional per-layout keys: `centerline` (`"relation"` or `"stitched"`: pin the
+centerline candidate when the automatic score picks wrong), `start_finish`
+(`{location, note}`: pin the lap origin), `pit` (`{entry, exit}` fractions).
 
 ## generation-config.json (optional generated layers)
 

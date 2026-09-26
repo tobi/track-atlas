@@ -311,6 +311,12 @@ def generate_track(slug: str) -> dict:
         geometry_summary = {"layout": lid, "candidates": []}
         if candidates:
             candidates.sort(key=lambda x: x[0])
+            # source.json may pin the candidate when the score picks wrong (the
+            # stitched ways can skip a chicane and still match the declared length)
+            forced = layout.get("centerline")
+            if forced and any(name == forced for _, name, _, _ in candidates):
+                candidates.sort(key=lambda x: x[1] != forced)
+                geometry_summary["forced"] = forced
             best_score, best_name, centerline, best_reasons = candidates[0]
             geometry_summary["selected"] = best_name
             geometry_summary["selected_score"] = round(best_score, 3)
