@@ -149,7 +149,7 @@ Keep corner layer labels cohesive:
 - `range_layers[id="corner_ranges"].label` = `Each Corner`
 - `range_layers[id="corner_complexes"].label` = `Corner Complexes`
 
-`corner_complexes` is a corner-group layer, not just "the special multi-corner things". It should be the corners list after merging adjacent named complexes, with one exception: omit solo high-speed corners/kinks (`scale` 5 or 6) because they clutter the layer without adding useful grouping information. A complex like Porsche Curves still has several `members[]` and several `points[{role:"apex"}]`, even when those apexes are fast. Do not create fake complexes for separated corners just because they share a straight or sector (Le Mans first/second Mulsanne chicanes stay separate).
+`corner_complexes` is a corner-group layer, not just "the special multi-corner things". It should be the corners list after merging adjacent named complexes, with one exception: omit solo high-speed corners/kinks (`scale` 5 or 6; on measured layouts, `character` `kink`/`high_speed` from the model lap) because they clutter the layer without adding useful grouping information. A complex like Porsche Curves still has several `members[]` and several `points[{role:"apex"}]`, even when those apexes are fast. Do not create fake complexes for separated corners just because they share a straight or sector (Le Mans first/second Mulsanne chicanes stay separate).
 
 ## Existing tools
 

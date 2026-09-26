@@ -320,8 +320,10 @@ crossing line ends on both edges.
 4. **Entry / exit**: walk out from the peak, within its share of the lobe, while
    curvature stays above max(1/600 m, 35% of the peak). Entry and exit are at
    least 3 m from the apex.
-5. **Apex**: the curvature peak of the **inside edge** within +/- 15 m of the
-   midline peak, placed on that edge.
+5. **Geometric apex** (`geometric_apex`): the curvature peak of the **inside
+   edge** within +/- 15 m of the midline peak, placed on that edge. The
+   corner's `apex` and `marker` are the racing-line apex (next section); the
+   geometric apex is only the fallback (`apex.basis = "curvature"`).
 6. The measured direction is authoritative for `apex.edge`; a disagreeing
    curated direction is recorded in `placement.declared_direction` and warned
    by `verify.py` (fix it in `overrides.json`).
@@ -329,6 +331,48 @@ crossing line ends on both edges.
 Crossing lines are the edge-to-edge segment along the midline normal at the
 station. Pit-lane features are OSM ways named or tagged as pit lane whose ends
 come within 60 m of the lap (a trace, not measured).
+
+## Racing line and phases (`lib/racing.py`)
+
+A model lap on the measured surface, so a corner's apex, braking zone and
+character describe how it is driven, not only how it is drawn. It is a
+model (a GT3/GTD car on a flat track), labelled as such everywhere:
+`dynamics.model`, `apex.basis = "racing_line"`, `surface.racing_line`.
+
+1. **Line**: minimum curvature. Lateral offsets along the midline normals at
+   every 3rd station, bounded so the car (2.05 m wide) keeps its half-width
+   off each edge. Curvature is linearised as
+   `n_i . (p_{i-1} - 2 p_i + p_{i+1}) / (ds_{i-1} ds_i)` and re-linearised 3
+   times; each round is a box-constrained QP solved by warm-started ADMM
+   (rho = 1e-4 x mean diag). Resampled to 2 m, curvature smoothed with sigma 4 m.
+2. **Speed**: quasi-steady-state. Lateral limit `mu (g + downforce)`; forward
+   pass limited by power (330 kW), traction (60% drive share) and the friction
+   ellipse; backward pass by braking plus drag. Car: 1350 kg, mu 1.5,
+   ClA 2.8, CdA 1.0.
+3. **Racing apex**: the closest approach of the line to the inside edge between
+   turn-in and exit (one line step inside both); ties within 0.15 m resolve to
+   the middle of the run. `apex.gap_m` is that distance.
+4. **Phases** per corner:
+   - minimum-speed point on the line;
+   - **braking point**: back from the minimum while the speed keeps rising;
+     under 10 m of braking counts as none;
+   - **full throttle**: first power-limited, non-braking point after the minimum;
+   - **range** (`dynamics.start/end`, the corner and complex ranges): from
+     0.5 s before braking (or turn-in, if earlier) to 0.5 s after full
+     throttle (or the exit, if later). Where neighbouring corners overlap they
+     meet at the fastest point between the apexes. Ranges do not wrap
+     start/finish; they are clamped to 0 / 1.
+5. **Character**: `kink` = taken flat (no braking and v < 98% of the grip
+   limit); `high_speed` = minimum >= 160 km/h; `medium` 100-160 km/h; `slow`
+   below 100 km/h.
+6. **Corner Complexes**: consecutive non-fast corners (not `kink` /
+   `high_speed`) whose phase ranges overlap, or that curation already grouped.
+   Fast corners stay tagged on the corner list but out of the complexes.
+
+Limitations (in `surface.racing_line.limitations`): no elevation, banking,
+kerbs or bumps, one car setup, no tyre or fuel state. Model laps land within
+about +/- 5% of IMSA GTD laps; banked or bumpy tracks (Daytona, Sebring) come
+out fast.
 
 ## Validation (`lib/surface_checks.py`, run by `verify.py`)
 

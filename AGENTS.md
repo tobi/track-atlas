@@ -37,7 +37,7 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   Corner`, merged complete group layer `Corner Complexes`. Put apexes inside
   range items as `points: [{role: "apex", point_ref: "..."}]`, not by
   narrowing the range to the apex. `corner_complexes` is the corner list with
-  adjacent named complexes merged, but solo high-speed corners/kinks (scale 5/6)
+  adjacent named complexes merged, but solo high-speed corners/kinks (scale 5/6; on measured layouts `character` kink/high_speed)
   are omitted to avoid UI clutter. Multi-apex complexes such as Porsche Curves
   stay grouped even if their members are fast. `verify.py`, `suggest_phases.py`,
   and `annotate.py` also consume these candidates for QA.
@@ -115,6 +115,13 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   warns when the curated direction disagrees (`placement.declared_direction`):
   fix `direction` in `overrides.json`, never in `raw/track.json`.
   `placement.marker_offset_m` records how far the input marker was from the apex.
+- Corner apex/phases come from a model GT3 lap on the midline
+  (`lib/racing.py`, docs/GEOMETRY.md "Racing line and phases"): `apex` is the
+  racing-line apex, `geometric_apex` the inside-edge curvature peak,
+  `character` kink/high_speed/medium/slow. Corner Complexes contain only
+  non-fast corners and span 0.5 s before braking to 0.5 s after full throttle.
+- `lib/__init__.py` pins OpenBLAS/OMP to 1 thread (multi-threaded BLAS is
+  ~70x slower on a busy machine); import `lib` before numpy in new scripts.
 - `surface.unnamed_corners` lists tight curvature peaks no atlas corner claimed:
   usually a missing or mis-numbered corner.
 
