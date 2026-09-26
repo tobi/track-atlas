@@ -311,8 +311,12 @@ def place_corners(G: LapGeometry, corners: list[dict]) -> tuple[list[dict | None
 
     Returns (per-corner placement or None, unclaimed strong peaks).
     """
-    cands = candidates(G)
-    have = [k for k, c in enumerate(corners) if c.get("marker") is not None]
+    # the matcher is order-preserving over the lap, so peaks must be in the
+    # centerline's lap order: the midline may start elsewhere (a pinned
+    # start/finish moves the centerline origin, not the measurement)
+    s0 = G.station(0.0)
+    cands = sorted(candidates(G), key=lambda cd: (cd.peak * STEP - s0) % G.total)
+    have =[k for k, c in enumerate(corners) if c.get("marker") is not None]
     m = _match(G, [corners[k] for k in have], cands)
     match: list[int | None] = [None] * len(corners)
     for k, j in zip(have, m):
