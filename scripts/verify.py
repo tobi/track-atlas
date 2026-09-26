@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.config import TRACKS, track_json_path  # noqa: E402
 from lib.osm import haversine, arc_lengths  # noqa: E402
 from lib.models import Track  # noqa: E402
+from lib.surface_checks import check_layout as check_surface  # noqa: E402
 from layer_tools.curvature_apexes import compute_layers as compute_curvature_layers  # noqa: E402
 from pydantic import ValidationError  # noqa: E402
 
@@ -377,6 +378,15 @@ def verify_track(slug: str) -> Report:
                            ", ".join(f"T{n} {d:.0f}m from {label}" for n, d, label in far[:10]))
         except Exception as e:
             r.warn(f"{pre} curvature apex check skipped: {e}")
+
+        # surface geometry (edges, crossing lines, apexes): docs/GEOMETRY.md
+        s_errs, s_warns, s_infos = check_surface(tj_f.parent, lo)
+        for m in s_errs:
+            r.err(f"{pre} surface: {m}")
+        for m in s_warns:
+            r.warn(f"{pre} surface: {m}")
+        for m in s_infos:
+            r.info(f"{pre} surface: {m}")
 
     svg = tdir / "raw" / "render" / f"{slug}.svg"
     png = tdir / "raw" / "render" / f"{slug}.png"
