@@ -15,3 +15,6 @@ venv/
 # local site build artifacts (CI copies these in pages.yml)
 site/tracks.jsonl
 site/geojson/
+
+# NAIP imagery cache (recreatable from raw/imagery/manifest request; several MB)
+tracks/*/raw/imagery/
