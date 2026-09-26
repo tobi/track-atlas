@@ -1430,7 +1430,7 @@
       "surface": {
         "file": "layers/gp.surface.geojson",
         "method": "edges/2",
-        "measured_at": "2026-09-26T20:11:05+00:00",
+        "measured_at": "2026-09-26T20:24:35+00:00",
         "lap_length_m": 2368.4,
         "width_m": {
           "p05": 8.91,
@@ -1449,6 +1449,7 @@
           "epoch": 2026.0,
           "source_frame": "WGS84-service",
           "imagery_frame": "WGS84-service",
+          "imagery_frame_basis": "inferred from registration to 1 lidar survey(s): mean residual WGS84-service 0.53 m, NAD83(2011) 1.26 m",
           "datum_shift_m": {
             "east": -0.273,
             "north": 0.101
@@ -1583,7 +1584,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:12:23.135294+00:00",
+    "generated_at": "2026-09-26T20:26:37.474042+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
