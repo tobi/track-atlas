@@ -733,9 +733,22 @@
           "type": "number"
         },
         "source_frame": {
-          "description": "Frame the imagery and references were delivered in, e.g. NAD83(2011).",
+          "description": "Frame of the position reference, stepped to `frame`: NAD83(2011) for 3DEP lidar, WGS84-service for imagery served in Web Mercator.",
           "title": "Source Frame",
           "type": "string"
+        },
+        "imagery_frame": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Frame the imagery was served in.",
+          "title": "Imagery Frame"
         },
         "datum_shift_m": {
           "additionalProperties": {

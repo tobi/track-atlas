@@ -286,7 +286,8 @@ class Position(Strict):
     """Absolute positioning of a surface measurement (lib/position.py)."""
     frame: str = Field(description="Coordinate frame of every published coordinate: WGS 84 (G2139) ~ ITRF2014.")
     epoch: float = Field(description="Coordinate epoch (decimal year); plate motion moves ground a few cm/yr in this frame.")
-    source_frame: str = Field(description="Frame the imagery and references were delivered in, e.g. NAD83(2011).")
+    source_frame: str = Field(description="Frame of the position reference, stepped to `frame`: NAD83(2011) for 3DEP lidar, WGS84-service for imagery served in Web Mercator.")
+    imagery_frame: Optional[str] = Field(None, description="Frame the imagery was served in.")
     datum_shift_m: dict[str, float] = Field(description="east/north metres added for source_frame -> frame.")
     registration_shift_m: dict[str, float] = Field(description="east/north metres added to move the imagery onto the reference.")
     applied_shift_m: dict[str, float] = Field(description="Sum of the two, as applied to the traced geometry.")

@@ -42,7 +42,7 @@ NAIP_SERVICE = "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPIma
 SOURCES: dict[str, dict] = {
     "naip": {
         "name": "USDA NAIP via USGS The National Map", "service": NAIP_SERVICE,
-        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.5, "frame": "NAD83(2011)",
+        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.5, "frame": "WGS84-service",
         "license": "public domain (US federal)",
         "ce95_m": 4.0, "accuracy_basis": "NAIP contract: 95% of well-defined points within 4 m (2016+); not tested per acquisition",
         "catalog": True,
@@ -50,7 +50,7 @@ SOURCES: dict[str, dict] = {
     "ct-2023": {
         "name": "Connecticut 2023 statewide orthoimagery (CT ECO, UConn CLEAR / CT DEEP)",
         "service": "https://cteco.uconn.edu/ctraster/rest/services/images/Ortho_2023/ImageServer",
-        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.0762, "frame": "NAD83(2011)",
+        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.0762, "frame": "WGS84-service",
         "license": "no restrictions; acknowledgement appreciated (CT ECO metadata)",
         "ce95_m": 0.16, "accuracy_basis": "tested: RMSEx 0.072 m, RMSEy 0.060 m on 179 independent checkpoints (CT_ortho_2023_metadata.xml); CE95 = 2.4477 x RMS per axis",
         "acquisition_dates": ["2023-03-27", "2023-04-13"],
@@ -58,7 +58,7 @@ SOURCES: dict[str, dict] = {
     "indiana-2025": {
         "name": "Indiana 2025 statewide orthoimagery (IGIO / IndianaMap)",
         "service": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2025_Imagery/ImageServer",
-        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.0762, "frame": "NAD83(2011)",
+        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.0762, "frame": "WGS84-service",
         "license": "CC0 1.0 (stated in the service)",
         "ce95_m": 0.37, "accuracy_basis": "specification: ASPRS 15 cm horizontal class for the 3-inch product (1.2 ft at 95%); no tested report found",
         "acquisition_dates": ["2025"],
@@ -66,7 +66,7 @@ SOURCES: dict[str, dict] = {
     "txgio-2021-caparea": {
         "name": "TxGIO StratMap 2021 CapArea/Brazos/Kerr 6-inch natural colour + CIR",
         "service": "https://imagery.geographic.texas.gov/server/rest/services/StratMap/StratMap21_NCCIR_CapArea_Brazos_Kerr/ImageServer",
-        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "NAD83(2011)",
+        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "WGS84-service",
         "license": "CC0 1.0 (TxGIO DataHub)",
         "ce95_m": None, "accuracy_basis": "not stated by the producer",
         "acquisition_dates": ["2021-01-03"],
@@ -74,7 +74,7 @@ SOURCES: dict[str, dict] = {
     "fdep-2020": {
         "name": "Florida DOR county orthoimagery 2020 (FDOT yearly aerials, served by FDEP)",
         "service": "https://ca.dep.state.fl.us/image/rest/services/FDOT_Yearly_Aerials/Aerial_Imagery_2020/ImageServer",
-        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "NAD83(2011)",
+        "rgb": "0,1,2", "nir": "3", "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "WGS84-service",
         "license": "Florida public record; no licence restrictions stated",
         "ce95_m": 0.75, "accuracy_basis": "specification: Florida county orthoimagery standard, RMSEx/RMSEy <= 1.0 ft for 0.5 ft imagery; no tested report found",
         "acquisition_dates": ["2019/2020 season"],
@@ -82,7 +82,7 @@ SOURCES: dict[str, dict] = {
     "fdep-2021": {
         "name": "Florida DOR county orthoimagery 2021 (FDOT yearly aerials, served by FDEP)",
         "service": "https://ca.dep.state.fl.us/image/rest/services/FDOT_Yearly_Aerials/Aerial_Imagery_2021/ImageServer",
-        "rgb": "0,1,2", "nir": None, "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "NAD83(2011)",
+        "rgb": "0,1,2", "nir": None, "gsd_m": 0.25, "native_gsd_m": 0.1524, "frame": "WGS84-service",
         "license": "Florida public record; no licence restrictions stated",
         "ce95_m": 0.75, "accuracy_basis": "specification: Florida county orthoimagery standard (Oct 2021), RMSEx/RMSEy <= 1.0 ft for 0.5 ft imagery; no tested report found",
         "acquisition_dates": ["2021"],

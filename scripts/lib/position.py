@@ -10,8 +10,9 @@ decides where that frame really is and what the result's absolute accuracy is:
    (lib/register.py). If a lidar project is the reference, its shift is
    applied; otherwise the shifts are only checks. With two lidar references
    their difference is an independent check of the references themselves.
-3. Datum. The source frame (NAD83(2011) for US sources) is moved to the atlas
-   frame (lib/datum.py).
+3. Datum. The reference's frame is moved to the atlas frame (lib/datum.py):
+   NAD83(2011) for 3DEP lidar, "WGS84-service" for imagery served in Web
+   Mercator.
 
 Error budget (95 %, horizontal): hypot(reference CE95, registration CE95,
 datum step CE95). The window shifts scatter around the applied (mean) shift
@@ -116,17 +117,19 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
             nr_e = math.sqrt(max(reg.sd_e ** 2 - noise[0] ** 2, 0.0))
             nr_n = math.sqrt(max(reg.sd_n ** 2 - noise[1] ** 2, 0.0))
         reg_ce95 = math.hypot(_ce95(nr_e, nr_n), 2.4477 * reg.se / math.sqrt(2))
+        frame = lidar.FRAME
     elif img_ce95 is not None:
         shift = (0.0, 0.0)
         reference = {"kind": "imagery", "name": source_id, "ce95_m": img_ce95,
                      "basis": src["accuracy_basis"], "stated": True}
         reg_ce95 = 0.0
+        frame = src["frame"]
     else:
         raise RuntimeError(f"{source_id}: no stated accuracy and no lidar reference registered")
 
-    frame = src["frame"]
     d_e, d_n = datum.shift_m(lon_c, lat_c, frame)
-    d_ce95 = datum.step_ce95_m(lon_c, frame)
+    d_ce95 = datum.step_ce95_m(lon_c, frame, lat_c)
+    l_e, l_n = datum.shift_m(lon_c, lat_c, lidar.FRAME)
     total = math.sqrt(reference["ce95_m"] ** 2 + reg_ce95 ** 2 + d_ce95 ** 2)
 
     checks = []
@@ -138,8 +141,10 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
             c["result"] = "no reliable registration"
         else:
             c.update(g.summary())
-            # where the image would be moved by this reference, relative to the applied shift
-            c["residual_vs_applied_m"] = round(math.hypot(g.de - shift[0], g.dn - shift[1]), 3)
+            # where this reference would put the geometry (its registration plus
+            # its own datum step), relative to where it was put
+            c["residual_vs_applied_m"] = round(math.hypot(g.de + l_e - shift[0] - d_e,
+                                                          g.dn + l_n - shift[1] - d_n), 3)
         checks.append(c)
     if len(usable) >= 2:
         a, b = usable[0]["registration"], usable[1]["registration"]
@@ -152,6 +157,7 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
         "summary": {
             "frame": datum.ATLAS_FRAME, "epoch": datum.ATLAS_EPOCH,
             "source_frame": frame,
+            "imagery_frame": src["frame"],
             "datum_shift_m": {"east": round(d_e, 3), "north": round(d_n, 3)},
             "registration_shift_m": {"east": round(shift[0], 3), "north": round(shift[1], 3)},
             "applied_shift_m": {"east": round(shift[0] + d_e, 3), "north": round(shift[1] + d_n, 3)},

@@ -42,6 +42,7 @@ from .sources import UA
 EPT_BUCKET = "https://s3-us-west-2.amazonaws.com/usgs-lidar-public"
 RESOURCES_INDEX = "https://raw.githubusercontent.com/hobuinc/usgs-lidar/master/boundaries/resources.geojson"
 GROUND_CLASSES = (2, 11)      # ASPRS ground, road surface
+FRAME = "NAD83(2011)"         # 3DEP delivery frame; EPT reprojects to 3857 with the identity step
 
 # Horizontal accuracy stated by each 3DEP project we use (metadata / project
 # report), as CE95 metres. None: the project states none; ASSUMED_CE95_M is
