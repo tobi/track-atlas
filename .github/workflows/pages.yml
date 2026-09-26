@@ -8,6 +8,7 @@ on:
       - 'tracks/**/*.json'
       - 'tracks/**/*.geojson'
       - 'schema/*.json'
+      - 'scripts/build_site.py'
       - 'README.md'
 permissions:
   pages: write
@@ -23,15 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
       - name: Build site
-        run: |
-          cp tracks.jsonl site/
-          mkdir -p site/geojson
-          find tracks -path '*/raw/layers/*.geojson' | while read f; do
-            slug=$(echo "$f" | cut -d/ -f2)
-            layout=$(basename "$f" .geojson)
-            cp "$f" "site/geojson/${slug}_${layout}.geojson"
-          done
+        run: uv run --no-project python scripts/build_site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
