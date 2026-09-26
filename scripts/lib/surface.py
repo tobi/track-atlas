@@ -10,9 +10,14 @@ Offline step. Consumes the committed measurement `raw/surface-<layout>.json`
   * layout points (start/finish, pit entry/exit): `line`
   * every range item: `start_line`, `end_line`; complexes also `entry`/`exit`
 
-All lap fractions (`marker`) stay on the layout centerline's basis: the same
-basis as every legacy marker, so old and new fields are directly comparable.
-The algorithm is documented in docs/GEOMETRY.md.
+The measured midline becomes the layout's geometry and lap-fraction basis: it
+is written as the layout's outline (rotated to start at start/finish), and
+every marker in the layout is re-expressed on it. Input markers (Lovely,
+overrides, OSM, layer tools) are on the seed centerline's basis and are mapped
+by projection: the point at the old fraction on the seed, projected onto the
+midline. A corner with a geometric placement takes its apex as its marker and
+its entry/exit as its range. Re-applying is idempotent: the midline projects
+onto itself. The algorithm is documented in docs/GEOMETRY.md.
 """
 from __future__ import annotations
 
@@ -45,6 +50,8 @@ APEX_REFINE_M = 15.0       # m, inside-edge peak search around the midline peak
 MIN_ARM_M = 3.0            # m, apex at least this far from entry/exit
 MAX_HALF_WIDTH_M = 40.0    # m, an edge hit further than this from the midline is another piece of edge
 INTERPOLATED_PENALTY_M = 1.5  # m added to precision where an edge was not seen
+OUTLINE_SIMPLIFY_M = 0.02  # m, Douglas-Peucker tolerance of the published midline outline
+OUTLINE_MAX_SEG_M = 20.0   # m, longest segment of the published outline
 PIT_NAME = r"(?i)\bpit\s*-?\s*(lane|road)?\b|pitlane"
 
 
@@ -118,6 +125,7 @@ class LapGeometry:
         st = np.maximum.accumulate(st)
         self.c_frac = np.arange(len(Cs)) / len(Cs)
         self.c_station = st
+        self.origin = 0.0      # station of output fraction 0 (set by rebase)
         # seen flags per station from the measurement's unseen spans
         self.seen = {side: self._seen(measurement["quality"]["unseen_spans"][side])
                      for side in ("left", "right")}
@@ -170,6 +178,35 @@ class LapGeometry:
             s += self.total
         return float(np.interp(s, st, fr) % 1.0)
 
+    # output basis: the midline itself, fraction 0 at `origin`
+    def rebase(self, origin_station: float) -> None:
+        self.origin = float(origin_station) % self.total
+
+    def out_fraction(self, station: float) -> float:
+        return ((float(station) - self.origin) % self.total) / self.total
+
+    def remap(self, frac: float) -> float:
+        """Seed-basis fraction -> output (midline) fraction (0 and 1 stay put)."""
+        if float(frac) >= 1.0:
+            return 1.0
+        return round(self.out_fraction(self.station(frac)), 5)
+
+    def point(self, station: float) -> list[float]:
+        return geo.lonlat_list(self.F.to_lonlat(self.mid[self.idx(station)][None, :]))[0]
+
+    def outline_lonlat(self) -> list[list[float]]:
+        """The midline starting exactly at the origin, closed and simplified."""
+        i = int(self.origin // STEP) % self.N
+        t = (self.origin - i * STEP) / STEP
+        p0 = self.mid[i] * (1 - t) + self.mid[(i + 1) % self.N] * t
+        rest = np.roll(self.mid, -(i + 1), axis=0)
+        ring = geo.simplify_closed(np.vstack([p0[None, :], rest]), OUTLINE_SIMPLIFY_M)
+        out = [ring[0]]
+        for a, b in zip(ring[:-1], ring[1:]):   # no segment longer than OUTLINE_MAX_SEG_M
+            n = int(np.ceil(np.hypot(*(b - a)) / OUTLINE_MAX_SEG_M))
+            out.extend(a + (b - a) * (k / n) for k in range(1, n + 1))
+        return geo.lonlat_list(self.F.to_lonlat(np.asarray(out)))
+
     def idx(self, station: float) -> int:
         return int(round(station / STEP)) % self.N
 
@@ -179,7 +216,7 @@ class LapGeometry:
         measured = bool(self.seen["left"][i] and self.seen["right"][i])
         ll = self.F.to_lonlat(np.stack([a, b]))
         return {
-            "marker": round(self.fraction(station) if frac is None else float(frac), 5),
+            "marker": round(self.out_fraction(station) if frac is None else float(frac), 5),
             "line": geo.lonlat_list(ll),
             "width_m": round(float(np.hypot(*(a - b))), 2),
             "quality": _quality(sources, self.m["quality"], measured),
@@ -350,7 +387,7 @@ def place_corners(G: LapGeometry, corners: list[dict]) -> tuple[list[dict | None
             **({"declared_direction": decl} if decl in ("left", "right") and decl != meas else {}),
         })
     used = {j for j in match if j is not None}
-    unclaimed = [{"marker": round(G.fraction(cd.peak * STEP), 4), "direction": "left" if cd.sign > 0 else "right",
+    unclaimed = [{"marker": round(G.out_fraction(cd.peak * STEP), 4), "direction": "left" if cd.sign > 0 else "right",
                   "radius_m": round(1 / cd.kappa, 1)}
                  for j, cd in enumerate(cands) if j not in used and 1 / cd.kappa <= NOTABLE_RADIUS_M]
     return out, unclaimed
@@ -421,28 +458,45 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
     if osm:
         feats.extend(pit_lane_features(osm, G))
 
+    rebased = layout.get("geometry", {}).get("basis") == "midline"
+    # fraction 0 = start/finish: the seed's origin, projected onto the midline
+    G.rebase(G.station(0.0))
+
     # layout points: lines across the track
     lp = _layer(layout, "layout_points", "point_layers")
     for it in (lp or {}).get("items", []):
         if it.get("marker") is None:
             continue
-        it["line"] = G.crossing(G.station(it["marker"]), sources, frac=it["marker"])
+        st = G.station(it["marker"])
+        it["marker"] = round(G.out_fraction(st), 5)
+        it["location"] = G.point(st)
+        it["line"] = G.crossing(st, sources)
         feats.append(_line_feature(it["id"], it["id"], it["line"]))
 
     # corners
     cl_layer = _layer(layout, "corners", "point_layers")
     corners = sorted((cl_layer or {}).get("items", []), key=lambda c: c.get("number", 0))
+    old_offsets = {c["id"]: (c.get("placement") or {}).get("marker_offset_m") for c in corners}
     placed, unclaimed = place_corners(G, corners)
     for c, p in zip(corners, placed):
         for k in ("entry", "apex", "exit", "placement"):
             c.pop(k, None)
         if p is None:
+            if c.get("marker") is not None:
+                st = G.station(c["marker"])
+                c["marker"] = round(G.out_fraction(st), 5)
+                c["location"] = G.point(st)
+                c["location_source"] = "midline"
+            for k in ("start", "end"):
+                if c.get(k) is not None:
+                    c[k] = G.remap(c[k])
             c["placement"] = {"basis": "none",
-                              "note": "no curvature peak near the marker; kept at the legacy marker only"}
+                              "note": "no curvature peak near the marker; marker projected from the source data"}
             continue
+        offset = old_offsets.get(c["id"]) if rebased and old_offsets.get(c["id"]) is not None else p["marker_offset_m"]
         c["placement"] = {"basis": p["basis"], "shape": "kink" if p["radius_m"] > KINK_RADIUS_M else "corner",
                           "direction": p["direction"], "radius_m": p["radius_m"],
-                          "marker_offset_m": p["marker_offset_m"],
+                          "marker_offset_m": offset,
                           **({"declared_direction": p["declared_direction"]} if "declared_direction" in p else {})}
         c["entry"] = G.crossing(p["entry"], sources)
         c["exit"] = G.crossing(p["exit"], sources)
@@ -450,11 +504,19 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
         inside = p["direction"]
         pt = (G.left if inside == "left" else G.right)[i]
         c["apex"] = {
-            "marker": round(G.fraction(p["apex"]), 5),
+            "marker": round(G.out_fraction(p["apex"]), 5),
             "location": geo.lonlat_list(G.F.to_lonlat(pt[None, :]))[0],
             "edge": inside,
             "quality": _quality(sources, q, bool(G.seen[inside][i])),
         }
+        # the corner itself is where the geometry says it is
+        c["marker"] = c["apex"]["marker"]
+        c["location"] = G.point(p["apex"])
+        c["location_source"] = "midline"
+        if c.get("start") is not None:
+            c["start"] = c["entry"]["marker"]
+        if c.get("end") is not None:
+            c["end"] = c["exit"]["marker"]
         feats.append(_line_feature(f"{c['id']}-entry", "corner_entry", c["entry"], corner=c["id"]))
         feats.append(_line_feature(f"{c['id']}-exit", "corner_exit", c["exit"], corner=c["id"]))
         feats.append({"type": "Feature", "properties": {
@@ -463,27 +525,54 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
             "geometry": {"type": "Point", "coordinates": c["apex"]["location"]}})
 
     by_id = {c["id"]: c for c in corners}
-    # ranges: lines at start/end; complexes: geometric entry/exit of members
+    # every other point layer: markers (and locations) onto the midline
+    for L in layout.get("point_layers", []):
+        if L is cl_layer or L is lp:
+            continue
+        for it in L.get("items", []):
+            if it.get("marker") is None:
+                continue
+            st = G.station(it["marker"])
+            it["marker"] = round(G.out_fraction(st), 5)
+            if "location" in it:
+                it["location"] = G.point(st)
+
+    # ranges: re-expressed; a corner's range is its geometric entry..exit, a
+    # complex's the entry of its first placed member .. exit of its last
     for L in layout.get("range_layers", []):
         for it in L.get("items", []):
-            it["start_line"] = G.crossing(G.station(it["start"]), sources, frac=it["start"])
-            it["end_line"] = G.crossing(G.station(it["end"]), sources, frac=it["end"])
             it.pop("entry", None)
             it.pop("exit", None)
-            if L.get("kind") == "corner_complexes" and it.get("members"):
-                # the first / last member with a geometric placement: a member
-                # without one (no curvature peak) cannot bound the complex
-                placed_m = [by_id[m] for m in it["members"] if m in by_id and "entry" in by_id[m]]
-                first = placed_m[0] if placed_m else None
-                last = placed_m[-1] if placed_m else None
-                if first and last:
-                    it["entry"] = first["entry"]
-                    it["exit"] = last["exit"]
+            start_line = end_line = None
+            anchor = by_id.get(it.get("anchor"))
+            if L.get("kind") == "corner_ranges" and anchor and "entry" in anchor:
+                start_line, end_line = anchor["entry"], anchor["exit"]
+            elif L.get("kind") == "corner_complexes" and it.get("members"):
+                # bounded by the first member's entry and the last member's exit;
+                # a bound member without a placement keeps the projected bound
+                first, last = by_id.get(it["members"][0]), by_id.get(it["members"][-1])
+                if first and "entry" in first:
+                    it["entry"] = start_line = first["entry"]
                     if len(it["members"]) > 1:
                         feats.append(_line_feature(f"{it['id']}-entry", "complex_entry", it["entry"], complex=it["id"]))
+                if last and "exit" in last:
+                    it["exit"] = end_line = last["exit"]
+                    if len(it["members"]) > 1:
                         feats.append(_line_feature(f"{it['id']}-exit", "complex_exit", it["exit"], complex=it["id"]))
+            it["start_line"] = start_line or G.crossing(G.station(it["start"]), sources, frac=G.remap(it["start"]))
+            it["end_line"] = end_line or G.crossing(G.station(it["end"]), sources, frac=G.remap(it["end"]))
+            it["start"], it["end"] = it["start_line"]["marker"], it["end_line"]["marker"]
+            for pt in it.get("points", []):
+                ref = by_id.get(pt.get("point_ref"))
+                if ref is not None and ref.get("marker") is not None:
+                    pt["marker"] = ref["marker"]
+                elif pt.get("marker") is not None:
+                    pt["marker"] = G.remap(pt["marker"])
             if L.get("kind") in ("timing_sectors",):
                 feats.append(_line_feature(f"{it['id']}-start", "sector_boundary", it["start_line"], range=it["id"]))
+
+    _write_outline(raw / layout["geometry"]["centerline"], cl_gj, G, layout)
+    layout["geometry"]["basis"] = "midline"
 
     rel = f"layers/{layout['id']}.surface.geojson"
     (raw / rel).write_text(json.dumps({"type": "FeatureCollection", "features": feats},
@@ -503,6 +592,22 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
         "sources": sources,
     }
     return layout
+
+
+def _write_outline(path: Path, gj: dict, G: LapGeometry, layout: dict) -> None:
+    """The layout GeoJSON on the new basis: outline = midline, points at their markers."""
+    items = {it["id"]: it for L in layout.get("point_layers", []) for it in L.get("items", [])}
+    for ft in gj["features"]:
+        pr = ft["properties"]
+        if pr.get("role") == "outline":
+            ft["geometry"]["coordinates"] = G.outline_lonlat()
+            pr["basis"] = "midline"
+            continue
+        it = items.get(pr.get("id")) or items.get(pr.get("role"))
+        if it is not None and it.get("location") is not None:
+            ft["geometry"]["coordinates"] = it["location"]
+            pr["marker"] = it.get("marker")
+    path.write_text(json.dumps(gj, ensure_ascii=False, indent=2))
 
 
 def _line_feature(fid: str, role: str, crossing: dict, **props) -> dict:

@@ -32,6 +32,7 @@
       "geometry": {
         "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326",
+        "basis": "midline",
         "surface": "layers/gp.surface.geojson"
       },
       "point_layers": [
@@ -45,8 +46,8 @@
               "label": "Start / Finish",
               "marker": 0.0,
               "location": [
-                -86.238847,
-                39.793157
+                -86.2388644,
+                39.7931558
               ],
               "line": {
                 "marker": 0.0,
@@ -73,13 +74,13 @@
             {
               "id": "pit_entry",
               "label": "Pit Entry",
-              "marker": 0.833,
+              "marker": 0.83262,
               "location": [
-                -86.235565,
-                39.789587
+                -86.2355679,
+                39.7895862
               ],
               "line": {
-                "marker": 0.833,
+                "marker": 0.83262,
                 "line": [
                   [
                     -86.2355897,
@@ -103,13 +104,13 @@
             {
               "id": "pit_exit",
               "label": "Pit Exit",
-              "marker": 0.107,
+              "marker": 0.10721,
               "location": [
-                -86.238898,
-                39.79692
+                -86.2389016,
+                39.7969263
               ],
               "line": {
-                "marker": 0.107,
+                "marker": 0.10721,
                 "line": [
                   [
                     -86.2390085,
@@ -145,12 +146,12 @@
               "labels": {
                 "numbered": "Turn 1"
               },
-              "marker": 0.1665,
+              "marker": 0.16969,
               "location": [
-                -86.238912,
-                39.799011
+                -86.2389315,
+                39.799083
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -159,7 +160,7 @@
                 "marker_offset_m": 9.3
               },
               "entry": {
-                "marker": 0.16513,
+                "marker": 0.16637,
                 "line": [
                   [
                     -86.2390499,
@@ -180,7 +181,7 @@
                 }
               },
               "exit": {
-                "marker": 0.17113,
+                "marker": 0.17379,
                 "line": [
                   [
                     -86.238767,
@@ -201,7 +202,7 @@
                 }
               },
               "apex": {
-                "marker": 0.16785,
+                "marker": 0.16969,
                 "location": [
                   -86.2388588,
                   39.7990447
@@ -224,12 +225,12 @@
               "labels": {
                 "numbered": "Turn 2"
               },
-              "marker": 0.1965,
+              "marker": 0.19963,
               "location": [
-                -86.237714,
-                39.799342
+                -86.2377153,
+                39.7993798
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -238,7 +239,7 @@
                 "marker_offset_m": 3.2
               },
               "entry": {
-                "marker": 0.18186,
+                "marker": 0.18454,
                 "line": [
                   [
                     -86.238275,
@@ -259,7 +260,7 @@
                 }
               },
               "exit": {
-                "marker": 0.20394,
+                "marker": 0.20603,
                 "line": [
                   [
                     -86.2377555,
@@ -280,7 +281,7 @@
                 }
               },
               "apex": {
-                "marker": 0.19736,
+                "marker": 0.19963,
                 "location": [
                   -86.2377911,
                   39.7994055
@@ -303,12 +304,12 @@
               "labels": {
                 "numbered": "Turn 3"
               },
-              "marker": 0.232,
+              "marker": 0.23341,
               "location": [
-                -86.237501,
-                39.800555
+                -86.237526,
+                39.8005388
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -317,7 +318,7 @@
                 "marker_offset_m": -10.2
               },
               "entry": {
-                "marker": 0.2124,
+                "marker": 0.21448,
                 "line": [
                   [
                     -86.237786,
@@ -338,7 +339,7 @@
                 }
               },
               "exit": {
-                "marker": 0.25057,
+                "marker": 0.25286,
                 "line": [
                   [
                     -86.2369168,
@@ -359,7 +360,7 @@
                 }
               },
               "apex": {
-                "marker": 0.23119,
+                "marker": 0.23341,
                 "location": [
                   -86.2374529,
                   39.8005039
@@ -382,12 +383,12 @@
               "labels": {
                 "numbered": "Turn 4"
               },
-              "marker": 0.2775,
+              "marker": 0.27001,
               "location": [
-                -86.235757,
-                39.801118
+                -86.2361639,
+                39.8012319
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -396,7 +397,7 @@
                 "marker_offset_m": -33.2
               },
               "entry": {
-                "marker": 0.26412,
+                "marker": 0.26643,
                 "line": [
                   [
                     -86.236353,
@@ -417,7 +418,7 @@
                 }
               },
               "exit": {
-                "marker": 0.29202,
+                "marker": 0.29406,
                 "line": [
                   [
                     -86.23539,
@@ -438,7 +439,7 @@
                 }
               },
               "apex": {
-                "marker": 0.26769,
+                "marker": 0.27001,
                 "location": [
                   -86.2361539,
                   39.801168
@@ -461,12 +462,12 @@
               "labels": {
                 "numbered": "Turn 5"
               },
-              "marker": 0.3175,
+              "marker": 0.3281,
               "location": [
-                -86.235443,
-                39.799783
+                -86.235357,
+                39.7994972
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -475,7 +476,7 @@
                 "marker_offset_m": 29.5
               },
               "entry": {
-                "marker": 0.31891,
+                "marker": 0.32093,
                 "line": [
                   [
                     -86.2353741,
@@ -496,7 +497,7 @@
                 }
               },
               "exit": {
-                "marker": 0.32888,
+                "marker": 0.33117,
                 "line": [
                   [
                     -86.235204,
@@ -517,7 +518,7 @@
                 }
               },
               "apex": {
-                "marker": 0.32584,
+                "marker": 0.3281,
                 "location": [
                   -86.2352906,
                   39.799539
@@ -540,12 +541,12 @@
               "labels": {
                 "numbered": "Turn 6"
               },
-              "marker": 0.339,
+              "marker": 0.33501,
               "location": [
-                -86.235015,
-                39.799161
+                -86.2351042,
+                39.7993543
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -554,7 +555,7 @@
                 "marker_offset_m": -19.2
               },
               "entry": {
-                "marker": 0.33093,
+                "marker": 0.33322,
                 "line": [
                   [
                     -86.2351212,
@@ -575,7 +576,7 @@
                 }
               },
               "exit": {
-                "marker": 0.3409,
+                "marker": 0.3432,
                 "line": [
                   [
                     -86.2348434,
@@ -596,7 +597,7 @@
                 }
               },
               "apex": {
-                "marker": 0.33278,
+                "marker": 0.33501,
                 "location": [
                   -86.2351735,
                   39.7992977
@@ -619,12 +620,12 @@
               "labels": {
                 "numbered": "Turn 7"
               },
-              "marker": 0.5295,
+              "marker": 0.53641,
               "location": [
-                -86.234919,
-                39.792461
+                -86.2348687,
+                39.7922991
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -633,7 +634,7 @@
                 "marker_offset_m": 17.2
               },
               "entry": {
-                "marker": 0.53036,
+                "marker": 0.53282,
                 "line": [
                   [
                     -86.2347843,
@@ -654,7 +655,7 @@
                 }
               },
               "exit": {
-                "marker": 0.53963,
+                "marker": 0.54127,
                 "line": [
                   [
                     -86.2346551,
@@ -675,7 +676,7 @@
                 }
               },
               "apex": {
-                "marker": 0.53423,
+                "marker": 0.53641,
                 "location": [
                   -86.2347831,
                   39.7923496
@@ -698,12 +699,12 @@
               "labels": {
                 "numbered": "Turn 8"
               },
-              "marker": 0.5645,
+              "marker": 0.57838,
               "location": [
-                -86.233547,
-                39.792248
+                -86.2330574,
+                39.7920661
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -712,7 +713,7 @@
                 "marker_offset_m": 33.9
               },
               "entry": {
-                "marker": 0.56245,
+                "marker": 0.56404,
                 "line": [
                   [
                     -86.2336362,
@@ -733,7 +734,7 @@
                 }
               },
               "exit": {
-                "marker": 0.58169,
+                "marker": 0.58324,
                 "line": [
                   [
                     -86.2328738,
@@ -754,7 +755,7 @@
                 }
               },
               "apex": {
-                "marker": 0.57676,
+                "marker": 0.57838,
                 "location": [
                   -86.2331237,
                   39.7920267
@@ -777,12 +778,12 @@
               "labels": {
                 "numbered": "Turn 9"
               },
-              "marker": 0.592,
+              "marker": 0.59219,
               "location": [
-                -86.232719,
-                39.791618
+                -86.2327615,
+                39.7916437
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -791,7 +792,7 @@
                 "marker_offset_m": -8.2
               },
               "entry": {
-                "marker": 0.58399,
+                "marker": 0.58554,
                 "line": [
                   [
                     -86.2328438,
@@ -812,7 +813,7 @@
                 }
               },
               "exit": {
-                "marker": 0.60108,
+                "marker": 0.60269,
                 "line": [
                   [
                     -86.2323236,
@@ -833,7 +834,7 @@
                 }
               },
               "apex": {
-                "marker": 0.59065,
+                "marker": 0.59219,
                 "location": [
                   -86.2327054,
                   39.7916925
@@ -856,12 +857,12 @@
               "labels": {
                 "numbered": "Turn 10"
               },
-              "marker": 0.63,
+              "marker": 0.62444,
               "location": [
-                -86.231113,
-                39.791393
+                -86.2313301,
+                39.7915732
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -870,7 +871,7 @@
                 "marker_offset_m": -23.3
               },
               "entry": {
-                "marker": 0.61924,
+                "marker": 0.62086,
                 "line": [
                   [
                     -86.231496,
@@ -891,7 +892,7 @@
                 }
               },
               "exit": {
-                "marker": 0.6294,
+                "marker": 0.63109,
                 "line": [
                   [
                     -86.2310555,
@@ -912,7 +913,7 @@
                 }
               },
               "apex": {
-                "marker": 0.62277,
+                "marker": 0.62444,
                 "location": [
                   -86.2313571,
                   39.7915098
@@ -935,12 +936,12 @@
               "labels": {
                 "numbered": "Turn 11"
               },
-              "marker": 0.704,
+              "marker": 0.69353,
               "location": [
-                -86.231569,
-                39.788887
+                -86.2312918,
+                39.7892469
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -949,7 +950,7 @@
                 "marker_offset_m": -41.1
               },
               "entry": {
-                "marker": 0.68892,
+                "marker": 0.69046,
                 "line": [
                   [
                     -86.2311669,
@@ -970,7 +971,7 @@
                 }
               },
               "exit": {
-                "marker": 0.7009,
+                "marker": 0.70249,
                 "line": [
                   [
                     -86.2314214,
@@ -991,7 +992,7 @@
                 }
               },
               "apex": {
-                "marker": 0.69199,
+                "marker": 0.69353,
                 "location": [
                   -86.2313929,
                   39.7892703
@@ -1014,12 +1015,12 @@
               "labels": {
                 "numbered": "Turn 12"
               },
-              "marker": 0.7875,
+              "marker": 0.79564,
               "location": [
-                -86.235121,
-                39.788172
+                -86.2353374,
+                39.7883599
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -1028,7 +1029,7 @@
                 "marker_offset_m": 20.6
               },
               "entry": {
-                "marker": 0.7874,
+                "marker": 0.78847,
                 "line": [
                   [
                     -86.2351355,
@@ -1049,7 +1050,7 @@
                 }
               },
               "exit": {
-                "marker": 0.79841,
+                "marker": 0.7982,
                 "line": [
                   [
                     -86.2354278,
@@ -1070,7 +1071,7 @@
                 }
               },
               "apex": {
-                "marker": 0.79588,
+                "marker": 0.79564,
                 "location": [
                   -86.2352538,
                   39.7883793
@@ -1093,12 +1094,12 @@
               "labels": {
                 "numbered": "Turn 13"
               },
-              "marker": 0.8265,
+              "marker": 0.83275,
               "location": [
-                -86.235361,
-                39.789429
+                -86.2355679,
+                39.7895862
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -1107,7 +1108,7 @@
                 "marker_offset_m": 24.7
               },
               "entry": {
-                "marker": 0.82173,
+                "marker": 0.82149,
                 "line": [
                   [
                     -86.2353896,
@@ -1128,7 +1129,7 @@
                 }
               },
               "exit": {
-                "marker": 0.83753,
+                "marker": 0.8371,
                 "line": [
                   [
                     -86.2357301,
@@ -1149,7 +1150,7 @@
                 }
               },
               "apex": {
-                "marker": 0.83313,
+                "marker": 0.83275,
                 "location": [
                   -86.2355897,
                   39.7895234
@@ -1172,12 +1173,12 @@
               "labels": {
                 "numbered": "Turn 14"
               },
-              "marker": 0.892,
+              "marker": 0.90261,
               "location": [
-                -86.238077,
-                39.789495
+                -86.2384051,
+                39.7897808
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "placement": {
                 "basis": "curvature",
                 "shape": "corner",
@@ -1186,7 +1187,7 @@
                 "marker_offset_m": 46.3
               },
               "entry": {
-                "marker": 0.90079,
+                "marker": 0.90031,
                 "line": [
                   [
                     -86.2384048,
@@ -1207,7 +1208,7 @@
                 }
               },
               "exit": {
-                "marker": 0.90665,
+                "marker": 0.90645,
                 "line": [
                   [
                     -86.2385702,
@@ -1228,7 +1229,7 @@
                 }
               },
               "apex": {
-                "marker": 0.90299,
+                "marker": 0.90261,
                 "location": [
                   -86.2383267,
                   39.789821
@@ -1257,7 +1258,7 @@
               "id": "s1",
               "label": "S1",
               "start": 0.0,
-              "end": 0.261,
+              "end": 0.26331,
               "start_line": {
                 "marker": 0.0,
                 "line": [
@@ -1280,7 +1281,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.261,
+                "marker": 0.26331,
                 "line": [
                   [
                     -86.2364815,
@@ -1304,10 +1305,10 @@
             {
               "id": "s2",
               "label": "S2",
-              "start": 0.261,
-              "end": 0.662,
+              "start": 0.26331,
+              "end": 0.66355,
               "start_line": {
-                "marker": 0.261,
+                "marker": 0.26331,
                 "line": [
                   [
                     -86.2364815,
@@ -1328,7 +1329,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.662,
+                "marker": 0.66355,
                 "line": [
                   [
                     -86.2309824,
@@ -1352,10 +1353,10 @@
             {
               "id": "s3",
               "label": "S3",
-              "start": 0.662,
+              "start": 0.66355,
               "end": 1.0,
               "start_line": {
-                "marker": 0.662,
+                "marker": 0.66355,
                 "line": [
                   [
                     -86.2309824,
@@ -1408,883 +1409,20 @@
             {
               "id": "t1",
               "label": "Turn 1",
-              "start": 0.13593,
-              "end": 0.18014,
+              "start": 0.16637,
+              "end": 0.17379,
               "anchor": "t1",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.1665,
+                  "marker": 0.16969,
                   "point_ref": "t1"
                 }
               ],
               "start_line": {
-                "marker": 0.13593,
-                "line": [
-                  [
-                    -86.23897,
-                    39.7979487
-                  ],
-                  [
-                    -86.2387056,
-                    39.7979149
-                  ]
-                ],
-                "width_m": 22.96,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.18014,
-                "line": [
-                  [
-                    -86.2383517,
-                    39.7992038
-                  ],
-                  [
-                    -86.2383645,
-                    39.7990702
-                  ]
-                ],
-                "width_m": 14.88,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t2",
-              "label": "Turn 2",
-              "start": 0.18014,
-              "end": 0.21264,
-              "anchor": "t2",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.1965,
-                  "point_ref": "t2"
-                }
-              ],
-              "start_line": {
-                "marker": 0.18014,
-                "line": [
-                  [
-                    -86.2383517,
-                    39.7992038
-                  ],
-                  [
-                    -86.2383645,
-                    39.7990702
-                  ]
-                ],
-                "width_m": 14.88,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.21264,
-                "line": [
-                  [
-                    -86.2377872,
-                    39.7999
-                  ],
-                  [
-                    -86.2376231,
-                    39.7999111
-                  ]
-                ],
-                "width_m": 14.11,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t3",
-              "label": "Turn 3",
-              "start": 0.21264,
-              "end": 0.25268,
-              "anchor": "t3",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.232,
-                  "point_ref": "t3"
-                }
-              ],
-              "start_line": {
-                "marker": 0.21264,
-                "line": [
-                  [
-                    -86.2377872,
-                    39.7999
-                  ],
-                  [
-                    -86.2376231,
-                    39.7999111
-                  ]
-                ],
-                "width_m": 14.11,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.25268,
-                "line": [
-                  [
-                    -86.2368304,
-                    39.8010827
-                  ],
-                  [
-                    -86.2367614,
-                    39.800965
-                  ]
-                ],
-                "width_m": 14.35,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t4",
-              "label": "Turn 4",
-              "start": 0.25268,
-              "end": 0.29568,
-              "anchor": "t4",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.2775,
-                  "point_ref": "t4"
-                }
-              ],
-              "start_line": {
-                "marker": 0.25268,
-                "line": [
-                  [
-                    -86.2368304,
-                    39.8010827
-                  ],
-                  [
-                    -86.2367614,
-                    39.800965
-                  ]
-                ],
-                "width_m": 14.35,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.29568,
-                "line": [
-                  [
-                    -86.2353852,
-                    39.8005513
-                  ],
-                  [
-                    -86.2355541,
-                    39.8005508
-                  ]
-                ],
-                "width_m": 14.47,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t5",
-              "label": "Turn 5",
-              "start": 0.29568,
-              "end": 0.32727,
-              "anchor": "t5",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.3175,
-                  "point_ref": "t5"
-                }
-              ],
-              "start_line": {
-                "marker": 0.29568,
-                "line": [
-                  [
-                    -86.2353852,
-                    39.8005513
-                  ],
-                  [
-                    -86.2355541,
-                    39.8005508
-                  ]
-                ],
-                "width_m": 14.47,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.32727,
-                "line": [
-                  [
-                    -86.2352503,
-                    39.7995108
-                  ],
-                  [
-                    -86.2353649,
-                    39.7994072
-                  ]
-                ],
-                "width_m": 15.13,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t6",
-              "label": "Turn 6",
-              "start": 0.32727,
-              "end": 0.36448,
-              "anchor": "t6",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.339,
-                  "point_ref": "t6"
-                }
-              ],
-              "start_line": {
-                "marker": 0.32727,
-                "line": [
-                  [
-                    -86.2352503,
-                    39.7995108
-                  ],
-                  [
-                    -86.2353649,
-                    39.7994072
-                  ]
-                ],
-                "width_m": 15.13,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.36448,
-                "line": [
-                  [
-                    -86.2348312,
-                    39.798266
-                  ],
-                  [
-                    -86.2350941,
-                    39.7982626
-                  ]
-                ],
-                "width_m": 22.51,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t7",
-              "label": "Turn 7",
-              "start": 0.49893,
-              "end": 0.54541,
-              "anchor": "t7",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.5295,
-                  "point_ref": "t7"
-                }
-              ],
-              "start_line": {
-                "marker": 0.49893,
-                "line": [
-                  [
-                    -86.2347624,
-                    39.7935283
-                  ],
-                  [
-                    -86.2350153,
-                    39.7935271
-                  ]
-                ],
-                "width_m": 21.66,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.54541,
-                "line": [
-                  [
-                    -86.2344173,
-                    39.792292
-                  ],
-                  [
-                    -86.2344103,
-                    39.7921611
-                  ]
-                ],
-                "width_m": 14.55,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t8",
-              "label": "Turn 8",
-              "start": 0.54541,
-              "end": 0.577,
-              "anchor": "t8",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.5645,
-                  "point_ref": "t8"
-                }
-              ],
-              "start_line": {
-                "marker": 0.54541,
-                "line": [
-                  [
-                    -86.2344173,
-                    39.792292
-                  ],
-                  [
-                    -86.2344103,
-                    39.7921611
-                  ]
-                ],
-                "width_m": 14.55,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.577,
-                "line": [
-                  [
-                    -86.2329835,
-                    39.7920976
-                  ],
-                  [
-                    -86.2331172,
-                    39.7920201
-                  ]
-                ],
-                "width_m": 14.32,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t9",
-              "label": "Turn 9",
-              "start": 0.577,
-              "end": 0.60927,
-              "anchor": "t9",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.592,
-                  "point_ref": "t9"
-                }
-              ],
-              "start_line": {
-                "marker": 0.577,
-                "line": [
-                  [
-                    -86.2329835,
-                    39.7920976
-                  ],
-                  [
-                    -86.2331172,
-                    39.7920201
-                  ]
-                ],
-                "width_m": 14.32,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.60927,
-                "line": [
-                  [
-                    -86.2319505,
-                    39.7916221
-                  ],
-                  [
-                    -86.2319407,
-                    39.7914942
-                  ]
-                ],
-                "width_m": 14.22,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t10",
-              "label": "Turn 10",
-              "start": 0.60927,
-              "end": 0.65548,
-              "anchor": "t10",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.63,
-                  "point_ref": "t10"
-                }
-              ],
-              "start_line": {
-                "marker": 0.60927,
-                "line": [
-                  [
-                    -86.2319505,
-                    39.7916221
-                  ],
-                  [
-                    -86.2319407,
-                    39.7914942
-                  ]
-                ],
-                "width_m": 14.22,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.65548,
-                "line": [
-                  [
-                    -86.2309381,
-                    39.7905081
-                  ],
-                  [
-                    -86.2311038,
-                    39.7905259
-                  ]
-                ],
-                "width_m": 14.33,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t11",
-              "label": "Turn 11",
-              "start": 0.67343,
-              "end": 0.72948,
-              "anchor": "t11",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.704,
-                  "point_ref": "t11"
-                }
-              ],
-              "start_line": {
-                "marker": 0.67343,
-                "line": [
-                  [
-                    -86.2310593,
-                    39.7898758
-                  ],
-                  [
-                    -86.2312254,
-                    39.7898932
-                  ]
-                ],
-                "width_m": 14.35,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.72948,
-                "line": [
-                  [
-                    -86.2324785,
-                    39.7883181
-                  ],
-                  [
-                    -86.2325377,
-                    39.788443
-                  ]
-                ],
-                "width_m": 14.76,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t12",
-              "label": "Turn 12",
-              "start": 0.75693,
-              "end": 0.80523,
-              "anchor": "t12",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.7875,
-                  "point_ref": "t12"
-                }
-              ],
-              "start_line": {
-                "marker": 0.75693,
-                "line": [
-                  [
-                    -86.2337123,
-                    39.7881601
-                  ],
-                  [
-                    -86.2337377,
-                    39.7882883
-                  ]
-                ],
-                "width_m": 14.4,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.80523,
-                "line": [
-                  [
-                    -86.2354133,
-                    39.7886948
-                  ],
-                  [
-                    -86.2352448,
-                    39.7886894
-                  ]
-                ],
-                "width_m": 14.44,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t13",
-              "label": "Turn 13",
-              "start": 0.80523,
-              "end": 0.85198,
-              "anchor": "t13",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.8265,
-                  "point_ref": "t13"
-                }
-              ],
-              "start_line": {
-                "marker": 0.80523,
-                "line": [
-                  [
-                    -86.2354133,
-                    39.7886948
-                  ],
-                  [
-                    -86.2352448,
-                    39.7886894
-                  ]
-                ],
-                "width_m": 14.44,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.85198,
-                "line": [
-                  [
-                    -86.2363476,
-                    39.7893168
-                  ],
-                  [
-                    -86.2364096,
-                    39.789436
-                  ]
-                ],
-                "width_m": 14.25,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              }
-            },
-            {
-              "id": "t14",
-              "label": "Turn 14",
-              "start": 0.86143,
-              "end": 0.91748,
-              "anchor": "t14",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.892,
-                  "point_ref": "t14"
-                }
-              ],
-              "start_line": {
-                "marker": 0.86143,
-                "line": [
-                  [
-                    -86.2367471,
-                    39.7891968
-                  ],
-                  [
-                    -86.2367932,
-                    39.7893211
-                  ]
-                ],
-                "width_m": 14.35,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.91748,
-                "line": [
-                  [
-                    -86.2387407,
-                    39.7902311
-                  ],
-                  [
-                    -86.2385806,
-                    39.7902765
-                  ]
-                ],
-                "width_m": 14.62,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2025"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "corner_complexes",
-          "kind": "corner_complexes",
-          "label": "Corner Complexes",
-          "items": [
-            {
-              "id": "t1",
-              "label": "Turn 1",
-              "start": 0.13593,
-              "end": 0.18014,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Turn 1",
-                  "marker": 0.1665,
-                  "point_ref": "t1"
-                }
-              ],
-              "start_line": {
-                "marker": 0.13593,
-                "line": [
-                  [
-                    -86.23897,
-                    39.7979487
-                  ],
-                  [
-                    -86.2387056,
-                    39.7979149
-                  ]
-                ],
-                "width_m": 22.96,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.18014,
-                "line": [
-                  [
-                    -86.2383517,
-                    39.7992038
-                  ],
-                  [
-                    -86.2383645,
-                    39.7990702
-                  ]
-                ],
-                "width_m": 14.88,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.16513,
+                "marker": 0.16637,
                 "line": [
                   [
                     -86.2390499,
@@ -2304,8 +1442,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.17113,
+              "end_line": {
+                "marker": 0.17379,
                 "line": [
                   [
                     -86.238767,
@@ -2329,64 +1467,20 @@
             {
               "id": "t2",
               "label": "Turn 2",
-              "start": 0.18014,
-              "end": 0.21264,
-              "members": [
-                "t2"
-              ],
+              "start": 0.18454,
+              "end": 0.20603,
+              "anchor": "t2",
               "points": [
                 {
-                  "id": "t2-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 2",
-                  "marker": 0.1965,
+                  "label": "Apex",
+                  "marker": 0.19963,
                   "point_ref": "t2"
                 }
               ],
               "start_line": {
-                "marker": 0.18014,
-                "line": [
-                  [
-                    -86.2383517,
-                    39.7992038
-                  ],
-                  [
-                    -86.2383645,
-                    39.7990702
-                  ]
-                ],
-                "width_m": 14.88,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.21264,
-                "line": [
-                  [
-                    -86.2377872,
-                    39.7999
-                  ],
-                  [
-                    -86.2376231,
-                    39.7999111
-                  ]
-                ],
-                "width_m": 14.11,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.18186,
+                "marker": 0.18454,
                 "line": [
                   [
                     -86.238275,
@@ -2406,8 +1500,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.20394,
+              "end_line": {
+                "marker": 0.20603,
                 "line": [
                   [
                     -86.2377555,
@@ -2431,64 +1525,20 @@
             {
               "id": "t3",
               "label": "Turn 3",
-              "start": 0.21264,
-              "end": 0.25268,
-              "members": [
-                "t3"
-              ],
+              "start": 0.21448,
+              "end": 0.25286,
+              "anchor": "t3",
               "points": [
                 {
-                  "id": "t3-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 3",
-                  "marker": 0.232,
+                  "label": "Apex",
+                  "marker": 0.23341,
                   "point_ref": "t3"
                 }
               ],
               "start_line": {
-                "marker": 0.21264,
-                "line": [
-                  [
-                    -86.2377872,
-                    39.7999
-                  ],
-                  [
-                    -86.2376231,
-                    39.7999111
-                  ]
-                ],
-                "width_m": 14.11,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.25268,
-                "line": [
-                  [
-                    -86.2368304,
-                    39.8010827
-                  ],
-                  [
-                    -86.2367614,
-                    39.800965
-                  ]
-                ],
-                "width_m": 14.35,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.2124,
+                "marker": 0.21448,
                 "line": [
                   [
                     -86.237786,
@@ -2508,8 +1558,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.25057,
+              "end_line": {
+                "marker": 0.25286,
                 "line": [
                   [
                     -86.2369168,
@@ -2533,64 +1583,20 @@
             {
               "id": "t4",
               "label": "Turn 4",
-              "start": 0.25268,
-              "end": 0.29568,
-              "members": [
-                "t4"
-              ],
+              "start": 0.26643,
+              "end": 0.29406,
+              "anchor": "t4",
               "points": [
                 {
-                  "id": "t4-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 4",
-                  "marker": 0.2775,
+                  "label": "Apex",
+                  "marker": 0.27001,
                   "point_ref": "t4"
                 }
               ],
               "start_line": {
-                "marker": 0.25268,
-                "line": [
-                  [
-                    -86.2368304,
-                    39.8010827
-                  ],
-                  [
-                    -86.2367614,
-                    39.800965
-                  ]
-                ],
-                "width_m": 14.35,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.29568,
-                "line": [
-                  [
-                    -86.2353852,
-                    39.8005513
-                  ],
-                  [
-                    -86.2355541,
-                    39.8005508
-                  ]
-                ],
-                "width_m": 14.47,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.26412,
+                "marker": 0.26643,
                 "line": [
                   [
                     -86.236353,
@@ -2610,8 +1616,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.29202,
+              "end_line": {
+                "marker": 0.29406,
                 "line": [
                   [
                     -86.23539,
@@ -2635,64 +1641,20 @@
             {
               "id": "t5",
               "label": "Turn 5",
-              "start": 0.29568,
-              "end": 0.32727,
-              "members": [
-                "t5"
-              ],
+              "start": 0.32093,
+              "end": 0.33117,
+              "anchor": "t5",
               "points": [
                 {
-                  "id": "t5-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 5",
-                  "marker": 0.3175,
+                  "label": "Apex",
+                  "marker": 0.3281,
                   "point_ref": "t5"
                 }
               ],
               "start_line": {
-                "marker": 0.29568,
-                "line": [
-                  [
-                    -86.2353852,
-                    39.8005513
-                  ],
-                  [
-                    -86.2355541,
-                    39.8005508
-                  ]
-                ],
-                "width_m": 14.47,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.32727,
-                "line": [
-                  [
-                    -86.2352503,
-                    39.7995108
-                  ],
-                  [
-                    -86.2353649,
-                    39.7994072
-                  ]
-                ],
-                "width_m": 15.13,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.31891,
+                "marker": 0.32093,
                 "line": [
                   [
                     -86.2353741,
@@ -2712,8 +1674,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.32888,
+              "end_line": {
+                "marker": 0.33117,
                 "line": [
                   [
                     -86.235204,
@@ -2737,64 +1699,20 @@
             {
               "id": "t6",
               "label": "Turn 6",
-              "start": 0.32727,
-              "end": 0.36448,
-              "members": [
-                "t6"
-              ],
+              "start": 0.33322,
+              "end": 0.3432,
+              "anchor": "t6",
               "points": [
                 {
-                  "id": "t6-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 6",
-                  "marker": 0.339,
+                  "label": "Apex",
+                  "marker": 0.33501,
                   "point_ref": "t6"
                 }
               ],
               "start_line": {
-                "marker": 0.32727,
-                "line": [
-                  [
-                    -86.2352503,
-                    39.7995108
-                  ],
-                  [
-                    -86.2353649,
-                    39.7994072
-                  ]
-                ],
-                "width_m": 15.13,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.36448,
-                "line": [
-                  [
-                    -86.2348312,
-                    39.798266
-                  ],
-                  [
-                    -86.2350941,
-                    39.7982626
-                  ]
-                ],
-                "width_m": 22.51,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.33093,
+                "marker": 0.33322,
                 "line": [
                   [
                     -86.2351212,
@@ -2814,8 +1732,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.3409,
+              "end_line": {
+                "marker": 0.3432,
                 "line": [
                   [
                     -86.2348434,
@@ -2839,64 +1757,20 @@
             {
               "id": "t7",
               "label": "Turn 7",
-              "start": 0.49893,
-              "end": 0.54541,
-              "members": [
-                "t7"
-              ],
+              "start": 0.53282,
+              "end": 0.54127,
+              "anchor": "t7",
               "points": [
                 {
-                  "id": "t7-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 7",
-                  "marker": 0.5295,
+                  "label": "Apex",
+                  "marker": 0.53641,
                   "point_ref": "t7"
                 }
               ],
               "start_line": {
-                "marker": 0.49893,
-                "line": [
-                  [
-                    -86.2347624,
-                    39.7935283
-                  ],
-                  [
-                    -86.2350153,
-                    39.7935271
-                  ]
-                ],
-                "width_m": 21.66,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.54541,
-                "line": [
-                  [
-                    -86.2344173,
-                    39.792292
-                  ],
-                  [
-                    -86.2344103,
-                    39.7921611
-                  ]
-                ],
-                "width_m": 14.55,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.53036,
+                "marker": 0.53282,
                 "line": [
                   [
                     -86.2347843,
@@ -2916,8 +1790,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.53963,
+              "end_line": {
+                "marker": 0.54127,
                 "line": [
                   [
                     -86.2346551,
@@ -2941,64 +1815,20 @@
             {
               "id": "t8",
               "label": "Turn 8",
-              "start": 0.54541,
-              "end": 0.577,
-              "members": [
-                "t8"
-              ],
+              "start": 0.56404,
+              "end": 0.58324,
+              "anchor": "t8",
               "points": [
                 {
-                  "id": "t8-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 8",
-                  "marker": 0.5645,
+                  "label": "Apex",
+                  "marker": 0.57838,
                   "point_ref": "t8"
                 }
               ],
               "start_line": {
-                "marker": 0.54541,
-                "line": [
-                  [
-                    -86.2344173,
-                    39.792292
-                  ],
-                  [
-                    -86.2344103,
-                    39.7921611
-                  ]
-                ],
-                "width_m": 14.55,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.577,
-                "line": [
-                  [
-                    -86.2329835,
-                    39.7920976
-                  ],
-                  [
-                    -86.2331172,
-                    39.7920201
-                  ]
-                ],
-                "width_m": 14.32,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.56245,
+                "marker": 0.56404,
                 "line": [
                   [
                     -86.2336362,
@@ -3018,8 +1848,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.58169,
+              "end_line": {
+                "marker": 0.58324,
                 "line": [
                   [
                     -86.2328738,
@@ -3043,64 +1873,20 @@
             {
               "id": "t9",
               "label": "Turn 9",
-              "start": 0.577,
-              "end": 0.60927,
-              "members": [
-                "t9"
-              ],
+              "start": 0.58554,
+              "end": 0.60269,
+              "anchor": "t9",
               "points": [
                 {
-                  "id": "t9-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 9",
-                  "marker": 0.592,
+                  "label": "Apex",
+                  "marker": 0.59219,
                   "point_ref": "t9"
                 }
               ],
               "start_line": {
-                "marker": 0.577,
-                "line": [
-                  [
-                    -86.2329835,
-                    39.7920976
-                  ],
-                  [
-                    -86.2331172,
-                    39.7920201
-                  ]
-                ],
-                "width_m": 14.32,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.60927,
-                "line": [
-                  [
-                    -86.2319505,
-                    39.7916221
-                  ],
-                  [
-                    -86.2319407,
-                    39.7914942
-                  ]
-                ],
-                "width_m": 14.22,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.58399,
+                "marker": 0.58554,
                 "line": [
                   [
                     -86.2328438,
@@ -3120,8 +1906,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.60108,
+              "end_line": {
+                "marker": 0.60269,
                 "line": [
                   [
                     -86.2323236,
@@ -3145,64 +1931,20 @@
             {
               "id": "t10",
               "label": "Turn 10",
-              "start": 0.60927,
-              "end": 0.65548,
-              "members": [
-                "t10"
-              ],
+              "start": 0.62086,
+              "end": 0.63109,
+              "anchor": "t10",
               "points": [
                 {
-                  "id": "t10-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 10",
-                  "marker": 0.63,
+                  "label": "Apex",
+                  "marker": 0.62444,
                   "point_ref": "t10"
                 }
               ],
               "start_line": {
-                "marker": 0.60927,
-                "line": [
-                  [
-                    -86.2319505,
-                    39.7916221
-                  ],
-                  [
-                    -86.2319407,
-                    39.7914942
-                  ]
-                ],
-                "width_m": 14.22,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.65548,
-                "line": [
-                  [
-                    -86.2309381,
-                    39.7905081
-                  ],
-                  [
-                    -86.2311038,
-                    39.7905259
-                  ]
-                ],
-                "width_m": 14.33,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.61924,
+                "marker": 0.62086,
                 "line": [
                   [
                     -86.231496,
@@ -3222,8 +1964,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.6294,
+              "end_line": {
+                "marker": 0.63109,
                 "line": [
                   [
                     -86.2310555,
@@ -3247,64 +1989,20 @@
             {
               "id": "t11",
               "label": "Turn 11",
-              "start": 0.67343,
-              "end": 0.72948,
-              "members": [
-                "t11"
-              ],
+              "start": 0.69046,
+              "end": 0.70249,
+              "anchor": "t11",
               "points": [
                 {
-                  "id": "t11-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 11",
-                  "marker": 0.704,
+                  "label": "Apex",
+                  "marker": 0.69353,
                   "point_ref": "t11"
                 }
               ],
               "start_line": {
-                "marker": 0.67343,
-                "line": [
-                  [
-                    -86.2310593,
-                    39.7898758
-                  ],
-                  [
-                    -86.2312254,
-                    39.7898932
-                  ]
-                ],
-                "width_m": 14.35,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.72948,
-                "line": [
-                  [
-                    -86.2324785,
-                    39.7883181
-                  ],
-                  [
-                    -86.2325377,
-                    39.788443
-                  ]
-                ],
-                "width_m": 14.76,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.68892,
+                "marker": 0.69046,
                 "line": [
                   [
                     -86.2311669,
@@ -3324,8 +2022,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.7009,
+              "end_line": {
+                "marker": 0.70249,
                 "line": [
                   [
                     -86.2314214,
@@ -3349,64 +2047,20 @@
             {
               "id": "t12",
               "label": "Turn 12",
-              "start": 0.75693,
-              "end": 0.80523,
-              "members": [
-                "t12"
-              ],
+              "start": 0.78847,
+              "end": 0.7982,
+              "anchor": "t12",
               "points": [
                 {
-                  "id": "t12-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 12",
-                  "marker": 0.7875,
+                  "label": "Apex",
+                  "marker": 0.79564,
                   "point_ref": "t12"
                 }
               ],
               "start_line": {
-                "marker": 0.75693,
-                "line": [
-                  [
-                    -86.2337123,
-                    39.7881601
-                  ],
-                  [
-                    -86.2337377,
-                    39.7882883
-                  ]
-                ],
-                "width_m": 14.4,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.80523,
-                "line": [
-                  [
-                    -86.2354133,
-                    39.7886948
-                  ],
-                  [
-                    -86.2352448,
-                    39.7886894
-                  ]
-                ],
-                "width_m": 14.44,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.7874,
+                "marker": 0.78847,
                 "line": [
                   [
                     -86.2351355,
@@ -3426,8 +2080,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.79841,
+              "end_line": {
+                "marker": 0.7982,
                 "line": [
                   [
                     -86.2354278,
@@ -3451,64 +2105,20 @@
             {
               "id": "t13",
               "label": "Turn 13",
-              "start": 0.80523,
-              "end": 0.85198,
-              "members": [
-                "t13"
-              ],
+              "start": 0.82149,
+              "end": 0.8371,
+              "anchor": "t13",
               "points": [
                 {
-                  "id": "t13-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 13",
-                  "marker": 0.8265,
+                  "label": "Apex",
+                  "marker": 0.83275,
                   "point_ref": "t13"
                 }
               ],
               "start_line": {
-                "marker": 0.80523,
-                "line": [
-                  [
-                    -86.2354133,
-                    39.7886948
-                  ],
-                  [
-                    -86.2352448,
-                    39.7886894
-                  ]
-                ],
-                "width_m": 14.44,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "end_line": {
-                "marker": 0.85198,
-                "line": [
-                  [
-                    -86.2363476,
-                    39.7893168
-                  ],
-                  [
-                    -86.2364096,
-                    39.789436
-                  ]
-                ],
-                "width_m": 14.25,
-                "quality": {
-                  "source": "indiana-2025",
-                  "accuracy_m": 0.4,
-                  "relative_accuracy_m": 0.14,
-                  "measured": true,
-                  "date": "2025"
-                }
-              },
-              "entry": {
-                "marker": 0.82173,
+                "marker": 0.82149,
                 "line": [
                   [
                     -86.2353896,
@@ -3528,8 +2138,8 @@
                   "date": "2025"
                 }
               },
-              "exit": {
-                "marker": 0.83753,
+              "end_line": {
+                "marker": 0.8371,
                 "line": [
                   [
                     -86.2357301,
@@ -3553,30 +2163,1361 @@
             {
               "id": "t14",
               "label": "Turn 14",
-              "start": 0.86143,
-              "end": 0.91748,
-              "members": [
-                "t14"
-              ],
+              "start": 0.90031,
+              "end": 0.90645,
+              "anchor": "t14",
               "points": [
                 {
-                  "id": "t14-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 14",
-                  "marker": 0.892,
+                  "label": "Apex",
+                  "marker": 0.90261,
                   "point_ref": "t14"
                 }
               ],
               "start_line": {
-                "marker": 0.86143,
+                "marker": 0.90031,
                 "line": [
                   [
-                    -86.2367471,
-                    39.7891968
+                    -86.2384048,
+                    39.7896728
                   ],
                   [
-                    -86.2367932,
-                    39.7893211
+                    -86.2382732,
+                    39.7897629
+                  ]
+                ],
+                "width_m": 15.07,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.90645,
+                "line": [
+                  [
+                    -86.2385702,
+                    39.789876
+                  ],
+                  [
+                    -86.2383906,
+                    39.7899285
+                  ]
+                ],
+                "width_m": 16.44,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.16637,
+              "end": 0.17379,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Turn 1",
+                  "marker": 0.16969,
+                  "point_ref": "t1"
+                }
+              ],
+              "entry": {
+                "marker": 0.16637,
+                "line": [
+                  [
+                    -86.2390499,
+                    39.7989683
+                  ],
+                  [
+                    -86.2388691,
+                    39.7989718
+                  ]
+                ],
+                "width_m": 15.49,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.17379,
+                "line": [
+                  [
+                    -86.238767,
+                    39.7992003
+                  ],
+                  [
+                    -86.2387638,
+                    39.7990707
+                  ]
+                ],
+                "width_m": 14.4,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.16637,
+                "line": [
+                  [
+                    -86.2390499,
+                    39.7989683
+                  ],
+                  [
+                    -86.2388691,
+                    39.7989718
+                  ]
+                ],
+                "width_m": 15.49,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.17379,
+                "line": [
+                  [
+                    -86.238767,
+                    39.7992003
+                  ],
+                  [
+                    -86.2387638,
+                    39.7990707
+                  ]
+                ],
+                "width_m": 14.4,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.18454,
+              "end": 0.20603,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.19963,
+                  "point_ref": "t2"
+                }
+              ],
+              "entry": {
+                "marker": 0.18454,
+                "line": [
+                  [
+                    -86.238275,
+                    39.7991993
+                  ],
+                  [
+                    -86.2382778,
+                    39.7990694
+                  ]
+                ],
+                "width_m": 14.43,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.20603,
+                "line": [
+                  [
+                    -86.2377555,
+                    39.7995984
+                  ],
+                  [
+                    -86.23759,
+                    39.7996024
+                  ]
+                ],
+                "width_m": 14.19,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.18454,
+                "line": [
+                  [
+                    -86.238275,
+                    39.7991993
+                  ],
+                  [
+                    -86.2382778,
+                    39.7990694
+                  ]
+                ],
+                "width_m": 14.43,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.20603,
+                "line": [
+                  [
+                    -86.2377555,
+                    39.7995984
+                  ],
+                  [
+                    -86.23759,
+                    39.7996024
+                  ]
+                ],
+                "width_m": 14.19,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t3",
+              "label": "Turn 3",
+              "start": 0.21448,
+              "end": 0.25286,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Turn 3",
+                  "marker": 0.23341,
+                  "point_ref": "t3"
+                }
+              ],
+              "entry": {
+                "marker": 0.21448,
+                "line": [
+                  [
+                    -86.237786,
+                    39.7998908
+                  ],
+                  [
+                    -86.2376219,
+                    39.7999024
+                  ]
+                ],
+                "width_m": 14.11,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.25286,
+                "line": [
+                  [
+                    -86.2369168,
+                    39.8010516
+                  ],
+                  [
+                    -86.2368447,
+                    39.8009362
+                  ]
+                ],
+                "width_m": 14.22,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.21448,
+                "line": [
+                  [
+                    -86.237786,
+                    39.7998908
+                  ],
+                  [
+                    -86.2376219,
+                    39.7999024
+                  ]
+                ],
+                "width_m": 14.11,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.25286,
+                "line": [
+                  [
+                    -86.2369168,
+                    39.8010516
+                  ],
+                  [
+                    -86.2368447,
+                    39.8009362
+                  ]
+                ],
+                "width_m": 14.22,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t4",
+              "label": "Turn 4",
+              "start": 0.26643,
+              "end": 0.29406,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Turn 4",
+                  "marker": 0.27001,
+                  "point_ref": "t4"
+                }
+              ],
+              "entry": {
+                "marker": 0.26643,
+                "line": [
+                  [
+                    -86.236353,
+                    39.8012523
+                  ],
+                  [
+                    -86.2362848,
+                    39.8011352
+                  ]
+                ],
+                "width_m": 14.25,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.29406,
+                "line": [
+                  [
+                    -86.23539,
+                    39.8006817
+                  ],
+                  [
+                    -86.2355582,
+                    39.8006724
+                  ]
+                ],
+                "width_m": 14.44,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.26643,
+                "line": [
+                  [
+                    -86.236353,
+                    39.8012523
+                  ],
+                  [
+                    -86.2362848,
+                    39.8011352
+                  ]
+                ],
+                "width_m": 14.25,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.29406,
+                "line": [
+                  [
+                    -86.23539,
+                    39.8006817
+                  ],
+                  [
+                    -86.2355582,
+                    39.8006724
+                  ]
+                ],
+                "width_m": 14.44,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t5",
+              "label": "Turn 5",
+              "start": 0.32093,
+              "end": 0.33117,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Turn 5",
+                  "marker": 0.3281,
+                  "point_ref": "t5"
+                }
+              ],
+              "entry": {
+                "marker": 0.32093,
+                "line": [
+                  [
+                    -86.2353741,
+                    39.7997322
+                  ],
+                  [
+                    -86.2355418,
+                    39.7997309
+                  ]
+                ],
+                "width_m": 14.36,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.33117,
+                "line": [
+                  [
+                    -86.235204,
+                    39.7994849
+                  ],
+                  [
+                    -86.2352985,
+                    39.7993692
+                  ]
+                ],
+                "width_m": 15.19,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.32093,
+                "line": [
+                  [
+                    -86.2353741,
+                    39.7997322
+                  ],
+                  [
+                    -86.2355418,
+                    39.7997309
+                  ]
+                ],
+                "width_m": 14.36,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.33117,
+                "line": [
+                  [
+                    -86.235204,
+                    39.7994849
+                  ],
+                  [
+                    -86.2352985,
+                    39.7993692
+                  ]
+                ],
+                "width_m": 15.19,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t6",
+              "label": "Turn 6",
+              "start": 0.33322,
+              "end": 0.3432,
+              "members": [
+                "t6"
+              ],
+              "points": [
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Turn 6",
+                  "marker": 0.33501,
+                  "point_ref": "t6"
+                }
+              ],
+              "entry": {
+                "marker": 0.33322,
+                "line": [
+                  [
+                    -86.2351212,
+                    39.7994538
+                  ],
+                  [
+                    -86.2352191,
+                    39.7993288
+                  ]
+                ],
+                "width_m": 16.22,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.3432,
+                "line": [
+                  [
+                    -86.2348434,
+                    39.7990942
+                  ],
+                  [
+                    -86.235106,
+                    39.7990914
+                  ]
+                ],
+                "width_m": 22.49,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.33322,
+                "line": [
+                  [
+                    -86.2351212,
+                    39.7994538
+                  ],
+                  [
+                    -86.2352191,
+                    39.7993288
+                  ]
+                ],
+                "width_m": 16.22,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.3432,
+                "line": [
+                  [
+                    -86.2348434,
+                    39.7990942
+                  ],
+                  [
+                    -86.235106,
+                    39.7990914
+                  ]
+                ],
+                "width_m": 22.49,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t7",
+              "label": "Turn 7",
+              "start": 0.53282,
+              "end": 0.54127,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Turn 7",
+                  "marker": 0.53641,
+                  "point_ref": "t7"
+                }
+              ],
+              "entry": {
+                "marker": 0.53282,
+                "line": [
+                  [
+                    -86.2347843,
+                    39.792413
+                  ],
+                  [
+                    -86.2350016,
+                    39.7924285
+                  ]
+                ],
+                "width_m": 18.69,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.54127,
+                "line": [
+                  [
+                    -86.2346551,
+                    39.7923088
+                  ],
+                  [
+                    -86.2346855,
+                    39.7921528
+                  ]
+                ],
+                "width_m": 17.52,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.53282,
+                "line": [
+                  [
+                    -86.2347843,
+                    39.792413
+                  ],
+                  [
+                    -86.2350016,
+                    39.7924285
+                  ]
+                ],
+                "width_m": 18.69,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.54127,
+                "line": [
+                  [
+                    -86.2346551,
+                    39.7923088
+                  ],
+                  [
+                    -86.2346855,
+                    39.7921528
+                  ]
+                ],
+                "width_m": 17.52,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t8",
+              "label": "Turn 8",
+              "start": 0.56404,
+              "end": 0.58324,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Turn 8",
+                  "marker": 0.57838,
+                  "point_ref": "t8"
+                }
+              ],
+              "entry": {
+                "marker": 0.56404,
+                "line": [
+                  [
+                    -86.2336362,
+                    39.7923212
+                  ],
+                  [
+                    -86.2336291,
+                    39.7921917
+                  ]
+                ],
+                "width_m": 14.39,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.58324,
+                "line": [
+                  [
+                    -86.2328738,
+                    39.7919362
+                  ],
+                  [
+                    -86.2330354,
+                    39.791895
+                  ]
+                ],
+                "width_m": 14.58,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.56404,
+                "line": [
+                  [
+                    -86.2336362,
+                    39.7923212
+                  ],
+                  [
+                    -86.2336291,
+                    39.7921917
+                  ]
+                ],
+                "width_m": 14.39,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.58324,
+                "line": [
+                  [
+                    -86.2328738,
+                    39.7919362
+                  ],
+                  [
+                    -86.2330354,
+                    39.791895
+                  ]
+                ],
+                "width_m": 14.58,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t9",
+              "label": "Turn 9",
+              "start": 0.58554,
+              "end": 0.60269,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Turn 9",
+                  "marker": 0.59219,
+                  "point_ref": "t9"
+                }
+              ],
+              "entry": {
+                "marker": 0.58554,
+                "line": [
+                  [
+                    -86.2328438,
+                    39.7918587
+                  ],
+                  [
+                    -86.233005,
+                    39.7918173
+                  ]
+                ],
+                "width_m": 14.55,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.60269,
+                "line": [
+                  [
+                    -86.2323236,
+                    39.7916014
+                  ],
+                  [
+                    -86.2323127,
+                    39.7914726
+                  ]
+                ],
+                "width_m": 14.33,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.58554,
+                "line": [
+                  [
+                    -86.2328438,
+                    39.7918587
+                  ],
+                  [
+                    -86.233005,
+                    39.7918173
+                  ]
+                ],
+                "width_m": 14.55,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.60269,
+                "line": [
+                  [
+                    -86.2323236,
+                    39.7916014
+                  ],
+                  [
+                    -86.2323127,
+                    39.7914726
+                  ]
+                ],
+                "width_m": 14.33,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t10",
+              "label": "Turn 10",
+              "start": 0.62086,
+              "end": 0.63109,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Turn 10",
+                  "marker": 0.62444,
+                  "point_ref": "t10"
+                }
+              ],
+              "entry": {
+                "marker": 0.62086,
+                "line": [
+                  [
+                    -86.231496,
+                    39.7916495
+                  ],
+                  [
+                    -86.2314872,
+                    39.7915187
+                  ]
+                ],
+                "width_m": 14.53,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.63109,
+                "line": [
+                  [
+                    -86.2310555,
+                    39.7914325
+                  ],
+                  [
+                    -86.2312071,
+                    39.7913819
+                  ]
+                ],
+                "width_m": 14.14,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.62086,
+                "line": [
+                  [
+                    -86.231496,
+                    39.7916495
+                  ],
+                  [
+                    -86.2314872,
+                    39.7915187
+                  ]
+                ],
+                "width_m": 14.53,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.63109,
+                "line": [
+                  [
+                    -86.2310555,
+                    39.7914325
+                  ],
+                  [
+                    -86.2312071,
+                    39.7913819
+                  ]
+                ],
+                "width_m": 14.14,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t11",
+              "label": "Turn 11",
+              "start": 0.69046,
+              "end": 0.70249,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Turn 11",
+                  "marker": 0.69353,
+                  "point_ref": "t11"
+                }
+              ],
+              "entry": {
+                "marker": 0.69046,
+                "line": [
+                  [
+                    -86.2311669,
+                    39.7893359
+                  ],
+                  [
+                    -86.2313501,
+                    39.7893677
+                  ]
+                ],
+                "width_m": 16.09,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.70249,
+                "line": [
+                  [
+                    -86.2314214,
+                    39.7889288
+                  ],
+                  [
+                    -86.2315649,
+                    39.7890211
+                  ]
+                ],
+                "width_m": 16.0,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.69046,
+                "line": [
+                  [
+                    -86.2311669,
+                    39.7893359
+                  ],
+                  [
+                    -86.2313501,
+                    39.7893677
+                  ]
+                ],
+                "width_m": 16.09,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.70249,
+                "line": [
+                  [
+                    -86.2314214,
+                    39.7889288
+                  ],
+                  [
+                    -86.2315649,
+                    39.7890211
+                  ]
+                ],
+                "width_m": 16.0,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.78847,
+              "end": 0.7982,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Turn 12",
+                  "marker": 0.79564,
+                  "point_ref": "t12"
+                }
+              ],
+              "entry": {
+                "marker": 0.78847,
+                "line": [
+                  [
+                    -86.2351355,
+                    39.7881149
+                  ],
+                  [
+                    -86.2350606,
+                    39.7882982
+                  ]
+                ],
+                "width_m": 21.34,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.7982,
+                "line": [
+                  [
+                    -86.2354278,
+                    39.7884508
+                  ],
+                  [
+                    -86.2352571,
+                    39.7884477
+                  ]
+                ],
+                "width_m": 14.62,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.78847,
+                "line": [
+                  [
+                    -86.2351355,
+                    39.7881149
+                  ],
+                  [
+                    -86.2350606,
+                    39.7882982
+                  ]
+                ],
+                "width_m": 21.34,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.7982,
+                "line": [
+                  [
+                    -86.2354278,
+                    39.7884508
+                  ],
+                  [
+                    -86.2352571,
+                    39.7884477
+                  ]
+                ],
+                "width_m": 14.62,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              }
+            },
+            {
+              "id": "t13",
+              "label": "Turn 13",
+              "start": 0.82149,
+              "end": 0.8371,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Turn 13",
+                  "marker": 0.83275,
+                  "point_ref": "t13"
+                }
+              ],
+              "entry": {
+                "marker": 0.82149,
+                "line": [
+                  [
+                    -86.2353896,
+                    39.7892622
+                  ],
+                  [
+                    -86.2352227,
+                    39.7892735
+                  ]
+                ],
+                "width_m": 14.35,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "exit": {
+                "marker": 0.8371,
+                "line": [
+                  [
+                    -86.2357301,
+                    39.7895076
+                  ],
+                  [
+                    -86.2357919,
+                    39.7896272
+                  ]
+                ],
+                "width_m": 14.3,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.82149,
+                "line": [
+                  [
+                    -86.2353896,
+                    39.7892622
+                  ],
+                  [
+                    -86.2352227,
+                    39.7892735
                   ]
                 ],
                 "width_m": 14.35,
@@ -3589,28 +3530,46 @@
                 }
               },
               "end_line": {
-                "marker": 0.91748,
+                "marker": 0.8371,
                 "line": [
                   [
-                    -86.2387407,
-                    39.7902311
+                    -86.2357301,
+                    39.7895076
                   ],
                   [
-                    -86.2385806,
-                    39.7902765
+                    -86.2357919,
+                    39.7896272
                   ]
                 ],
-                "width_m": 14.62,
+                "width_m": 14.3,
                 "quality": {
                   "source": "indiana-2025",
-                  "accuracy_m": 1.68,
-                  "relative_accuracy_m": 1.64,
-                  "measured": false,
+                  "accuracy_m": 0.4,
+                  "relative_accuracy_m": 0.14,
+                  "measured": true,
                   "date": "2025"
                 }
-              },
+              }
+            },
+            {
+              "id": "t14",
+              "label": "Turn 14",
+              "start": 0.90031,
+              "end": 0.90645,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Turn 14",
+                  "marker": 0.90261,
+                  "point_ref": "t14"
+                }
+              ],
               "entry": {
-                "marker": 0.90079,
+                "marker": 0.90031,
                 "line": [
                   [
                     -86.2384048,
@@ -3631,7 +3590,49 @@
                 }
               },
               "exit": {
-                "marker": 0.90665,
+                "marker": 0.90645,
+                "line": [
+                  [
+                    -86.2385702,
+                    39.789876
+                  ],
+                  [
+                    -86.2383906,
+                    39.7899285
+                  ]
+                ],
+                "width_m": 16.44,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              },
+              "start_line": {
+                "marker": 0.90031,
+                "line": [
+                  [
+                    -86.2384048,
+                    39.7896728
+                  ],
+                  [
+                    -86.2382732,
+                    39.7897629
+                  ]
+                ],
+                "width_m": 15.07,
+                "quality": {
+                  "source": "indiana-2025",
+                  "accuracy_m": 1.68,
+                  "relative_accuracy_m": 1.64,
+                  "measured": false,
+                  "date": "2025"
+                }
+              },
+              "end_line": {
+                "marker": 0.90645,
                 "line": [
                   [
                     -86.2385702,
@@ -3762,12 +3763,12 @@
         },
         "unnamed_corners": [
           {
-            "marker": 0.1493,
+            "marker": 0.1505,
             "direction": "left",
             "radius_m": 41.6
           },
           {
-            "marker": 0.1555,
+            "marker": 0.1566,
             "direction": "right",
             "radius_m": 36.4
           }
@@ -3835,7 +3836,7 @@
     "imsa_data": "indianapolis"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:26:38.067755+00:00",
+    "generated_at": "2026-09-26T20:41:41.450763+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

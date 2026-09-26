@@ -35,6 +35,7 @@
       "geometry": {
         "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326",
+        "basis": "midline",
         "surface": "layers/gp.surface.geojson"
       },
       "point_layers": [
@@ -48,8 +49,8 @@
               "label": "Start / Finish",
               "marker": 0.0,
               "location": [
-                -118.185888,
-                33.765664
+                -118.1858842,
+                33.7656741
               ],
               "line": {
                 "marker": 0.0,
@@ -89,12 +90,12 @@
                 "numbered": "Turn 1",
                 "driver": "Shoreline"
               },
-              "marker": 0.223,
+              "marker": 0.23012,
               "location": [
-                -118.187684,
-                33.762052
+                -118.1878164,
+                33.7619831
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 3,
               "placement": {
@@ -105,7 +106,7 @@
                 "marker_offset_m": 17.1
               },
               "entry": {
-                "marker": 0.22395,
+                "marker": 0.22673,
                 "line": [
                   [
                     -118.187676,
@@ -126,7 +127,7 @@
                 }
               },
               "exit": {
-                "marker": 0.23209,
+                "marker": 0.23506,
                 "line": [
                   [
                     -118.1879624,
@@ -147,7 +148,7 @@
                 }
               },
               "apex": {
-                "marker": 0.22729,
+                "marker": 0.23012,
                 "location": [
                   -118.1878436,
                   33.7620362
@@ -171,17 +172,17 @@
                 "numbered": "Turn 2",
                 "driver": "Aquarium"
               },
-              "marker": 0.283,
+              "marker": 0.28645,
               "location": [
-                -118.18975,
-                33.761809
+                -118.1897464,
+                33.7618033
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 2,
               "placement": {
                 "basis": "none",
-                "note": "no curvature peak near the marker; kept at the legacy marker only"
+                "note": "no curvature peak near the marker; marker projected from the source data"
               }
             },
             {
@@ -193,12 +194,12 @@
                 "numbered": "Turn 3",
                 "driver": "T3"
               },
-              "marker": 0.295,
+              "marker": 0.27335,
               "location": [
-                -118.190161,
-                33.761887
+                -118.1892967,
+                33.7617568
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 4,
               "placement": {
@@ -209,7 +210,7 @@
                 "marker_offset_m": -83.6
               },
               "entry": {
-                "marker": 0.26582,
+                "marker": 0.26902,
                 "line": [
                   [
                     -118.1891353,
@@ -230,7 +231,7 @@
                 }
               },
               "exit": {
-                "marker": 0.27335,
+                "marker": 0.27674,
                 "line": [
                   [
                     -118.189427,
@@ -251,7 +252,7 @@
                 }
               },
               "apex": {
-                "marker": 0.27003,
+                "marker": 0.27335,
                 "location": [
                   -118.1892941,
                   33.761829
@@ -275,12 +276,12 @@
                 "numbered": "Turn 4",
                 "driver": "T4"
               },
-              "marker": 0.331,
+              "marker": 0.3283,
               "location": [
-                -118.191326,
-                33.762305
+                -118.1911144,
+                33.762228
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
@@ -291,7 +292,7 @@
                 "marker_offset_m": -16.3
               },
               "entry": {
-                "marker": 0.32296,
+                "marker": 0.32676,
                 "line": [
                   [
                     -118.1911012,
@@ -312,7 +313,7 @@
                 }
               },
               "exit": {
-                "marker": 0.32968,
+                "marker": 0.33355,
                 "line": [
                   [
                     -118.1913068,
@@ -333,7 +334,7 @@
                 }
               },
               "apex": {
-                "marker": 0.32449,
+                "marker": 0.3283,
                 "location": [
                   -118.191146,
                   33.7621774
@@ -357,12 +358,12 @@
                 "numbered": "Turn 5",
                 "driver": "T5"
               },
-              "marker": 0.378,
+              "marker": 0.37214,
               "location": [
-                -118.192812,
-                33.762915
+                -118.192497,
+                33.7627796
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
@@ -373,7 +374,7 @@
                 "marker_offset_m": -34.1
               },
               "entry": {
-                "marker": 0.36402,
+                "marker": 0.36813,
                 "line": [
                   [
                     -118.1924066,
@@ -394,7 +395,7 @@
                 }
               },
               "exit": {
-                "marker": 0.37057,
+                "marker": 0.37461,
                 "line": [
                   [
                     -118.1926001,
@@ -415,7 +416,7 @@
                 }
               },
               "apex": {
-                "marker": 0.36802,
+                "marker": 0.37214,
                 "location": [
                   -118.1925261,
                   33.7627143
@@ -439,12 +440,12 @@
                 "numbered": "Turn 6",
                 "driver": "T6"
               },
-              "marker": 0.505,
+              "marker": 0.49532,
               "location": [
-                -118.196262,
-                33.763098
+                -118.1961312,
+                33.7628397
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 5,
               "placement": {
@@ -455,7 +456,7 @@
                 "marker_offset_m": -33.3
               },
               "entry": {
-                "marker": 0.48579,
+                "marker": 0.48699,
                 "line": [
                   [
                     -118.1958126,
@@ -476,7 +477,7 @@
                 }
               },
               "exit": {
-                "marker": 0.5001,
+                "marker": 0.50119,
                 "line": [
                   [
                     -118.1963303,
@@ -497,7 +498,7 @@
                 }
               },
               "apex": {
-                "marker": 0.49437,
+                "marker": 0.49532,
                 "location": [
                   -118.1961072,
                   33.7628941
@@ -521,12 +522,12 @@
                 "numbered": "Turn 7",
                 "driver": "T7"
               },
-              "marker": 0.536,
+              "marker": 0.50551,
               "location": [
-                -118.19716,
-                33.763607
+                -118.1963061,
+                33.763083
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
@@ -537,7 +538,7 @@
                 "marker_offset_m": -96.2
               },
               "entry": {
-                "marker": 0.50228,
+                "marker": 0.50335,
                 "line": [
                   [
                     -118.1963481,
@@ -558,7 +559,7 @@
                 }
               },
               "exit": {
-                "marker": 0.51072,
+                "marker": 0.51045,
                 "line": [
                   [
                     -118.1964774,
@@ -579,7 +580,7 @@
                 }
               },
               "apex": {
-                "marker": 0.50539,
+                "marker": 0.50551,
                 "location": [
                   -118.1963661,
                   33.7630509
@@ -603,12 +604,12 @@
                 "numbered": "Turn 8",
                 "driver": "The Fountain"
               },
-              "marker": 0.602,
+              "marker": 0.6253,
               "location": [
-                -118.196225,
-                33.764754
+                -118.1955632,
+                33.764419
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 2,
               "placement": {
@@ -619,7 +620,7 @@
                 "marker_offset_m": 67.5
               },
               "entry": {
-                "marker": 0.61966,
+                "marker": 0.62097,
                 "line": [
                   [
                     -118.1956418,
@@ -640,7 +641,7 @@
                 }
               },
               "exit": {
-                "marker": 0.62553,
+                "marker": 0.62684,
                 "line": [
                   [
                     -118.1954743,
@@ -661,7 +662,7 @@
                 }
               },
               "apex": {
-                "marker": 0.62397,
+                "marker": 0.6253,
                 "location": [
                   -118.1955195,
                   33.7644949
@@ -685,12 +686,12 @@
                 "numbered": "Turn 9",
                 "driver": "T9"
               },
-              "marker": 0.801,
+              "marker": 0.80992,
               "location": [
-                -118.192365,
-                33.765396
+                -118.1923911,
+                33.7656982
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 3,
               "placement": {
@@ -701,7 +702,7 @@
                 "marker_offset_m": 47.9
               },
               "entry": {
-                "marker": 0.81011,
+                "marker": 0.80899,
                 "line": [
                   [
                     -118.1925028,
@@ -722,7 +723,7 @@
                 }
               },
               "exit": {
-                "marker": 0.82011,
+                "marker": 0.81856,
                 "line": [
                   [
                     -118.1922094,
@@ -743,7 +744,7 @@
                 }
               },
               "apex": {
-                "marker": 0.81097,
+                "marker": 0.80992,
                 "location": [
                   -118.1922822,
                   33.7656899
@@ -767,12 +768,12 @@
                 "numbered": "Turn 10",
                 "driver": "T10"
               },
-              "marker": 0.842,
+              "marker": 0.86055,
               "location": [
-                -118.191446,
-                33.765841
+                -118.1907418,
+                33.7658605
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
@@ -783,7 +784,7 @@
                 "marker_offset_m": 62.6
               },
               "entry": {
-                "marker": 0.85748,
+                "marker": 0.85622,
                 "line": [
                   [
                     -118.1908893,
@@ -804,7 +805,7 @@
                 }
               },
               "exit": {
-                "marker": 0.864,
+                "marker": 0.86271,
                 "line": [
                   [
                     -118.1906844,
@@ -825,7 +826,7 @@
                 }
               },
               "apex": {
-                "marker": 0.86181,
+                "marker": 0.86055,
                 "location": [
                   -118.1907487,
                   33.7659483
@@ -849,12 +850,12 @@
                 "numbered": "Turn 11",
                 "driver": "The Hairpin"
               },
-              "marker": 0.882,
+              "marker": 0.88648,
               "location": [
-                -118.190037,
-                33.76588
+                -118.1898378,
+                33.7659134
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 1,
               "placement": {
@@ -865,7 +866,7 @@
                 "marker_offset_m": 25.1
               },
               "entry": {
-                "marker": 0.88602,
+                "marker": 0.88494,
                 "line": [
                   [
                     -118.1898983,
@@ -886,7 +887,7 @@
                 }
               },
               "exit": {
-                "marker": 0.90062,
+                "marker": 0.89975,
                 "line": [
                   [
                     -118.1893662,
@@ -907,7 +908,7 @@
                 }
               },
               "apex": {
-                "marker": 0.88754,
+                "marker": 0.88648,
                 "location": [
                   -118.1898336,
                   33.7658185
@@ -936,7 +937,7 @@
               "id": "s1",
               "label": "S1",
               "start": 0.0,
-              "end": 0.312,
+              "end": 0.31573,
               "start_line": {
                 "marker": 0.0,
                 "line": [
@@ -959,7 +960,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.312,
+                "marker": 0.31573,
                 "line": [
                   [
                     -118.1907514,
@@ -983,10 +984,10 @@
             {
               "id": "s2",
               "label": "S2",
-              "start": 0.312,
-              "end": 0.726,
+              "start": 0.31573,
+              "end": 0.72507,
               "start_line": {
-                "marker": 0.312,
+                "marker": 0.31573,
                 "line": [
                   [
                     -118.1907514,
@@ -1007,7 +1008,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.726,
+                "marker": 0.72507,
                 "line": [
                   [
                     -118.1926455,
@@ -1031,10 +1032,10 @@
             {
               "id": "s3",
               "label": "S3",
-              "start": 0.726,
+              "start": 0.72507,
               "end": 1.0,
               "start_line": {
-                "marker": 0.726,
+                "marker": 0.72507,
                 "line": [
                   [
                     -118.1926455,
@@ -1087,709 +1088,20 @@
             {
               "id": "t1",
               "label": "Shoreline",
-              "start": 0.18511,
-              "end": 0.24443,
+              "start": 0.22673,
+              "end": 0.23506,
               "anchor": "t1",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.223,
+                  "marker": 0.23012,
                   "point_ref": "t1"
                 }
               ],
               "start_line": {
-                "marker": 0.18511,
-                "line": [
-                  [
-                    -118.1865076,
-                    33.7625881
-                  ],
-                  [
-                    -118.1865952,
-                    33.7626849
-                  ]
-                ],
-                "width_m": 13.46,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.24443,
-                "line": [
-                  [
-                    -118.1883804,
-                    33.7617802
-                  ],
-                  [
-                    -118.1884146,
-                    33.7619112
-                  ]
-                ],
-                "width_m": 14.87,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t2",
-              "label": "Aquarium",
-              "start": 0.24443,
-              "end": 0.2908,
-              "anchor": "t2",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.283,
-                  "point_ref": "t2"
-                }
-              ],
-              "start_line": {
-                "marker": 0.24443,
-                "line": [
-                  [
-                    -118.1883804,
-                    33.7617802
-                  ],
-                  [
-                    -118.1884146,
-                    33.7619112
-                  ]
-                ],
-                "width_m": 14.87,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.2908,
-                "line": [
-                  [
-                    -118.1900428,
-                    33.7617806
-                  ],
-                  [
-                    -118.1899996,
-                    33.7619191
-                  ]
-                ],
-                "width_m": 15.87,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t3",
-              "label": "T3",
-              "start": 0.2908,
-              "end": 0.313,
-              "anchor": "t3",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.295,
-                  "point_ref": "t3"
-                }
-              ],
-              "start_line": {
-                "marker": 0.2908,
-                "line": [
-                  [
-                    -118.1900428,
-                    33.7617806
-                  ],
-                  [
-                    -118.1899996,
-                    33.7619191
-                  ]
-                ],
-                "width_m": 15.87,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.313,
-                "line": [
-                  [
-                    -118.1907905,
-                    33.7620192
-                  ],
-                  [
-                    -118.1907274,
-                    33.7621335
-                  ]
-                ],
-                "width_m": 13.97,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t4",
-              "label": "T4",
-              "start": 0.313,
-              "end": 0.3531,
-              "anchor": "t4",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.331,
-                  "point_ref": "t4"
-                }
-              ],
-              "start_line": {
-                "marker": 0.313,
-                "line": [
-                  [
-                    -118.1907905,
-                    33.7620192
-                  ],
-                  [
-                    -118.1907274,
-                    33.7621335
-                  ]
-                ],
-                "width_m": 13.97,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.3531,
-                "line": [
-                  [
-                    -118.192053,
-                    33.7625318
-                  ],
-                  [
-                    -118.1919958,
-                    33.7626318
-                  ]
-                ],
-                "width_m": 12.3,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t5",
-              "label": "T5",
-              "start": 0.3559,
-              "end": 0.4001,
-              "anchor": "t5",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.378,
-                  "point_ref": "t5"
-                }
-              ],
-              "start_line": {
-                "marker": 0.3559,
-                "line": [
-                  [
-                    -118.1921398,
-                    33.7625678
-                  ],
-                  [
-                    -118.192084,
-                    33.7626663
-                  ]
-                ],
-                "width_m": 12.08,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.1,
-                  "relative_accuracy_m": 0.28,
-                  "measured": true,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.4001,
-                "line": [
-                  [
-                    -118.1935504,
-                    33.7631256
-                  ],
-                  [
-                    -118.1934622,
-                    33.7632949
-                  ]
-                ],
-                "width_m": 20.48,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t6",
-              "label": "T6",
-              "start": 0.49395,
-              "end": 0.51713,
-              "anchor": "t6",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.505,
-                  "point_ref": "t6"
-                }
-              ],
-              "start_line": {
-                "marker": 0.49395,
-                "line": [
-                  [
-                    -118.1961413,
-                    33.7627819
-                  ],
-                  [
-                    -118.1961005,
-                    33.7628922
-                  ]
-                ],
-                "width_m": 12.81,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.51713,
-                "line": [
-                  [
-                    -118.1966739,
-                    33.7632142
-                  ],
-                  [
-                    -118.1966032,
-                    33.7633127
-                  ]
-                ],
-                "width_m": 12.73,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t7",
-              "label": "T7",
-              "start": 0.51713,
-              "end": 0.55448,
-              "anchor": "t7",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.536,
-                  "point_ref": "t7"
-                }
-              ],
-              "start_line": {
-                "marker": 0.51713,
-                "line": [
-                  [
-                    -118.1966739,
-                    33.7632142
-                  ],
-                  [
-                    -118.1966032,
-                    33.7633127
-                  ]
-                ],
-                "width_m": 12.73,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.55448,
-                "line": [
-                  [
-                    -118.1972677,
-                    33.7640926
-                  ],
-                  [
-                    -118.1971489,
-                    33.7640532
-                  ]
-                ],
-                "width_m": 11.84,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t8",
-              "label": "The Fountain",
-              "start": 0.55448,
-              "end": 0.64305,
-              "anchor": "t8",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.602,
-                  "point_ref": "t8"
-                }
-              ],
-              "start_line": {
-                "marker": 0.55448,
-                "line": [
-                  [
-                    -118.1972677,
-                    33.7640926
-                  ],
-                  [
-                    -118.1971489,
-                    33.7640532
-                  ]
-                ],
-                "width_m": 11.84,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.64305,
-                "line": [
-                  [
-                    -118.1949018,
-                    33.7642351
-                  ],
-                  [
-                    -118.1950256,
-                    33.7640713
-                  ]
-                ],
-                "width_m": 21.48,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.1,
-                  "relative_accuracy_m": 0.28,
-                  "measured": true,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t9",
-              "label": "T9",
-              "start": 0.76311,
-              "end": 0.82512,
-              "anchor": "t9",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.801,
-                  "point_ref": "t9"
-                }
-              ],
-              "start_line": {
-                "marker": 0.76311,
-                "line": [
-                  [
-                    -118.1925163,
-                    33.7642847
-                  ],
-                  [
-                    -118.1923642,
-                    33.7642849
-                  ]
-                ],
-                "width_m": 14.09,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.82512,
-                "line": [
-                  [
-                    -118.1920372,
-                    33.765938
-                  ],
-                  [
-                    -118.1920351,
-                    33.7657593
-                  ]
-                ],
-                "width_m": 19.83,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t10",
-              "label": "T10",
-              "start": 0.82512,
-              "end": 0.85075,
-              "anchor": "t10",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.842,
-                  "point_ref": "t10"
-                }
-              ],
-              "start_line": {
-                "marker": 0.82512,
-                "line": [
-                  [
-                    -118.1920372,
-                    33.765938
-                  ],
-                  [
-                    -118.1920351,
-                    33.7657593
-                  ]
-                ],
-                "width_m": 19.83,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.85075,
-                "line": [
-                  [
-                    -118.1911317,
-                    33.7659588
-                  ],
-                  [
-                    -118.1911284,
-                    33.7657761
-                  ]
-                ],
-                "width_m": 20.26,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            },
-            {
-              "id": "t11",
-              "label": "The Hairpin",
-              "start": 0.85075,
-              "end": 0.93568,
-              "anchor": "t11",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.882,
-                  "point_ref": "t11"
-                }
-              ],
-              "start_line": {
-                "marker": 0.85075,
-                "line": [
-                  [
-                    -118.1911317,
-                    33.7659588
-                  ],
-                  [
-                    -118.1911284,
-                    33.7657761
-                  ]
-                ],
-                "width_m": 20.26,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.93568,
-                "line": [
-                  [
-                    -118.1881402,
-                    33.7658906
-                  ],
-                  [
-                    -118.1881591,
-                    33.7657553
-                  ]
-                ],
-                "width_m": 15.11,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "corner_complexes",
-          "kind": "corner_complexes",
-          "label": "Corner Complexes",
-          "items": [
-            {
-              "id": "t1",
-              "label": "Shoreline",
-              "start": 0.18511,
-              "end": 0.24443,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Shoreline",
-                  "marker": 0.223,
-                  "point_ref": "t1"
-                }
-              ],
-              "start_line": {
-                "marker": 0.18511,
-                "line": [
-                  [
-                    -118.1865076,
-                    33.7625881
-                  ],
-                  [
-                    -118.1865952,
-                    33.7626849
-                  ]
-                ],
-                "width_m": 13.46,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.24443,
-                "line": [
-                  [
-                    -118.1883804,
-                    33.7617802
-                  ],
-                  [
-                    -118.1884146,
-                    33.7619112
-                  ]
-                ],
-                "width_m": 14.87,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "entry": {
-                "marker": 0.22395,
+                "marker": 0.22673,
                 "line": [
                   [
                     -118.187676,
@@ -1809,8 +1121,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.23209,
+              "end_line": {
+                "marker": 0.23506,
                 "line": [
                   [
                     -118.1879624,
@@ -1834,22 +1146,20 @@
             {
               "id": "t2",
               "label": "Aquarium",
-              "start": 0.24443,
-              "end": 0.2908,
-              "members": [
-                "t2"
-              ],
+              "start": 0.24748,
+              "end": 0.29433,
+              "anchor": "t2",
               "points": [
                 {
-                  "id": "t2-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Aquarium",
-                  "marker": 0.283,
+                  "label": "Apex",
+                  "marker": 0.28645,
                   "point_ref": "t2"
                 }
               ],
               "start_line": {
-                "marker": 0.24443,
+                "marker": 0.24748,
                 "line": [
                   [
                     -118.1883804,
@@ -1870,7 +1180,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.2908,
+                "marker": 0.29433,
                 "line": [
                   [
                     -118.1900428,
@@ -1894,64 +1204,20 @@
             {
               "id": "t3",
               "label": "T3",
-              "start": 0.2908,
-              "end": 0.313,
-              "members": [
-                "t3"
-              ],
+              "start": 0.26902,
+              "end": 0.27674,
+              "anchor": "t3",
               "points": [
                 {
-                  "id": "t3-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "T3",
-                  "marker": 0.295,
+                  "label": "Apex",
+                  "marker": 0.27335,
                   "point_ref": "t3"
                 }
               ],
               "start_line": {
-                "marker": 0.2908,
-                "line": [
-                  [
-                    -118.1900428,
-                    33.7617806
-                  ],
-                  [
-                    -118.1899996,
-                    33.7619191
-                  ]
-                ],
-                "width_m": 15.87,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.313,
-                "line": [
-                  [
-                    -118.1907905,
-                    33.7620192
-                  ],
-                  [
-                    -118.1907274,
-                    33.7621335
-                  ]
-                ],
-                "width_m": 13.97,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "entry": {
-                "marker": 0.26582,
+                "marker": 0.26902,
                 "line": [
                   [
                     -118.1891353,
@@ -1971,8 +1237,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.27335,
+              "end_line": {
+                "marker": 0.27674,
                 "line": [
                   [
                     -118.189427,
@@ -1996,64 +1262,20 @@
             {
               "id": "t4",
               "label": "T4",
-              "start": 0.313,
-              "end": 0.3531,
-              "members": [
-                "t4"
-              ],
+              "start": 0.32676,
+              "end": 0.33355,
+              "anchor": "t4",
               "points": [
                 {
-                  "id": "t4-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "T4",
-                  "marker": 0.331,
+                  "label": "Apex",
+                  "marker": 0.3283,
                   "point_ref": "t4"
                 }
               ],
               "start_line": {
-                "marker": 0.313,
-                "line": [
-                  [
-                    -118.1907905,
-                    33.7620192
-                  ],
-                  [
-                    -118.1907274,
-                    33.7621335
-                  ]
-                ],
-                "width_m": 13.97,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.3531,
-                "line": [
-                  [
-                    -118.192053,
-                    33.7625318
-                  ],
-                  [
-                    -118.1919958,
-                    33.7626318
-                  ]
-                ],
-                "width_m": 12.3,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "entry": {
-                "marker": 0.32296,
+                "marker": 0.32676,
                 "line": [
                   [
                     -118.1911012,
@@ -2073,8 +1295,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.32968,
+              "end_line": {
+                "marker": 0.33355,
                 "line": [
                   [
                     -118.1913068,
@@ -2098,64 +1320,20 @@
             {
               "id": "t5",
               "label": "T5",
-              "start": 0.3559,
-              "end": 0.4001,
-              "members": [
-                "t5"
-              ],
+              "start": 0.36813,
+              "end": 0.37461,
+              "anchor": "t5",
               "points": [
                 {
-                  "id": "t5-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "T5",
-                  "marker": 0.378,
+                  "label": "Apex",
+                  "marker": 0.37214,
                   "point_ref": "t5"
                 }
               ],
               "start_line": {
-                "marker": 0.3559,
-                "line": [
-                  [
-                    -118.1921398,
-                    33.7625678
-                  ],
-                  [
-                    -118.192084,
-                    33.7626663
-                  ]
-                ],
-                "width_m": 12.08,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.1,
-                  "relative_accuracy_m": 0.28,
-                  "measured": true,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.4001,
-                "line": [
-                  [
-                    -118.1935504,
-                    33.7631256
-                  ],
-                  [
-                    -118.1934622,
-                    33.7632949
-                  ]
-                ],
-                "width_m": 20.48,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "entry": {
-                "marker": 0.36402,
+                "marker": 0.36813,
                 "line": [
                   [
                     -118.1924066,
@@ -2175,8 +1353,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.37057,
+              "end_line": {
+                "marker": 0.37461,
                 "line": [
                   [
                     -118.1926001,
@@ -2198,35 +1376,33 @@
               }
             },
             {
-              "id": "t7",
-              "label": "T7",
-              "start": 0.51713,
-              "end": 0.55448,
-              "members": [
-                "t7"
-              ],
+              "id": "t6",
+              "label": "T6",
+              "start": 0.48699,
+              "end": 0.50119,
+              "anchor": "t6",
               "points": [
                 {
-                  "id": "t7-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "T7",
-                  "marker": 0.536,
-                  "point_ref": "t7"
+                  "label": "Apex",
+                  "marker": 0.49532,
+                  "point_ref": "t6"
                 }
               ],
               "start_line": {
-                "marker": 0.51713,
+                "marker": 0.48699,
                 "line": [
                   [
-                    -118.1966739,
-                    33.7632142
+                    -118.1958126,
+                    33.7628743
                   ],
                   [
-                    -118.1966032,
-                    33.7633127
+                    -118.1959325,
+                    33.7629436
                   ]
                 ],
-                "width_m": 12.73,
+                "width_m": 13.51,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 2.07,
@@ -2236,28 +1412,44 @@
                 }
               },
               "end_line": {
-                "marker": 0.55448,
+                "marker": 0.50119,
                 "line": [
                   [
-                    -118.1972677,
-                    33.7640926
+                    -118.1963303,
+                    33.7629452
                   ],
                   [
-                    -118.1971489,
-                    33.7640532
+                    -118.1961959,
+                    33.7629802
                   ]
                 ],
-                "width_m": 11.84,
+                "width_m": 13.03,
                 "quality": {
                   "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
                   "date": "2022-05-11"
                 }
-              },
-              "entry": {
-                "marker": 0.50228,
+              }
+            },
+            {
+              "id": "t7",
+              "label": "T7",
+              "start": 0.50335,
+              "end": 0.51045,
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.50551,
+                  "point_ref": "t7"
+                }
+              ],
+              "start_line": {
+                "marker": 0.50335,
                 "line": [
                   [
                     -118.1963481,
@@ -2277,8 +1469,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.51072,
+              "end_line": {
+                "marker": 0.51045,
                 "line": [
                   [
                     -118.1964774,
@@ -2302,64 +1494,20 @@
             {
               "id": "t8",
               "label": "The Fountain",
-              "start": 0.55448,
-              "end": 0.64305,
-              "members": [
-                "t8"
-              ],
+              "start": 0.62097,
+              "end": 0.62684,
+              "anchor": "t8",
               "points": [
                 {
-                  "id": "t8-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "The Fountain",
-                  "marker": 0.602,
+                  "label": "Apex",
+                  "marker": 0.6253,
                   "point_ref": "t8"
                 }
               ],
               "start_line": {
-                "marker": 0.55448,
-                "line": [
-                  [
-                    -118.1972677,
-                    33.7640926
-                  ],
-                  [
-                    -118.1971489,
-                    33.7640532
-                  ]
-                ],
-                "width_m": 11.84,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.64305,
-                "line": [
-                  [
-                    -118.1949018,
-                    33.7642351
-                  ],
-                  [
-                    -118.1950256,
-                    33.7640713
-                  ]
-                ],
-                "width_m": 21.48,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.1,
-                  "relative_accuracy_m": 0.28,
-                  "measured": true,
-                  "date": "2022-05-11"
-                }
-              },
-              "entry": {
-                "marker": 0.61966,
+                "marker": 0.62097,
                 "line": [
                   [
                     -118.1956418,
@@ -2379,8 +1527,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.62553,
+              "end_line": {
+                "marker": 0.62684,
                 "line": [
                   [
                     -118.1954743,
@@ -2404,64 +1552,20 @@
             {
               "id": "t9",
               "label": "T9",
-              "start": 0.76311,
-              "end": 0.82512,
-              "members": [
-                "t9"
-              ],
+              "start": 0.80899,
+              "end": 0.81856,
+              "anchor": "t9",
               "points": [
                 {
-                  "id": "t9-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "T9",
-                  "marker": 0.801,
+                  "label": "Apex",
+                  "marker": 0.80992,
                   "point_ref": "t9"
                 }
               ],
               "start_line": {
-                "marker": 0.76311,
-                "line": [
-                  [
-                    -118.1925163,
-                    33.7642847
-                  ],
-                  [
-                    -118.1923642,
-                    33.7642849
-                  ]
-                ],
-                "width_m": 14.09,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.82512,
-                "line": [
-                  [
-                    -118.1920372,
-                    33.765938
-                  ],
-                  [
-                    -118.1920351,
-                    33.7657593
-                  ]
-                ],
-                "width_m": 19.83,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "entry": {
-                "marker": 0.81011,
+                "marker": 0.80899,
                 "line": [
                   [
                     -118.1925028,
@@ -2481,8 +1585,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.82011,
+              "end_line": {
+                "marker": 0.81856,
                 "line": [
                   [
                     -118.1922094,
@@ -2506,64 +1610,20 @@
             {
               "id": "t10",
               "label": "T10",
-              "start": 0.82512,
-              "end": 0.85075,
-              "members": [
-                "t10"
-              ],
+              "start": 0.85622,
+              "end": 0.86271,
+              "anchor": "t10",
               "points": [
                 {
-                  "id": "t10-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "T10",
-                  "marker": 0.842,
+                  "label": "Apex",
+                  "marker": 0.86055,
                   "point_ref": "t10"
                 }
               ],
               "start_line": {
-                "marker": 0.82512,
-                "line": [
-                  [
-                    -118.1920372,
-                    33.765938
-                  ],
-                  [
-                    -118.1920351,
-                    33.7657593
-                  ]
-                ],
-                "width_m": 19.83,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "end_line": {
-                "marker": 0.85075,
-                "line": [
-                  [
-                    -118.1911317,
-                    33.7659588
-                  ],
-                  [
-                    -118.1911284,
-                    33.7657761
-                  ]
-                ],
-                "width_m": 20.26,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.07,
-                  "relative_accuracy_m": 1.78,
-                  "measured": false,
-                  "date": "2022-05-11"
-                }
-              },
-              "entry": {
-                "marker": 0.85748,
+                "marker": 0.85622,
                 "line": [
                   [
                     -118.1908893,
@@ -2583,8 +1643,8 @@
                   "date": "2022-05-11"
                 }
               },
-              "exit": {
-                "marker": 0.864,
+              "end_line": {
+                "marker": 0.86271,
                 "line": [
                   [
                     -118.1906844,
@@ -2608,33 +1668,31 @@
             {
               "id": "t11",
               "label": "The Hairpin",
-              "start": 0.85075,
-              "end": 0.93568,
-              "members": [
-                "t11"
-              ],
+              "start": 0.88494,
+              "end": 0.89975,
+              "anchor": "t11",
               "points": [
                 {
-                  "id": "t11-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "The Hairpin",
-                  "marker": 0.882,
+                  "label": "Apex",
+                  "marker": 0.88648,
                   "point_ref": "t11"
                 }
               ],
               "start_line": {
-                "marker": 0.85075,
+                "marker": 0.88494,
                 "line": [
                   [
-                    -118.1911317,
-                    33.7659588
+                    -118.1898983,
+                    33.7660058
                   ],
                   [
-                    -118.1911284,
-                    33.7657761
+                    -118.1898852,
+                    33.7658164
                   ]
                 ],
-                "width_m": 20.26,
+                "width_m": 21.05,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 2.07,
@@ -2644,18 +1702,64 @@
                 }
               },
               "end_line": {
-                "marker": 0.93568,
+                "marker": 0.89975,
                 "line": [
                   [
-                    -118.1881402,
-                    33.7658906
+                    -118.1893662,
+                    33.765981
                   ],
                   [
-                    -118.1881591,
-                    33.7657553
+                    -118.189382,
+                    33.7658222
                   ]
                 ],
-                "width_m": 15.11,
+                "width_m": 17.67,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Shoreline",
+              "start": 0.22673,
+              "end": 0.23506,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Shoreline",
+                  "marker": 0.23012,
+                  "point_ref": "t1"
+                }
+              ],
+              "entry": {
+                "marker": 0.22673,
+                "line": [
+                  [
+                    -118.187676,
+                    33.7619739
+                  ],
+                  [
+                    -118.1877444,
+                    33.7620812
+                  ]
+                ],
+                "width_m": 13.49,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 2.07,
@@ -2664,8 +1768,863 @@
                   "date": "2022-05-11"
                 }
               },
+              "exit": {
+                "marker": 0.23506,
+                "line": [
+                  [
+                    -118.1879624,
+                    33.7618772
+                  ],
+                  [
+                    -118.1879982,
+                    33.7619992
+                  ]
+                ],
+                "width_m": 13.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.22673,
+                "line": [
+                  [
+                    -118.187676,
+                    33.7619739
+                  ],
+                  [
+                    -118.1877444,
+                    33.7620812
+                  ]
+                ],
+                "width_m": 13.49,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.23506,
+                "line": [
+                  [
+                    -118.1879624,
+                    33.7618772
+                  ],
+                  [
+                    -118.1879982,
+                    33.7619992
+                  ]
+                ],
+                "width_m": 13.92,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t2",
+              "label": "Aquarium",
+              "start": 0.24748,
+              "end": 0.29433,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Aquarium",
+                  "marker": 0.28645,
+                  "point_ref": "t2"
+                }
+              ],
+              "start_line": {
+                "marker": 0.24748,
+                "line": [
+                  [
+                    -118.1883804,
+                    33.7617802
+                  ],
+                  [
+                    -118.1884146,
+                    33.7619112
+                  ]
+                ],
+                "width_m": 14.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.29433,
+                "line": [
+                  [
+                    -118.1900428,
+                    33.7617806
+                  ],
+                  [
+                    -118.1899996,
+                    33.7619191
+                  ]
+                ],
+                "width_m": 15.87,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t3",
+              "label": "T3",
+              "start": 0.26902,
+              "end": 0.27674,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "T3",
+                  "marker": 0.27335,
+                  "point_ref": "t3"
+                }
+              ],
               "entry": {
-                "marker": 0.88602,
+                "marker": 0.26902,
+                "line": [
+                  [
+                    -118.1891353,
+                    33.7616943
+                  ],
+                  [
+                    -118.1891567,
+                    33.7618338
+                  ]
+                ],
+                "width_m": 15.61,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.27674,
+                "line": [
+                  [
+                    -118.189427,
+                    33.7616959
+                  ],
+                  [
+                    -118.1894025,
+                    33.7618371
+                  ]
+                ],
+                "width_m": 15.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.26902,
+                "line": [
+                  [
+                    -118.1891353,
+                    33.7616943
+                  ],
+                  [
+                    -118.1891567,
+                    33.7618338
+                  ]
+                ],
+                "width_m": 15.61,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.27674,
+                "line": [
+                  [
+                    -118.189427,
+                    33.7616959
+                  ],
+                  [
+                    -118.1894025,
+                    33.7618371
+                  ]
+                ],
+                "width_m": 15.83,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t4",
+              "label": "T4",
+              "start": 0.32676,
+              "end": 0.33355,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "T4",
+                  "marker": 0.3283,
+                  "point_ref": "t4"
+                }
+              ],
+              "entry": {
+                "marker": 0.32676,
+                "line": [
+                  [
+                    -118.1911012,
+                    33.7621555
+                  ],
+                  [
+                    -118.1910331,
+                    33.7622571
+                  ]
+                ],
+                "width_m": 12.91,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.33355,
+                "line": [
+                  [
+                    -118.1913068,
+                    33.7622416
+                  ],
+                  [
+                    -118.1912536,
+                    33.7623457
+                  ]
+                ],
+                "width_m": 12.56,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.32676,
+                "line": [
+                  [
+                    -118.1911012,
+                    33.7621555
+                  ],
+                  [
+                    -118.1910331,
+                    33.7622571
+                  ]
+                ],
+                "width_m": 12.91,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.33355,
+                "line": [
+                  [
+                    -118.1913068,
+                    33.7622416
+                  ],
+                  [
+                    -118.1912536,
+                    33.7623457
+                  ]
+                ],
+                "width_m": 12.56,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t5",
+              "label": "T5",
+              "start": 0.36813,
+              "end": 0.37461,
+              "members": [
+                "t5"
+              ],
+              "points": [
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "T5",
+                  "marker": 0.37214,
+                  "point_ref": "t5"
+                }
+              ],
+              "entry": {
+                "marker": 0.36813,
+                "line": [
+                  [
+                    -118.1924066,
+                    33.7626727
+                  ],
+                  [
+                    -118.1923353,
+                    33.762784
+                  ]
+                ],
+                "width_m": 14.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.37461,
+                "line": [
+                  [
+                    -118.1926001,
+                    33.7627256
+                  ],
+                  [
+                    -118.19256,
+                    33.7628725
+                  ]
+                ],
+                "width_m": 16.71,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.36813,
+                "line": [
+                  [
+                    -118.1924066,
+                    33.7626727
+                  ],
+                  [
+                    -118.1923353,
+                    33.762784
+                  ]
+                ],
+                "width_m": 14.0,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.37461,
+                "line": [
+                  [
+                    -118.1926001,
+                    33.7627256
+                  ],
+                  [
+                    -118.19256,
+                    33.7628725
+                  ]
+                ],
+                "width_m": 16.71,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t7",
+              "label": "T7",
+              "start": 0.50335,
+              "end": 0.51045,
+              "members": [
+                "t7"
+              ],
+              "points": [
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "T7",
+                  "marker": 0.50551,
+                  "point_ref": "t7"
+                }
+              ],
+              "entry": {
+                "marker": 0.50335,
+                "line": [
+                  [
+                    -118.1963481,
+                    33.7630105
+                  ],
+                  [
+                    -118.1962113,
+                    33.7630379
+                  ]
+                ],
+                "width_m": 13.04,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.51045,
+                "line": [
+                  [
+                    -118.1964774,
+                    33.7631183
+                  ],
+                  [
+                    -118.1964028,
+                    33.7632255
+                  ]
+                ],
+                "width_m": 13.75,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.50335,
+                "line": [
+                  [
+                    -118.1963481,
+                    33.7630105
+                  ],
+                  [
+                    -118.1962113,
+                    33.7630379
+                  ]
+                ],
+                "width_m": 13.04,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.51045,
+                "line": [
+                  [
+                    -118.1964774,
+                    33.7631183
+                  ],
+                  [
+                    -118.1964028,
+                    33.7632255
+                  ]
+                ],
+                "width_m": 13.75,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t8",
+              "label": "The Fountain",
+              "start": 0.62097,
+              "end": 0.62684,
+              "members": [
+                "t8"
+              ],
+              "points": [
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "The Fountain",
+                  "marker": 0.6253,
+                  "point_ref": "t8"
+                }
+              ],
+              "entry": {
+                "marker": 0.62097,
+                "line": [
+                  [
+                    -118.1956418,
+                    33.7645544
+                  ],
+                  [
+                    -118.1957473,
+                    33.7644082
+                  ]
+                ],
+                "width_m": 18.93,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.62684,
+                "line": [
+                  [
+                    -118.1954743,
+                    33.7644796
+                  ],
+                  [
+                    -118.1955527,
+                    33.7643234
+                  ]
+                ],
+                "width_m": 18.79,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.62097,
+                "line": [
+                  [
+                    -118.1956418,
+                    33.7645544
+                  ],
+                  [
+                    -118.1957473,
+                    33.7644082
+                  ]
+                ],
+                "width_m": 18.93,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.62684,
+                "line": [
+                  [
+                    -118.1954743,
+                    33.7644796
+                  ],
+                  [
+                    -118.1955527,
+                    33.7643234
+                  ]
+                ],
+                "width_m": 18.79,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t9",
+              "label": "T9",
+              "start": 0.80899,
+              "end": 0.81856,
+              "members": [
+                "t9"
+              ],
+              "points": [
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "T9",
+                  "marker": 0.80992,
+                  "point_ref": "t9"
+                }
+              ],
+              "entry": {
+                "marker": 0.80899,
+                "line": [
+                  [
+                    -118.1925028,
+                    33.7656765
+                  ],
+                  [
+                    -118.1922847,
+                    33.765666
+                  ]
+                ],
+                "width_m": 20.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.81856,
+                "line": [
+                  [
+                    -118.1922094,
+                    33.7659394
+                  ],
+                  [
+                    -118.1922083,
+                    33.7657581
+                  ]
+                ],
+                "width_m": 20.11,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.80899,
+                "line": [
+                  [
+                    -118.1925028,
+                    33.7656765
+                  ],
+                  [
+                    -118.1922847,
+                    33.765666
+                  ]
+                ],
+                "width_m": 20.24,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.81856,
+                "line": [
+                  [
+                    -118.1922094,
+                    33.7659394
+                  ],
+                  [
+                    -118.1922083,
+                    33.7657581
+                  ]
+                ],
+                "width_m": 20.11,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t10",
+              "label": "T10",
+              "start": 0.85622,
+              "end": 0.86271,
+              "members": [
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "T10",
+                  "marker": 0.86055,
+                  "point_ref": "t10"
+                }
+              ],
+              "entry": {
+                "marker": 0.85622,
+                "line": [
+                  [
+                    -118.1908893,
+                    33.7659496
+                  ],
+                  [
+                    -118.1908963,
+                    33.7657747
+                  ]
+                ],
+                "width_m": 19.41,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "exit": {
+                "marker": 0.86271,
+                "line": [
+                  [
+                    -118.1906844,
+                    33.765959
+                  ],
+                  [
+                    -118.1906494,
+                    33.7657792
+                  ]
+                ],
+                "width_m": 20.21,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.85622,
+                "line": [
+                  [
+                    -118.1908893,
+                    33.7659496
+                  ],
+                  [
+                    -118.1908963,
+                    33.7657747
+                  ]
+                ],
+                "width_m": 19.41,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.86271,
+                "line": [
+                  [
+                    -118.1906844,
+                    33.765959
+                  ],
+                  [
+                    -118.1906494,
+                    33.7657792
+                  ]
+                ],
+                "width_m": 20.21,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.1,
+                  "relative_accuracy_m": 0.28,
+                  "measured": true,
+                  "date": "2022-05-11"
+                }
+              }
+            },
+            {
+              "id": "t11",
+              "label": "The Hairpin",
+              "start": 0.88494,
+              "end": 0.89975,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "The Hairpin",
+                  "marker": 0.88648,
+                  "point_ref": "t11"
+                }
+              ],
+              "entry": {
+                "marker": 0.88494,
                 "line": [
                   [
                     -118.1898983,
@@ -2686,7 +2645,49 @@
                 }
               },
               "exit": {
-                "marker": 0.90062,
+                "marker": 0.89975,
+                "line": [
+                  [
+                    -118.1893662,
+                    33.765981
+                  ],
+                  [
+                    -118.189382,
+                    33.7658222
+                  ]
+                ],
+                "width_m": 17.67,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "start_line": {
+                "marker": 0.88494,
+                "line": [
+                  [
+                    -118.1898983,
+                    33.7660058
+                  ],
+                  [
+                    -118.1898852,
+                    33.7658164
+                  ]
+                ],
+                "width_m": 21.05,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.07,
+                  "relative_accuracy_m": 1.78,
+                  "measured": false,
+                  "date": "2022-05-11"
+                }
+              },
+              "end_line": {
+                "marker": 0.89975,
                 "line": [
                   [
                     -118.1893662,
@@ -2815,62 +2816,62 @@
         },
         "unnamed_corners": [
           {
-            "marker": 0.0086,
+            "marker": 0.0097,
             "direction": "right",
             "radius_m": 31.8
           },
           {
-            "marker": 0.0519,
+            "marker": 0.0541,
             "direction": "left",
             "radius_m": 42.6
           },
           {
-            "marker": 0.0815,
+            "marker": 0.0835,
             "direction": "left",
             "radius_m": 55.0
           },
           {
-            "marker": 0.0928,
+            "marker": 0.0949,
             "direction": "right",
             "radius_m": 11.5
           },
           {
-            "marker": 0.4366,
+            "marker": 0.4398,
             "direction": "left",
             "radius_m": 16.7
           },
           {
-            "marker": 0.4564,
+            "marker": 0.4589,
             "direction": "right",
             "radius_m": 72.6
           },
           {
-            "marker": 0.4797,
+            "marker": 0.482,
             "direction": "left",
             "radius_m": 24.5
           },
           {
-            "marker": 0.5397,
+            "marker": 0.5401,
             "direction": "right",
             "radius_m": 26.5
           },
           {
-            "marker": 0.5891,
+            "marker": 0.5901,
             "direction": "right",
             "radius_m": 14.6
           },
           {
-            "marker": 0.719,
+            "marker": 0.7195,
             "direction": "left",
             "radius_m": 15.7
           },
           {
-            "marker": 0.7415,
+            "marker": 0.7401,
             "direction": "left",
             "radius_m": 64.9
           },
           {
-            "marker": 0.9768,
+            "marker": 0.9766,
             "direction": "left",
             "radius_m": 77.8
           }
@@ -2941,7 +2942,7 @@
     "imsa_data": "long-beach"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:08:26.806446+00:00",
+    "generated_at": "2026-09-26T20:41:27.538982+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

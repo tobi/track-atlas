@@ -118,6 +118,16 @@
           "default": "EPSG:4326",
           "title": "Crs",
           "type": "string"
+        },
+        "basis": {
+          "default": "centerline",
+          "description": "What `centerline` is and what every lap fraction is measured along: 'midline' = the measured surface midline (docs/GEOMETRY.md), 'centerline' = the OSM-derived line (unmeasured layouts).",
+          "enum": [
+            "centerline",
+            "midline"
+          ],
+          "title": "Basis",
+          "type": "string"
         }
       },
       "required": [
@@ -523,6 +533,7 @@
               "enum": [
                 "osm-way",
                 "centerline",
+                "midline",
                 "manual"
               ],
               "type": "string"

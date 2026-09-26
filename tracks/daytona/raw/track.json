@@ -35,6 +35,7 @@
       "geometry": {
         "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326",
+        "basis": "midline",
         "surface": "layers/gp.surface.geojson"
       },
       "point_layers": [
@@ -48,8 +49,8 @@
               "label": "Start / Finish",
               "marker": 0.0,
               "location": [
-                -81.072653,
-                29.187867
+                -81.0726408,
+                29.1878553
               ],
               "line": {
                 "marker": 0.0,
@@ -88,12 +89,12 @@
               "labels": {
                 "numbered": "Turn 1"
               },
-              "marker": 0.085,
+              "marker": 0.08268,
               "location": [
-                -81.073544,
-                29.183832
+                -81.0736054,
+                29.1838988
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 2,
               "placement": {
@@ -104,7 +105,7 @@
                 "marker_offset_m": -6.3
               },
               "entry": {
-                "marker": 0.07955,
+                "marker": 0.0792,
                 "line": [
                   [
                     -81.0736384,
@@ -125,7 +126,7 @@
                 }
               },
               "exit": {
-                "marker": 0.09322,
+                "marker": 0.0919,
                 "line": [
                   [
                     -81.0731268,
@@ -146,7 +147,7 @@
                 }
               },
               "apex": {
-                "marker": 0.08324,
+                "marker": 0.08268,
                 "location": [
                   -81.0735478,
                   29.1839571
@@ -169,12 +170,12 @@
               "labels": {
                 "numbered": "Turn 2"
               },
-              "marker": 0.115,
+              "marker": 0.12494,
               "location": [
-                -81.072074,
-                29.18452
+                -81.071484,
+                29.1847935
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 3,
               "placement": {
@@ -185,7 +186,7 @@
                 "marker_offset_m": 50.3
               },
               "entry": {
-                "marker": 0.12044,
+                "marker": 0.11902,
                 "line": [
                   [
                     -81.0717938,
@@ -206,7 +207,7 @@
                 }
               },
               "exit": {
-                "marker": 0.12922,
+                "marker": 0.12772,
                 "line": [
                   [
                     -81.0714324,
@@ -227,7 +228,7 @@
                 }
               },
               "apex": {
-                "marker": 0.12645,
+                "marker": 0.12494,
                 "location": [
                   -81.0715211,
                   29.1848231
@@ -252,12 +253,12 @@
                 "driver": "International Horseshoe",
                 "official": "International Horseshoe"
               },
-              "marker": 0.169,
+              "marker": 0.17067,
               "location": [
-                -81.069856,
-                29.186424
+                -81.0696896,
+                29.1863983
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 1,
               "placement": {
@@ -268,7 +269,7 @@
                 "marker_offset_m": 21.5
               },
               "entry": {
-                "marker": 0.16254,
+                "marker": 0.16111,
                 "line": [
                   [
                     -81.0702533,
@@ -289,7 +290,7 @@
                 }
               },
               "exit": {
-                "marker": 0.1797,
+                "marker": 0.17937,
                 "line": [
                   [
                     -81.0694893,
@@ -310,7 +311,7 @@
                 }
               },
               "apex": {
-                "marker": 0.17172,
+                "marker": 0.17067,
                 "location": [
                   -81.0697273,
                   29.1863403
@@ -335,12 +336,12 @@
                 "driver": "The Kink",
                 "official": "Turn 4 (Kink)"
               },
-              "marker": 0.255,
+              "marker": 0.25502,
               "location": [
-                -81.071983,
-                29.182743
+                -81.0719988,
+                29.1827262
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -351,7 +352,7 @@
                 "marker_offset_m": 4.7
               },
               "entry": {
-                "marker": 0.24924,
+                "marker": 0.24893,
                 "line": [
                   [
                     -81.0717809,
@@ -372,7 +373,7 @@
                 }
               },
               "exit": {
-                "marker": 0.25874,
+                "marker": 0.25849,
                 "line": [
                   [
                     -81.0719759,
@@ -393,7 +394,7 @@
                 }
               },
               "apex": {
-                "marker": 0.25528,
+                "marker": 0.25502,
                 "location": [
                   -81.0719382,
                   29.1827083
@@ -418,12 +419,12 @@
                 "driver": "West Horseshoe",
                 "official": "West Horseshoe"
               },
-              "marker": 0.309,
+              "marker": 0.30945,
               "location": [
-                -81.072097,
-                29.180021
+                -81.0721414,
+                29.1800007
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 2,
               "placement": {
@@ -435,7 +436,7 @@
                 "declared_direction": "left"
               },
               "entry": {
-                "marker": 0.30459,
+                "marker": 0.3044,
                 "line": [
                   [
                     -81.0718994,
@@ -456,7 +457,7 @@
                 }
               },
               "exit": {
-                "marker": 0.32463,
+                "marker": 0.32423,
                 "line": [
                   [
                     -81.0728799,
@@ -477,7 +478,7 @@
                 }
               },
               "apex": {
-                "marker": 0.30965,
+                "marker": 0.30945,
                 "location": [
                   -81.0721664,
                   29.1800463
@@ -502,12 +503,12 @@
                 "driver": "NASCAR 1",
                 "official": "Turn 6 (NASCAR Turn 1)"
               },
-              "marker": 0.376,
+              "marker": 0.37831,
               "location": [
-                -81.073287,
-                29.18296
+                -81.0733657,
+                29.183097
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -518,7 +519,7 @@
                 "marker_offset_m": 20.2
               },
               "entry": {
-                "marker": 0.37639,
+                "marker": 0.37605,
                 "line": [
                   [
                     -81.0733652,
@@ -539,7 +540,7 @@
                 }
               },
               "exit": {
-                "marker": 0.38488,
+                "marker": 0.38457,
                 "line": [
                   [
                     -81.073692,
@@ -560,7 +561,7 @@
                 }
               },
               "apex": {
-                "marker": 0.37876,
+                "marker": 0.37831,
                 "location": [
                   -81.0734236,
                   29.1830602
@@ -585,12 +586,12 @@
                 "driver": "NASCAR 2",
                 "official": "Turn 7 (NASCAR Turn 2)"
               },
-              "marker": 0.451,
+              "marker": 0.44857,
               "location": [
-                -81.074671,
-                29.180285
+                -81.0747552,
+                29.1803918
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -601,7 +602,7 @@
                 "marker_offset_m": -16.3
               },
               "entry": {
-                "marker": 0.44601,
+                "marker": 0.44631,
                 "line": [
                   [
                     -81.0747088,
@@ -622,7 +623,7 @@
                 }
               },
               "exit": {
-                "marker": 0.44968,
+                "marker": 0.45013,
                 "line": [
                   [
                     -81.0746158,
@@ -643,7 +644,7 @@
                 }
               },
               "apex": {
-                "marker": 0.44819,
+                "marker": 0.44857,
                 "location": [
                   -81.0746674,
                   29.1804276
@@ -667,12 +668,12 @@
                 "numbered": "Turn 8",
                 "driver": "Bus Stop entry"
               },
-              "marker": 0.67,
+              "marker": 0.67221,
               "location": [
-                -81.065474,
-                29.184268
+                -81.0654389,
+                29.18437
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
@@ -683,7 +684,7 @@
                 "marker_offset_m": 13.1
               },
               "entry": {
-                "marker": 0.66929,
+                "marker": 0.66977,
                 "line": [
                   [
                     -81.0655664,
@@ -704,7 +705,7 @@
                 }
               },
               "exit": {
-                "marker": 0.67683,
+                "marker": 0.67725,
                 "line": [
                   [
                     -81.0655067,
@@ -725,7 +726,7 @@
                 }
               },
               "apex": {
-                "marker": 0.67182,
+                "marker": 0.67221,
                 "location": [
                   -81.0655027,
                   29.1843894
@@ -749,12 +750,12 @@
                 "numbered": "Turn 9",
                 "driver": "Bus Stop"
               },
-              "marker": 0.68,
+              "marker": 0.68316,
               "location": [
-                -81.065484,
-                29.184776
+                -81.0654917,
+                29.1849255
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 3,
               "placement": {
@@ -765,7 +766,7 @@
                 "marker_offset_m": 10.7
               },
               "entry": {
-                "marker": 0.67908,
+                "marker": 0.67951,
                 "line": [
                   [
                     -81.0655488,
@@ -786,7 +787,7 @@
                 }
               },
               "exit": {
-                "marker": 0.68423,
+                "marker": 0.68473,
                 "line": [
                   [
                     -81.0654925,
@@ -807,7 +808,7 @@
                 }
               },
               "apex": {
-                "marker": 0.68266,
+                "marker": 0.68316,
                 "location": [
                   -81.0654389,
                   29.1849089
@@ -831,12 +832,12 @@
                 "numbered": "Turn 10",
                 "driver": "Bus Stop"
               },
-              "marker": 0.692,
+              "marker": 0.69621,
               "location": [
-                -81.065221,
-                29.185333
+                -81.0650905,
+                29.1855002
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 3,
               "placement": {
@@ -847,7 +848,7 @@
                 "marker_offset_m": 20.3
               },
               "entry": {
-                "marker": 0.69326,
+                "marker": 0.69377,
                 "line": [
                   [
                     -81.0652246,
@@ -868,7 +869,7 @@
                 }
               },
               "exit": {
-                "marker": 0.69768,
+                "marker": 0.69829,
                 "line": [
                   [
                     -81.0649844,
@@ -889,7 +890,7 @@
                 }
               },
               "apex": {
-                "marker": 0.69566,
+                "marker": 0.69621,
                 "location": [
                   -81.0650603,
                   29.1854596
@@ -913,12 +914,12 @@
                 "numbered": "Turn 11",
                 "driver": "Bus Stop exit"
               },
-              "marker": 0.703,
+              "marker": 0.70403,
               "location": [
-                -81.064681,
-                29.185589
+                -81.064642,
+                29.1855931
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
@@ -929,7 +930,7 @@
                 "marker_offset_m": 5.4
               },
               "entry": {
-                "marker": 0.70203,
+                "marker": 0.70264,
                 "line": [
                   [
                     -81.0647361,
@@ -950,7 +951,7 @@
                 }
               },
               "exit": {
-                "marker": 0.70597,
+                "marker": 0.70647,
                 "line": [
                   [
                     -81.0646025,
@@ -971,7 +972,7 @@
                 }
               },
               "apex": {
-                "marker": 0.70341,
+                "marker": 0.70403,
                 "location": [
                   -81.0646745,
                   29.1856716
@@ -996,12 +997,12 @@
                 "driver": "NASCAR 3",
                 "official": "Turn 12 (NASCAR Turns 3-4)"
               },
-              "marker": 0.81,
+              "marker": 0.8035,
               "location": [
-                -81.063084,
-                29.190366
+                -81.062896,
+                29.1900843
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -1012,7 +1013,7 @@
                 "marker_offset_m": -23.0
               },
               "entry": {
-                "marker": 0.80058,
+                "marker": 0.80072,
                 "line": [
                   [
                     -81.0628803,
@@ -1033,7 +1034,7 @@
                 }
               },
               "exit": {
-                "marker": 0.80826,
+                "marker": 0.80837,
                 "line": [
                   [
                     -81.0630965,
@@ -1054,7 +1055,7 @@
                 }
               },
               "apex": {
-                "marker": 0.80338,
+                "marker": 0.8035,
                 "location": [
                   -81.0629525,
                   29.1900575
@@ -1083,7 +1084,7 @@
               "id": "s1",
               "label": "S1",
               "start": 0.0,
-              "end": 0.355,
+              "end": 0.35465,
               "start_line": {
                 "marker": 0.0,
                 "line": [
@@ -1106,7 +1107,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.355,
+                "marker": 0.35465,
                 "line": [
                   [
                     -81.0731486,
@@ -1130,10 +1131,10 @@
             {
               "id": "s2",
               "label": "S2",
-              "start": 0.355,
-              "end": 0.63,
+              "start": 0.35465,
+              "end": 0.63045,
               "start_line": {
-                "marker": 0.355,
+                "marker": 0.35465,
                 "line": [
                   [
                     -81.0731486,
@@ -1154,7 +1155,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.63,
+                "marker": 0.63045,
                 "line": [
                   [
                     -81.0669342,
@@ -1178,10 +1179,10 @@
             {
               "id": "s3",
               "label": "S3",
-              "start": 0.63,
+              "start": 0.63045,
               "end": 1.0,
               "start_line": {
-                "marker": 0.63,
+                "marker": 0.63045,
                 "line": [
                   [
                     -81.0669342,
@@ -1234,767 +1235,20 @@
             {
               "id": "t1",
               "label": "Turn 1",
-              "start": 0.05358,
-              "end": 0.1006,
+              "start": 0.0792,
+              "end": 0.0919,
               "anchor": "t1",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.085,
+                  "marker": 0.08268,
                   "point_ref": "t1"
                 }
               ],
               "start_line": {
-                "marker": 0.05358,
-                "line": [
-                  [
-                    -81.0738099,
-                    29.1853576
-                  ],
-                  [
-                    -81.0739477,
-                    29.1853356
-                  ]
-                ],
-                "width_m": 13.63,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.03,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.1006,
-                "line": [
-                  [
-                    -81.0727431,
-                    29.1840751
-                  ],
-                  [
-                    -81.07266,
-                    29.1839834
-                  ]
-                ],
-                "width_m": 12.99,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t2",
-              "label": "Turn 2",
-              "start": 0.1006,
-              "end": 0.13043,
-              "anchor": "t2",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.115,
-                  "point_ref": "t2"
-                }
-              ],
-              "start_line": {
-                "marker": 0.1006,
-                "line": [
-                  [
-                    -81.0727431,
-                    29.1840751
-                  ],
-                  [
-                    -81.07266,
-                    29.1839834
-                  ]
-                ],
-                "width_m": 12.99,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.13043,
-                "line": [
-                  [
-                    -81.0714073,
-                    29.1849917
-                  ],
-                  [
-                    -81.0712953,
-                    29.1849369
-                  ]
-                ],
-                "width_m": 12.47,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t3",
-              "label": "International Horseshoe",
-              "start": 0.13043,
-              "end": 0.19867,
-              "anchor": "t3",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.169,
-                  "point_ref": "t3"
-                }
-              ],
-              "start_line": {
-                "marker": 0.13043,
-                "line": [
-                  [
-                    -81.0714073,
-                    29.1849917
-                  ],
-                  [
-                    -81.0712953,
-                    29.1849369
-                  ]
-                ],
-                "width_m": 12.47,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.19867,
-                "line": [
-                  [
-                    -81.070021,
-                    29.1850985
-                  ],
-                  [
-                    -81.0701161,
-                    29.1851542
-                  ]
-                ],
-                "width_m": 11.11,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t4",
-              "label": "The Kink",
-              "start": 0.24889,
-              "end": 0.26285,
-              "anchor": "t4",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.255,
-                  "point_ref": "t4"
-                }
-              ],
-              "start_line": {
-                "marker": 0.24889,
-                "line": [
-                  [
-                    -81.0717704,
-                    29.1829893
-                  ],
-                  [
-                    -81.0718642,
-                    29.1830476
-                  ]
-                ],
-                "width_m": 11.18,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.26285,
-                "line": [
-                  [
-                    -81.0720037,
-                    29.1823331
-                  ],
-                  [
-                    -81.0721056,
-                    29.1823341
-                  ]
-                ],
-                "width_m": 9.91,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t5",
-              "label": "West Horseshoe",
-              "start": 0.27758,
-              "end": 0.33169,
-              "anchor": "t5",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.309,
-                  "point_ref": "t5"
-                }
-              ],
-              "start_line": {
-                "marker": 0.27758,
-                "line": [
-                  [
-                    -81.0719633,
-                    29.1815824
-                  ],
-                  [
-                    -81.0720401,
-                    29.1815734
-                  ]
-                ],
-                "width_m": 7.54,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.33169,
-                "line": [
-                  [
-                    -81.0729618,
-                    29.180696
-                  ],
-                  [
-                    -81.0728447,
-                    29.1807102
-                  ]
-                ],
-                "width_m": 11.49,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t6",
-              "label": "NASCAR 1",
-              "start": 0.36989,
-              "end": 0.38385,
-              "anchor": "t6",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.376,
-                  "point_ref": "t6"
-                }
-              ],
-              "start_line": {
-                "marker": 0.36989,
-                "line": [
-                  [
-                    -81.0732763,
-                    29.1826566
-                  ],
-                  [
-                    -81.0731869,
-                    29.1826716
-                  ]
-                ],
-                "width_m": 8.85,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.38385,
-                "line": [
-                  [
-                    -81.0736356,
-                    29.1831177
-                  ],
-                  [
-                    -81.0736542,
-                    29.183241
-                  ]
-                ],
-                "width_m": 13.78,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t7",
-              "label": "NASCAR 2",
-              "start": 0.44489,
-              "end": 0.45885,
-              "anchor": "t7",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.451,
-                  "point_ref": "t7"
-                }
-              ],
-              "start_line": {
-                "marker": 0.44489,
-                "line": [
-                  [
-                    -81.0747272,
-                    29.1805789
-                  ],
-                  [
-                    -81.0749087,
-                    29.1805293
-                  ]
-                ],
-                "width_m": 18.49,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.45885,
-                "line": [
-                  [
-                    -81.0743178,
-                    29.1799835
-                  ],
-                  [
-                    -81.0745534,
-                    29.1798558
-                  ]
-                ],
-                "width_m": 26.93,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t8",
-              "label": "Bus Stop entry",
-              "start": 0.65778,
-              "end": 0.67368,
-              "anchor": "t8",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.67,
-                  "point_ref": "t8"
-                }
-              ],
-              "start_line": {
-                "marker": 0.65778,
-                "line": [
-                  [
-                    -81.0659653,
-                    29.1838152
-                  ],
-                  [
-                    -81.0658536,
-                    29.1837439
-                  ]
-                ],
-                "width_m": 13.43,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.67368,
-                "line": [
-                  [
-                    -81.0654929,
-                    29.1844673
-                  ],
-                  [
-                    -81.0653476,
-                    29.1844673
-                  ]
-                ],
-                "width_m": 14.13,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.03,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t9",
-              "label": "Bus Stop",
-              "start": 0.67368,
-              "end": 0.68545,
-              "anchor": "t9",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.68,
-                  "point_ref": "t9"
-                }
-              ],
-              "start_line": {
-                "marker": 0.67368,
-                "line": [
-                  [
-                    -81.0654929,
-                    29.1844673
-                  ],
-                  [
-                    -81.0653476,
-                    29.1844673
-                  ]
-                ],
-                "width_m": 14.13,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.03,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.68545,
-                "line": [
-                  [
-                    -81.065456,
-                    29.1850739
-                  ],
-                  [
-                    -81.0653668,
-                    29.1850286
-                  ]
-                ],
-                "width_m": 10.03,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t10",
-              "label": "Bus Stop",
-              "start": 0.68545,
-              "end": 0.69847,
-              "anchor": "t10",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.692,
-                  "point_ref": "t10"
-                }
-              ],
-              "start_line": {
-                "marker": 0.68545,
-                "line": [
-                  [
-                    -81.065456,
-                    29.1850739
-                  ],
-                  [
-                    -81.0653668,
-                    29.1850286
-                  ]
-                ],
-                "width_m": 10.03,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.69847,
-                "line": [
-                  [
-                    -81.0649352,
-                    29.1855977
-                  ],
-                  [
-                    -81.0649116,
-                    29.1854838
-                  ]
-                ],
-                "width_m": 12.82,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t11",
-              "label": "Bus Stop exit",
-              "start": 0.69847,
-              "end": 0.71522,
-              "anchor": "t11",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.703,
-                  "point_ref": "t11"
-                }
-              ],
-              "start_line": {
-                "marker": 0.69847,
-                "line": [
-                  [
-                    -81.0649352,
-                    29.1855977
-                  ],
-                  [
-                    -81.0649116,
-                    29.1854838
-                  ]
-                ],
-                "width_m": 12.82,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.71522,
-                "line": [
-                  [
-                    -81.0642131,
-                    29.1860559
-                  ],
-                  [
-                    -81.0640423,
-                    29.1859233
-                  ]
-                ],
-                "width_m": 22.18,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            },
-            {
-              "id": "t12",
-              "label": "NASCAR 3",
-              "start": 0.80389,
-              "end": 0.81785,
-              "anchor": "t12",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.81,
-                  "point_ref": "t12"
-                }
-              ],
-              "start_line": {
-                "marker": 0.80389,
-                "line": [
-                  [
-                    -81.062967,
-                    29.1900808
-                  ],
-                  [
-                    -81.0628545,
-                    29.1901354
-                  ]
-                ],
-                "width_m": 12.51,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.81785,
-                "line": [
-                  [
-                    -81.0634432,
-                    29.1906469
-                  ],
-                  [
-                    -81.0633546,
-                    29.1907255
-                  ]
-                ],
-                "width_m": 12.25,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "corner_complexes",
-          "kind": "corner_complexes",
-          "label": "Corner Complexes",
-          "items": [
-            {
-              "id": "t1",
-              "label": "Turn 1",
-              "start": 0.05358,
-              "end": 0.1006,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Turn 1",
-                  "marker": 0.085,
-                  "point_ref": "t1"
-                }
-              ],
-              "start_line": {
-                "marker": 0.05358,
-                "line": [
-                  [
-                    -81.0738099,
-                    29.1853576
-                  ],
-                  [
-                    -81.0739477,
-                    29.1853356
-                  ]
-                ],
-                "width_m": 13.63,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 2.03,
-                  "relative_accuracy_m": 1.75,
-                  "measured": false,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.1006,
-                "line": [
-                  [
-                    -81.0727431,
-                    29.1840751
-                  ],
-                  [
-                    -81.07266,
-                    29.1839834
-                  ]
-                ],
-                "width_m": 12.99,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "entry": {
-                "marker": 0.07955,
+                "marker": 0.0792,
                 "line": [
                   [
                     -81.0736384,
@@ -2014,8 +1268,8 @@
                   "date": "2023-01-17"
                 }
               },
-              "exit": {
-                "marker": 0.09322,
+              "end_line": {
+                "marker": 0.0919,
                 "line": [
                   [
                     -81.0731268,
@@ -2039,64 +1293,20 @@
             {
               "id": "t2",
               "label": "Turn 2",
-              "start": 0.1006,
-              "end": 0.13043,
-              "members": [
-                "t2"
-              ],
+              "start": 0.11902,
+              "end": 0.12772,
+              "anchor": "t2",
               "points": [
                 {
-                  "id": "t2-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 2",
-                  "marker": 0.115,
+                  "label": "Apex",
+                  "marker": 0.12494,
                   "point_ref": "t2"
                 }
               ],
               "start_line": {
-                "marker": 0.1006,
-                "line": [
-                  [
-                    -81.0727431,
-                    29.1840751
-                  ],
-                  [
-                    -81.07266,
-                    29.1839834
-                  ]
-                ],
-                "width_m": 12.99,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.13043,
-                "line": [
-                  [
-                    -81.0714073,
-                    29.1849917
-                  ],
-                  [
-                    -81.0712953,
-                    29.1849369
-                  ]
-                ],
-                "width_m": 12.47,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "entry": {
-                "marker": 0.12044,
+                "marker": 0.11902,
                 "line": [
                   [
                     -81.0717938,
@@ -2116,8 +1326,8 @@
                   "date": "2023-01-17"
                 }
               },
-              "exit": {
-                "marker": 0.12922,
+              "end_line": {
+                "marker": 0.12772,
                 "line": [
                   [
                     -81.0714324,
@@ -2141,30 +1351,550 @@
             {
               "id": "t3",
               "label": "International Horseshoe",
-              "start": 0.13043,
-              "end": 0.19867,
-              "members": [
-                "t3"
-              ],
+              "start": 0.16111,
+              "end": 0.17937,
+              "anchor": "t3",
               "points": [
                 {
-                  "id": "t3-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "International Horseshoe",
-                  "marker": 0.169,
+                  "label": "Apex",
+                  "marker": 0.17067,
                   "point_ref": "t3"
                 }
               ],
               "start_line": {
-                "marker": 0.13043,
+                "marker": 0.16111,
                 "line": [
                   [
-                    -81.0714073,
-                    29.1849917
+                    -81.0702533,
+                    29.1863328
                   ],
                   [
-                    -81.0712953,
-                    29.1849369
+                    -81.0701405,
+                    29.1862467
+                  ]
+                ],
+                "width_m": 14.54,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.17937,
+                "line": [
+                  [
+                    -81.0694893,
+                    29.1859762
+                  ],
+                  [
+                    -81.0696338,
+                    29.1860256
+                  ]
+                ],
+                "width_m": 15.09,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t4",
+              "label": "The Kink",
+              "start": 0.24893,
+              "end": 0.25849,
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.25502,
+                  "point_ref": "t4"
+                }
+              ],
+              "start_line": {
+                "marker": 0.24893,
+                "line": [
+                  [
+                    -81.0717809,
+                    29.1829744
+                  ],
+                  [
+                    -81.0718773,
+                    29.183033
+                  ]
+                ],
+                "width_m": 11.41,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.25849,
+                "line": [
+                  [
+                    -81.0719759,
+                    29.1825441
+                  ],
+                  [
+                    -81.0720984,
+                    29.1825549
+                  ]
+                ],
+                "width_m": 11.98,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t5",
+              "label": "West Horseshoe",
+              "start": 0.3044,
+              "end": 0.32423,
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.30945,
+                  "point_ref": "t5"
+                }
+              ],
+              "start_line": {
+                "marker": 0.3044,
+                "line": [
+                  [
+                    -81.0718994,
+                    29.1801744
+                  ],
+                  [
+                    -81.0720076,
+                    29.1802169
+                  ]
+                ],
+                "width_m": 11.53,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.32423,
+                "line": [
+                  [
+                    -81.0728799,
+                    29.1803241
+                  ],
+                  [
+                    -81.0727717,
+                    29.1803558
+                  ]
+                ],
+                "width_m": 11.1,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t6",
+              "label": "NASCAR 1",
+              "start": 0.37605,
+              "end": 0.38457,
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.37831,
+                  "point_ref": "t6"
+                }
+              ],
+              "start_line": {
+                "marker": 0.37605,
+                "line": [
+                  [
+                    -81.0733652,
+                    29.1829759
+                  ],
+                  [
+                    -81.0732596,
+                    29.1830042
+                  ]
+                ],
+                "width_m": 10.74,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.38457,
+                "line": [
+                  [
+                    -81.073692,
+                    29.1831148
+                  ],
+                  [
+                    -81.0737194,
+                    29.1832259
+                  ]
+                ],
+                "width_m": 12.6,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t7",
+              "label": "NASCAR 2",
+              "start": 0.44631,
+              "end": 0.45013,
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.44857,
+                  "point_ref": "t7"
+                }
+              ],
+              "start_line": {
+                "marker": 0.44631,
+                "line": [
+                  [
+                    -81.0747088,
+                    29.1805274
+                  ],
+                  [
+                    -81.0748903,
+                    29.1804774
+                  ]
+                ],
+                "width_m": 18.51,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.45013,
+                "line": [
+                  [
+                    -81.0746158,
+                    29.1803835
+                  ],
+                  [
+                    -81.0747959,
+                    29.180263
+                  ]
+                ],
+                "width_m": 22.03,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t8",
+              "label": "Bus Stop entry",
+              "start": 0.66977,
+              "end": 0.67725,
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.67221,
+                  "point_ref": "t8"
+                }
+              ],
+              "start_line": {
+                "marker": 0.66977,
+                "line": [
+                  [
+                    -81.0655664,
+                    29.1842975
+                  ],
+                  [
+                    -81.0654533,
+                    29.1842242
+                  ]
+                ],
+                "width_m": 13.67,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.67725,
+                "line": [
+                  [
+                    -81.0655067,
+                    29.1846132
+                  ],
+                  [
+                    -81.0653774,
+                    29.1846433
+                  ]
+                ],
+                "width_m": 13.01,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t9",
+              "label": "Bus Stop",
+              "start": 0.67951,
+              "end": 0.68473,
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.68316,
+                  "point_ref": "t9"
+                }
+              ],
+              "start_line": {
+                "marker": 0.67951,
+                "line": [
+                  [
+                    -81.0655488,
+                    29.1847241
+                  ],
+                  [
+                    -81.0654199,
+                    29.1847548
+                  ]
+                ],
+                "width_m": 12.99,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.68473,
+                "line": [
+                  [
+                    -81.0654925,
+                    29.1850206
+                  ],
+                  [
+                    -81.0654036,
+                    29.1849732
+                  ]
+                ],
+                "width_m": 10.12,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t10",
+              "label": "Bus Stop",
+              "start": 0.69377,
+              "end": 0.69829,
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.69621,
+                  "point_ref": "t10"
+                }
+              ],
+              "start_line": {
+                "marker": 0.69377,
+                "line": [
+                  [
+                    -81.0652246,
+                    29.1854253
+                  ],
+                  [
+                    -81.0651326,
+                    29.185379
+                  ]
+                ],
+                "width_m": 10.31,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.69829,
+                "line": [
+                  [
+                    -81.0649844,
+                    29.1855866
+                  ],
+                  [
+                    -81.064964,
+                    29.1854808
+                  ]
+                ],
+                "width_m": 11.89,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t11",
+              "label": "Bus Stop exit",
+              "start": 0.70264,
+              "end": 0.70647,
+              "anchor": "t11",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.70403,
+                  "point_ref": "t11"
+                }
+              ],
+              "start_line": {
+                "marker": 0.70264,
+                "line": [
+                  [
+                    -81.0647361,
+                    29.1856468
+                  ],
+                  [
+                    -81.0647084,
+                    29.185509
+                  ]
+                ],
+                "width_m": 15.51,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.03,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.70647,
+                "line": [
+                  [
+                    -81.0646025,
+                    29.1857313
+                  ],
+                  [
+                    -81.06445,
+                    29.1856015
+                  ]
+                ],
+                "width_m": 20.66,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t12",
+              "label": "NASCAR 3",
+              "start": 0.80072,
+              "end": 0.80837,
+              "anchor": "t12",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.8035,
+                  "point_ref": "t12"
+                }
+              ],
+              "start_line": {
+                "marker": 0.80072,
+                "line": [
+                  [
+                    -81.0628803,
+                    29.1899309
+                  ],
+                  [
+                    -81.0627646,
+                    29.1899794
                   ]
                 ],
                 "width_m": 12.47,
@@ -2177,18 +1907,64 @@
                 }
               },
               "end_line": {
-                "marker": 0.19867,
+                "marker": 0.80837,
                 "line": [
                   [
-                    -81.070021,
-                    29.1850985
+                    -81.0630965,
+                    29.1902692
                   ],
                   [
-                    -81.0701161,
-                    29.1851542
+                    -81.0629969,
+                    29.1903293
                   ]
                 ],
-                "width_m": 11.11,
+                "width_m": 11.75,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Turn 1",
+              "start": 0.0792,
+              "end": 0.0919,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Turn 1",
+                  "marker": 0.08268,
+                  "point_ref": "t1"
+                }
+              ],
+              "entry": {
+                "marker": 0.0792,
+                "line": [
+                  [
+                    -81.0736384,
+                    29.1840783
+                  ],
+                  [
+                    -81.073802,
+                    29.1840149
+                  ]
+                ],
+                "width_m": 17.4,
                 "quality": {
                   "source": "naip",
                   "accuracy_m": 1.05,
@@ -2197,8 +1973,191 @@
                   "date": "2023-01-17"
                 }
               },
+              "exit": {
+                "marker": 0.0919,
+                "line": [
+                  [
+                    -81.0731268,
+                    29.1839538
+                  ],
+                  [
+                    -81.0730509,
+                    29.1837794
+                  ]
+                ],
+                "width_m": 20.69,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.03,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2023-01-17"
+                }
+              },
+              "start_line": {
+                "marker": 0.0792,
+                "line": [
+                  [
+                    -81.0736384,
+                    29.1840783
+                  ],
+                  [
+                    -81.073802,
+                    29.1840149
+                  ]
+                ],
+                "width_m": 17.4,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.0919,
+                "line": [
+                  [
+                    -81.0731268,
+                    29.1839538
+                  ],
+                  [
+                    -81.0730509,
+                    29.1837794
+                  ]
+                ],
+                "width_m": 20.69,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 2.03,
+                  "relative_accuracy_m": 1.75,
+                  "measured": false,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.11902,
+              "end": 0.12772,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.12494,
+                  "point_ref": "t2"
+                }
+              ],
               "entry": {
-                "marker": 0.16254,
+                "marker": 0.11902,
+                "line": [
+                  [
+                    -81.0717938,
+                    29.1846827
+                  ],
+                  [
+                    -81.071749,
+                    29.1845689
+                  ]
+                ],
+                "width_m": 13.35,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "exit": {
+                "marker": 0.12772,
+                "line": [
+                  [
+                    -81.0714324,
+                    29.1849319
+                  ],
+                  [
+                    -81.0713397,
+                    29.1848861
+                  ]
+                ],
+                "width_m": 10.35,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "start_line": {
+                "marker": 0.11902,
+                "line": [
+                  [
+                    -81.0717938,
+                    29.1846827
+                  ],
+                  [
+                    -81.071749,
+                    29.1845689
+                  ]
+                ],
+                "width_m": 13.35,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.12772,
+                "line": [
+                  [
+                    -81.0714324,
+                    29.1849319
+                  ],
+                  [
+                    -81.0713397,
+                    29.1848861
+                  ]
+                ],
+                "width_m": 10.35,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              }
+            },
+            {
+              "id": "t3",
+              "label": "International Horseshoe",
+              "start": 0.16111,
+              "end": 0.17937,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "International Horseshoe",
+                  "marker": 0.17067,
+                  "point_ref": "t3"
+                }
+              ],
+              "entry": {
+                "marker": 0.16111,
                 "line": [
                   [
                     -81.0702533,
@@ -2219,7 +2178,49 @@
                 }
               },
               "exit": {
-                "marker": 0.1797,
+                "marker": 0.17937,
+                "line": [
+                  [
+                    -81.0694893,
+                    29.1859762
+                  ],
+                  [
+                    -81.0696338,
+                    29.1860256
+                  ]
+                ],
+                "width_m": 15.09,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "start_line": {
+                "marker": 0.16111,
+                "line": [
+                  [
+                    -81.0702533,
+                    29.1863328
+                  ],
+                  [
+                    -81.0701405,
+                    29.1862467
+                  ]
+                ],
+                "width_m": 14.54,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.17937,
                 "line": [
                   [
                     -81.0694893,
@@ -2243,8 +2244,8 @@
             {
               "id": "t5",
               "label": "West Horseshoe",
-              "start": 0.27758,
-              "end": 0.33169,
+              "start": 0.3044,
+              "end": 0.32423,
               "members": [
                 "t5"
               ],
@@ -2253,54 +2254,12 @@
                   "id": "t5-apex",
                   "role": "apex",
                   "label": "West Horseshoe",
-                  "marker": 0.309,
+                  "marker": 0.30945,
                   "point_ref": "t5"
                 }
               ],
-              "start_line": {
-                "marker": 0.27758,
-                "line": [
-                  [
-                    -81.0719633,
-                    29.1815824
-                  ],
-                  [
-                    -81.0720401,
-                    29.1815734
-                  ]
-                ],
-                "width_m": 7.54,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.33169,
-                "line": [
-                  [
-                    -81.0729618,
-                    29.180696
-                  ],
-                  [
-                    -81.0728447,
-                    29.1807102
-                  ]
-                ],
-                "width_m": 11.49,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
               "entry": {
-                "marker": 0.30459,
+                "marker": 0.3044,
                 "line": [
                   [
                     -81.0718994,
@@ -2321,7 +2280,49 @@
                 }
               },
               "exit": {
-                "marker": 0.32463,
+                "marker": 0.32423,
+                "line": [
+                  [
+                    -81.0728799,
+                    29.1803241
+                  ],
+                  [
+                    -81.0727717,
+                    29.1803558
+                  ]
+                ],
+                "width_m": 11.1,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "start_line": {
+                "marker": 0.3044,
+                "line": [
+                  [
+                    -81.0718994,
+                    29.1801744
+                  ],
+                  [
+                    -81.0720076,
+                    29.1802169
+                  ]
+                ],
+                "width_m": 11.53,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.32423,
                 "line": [
                   [
                     -81.0728799,
@@ -2345,8 +2346,8 @@
             {
               "id": "busstopmans",
               "label": "Bus Stop (Le Mans Chicane)",
-              "start": 0.65778,
-              "end": 0.71522,
+              "start": 0.66977,
+              "end": 0.70647,
               "members": [
                 "t8",
                 "t9",
@@ -2358,75 +2359,33 @@
                   "id": "t8-apex",
                   "role": "apex",
                   "label": "Bus Stop entry",
-                  "marker": 0.67,
+                  "marker": 0.67221,
                   "point_ref": "t8"
                 },
                 {
                   "id": "t9-apex",
                   "role": "apex",
                   "label": "Bus Stop",
-                  "marker": 0.68,
+                  "marker": 0.68316,
                   "point_ref": "t9"
                 },
                 {
                   "id": "t10-apex",
                   "role": "apex",
                   "label": "Bus Stop",
-                  "marker": 0.692,
+                  "marker": 0.69621,
                   "point_ref": "t10"
                 },
                 {
                   "id": "t11-apex",
                   "role": "apex",
                   "label": "Bus Stop exit",
-                  "marker": 0.703,
+                  "marker": 0.70403,
                   "point_ref": "t11"
                 }
               ],
-              "start_line": {
-                "marker": 0.65778,
-                "line": [
-                  [
-                    -81.0659653,
-                    29.1838152
-                  ],
-                  [
-                    -81.0658536,
-                    29.1837439
-                  ]
-                ],
-                "width_m": 13.43,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
-              "end_line": {
-                "marker": 0.71522,
-                "line": [
-                  [
-                    -81.0642131,
-                    29.1860559
-                  ],
-                  [
-                    -81.0640423,
-                    29.1859233
-                  ]
-                ],
-                "width_m": 22.18,
-                "quality": {
-                  "source": "naip",
-                  "accuracy_m": 1.05,
-                  "relative_accuracy_m": 0.25,
-                  "measured": true,
-                  "date": "2023-01-17"
-                }
-              },
               "entry": {
-                "marker": 0.66929,
+                "marker": 0.66977,
                 "line": [
                   [
                     -81.0655664,
@@ -2447,7 +2406,49 @@
                 }
               },
               "exit": {
-                "marker": 0.70597,
+                "marker": 0.70647,
+                "line": [
+                  [
+                    -81.0646025,
+                    29.1857313
+                  ],
+                  [
+                    -81.06445,
+                    29.1856015
+                  ]
+                ],
+                "width_m": 20.66,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "start_line": {
+                "marker": 0.66977,
+                "line": [
+                  [
+                    -81.0655664,
+                    29.1842975
+                  ],
+                  [
+                    -81.0654533,
+                    29.1842242
+                  ]
+                ],
+                "width_m": 13.67,
+                "quality": {
+                  "source": "naip",
+                  "accuracy_m": 1.05,
+                  "relative_accuracy_m": 0.25,
+                  "measured": true,
+                  "date": "2023-01-17"
+                }
+              },
+              "end_line": {
+                "marker": 0.70647,
                 "line": [
                   [
                     -81.0646025,
@@ -2557,37 +2558,37 @@
             "radius_m": 52.5
           },
           {
-            "marker": 0.069,
+            "marker": 0.0688,
             "direction": "left",
             "radius_m": 72.0
           },
           {
-            "marker": 0.0996,
+            "marker": 0.0982,
             "direction": "left",
             "radius_m": 64.7
           },
           {
-            "marker": 0.1126,
+            "marker": 0.1112,
             "direction": "right",
             "radius_m": 69.2
           },
           {
-            "marker": 0.4063,
+            "marker": 0.4061,
             "direction": "left",
             "radius_m": 37.7
           },
           {
-            "marker": 0.5674,
+            "marker": 0.5677,
             "direction": "left",
             "radius_m": 52.7
           },
           {
-            "marker": 0.5714,
+            "marker": 0.5717,
             "direction": "right",
             "radius_m": 57.0
           },
           {
-            "marker": 0.7583,
+            "marker": 0.7586,
             "direction": "left",
             "radius_m": 57.2
           },
@@ -2657,7 +2658,7 @@
     "imsa_data": "daytona"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:08:21.808126+00:00",
+    "generated_at": "2026-09-26T20:41:22.397738+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

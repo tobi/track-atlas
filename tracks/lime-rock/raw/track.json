@@ -35,6 +35,7 @@
       "geometry": {
         "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326",
+        "basis": "midline",
         "surface": "layers/gp.surface.geojson"
       },
       "point_layers": [
@@ -49,7 +50,7 @@
               "marker": 0.0,
               "location": [
                 -73.380692,
-                41.928495
+                41.9285015
               ],
               "line": {
                 "marker": 0.0,
@@ -76,13 +77,13 @@
             {
               "id": "pit_entry",
               "label": "Pit Entry",
-              "marker": 0.9,
+              "marker": 0.89989,
               "location": [
-                -73.383304,
-                41.92936
+                -73.3833048,
+                41.9293603
               ],
               "line": {
-                "marker": 0.9,
+                "marker": 0.89989,
                 "line": [
                   [
                     -73.3832645,
@@ -106,13 +107,13 @@
             {
               "id": "pit_exit",
               "label": "Pit Exit",
-              "marker": 0.046,
+              "marker": 0.04604,
               "location": [
-                -73.379489,
-                41.9281
+                -73.3794986,
+                41.9280927
               ],
               "line": {
-                "marker": 0.046,
+                "marker": 0.04604,
                 "line": [
                   [
                     -73.3794609,
@@ -150,12 +151,12 @@
                 "driver": "Big Bend",
                 "official": "Big Bend"
               },
-              "marker": 0.148,
+              "marker": 0.18102,
               "location": [
-                -73.378204,
-                41.926617
+                -73.3790461,
+                41.9263824
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 3,
               "placement": {
@@ -166,7 +167,7 @@
                 "marker_offset_m": 77.2
               },
               "entry": {
-                "marker": 0.14255,
+                "marker": 0.14218,
                 "line": [
                   [
                     -73.3780742,
@@ -187,7 +188,7 @@
                 }
               },
               "exit": {
-                "marker": 0.18965,
+                "marker": 0.18905,
                 "line": [
                   [
                     -73.3792836,
@@ -208,7 +209,7 @@
                 }
               },
               "apex": {
-                "marker": 0.18161,
+                "marker": 0.18102,
                 "location": [
                   -73.3790287,
                   41.9264276
@@ -233,12 +234,12 @@
                 "driver": "The Left-Hander",
                 "official": "Left Hander"
               },
-              "marker": 0.309,
+              "marker": 0.27561,
               "location": [
-                -73.381508,
-                41.92609
+                -73.3814259,
+                41.9267659
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 3,
               "placement": {
@@ -249,7 +250,7 @@
                 "marker_offset_m": -74.2
               },
               "entry": {
-                "marker": 0.23527,
+                "marker": 0.23465,
                 "line": [
                   [
                     -73.3803962,
@@ -270,7 +271,7 @@
                 }
               },
               "exit": {
-                "marker": 0.29164,
+                "marker": 0.29081,
                 "line": [
                   [
                     -73.3814775,
@@ -291,7 +292,7 @@
                 }
               },
               "apex": {
-                "marker": 0.27634,
+                "marker": 0.27561,
                 "location": [
                   -73.3813699,
                   41.9267353
@@ -316,12 +317,12 @@
                 "driver": "The Uphill",
                 "official": "Uphill"
               },
-              "marker": 0.53,
+              "marker": 0.52728,
               "location": [
-                -73.386843,
-                41.925548
+                -73.3867955,
+                41.9255162
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 4,
               "placement": {
@@ -332,7 +333,7 @@
                 "marker_offset_m": -3.2
               },
               "entry": {
-                "marker": 0.52348,
+                "marker": 0.52305,
                 "line": [
                   [
                     -73.386707,
@@ -353,7 +354,7 @@
                 }
               },
               "exit": {
-                "marker": 0.53456,
+                "marker": 0.53403,
                 "line": [
                   [
                     -73.3869813,
@@ -374,7 +375,7 @@
                 }
               },
               "apex": {
-                "marker": 0.5278,
+                "marker": 0.52728,
                 "location": [
                   -73.3867532,
                   41.9255646
@@ -399,12 +400,12 @@
                 "driver": "West Bend",
                 "official": "West Bend"
               },
-              "marker": 0.692,
+              "marker": 0.65269,
               "location": [
-                -73.388243,
-                41.928523
+                -73.3886274,
+                41.9277841
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 4,
               "placement": {
@@ -415,7 +416,7 @@
                 "marker_offset_m": -88.0
               },
               "entry": {
-                "marker": 0.64738,
+                "marker": 0.64678,
                 "line": [
                   [
                     -73.3886342,
@@ -436,7 +437,7 @@
                 }
               },
               "exit": {
-                "marker": 0.68275,
+                "marker": 0.68225,
                 "line": [
                   [
                     -73.3884723,
@@ -457,7 +458,7 @@
                 }
               },
               "apex": {
-                "marker": 0.65342,
+                "marker": 0.65269,
                 "location": [
                   -73.3885584,
                   41.9277967
@@ -482,12 +483,12 @@
                 "driver": "The Downhill",
                 "official": "Diving Turn"
               },
-              "marker": 0.823,
+              "marker": 0.79077,
               "location": [
-                -73.385314,
-                41.930026
+                -73.3862028,
+                41.9299844
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 5,
               "placement": {
@@ -498,7 +499,7 @@
                 "marker_offset_m": -74.7
               },
               "entry": {
-                "marker": 0.77988,
+                "marker": 0.77937,
                 "line": [
                   [
                     -73.3865118,
@@ -519,7 +520,7 @@
                 }
               },
               "exit": {
-                "marker": 0.82855,
+                "marker": 0.82835,
                 "line": [
                   [
                     -73.3851275,
@@ -540,7 +541,7 @@
                 }
               },
               "apex": {
-                "marker": 0.7912,
+                "marker": 0.79077,
                 "location": [
                   -73.3861773,
                   41.9299414
@@ -569,7 +570,7 @@
               "id": "s1",
               "label": "S1",
               "start": 0.0,
-              "end": 0.23,
+              "end": 0.22939,
               "start_line": {
                 "marker": 0.0,
                 "line": [
@@ -592,7 +593,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.23,
+                "marker": 0.22939,
                 "line": [
                   [
                     -73.380268,
@@ -616,10 +617,10 @@
             {
               "id": "s2",
               "label": "S2",
-              "start": 0.23,
-              "end": 0.63,
+              "start": 0.22939,
+              "end": 0.62938,
               "start_line": {
-                "marker": 0.23,
+                "marker": 0.22939,
                 "line": [
                   [
                     -73.380268,
@@ -640,7 +641,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.63,
+                "marker": 0.62938,
                 "line": [
                   [
                     -73.3884268,
@@ -664,10 +665,10 @@
             {
               "id": "s3",
               "label": "S3",
-              "start": 0.63,
+              "start": 0.62938,
               "end": 1.0,
               "start_line": {
-                "marker": 0.63,
+                "marker": 0.62938,
                 "line": [
                   [
                     -73.3884268,
@@ -720,361 +721,20 @@
             {
               "id": "t1",
               "label": "Big Bend",
-              "start": 0.09926,
-              "end": 0.18862,
+              "start": 0.14218,
+              "end": 0.18905,
               "anchor": "t1",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.148,
+                  "marker": 0.18102,
                   "point_ref": "t1"
                 }
               ],
               "start_line": {
-                "marker": 0.09926,
-                "line": [
-                  [
-                    -73.3781016,
-                    41.9276095
-                  ],
-                  [
-                    -73.37823,
-                    41.9275385
-                  ]
-                ],
-                "width_m": 13.25,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.18862,
-                "line": [
-                  [
-                    -73.3792611,
-                    41.926404
-                  ],
-                  [
-                    -73.3792037,
-                    41.9264875
-                  ]
-                ],
-                "width_m": 10.42,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              }
-            },
-            {
-              "id": "t2",
-              "label": "The Left-Hander",
-              "start": 0.26026,
-              "end": 0.34962,
-              "anchor": "t2",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.309,
-                  "point_ref": "t2"
-                }
-              ],
-              "start_line": {
-                "marker": 0.26026,
-                "line": [
-                  [
-                    -73.3810354,
-                    41.9269175
-                  ],
-                  [
-                    -73.3810832,
-                    41.9270097
-                  ]
-                ],
-                "width_m": 10.99,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.34962,
-                "line": [
-                  [
-                    -73.3820461,
-                    41.925375
-                  ],
-                  [
-                    -73.3820949,
-                    41.9254603
-                  ]
-                ],
-                "width_m": 10.3,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              }
-            },
-            {
-              "id": "t3",
-              "label": "The Uphill",
-              "start": 0.50157,
-              "end": 0.55843,
-              "anchor": "t3",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.53,
-                  "point_ref": "t3"
-                }
-              ],
-              "start_line": {
-                "marker": 0.50157,
-                "line": [
-                  [
-                    -73.3863731,
-                    41.9251433
-                  ],
-                  [
-                    -73.3862425,
-                    41.9252027
-                  ]
-                ],
-                "width_m": 12.68,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 1.66,
-                  "relative_accuracy_m": 1.63,
-                  "measured": false,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.55843,
-                "line": [
-                  [
-                    -73.3873084,
-                    41.9260396
-                  ],
-                  [
-                    -73.3871793,
-                    41.9261148
-                  ]
-                ],
-                "width_m": 13.58,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              }
-            },
-            {
-              "id": "t4",
-              "label": "West Bend",
-              "start": 0.66357,
-              "end": 0.72043,
-              "anchor": "t4",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.692,
-                  "point_ref": "t4"
-                }
-              ],
-              "start_line": {
-                "marker": 0.66357,
-                "line": [
-                  [
-                    -73.3886885,
-                    41.9280065
-                  ],
-                  [
-                    -73.3885562,
-                    41.9279911
-                  ]
-                ],
-                "width_m": 11.1,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 1.66,
-                  "relative_accuracy_m": 1.63,
-                  "measured": false,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.72043,
-                "line": [
-                  [
-                    -73.3877386,
-                    41.9290019
-                  ],
-                  [
-                    -73.3876463,
-                    41.9289373
-                  ]
-                ],
-                "width_m": 10.49,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              }
-            },
-            {
-              "id": "t5",
-              "label": "The Downhill",
-              "start": 0.80878,
-              "end": 0.84128,
-              "anchor": "t5",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.823,
-                  "point_ref": "t5"
-                }
-              ],
-              "start_line": {
-                "marker": 0.80878,
-                "line": [
-                  [
-                    -73.385712,
-                    41.9301162
-                  ],
-                  [
-                    -73.3857061,
-                    41.9300058
-                  ]
-                ],
-                "width_m": 12.27,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.84128,
-                "line": [
-                  [
-                    -73.3847857,
-                    41.9299509
-                  ],
-                  [
-                    -73.3848536,
-                    41.9298358
-                  ]
-                ],
-                "width_m": 13.97,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "corner_complexes",
-          "kind": "corner_complexes",
-          "label": "Corner Complexes",
-          "items": [
-            {
-              "id": "t1",
-              "label": "Big Bend",
-              "start": 0.09926,
-              "end": 0.18862,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Big Bend",
-                  "marker": 0.148,
-                  "point_ref": "t1"
-                }
-              ],
-              "start_line": {
-                "marker": 0.09926,
-                "line": [
-                  [
-                    -73.3781016,
-                    41.9276095
-                  ],
-                  [
-                    -73.37823,
-                    41.9275385
-                  ]
-                ],
-                "width_m": 13.25,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.18862,
-                "line": [
-                  [
-                    -73.3792611,
-                    41.926404
-                  ],
-                  [
-                    -73.3792037,
-                    41.9264875
-                  ]
-                ],
-                "width_m": 10.42,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "entry": {
-                "marker": 0.14255,
+                "marker": 0.14218,
                 "line": [
                   [
                     -73.3780742,
@@ -1094,8 +754,8 @@
                   "date": "2023-04-13"
                 }
               },
-              "exit": {
-                "marker": 0.18965,
+              "end_line": {
+                "marker": 0.18905,
                 "line": [
                   [
                     -73.3792836,
@@ -1117,66 +777,22 @@
               }
             },
             {
-              "id": "complex-2",
-              "label": "Esses",
-              "start": 0.26026,
-              "end": 0.34962,
-              "members": [
-                "t2"
-              ],
+              "id": "t2",
+              "label": "The Left-Hander",
+              "start": 0.23465,
+              "end": 0.29081,
+              "anchor": "t2",
               "points": [
                 {
-                  "id": "t2-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "The Left-Hander",
-                  "marker": 0.309,
+                  "label": "Apex",
+                  "marker": 0.27561,
                   "point_ref": "t2"
                 }
               ],
               "start_line": {
-                "marker": 0.26026,
-                "line": [
-                  [
-                    -73.3810354,
-                    41.9269175
-                  ],
-                  [
-                    -73.3810832,
-                    41.9270097
-                  ]
-                ],
-                "width_m": 10.99,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.34962,
-                "line": [
-                  [
-                    -73.3820461,
-                    41.925375
-                  ],
-                  [
-                    -73.3820949,
-                    41.9254603
-                  ]
-                ],
-                "width_m": 10.3,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "entry": {
-                "marker": 0.23527,
+                "marker": 0.23465,
                 "line": [
                   [
                     -73.3803962,
@@ -1196,8 +812,8 @@
                   "date": "2023-04-13"
                 }
               },
-              "exit": {
-                "marker": 0.29164,
+              "end_line": {
+                "marker": 0.29081,
                 "line": [
                   [
                     -73.3814775,
@@ -1221,64 +837,20 @@
             {
               "id": "t3",
               "label": "The Uphill",
-              "start": 0.50157,
-              "end": 0.55843,
-              "members": [
-                "t3"
-              ],
+              "start": 0.52305,
+              "end": 0.53403,
+              "anchor": "t3",
               "points": [
                 {
-                  "id": "t3-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "The Uphill",
-                  "marker": 0.53,
+                  "label": "Apex",
+                  "marker": 0.52728,
                   "point_ref": "t3"
                 }
               ],
               "start_line": {
-                "marker": 0.50157,
-                "line": [
-                  [
-                    -73.3863731,
-                    41.9251433
-                  ],
-                  [
-                    -73.3862425,
-                    41.9252027
-                  ]
-                ],
-                "width_m": 12.68,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 1.66,
-                  "relative_accuracy_m": 1.63,
-                  "measured": false,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.55843,
-                "line": [
-                  [
-                    -73.3873084,
-                    41.9260396
-                  ],
-                  [
-                    -73.3871793,
-                    41.9261148
-                  ]
-                ],
-                "width_m": 13.58,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 0.35,
-                  "relative_accuracy_m": 0.13,
-                  "measured": true,
-                  "date": "2023-04-13"
-                }
-              },
-              "entry": {
-                "marker": 0.52348,
+                "marker": 0.52305,
                 "line": [
                   [
                     -73.386707,
@@ -1298,8 +870,8 @@
                   "date": "2023-04-13"
                 }
               },
-              "exit": {
-                "marker": 0.53456,
+              "end_line": {
+                "marker": 0.53403,
                 "line": [
                   [
                     -73.3869813,
@@ -1323,54 +895,31 @@
             {
               "id": "t4",
               "label": "West Bend",
-              "start": 0.66357,
-              "end": 0.72043,
-              "members": [
-                "t4"
-              ],
+              "start": 0.64678,
+              "end": 0.68225,
+              "anchor": "t4",
               "points": [
                 {
-                  "id": "t4-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "West Bend",
-                  "marker": 0.692,
+                  "label": "Apex",
+                  "marker": 0.65269,
                   "point_ref": "t4"
                 }
               ],
               "start_line": {
-                "marker": 0.66357,
+                "marker": 0.64678,
                 "line": [
                   [
-                    -73.3886885,
-                    41.9280065
+                    -73.3886342,
+                    41.9276489
                   ],
                   [
-                    -73.3885562,
-                    41.9279911
+                    -73.3885084,
+                    41.9276817
                   ]
                 ],
-                "width_m": 11.1,
-                "quality": {
-                  "source": "ct-2023",
-                  "accuracy_m": 1.66,
-                  "relative_accuracy_m": 1.63,
-                  "measured": false,
-                  "date": "2023-04-13"
-                }
-              },
-              "end_line": {
-                "marker": 0.72043,
-                "line": [
-                  [
-                    -73.3877386,
-                    41.9290019
-                  ],
-                  [
-                    -73.3876463,
-                    41.9289373
-                  ]
-                ],
-                "width_m": 10.49,
+                "width_m": 11.05,
                 "quality": {
                   "source": "ct-2023",
                   "accuracy_m": 0.35,
@@ -1379,8 +928,418 @@
                   "date": "2023-04-13"
                 }
               },
+              "end_line": {
+                "marker": 0.68225,
+                "line": [
+                  [
+                    -73.3884723,
+                    41.9284099
+                  ],
+                  [
+                    -73.388359,
+                    41.9283474
+                  ]
+                ],
+                "width_m": 11.68,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              }
+            },
+            {
+              "id": "t5",
+              "label": "The Downhill",
+              "start": 0.77937,
+              "end": 0.82835,
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.79077,
+                  "point_ref": "t5"
+                }
+              ],
+              "start_line": {
+                "marker": 0.77937,
+                "line": [
+                  [
+                    -73.3865118,
+                    41.9298886
+                  ],
+                  [
+                    -73.3864453,
+                    41.9298228
+                  ]
+                ],
+                "width_m": 9.16,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "end_line": {
+                "marker": 0.82835,
+                "line": [
+                  [
+                    -73.3851275,
+                    41.9300507
+                  ],
+                  [
+                    -73.3851798,
+                    41.9299431
+                  ]
+                ],
+                "width_m": 12.72,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Big Bend",
+              "start": 0.14218,
+              "end": 0.18905,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Big Bend",
+                  "marker": 0.18102,
+                  "point_ref": "t1"
+                }
+              ],
               "entry": {
-                "marker": 0.64738,
+                "marker": 0.14218,
+                "line": [
+                  [
+                    -73.3780742,
+                    41.9266929
+                  ],
+                  [
+                    -73.3781767,
+                    41.9267393
+                  ]
+                ],
+                "width_m": 9.95,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "exit": {
+                "marker": 0.18905,
+                "line": [
+                  [
+                    -73.3792836,
+                    41.926412
+                  ],
+                  [
+                    -73.3792241,
+                    41.926496
+                  ]
+                ],
+                "width_m": 10.56,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "start_line": {
+                "marker": 0.14218,
+                "line": [
+                  [
+                    -73.3780742,
+                    41.9266929
+                  ],
+                  [
+                    -73.3781767,
+                    41.9267393
+                  ]
+                ],
+                "width_m": 9.95,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "end_line": {
+                "marker": 0.18905,
+                "line": [
+                  [
+                    -73.3792836,
+                    41.926412
+                  ],
+                  [
+                    -73.3792241,
+                    41.926496
+                  ]
+                ],
+                "width_m": 10.56,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              }
+            },
+            {
+              "id": "complex-2",
+              "label": "Esses",
+              "start": 0.23465,
+              "end": 0.29081,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "The Left-Hander",
+                  "marker": 0.27561,
+                  "point_ref": "t2"
+                }
+              ],
+              "entry": {
+                "marker": 0.23465,
+                "line": [
+                  [
+                    -73.3803962,
+                    41.9269132
+                  ],
+                  [
+                    -73.3803457,
+                    41.926992
+                  ]
+                ],
+                "width_m": 9.7,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "exit": {
+                "marker": 0.29081,
+                "line": [
+                  [
+                    -73.3814775,
+                    41.9264569
+                  ],
+                  [
+                    -73.3816094,
+                    41.9264606
+                  ]
+                ],
+                "width_m": 10.95,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "start_line": {
+                "marker": 0.23465,
+                "line": [
+                  [
+                    -73.3803962,
+                    41.9269132
+                  ],
+                  [
+                    -73.3803457,
+                    41.926992
+                  ]
+                ],
+                "width_m": 9.7,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "end_line": {
+                "marker": 0.29081,
+                "line": [
+                  [
+                    -73.3814775,
+                    41.9264569
+                  ],
+                  [
+                    -73.3816094,
+                    41.9264606
+                  ]
+                ],
+                "width_m": 10.95,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              }
+            },
+            {
+              "id": "t3",
+              "label": "The Uphill",
+              "start": 0.52305,
+              "end": 0.53403,
+              "members": [
+                "t3"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "The Uphill",
+                  "marker": 0.52728,
+                  "point_ref": "t3"
+                }
+              ],
+              "entry": {
+                "marker": 0.52305,
+                "line": [
+                  [
+                    -73.386707,
+                    41.9254275
+                  ],
+                  [
+                    -73.3866606,
+                    41.925539
+                  ]
+                ],
+                "width_m": 12.97,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "exit": {
+                "marker": 0.53403,
+                "line": [
+                  [
+                    -73.3869813,
+                    41.9256015
+                  ],
+                  [
+                    -73.386844,
+                    41.9256554
+                  ]
+                ],
+                "width_m": 12.87,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "start_line": {
+                "marker": 0.52305,
+                "line": [
+                  [
+                    -73.386707,
+                    41.9254275
+                  ],
+                  [
+                    -73.3866606,
+                    41.925539
+                  ]
+                ],
+                "width_m": 12.97,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "end_line": {
+                "marker": 0.53403,
+                "line": [
+                  [
+                    -73.3869813,
+                    41.9256015
+                  ],
+                  [
+                    -73.386844,
+                    41.9256554
+                  ]
+                ],
+                "width_m": 12.87,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              }
+            },
+            {
+              "id": "t4",
+              "label": "West Bend",
+              "start": 0.64678,
+              "end": 0.68225,
+              "members": [
+                "t4"
+              ],
+              "points": [
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "West Bend",
+                  "marker": 0.65269,
+                  "point_ref": "t4"
+                }
+              ],
+              "entry": {
+                "marker": 0.64678,
                 "line": [
                   [
                     -73.3886342,
@@ -1401,7 +1360,49 @@
                 }
               },
               "exit": {
-                "marker": 0.68275,
+                "marker": 0.68225,
+                "line": [
+                  [
+                    -73.3884723,
+                    41.9284099
+                  ],
+                  [
+                    -73.388359,
+                    41.9283474
+                  ]
+                ],
+                "width_m": 11.68,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "start_line": {
+                "marker": 0.64678,
+                "line": [
+                  [
+                    -73.3886342,
+                    41.9276489
+                  ],
+                  [
+                    -73.3885084,
+                    41.9276817
+                  ]
+                ],
+                "width_m": 11.05,
+                "quality": {
+                  "source": "ct-2023",
+                  "accuracy_m": 0.35,
+                  "relative_accuracy_m": 0.13,
+                  "measured": true,
+                  "date": "2023-04-13"
+                }
+              },
+              "end_line": {
+                "marker": 0.68225,
                 "line": [
                   [
                     -73.3884723,
@@ -1508,22 +1509,22 @@
             "radius_m": 58.4
           },
           {
-            "marker": 0.3242,
+            "marker": 0.3233,
             "direction": "right",
             "radius_m": 54.3
           },
           {
-            "marker": 0.4993,
+            "marker": 0.4986,
             "direction": "right",
             "radius_m": 18.9
           },
           {
-            "marker": 0.5125,
+            "marker": 0.5121,
             "direction": "left",
             "radius_m": 21.3
           },
           {
-            "marker": 0.5874,
+            "marker": 0.5868,
             "direction": "right",
             "radius_m": 75.8
           }
@@ -1584,7 +1585,7 @@
     "imsa_data": "lime-rock"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:26:37.474042+00:00",
+    "generated_at": "2026-09-26T20:41:39.371512+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",

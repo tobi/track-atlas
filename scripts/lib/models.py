@@ -64,6 +64,10 @@ class Geometry(Strict):
         None, description="Path (relative to the track's raw dir) to the layout's surface GeoJSON: edges, "
                           "midline, surface polygon, pit lane, crossing lines and apexes (docs/GEOMETRY.md).")
     crs: str = "EPSG:4326"
+    basis: Literal["centerline", "midline"] = Field(
+        "centerline", description="What `centerline` is and what every lap fraction is measured along: "
+                                  "'midline' = the measured surface midline (docs/GEOMETRY.md), "
+                                  "'centerline' = the OSM-derived line (unmeasured layouts).")
 
 
 # --- surface geometry (docs/GEOMETRY.md) ---------------------------------------
@@ -136,7 +140,7 @@ class PointItem(Strict):
     label: Optional[str] = None
     marker: Optional[Fraction] = None
     location: Optional[LonLat] = None
-    location_source: Optional[Literal["osm-way", "centerline", "manual"]] = None
+    location_source: Optional[Literal["osm-way", "centerline", "midline", "manual"]] = None
     labels: dict[LayerCode, str] = Field(default_factory=dict)
     number: Optional[int] = None
     code: Optional[str] = None

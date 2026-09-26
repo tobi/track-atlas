@@ -35,6 +35,7 @@
       "geometry": {
         "centerline": "layers/gp.geojson",
         "crs": "EPSG:4326",
+        "basis": "midline",
         "surface": "layers/gp.surface.geojson"
       },
       "point_layers": [
@@ -48,8 +49,8 @@
               "label": "Start / Finish",
               "marker": 0.0,
               "location": [
-                -97.643248,
-                30.134208
+                -97.6432548,
+                30.1342029
               ],
               "line": {
                 "marker": 0.0,
@@ -76,13 +77,13 @@
             {
               "id": "pit_entry",
               "label": "Pit Entry",
-              "marker": 0.99,
+              "marker": 0.99006,
               "location": [
-                -97.643336,
-                30.134595
+                -97.6433248,
+                30.1345977
               ],
               "line": {
-                "marker": 0.99,
+                "marker": 0.99006,
                 "line": [
                   [
                     -97.6432873,
@@ -106,13 +107,13 @@
             {
               "id": "pit_exit",
               "label": "Pit Exit",
-              "marker": 0.07,
+              "marker": 0.07009,
               "location": [
-                -97.640094,
-                30.132073
+                -97.6400932,
+                30.1320713
               ],
               "line": {
-                "marker": 0.07,
+                "marker": 0.07009,
                 "line": [
                   [
                     -97.6400204,
@@ -149,12 +150,12 @@
                 "numbered": "Turn 1",
                 "driver": "Big Red"
               },
-              "marker": 0.12,
+              "marker": 0.14119,
               "location": [
-                -97.637842,
-                30.130547
+                -97.6368269,
+                30.1300789
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 1,
               "placement": {
@@ -165,7 +166,7 @@
                 "marker_offset_m": 118.5
               },
               "entry": {
-                "marker": 0.13648,
+                "marker": 0.13665,
                 "line": [
                   [
                     -97.6370017,
@@ -186,7 +187,7 @@
                 }
               },
               "exit": {
-                "marker": 0.1448,
+                "marker": 0.14501,
                 "line": [
                   [
                     -97.636874,
@@ -207,7 +208,7 @@
                 }
               },
               "apex": {
-                "marker": 0.14091,
+                "marker": 0.14119,
                 "location": [
                   -97.6368893,
                   30.130151
@@ -230,12 +231,12 @@
               "labels": {
                 "numbered": "Turn 2"
               },
-              "marker": 0.16,
+              "marker": 0.17482,
               "location": [
-                -97.637059,
-                30.130965
+                -97.6373256,
+                30.1316535
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 4,
               "placement": {
@@ -246,7 +247,7 @@
                 "marker_offset_m": 86.4
               },
               "entry": {
-                "marker": 0.17206,
+                "marker": 0.17227,
                 "line": [
                   [
                     -97.6373523,
@@ -267,7 +268,7 @@
                 }
               },
               "exit": {
-                "marker": 0.19873,
+                "marker": 0.19899,
                 "line": [
                   [
                     -97.6368323,
@@ -288,7 +289,7 @@
                 }
               },
               "apex": {
-                "marker": 0.17459,
+                "marker": 0.17482,
                 "location": [
                   -97.6372574,
                   30.1316663
@@ -311,12 +312,12 @@
               "labels": {
                 "numbered": "Turn 3"
               },
-              "marker": 0.21,
+              "marker": 0.23334,
               "location": [
-                -97.636252,
-                30.132976
+                -97.6351446,
+                30.1336012
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -327,7 +328,7 @@
                 "marker_offset_m": 132.0
               },
               "entry": {
-                "marker": 0.2278,
+                "marker": 0.22807,
                 "line": [
                   [
                     -97.6354097,
@@ -348,7 +349,7 @@
                 }
               },
               "exit": {
-                "marker": 0.23925,
+                "marker": 0.23952,
                 "line": [
                   [
                     -97.6350243,
@@ -369,7 +370,7 @@
                 }
               },
               "apex": {
-                "marker": 0.23305,
+                "marker": 0.23334,
                 "location": [
                   -97.635195,
                   30.1336417
@@ -392,12 +393,12 @@
               "labels": {
                 "numbered": "Turn 4"
               },
-              "marker": 0.23,
+              "marker": 0.25243,
               "location": [
-                -97.635281,
-                30.133499
+                -97.6346129,
+                30.1344168
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 5,
               "placement": {
@@ -408,7 +409,7 @@
                 "marker_offset_m": 120.8
               },
               "entry": {
-                "marker": 0.24561,
+                "marker": 0.24588,
                 "line": [
                   [
                     -97.6348892,
@@ -429,7 +430,7 @@
                 }
               },
               "exit": {
-                "marker": 0.2564,
+                "marker": 0.25661,
                 "line": [
                   [
                     -97.6344331,
@@ -450,7 +451,7 @@
                 }
               },
               "apex": {
-                "marker": 0.25219,
+                "marker": 0.25243,
                 "location": [
                   -97.6345691,
                   30.1343709
@@ -473,12 +474,12 @@
               "labels": {
                 "numbered": "Turn 5"
               },
-              "marker": 0.25,
+              "marker": 0.26733,
               "location": [
-                -97.634708,
-                30.134337
+                -97.6338763,
+                30.1347727
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -489,7 +490,7 @@
                 "marker_offset_m": 96.0
               },
               "entry": {
-                "marker": 0.26112,
+                "marker": 0.26133,
                 "line": [
                   [
                     -97.6341807,
@@ -510,7 +511,7 @@
                 }
               },
               "exit": {
-                "marker": 0.27466,
+                "marker": 0.27478,
                 "line": [
                   [
                     -97.6337839,
@@ -531,7 +532,7 @@
                 }
               },
               "apex": {
-                "marker": 0.26714,
+                "marker": 0.26733,
                 "location": [
                   -97.6339278,
                   30.1348106
@@ -554,12 +555,12 @@
               "labels": {
                 "numbered": "Turn 6"
               },
-              "marker": 0.27,
+              "marker": 0.28423,
               "location": [
-                -97.633786,
-                30.134881
+                -97.6336182,
+                30.1355695
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 4,
               "placement": {
@@ -570,7 +571,7 @@
                 "marker_offset_m": 92.5
               },
               "entry": {
-                "marker": 0.27902,
+                "marker": 0.27914,
                 "line": [
                   [
                     -97.6337605,
@@ -591,7 +592,7 @@
                 }
               },
               "exit": {
-                "marker": 0.29577,
+                "marker": 0.29586,
                 "line": [
                   [
                     -97.6332234,
@@ -612,7 +613,7 @@
                 }
               },
               "apex": {
-                "marker": 0.2841,
+                "marker": 0.28423,
                 "location": [
                   -97.6335552,
                   30.1355464
@@ -635,12 +636,12 @@
               "labels": {
                 "numbered": "Turn 7"
               },
-              "marker": 0.31,
+              "marker": 0.30695,
               "location": [
-                -97.632433,
-                30.136195
+                -97.6326046,
+                30.1362027
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
@@ -652,7 +653,7 @@
                 "declared_direction": "left"
               },
               "entry": {
-                "marker": 0.29632,
+                "marker": 0.29641,
                 "line": [
                   [
                     -97.6331969,
@@ -673,7 +674,7 @@
                 }
               },
               "exit": {
-                "marker": 0.31335,
+                "marker": 0.31349,
                 "line": [
                   [
                     -97.6322135,
@@ -694,7 +695,7 @@
                 }
               },
               "apex": {
-                "marker": 0.30683,
+                "marker": 0.30695,
                 "location": [
                   -97.6325994,
                   30.1361471
@@ -717,17 +718,17 @@
               "labels": {
                 "numbered": "Turn 8"
               },
-              "marker": 0.34,
+              "marker": 0.3402,
               "location": [
-                -97.630857,
-                30.135865
+                -97.6308481,
+                30.1358661
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 2,
               "placement": {
                 "basis": "none",
-                "note": "no curvature peak near the marker; kept at the legacy marker only"
+                "note": "no curvature peak near the marker; marker projected from the source data"
               }
             },
             {
@@ -738,12 +739,12 @@
               "labels": {
                 "numbered": "Turn 9"
               },
-              "marker": 0.36,
+              "marker": 0.3344,
               "location": [
-                -97.630063,
-                30.136566
+                -97.6311451,
+                30.1357446
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 3,
               "placement": {
@@ -754,7 +755,7 @@
                 "marker_offset_m": -140.8
               },
               "entry": {
-                "marker": 0.33152,
+                "marker": 0.33167,
                 "line": [
                   [
                     -97.6312673,
@@ -775,7 +776,7 @@
                 }
               },
               "exit": {
-                "marker": 0.33747,
+                "marker": 0.33767,
                 "line": [
                   [
                     -97.6310067,
@@ -796,7 +797,7 @@
                 }
               },
               "apex": {
-                "marker": 0.33423,
+                "marker": 0.3344,
                 "location": [
                   -97.6311468,
                   30.135804
@@ -819,12 +820,12 @@
               "labels": {
                 "numbered": "Turn 10"
               },
-              "marker": 0.39,
+              "marker": 0.38002,
               "location": [
-                -97.628585,
-                30.136232
+                -97.6291386,
+                30.1362338
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -835,7 +836,7 @@
                 "marker_offset_m": -48.6
               },
               "entry": {
-                "marker": 0.37819,
+                "marker": 0.37838,
                 "line": [
                   [
                     -97.629132,
@@ -856,7 +857,7 @@
                 }
               },
               "exit": {
-                "marker": 0.38481,
+                "marker": 0.38511,
                 "line": [
                   [
                     -97.6288815,
@@ -877,7 +878,7 @@
                 }
               },
               "apex": {
-                "marker": 0.3798,
+                "marker": 0.38002,
                 "location": [
                   -97.6290913,
                   30.1362771
@@ -901,12 +902,12 @@
                 "numbered": "Turn 11",
                 "driver": "Hairpin"
               },
-              "marker": 0.47,
+              "marker": 0.4927,
               "location": [
-                -97.625112,
-                30.138508
+                -97.6245423,
+                30.1394199
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 1,
               "placement": {
@@ -917,7 +918,7 @@
                 "marker_offset_m": 121.3
               },
               "entry": {
-                "marker": 0.4866,
+                "marker": 0.48689,
                 "line": [
                   [
                     -97.6246109,
@@ -938,7 +939,7 @@
                 }
               },
               "exit": {
-                "marker": 0.49465,
+                "marker": 0.49507,
                 "line": [
                   [
                     -97.6246592,
@@ -959,7 +960,7 @@
                 }
               },
               "apex": {
-                "marker": 0.49236,
+                "marker": 0.4927,
                 "location": [
                   -97.6245902,
                   30.1393534
@@ -982,12 +983,12 @@
               "labels": {
                 "numbered": "Turn 12"
               },
-              "marker": 0.69,
+              "marker": 0.70953,
               "location": [
-                -97.635584,
-                30.137478
+                -97.636611,
+                30.137285
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 1,
               "placement": {
@@ -998,7 +999,7 @@
                 "marker_offset_m": 103.9
               },
               "entry": {
-                "marker": 0.70561,
+                "marker": 0.70608,
                 "line": [
                   [
                     -97.6364439,
@@ -1019,7 +1020,7 @@
                 }
               },
               "exit": {
-                "marker": 0.71217,
+                "marker": 0.71226,
                 "line": [
                   [
                     -97.6364967,
@@ -1040,7 +1041,7 @@
                 }
               },
               "apex": {
-                "marker": 0.70942,
+                "marker": 0.70953,
                 "location": [
                   -97.6365219,
                   30.1372681
@@ -1063,17 +1064,17 @@
               "labels": {
                 "numbered": "Turn 13"
               },
-              "marker": 0.72,
+              "marker": 0.7201,
               "location": [
-                -97.636277,
-                30.136851
+                -97.6362834,
+                30.1368598
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 2,
               "placement": {
                 "basis": "none",
-                "note": "no curvature peak near the marker; kept at the legacy marker only"
+                "note": "no curvature peak near the marker; marker projected from the source data"
               }
             },
             {
@@ -1084,12 +1085,12 @@
               "labels": {
                 "numbered": "Turn 14"
               },
-              "marker": 0.74,
+              "marker": 0.75007,
               "location": [
-                -97.635622,
-                30.13604
+                -97.6354718,
+                30.1356017
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 4,
               "placement": {
@@ -1100,7 +1101,7 @@
                 "marker_offset_m": 54.8
               },
               "entry": {
-                "marker": 0.74506,
+                "marker": 0.74516,
                 "line": [
                   [
                     -97.6354065,
@@ -1121,7 +1122,7 @@
                 }
               },
               "exit": {
-                "marker": 0.75506,
+                "marker": 0.75479,
                 "line": [
                   [
                     -97.6357052,
@@ -1142,7 +1143,7 @@
                 }
               },
               "apex": {
-                "marker": 0.75017,
+                "marker": 0.75007,
                 "location": [
                   -97.6355422,
                   30.1356422
@@ -1165,12 +1166,12 @@
               "labels": {
                 "numbered": "Turn 15"
               },
-              "marker": 0.76,
+              "marker": 0.77951,
               "location": [
-                -97.635995,
-                30.135527
+                -97.6367086,
+                30.1361419
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 5,
               "placement": {
@@ -1181,7 +1182,7 @@
                 "marker_offset_m": 101.8
               },
               "entry": {
-                "marker": 0.77521,
+                "marker": 0.77497,
                 "line": [
                   [
                     -97.6366598,
@@ -1202,7 +1203,7 @@
                 }
               },
               "exit": {
-                "marker": 0.78197,
+                "marker": 0.78169,
                 "line": [
                   [
                     -97.6368389,
@@ -1223,7 +1224,7 @@
                 }
               },
               "apex": {
-                "marker": 0.77978,
+                "marker": 0.77951,
                 "location": [
                   -97.6367659,
                   30.1361054
@@ -1246,12 +1247,12 @@
               "labels": {
                 "numbered": "Turn 16"
               },
-              "marker": 0.78,
+              "marker": 0.8015,
               "location": [
-                -97.636718,
-                30.136158
+                -97.6377399,
+                30.1365647
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 2,
               "placement": {
@@ -1262,7 +1263,7 @@
                 "marker_offset_m": 123.8
               },
               "entry": {
-                "marker": 0.79883,
+                "marker": 0.79878,
                 "line": [
                   [
                     -97.6375894,
@@ -1283,7 +1284,7 @@
                 }
               },
               "exit": {
-                "marker": 0.80582,
+                "marker": 0.80568,
                 "line": [
                   [
                     -97.6376909,
@@ -1304,7 +1305,7 @@
                 }
               },
               "apex": {
-                "marker": 0.80164,
+                "marker": 0.8015,
                 "location": [
                   -97.637682,
                   30.1365123
@@ -1327,17 +1328,17 @@
               "labels": {
                 "numbered": "Turn 17"
               },
-              "marker": 0.81,
+              "marker": 0.80986,
               "location": [
-                -97.637627,
-                30.136188
+                -97.6376366,
+                30.1361915
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 5,
               "placement": {
                 "basis": "none",
-                "note": "no curvature peak near the marker; kept at the legacy marker only"
+                "note": "no curvature peak near the marker; marker projected from the source data"
               }
             },
             {
@@ -1348,12 +1349,12 @@
               "labels": {
                 "numbered": "Turn 18"
               },
-              "marker": 0.86,
+              "marker": 0.85966,
               "location": [
-                -97.637161,
-                30.133977
+                -97.6371526,
+                30.133988
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "right",
               "scale": 5,
               "placement": {
@@ -1364,7 +1365,7 @@
                 "marker_offset_m": -7.1
               },
               "entry": {
-                "marker": 0.85432,
+                "marker": 0.85421,
                 "line": [
                   [
                     -97.6369128,
@@ -1385,7 +1386,7 @@
                 }
               },
               "exit": {
-                "marker": 0.86254,
+                "marker": 0.86239,
                 "line": [
                   [
                     -97.6372554,
@@ -1406,7 +1407,7 @@
                 }
               },
               "apex": {
-                "marker": 0.85979,
+                "marker": 0.85966,
                 "location": [
                   -97.6371962,
                   30.1340353
@@ -1429,17 +1430,17 @@
               "labels": {
                 "numbered": "Turn 19"
               },
-              "marker": 0.91,
+              "marker": 0.90987,
               "location": [
-                -97.639585,
-                30.134413
+                -97.6395842,
+                30.1344065
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 4,
               "placement": {
                 "basis": "none",
-                "note": "no curvature peak near the marker; kept at the legacy marker only"
+                "note": "no curvature peak near the marker; marker projected from the source data"
               }
             },
             {
@@ -1450,12 +1451,12 @@
               "labels": {
                 "numbered": "Turn 20"
               },
-              "marker": 0.96,
+              "marker": 0.93927,
               "location": [
-                -97.641766,
-                30.135196
+                -97.6406522,
+                30.1355205
               ],
-              "location_source": "centerline",
+              "location_source": "midline",
               "direction": "left",
               "scale": 2,
               "placement": {
@@ -1466,7 +1467,7 @@
                 "marker_offset_m": -115.1
               },
               "entry": {
-                "marker": 0.93558,
+                "marker": 0.93545,
                 "line": [
                   [
                     -97.6405289,
@@ -1508,7 +1509,7 @@
                 }
               },
               "apex": {
-                "marker": 0.93931,
+                "marker": 0.93927,
                 "location": [
                   -97.6406706,
                   30.1354582
@@ -1537,7 +1538,7 @@
               "id": "s1",
               "label": "S1",
               "start": 0.0,
-              "end": 0.3,
+              "end": 0.30009,
               "start_line": {
                 "marker": 0.0,
                 "line": [
@@ -1560,7 +1561,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.3,
+                "marker": 0.30009,
                 "line": [
                   [
                     -97.6330109,
@@ -1584,10 +1585,10 @@
             {
               "id": "s2",
               "label": "S2",
-              "start": 0.3,
-              "end": 0.7,
+              "start": 0.30009,
+              "end": 0.70047,
               "start_line": {
-                "marker": 0.3,
+                "marker": 0.30009,
                 "line": [
                   [
                     -97.6330109,
@@ -1608,7 +1609,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.7,
+                "marker": 0.70047,
                 "line": [
                   [
                     -97.6361257,
@@ -1632,10 +1633,10 @@
             {
               "id": "s3",
               "label": "S3",
-              "start": 0.7,
+              "start": 0.70047,
               "end": 1.0,
               "start_line": {
-                "marker": 0.7,
+                "marker": 0.70047,
                 "line": [
                   [
                     -97.6361257,
@@ -1688,1231 +1689,20 @@
             {
               "id": "t1",
               "label": "Big Red",
-              "start": 0.07467,
-              "end": 0.14833,
+              "start": 0.13665,
+              "end": 0.14501,
               "anchor": "t1",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.12,
+                  "marker": 0.14119,
                   "point_ref": "t1"
                 }
               ],
               "start_line": {
-                "marker": 0.07467,
-                "line": [
-                  [
-                    -97.6398479,
-                    30.1319668
-                  ],
-                  [
-                    -97.6399437,
-                    30.1318598
-                  ]
-                ],
-                "width_m": 15.03,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.14833,
-                "line": [
-                  [
-                    -97.6369246,
-                    30.1303929
-                  ],
-                  [
-                    -97.6367615,
-                    30.130437
-                  ]
-                ],
-                "width_m": 16.47,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t2",
-              "label": "Turn 2",
-              "start": 0.14833,
-              "end": 0.17269,
-              "anchor": "t2",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.16,
-                  "point_ref": "t2"
-                }
-              ],
-              "start_line": {
-                "marker": 0.14833,
-                "line": [
-                  [
-                    -97.6369246,
-                    30.1303929
-                  ],
-                  [
-                    -97.6367615,
-                    30.130437
-                  ]
-                ],
-                "width_m": 16.47,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.17269,
-                "line": [
-                  [
-                    -97.6373622,
-                    30.1315396
-                  ],
-                  [
-                    -97.6372294,
-                    30.1315759
-                  ]
-                ],
-                "width_m": 13.41,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t3",
-              "label": "Turn 3",
-              "start": 0.20365,
-              "end": 0.22125,
-              "anchor": "t3",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.21,
-                  "point_ref": "t3"
-                }
-              ],
-              "start_line": {
-                "marker": 0.20365,
-                "line": [
-                  [
-                    -97.6365931,
-                    30.1328671
-                  ],
-                  [
-                    -97.6365219,
-                    30.1327632
-                  ]
-                ],
-                "width_m": 13.41,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.22125,
-                "line": [
-                  [
-                    -97.6357338,
-                    30.1333208
-                  ],
-                  [
-                    -97.6356611,
-                    30.1332189
-                  ]
-                ],
-                "width_m": 13.29,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t4",
-              "label": "Turn 4",
-              "start": 0.22125,
-              "end": 0.24125,
-              "anchor": "t4",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.23,
-                  "point_ref": "t4"
-                }
-              ],
-              "start_line": {
-                "marker": 0.22125,
-                "line": [
-                  [
-                    -97.6357338,
-                    30.1333208
-                  ],
-                  [
-                    -97.6356611,
-                    30.1332189
-                  ]
-                ],
-                "width_m": 13.29,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.24125,
-                "line": [
-                  [
-                    -97.6349787,
-                    30.1339749
-                  ],
-                  [
-                    -97.6348566,
-                    30.1339309
-                  ]
-                ],
-                "width_m": 12.73,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t5",
-              "label": "Turn 5",
-              "start": 0.24125,
-              "end": 0.25783,
-              "anchor": "t5",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.25,
-                  "point_ref": "t5"
-                }
-              ],
-              "start_line": {
-                "marker": 0.24125,
-                "line": [
-                  [
-                    -97.6349787,
-                    30.1339749
-                  ],
-                  [
-                    -97.6348566,
-                    30.1339309
-                  ]
-                ],
-                "width_m": 12.73,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.25783,
-                "line": [
-                  [
-                    -97.6343543,
-                    30.1346021
-                  ],
-                  [
-                    -97.6343036,
-                    30.1344886
-                  ]
-                ],
-                "width_m": 13.5,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t6",
-              "label": "Turn 6",
-              "start": 0.25783,
-              "end": 0.29,
-              "anchor": "t6",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.27,
-                  "point_ref": "t6"
-                }
-              ],
-              "start_line": {
-                "marker": 0.25783,
-                "line": [
-                  [
-                    -97.6343543,
-                    30.1346021
-                  ],
-                  [
-                    -97.6343036,
-                    30.1344886
-                  ]
-                ],
-                "width_m": 13.5,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.29,
-                "line": [
-                  [
-                    -97.6334904,
-                    30.1358514
-                  ],
-                  [
-                    -97.6333857,
-                    30.1357691
-                  ]
-                ],
-                "width_m": 13.6,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t7",
-              "label": "Turn 7",
-              "start": 0.29,
-              "end": 0.3184,
-              "anchor": "t7",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.31,
-                  "point_ref": "t7"
-                }
-              ],
-              "start_line": {
-                "marker": 0.29,
-                "line": [
-                  [
-                    -97.6334904,
-                    30.1358514
-                  ],
-                  [
-                    -97.6333857,
-                    30.1357691
-                  ]
-                ],
-                "width_m": 13.6,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.3184,
-                "line": [
-                  [
-                    -97.6319464,
-                    30.1361008
-                  ],
-                  [
-                    -97.6320023,
-                    30.1359935
-                  ]
-                ],
-                "width_m": 13.05,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t8",
-              "label": "Turn 8",
-              "start": 0.3184,
-              "end": 0.3504,
-              "anchor": "t8",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.34,
-                  "point_ref": "t8"
-                }
-              ],
-              "start_line": {
-                "marker": 0.3184,
-                "line": [
-                  [
-                    -97.6319464,
-                    30.1361008
-                  ],
-                  [
-                    -97.6320023,
-                    30.1359935
-                  ]
-                ],
-                "width_m": 13.05,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.3504,
-                "line": [
-                  [
-                    -97.6304623,
-                    30.1362477
-                  ],
-                  [
-                    -97.6303567,
-                    30.1361693
-                  ]
-                ],
-                "width_m": 13.38,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t9",
-              "label": "Turn 9",
-              "start": 0.3504,
-              "end": 0.38222,
-              "anchor": "t9",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.36,
-                  "point_ref": "t9"
-                }
-              ],
-              "start_line": {
-                "marker": 0.3504,
-                "line": [
-                  [
-                    -97.6304623,
-                    30.1362477
-                  ],
-                  [
-                    -97.6303567,
-                    30.1361693
-                  ]
-                ],
-                "width_m": 13.38,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.38222,
-                "line": [
-                  [
-                    -97.6289975,
-                    30.1362337
-                  ],
-                  [
-                    -97.6290264,
-                    30.1361164
-                  ]
-                ],
-                "width_m": 13.29,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t10",
-              "label": "Turn 10",
-              "start": 0.38222,
-              "end": 0.39816,
-              "anchor": "t10",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.39,
-                  "point_ref": "t10"
-                }
-              ],
-              "start_line": {
-                "marker": 0.38222,
-                "line": [
-                  [
-                    -97.6289975,
-                    30.1362337
-                  ],
-                  [
-                    -97.6290264,
-                    30.1361164
-                  ]
-                ],
-                "width_m": 13.29,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.39816,
-                "line": [
-                  [
-                    -97.6281428,
-                    30.1363775
-                  ],
-                  [
-                    -97.6281123,
-                    30.136259
-                  ]
-                ],
-                "width_m": 13.46,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t11",
-              "label": "Hairpin",
-              "start": 0.42467,
-              "end": 0.50083,
-              "anchor": "t11",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.47,
-                  "point_ref": "t11"
-                }
-              ],
-              "start_line": {
-                "marker": 0.42467,
-                "line": [
-                  [
-                    -97.6268144,
-                    30.1368173
-                  ],
-                  [
-                    -97.6267084,
-                    30.1367419
-                  ]
-                ],
-                "width_m": 13.19,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.50083,
-                "line": [
-                  [
-                    -97.6249886,
-                    30.1392933
-                  ],
-                  [
-                    -97.6250441,
-                    30.1394271
-                  ]
-                ],
-                "width_m": 15.76,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t12",
-              "label": "Turn 12",
-              "start": 0.64467,
-              "end": 0.70457,
-              "anchor": "t12",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.69,
-                  "point_ref": "t12"
-                }
-              ],
-              "start_line": {
-                "marker": 0.64467,
-                "line": [
-                  [
-                    -97.632995,
-                    30.1376591
-                  ],
-                  [
-                    -97.6330158,
-                    30.1377978
-                  ]
-                ],
-                "width_m": 15.5,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.70457,
-                "line": [
-                  [
-                    -97.6363824,
-                    30.1372948
-                  ],
-                  [
-                    -97.6364103,
-                    30.1374712
-                  ]
-                ],
-                "width_m": 19.73,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t13",
-              "label": "Turn 13",
-              "start": 0.70457,
-              "end": 0.733,
-              "anchor": "t13",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.72,
-                  "point_ref": "t13"
-                }
-              ],
-              "start_line": {
-                "marker": 0.70457,
-                "line": [
-                  [
-                    -97.6363824,
-                    30.1372948
-                  ],
-                  [
-                    -97.6364103,
-                    30.1374712
-                  ]
-                ],
-                "width_m": 19.73,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.733,
-                "line": [
-                  [
-                    -97.6357739,
-                    30.1363761
-                  ],
-                  [
-                    -97.635914,
-                    30.1362934
-                  ]
-                ],
-                "width_m": 16.32,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t14",
-              "label": "Turn 14",
-              "start": 0.733,
-              "end": 0.75269,
-              "anchor": "t14",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.74,
-                  "point_ref": "t14"
-                }
-              ],
-              "start_line": {
-                "marker": 0.733,
-                "line": [
-                  [
-                    -97.6357739,
-                    30.1363761
-                  ],
-                  [
-                    -97.635914,
-                    30.1362934
-                  ]
-                ],
-                "width_m": 16.32,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.75269,
-                "line": [
-                  [
-                    -97.6355406,
-                    30.1354594
-                  ],
-                  [
-                    -97.6356061,
-                    30.1355952
-                  ]
-                ],
-                "width_m": 16.32,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t15",
-              "label": "Turn 15",
-              "start": 0.75365,
-              "end": 0.764,
-              "anchor": "t15",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.76,
-                  "point_ref": "t15"
-                }
-              ],
-              "start_line": {
-                "marker": 0.75365,
-                "line": [
-                  [
-                    -97.6356068,
-                    30.1354419
-                  ],
-                  [
-                    -97.635639,
-                    30.1355865
-                  ]
-                ],
-                "width_m": 16.33,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.764,
-                "line": [
-                  [
-                    -97.6362227,
-                    30.1354653
-                  ],
-                  [
-                    -97.6362031,
-                    30.1356103
-                  ]
-                ],
-                "width_m": 16.18,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t16",
-              "label": "Turn 16",
-              "start": 0.764,
-              "end": 0.80357,
-              "anchor": "t16",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.78,
-                  "point_ref": "t16"
-                }
-              ],
-              "start_line": {
-                "marker": 0.764,
-                "line": [
-                  [
-                    -97.6362227,
-                    30.1354653
-                  ],
-                  [
-                    -97.6362031,
-                    30.1356103
-                  ]
-                ],
-                "width_m": 16.18,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.80357,
-                "line": [
-                  [
-                    -97.6377094,
-                    30.1364781
-                  ],
-                  [
-                    -97.6378597,
-                    30.1364917
-                  ]
-                ],
-                "width_m": 14.56,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t17",
-              "label": "Turn 17",
-              "start": 0.80365,
-              "end": 0.81816,
-              "anchor": "t17",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.81,
-                  "point_ref": "t17"
-                }
-              ],
-              "start_line": {
-                "marker": 0.80365,
-                "line": [
-                  [
-                    -97.6377092,
-                    30.1364734
-                  ],
-                  [
-                    -97.63786,
-                    30.1364784
-                  ]
-                ],
-                "width_m": 14.55,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.81816,
-                "line": [
-                  [
-                    -97.6373391,
-                    30.1358728
-                  ],
-                  [
-                    -97.6374575,
-                    30.1358122
-                  ]
-                ],
-                "width_m": 13.23,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t18",
-              "label": "Turn 18",
-              "start": 0.85365,
-              "end": 0.86816,
-              "anchor": "t18",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.86,
-                  "point_ref": "t18"
-                }
-              ],
-              "start_line": {
-                "marker": 0.85365,
-                "line": [
-                  [
-                    -97.6368977,
-                    30.1342185
-                  ],
-                  [
-                    -97.6370254,
-                    30.134263
-                  ]
-                ],
-                "width_m": 13.26,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.86816,
-                "line": [
-                  [
-                    -97.6375447,
-                    30.1337431
-                  ],
-                  [
-                    -97.6376083,
-                    30.133855
-                  ]
-                ],
-                "width_m": 13.83,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t19",
-              "label": "Turn 19",
-              "start": 0.89731,
-              "end": 0.92269,
-              "anchor": "t19",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.91,
-                  "point_ref": "t19"
-                }
-              ],
-              "start_line": {
-                "marker": 0.89731,
-                "line": [
-                  [
-                    -97.6391803,
-                    30.1338635
-                  ],
-                  [
-                    -97.6390966,
-                    30.1339599
-                  ]
-                ],
-                "width_m": 13.39,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.92269,
-                "line": [
-                  [
-                    -97.6400687,
-                    30.1348787
-                  ],
-                  [
-                    -97.6399593,
-                    30.1349521
-                  ]
-                ],
-                "width_m": 13.31,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            },
-            {
-              "id": "t20",
-              "label": "Turn 20",
-              "start": 0.92736,
-              "end": 0.98357,
-              "anchor": "t20",
-              "points": [
-                {
-                  "id": "apex",
-                  "role": "apex",
-                  "label": "Apex",
-                  "marker": 0.96,
-                  "point_ref": "t20"
-                }
-              ],
-              "start_line": {
-                "marker": 0.92736,
-                "line": [
-                  [
-                    -97.6402355,
-                    30.1350623
-                  ],
-                  [
-                    -97.6401247,
-                    30.1351381
-                  ]
-                ],
-                "width_m": 13.59,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.98357,
-                "line": [
-                  [
-                    -97.6429729,
-                    30.1346628
-                  ],
-                  [
-                    -97.6430141,
-                    30.1347903
-                  ]
-                ],
-                "width_m": 14.68,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "corner_complexes",
-          "kind": "corner_complexes",
-          "label": "Corner Complexes",
-          "items": [
-            {
-              "id": "t1",
-              "label": "Big Red",
-              "start": 0.07467,
-              "end": 0.14833,
-              "members": [
-                "t1"
-              ],
-              "points": [
-                {
-                  "id": "t1-apex",
-                  "role": "apex",
-                  "label": "Big Red",
-                  "marker": 0.12,
-                  "point_ref": "t1"
-                }
-              ],
-              "start_line": {
-                "marker": 0.07467,
-                "line": [
-                  [
-                    -97.6398479,
-                    30.1319668
-                  ],
-                  [
-                    -97.6399437,
-                    30.1318598
-                  ]
-                ],
-                "width_m": 15.03,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.14833,
-                "line": [
-                  [
-                    -97.6369246,
-                    30.1303929
-                  ],
-                  [
-                    -97.6367615,
-                    30.130437
-                  ]
-                ],
-                "width_m": 16.47,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "entry": {
-                "marker": 0.13648,
+                "marker": 0.13665,
                 "line": [
                   [
                     -97.6370017,
@@ -2932,8 +1722,8 @@
                   "date": "2021-01-03"
                 }
               },
-              "exit": {
-                "marker": 0.1448,
+              "end_line": {
+                "marker": 0.14501,
                 "line": [
                   [
                     -97.636874,
@@ -2957,64 +1747,20 @@
             {
               "id": "t2",
               "label": "Turn 2",
-              "start": 0.14833,
-              "end": 0.17269,
-              "members": [
-                "t2"
-              ],
+              "start": 0.17227,
+              "end": 0.19899,
+              "anchor": "t2",
               "points": [
                 {
-                  "id": "t2-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 2",
-                  "marker": 0.16,
+                  "label": "Apex",
+                  "marker": 0.17482,
                   "point_ref": "t2"
                 }
               ],
               "start_line": {
-                "marker": 0.14833,
-                "line": [
-                  [
-                    -97.6369246,
-                    30.1303929
-                  ],
-                  [
-                    -97.6367615,
-                    30.130437
-                  ]
-                ],
-                "width_m": 16.47,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.17269,
-                "line": [
-                  [
-                    -97.6373622,
-                    30.1315396
-                  ],
-                  [
-                    -97.6372294,
-                    30.1315759
-                  ]
-                ],
-                "width_m": 13.41,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "entry": {
-                "marker": 0.17206,
+                "marker": 0.17227,
                 "line": [
                   [
                     -97.6373523,
@@ -3034,8 +1780,8 @@
                   "date": "2021-01-03"
                 }
               },
-              "exit": {
-                "marker": 0.19873,
+              "end_line": {
+                "marker": 0.19899,
                 "line": [
                   [
                     -97.6368323,
@@ -3057,122 +1803,22 @@
               }
             },
             {
-              "id": "complex-3",
-              "label": "Esses",
-              "start": 0.20365,
-              "end": 0.39816,
-              "members": [
-                "t3",
-                "t4",
-                "t5",
-                "t6",
-                "t7",
-                "t8",
-                "t9",
-                "t10"
-              ],
+              "id": "t3",
+              "label": "Turn 3",
+              "start": 0.22807,
+              "end": 0.23952,
+              "anchor": "t3",
               "points": [
                 {
-                  "id": "t3-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 3",
-                  "marker": 0.21,
+                  "label": "Apex",
+                  "marker": 0.23334,
                   "point_ref": "t3"
-                },
-                {
-                  "id": "t4-apex",
-                  "role": "apex",
-                  "label": "Turn 4",
-                  "marker": 0.23,
-                  "point_ref": "t4"
-                },
-                {
-                  "id": "t5-apex",
-                  "role": "apex",
-                  "label": "Turn 5",
-                  "marker": 0.25,
-                  "point_ref": "t5"
-                },
-                {
-                  "id": "t6-apex",
-                  "role": "apex",
-                  "label": "Turn 6",
-                  "marker": 0.27,
-                  "point_ref": "t6"
-                },
-                {
-                  "id": "t7-apex",
-                  "role": "apex",
-                  "label": "Turn 7",
-                  "marker": 0.31,
-                  "point_ref": "t7"
-                },
-                {
-                  "id": "t8-apex",
-                  "role": "apex",
-                  "label": "Turn 8",
-                  "marker": 0.34,
-                  "point_ref": "t8"
-                },
-                {
-                  "id": "t9-apex",
-                  "role": "apex",
-                  "label": "Turn 9",
-                  "marker": 0.36,
-                  "point_ref": "t9"
-                },
-                {
-                  "id": "t10-apex",
-                  "role": "apex",
-                  "label": "Turn 10",
-                  "marker": 0.39,
-                  "point_ref": "t10"
                 }
               ],
               "start_line": {
-                "marker": 0.20365,
-                "line": [
-                  [
-                    -97.6365931,
-                    30.1328671
-                  ],
-                  [
-                    -97.6365219,
-                    30.1327632
-                  ]
-                ],
-                "width_m": 13.41,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.39816,
-                "line": [
-                  [
-                    -97.6281428,
-                    30.1363775
-                  ],
-                  [
-                    -97.6281123,
-                    30.136259
-                  ]
-                ],
-                "width_m": 13.46,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "entry": {
-                "marker": 0.2278,
+                "marker": 0.22807,
                 "line": [
                   [
                     -97.6354097,
@@ -3192,8 +1838,414 @@
                   "date": "2021-01-03"
                 }
               },
-              "exit": {
-                "marker": 0.38481,
+              "end_line": {
+                "marker": 0.23952,
+                "line": [
+                  [
+                    -97.6350243,
+                    30.1338834
+                  ],
+                  [
+                    -97.6348988,
+                    30.1338393
+                  ]
+                ],
+                "width_m": 13.04,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t4",
+              "label": "Turn 4",
+              "start": 0.24588,
+              "end": 0.25661,
+              "anchor": "t4",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.25243,
+                  "point_ref": "t4"
+                }
+              ],
+              "start_line": {
+                "marker": 0.24588,
+                "line": [
+                  [
+                    -97.6348892,
+                    30.1341772
+                  ],
+                  [
+                    -97.6347625,
+                    30.1341311
+                  ]
+                ],
+                "width_m": 13.23,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.25661,
+                "line": [
+                  [
+                    -97.6344331,
+                    30.1345749
+                  ],
+                  [
+                    -97.6343795,
+                    30.1344634
+                  ]
+                ],
+                "width_m": 13.4,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t5",
+              "label": "Turn 5",
+              "start": 0.26133,
+              "end": 0.27478,
+              "anchor": "t5",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.26733,
+                  "point_ref": "t5"
+                }
+              ],
+              "start_line": {
+                "marker": 0.26133,
+                "line": [
+                  [
+                    -97.6341807,
+                    30.1346612
+                  ],
+                  [
+                    -97.6341301,
+                    30.1345496
+                  ]
+                ],
+                "width_m": 13.3,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.27478,
+                "line": [
+                  [
+                    -97.6337839,
+                    30.1351205
+                  ],
+                  [
+                    -97.6336537,
+                    30.1351011
+                  ]
+                ],
+                "width_m": 12.72,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t6",
+              "label": "Turn 6",
+              "start": 0.27914,
+              "end": 0.29586,
+              "anchor": "t6",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.28423,
+                  "point_ref": "t6"
+                }
+              ],
+              "start_line": {
+                "marker": 0.27914,
+                "line": [
+                  [
+                    -97.6337605,
+                    30.135333
+                  ],
+                  [
+                    -97.6336175,
+                    30.1353182
+                  ]
+                ],
+                "width_m": 13.87,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.29586,
+                "line": [
+                  [
+                    -97.6332234,
+                    30.1360457
+                  ],
+                  [
+                    -97.633145,
+                    30.1359453
+                  ]
+                ],
+                "width_m": 13.46,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t7",
+              "label": "Turn 7",
+              "start": 0.29641,
+              "end": 0.31349,
+              "anchor": "t7",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.30695,
+                  "point_ref": "t7"
+                }
+              ],
+              "start_line": {
+                "marker": 0.29641,
+                "line": [
+                  [
+                    -97.6331969,
+                    30.1360611
+                  ],
+                  [
+                    -97.6331198,
+                    30.1359602
+                  ]
+                ],
+                "width_m": 13.43,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.31349,
+                "line": [
+                  [
+                    -97.6322135,
+                    30.1362059
+                  ],
+                  [
+                    -97.6322675,
+                    30.136091
+                  ]
+                ],
+                "width_m": 13.75,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t8",
+              "label": "Turn 8",
+              "start": 0.31854,
+              "end": 0.35062,
+              "anchor": "t8",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.3402,
+                  "point_ref": "t8"
+                }
+              ],
+              "start_line": {
+                "marker": 0.31854,
+                "line": [
+                  [
+                    -97.6319464,
+                    30.1361008
+                  ],
+                  [
+                    -97.6320023,
+                    30.1359935
+                  ]
+                ],
+                "width_m": 13.05,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.35062,
+                "line": [
+                  [
+                    -97.6304623,
+                    30.1362477
+                  ],
+                  [
+                    -97.6303567,
+                    30.1361693
+                  ]
+                ],
+                "width_m": 13.38,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t9",
+              "label": "Turn 9",
+              "start": 0.33167,
+              "end": 0.33767,
+              "anchor": "t9",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.3344,
+                  "point_ref": "t9"
+                }
+              ],
+              "start_line": {
+                "marker": 0.33167,
+                "line": [
+                  [
+                    -97.6312673,
+                    30.1358337
+                  ],
+                  [
+                    -97.6313218,
+                    30.135722
+                  ]
+                ],
+                "width_m": 13.45,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.33767,
+                "line": [
+                  [
+                    -97.6310067,
+                    30.1358534
+                  ],
+                  [
+                    -97.630937,
+                    30.1357466
+                  ]
+                ],
+                "width_m": 13.61,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t10",
+              "label": "Turn 10",
+              "start": 0.37838,
+              "end": 0.38511,
+              "anchor": "t10",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.38002,
+                  "point_ref": "t10"
+                }
+              ],
+              "start_line": {
+                "marker": 0.37838,
+                "line": [
+                  [
+                    -97.629132,
+                    30.1363282
+                  ],
+                  [
+                    -97.6292527,
+                    30.1362712
+                  ]
+                ],
+                "width_m": 13.23,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.38511,
                 "line": [
                   [
                     -97.6288815,
@@ -3217,64 +2269,20 @@
             {
               "id": "t11",
               "label": "Hairpin",
-              "start": 0.42467,
-              "end": 0.50083,
-              "members": [
-                "t11"
-              ],
+              "start": 0.48689,
+              "end": 0.49507,
+              "anchor": "t11",
               "points": [
                 {
-                  "id": "t11-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Hairpin",
-                  "marker": 0.47,
+                  "label": "Apex",
+                  "marker": 0.4927,
                   "point_ref": "t11"
                 }
               ],
               "start_line": {
-                "marker": 0.42467,
-                "line": [
-                  [
-                    -97.6268144,
-                    30.1368173
-                  ],
-                  [
-                    -97.6267084,
-                    30.1367419
-                  ]
-                ],
-                "width_m": 13.19,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.50083,
-                "line": [
-                  [
-                    -97.6249886,
-                    30.1392933
-                  ],
-                  [
-                    -97.6250441,
-                    30.1394271
-                  ]
-                ],
-                "width_m": 15.76,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "entry": {
-                "marker": 0.4866,
+                "marker": 0.48689,
                 "line": [
                   [
                     -97.6246109,
@@ -3294,8 +2302,8 @@
                   "date": "2021-01-03"
                 }
               },
-              "exit": {
-                "marker": 0.49465,
+              "end_line": {
+                "marker": 0.49507,
                 "line": [
                   [
                     -97.6246592,
@@ -3319,64 +2327,20 @@
             {
               "id": "t12",
               "label": "Turn 12",
-              "start": 0.64467,
-              "end": 0.70457,
-              "members": [
-                "t12"
-              ],
+              "start": 0.70608,
+              "end": 0.71226,
+              "anchor": "t12",
               "points": [
                 {
-                  "id": "t12-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 12",
-                  "marker": 0.69,
+                  "label": "Apex",
+                  "marker": 0.70953,
                   "point_ref": "t12"
                 }
               ],
               "start_line": {
-                "marker": 0.64467,
-                "line": [
-                  [
-                    -97.632995,
-                    30.1376591
-                  ],
-                  [
-                    -97.6330158,
-                    30.1377978
-                  ]
-                ],
-                "width_m": 15.5,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.70457,
-                "line": [
-                  [
-                    -97.6363824,
-                    30.1372948
-                  ],
-                  [
-                    -97.6364103,
-                    30.1374712
-                  ]
-                ],
-                "width_m": 19.73,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "entry": {
-                "marker": 0.70561,
+                "marker": 0.70608,
                 "line": [
                   [
                     -97.6364439,
@@ -3396,8 +2360,8 @@
                   "date": "2021-01-03"
                 }
               },
-              "exit": {
-                "marker": 0.71217,
+              "end_line": {
+                "marker": 0.71226,
                 "line": [
                   [
                     -97.6364967,
@@ -3421,22 +2385,20 @@
             {
               "id": "t13",
               "label": "Turn 13",
-              "start": 0.70457,
-              "end": 0.733,
-              "members": [
-                "t13"
-              ],
+              "start": 0.70504,
+              "end": 0.7331,
+              "anchor": "t13",
               "points": [
                 {
-                  "id": "t13-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 13",
-                  "marker": 0.72,
+                  "label": "Apex",
+                  "marker": 0.7201,
                   "point_ref": "t13"
                 }
               ],
               "start_line": {
-                "marker": 0.70457,
+                "marker": 0.70504,
                 "line": [
                   [
                     -97.6363824,
@@ -3457,7 +2419,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.733,
+                "marker": 0.7331,
                 "line": [
                   [
                     -97.6357739,
@@ -3481,64 +2443,20 @@
             {
               "id": "t14",
               "label": "Turn 14",
-              "start": 0.733,
-              "end": 0.75269,
-              "members": [
-                "t14"
-              ],
+              "start": 0.74516,
+              "end": 0.75479,
+              "anchor": "t14",
               "points": [
                 {
-                  "id": "t14-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 14",
-                  "marker": 0.74,
+                  "label": "Apex",
+                  "marker": 0.75007,
                   "point_ref": "t14"
                 }
               ],
               "start_line": {
-                "marker": 0.733,
-                "line": [
-                  [
-                    -97.6357739,
-                    30.1363761
-                  ],
-                  [
-                    -97.635914,
-                    30.1362934
-                  ]
-                ],
-                "width_m": 16.32,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "end_line": {
-                "marker": 0.75269,
-                "line": [
-                  [
-                    -97.6355406,
-                    30.1354594
-                  ],
-                  [
-                    -97.6356061,
-                    30.1355952
-                  ]
-                ],
-                "width_m": 16.32,
-                "quality": {
-                  "source": "txgio-2021-caparea",
-                  "accuracy_m": 1.08,
-                  "relative_accuracy_m": 0.15,
-                  "measured": true,
-                  "date": "2021-01-03"
-                }
-              },
-              "entry": {
-                "marker": 0.74506,
+                "marker": 0.74516,
                 "line": [
                   [
                     -97.6354065,
@@ -3558,8 +2476,8 @@
                   "date": "2021-01-03"
                 }
               },
-              "exit": {
-                "marker": 0.75506,
+              "end_line": {
+                "marker": 0.75479,
                 "line": [
                   [
                     -97.6357052,
@@ -3581,35 +2499,33 @@
               }
             },
             {
-              "id": "t16",
-              "label": "Turn 16",
-              "start": 0.764,
-              "end": 0.80357,
-              "members": [
-                "t16"
-              ],
+              "id": "t15",
+              "label": "Turn 15",
+              "start": 0.77497,
+              "end": 0.78169,
+              "anchor": "t15",
               "points": [
                 {
-                  "id": "t16-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 16",
-                  "marker": 0.78,
-                  "point_ref": "t16"
+                  "label": "Apex",
+                  "marker": 0.77951,
+                  "point_ref": "t15"
                 }
               ],
               "start_line": {
-                "marker": 0.764,
+                "marker": 0.77497,
                 "line": [
                   [
-                    -97.6362227,
-                    30.1354653
+                    -97.6366598,
+                    30.1359187
                   ],
                   [
-                    -97.6362031,
-                    30.1356103
+                    -97.6365196,
+                    30.1359661
                   ]
                 ],
-                "width_m": 16.18,
+                "width_m": 14.5,
                 "quality": {
                   "source": "txgio-2021-caparea",
                   "accuracy_m": 1.08,
@@ -3619,18 +2535,18 @@
                 }
               },
               "end_line": {
-                "marker": 0.80357,
+                "marker": 0.78169,
                 "line": [
                   [
-                    -97.6377094,
-                    30.1364781
+                    -97.6368389,
+                    30.1361859
                   ],
                   [
-                    -97.6378597,
-                    30.1364917
+                    -97.6367362,
+                    30.1362653
                   ]
                 ],
-                "width_m": 14.56,
+                "width_m": 13.25,
                 "quality": {
                   "source": "txgio-2021-caparea",
                   "accuracy_m": 1.08,
@@ -3638,9 +2554,25 @@
                   "measured": true,
                   "date": "2021-01-03"
                 }
-              },
-              "entry": {
-                "marker": 0.79883,
+              }
+            },
+            {
+              "id": "t16",
+              "label": "Turn 16",
+              "start": 0.79878,
+              "end": 0.80568,
+              "anchor": "t16",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.8015,
+                  "point_ref": "t16"
+                }
+              ],
+              "start_line": {
+                "marker": 0.79878,
                 "line": [
                   [
                     -97.6375894,
@@ -3660,8 +2592,8 @@
                   "date": "2021-01-03"
                 }
               },
-              "exit": {
-                "marker": 0.80582,
+              "end_line": {
+                "marker": 0.80568,
                 "line": [
                   [
                     -97.6376909,
@@ -3683,24 +2615,138 @@
               }
             },
             {
-              "id": "t19",
-              "label": "Turn 19",
-              "start": 0.89731,
-              "end": 0.92269,
-              "members": [
-                "t19"
-              ],
+              "id": "t17",
+              "label": "Turn 17",
+              "start": 0.80348,
+              "end": 0.81803,
+              "anchor": "t17",
               "points": [
                 {
-                  "id": "t19-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 19",
-                  "marker": 0.91,
+                  "label": "Apex",
+                  "marker": 0.80986,
+                  "point_ref": "t17"
+                }
+              ],
+              "start_line": {
+                "marker": 0.80348,
+                "line": [
+                  [
+                    -97.6377092,
+                    30.1364734
+                  ],
+                  [
+                    -97.63786,
+                    30.1364784
+                  ]
+                ],
+                "width_m": 14.55,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.81803,
+                "line": [
+                  [
+                    -97.6373391,
+                    30.1358728
+                  ],
+                  [
+                    -97.6374575,
+                    30.1358122
+                  ]
+                ],
+                "width_m": 13.23,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t18",
+              "label": "Turn 18",
+              "start": 0.85421,
+              "end": 0.86239,
+              "anchor": "t18",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.85966,
+                  "point_ref": "t18"
+                }
+              ],
+              "start_line": {
+                "marker": 0.85421,
+                "line": [
+                  [
+                    -97.6369128,
+                    30.1341849
+                  ],
+                  [
+                    -97.637041,
+                    30.1342296
+                  ]
+                ],
+                "width_m": 13.31,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.86239,
+                "line": [
+                  [
+                    -97.6372554,
+                    30.1338639
+                  ],
+                  [
+                    -97.6373162,
+                    30.1339737
+                  ]
+                ],
+                "width_m": 13.5,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t19",
+              "label": "Turn 19",
+              "start": 0.89717,
+              "end": 0.92256,
+              "anchor": "t19",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.90987,
                   "point_ref": "t19"
                 }
               ],
               "start_line": {
-                "marker": 0.89731,
+                "marker": 0.89717,
                 "line": [
                   [
                     -97.6391803,
@@ -3721,7 +2767,7 @@
                 }
               },
               "end_line": {
-                "marker": 0.92269,
+                "marker": 0.92256,
                 "line": [
                   [
                     -97.6400687,
@@ -3745,33 +2791,31 @@
             {
               "id": "t20",
               "label": "Turn 20",
-              "start": 0.92736,
-              "end": 0.98357,
-              "members": [
-                "t20"
-              ],
+              "start": 0.93545,
+              "end": 0.94272,
+              "anchor": "t20",
               "points": [
                 {
-                  "id": "t20-apex",
+                  "id": "apex",
                   "role": "apex",
-                  "label": "Turn 20",
-                  "marker": 0.96,
+                  "label": "Apex",
+                  "marker": 0.93927,
                   "point_ref": "t20"
                 }
               ],
               "start_line": {
-                "marker": 0.92736,
+                "marker": 0.93545,
                 "line": [
                   [
-                    -97.6402355,
-                    30.1350623
+                    -97.6405289,
+                    30.1353744
                   ],
                   [
-                    -97.6401247,
-                    30.1351381
+                    -97.6404233,
+                    30.1354539
                   ]
                 ],
-                "width_m": 13.59,
+                "width_m": 13.46,
                 "quality": {
                   "source": "txgio-2021-caparea",
                   "accuracy_m": 1.08,
@@ -3781,18 +2825,64 @@
                 }
               },
               "end_line": {
-                "marker": 0.98357,
+                "marker": 0.94272,
                 "line": [
                   [
-                    -97.6429729,
-                    30.1346628
+                    -97.6408278,
+                    30.1354488
                   ],
                   [
-                    -97.6430141,
-                    30.1347903
+                    -97.6408662,
+                    30.1355779
                   ]
                 ],
-                "width_m": 14.68,
+                "width_m": 14.78,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "corner_complexes",
+          "kind": "corner_complexes",
+          "label": "Corner Complexes",
+          "items": [
+            {
+              "id": "t1",
+              "label": "Big Red",
+              "start": 0.13665,
+              "end": 0.14501,
+              "members": [
+                "t1"
+              ],
+              "points": [
+                {
+                  "id": "t1-apex",
+                  "role": "apex",
+                  "label": "Big Red",
+                  "marker": 0.14119,
+                  "point_ref": "t1"
+                }
+              ],
+              "entry": {
+                "marker": 0.13665,
+                "line": [
+                  [
+                    -97.6370017,
+                    30.1301891
+                  ],
+                  [
+                    -97.6371467,
+                    30.129968
+                  ]
+                ],
+                "width_m": 28.22,
                 "quality": {
                   "source": "txgio-2021-caparea",
                   "accuracy_m": 1.08,
@@ -3801,8 +2891,877 @@
                   "date": "2021-01-03"
                 }
               },
+              "exit": {
+                "marker": 0.14501,
+                "line": [
+                  [
+                    -97.636874,
+                    30.1302284
+                  ],
+                  [
+                    -97.6366955,
+                    30.130274
+                  ]
+                ],
+                "width_m": 17.93,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.13665,
+                "line": [
+                  [
+                    -97.6370017,
+                    30.1301891
+                  ],
+                  [
+                    -97.6371467,
+                    30.129968
+                  ]
+                ],
+                "width_m": 28.22,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.14501,
+                "line": [
+                  [
+                    -97.636874,
+                    30.1302284
+                  ],
+                  [
+                    -97.6366955,
+                    30.130274
+                  ]
+                ],
+                "width_m": 17.93,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t2",
+              "label": "Turn 2",
+              "start": 0.17227,
+              "end": 0.19899,
+              "members": [
+                "t2"
+              ],
+              "points": [
+                {
+                  "id": "t2-apex",
+                  "role": "apex",
+                  "label": "Turn 2",
+                  "marker": 0.17482,
+                  "point_ref": "t2"
+                }
+              ],
               "entry": {
-                "marker": 0.93558,
+                "marker": 0.17227,
+                "line": [
+                  [
+                    -97.6373523,
+                    30.1315128
+                  ],
+                  [
+                    -97.6372203,
+                    30.1315512
+                  ]
+                ],
+                "width_m": 13.42,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "exit": {
+                "marker": 0.19899,
+                "line": [
+                  [
+                    -97.6368323,
+                    30.1327387
+                  ],
+                  [
+                    -97.6367594,
+                    30.1326356
+                  ]
+                ],
+                "width_m": 13.42,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.17227,
+                "line": [
+                  [
+                    -97.6373523,
+                    30.1315128
+                  ],
+                  [
+                    -97.6372203,
+                    30.1315512
+                  ]
+                ],
+                "width_m": 13.42,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.19899,
+                "line": [
+                  [
+                    -97.6368323,
+                    30.1327387
+                  ],
+                  [
+                    -97.6367594,
+                    30.1326356
+                  ]
+                ],
+                "width_m": 13.42,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "complex-3",
+              "label": "Esses",
+              "start": 0.22807,
+              "end": 0.38511,
+              "members": [
+                "t3",
+                "t4",
+                "t5",
+                "t6",
+                "t7",
+                "t8",
+                "t9",
+                "t10"
+              ],
+              "points": [
+                {
+                  "id": "t3-apex",
+                  "role": "apex",
+                  "label": "Turn 3",
+                  "marker": 0.23334,
+                  "point_ref": "t3"
+                },
+                {
+                  "id": "t4-apex",
+                  "role": "apex",
+                  "label": "Turn 4",
+                  "marker": 0.25243,
+                  "point_ref": "t4"
+                },
+                {
+                  "id": "t5-apex",
+                  "role": "apex",
+                  "label": "Turn 5",
+                  "marker": 0.26733,
+                  "point_ref": "t5"
+                },
+                {
+                  "id": "t6-apex",
+                  "role": "apex",
+                  "label": "Turn 6",
+                  "marker": 0.28423,
+                  "point_ref": "t6"
+                },
+                {
+                  "id": "t7-apex",
+                  "role": "apex",
+                  "label": "Turn 7",
+                  "marker": 0.30695,
+                  "point_ref": "t7"
+                },
+                {
+                  "id": "t8-apex",
+                  "role": "apex",
+                  "label": "Turn 8",
+                  "marker": 0.3402,
+                  "point_ref": "t8"
+                },
+                {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Turn 9",
+                  "marker": 0.3344,
+                  "point_ref": "t9"
+                },
+                {
+                  "id": "t10-apex",
+                  "role": "apex",
+                  "label": "Turn 10",
+                  "marker": 0.38002,
+                  "point_ref": "t10"
+                }
+              ],
+              "entry": {
+                "marker": 0.22807,
+                "line": [
+                  [
+                    -97.6354097,
+                    30.1334926
+                  ],
+                  [
+                    -97.6353474,
+                    30.1333849
+                  ]
+                ],
+                "width_m": 13.37,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "exit": {
+                "marker": 0.38511,
+                "line": [
+                  [
+                    -97.6288815,
+                    30.1362377
+                  ],
+                  [
+                    -97.6288543,
+                    30.1361191
+                  ]
+                ],
+                "width_m": 13.41,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.22807,
+                "line": [
+                  [
+                    -97.6354097,
+                    30.1334926
+                  ],
+                  [
+                    -97.6353474,
+                    30.1333849
+                  ]
+                ],
+                "width_m": 13.37,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.38511,
+                "line": [
+                  [
+                    -97.6288815,
+                    30.1362377
+                  ],
+                  [
+                    -97.6288543,
+                    30.1361191
+                  ]
+                ],
+                "width_m": 13.41,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t11",
+              "label": "Hairpin",
+              "start": 0.48689,
+              "end": 0.49507,
+              "members": [
+                "t11"
+              ],
+              "points": [
+                {
+                  "id": "t11-apex",
+                  "role": "apex",
+                  "label": "Hairpin",
+                  "marker": 0.4927,
+                  "point_ref": "t11"
+                }
+              ],
+              "entry": {
+                "marker": 0.48689,
+                "line": [
+                  [
+                    -97.6246109,
+                    30.1392152
+                  ],
+                  [
+                    -97.6244364,
+                    30.139107
+                  ]
+                ],
+                "width_m": 20.66,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "exit": {
+                "marker": 0.49507,
+                "line": [
+                  [
+                    -97.6246592,
+                    30.1393596
+                  ],
+                  [
+                    -97.6246873,
+                    30.1394933
+                  ]
+                ],
+                "width_m": 15.07,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.48689,
+                "line": [
+                  [
+                    -97.6246109,
+                    30.1392152
+                  ],
+                  [
+                    -97.6244364,
+                    30.139107
+                  ]
+                ],
+                "width_m": 20.66,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.49507,
+                "line": [
+                  [
+                    -97.6246592,
+                    30.1393596
+                  ],
+                  [
+                    -97.6246873,
+                    30.1394933
+                  ]
+                ],
+                "width_m": 15.07,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t12",
+              "label": "Turn 12",
+              "start": 0.70608,
+              "end": 0.71226,
+              "members": [
+                "t12"
+              ],
+              "points": [
+                {
+                  "id": "t12-apex",
+                  "role": "apex",
+                  "label": "Turn 12",
+                  "marker": 0.70953,
+                  "point_ref": "t12"
+                }
+              ],
+              "entry": {
+                "marker": 0.70608,
+                "line": [
+                  [
+                    -97.6364439,
+                    30.137286
+                  ],
+                  [
+                    -97.6364723,
+                    30.1374661
+                  ]
+                ],
+                "width_m": 20.16,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "exit": {
+                "marker": 0.71226,
+                "line": [
+                  [
+                    -97.6364967,
+                    30.1372102
+                  ],
+                  [
+                    -97.636629,
+                    30.1371138
+                  ]
+                ],
+                "width_m": 16.63,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.70608,
+                "line": [
+                  [
+                    -97.6364439,
+                    30.137286
+                  ],
+                  [
+                    -97.6364723,
+                    30.1374661
+                  ]
+                ],
+                "width_m": 20.16,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.71226,
+                "line": [
+                  [
+                    -97.6364967,
+                    30.1372102
+                  ],
+                  [
+                    -97.636629,
+                    30.1371138
+                  ]
+                ],
+                "width_m": 16.63,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t13",
+              "label": "Turn 13",
+              "start": 0.70504,
+              "end": 0.7331,
+              "members": [
+                "t13"
+              ],
+              "points": [
+                {
+                  "id": "t13-apex",
+                  "role": "apex",
+                  "label": "Turn 13",
+                  "marker": 0.7201,
+                  "point_ref": "t13"
+                }
+              ],
+              "start_line": {
+                "marker": 0.70504,
+                "line": [
+                  [
+                    -97.6363824,
+                    30.1372948
+                  ],
+                  [
+                    -97.6364103,
+                    30.1374712
+                  ]
+                ],
+                "width_m": 19.73,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.7331,
+                "line": [
+                  [
+                    -97.6357739,
+                    30.1363761
+                  ],
+                  [
+                    -97.635914,
+                    30.1362934
+                  ]
+                ],
+                "width_m": 16.32,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t14",
+              "label": "Turn 14",
+              "start": 0.74516,
+              "end": 0.75479,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Turn 14",
+                  "marker": 0.75007,
+                  "point_ref": "t14"
+                }
+              ],
+              "entry": {
+                "marker": 0.74516,
+                "line": [
+                  [
+                    -97.6354065,
+                    30.1358672
+                  ],
+                  [
+                    -97.6355516,
+                    30.1357952
+                  ]
+                ],
+                "width_m": 16.1,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "exit": {
+                "marker": 0.75479,
+                "line": [
+                  [
+                    -97.6357052,
+                    30.135436
+                  ],
+                  [
+                    -97.6357061,
+                    30.1355834
+                  ]
+                ],
+                "width_m": 16.35,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.74516,
+                "line": [
+                  [
+                    -97.6354065,
+                    30.1358672
+                  ],
+                  [
+                    -97.6355516,
+                    30.1357952
+                  ]
+                ],
+                "width_m": 16.1,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.75479,
+                "line": [
+                  [
+                    -97.6357052,
+                    30.135436
+                  ],
+                  [
+                    -97.6357061,
+                    30.1355834
+                  ]
+                ],
+                "width_m": 16.35,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t16",
+              "label": "Turn 16",
+              "start": 0.79878,
+              "end": 0.80568,
+              "members": [
+                "t16"
+              ],
+              "points": [
+                {
+                  "id": "t16-apex",
+                  "role": "apex",
+                  "label": "Turn 16",
+                  "marker": 0.8015,
+                  "point_ref": "t16"
+                }
+              ],
+              "entry": {
+                "marker": 0.79878,
+                "line": [
+                  [
+                    -97.6375894,
+                    30.1365267
+                  ],
+                  [
+                    -97.6376022,
+                    30.1366828
+                  ]
+                ],
+                "width_m": 17.36,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "exit": {
+                "marker": 0.80568,
+                "line": [
+                  [
+                    -97.6376909,
+                    30.1364018
+                  ],
+                  [
+                    -97.6378121,
+                    30.1363447
+                  ]
+                ],
+                "width_m": 13.28,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.79878,
+                "line": [
+                  [
+                    -97.6375894,
+                    30.1365267
+                  ],
+                  [
+                    -97.6376022,
+                    30.1366828
+                  ]
+                ],
+                "width_m": 17.36,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.80568,
+                "line": [
+                  [
+                    -97.6376909,
+                    30.1364018
+                  ],
+                  [
+                    -97.6378121,
+                    30.1363447
+                  ]
+                ],
+                "width_m": 13.28,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t19",
+              "label": "Turn 19",
+              "start": 0.89717,
+              "end": 0.92256,
+              "members": [
+                "t19"
+              ],
+              "points": [
+                {
+                  "id": "t19-apex",
+                  "role": "apex",
+                  "label": "Turn 19",
+                  "marker": 0.90987,
+                  "point_ref": "t19"
+                }
+              ],
+              "start_line": {
+                "marker": 0.89717,
+                "line": [
+                  [
+                    -97.6391803,
+                    30.1338635
+                  ],
+                  [
+                    -97.6390966,
+                    30.1339599
+                  ]
+                ],
+                "width_m": 13.39,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
+                "marker": 0.92256,
+                "line": [
+                  [
+                    -97.6400687,
+                    30.1348787
+                  ],
+                  [
+                    -97.6399593,
+                    30.1349521
+                  ]
+                ],
+                "width_m": 13.31,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              }
+            },
+            {
+              "id": "t20",
+              "label": "Turn 20",
+              "start": 0.93545,
+              "end": 0.94272,
+              "members": [
+                "t20"
+              ],
+              "points": [
+                {
+                  "id": "t20-apex",
+                  "role": "apex",
+                  "label": "Turn 20",
+                  "marker": 0.93927,
+                  "point_ref": "t20"
+                }
+              ],
+              "entry": {
+                "marker": 0.93545,
                 "line": [
                   [
                     -97.6405289,
@@ -3823,6 +3782,48 @@
                 }
               },
               "exit": {
+                "marker": 0.94272,
+                "line": [
+                  [
+                    -97.6408278,
+                    30.1354488
+                  ],
+                  [
+                    -97.6408662,
+                    30.1355779
+                  ]
+                ],
+                "width_m": 14.78,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "start_line": {
+                "marker": 0.93545,
+                "line": [
+                  [
+                    -97.6405289,
+                    30.1353744
+                  ],
+                  [
+                    -97.6404233,
+                    30.1354539
+                  ]
+                ],
+                "width_m": 13.46,
+                "quality": {
+                  "source": "txgio-2021-caparea",
+                  "accuracy_m": 1.08,
+                  "relative_accuracy_m": 0.15,
+                  "measured": true,
+                  "date": "2021-01-03"
+                }
+              },
+              "end_line": {
                 "marker": 0.94272,
                 "line": [
                   [
@@ -3925,37 +3926,37 @@
         },
         "unnamed_corners": [
           {
-            "marker": 0.3684,
+            "marker": 0.3686,
             "direction": "right",
             "radius_m": 54.6
           },
           {
-            "marker": 0.4183,
+            "marker": 0.4185,
             "direction": "left",
             "radius_m": 43.4
           },
           {
-            "marker": 0.7676,
+            "marker": 0.7673,
             "direction": "right",
             "radius_m": 33.3
           },
           {
-            "marker": 0.7924,
+            "marker": 0.7922,
             "direction": "left",
             "radius_m": 47.4
           },
           {
-            "marker": 0.8392,
+            "marker": 0.8391,
             "direction": "right",
             "radius_m": 70.4
           },
           {
-            "marker": 0.8764,
+            "marker": 0.8762,
             "direction": "right",
             "radius_m": 63.6
           },
           {
-            "marker": 0.9943,
+            "marker": 0.9942,
             "direction": "left",
             "radius_m": 21.6
           }
@@ -4016,7 +4017,7 @@
     "imsa_data": "circuit-of-the-americas"
   },
   "provenance": {
-    "generated_at": "2026-09-26T20:26:44.509753+00:00",
+    "generated_at": "2026-09-26T20:41:46.844568+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
