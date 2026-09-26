@@ -36,6 +36,10 @@ def main() -> None:
         if not (TRACKS / slug / "generation-config.json").exists():
             continue
         track = run_layer_configs(slug, write=True)
+        from lib.surface import apply_track
+        from lib.config import raw_dir
+        track = apply_track(raw_dir(slug), track)
+        (raw_dir(slug) / "track.json").write_text(json.dumps(track, ensure_ascii=False, indent=2))
         n = sum(len(lo.get("point_layers", [])) + len(lo.get("range_layers", [])) for lo in track.get("layouts", []))
         print(f"[{slug}] layer configs applied ({n} total point/range layers)")
 

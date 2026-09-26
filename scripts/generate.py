@@ -661,6 +661,11 @@ def generate_track(slug: str) -> dict:
     # local raw/layer-sources before invoking a pure converter tool.
     from lib.layer_runner import run_layer_configs
     track = run_layer_configs(slug, write=True)
+    # Measured surface geometry (edges, crossing lines, geometric apexes), when
+    # raw/surface-<layout>.json exists. Offline; see measure_surface.py.
+    from lib.surface import apply_track
+    track = apply_track(raw, track)
+    (raw / "track.json").write_text(json.dumps(track, ensure_ascii=False, indent=2))
     print(f"[{slug}] raw/track.json written -- corners matched to OSM geometry: "
           f"{matched_total}/{corner_total}")
     return track
