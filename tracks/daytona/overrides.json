@@ -28,7 +28,7 @@
       "5": {
         "driver": "West Horseshoe",
         "official": "West Horseshoe",
-        "direction": "left",
+        "direction": "right",
         "scale": 2
       },
       "6": {
@@ -80,6 +80,70 @@
         "error": "Turn 12 covers both NASCAR 3 and NASCAR 4 banking — a single marker at 0.81 under-represents roughly a quarter mile of continuous banked cornering; consider a second point for NASCAR 4 around 0.87"
       }
     },
-    "errors_summary": "Metadata says 'clockwise' but the Daytona road course runs counter-clockwise (NASCAR oval direction); the GeoJSON outline also appears mirrored north-south versus the real circuit (infield turns plotted north of the oval), which would make a CCW track render as clockwise — directions given here are real-world. T7 coordinate looks misplaced in the infield instead of on the NASCAR 2 banking."
+    "errors_summary": "Metadata says 'clockwise' but the Daytona road course runs counter-clockwise (NASCAR oval direction); the GeoJSON outline also appears mirrored north-south versus the real circuit (infield turns plotted north of the oval), which would make a CCW track render as clockwise — directions given here are real-world. T7 coordinate looks misplaced in the infield instead of on the NASCAR 2 banking.",
+    "surface_review": {
+      "unnamed": [
+        {
+          "marker": 0.0515,
+          "direction": "left",
+          "verdict": "artefact",
+          "note": "L/R +-20 deg pair where the pit lane splits off the front stretch (OSM pit way 0.0536-0.0587): the right edge follows the pit apron"
+        },
+        {
+          "marker": 0.0557,
+          "direction": "right",
+          "verdict": "artefact",
+          "note": "other half of the pit-split pair"
+        },
+        {
+          "marker": 0.069,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "turn-in lobe of T1 (+19 deg, R72) before its R36 apex at 0.085"
+        },
+        {
+          "marker": 0.0996,
+          "direction": "left",
+          "verdict": "unnumbered_bend",
+          "note": "flat +25 deg bend (R65) between T1 and T2; not numbered"
+        },
+        {
+          "marker": 0.1127,
+          "direction": "right",
+          "verdict": "unnumbered_bend",
+          "note": "flat -25 deg bend (R69) before T2; not numbered"
+        },
+        {
+          "marker": 0.4063,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "second apex of T6: the left that merges the infield onto the NASCAR 1 banking"
+        },
+        {
+          "marker": 0.5675,
+          "direction": "left",
+          "verdict": "artefact",
+          "note": "L/R +-18 deg pair at the banking exit where the edges jump between apron and wall lines; OSM centerline R368/R775 there"
+        },
+        {
+          "marker": 0.5714,
+          "direction": "right",
+          "verdict": "artefact",
+          "note": "other half of the banking-exit pair"
+        },
+        {
+          "marker": 0.7584,
+          "direction": "left",
+          "verdict": "artefact",
+          "note": "254 m lobe (+61 deg, R57) where the left edge jumps to the apron line; OSM centerline R196 (the tri-oval banking)"
+        },
+        {
+          "marker": 0.8464,
+          "direction": "left",
+          "verdict": "artefact",
+          "note": "edge jump on the NASCAR 3-4 banking; OSM centerline R252"
+        }
+      ]
+    }
   }
 }

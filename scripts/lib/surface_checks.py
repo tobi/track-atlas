@@ -22,12 +22,33 @@ MIN_SEEN_FRACTION = 0.8     # warn when less of an edge than this was seen
 GPS_GATE_M = 2.0            # Omatrack draws racing lines / apexes at <= 2 m only
 TARGET_CE95_M = 1.0         # the atlas aims for sub-metre absolute accuracy
 REFERENCE_DISAGREE_M = 1.0  # two lidar surveys (or a check) further apart than this
+REVIEW_MATCH_M = 25.0       # a reviewed unnamed peak matches within this (and direction)
 
 
 def _circ(a: float, b: float) -> float:
     """Signed b - a on the unit lap."""
     d = (b - a) % 1.0
     return d - 1.0 if d > 0.5 else d
+
+
+def _review(raw: Path, lid: str | None) -> dict:
+    """Curator verdicts from tracks/<slug>/overrides.json `surface_review`
+    ("*" and the layout block): `unnamed` = [{marker, direction, verdict,
+    note}] for curvature peaks that are not atlas corners (artefact, part of
+    a corner, unnumbered bend), `corners` = {number: note} for corners the
+    geometry cannot place (genuine straight-line kinks). Reviewed items are
+    reported as infos instead of warnings; the track README records the
+    evidence."""
+    f = raw.parent / "overrides.json"
+    out: dict = {"unnamed": [], "corners": {}}
+    if not f.exists():
+        return out
+    ov = json.loads(f.read_text())
+    for key in ("*", lid):
+        rv = (ov.get(key) or {}).get("surface_review") or {}
+        out["unnamed"] += rv.get("unnamed", [])
+        out["corners"].update({str(k): v for k, v in (rv.get("corners") or {}).items()})
+    return out
 
 
 def check_layout(raw: Path, lo: dict) -> tuple[list[str], list[str], list[str]]:
@@ -50,6 +71,7 @@ def check_layout(raw: Path, lo: dict) -> tuple[list[str], list[str], list[str]]:
         Mll = np.asarray(by_role["midline"][0]["geometry"]["coordinates"], dtype=float)
     except (KeyError, IndexError):
         return ["surface file lacks edge_left / edge_right / midline"], warns, infos
+    review = _review(raw, lo.get("id"))
     F = geo.Frame.around(Mll)
     L, R, M = F.to_xy(Lll), F.to_xy(Rll), F.to_xy(Mll)
     Lr, Rr = LinearRing(L), LinearRing(R)
@@ -116,7 +138,11 @@ def check_layout(raw: Path, lo: dict) -> tuple[list[str], list[str], list[str]]:
             if pl.get("declared_direction"):
                 warns.append(f"{it['id']} curated direction {pl['declared_direction']} but the geometry turns {pl['direction']}")
             if pl.get("basis") == "none":
-                warns.append(f"{it['id']} has no curvature peak near its marker (no entry/apex/exit)")
+                note = review["corners"].get(str(it.get("number")))
+                if note:
+                    infos.append(f"{it['id']} reviewed, no curvature peak: {note}")
+                else:
+                    warns.append(f"{it['id']} has no curvature peak near its marker (no entry/apex/exit)")
     for L_ in lo.get("range_layers", []):
         for it in L_.get("items", []):
             crossing(f"{L_['kind']}.{it['id']} start", it.get("start_line"))
@@ -124,8 +150,16 @@ def check_layout(raw: Path, lo: dict) -> tuple[list[str], list[str], list[str]]:
             crossing(f"{L_['kind']}.{it['id']} entry", it.get("entry"))
             crossing(f"{L_['kind']}.{it['id']} exit", it.get("exit"))
     s = lo.get("surface") or {}
+    lap_m = s.get("lap_length_m") or lo.get("length_m") or 1.0
     for u in s.get("unnamed_corners", []):
-        warns.append(f"unnamed {u['direction']} curvature peak R {u['radius_m']} m at {u['marker']} (no atlas corner)")
+        hit = next((v for v in review["unnamed"]
+                    if v.get("direction") == u["direction"]
+                    and abs(_circ(float(v["marker"]), u["marker"])) * lap_m <= REVIEW_MATCH_M), None)
+        if hit:
+            infos.append(f"unnamed {u['direction']} peak R {u['radius_m']} m at {u['marker']} reviewed: "
+                         f"{hit.get('verdict', 'reviewed')}")
+        else:
+            warns.append(f"unnamed {u['direction']} curvature peak R {u['radius_m']} m at {u['marker']} (no atlas corner)")
     seen = (s.get("seen_fraction") or {})
     for side in ("left", "right"):
         if seen.get(side, 1.0) < MIN_SEEN_FRACTION:
