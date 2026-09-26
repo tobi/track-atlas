@@ -1410,6 +1410,28 @@
           "$ref": "#/$defs/SeenFraction",
           "description": "Share of the lap where each edge was actually seen in the imagery."
         },
+        "unseen_spans": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "items": {
+                  "items": {
+                    "type": "number"
+                  },
+                  "type": "array"
+                },
+                "type": "array"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Per edge (left/right), the lap-fraction spans where the edge was not seen and is bridged.",
+          "title": "Unseen Spans"
+        },
         "relative_precision_m": {
           "title": "Relative Precision M",
           "type": "number"

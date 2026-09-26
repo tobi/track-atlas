@@ -311,6 +311,8 @@ class Surface(Strict):
     lap_length_m: float = Field(description="Lap length along the measured midline.")
     width_m: Percentiles
     seen_fraction: SeenFraction = Field(description="Share of the lap where each edge was actually seen in the imagery.")
+    unseen_spans: Optional[dict[str, list[list[float]]]] = Field(
+        None, description="Per edge (left/right), the lap-fraction spans where the edge was not seen and is bridged.")
     relative_precision_m: float
     absolute_accuracy_ce95_m: float = Field(
         description="Absolute horizontal accuracy (95%) of the measured geometry in the atlas frame: reference, "

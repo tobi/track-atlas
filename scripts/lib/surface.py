@@ -196,8 +196,9 @@ class LapGeometry:
 
     def outline_lonlat(self) -> list[list[float]]:
         """The midline starting exactly at the origin, closed and simplified."""
-        i = int(self.origin // STEP) % self.N
-        t = (self.origin - i * STEP) / STEP
+        pos = self.origin * self.N / self.total      # stations are total/N apart, not exactly STEP
+        t = pos - math.floor(pos)
+        i = int(math.floor(pos)) % self.N
         p0 = self.mid[i] * (1 - t) + self.mid[(i + 1) % self.N] * t
         rest = np.roll(self.mid, -(i + 1), axis=0)
         ring = geo.simplify_closed(np.vstack([p0[None, :], rest]), OUTLINE_SIMPLIFY_M)
@@ -208,7 +209,7 @@ class LapGeometry:
         return geo.lonlat_list(self.F.to_lonlat(np.asarray(out)))
 
     def idx(self, station: float) -> int:
-        return int(round(station / STEP)) % self.N
+        return int(round(station * self.N / self.total)) % self.N
 
     def crossing(self, station: float, sources: dict, frac: float | None = None) -> dict:
         i = self.idx(station)
@@ -424,6 +425,23 @@ def pit_lane_features(osm: dict, G: LapGeometry) -> list[dict]:
 
 
 # --- apply ---------------------------------------------------------------------
+def _runs(flags: np.ndarray) -> list[tuple[int, int]]:
+    """Maximal runs of True on a closed lap as (first, last) indices; last may exceed N."""
+    n = len(flags)
+    if flags.all():
+        return [(0, n - 1)]
+    start = int(np.argmin(flags))          # begin at a False so no run wraps the scan
+    out, i = [], None
+    for k in range(start, start + n + 1):
+        on = bool(flags[k % n]) and k < start + n
+        if on and i is None:
+            i = k
+        elif not on and i is not None:
+            out.append((i, k - 1))
+            i = None
+    return out
+
+
 def _layer(layout: dict, kind: str, attr: str) -> dict | None:
     return next((L for L in layout.get(attr, []) if L.get("id") == kind or L.get("kind") == kind), None)
 
@@ -465,6 +483,20 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
     rebased = layout.get("geometry", {}).get("basis") == "midline"
     # fraction 0 = start/finish: the seed's origin, projected onto the midline
     G.rebase(G.station(0.0))
+    # unseen spans on the output basis, and as geometry (the bridged stretches)
+    unseen = {side: [[round(G.out_fraction(a * G.total), 5), round(G.out_fraction(b * G.total), 5)]
+                     for a, b in q["unseen_spans"][side]] for side in ("left", "right")}
+    for f in feats:
+        side = f["properties"]["role"].removeprefix("edge_")
+        if side in unseen:
+            f["properties"]["unseen_spans"] = unseen[side]
+    for side, E in (("left", G.left), ("right", G.right)):
+        runs = _runs(~G.seen[side])
+        if runs:
+            feats.append({"type": "Feature", "properties": {"role": "edge_unseen", "side": side,
+                                                            "note": "bridged: the edge was not seen in the imagery here"},
+                          "geometry": {"type": "MultiLineString", "coordinates": [
+                              geo.lonlat_list(G.F.to_lonlat(E[[k % G.N for k in range(i, j + 1)]])) for i, j in runs]}})
 
     # layout points: lines across the track
     lp = _layer(layout, "layout_points", "point_layers")
@@ -589,6 +621,7 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
         "lap_length_m": meas["lap_length_m"],
         "width_m": q["width_m"],
         "seen_fraction": q["seen_fraction"],
+        "unseen_spans": unseen,
         "relative_precision_m": q["relative_precision_m"],
         "absolute_accuracy_ce95_m": q["absolute_accuracy_ce95_m"],
         "position": meas["position"],
