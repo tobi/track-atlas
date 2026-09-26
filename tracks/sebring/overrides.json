@@ -110,6 +110,76 @@
         "scale": 4
       }
     },
-    "errors_summary": "Corrected Sebring names by lap-position against OSM named ways: Tower Turn is T13, Fangio is T8, Cunningham is T10, Bishop Bend is T14, Gendebien is T15, and Sunset Bend is T17. Removed unsupported Tower/Workbench/Coca-Cola-style labels from the wrong turns."
+    "errors_summary": "Corrected Sebring names by lap-position against OSM named ways: Tower Turn is T13, Fangio is T8, Cunningham is T10, Bishop Bend is T14, Gendebien is T15, and Sunset Bend is T17. Removed unsupported Tower/Workbench/Coca-Cola-style labels from the wrong turns.",
+    "surface_review": {
+      "unnamed": [
+        {
+          "marker": 0.097,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "second lobe of T1 (L79, +26 deg) 70 m after its apex; both edges seen on <10% of it"
+        },
+        {
+          "marker": 0.1014,
+          "direction": "right",
+          "verdict": "artefact",
+          "note": "R69, -14 deg where the OSM centerline bends left (R205); right edge unseen"
+        },
+        {
+          "marker": 0.3488,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "Hairpin (T7) exit wiggle, L44 +32 deg, inside the OSM Hairpin way 0.3298-0.3642; the centerline stays right here"
+        },
+        {
+          "marker": 0.3594,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "Hairpin (T7) exit, R76 -37 deg, inside the OSM Hairpin way 0.3298-0.3642"
+        },
+        {
+          "marker": 0.4897,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "first lobe of Collier (T11, a left), L52 +30 deg between the Cunningham and Collier ways; centerline L61"
+        },
+        {
+          "marker": 0.5179,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "Collier (T11) second lobe, L75 +15 deg, inside the OSM Collier Curve way 0.5003-0.5171"
+        },
+        {
+          "marker": 0.6566,
+          "direction": "left",
+          "verdict": "unnumbered_bend",
+          "note": "L70, +25.5 deg between Bishop Bend (T14) and Gendebien (T15); real (centerline L81) but unnumbered on the 17-turn circuit"
+        },
+        {
+          "marker": 0.7051,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "Gendebien (T15) exit, L66 +31 deg, at the end of the OSM Gendebien Bend way 0.6824-0.7054"
+        },
+        {
+          "marker": 0.8975,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "Sunset Bend (T17) first apex, R59 -41 deg; OSM Sunset Bend way 0.8912-0.9578"
+        },
+        {
+          "marker": 0.9155,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "Sunset Bend (T17) second apex, R47 -37 deg; the marked apex is R46 at 0.9251"
+        },
+        {
+          "marker": 0.9372,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "Sunset Bend (T17) exit apex, R61 -32.5 deg; OSM Sunset Bend way"
+        }
+      ]
+    }
   }
 }
