@@ -1360,17 +1360,18 @@
         "display": "Horseshoe",
         "labels": {
           "numbered": "Turn 1",
+          "official": "Horseshoe",
           "driver": "Horseshoe"
         },
         "direction": "right",
-        "scale": 1,
-        "marker": 0.0815
+        "scale": 2,
+        "marker": 0.0735
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.20237,
-          36.56809
+          -79.202188,
+          36.568428
         ]
       }
     },
@@ -1387,13 +1388,13 @@
         },
         "direction": "left",
         "scale": 4,
-        "marker": 0.134
+        "marker": 0.1311
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.205291,
-          36.568253
+          -79.205122,
+          36.56827
         ]
       }
     },
@@ -1407,17 +1408,18 @@
         "display": "NASCAR",
         "labels": {
           "numbered": "Turn 3",
+          "official": "NASCAR Bend",
           "driver": "NASCAR"
         },
-        "direction": "right",
+        "direction": "left",
         "scale": 3,
-        "marker": 0.1645
+        "marker": 0.1556
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.20637,
-          36.567362
+          -79.206386,
+          36.567776
         ]
       }
     },
@@ -1431,17 +1433,18 @@
         "display": "Left Hook",
         "labels": {
           "numbered": "Turn 4",
+          "official": "Left Hook",
           "driver": "Left Hook"
         },
         "direction": "left",
         "scale": 2,
-        "marker": 0.1935
+        "marker": 0.1946
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.205798,
-          36.566087
+          -79.205738,
+          36.56607
         ]
       }
     },
@@ -1452,20 +1455,19 @@
         "id": "t5",
         "number": 5,
         "code": "5",
-        "display": "Climbing Esses",
+        "display": "Turn 5",
         "labels": {
-          "numbered": "Turn 5",
-          "driver": "Climbing Esses"
+          "numbered": "Turn 5"
         },
         "direction": "right",
-        "scale": 4,
-        "marker": 0.216
+        "scale": 3,
+        "marker": 0.2075
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204599,
-          36.565961
+          -79.205003,
+          36.566184
         ]
       }
     },
@@ -1476,20 +1478,19 @@
         "id": "t6",
         "number": 6,
         "code": "6",
-        "display": "Climbing Esses",
+        "display": "Turn 6",
         "labels": {
-          "numbered": "Turn 6",
-          "driver": "Climbing Esses"
+          "numbered": "Turn 6"
         },
-        "direction": "left",
-        "scale": 4,
-        "marker": 0.2345
+        "direction": "right",
+        "scale": 3,
+        "marker": 0.2332
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204183,
-          36.565183
+          -79.204172,
+          36.565243
         ]
       }
     },
@@ -1503,17 +1504,18 @@
         "display": "Snake",
         "labels": {
           "numbered": "Turn 7",
+          "official": "Snake",
           "driver": "Snake"
         },
         "direction": "left",
-        "scale": 2,
-        "marker": 0.276
+        "scale": 4,
+        "marker": 0.2681
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204661,
-          36.563293
+          -79.204673,
+          36.563666
         ]
       }
     },
@@ -1524,20 +1526,20 @@
         "id": "t8",
         "number": 8,
         "code": "8",
-        "display": "Spiral",
+        "display": "Climbing Esses",
         "labels": {
           "numbered": "Turn 8",
-          "driver": "Spiral"
+          "driver": "Climbing Esses"
         },
-        "direction": "right",
-        "scale": 2,
-        "marker": 0.357
+        "direction": "left",
+        "scale": 5,
+        "marker": 0.3535
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204843,
-          36.559472
+          -79.204869,
+          36.559636
         ]
       }
     },
@@ -1548,20 +1550,20 @@
         "id": "t9",
         "number": 9,
         "code": "9",
-        "display": "Spiral",
+        "display": "Climbing Esses",
         "labels": {
           "numbered": "Turn 9",
-          "driver": "Spiral"
+          "driver": "Climbing Esses"
         },
-        "direction": "left",
-        "scale": 3,
-        "marker": 0.377
+        "direction": "right",
+        "scale": 5,
+        "marker": 0.3786
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204628,
-          36.558545
+          -79.204632,
+          36.55847
         ]
       }
     },
@@ -1572,20 +1574,20 @@
         "id": "t10",
         "number": 10,
         "code": "10",
-        "display": "Spiral",
+        "display": "Climbing Esses",
         "labels": {
           "numbered": "Turn 10",
-          "driver": "Spiral"
+          "driver": "Climbing Esses"
         },
-        "direction": "right",
-        "scale": 3,
-        "marker": 0.3955
+        "direction": "left",
+        "scale": 5,
+        "marker": 0.3961
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204755,
-          36.557681
+          -79.204749,
+          36.557653
         ]
       }
     },
@@ -1596,20 +1598,20 @@
         "id": "t11",
         "number": 11,
         "code": "11",
-        "display": "Spiral",
+        "display": "Climbing Esses",
         "labels": {
           "numbered": "Turn 11",
-          "driver": "Spiral"
+          "driver": "Climbing Esses"
         },
-        "direction": "left",
-        "scale": 3,
-        "marker": 0.4175
+        "direction": "right",
+        "scale": 4,
+        "marker": 0.41
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204675,
-          36.556656
+          -79.204615,
+          36.557006
         ]
       }
     },
@@ -1623,17 +1625,18 @@
         "display": "South Bend",
         "labels": {
           "numbered": "Turn 12",
+          "official": "South Bend",
           "driver": "South Bend"
         },
-        "direction": "right",
-        "scale": 3,
-        "marker": 0.4585
+        "direction": "left",
+        "scale": 4,
+        "marker": 0.4551
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.205327,
-          36.554821
+          -79.205368,
+          36.554978
         ]
       }
     },
@@ -1647,17 +1650,18 @@
         "display": "Oak Tree",
         "labels": {
           "numbered": "Turn 13",
+          "official": "Oak Tree Curve",
           "driver": "Oak Tree"
         },
-        "direction": "left",
-        "scale": 4,
-        "marker": 0.526
+        "direction": "right",
+        "scale": 2,
+        "marker": 0.5309
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.204854,
-          36.551938
+          -79.205128,
+          36.551925
         ]
       }
     },
@@ -1671,17 +1675,18 @@
         "display": "Roller Coaster",
         "labels": {
           "numbered": "Turn 14",
+          "official": "Roller Coaster",
           "driver": "Roller Coaster"
         },
         "direction": "right",
-        "scale": 5,
-        "marker": 0.789
+        "scale": 3,
+        "marker": 0.7803
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.211884,
-          36.562683
+          -79.211969,
+          36.562301
         ]
       }
     },
@@ -1692,20 +1697,21 @@
         "id": "t15",
         "number": 15,
         "code": "15",
-        "display": "Hog Pen",
+        "display": "Roller Coaster",
         "labels": {
           "numbered": "Turn 15",
-          "driver": "Hog Pen"
+          "official": "Roller Coaster",
+          "driver": "Roller Coaster"
         },
         "direction": "left",
-        "scale": 2,
-        "marker": 0.8655
+        "scale": 4,
+        "marker": 0.7964
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.212809,
-          36.565764
+          -79.211568,
+          36.562925
         ]
       }
     },
@@ -1716,21 +1722,46 @@
         "id": "t16",
         "number": 16,
         "code": "16",
-        "display": "Turn 17",
+        "display": "Hog Pen",
         "labels": {
           "numbered": "Turn 16",
-          "driver": "Turn 17",
-          "official": "Turn 17"
+          "official": "Hog Pen",
+          "driver": "Hog Pen"
         },
-        "direction": "right",
-        "scale": 5,
-        "marker": 0.0835
+        "direction": "left",
+        "scale": 4,
+        "marker": 0.8392
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -79.202455,
-          36.568025
+          -79.212025,
+          36.564814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t17",
+        "number": 17,
+        "code": "17",
+        "display": "Hog Pen",
+        "labels": {
+          "numbered": "Turn 17",
+          "official": "Hog Pen",
+          "driver": "Hog Pen"
+        },
+        "direction": "right",
+        "scale": 4,
+        "marker": 0.8547
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.212735,
+          36.565264
         ]
       }
     }
