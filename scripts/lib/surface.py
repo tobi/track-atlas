@@ -37,7 +37,8 @@ SPLIT_DIP = 0.6            # two peaks in one lobe stay separate below this dip 
 ONSET_FRACTION = 0.35      # turn-in / track-out at this share of the peak curvature
 SEARCH_M = 150.0           # m, max distance from the legacy marker to the peak
 MATCH_SCALE_M = 80.0       # m of marker distance that cost one unit (legacy markers are often 50-100 m off)
-DIRECTION_PENALTY = 5.0    # cost of a peak turning the other way than declared
+DIRECTION_PENALTY = 2.5    # cost of a peak turning the other way than declared
+MISMATCH_MAX_M = 40.0      # m, a peak turning the other way is matched only this close to the marker
 STRENGTH_WEIGHT = 1.5      # preference for tighter peaks (per ln of curvature)
 UNMATCHED_COST = 1.0       # cost of leaving a corner without a geometric peak
 APEX_REFINE_M = 15.0       # m, inside-edge peak search around the midline peak
@@ -244,6 +245,7 @@ def _match(G: LapGeometry, corners: list[dict], cands: list[Candidate]) -> list[
 
     cost(corner, peak) = |distance from the corner's marker| / MATCH_SCALE_M
                          + DIRECTION_PENALTY if the declared direction disagrees
+                           (never matched beyond MISMATCH_MAX_M)
                          - STRENGTH_WEIGHT * ln(kappa / KAPPA_FLOOR)
     A corner may stay unmatched at UNMATCHED_COST; a peak serves one corner;
     peaks further than SEARCH_M from the marker are never matched.
@@ -257,7 +259,11 @@ def _match(G: LapGeometry, corners: list[dict], cands: list[Candidate]) -> list[
         if d > SEARCH_M:
             return INF
         decl = {"left": 1, "right": -1}.get(corners[k].get("direction"))
-        pen = DIRECTION_PENALTY if decl is not None and decl != cands[j].sign else 0.0
+        pen = 0.0
+        if decl is not None and decl != cands[j].sign:
+            if d > MISMATCH_MAX_M:
+                return INF
+            pen = DIRECTION_PENALTY
         return d / MATCH_SCALE_M + pen - STRENGTH_WEIGHT * math.log(cands[j].kappa / KAPPA_FLOOR)
 
     # D[k][j]: best cost for corners[:k] using peaks[:j]
