@@ -1,39 +1,86 @@
 {
   "gp": {
-    "corners": {
-      "1": {
-        "driver": "Big Bend",
+    "replace_corners": [
+      {
+        "number": 1,
         "official": "Big Bend",
+        "driver": "Big Bend",
+        "marker": 0.0928,
+        "direction": "right",
+        "scale": 3,
+        "complex": "Big Bend"
+      },
+      {
+        "number": 2,
+        "official": "Big Bend",
+        "driver": "Big Bend",
+        "marker": 0.1808,
+        "direction": "right",
+        "scale": 3,
+        "complex": "Big Bend"
+      },
+      {
+        "number": 3,
+        "official": "The Lefthander",
+        "driver": "The Left-Hander",
+        "marker": 0.2776,
+        "direction": "left",
+        "scale": 3
+      },
+      {
+        "number": 4,
+        "official": "The Righthander",
+        "driver": "The Right-Hander",
+        "marker": 0.3242,
         "direction": "right",
         "scale": 3
       },
-      "2": {
-        "driver": "The Left-Hander",
-        "official": "Left Hander",
-        "complex": "Esses",
-        "direction": "left",
-        "scale": 3,
-        "error": "The Esses is actually a two-element sequence (Left-Hander then Right-Hander at the start of No Name Straight) but is recorded as a single corner; the marker 0.309 / coordinate sits between the two apexes rather than on either"
-      },
-      "3": {
+      {
+        "number": 5,
+        "official": "Climbing Turn",
         "driver": "The Uphill",
-        "official": "Uphill",
+        "marker": 0.4993,
         "direction": "right",
-        "scale": 4
+        "scale": 2
       },
-      "4": {
-        "driver": "West Bend",
+      {
+        "number": 6,
         "official": "West Bend",
+        "driver": "West Bend",
+        "marker": 0.655,
+        "direction": "right",
+        "scale": 3
+      },
+      {
+        "number": 7,
+        "official": "Diving Turn",
+        "driver": "The Downhill",
+        "marker": 0.7916,
         "direction": "right",
         "scale": 4
-      },
-      "5": {
-        "driver": "The Downhill",
-        "official": "Diving Turn",
-        "direction": "right",
-        "scale": 5
       }
-    },
-    "errors_summary": "Data is largely clean; only structural note is that 'Esses' (T2) compresses the classic Left-Hander/Right-Hander pair into a single corner entry, with its coordinate placed between the two apexes"
+    ],
+    "surface_review": {
+      "unnamed": [
+        {
+          "marker": 0.5125,
+          "direction": "left",
+          "verdict": "part_of_corner",
+          "note": "South Chicane (L21, +52 deg): the OSM relation 'Lime Rock Park (with Chicane)' takes the South Chicane way here instead of the second Climbing Turn way; same endpoints, up to 24 m apart"
+        },
+        {
+          "marker": 0.5287,
+          "direction": "right",
+          "verdict": "part_of_corner",
+          "note": "South Chicane exit (R30.5, -42 deg), same branch as 0.5125"
+        },
+        {
+          "marker": 0.5874,
+          "direction": "right",
+          "verdict": "unnumbered_bend",
+          "note": "R76, -18 deg where the South Chicane branch rejoins the Climbing Turn line (both OSM ways end at 0.5889); centerline R76 too"
+        }
+      ]
+    }
   }
 }

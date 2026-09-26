@@ -568,18 +568,18 @@
         "display": "Big Bend",
         "labels": {
           "numbered": "Turn 1",
-          "driver": "Big Bend",
-          "official": "Big Bend"
+          "official": "Big Bend",
+          "driver": "Big Bend"
         },
         "direction": "right",
         "scale": 3,
-        "marker": 0.148
+        "marker": 0.0928
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.378204,
-          41.926617
+          -73.378283,
+          41.927676
         ]
       }
     },
@@ -590,21 +590,21 @@
         "id": "t2",
         "number": 2,
         "code": "2",
-        "display": "The Left-Hander",
+        "display": "Big Bend",
         "labels": {
           "numbered": "Turn 2",
-          "driver": "The Left-Hander",
-          "official": "Left Hander"
+          "official": "Big Bend",
+          "driver": "Big Bend"
         },
-        "direction": "left",
+        "direction": "right",
         "scale": 3,
-        "marker": 0.309
+        "marker": 0.1808
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.381508,
-          41.92609
+          -73.379024,
+          41.926375
         ]
       }
     },
@@ -615,21 +615,21 @@
         "id": "t3",
         "number": 3,
         "code": "3",
-        "display": "The Uphill",
+        "display": "The Left-Hander",
         "labels": {
           "numbered": "Turn 3",
-          "driver": "The Uphill",
-          "official": "Uphill"
+          "official": "The Lefthander",
+          "driver": "The Left-Hander"
         },
-        "direction": "right",
-        "scale": 4,
-        "marker": 0.53
+        "direction": "left",
+        "scale": 3,
+        "marker": 0.2776
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.386843,
-          41.925548
+          -73.381449,
+          41.926745
         ]
       }
     },
@@ -640,21 +640,21 @@
         "id": "t4",
         "number": 4,
         "code": "4",
-        "display": "West Bend",
+        "display": "The Right-Hander",
         "labels": {
           "numbered": "Turn 4",
-          "driver": "West Bend",
-          "official": "West Bend"
+          "official": "The Righthander",
+          "driver": "The Right-Hander"
         },
         "direction": "right",
-        "scale": 4,
-        "marker": 0.692
+        "scale": 3,
+        "marker": 0.3242
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.388243,
-          41.928523
+          -73.381542,
+          41.925771
         ]
       }
     },
@@ -665,21 +665,71 @@
         "id": "t5",
         "number": 5,
         "code": "5",
-        "display": "The Downhill",
+        "display": "The Uphill",
         "labels": {
           "numbered": "Turn 5",
-          "driver": "The Downhill",
-          "official": "Diving Turn"
+          "official": "Climbing Turn",
+          "driver": "The Uphill"
         },
         "direction": "right",
-        "scale": 5,
-        "marker": 0.823
+        "scale": 2,
+        "marker": 0.4993
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -73.385314,
-          41.930026
+          -73.386248,
+          41.92515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t6",
+        "number": 6,
+        "code": "6",
+        "display": "West Bend",
+        "labels": {
+          "numbered": "Turn 6",
+          "official": "West Bend",
+          "driver": "West Bend"
+        },
+        "direction": "right",
+        "scale": 3,
+        "marker": 0.655
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.388615,
+          41.927818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "role": "corner",
+        "id": "t7",
+        "number": 7,
+        "code": "7",
+        "display": "The Downhill",
+        "labels": {
+          "numbered": "Turn 7",
+          "official": "Diving Turn",
+          "driver": "The Downhill"
+        },
+        "direction": "right",
+        "scale": 4,
+        "marker": 0.7916
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.386192,
+          41.929974
         ]
       }
     }
