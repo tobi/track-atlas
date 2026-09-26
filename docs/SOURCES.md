@@ -24,6 +24,13 @@ position reference to the atlas frame (WGS 84 (G2139) ~ ITRF2014, epoch
 | `fdep-2020` | Florida counties | 15 cm | RGB + NIR | public record, no restrictions stated | specification 1 ft RMSE per axis, 0.75 m CE95 |
 | `fdep-2021` | Florida counties | 15 cm | RGB only | as above | as above |
 
+Served frame, measured by registration onto NAD83(2011) lidar: `naip`
+(all ten venues), `ct-2023` and `txgio-2021-caparea` are transformed to WGS 84
+(`WGS84-service`); `indiana-2025` is identity-labelled NAD83(2011). `fdep-2020`
+was tried and rejected: at Sebring its edges were seen on 35/55 % of the lap
+(NAIP 61/69 %) and it would not register coherently; it does not cover Volusia
+(Daytona).
+
 Only `ct-2023` has a tested accuracy better than the lidar references; it
 can be the reference itself. The others are sharper than NAIP (better edge
 tracing) but their position is still established by lidar registration.

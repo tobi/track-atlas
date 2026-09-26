@@ -261,6 +261,11 @@ Earth is decided separately, in three steps, each recorded in
      ITRF at epoch 2010.0, plate motion since then applied (~0.3 m), and the
      epoch (2002-2010) and transformation ambiguity carried in the budget
      (~0.3 m CE95). It matters only when the imagery is its own reference.
+   - Not every service does this: Indiana 2025 was built with the identity
+     step (it registers onto the NAD83 lidar at ~0 shift). So when imagery is
+     its own reference and lidar exists, both hypotheses (~1 m apart) are
+     tested against the lidar registrations and the closer one is used
+     (`position.imagery_frame`, `imagery_frame_basis`).
 
 The applied shift (registration + datum) is added to every traced coordinate.
 
