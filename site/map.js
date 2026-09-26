@@ -4,7 +4,17 @@ import { Lap, cornerName, corners, exportImageUrl, turnCode } from "./lib.js";
 
 const ll = (c) => [c[1], c[0]];
 const COL = { edge: "#f4f1e8", unseen: "#ffb020", entry: "#34d399", exit: "#f43f5e", apex: "#ffd84d",
-              mid: "#7dd3fc", sf: "#ffffff", sector: "#c4b5fd", pit: "#94a3b8", outline: "#7dd3fc" };
+              mid: "#7dd3fc", brake: "#fb923c", sf: "#ffffff", sector: "#c4b5fd", pit: "#94a3b8", outline: "#7dd3fc" };
+const SPEED_RAMP = [[80, [239, 68, 68]], [130, [245, 158, 11]], [180, [250, 204, 21]], [230, [52, 211, 153]], [280, [56, 189, 248]]];
+export const speedColor = (v) => {
+  const r = SPEED_RAMP;
+  if (v <= r[0][0]) return `rgb(${r[0][1]})`;
+  for (let k = 1; k < r.length; k++) if (v <= r[k][0]) {
+    const t = (v - r[k - 1][0]) / (r[k][0] - r[k - 1][0]);
+    return `rgb(${r[k - 1][1].map((c, j) => Math.round(c + (r[k][1][j] - c) * t))})`;
+  }
+  return `rgb(${r[r.length - 1][1]})`;
+};
 export const RANGE_COLORS = ["#7dd3fc", "#fbbf24", "#c084fc", "#34d399", "#fb7185", "#60a5fa", "#a3e635",
                              "#f97316", "#22d3ee", "#e879f9", "#facc15", "#94a3b8"];
 
@@ -71,7 +81,7 @@ export class TrackMap {
     this.sourceLayer = svc ? new SourceImagery(svc, s.position?.applied_shift_m,
       { attribution: `${s.sources.imagery.name} (${s.sources.imagery.license})` }) : null;
     if (this.sourceLayer) this.sourceLayer.getAttribution = () => `${s.sources.imagery.name}`;
-    this.map.fitBounds(L.latLngBounds(this.lap.c.map(ll)), { paddingTopLeft: [30, 110], paddingBottomRight: [30, 130] });
+    this.map.fitBounds(L.latLngBounds(this.lap.c.map(ll)), { paddingTopLeft: [30, 110], paddingBottomRight: [30, 190] });
     this.setBase(this.baseId && (this.baseId !== "source" || this.sourceLayer) ? this.baseId : (this.sourceLayer ? "source" : "dark"));
     this.draw();
   }
@@ -99,6 +109,21 @@ export class TrackMap {
       }
       if (on("midline")) for (const f of by("midline"))
         L.geoJSON(f, { style: { color: COL.mid, weight: 1, opacity: 0.7, dashArray: "6 6" }, interactive: false }).addTo(g.surface);
+      if (on("racing")) for (const f of by("racing_line")) {
+        const c = f.geometry.coordinates.map(ll), v = f.properties.speed_kmh;
+        L.polyline([...c, c[0]], { color: "#000", weight: 6, opacity: 0.35, interactive: false }).addTo(g.surface);
+        // runs of one 10 km/h bucket, drawn as one polyline each
+        let run = [c[0]], bucket = Math.round(v[0] / 10);
+        for (let k = 1; k <= c.length; k++) {
+          const i = k % c.length, b = Math.round(v[i] / 10);
+          run.push(c[i]);
+          if (b !== bucket || k === c.length) {
+            L.polyline(run, { color: speedColor(bucket * 10), weight: 3, opacity: 1, interactive: false }).addTo(g.surface);
+            run = [c[i]]; bucket = b;
+          }
+        }
+      }
+      if (on("brakes")) for (const f of by("brake_point")) this._line(f, COL.brake, 3, g.lines, "2 3");
       if (on("crossings")) {
         for (const f of by("corner_entry")) this._line(f, COL.entry, 3, g.lines);
         for (const f of by("corner_exit")) this._line(f, COL.exit, 3, g.lines);
@@ -106,6 +131,8 @@ export class TrackMap {
       if (on("sectors")) for (const f of by("sector_boundary")) this._line(f, COL.sector, 3, g.lines, "3 3");
       for (const f of by("start_finish")) this._line(f, COL.sf, 5, g.lines, null, "sf-line");
       for (const f of [...by("pit_entry"), ...by("pit_exit")]) this._line(f, COL.pit, 3, g.lines);
+      if (on("apexes")) for (const f of by("geometric_apex"))
+        L.circleMarker(ll(f.geometry.coordinates), { radius: 3, color: COL.apex, weight: 1.5, fill: false, opacity: 0.8, interactive: false }).addTo(g.lines);
       if (on("apexes")) for (const f of by("apex"))
         L.circleMarker(ll(f.geometry.coordinates), { radius: 4.5, color: "#1a1300", weight: 1.5, fillColor: COL.apex, fillOpacity: 1, interactive: false }).addTo(g.lines);
     } else {
@@ -169,7 +196,7 @@ export class TrackMap {
     this.map.flyTo(ll(p), Math.max(this.map.getZoom(), 17), { duration: 0.5 });
   }
 
-  fit() { this.map.flyToBounds(L.latLngBounds(this.lap.c.map(ll)), { paddingTopLeft: [30, 110], paddingBottomRight: [30, 130], duration: 0.5 }); }
+  fit() { this.map.flyToBounds(L.latLngBounds(this.lap.c.map(ll)), { paddingTopLeft: [30, 110], paddingBottomRight: [30, 190], duration: 0.5 }); }
 
   _hover(e) {
     if (!this.lap) return;

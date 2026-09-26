@@ -174,7 +174,10 @@ class AtlasHome extends Light {
 }
 
 // --- track page -------------------------------------------------------------------------
-const LAYER_TOGGLES = [["edges", "Edges"], ["crossings", "Entry / exit"], ["apexes", "Apexes"], ["midline", "Midline"],
+const fmtLap = (t) => `${Math.floor(t / 60)}:${(t % 60).toFixed(2).padStart(5, "0")}`;
+const CHARACTER = { kink: "kink", high_speed: "high speed", medium: "medium", slow: "slow" };
+const LAYER_TOGGLES = [["edges", "Edges"], ["racing", "Racing line"], ["brakes", "Braking points"], ["crossings", "Turn-in / exit"],
+                       ["apexes", "Apexes"], ["midline", "Midline"],
                        ["surface", "Asphalt"], ["sectors", "Sector lines"], ["labels", "Labels"]];
 
 class TrackPage extends Light {
@@ -277,6 +280,7 @@ class TrackPage extends Light {
           </div>
           ${s ? html`<div class="map-key">
             <span><i class="k-edge"></i>edge, seen</span><span><i class="k-unseen"></i>edge, bridged</span>
+            <span><i class="k-racing"></i>racing line, slow → fast</span><span><i class="k-brake"></i>braking</span>
             <span><i class="k-entry"></i>turn-in</span><span><i class="k-exit"></i>exit</span><span><i class="k-apex"></i>apex</span></div>` : nothing}
           <lap-strip .layout=${lo} .lap=${this.lap} .hover=${this.hover} .sel=${this.sel} .range=${this.rangeSpec()} .label=${this.label}
             @pick=${(e) => this.pick(e.detail)} @seek=${(e) => this.map?.focusFraction(e.detail)}></lap-strip>
@@ -314,13 +318,15 @@ class TrackPage extends Light {
               <span class="code ${c.direction || ""}">${turnCode(c)}</span>
               <span class="cname">${cornerName(c, this.label)}</span>
               <span class="dir" title=${c.direction || "direction unknown"}>${c.direction === "left" ? "↰" : c.direction === "right" ? "↱" : "·"}</span>
-              <span class="rad">${pl?.radius_m ? `R ${Math.round(pl.radius_m)}` : ""}</span>
-              <span class="state ${pl?.basis === "curvature" ? "ok" : lo.surface ? "warn" : ""}">${pl?.basis === "curvature" ? (pl.shape === "kink" ? "kink" : "measured") : lo.surface ? "no peak" : "marker"}</span>
+              <span class="rad">${c.dynamics ? `${Math.round(c.dynamics.min_speed_kmh)} km/h` : pl?.radius_m ? `R ${Math.round(pl.radius_m)}` : ""}</span>
+              ${c.character ? html`<span class="char ${c.character}">${CHARACTER[c.character]}</span>`
+                : html`<span class="state ${pl?.basis === "curvature" ? "ok" : lo.surface ? "warn" : ""}">${pl?.basis === "curvature" ? (pl.shape === "kink" ? "kink" : "measured") : lo.surface ? "no peak" : "marker"}</span>`}
             </button>
             ${open ? html`<div class="corner-detail">
               <dl>
+                ${c.dynamics ? this.dynamicsRows(c, lo) : nothing}
                 ${c.entry ? html`<dt>Turn-in</dt><dd>${pct(c.entry.marker)} of lap · ${m1(c.entry.width_m)} wide</dd>` : nothing}
-                ${c.apex ? html`<dt>Apex</dt><dd>${pct(c.apex.marker)} · on the ${c.apex.edge} edge · <code>${c.apex.location.map((v) => v.toFixed(6)).join(", ")}</code></dd>`
+                ${c.apex ? html`<dt>Apex</dt><dd>${pct(c.apex.marker)} · on the ${c.apex.edge} edge${c.apex.basis === "racing_line" ? " · racing line" : ""} · <code>${c.apex.location.map((v) => v.toFixed(6)).join(", ")}</code></dd>`
                   : c.location ? html`<dt>Location</dt><dd><code>${c.location.map((v) => v.toFixed(6)).join(", ")}</code> (${c.location_source})</dd>` : nothing}
                 ${c.exit ? html`<dt>Exit</dt><dd>${pct(c.exit.marker)} · ${m1(c.exit.width_m)} wide</dd>` : nothing}
                 ${len ? html`<dt>Length</dt><dd>${Math.round(len)} m turn-in to exit</dd>` : nothing}
@@ -335,6 +341,18 @@ class TrackPage extends Light {
           </li>`;
         })}
       </ol>`;
+  }
+
+  dynamicsRows(c, lo) {
+    const d = c.dynamics, L = lo.surface?.lap_length_m || lo.length_m;
+    const dist = (a, b) => Math.round((((b - a) % 1) + 1) % 1 * L);
+    const geo = c.geometric_apex;
+    return html`
+      <dt>Character</dt><dd><span class="char ${d.character}">${CHARACTER[d.character]}</span> · minimum ${Math.round(d.min_speed_kmh)} km/h <span class="muted">(${d.model.toUpperCase()} model)</span></dd>
+      <dt>Braking</dt><dd>${d.brake ? html`from ${Math.round(d.brake.speed_kmh)} km/h at ${pct(d.brake.marker)} · ${Math.round(d.brake_m)} m to the slowest point` : d.character === "kink" ? "none, taken flat" : "none (a lift)"}</dd>
+      <dt>Full throttle</dt><dd>${pct(d.full_throttle_marker)}</dd>
+      <dt>Range</dt><dd>${pct(d.start)} → ${pct(d.end)} · ${dist(d.start, d.end)} m <span class="muted">(0.5 s before braking to 0.5 s after full throttle)</span></dd>
+      ${geo ? html`<dt>vs geometry</dt><dd>racing apex ${Math.abs(dist(geo.marker, c.apex.marker)) > L / 2 ? `${dist(c.apex.marker, geo.marker)} m before` : `${dist(geo.marker, c.apex.marker)} m after`} the tightest point of the inside edge${c.apex.gap_m != null ? html` · clearance ${m1(Math.max(0, c.apex.gap_m))}` : nothing}</dd>` : nothing}`;
   }
 
   issueUrl(c) {
@@ -450,6 +468,14 @@ class QualityPanel extends Light {
         </table>
         <p class="muted small">Score = CE95 + 4 m × unseen share: position and coverage in one number.</p>` : nothing}
 
+      ${s.racing_line ? html`<h3 class="h">Racing line <span class="muted">model</span></h3>
+        <dl class="kv">
+          <dt>Car</dt><dd>${s.racing_line.car.name}</dd>
+          <dt>Lap</dt><dd>${fmtLap(s.racing_line.lap_time_s)} · top ${Math.round(s.racing_line.top_speed_kmh)} km/h · ${km(s.racing_line.length_m)}</dd>
+        </dl>
+        <p class="muted small">Minimum-curvature line inside the measured edges and a quasi-steady-state lap. It gives the racing apex, braking points and each corner's character.
+          ${s.racing_line.limitations}.</p>` : nothing}
+
       ${s.unnamed_corners?.length ? html`<h3 class="h">Unclaimed curvature peaks</h3>
         <p class="muted small">${s.unnamed_corners.length} tight bends in the measured midline match no atlas corner. They are either missing corners or second apexes; the curation notes say which.</p>` : nothing}`;
   }
@@ -528,6 +554,9 @@ class AtlasMethod extends Light {
         <li><h3>Move to today's frame</h3><p>US sources are in NAD83(2011). Each result is moved to WGS 84 (G2139) ≈ ITRF2014 at epoch 2026.0, the frame a GNSS receiver reports today. That step is 0.9–1.6 m, and before this work it was silently ignored.</p></li>
         <li><h3>Place the corners</h3><p>The curvature of the measured midline gives each corner a turn-in line, an apex on the inside edge and an exit line.
           The midline becomes the lap: markers are fractions of it, measured from the start/finish line.</p></li>
+        <li><h3>Drive a model lap</h3><p>A minimum-curvature racing line is fitted inside the measured edges and a generic GT3 car is run on it.
+          That gives each corner its racing apex, braking point, minimum speed and character (kink, high speed, medium, slow). A complex runs from 0.5 s before braking to 0.5 s after full throttle.
+          This is a model, stated as one: no elevation, no kerbs.</p></li>
         <li><h3>Choose the best source</h3><p>Every imagery source that covers the circuit is measured. The one with the lowest score wins, where score = CE95 + 4 m × unseen share. The comparison is published with the data.</p></li>
       </ol>
       <h2>Accuracy tiers</h2>
