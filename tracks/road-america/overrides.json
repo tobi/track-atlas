@@ -1,87 +1,101 @@
 {
   "gp": {
-    "corners": {
-      "1": {
-        "driver": "Turn 1",
-        "official": "Turn 1",
+    "replace_corners": [
+      {
+        "number": 1,
+        "marker": 0.1008,
         "direction": "right",
         "scale": 2
       },
-      "2": {
-        "driver": "Turn 3",
-        "official": "Turn 3",
-        "direction": "left",
-        "scale": 3
-      },
-      "3": {
-        "driver": "Moraine Sweep",
-        "official": "Turn 5",
-        "direction": "left",
-        "scale": 5
-      },
-      "4": {
-        "driver": "Turn 5",
-        "official": "Turn 5",
+      {
+        "number": 2,
+        "marker": 0.1445,
         "direction": "right",
-        "scale": 3,
-        "error": "numbered name should be Turn 5A - this is the first apex before the main Turn 5 complex; coordinates place it at the Thunder Valley entry"
-      },
-      "5": {
-        "driver": "Turn 6",
-        "official": "Turn 6",
-        "direction": "right",
-        "scale": 2
-      },
-      "6": {
-        "driver": "Turn 7",
-        "official": "Turn 7",
-        "direction": "left",
-        "scale": 3
-      },
-      "7": {
-        "driver": "Turn 8",
-        "official": "Turn 8",
-        "direction": "left",
-        "scale": 3
-      },
-      "8": {
-        "driver": "The Carousel",
-        "official": "Turn 9 (The Carousel)",
-        "direction": "right",
-        "scale": 2
-      },
-      "9": {
-        "driver": "The Kink",
-        "official": "Turn 11 (The Kink)",
-        "direction": "left",
         "scale": 6
       },
-      "10": {
-        "driver": "Kettle Bottoms",
-        "official": "Turn 12 (Kettle Bottoms)",
+      {
+        "number": 3,
+        "marker": 0.1702,
+        "direction": "right",
+        "scale": 3
+      },
+      {
+        "number": 4,
+        "marker": 0.2459,
+        "direction": "right",
+        "scale": 6
+      },
+      {
+        "number": 5,
+        "marker": 0.3553,
+        "direction": "left",
+        "scale": 2
+      },
+      {
+        "number": 6,
+        "marker": 0.4007,
+        "direction": "left",
+        "scale": 3
+      },
+      {
+        "number": 7,
+        "marker": 0.4392,
         "direction": "right",
         "scale": 4
       },
-      "11": {
-        "driver": "Canada Corner",
-        "official": "Turn 13 (Canada Corner)",
+      {
+        "number": 8,
+        "marker": 0.5027,
         "direction": "left",
-        "scale": 1
+        "scale": 2
       },
-      "12": {
-        "driver": "Bill Mitchell Bend",
-        "official": "Turn 14 (Bill Mitchell Bend)",
-        "direction": "left",
-        "scale": 4
-      },
-      "13": {
-        "driver": "Turn 14",
-        "official": "Turn 14",
+      {
+        "number": 9,
+        "official": "The Carousel",
+        "driver": "Carousel",
+        "marker": 0.5333,
         "direction": "right",
         "scale": 3,
-        "error": "this appears to be a duplicate - Bill Mitchell Bend IS Turn 14; this coordinate at 0.8905 may be the final kink onto the front straight which is not typically numbered separately"
+        "complex": "Carousel"
+      },
+      {
+        "number": 10,
+        "official": "The Carousel",
+        "driver": "Carousel",
+        "marker": 0.5847,
+        "direction": "right",
+        "scale": 3,
+        "complex": "Carousel"
+      },
+      {
+        "number": 11,
+        "official": "The Kink",
+        "driver": "The Kink",
+        "marker": 0.6601,
+        "direction": "right",
+        "scale": 5
+      },
+      {
+        "number": 12,
+        "official": "Canada Corner",
+        "driver": "Canada Corner",
+        "marker": 0.7901,
+        "direction": "right",
+        "scale": 2
+      },
+      {
+        "number": 13,
+        "driver": "Bill Mitchell Bend",
+        "marker": 0.8367,
+        "direction": "left",
+        "scale": 4
+      },
+      {
+        "number": 14,
+        "marker": 0.8903,
+        "direction": "right",
+        "scale": 3
       }
-    },
-    "errors_summary": "Road America officially has 14 turns but data shows 13 corners with numbering inconsistencies; corner 13 appears to duplicate Turn 14 (Bill Mitchell Bend); missing Turn 2, Turn 4, and Turn 10 from official numbering"
+    ]
   }
 }

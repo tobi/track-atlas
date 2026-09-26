@@ -47,8 +47,8 @@
               "label": "Start / Finish",
               "marker": 0.0,
               "location": [
-                -87.989609,
-                43.797197
+                -87.989624,
+                43.797732
               ]
             },
             {
@@ -56,8 +56,8 @@
               "label": "Pit Entry",
               "marker": 0.925,
               "location": [
-                -87.989732,
-                43.801606
+                -87.989745,
+                43.802073
               ]
             },
             {
@@ -65,8 +65,8 @@
               "label": "Pit Exit",
               "marker": 0.056,
               "location": [
-                -87.989505,
-                43.793905
+                -87.989523,
+                43.794491
               ]
             }
           ]
@@ -84,10 +84,10 @@
               "labels": {
                 "numbered": "Turn 1"
               },
-              "marker": 0.099,
+              "marker": 0.1008,
               "location": [
-                -87.990595,
-                43.791785
+                -87.989839,
+                43.791977
               ],
               "location_source": "centerline",
               "direction": "right",
@@ -97,92 +97,82 @@
               "id": "t2",
               "number": 2,
               "code": "2",
-              "label": "Turn 3",
+              "label": "Turn 2",
               "labels": {
-                "numbered": "Turn 2",
-                "driver": "Turn 3",
-                "official": "Turn 3"
+                "numbered": "Turn 2"
               },
-              "marker": 0.1725,
+              "marker": 0.1445,
               "location": [
-                -87.995502,
-                43.792326
+                -87.993245,
+                43.791434
               ],
               "location_source": "centerline",
-              "direction": "left",
-              "scale": 3
+              "direction": "right",
+              "scale": 6
             },
             {
               "id": "t3",
               "number": 3,
               "code": "3",
-              "label": "Moraine Sweep",
+              "label": "Turn 3",
               "labels": {
-                "numbered": "Turn 3",
-                "driver": "Moraine Sweep",
-                "official": "Turn 5"
+                "numbered": "Turn 3"
               },
-              "marker": 0.2775,
+              "marker": 0.1702,
               "location": [
-                -87.99354,
-                43.798309
-              ],
-              "location_source": "centerline",
-              "direction": "left",
-              "scale": 5
-            },
-            {
-              "id": "t4",
-              "number": 4,
-              "code": "4",
-              "label": "Turn 5",
-              "labels": {
-                "numbered": "Turn 4",
-                "driver": "Turn 5",
-                "official": "Turn 5"
-              },
-              "marker": 0.3525,
-              "location": [
-                -87.993589,
-                43.801856
+                -87.995269,
+                43.791497
               ],
               "location_source": "centerline",
               "direction": "right",
               "scale": 3
             },
             {
-              "id": "t5",
-              "number": 5,
-              "code": "5",
-              "label": "Turn 6",
+              "id": "t4",
+              "number": 4,
+              "code": "4",
+              "label": "Turn 4",
               "labels": {
-                "numbered": "Turn 5",
-                "driver": "Turn 6",
-                "official": "Turn 6"
+                "numbered": "Turn 4"
               },
-              "marker": 0.4025,
+              "marker": 0.2459,
               "location": [
-                -87.996158,
-                43.800603
+                -87.994726,
+                43.79577
               ],
               "location_source": "centerline",
               "direction": "right",
+              "scale": 6
+            },
+            {
+              "id": "t5",
+              "number": 5,
+              "code": "5",
+              "label": "Turn 5",
+              "labels": {
+                "numbered": "Turn 5"
+              },
+              "marker": 0.3553,
+              "location": [
+                -87.992553,
+                43.801823
+              ],
+              "location_source": "centerline",
+              "direction": "left",
               "scale": 2
             },
             {
               "id": "t6",
               "number": 6,
               "code": "6",
-              "label": "Turn 7",
+              "label": "Turn 6",
               "labels": {
-                "numbered": "Turn 6",
-                "driver": "Turn 7",
-                "official": "Turn 7"
+                "numbered": "Turn 6"
               },
-              "marker": 0.44,
+              "marker": 0.4007,
               "location": [
-                -87.997348,
-                43.798786
+                -87.996118,
+                43.801652
               ],
               "location_source": "centerline",
               "direction": "left",
@@ -192,130 +182,142 @@
               "id": "t7",
               "number": 7,
               "code": "7",
-              "label": "Turn 8",
+              "label": "Turn 7",
               "labels": {
-                "numbered": "Turn 7",
-                "driver": "Turn 8",
-                "official": "Turn 8"
+                "numbered": "Turn 7"
               },
-              "marker": 0.4995,
+              "marker": 0.4392,
               "location": [
-                -87.999336,
-                43.796331
+                -87.996253,
+                43.799465
               ],
               "location_source": "centerline",
-              "direction": "left",
-              "scale": 3
+              "direction": "right",
+              "scale": 4
             },
             {
               "id": "t8",
               "number": 8,
               "code": "8",
-              "label": "The Carousel",
+              "label": "Turn 8",
               "labels": {
-                "numbered": "Turn 8",
-                "driver": "The Carousel",
-                "official": "Turn 9 (The Carousel)"
+                "numbered": "Turn 8"
               },
-              "marker": 0.5725,
+              "marker": 0.5027,
               "location": [
-                -88.001734,
-                43.794786
+                -87.999999,
+                43.797049
               ],
               "location_source": "centerline",
-              "direction": "right",
+              "direction": "left",
               "scale": 2
             },
             {
               "id": "t9",
               "number": 9,
               "code": "9",
-              "label": "The Kink",
+              "label": "Carousel",
               "labels": {
                 "numbered": "Turn 9",
-                "driver": "The Kink",
-                "official": "Turn 11 (The Kink)"
+                "official": "The Carousel",
+                "driver": "Carousel"
               },
-              "marker": 0.66,
+              "marker": 0.5333,
               "location": [
-                -88.001717,
-                43.799629
+                -87.9987,
+                43.795561
               ],
               "location_source": "centerline",
-              "direction": "left",
-              "scale": 6
+              "direction": "right",
+              "scale": 3
             },
             {
               "id": "t10",
               "number": 10,
               "code": "10",
-              "label": "Kettle Bottoms",
+              "label": "Carousel",
               "labels": {
                 "numbered": "Turn 10",
-                "driver": "Kettle Bottoms",
-                "official": "Turn 12 (Kettle Bottoms)"
+                "official": "The Carousel",
+                "driver": "Carousel"
               },
-              "marker": 0.735,
+              "marker": 0.5847,
               "location": [
-                -87.998322,
-                43.803245
+                -88.001405,
+                43.79445
               ],
               "location_source": "centerline",
               "direction": "right",
-              "scale": 4
+              "scale": 3
             },
             {
               "id": "t11",
               "number": 11,
               "code": "11",
-              "label": "Canada Corner",
+              "label": "The Kink",
               "labels": {
                 "numbered": "Turn 11",
-                "driver": "Canada Corner",
-                "official": "Turn 13 (Canada Corner)"
+                "official": "The Kink",
+                "driver": "The Kink"
               },
-              "marker": 0.7905,
+              "marker": 0.6601,
               "location": [
-                -87.997108,
-                43.804987
+                -88.002663,
+                43.798645
               ],
               "location_source": "centerline",
-              "direction": "left",
-              "scale": 1
+              "direction": "right",
+              "scale": 5
             },
             {
               "id": "t12",
               "number": 12,
               "code": "12",
-              "label": "Bill Mitchell Bend",
+              "label": "Canada Corner",
               "labels": {
                 "numbered": "Turn 12",
-                "driver": "Bill Mitchell Bend",
-                "official": "Turn 14 (Bill Mitchell Bend)"
+                "official": "Canada Corner",
+                "driver": "Canada Corner"
               },
-              "marker": 0.8395,
+              "marker": 0.7901,
               "location": [
-                -87.993637,
-                43.80373
+                -87.997384,
+                43.804987
+              ],
+              "location_source": "centerline",
+              "direction": "right",
+              "scale": 2
+            },
+            {
+              "id": "t13",
+              "number": 13,
+              "code": "13",
+              "label": "Bill Mitchell Bend",
+              "labels": {
+                "numbered": "Turn 13",
+                "driver": "Bill Mitchell Bend"
+              },
+              "marker": 0.8367,
+              "location": [
+                -87.994153,
+                43.8038
               ],
               "location_source": "centerline",
               "direction": "left",
               "scale": 4
             },
             {
-              "id": "t13",
-              "number": 13,
-              "code": "13",
+              "id": "t14",
+              "number": 14,
+              "code": "14",
               "label": "Turn 14",
               "labels": {
-                "numbered": "Turn 13",
-                "driver": "Turn 14",
-                "official": "Turn 14"
+                "numbered": "Turn 14"
               },
-              "marker": 0.8905,
+              "marker": 0.8903,
               "location": [
-                -87.989877,
-                43.803604
+                -87.990003,
+                43.804039
               ],
               "location_source": "centerline",
               "direction": "right",
@@ -360,208 +362,224 @@
             {
               "id": "t1",
               "label": "Turn 1",
-              "start": 0.07137,
-              "end": 0.11896,
+              "start": 0.07317,
+              "end": 0.12076,
               "anchor": "t1",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.099,
+                  "marker": 0.1008,
                   "point_ref": "t1"
                 }
               ]
             },
             {
               "id": "t2",
-              "label": "Turn 3",
-              "start": 0.15408,
-              "end": 0.18785,
+              "label": "Turn 2",
+              "start": 0.1422,
+              "end": 0.1468,
               "anchor": "t2",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.1725,
+                  "marker": 0.1445,
                   "point_ref": "t2"
                 }
               ]
             },
             {
               "id": "t3",
-              "label": "Moraine Sweep",
-              "start": 0.27213,
-              "end": 0.28441,
+              "label": "Turn 3",
+              "start": 0.15178,
+              "end": 0.18555,
               "anchor": "t3",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.2775,
+                  "marker": 0.1702,
                   "point_ref": "t3"
                 }
               ]
             },
             {
               "id": "t4",
-              "label": "Turn 5",
-              "start": 0.33408,
-              "end": 0.36785,
+              "label": "Turn 4",
+              "start": 0.2436,
+              "end": 0.2482,
               "anchor": "t4",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.3525,
+                  "marker": 0.2459,
                   "point_ref": "t4"
                 }
               ]
             },
             {
               "id": "t5",
-              "label": "Turn 6",
-              "start": 0.37487,
-              "end": 0.422,
+              "label": "Turn 5",
+              "start": 0.32767,
+              "end": 0.37526,
               "anchor": "t5",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.4025,
+                  "marker": 0.3553,
                   "point_ref": "t5"
                 }
               ]
             },
             {
               "id": "t6",
-              "label": "Turn 7",
-              "start": 0.422,
-              "end": 0.45535,
+              "label": "Turn 6",
+              "start": 0.38228,
+              "end": 0.41605,
               "anchor": "t6",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.44,
+                  "marker": 0.4007,
                   "point_ref": "t6"
                 }
               ]
             },
             {
               "id": "t7",
-              "label": "Turn 8",
-              "start": 0.48108,
-              "end": 0.51485,
+              "label": "Turn 7",
+              "start": 0.42845,
+              "end": 0.44995,
               "anchor": "t7",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.4995,
+                  "marker": 0.4392,
                   "point_ref": "t7"
                 }
               ]
             },
             {
               "id": "t8",
-              "label": "The Carousel",
-              "start": 0.54487,
-              "end": 0.59246,
+              "label": "Turn 8",
+              "start": 0.47507,
+              "end": 0.51861,
               "anchor": "t8",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.5725,
+                  "marker": 0.5027,
                   "point_ref": "t8"
                 }
               ]
             },
             {
               "id": "t9",
-              "label": "The Kink",
-              "start": 0.6577,
-              "end": 0.6623,
+              "label": "Carousel",
+              "start": 0.51861,
+              "end": 0.55666,
               "anchor": "t9",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.66,
+                  "marker": 0.5333,
                   "point_ref": "t9"
                 }
               ]
             },
             {
               "id": "t10",
-              "label": "Kettle Bottoms",
-              "start": 0.72425,
-              "end": 0.74575,
+              "label": "Carousel",
+              "start": 0.55666,
+              "end": 0.60005,
               "anchor": "t10",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.735,
+                  "marker": 0.5847,
                   "point_ref": "t10"
                 }
               ]
             },
             {
               "id": "t11",
-              "label": "Canada Corner",
-              "start": 0.75212,
-              "end": 0.8166,
+              "label": "The Kink",
+              "start": 0.65473,
+              "end": 0.66701,
               "anchor": "t11",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.7905,
+                  "marker": 0.6601,
                   "point_ref": "t11"
                 }
               ]
             },
             {
               "id": "t12",
-              "label": "Bill Mitchell Bend",
-              "start": 0.82875,
-              "end": 0.85025,
+              "label": "Canada Corner",
+              "start": 0.76247,
+              "end": 0.81006,
               "anchor": "t12",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.8395,
+                  "marker": 0.7901,
                   "point_ref": "t12"
                 }
               ]
             },
             {
               "id": "t13",
-              "label": "Turn 14",
-              "start": 0.87208,
-              "end": 0.90585,
+              "label": "Bill Mitchell Bend",
+              "start": 0.82595,
+              "end": 0.84745,
               "anchor": "t13",
               "points": [
                 {
                   "id": "apex",
                   "role": "apex",
                   "label": "Apex",
-                  "marker": 0.8905,
+                  "marker": 0.8367,
                   "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Turn 14",
+              "start": 0.87188,
+              "end": 0.90565,
+              "anchor": "t14",
+              "points": [
+                {
+                  "id": "apex",
+                  "role": "apex",
+                  "label": "Apex",
+                  "marker": 0.8903,
+                  "point_ref": "t14"
                 }
               ]
             }
@@ -575,8 +593,8 @@
             {
               "id": "t1",
               "label": "Turn 1",
-              "start": 0.07137,
-              "end": 0.11896,
+              "start": 0.07317,
+              "end": 0.12076,
               "members": [
                 "t1"
               ],
@@ -585,52 +603,34 @@
                   "id": "t1-apex",
                   "role": "apex",
                   "label": "Turn 1",
-                  "marker": 0.099,
+                  "marker": 0.1008,
                   "point_ref": "t1"
                 }
               ]
             },
             {
-              "id": "t2",
+              "id": "t3",
               "label": "Turn 3",
-              "start": 0.15408,
-              "end": 0.18785,
+              "start": 0.15178,
+              "end": 0.18555,
               "members": [
-                "t2"
+                "t3"
               ],
               "points": [
                 {
-                  "id": "t2-apex",
+                  "id": "t3-apex",
                   "role": "apex",
                   "label": "Turn 3",
-                  "marker": 0.1725,
-                  "point_ref": "t2"
-                }
-              ]
-            },
-            {
-              "id": "t4",
-              "label": "Turn 5",
-              "start": 0.33408,
-              "end": 0.36785,
-              "members": [
-                "t4"
-              ],
-              "points": [
-                {
-                  "id": "t4-apex",
-                  "role": "apex",
-                  "label": "Turn 5",
-                  "marker": 0.3525,
-                  "point_ref": "t4"
+                  "marker": 0.1702,
+                  "point_ref": "t3"
                 }
               ]
             },
             {
               "id": "t5",
-              "label": "Turn 6",
-              "start": 0.37487,
-              "end": 0.422,
+              "label": "Turn 5",
+              "start": 0.32767,
+              "end": 0.37526,
               "members": [
                 "t5"
               ],
@@ -638,17 +638,17 @@
                 {
                   "id": "t5-apex",
                   "role": "apex",
-                  "label": "Turn 6",
-                  "marker": 0.4025,
+                  "label": "Turn 5",
+                  "marker": 0.3553,
                   "point_ref": "t5"
                 }
               ]
             },
             {
               "id": "t6",
-              "label": "Turn 7",
-              "start": 0.422,
-              "end": 0.45535,
+              "label": "Turn 6",
+              "start": 0.38228,
+              "end": 0.41605,
               "members": [
                 "t6"
               ],
@@ -656,17 +656,17 @@
                 {
                   "id": "t6-apex",
                   "role": "apex",
-                  "label": "Turn 7",
-                  "marker": 0.44,
+                  "label": "Turn 6",
+                  "marker": 0.4007,
                   "point_ref": "t6"
                 }
               ]
             },
             {
               "id": "t7",
-              "label": "Turn 8",
-              "start": 0.48108,
-              "end": 0.51485,
+              "label": "Turn 7",
+              "start": 0.42845,
+              "end": 0.44995,
               "members": [
                 "t7"
               ],
@@ -674,17 +674,17 @@
                 {
                   "id": "t7-apex",
                   "role": "apex",
-                  "label": "Turn 8",
-                  "marker": 0.4995,
+                  "label": "Turn 7",
+                  "marker": 0.4392,
                   "point_ref": "t7"
                 }
               ]
             },
             {
               "id": "t8",
-              "label": "The Carousel",
-              "start": 0.54487,
-              "end": 0.59246,
+              "label": "Turn 8",
+              "start": 0.47507,
+              "end": 0.51861,
               "members": [
                 "t8"
               ],
@@ -692,53 +692,43 @@
                 {
                   "id": "t8-apex",
                   "role": "apex",
-                  "label": "The Carousel",
-                  "marker": 0.5725,
+                  "label": "Turn 8",
+                  "marker": 0.5027,
                   "point_ref": "t8"
                 }
               ]
             },
             {
-              "id": "t10",
-              "label": "Kettle Bottoms",
-              "start": 0.72425,
-              "end": 0.74575,
+              "id": "carousel",
+              "label": "Carousel",
+              "start": 0.51861,
+              "end": 0.60005,
               "members": [
+                "t9",
                 "t10"
               ],
               "points": [
                 {
+                  "id": "t9-apex",
+                  "role": "apex",
+                  "label": "Carousel",
+                  "marker": 0.5333,
+                  "point_ref": "t9"
+                },
+                {
                   "id": "t10-apex",
                   "role": "apex",
-                  "label": "Kettle Bottoms",
-                  "marker": 0.735,
+                  "label": "Carousel",
+                  "marker": 0.5847,
                   "point_ref": "t10"
                 }
               ]
             },
             {
-              "id": "t11",
-              "label": "Canada Corner",
-              "start": 0.75212,
-              "end": 0.8166,
-              "members": [
-                "t11"
-              ],
-              "points": [
-                {
-                  "id": "t11-apex",
-                  "role": "apex",
-                  "label": "Canada Corner",
-                  "marker": 0.7905,
-                  "point_ref": "t11"
-                }
-              ]
-            },
-            {
               "id": "t12",
-              "label": "Bill Mitchell Bend",
-              "start": 0.82875,
-              "end": 0.85025,
+              "label": "Canada Corner",
+              "start": 0.76247,
+              "end": 0.81006,
               "members": [
                 "t12"
               ],
@@ -746,17 +736,17 @@
                 {
                   "id": "t12-apex",
                   "role": "apex",
-                  "label": "Bill Mitchell Bend",
-                  "marker": 0.8395,
+                  "label": "Canada Corner",
+                  "marker": 0.7901,
                   "point_ref": "t12"
                 }
               ]
             },
             {
               "id": "t13",
-              "label": "Turn 14",
-              "start": 0.87208,
-              "end": 0.90585,
+              "label": "Bill Mitchell Bend",
+              "start": 0.82595,
+              "end": 0.84745,
               "members": [
                 "t13"
               ],
@@ -764,9 +754,27 @@
                 {
                   "id": "t13-apex",
                   "role": "apex",
-                  "label": "Turn 14",
-                  "marker": 0.8905,
+                  "label": "Bill Mitchell Bend",
+                  "marker": 0.8367,
                   "point_ref": "t13"
+                }
+              ]
+            },
+            {
+              "id": "t14",
+              "label": "Turn 14",
+              "start": 0.87188,
+              "end": 0.90565,
+              "members": [
+                "t14"
+              ],
+              "points": [
+                {
+                  "id": "t14-apex",
+                  "role": "apex",
+                  "label": "Turn 14",
+                  "marker": 0.8903,
+                  "point_ref": "t14"
                 }
               ]
             }
@@ -784,7 +792,7 @@
     "imsa_data": "road-america"
   },
   "provenance": {
-    "generated_at": "2026-06-29T19:37:54.077587+00:00",
+    "generated_at": "2026-09-26T20:36:24.000777+00:00",
     "sources": [
       {
         "name": "Lovely-Sim-Racing/lovely-track-data",
@@ -807,8 +815,8 @@
       }
     ],
     "corner_match": {
-      "matched": 5,
-      "total": 13
+      "matched": 4,
+      "total": 14
     },
     "geometry": [
       {
@@ -816,14 +824,14 @@
         "candidates": [
           {
             "source": "stitched_fallback",
-            "score": 24.762,
+            "score": 76.105,
             "reasons": [
-              "length 6,539 m (Δ 25 m)"
+              "length 6,438 m (Δ 76 m)"
             ]
           }
         ],
         "selected": "stitched_fallback",
-        "selected_score": 24.762
+        "selected_score": 76.105
       }
     ]
   }
