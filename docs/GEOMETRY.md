@@ -15,7 +15,8 @@ peak it gets no entry/apex/exit.
 
 | file | written by | committed | content |
 |---|---|---|---|
-| `raw/imagery/` | `measure_surface.py` | no (gitignored cache, recreatable from the recorded request) | NAIP RGB + NIR tiles, `manifest.json` |
+| `raw/imagery/<source>/` | `measure_surface.py` | no (gitignored cache, recreatable from the recorded request) | imagery tiles (RGB + NIR where the source has it), `manifest.json` |
+| `raw/lidar/<survey>/` | `measure_surface.py` | no (gitignored cache) | 3DEP EPT hierarchy and point tiles along the lap |
 | `raw/surface-<layout>.json` | `measure_surface.py` (network) | yes | the measurement: edges, midline, quality, sources |
 | `raw/layers/<layout>.surface.geojson` | `build_geometry.py` / `generate.py` (offline) | yes | every surface feature (below) |
 | `raw/track.json` | `build_geometry.py` / `generate.py` (offline) | yes | `layout.surface`, `geometry.surface`, crossing lines and apexes on items |
@@ -33,11 +34,18 @@ A track opts in with `source.json`:
 ```json
 "surface": {"imagery": "naip"}                        // every layout
 "surface": {"imagery": "naip", "layouts": ["imsa"]}   // only these
+"surface": {"imagery": "naip", "lidar": ["GA_Statewide_B3_2018", "ARRA-GA_LakeLanier_2010"]}
 ```
+
+`imagery` is a key of `lib/imagery.SOURCES`; `lidar` lists USGS 3DEP EPT
+surveys used as the position reference (best first). `measure_surface.py
+<slug> --find-lidar` lists the surveys covering the lap.
 
 ## Conventions
 
-- Coordinates are GeoJSON `[lon, lat]`, WGS84.
+- Coordinates are GeoJSON `[lon, lat]` in **WGS 84 (G2139) ~ ITRF2014 at
+  epoch 2026.0**, the frame a GNSS receiver reports today (see "Absolute
+  position" below). US sources are delivered in NAD83(2011) and are moved.
 - **Left / right are in the driving direction.** Every edge polyline starts at
   the lap origin (start/finish) and runs in the driving direction.
 - Every lap fraction (`marker`) stays on the **layout centerline's basis**, the
@@ -58,15 +66,16 @@ Path (relative to `raw/`) of the surface GeoJSON, e.g. `layers/gp.surface.geojso
 | field | meaning |
 |---|---|
 | `file` | same as `geometry.surface` |
-| `method` | `naip-edges/1` (method and version) |
+| `method` | `edges/2` (method and version) |
 | `measured_at` | when the measurement ran |
 | `lap_length_m` | lap length along the measured midline |
 | `width_m` | `{p05, median, p95}` of the measured width |
 | `seen_fraction` | `{left, right, both}` share of the lap where the edge was actually seen |
 | `relative_precision_m` | 1-sigma precision of a seen edge relative to the rest of the geometry |
-| `absolute_accuracy_ce95_m` | the imagery's absolute horizontal accuracy (95%) |
+| `absolute_accuracy_ce95_m` | absolute horizontal accuracy (95%) in the atlas frame: `position.budget_ce95_m.total` |
+| `position` | frame, epoch, datum and registration shifts, reference, CE95 budget and independent checks (below) |
 | `unnamed_corners` | curvature peaks tighter than 80 m that no atlas corner claimed (curation hints) |
-| `sources` | `naip` (service, rasters, acquisition dates, request, accuracy statement) and `seed` (the OSM centerline, used only to seed the search) |
+| `sources` | `imagery` (id, service, rasters, acquisition dates, licence, accuracy statement), `reference` (the lidar surveys) and `seed` (the OSM centerline, used only to seed the search) |
 
 ### Corner items (`point_layers[corners].items[]`)
 
@@ -121,8 +130,8 @@ Example (Road Atlanta Turn 7):
 {"source": "naip", "accuracy_m": 4.0, "relative_accuracy_m": 0.25, "measured": true, "date": "2023-10-22"}
 ```
 
-- `source`: `naip`, `osm`, `survey` or `derived`.
-- `accuracy_m`: absolute, 95%: `hypot(imagery CE95, relative_accuracy_m)`.
+- `source`: the imagery id (`naip`, `ct-2023`, ...), `osm`, `survey` or `derived`.
+- `accuracy_m`: absolute, 95%: `hypot(surface absolute CE95, relative_accuracy_m)`.
 - `relative_accuracy_m`: against the rest of the layout's geometry (what widths,
   lines and apexes relative to the edges depend on). A feature on a bridged
   (unseen) span adds 1.5 m.
@@ -142,25 +151,46 @@ Example (Road Atlanta Turn 7):
 | `complex_entry`, `complex_exit` | LineString (crossing) | `complex` (only complexes of two or more corners) |
 | `sector_boundary` | LineString (crossing) | `range` (the timing sector starting there) |
 
-## The centerline: still needed, for two reasons
+## The centerline: proposal to retire it as the basis
 
-1. It is the **lap-fraction basis** of every existing marker, range and
-   consumer (Omatrack maps GPS to lap fraction along it). Changing it would
-   shift every legacy marker.
-2. It **seeds** the edge search (lap order, origin, direction and the rough
-   corridor).
+Evidence from the measurements: the OSM centerline sits up to ~5 m off the
+asphalt centre (`quality.seed_offset_m` p95: Daytona 5.1 m), its length differs
+from the measured midline by up to a few percent (Lime Rock, Long Beach), and
+it is in whatever frame its tracer used. The measured midline is centred on
+the asphalt, in the atlas frame, with a stated accuracy. The centerline's only
+remaining jobs are (1) seeding the edge search, which it does well, and (2)
+being the lap-fraction basis of every marker.
 
-The measured `midline` is geometrically better (it is centred on the measured
-asphalt; OSM ways traced from TIGER road data are often metres off). A future
-schema version could make the midline the basis and re-express legacy markers
-on it; until then the centerline stays and the midline is derived.
+**Proposal (schema v2, not yet applied):**
+
+1. The **midline becomes the lap-fraction basis** for every layout with a
+   measured surface; the OSM centerline stays as `geometry.seed` only.
+2. The origin (`0.0`) is the `start_finish` crossing line, the midline runs in
+   the driving direction (both already true).
+3. Every marker is **re-expressed by projection**, not by rescaling:
+   `m' = s_mid(project(P_centerline(m))) / L_mid`, where `P_centerline(m)` is the
+   point at fraction `m` on the old centerline and `project` is the nearest point
+   on the midline. Corner entry/apex/exit are already measured on the midline,
+   so they simply switch to their native stations.
+4. Where the surface places a corner (curvature lobe), the marker becomes the
+   **apex station**; legacy Lovely markers (often 50-100 m off) are kept as
+   `placement.legacy_marker` for traceability.
+5. Consumers that prefer coordinates should use the crossing lines and apex
+   points (GPS) directly: they do not depend on any basis.
+6. Tracks without a surface (non-US) keep the centerline basis, flagged
+   `basis: "centerline"`, until they are measured.
+
+Until then the centerline stays the basis (so legacy and new fields remain
+comparable) and the midline is published alongside it.
 
 ## Measuring the edges (`lib/edges.py`, `measure_surface.py`)
 
 Imagery: **USDA NAIP** via the USGS National Map ImageServer (public domain,
-compatible with the atlas's ODbL; commercial basemaps may not be traced). It is
-exported as Web-Mercator tiles at 0.5 m ground sample (native 0.6 m in recent
-years), natural colour plus the near-infrared band, and cached.
+compatible with the atlas's ODbL; commercial basemaps may not be traced), or a
+state orthophoto programme from `lib/imagery.SOURCES` (see docs/SOURCES.md for
+licences). It is exported as Web-Mercator tiles at 0.5 m (NAIP) or 0.25 m
+ground sample, natural colour plus near-infrared where the source has it, and
+cached. RGB-only sources use chroma and brightness (no NDVI).
 
 1. **Straightened grid.** The seed centerline is resampled at 1 m and smoothed
    (sigma 4 m) for its normals. Imagery is sampled on a station x lateral-offset
@@ -195,6 +225,52 @@ years), natural colour plus the near-infrared band, and cached.
    against the smoothed edge, combined with half a ground pixel.
 
 The edges are stored simplified (Douglas-Peucker, 0.05 m).
+
+## Absolute position (`lib/position.py`, `lib/register.py`, `lib/datum.py`)
+
+The edges are traced in the imagery's own frame. Where that frame sits on the
+Earth is decided separately, in three steps, each recorded in
+`layout.surface.position`:
+
+1. **Reference.** The imagery's stated accuracy is compared with each lidar
+   survey's (`lib/lidar.PROJECTS`: the producer's stated horizontal accuracy,
+   converted to CE95; 1.0 m CE95 assumed and flagged `stated: false` when the
+   metadata gives none). The sharper one is the reference. For NAIP (4 m
+   contract) that is always the lidar.
+2. **Registration.** USGS 3DEP airborne lidar (public domain, EPT on S3) is
+   read along the lap and its ground/road last-return intensity is rasterised at
+   0.5 m (per-flight-line normalised, Gaussian-splatted, canopy masked). Both
+   the lidar and the imagery see the track at ~1 um: asphalt dark, grass and
+   paint bright. The imagery's NIR (pseudo-NIR for RGB sources) is high-passed
+   (3 m) like the lidar and correlated (NCC) in 120 m windows every 100 m of
+   lap, +/- 8 m search, sub-pixel peak. Windows with weak, ambiguous or
+   search-limit peaks are dropped; the kept shifts give a Tukey-robust mean.
+   Lidar is the reference, not the tracer: at 2-20 returns/m2 it cannot draw
+   a sharp edge, but its absolute position is sub-metre.
+3. **Datum.** NAIP, 3DEP and state orthos are NAD83(2011). Web services label
+   that "WGS 84" through PROJ's identity step, which is off by 0.9-1.6 m in the
+   conterminous US. `lib/datum.py` applies the NGS NAD83(2011) -> ITRF2014
+   time-dependent transformation at epoch 2026.0 (constant over a circuit, so a
+   translation).
+
+The applied shift (registration + datum) is added to every traced coordinate.
+
+**Budget (95 %, horizontal)** = hypot(reference, registration, datum):
+
+- reference: the survey's CE95 (stated or assumed);
+- registration: the window shifts scatter around the applied mean because of
+  estimator noise and real non-rigid distortion of the imagery (which one shift
+  leaves in place). With two lidar surveys the per-window difference of the two
+  registrations cancels the imagery's distortion and measures the noise alone
+  (noise^2 = var(diff)/2); the registration term is then the non-rigid part plus
+  the standard error of the mean. With one survey the whole scatter counts;
+- datum: 0.05 m on the stable plate, 0.35 m west of the San Andreas system
+  (Pacific-plate motion NAD83(2011) models only to 2010).
+
+**Checks** (`position.checks`): the registration against every listed survey,
+its distance from the applied shift, and the agreement of two independent
+surveys (different years, vendors and flights), which bounds both references'
+errors empirically.
 
 ## Placing corners (`lib/surface.py`)
 
@@ -248,19 +324,24 @@ Errors:
 
 Warnings: curated direction disagrees with geometry; a corner without a
 curvature peak; an unnamed tight peak; an edge seen on less than 80% of the lap.
-Info: absolute accuracy above the 2 m racing-line gate.
+Position: error when the budget does not add up to
+`absolute_accuracy_ce95_m` or the applied shift is not registration + datum;
+warning when the reference's accuracy is assumed, when two surveys (or a check
+against the applied shift) disagree by more than 1 m, or when a surface has no
+position record. Info: the budget line; absolute accuracy above the 2 m
+racing-line gate.
 
 ## Accuracy, honestly
 
 - **Relative** geometry (width, edge shape, where the apex sits against the
   edge) is good to about 0.25-0.5 m where the edge was seen.
-- **Absolute** position is bounded by the imagery's registration: NAIP's
-  contract is 95% of well-defined points within **4 m** (6 m before 2016).
-  Individual acquisitions are often better, but that is not guaranteed and has
-  not been measured here, so `accuracy_m` reports the contract. A consumer gating on 2 m
-  absolute accuracy (Omatrack's racing-line and apex rendering) should treat
-  NAIP geometry as not meeting the gate unless it registers its GPS against the
-  edges (for example, by fitting a lap's GPS trace into the surface polygon).
+- **Absolute** position is whatever `position.budget_ce95_m.total` says: the
+  imagery registered to 3DEP lidar and moved to ITRF2014. NAIP alone would be
+  its **4 m** contract (6 m before 2016). The dominant term is usually the lidar
+  reference itself, and most 3DEP surveys do not state a horizontal accuracy:
+  the 1.0 m CE95 then used is an assumption (flagged), supported but not proven
+  by the agreement of two independent surveys. Sub-metre claims need a stated
+  reference, or ground control (survey marks, CORS-referenced GNSS).
 - **Bridged spans** (tree shadow, bridges, paved run-off without a painted line,
   pit merges) are interpolated and marked `measured: false` with 1.5 m added.
 - **Outside the conterminous US** NAIP does not exist; those tracks have no

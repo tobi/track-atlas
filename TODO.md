@@ -18,7 +18,11 @@ Spec: docs/GEOMETRY.md.
 - [ ] Daytona start/finish is pinned where the Lovely markers fit the curvature peaks, not a surveyed timing line
 - [ ] Remaining US tracks
 - [ ] Non-US imagery source (NAIP is US-only; Mosport and every non-US track have no surface)
-- [ ] Absolute registration better than NAIP's 4 m CE95 (GPS-trace or survey control)
+- [x] Absolute position: 3DEP lidar registration + NAD83(2011) -> ITRF2014 datum step, CE95 budget in `layout.surface.position` (lib/lidar, register, datum, position; docs/SOURCES.md)
+- [ ] Re-measure the 9 other US venues with the position pipeline
+- [ ] State orthos as primary imagery where sharper: ct-2023 (Lime Rock, tested 0.16 m), indiana-2025, fdep-2020 (Sebring), txgio (COTA); check band order / NDVI visually
+- [ ] Most 3DEP surveys state no horizontal accuracy (1.0 m CE95 assumed): find the project reports, or ground control (NGS marks / CORS GNSS) to get below 1 m
+- [ ] Registration term: model a smooth shift field along the lap instead of one translation (non-rigid imagery distortion dominates it)
 - [ ] Decide: make the measured midline the lap-fraction basis (re-express legacy markers)
 - [ ] Road Atlanta: t8/t9/t10 sit on the back straight with no curvature peak; confirm or drop
 
