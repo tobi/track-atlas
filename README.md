@@ -73,7 +73,7 @@ Display name for T17 resolves to **"Turn 17"** — the `driver` layer is empty
 (drivers just say the number) so it falls back to the identifier, while the
 official name "Sunset Bend" is preserved in its own layer.
 
-Browse it: **https://tracks-atlas.pages.tobi.lutke.com/** — every circuit ranked
+Browse it: **https://pages.tobi.lutke.com/track-atlas/** — every circuit ranked
 by measured accuracy, the edges drawn over the very orthophoto they were measured
 on, each corner's turn-in, apex and exit, and the error budget behind every
 figure. The site is built from `tracks.jsonl` and links straight to it. (Deployed
