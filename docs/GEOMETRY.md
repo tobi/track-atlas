@@ -199,7 +199,9 @@ licences). It is exported as Web-Mercator tiles at 0.5 m (NAIP) or 0.25 m
 ground sample, natural colour plus near-infrared where the source has it, and
 cached. RGB-only sources use chroma and brightness (no NDVI).
 
-1. **Straightened grid.** The seed centerline is resampled at 1 m and smoothed
+1. **Straightened grid.** The seed is the OSM centerline, kept by
+   `generate.py` as `raw/seed-<layout>.geojson` before the outline becomes the
+   midline (seeding from a previous midline would feed its errors back). The seed centerline is resampled at 1 m and smoothed
    (sigma 4 m) for its normals. Imagery is sampled on a station x lateral-offset
    grid (1 m x 0.25 m, +/- 26 m), bilinear in RGB + NIR.
 2. **Self-calibrated asphalt model.** Samples within 1.5 m of the seed are mostly
@@ -223,7 +225,11 @@ cached. RGB-only sources use chroma and brightness (no NDVI).
    iteratively reweighted Gaussian smoothing (sigma 10 m, Tukey weights at
    0.5 m) over the stations that were seen. Unseen spans (weak contrast,
    occlusion) are bridged linearly between seen neighbours and listed in
-   `unseen_spans`, never hidden.
+   `unseen_spans`, never hidden. A curator can force a span unseen where the
+   imagery edge is known to follow the wrong surface (a pit lane merging
+   without a painted line, an oval continuing past a road-course turn):
+   `source.json` `surface.bridge: [{side, from, to, note}]` (lap fractions on
+   the seed; recorded as `quality.curated_bridges`).
 7. **Loop removal.** Offsetting a tight inside edge (or a V-shaped kink in the
    seed) can fold it into a swallowtail. `geo.remove_loops` cuts every loop
    shorter than 150 m at the self-intersection of non-adjacent segments;

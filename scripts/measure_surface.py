@@ -17,6 +17,8 @@ Only tracks whose source.json has a surface block are measured:
 
     "surface": {}                                   // = {"imagery": "auto", "lidar": "auto"}
     "surface": {"imagery": "naip", "lidar": ["GA_Statewide_B3_2018"]}   // pinned
+    "surface": {"bridge": [{"side": "right", "from": 0.10, "to": 0.167,
+                            "note": "pit exit merges without a painted line"}]}
 
 `imagery` "auto" measures with every lib/imagery.SOURCES entry covering the lap
 and keeps the best (absolute CE95 + a charge for bridged edges; the comparison
@@ -49,6 +51,10 @@ EDGE_SIMPLIFY_M = 0.05     # Douglas-Peucker tolerance for the stored edges
 
 
 def _outline(slug: str, layout_id: str) -> np.ndarray:
+    """The seed: the OSM centerline generate.py kept (never the previous midline)."""
+    seed = raw_dir(slug) / f"seed-{layout_id}.geojson"
+    if seed.exists():
+        return np.asarray(json.loads(seed.read_text())["geometry"]["coordinates"], dtype=float)
     gj = json.loads((raw_dir(slug) / "layers" / f"{layout_id}.geojson").read_text())
     f = next(f for f in gj["features"] if f["properties"].get("role") == "outline")
     return np.asarray(f["geometry"]["coordinates"], dtype=float)
@@ -104,7 +110,7 @@ def measure(slug: str, layout_id: str, cfg: dict) -> dict:
     results, selection = [], []
     for sid in cands:
         try:
-            out = _measure_with(slug, layout_id, sid, refs, seed_ll)
+            out = _measure_with(slug, layout_id, sid, refs, seed_ll, cfg.get("bridge"))
         except Refused as e:
             selection.append({"imagery": sid, "result": f"refused: {e}"})
             print(f"[{slug}/{layout_id}] {sid}: refused: {e}")
@@ -127,13 +133,17 @@ def measure(slug: str, layout_id: str, cfg: dict) -> dict:
     return out
 
 
-def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], seed_ll: np.ndarray) -> dict:
+def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], seed_ll: np.ndarray,
+                  bridge=None) -> dict:
     src = SOURCES[source_id]
     cache = raw_dir(slug) / "imagery" / source_id
     fetch_imagery(cache, seed_ll, source_id)
     R, manifest = load_raster(cache)
     F = geo.Frame.around(seed_ll)
-    res = edges.extract_edges(R, F, geo.open_ring(F.to_xy(seed_ll)))
+    for b in bridge or ():
+        if b.get("side") not in ("left", "right") or not b.get("note"):
+            raise SystemExit(f"[{slug}] surface.bridge needs side left/right and a note: {b}")
+    res = edges.extract_edges(R, F, geo.open_ring(F.to_xy(seed_ll)), bridge=bridge)
     if min(res.seen_left.mean(), res.seen_right.mean()) < MIN_SEEN:
         raise Refused(f"edges seen on only {res.seen_left.mean():.0%}/{res.seen_right.mean():.0%} "
                       "of the lap (no coverage, or unusable imagery)")
@@ -176,6 +186,7 @@ def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], se
             "seen_fraction": {"left": round(float(res.seen_left.mean()), 3),
                               "right": round(float(res.seen_right.mean()), 3),
                               "both": round(float(seen.mean()), 3)},
+            "curated_bridges": bridge or [],
             "unseen_spans": {"left": _spans(res.seen_left, res.total_m),
                              "right": _spans(res.seen_right, res.total_m)},
             "relative_precision_m": round(precision, 2),

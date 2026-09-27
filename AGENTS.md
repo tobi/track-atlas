@@ -110,7 +110,11 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   flagged.
 - Inspect visually before committing: edges over the imagery at every corner.
   Paved run-off without a painted line, pit merges, bridges and tree shadow
-  are the usual failure spots; they show up as `unseen_spans`.
+  are the usual failure spots; they show up as `unseen_spans`. Where the edge
+  follows the wrong surface while "seen" (Indy's pit-exit merge before T1),
+  force a bridge with `source.json` `surface.bridge` and re-measure.
+- `measure_surface.py` seeds from `raw/seed-<layout>.geojson` (the OSM
+  centerline, written by `generate.py`), never the previous midline.
 - The measured curvature is authoritative for a corner's direction. `verify.py`
   warns when the curated direction disagrees (`placement.declared_direction`):
   fix `direction` in `overrides.json`, never in `raw/track.json`.

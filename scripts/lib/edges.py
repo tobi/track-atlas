@@ -249,7 +249,22 @@ def _extract_once(R: Raster, frame: geo.Frame, seed_xy: np.ndarray, typical=None
     return mid, nrm, total, out
 
 
-def extract_edges(R: Raster, frame: geo.Frame, seed_xy: np.ndarray, iterations: int = 3) -> EdgeResult:
+def _bridged(n: int, bridge, side: str) -> np.ndarray:
+    """Stations inside a curated bridge span of this side (lap fractions from the origin)."""
+    out = np.zeros(n, dtype=bool)
+    f = np.arange(n) / n
+    for b in bridge or ():
+        if b["side"] == side:
+            a, z = b["from"], b["to"]
+            out |= ((f >= a) & (f <= z)) if a <= z else ((f >= a) | (f <= z))
+    return out
+
+
+def extract_edges(R: Raster, frame: geo.Frame, seed_xy: np.ndarray, iterations: int = 3,
+                  bridge=None) -> EdgeResult:
+    """`bridge`: curated spans ({side, from, to} lap fractions) where the imagery
+    edge is known to be wrong (a pit lane merging without a painted line); those
+    stations count as unseen, so the edge is bridged and reported as such."""
     seed0, _ = geo.resample_closed(seed_xy, STEP_S)
     cur = seed_xy
     typical = None
@@ -257,8 +272,8 @@ def extract_edges(R: Raster, frame: geo.Frame, seed_xy: np.ndarray, iterations: 
         mid, nrm, total, out = _extract_once(R, frame, cur, typical)
         hl, el = out["left"]
         hr, er = out["right"]
-        seen_l = el > WEAK_CONTRAST
-        seen_r = er > WEAK_CONTRAST
+        seen_l = (el > WEAK_CONTRAST) & ~_bridged(len(el), bridge, "left")
+        seen_r = (er > WEAK_CONTRAST) & ~_bridged(len(er), bridge, "right")
         hl = _fill_and_smooth(hl, seen_l)
         hr = _fill_and_smooth(hr, seen_r)
         centre = mid + nrm * ((hl - hr) / 2.0)[:, None]

@@ -755,6 +755,14 @@ def apply_layout(raw: Path, layout: dict, osm: dict | None = None) -> dict | Non
             if L.get("kind") in ("timing_sectors",):
                 feats.append(_line_feature(f"{it['id']}-start", "sector_boundary", it["start_line"], range=it["id"]))
 
+    # the OSM centerline is the seed of the next measurement: keep it before the
+    # outline becomes the midline (seeding from the midline feeds errors back)
+    osm_outline = next(f for f in cl_gj["features"] if f["properties"].get("role") == "outline")
+    if osm_outline["properties"].get("basis") != "midline":
+        (raw / f"seed-{layout['id']}.geojson").write_text(json.dumps(
+            {"type": "Feature", "properties": {"role": "seed", "layout": layout["id"],
+             "use": "seed of measure_surface.py (OSM centerline, lap origin at start/finish); not the lap basis"},
+             "geometry": osm_outline["geometry"]}, separators=(",", ":")))
     _write_outline(raw / layout["geometry"]["centerline"], cl_gj, G, layout)
     layout["geometry"]["basis"] = "midline"
 
