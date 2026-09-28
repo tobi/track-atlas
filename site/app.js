@@ -357,7 +357,7 @@ class TrackPage extends Light {
 
   issueUrl(c) {
     const lo = this.layout;
-    const body = `Track: ${this.t.slug} / layout ${lo.id}\nCorner: ${turnCode(c)} (${c.id})\n\nCurrent: ${JSON.stringify({ labels: c.labels, direction: c.direction, marker: c.marker })}\n\nProposed \`overrides.json\` patch:\n\n\`\`\`json\n${JSON.stringify({ [lo.id]: { corners: { [c.number]: { official: c.labels?.official || "", direction: c.direction } } } }, null, 2)}\n\`\`\`\n\nEvidence / source:\n`;
+    const body = `Track: ${this.t.slug} / layout ${lo.id}\nCorner: ${turnCode(c)} (${c.id})\n\nCurrent: ${JSON.stringify({ labels: c.labels, direction: c.direction, marker: c.marker })}\n\nProposed \`track.py\` line:\n\n\`\`\`python\nlap.corner(${c.number}, official=${JSON.stringify(c.labels?.official || "")}, direction=${JSON.stringify(c.direction)})\n\`\`\`\n\nEvidence / source:\n`;
     return `${GH}/issues/new?${new URLSearchParams({ title: `${this.t.name}: ${turnCode(c)} ${cornerName(c, "official")}`, body })}`;
   }
 
@@ -399,8 +399,7 @@ class TrackPage extends Light {
       <button class="btn" @click=${(e) => navigator.clipboard.writeText(JSON.stringify(t, null, 2)).then(() => (e.target.textContent = "Copied"))}>Copy track JSON</button>
       <h3 class="h">Improve it</h3>
       <ul class="links">
-        <li><a href=${`${GH}/edit/${BRANCH}/tracks/${t.slug}/overrides.json`} target="_blank" rel="noopener">Edit overrides.json</a><span>names, directions, markers</span></li>
-        <li><a href=${`${GH}/edit/${BRANCH}/tracks/${t.slug}/source.json`} target="_blank" rel="noopener">Edit source.json</a><span>layouts, start/finish, sources</span></li>
+        <li><a href=${`${GH}/edit/${BRANCH}/tracks/${t.slug}/track.py`} target="_blank" rel="noopener">Edit track.py</a><span>sources, layouts, curation</span></li>
         <li><a href=${`${raw}/README.md`} target="_blank" rel="noopener">Curation notes</a><span>what was checked and why</span></li>
       </ul>
       <h3 class="h">Licence</h3>

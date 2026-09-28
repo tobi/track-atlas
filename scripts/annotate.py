@@ -4,7 +4,7 @@ annotate.py — ask a model to fill corner names, complexes, direction, scale
 and flag any data errors it spots.
 
 Usage:
-    python scripts/annotate.py <slug>            # writes tracks/<slug>/overrides.json
+    python scripts/annotate.py <slug>            # appends corner() calls to tracks/<slug>/track.py
     python scripts/annotate.py silverstone --dry  # print proposed overrides, don't write
 
 The model is given:
@@ -12,7 +12,7 @@ The model is given:
   - the GeoJSON outline + corner point coordinates
   - the track's declared metadata (length, direction, country, series)
 
-It returns structured JSON we merge into overrides.json.
+It returns structured JSON appended to track.py as corner() calls.
 
 Model: reads ANTHROPIC_API_KEY from env; calls the model set in ANNOTATE_MODEL
 (default: claude-fable-5 via the anthropic messages API directly -- no DSPy
@@ -218,26 +218,6 @@ def parse_response(text: str) -> dict:
     return json.loads(t)
 
 
-def merge_overrides(existing: dict, new_data: dict) -> dict:
-    """Deep-merge new_data into existing overrides (new wins on conflicts)."""
-    result = json.loads(json.dumps(existing))
-    for layout_id, layout_data in new_data.items():
-        if layout_id not in result:
-            result[layout_id] = {}
-        for key, val in layout_data.items():
-            if key == "corners":
-                if "corners" not in result[layout_id]:
-                    result[layout_id]["corners"] = {}
-                for num, cdata in val.items():
-                    result[layout_id]["corners"][num] = {
-                        **result[layout_id]["corners"].get(num, {}),
-                        **{k: v for k, v in cdata.items() if v is not None}
-                    }
-            else:
-                result[layout_id][key] = val
-    return result
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("slug")
@@ -299,16 +279,15 @@ def main():
             print(f"  T{num:>2} {cname:<22}  " + "  |  ".join(changes))
 
     if args.dry:
-        print("\n[dry run] proposed overrides.json content:")
+        print("\n[dry run] proposed curation:")
         print(json.dumps(new_data, indent=2))
         return
 
-    # Merge into existing overrides.json
-    ov_path = TRACKS / slug / "overrides.json"
-    existing = json.loads(ov_path.read_text()) if ov_path.exists() else {}
-    merged = merge_overrides(existing, new_data)
-    ov_path.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n")
-    print(f"\n[annotate] wrote {ov_path}")
+    # Append to the track definition; later corner() calls win per field
+    from lib.dsl import append_curation
+    path = TRACKS / slug / "track.py"
+    n = append_curation(path, new_data, f"annotate.py ({args.model}): review before committing")
+    print(f"\n[annotate] appended {n} calls to {path}")
     print("Run: python scripts/generate.py", slug, "&& python scripts/verify.py", slug)
 
 

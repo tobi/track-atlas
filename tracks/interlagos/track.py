@@ -1,0 +1,139 @@
+from lib.dsl import Track, osm
+
+t = Track(
+    "interlagos",
+    "Autodromo Jose Carlos Pace",
+    aka=["Interlagos"],
+    country="BR",
+    series=["wec", "f1"],
+    location=dict(
+        lat=-23.7022,
+        lon=-46.6932,
+        locality="Sao Paulo",
+        region="Sao Paulo",
+        timezone="America/Sao_Paulo",
+    ),
+    external_ids=dict(imsa_data="sao-paulo"),
+    osm=osm([-23.7322, -46.7232, -23.6722, -46.6632], relation=6781071),
+    lovely=dict(gp="lmu/autodromo-jose-carlos-pace.json"),
+)
+
+# -- gp --------------------------------------------------------------------
+lap = t.layout("gp", "Grand Prix Circuit", length_m=4309, direction="anticlockwise", lovely="gp")
+lap.summary(
+    "T7 direction wrong (should be left), T6 scale should be 2, T15 direction wrong (should be right), T8 naming unclear, T13 questionable as separate corner",
+)
+lap.corner(
+    1,
+    driver="Senna S",
+    official="Descida do S do Senna",
+    complex="Senna S",
+    direction="left",
+    scale=2,
+    error="scale 3 too generous — T1 is a heavy-braking 2nd-gear left at the top of the Senna S, scale 2",
+)
+lap.corner(
+    2,
+    driver="Senna S",
+    official="Senna S",
+    complex="Senna S",
+    direction="right",
+    scale=3,
+    error="scale 4 slightly high — the right-hand exit of the Senna S is a medium-speed compromise corner, scale 3",
+)
+lap.corner(3, driver="Curva do Sol", official="Curva do Sol", direction="left", scale=4)
+lap.corner(
+    4,
+    driver="Descida do Lago",
+    official="Descida do Lago",
+    complex="Descida do Lago",
+    direction="left",
+    scale=4,
+)
+lap.corner(
+    5,
+    complex="Descida do Lago",
+    direction="left",
+    scale=5,
+    driver="Descida do Lago",
+    official="Descida do Lago",
+)
+lap.corner(
+    6,
+    driver="Ferradura",
+    official="Ferradura",
+    direction="right",
+    scale=2,
+    error="scale should be 2 not 3 - this is a slow hairpin-like corner, not medium speed",
+)
+lap.corner(
+    7,
+    driver="Laranjinha",
+    official="Laranjinha",
+    direction="left",
+    scale=2,
+    error="direction should be left not right - the corner turns left after Ferradura",
+)
+lap.corner(
+    8,
+    direction="left",
+    scale=4,
+    error="this corner is often labeled as part of Pinheirinho complex - T8 is the kink before the main Pinheirinho left at T9",
+    driver="Pinheirinho",
+    official="Pinheirinho",
+)
+lap.corner(
+    9,
+    driver="Pinheirinho",
+    official="Pinheirinho",
+    direction="left",
+    scale=3,
+    error="scale 6 wrong — Pinheirinho is a proper medium-speed 90°+ left, not a kink; scale 3",
+)
+lap.corner(
+    10,
+    driver="Bico de Pato",
+    official="Bico de Pato",
+    direction="right",
+    scale=2,
+    error="scale 6 badly wrong — Bico de Pato is a near-hairpin right and one of the slowest corners on the lap, scale 2",
+)
+lap.corner(
+    11,
+    driver="Mergulho",
+    official="Mergulho",
+    direction="left",
+    scale=4,
+    error="scale 5 slightly high — Mergulho is a fast committed left but loaded and downhill, scale 4",
+)
+lap.corner(
+    12,
+    driver="Juncao",
+    official="Junção",
+    direction="left",
+    scale=2,
+    error="scale 3 slightly generous — Junção is a slow 2nd/3rd-gear left that sets up the entire climb to the line, scale 2",
+)
+lap.corner(
+    13,
+    direction="left",
+    scale=6,
+    driver="Juncao",
+    official="Junção",
+    error="this is typically considered part of the Juncao complex with T12, not a separate corner - it's a minor kink on exit of T12",
+)
+lap.corner(
+    14,
+    driver="Subida dos Boxes",
+    official="Subida dos Boxes",
+    direction="left",
+    scale=6,
+)
+lap.corner(
+    15,
+    driver="Arquibancadas",
+    official="Arquibancadas",
+    direction="right",
+    scale=4,
+    error="direction should be right not left - this corner turns right before the main straight",
+)

@@ -13,9 +13,9 @@ Specs: `docs/GEOMETRY.md`. Sources, licences and served frames: `docs/SOURCES.md
 ## Workflow
 
 ```bash
-# 1. opt in: tracks/<slug>/source.json
-#    "surface": {}                      auto imagery + auto lidar, every layout
-#    "surface": {"layouts": ["imsa"]}   only some layouts
+# 1. opt in: tracks/<slug>/track.py
+#    t.surface()                        auto imagery + auto lidar, every layout
+#    t.surface(layouts=["imsa"])        only some layouts
 uv run python scripts/measure_surface.py <slug> --find-lidar   # optional: every 3DEP survey on the lap
 uv run python scripts/measure_surface.py <slug>                # network, minutes; writes raw/surface-<layout>.json
 uv run python scripts/generate.py <slug>                       # offline: applies it (midline basis)
@@ -33,7 +33,7 @@ Surface-only reapply (no Lovely/OSM rebuild): `uv run python scripts/build_geome
 - **Lidar.** `lib/lidar.pick(lap)` takes surveys covering at least 95% of the lap. Those with a stated accuracy come first (sharpest first), then the newest. At most three are used.
   - The first survey that registers is the reference. The others are checks.
   - With two surveys, their per-window difference separates estimator noise from real non-rigid imagery distortion.
-- Pin `"imagery": "<id>"` or `"lidar": [...]` only to investigate one source. Unpin before committing.
+- Pin `t.surface(imagery="<id>")` or `t.surface(lidar=[...])` only to investigate one source. Unpin before committing.
 
 ## Adding an imagery source
 
@@ -63,7 +63,7 @@ The console and `raw/surface-<layout>.json` report:
 - Paved run-off without a painted line, pit merges, bridges and tree shadow. Look at the edges over the imagery at every corner before committing.
 - Registration refused (`no reliable registration`): the window spread exceeded 1.5 m. The imagery is not coherent with that survey.
 - A curvature lobe matched one lobe off in esses (COTA T7-T9). Check `placement.marker_offset_m` for outliers.
-- Curated direction disagrees with the measured one: fix `direction` in `overrides.json`, never in `raw/track.json`.
+- Curated direction disagrees with the measured one: fix `direction` with a `lap.corner(...)` call in `track.py`, never in `raw/track.json`.
 
 ## Rules
 

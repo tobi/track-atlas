@@ -14,7 +14,7 @@ Front straight / T1 entry (0.10-0.167): the pit-exit lane merges beside the
 straight without a painted line and the oval continues past road-course T1, so
 the imagery edges wandered onto the pit lane (right) and the oval (left) and
 put a false right-left wiggle into the midline. Both edges are bridged there by
-`source.json` `surface.bridge` (reported in `unseen_spans`); the midline is now
+`t.bridge(...)` calls in `track.py` (reported in `unseen_spans`); the midline is now
 straight within 0.5 m to 0.13 and tapers ~2.6 m into the T1 turn-in.
 
 Corner directions are still unset (the Lovely iracing source has none); the

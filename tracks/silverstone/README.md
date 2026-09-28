@@ -22,7 +22,7 @@
 - Cleanest possible case: single OSM area, every corner name resolves.
 - Lovely repeats names across multi-apex complexes (Maggotts×2, Becketts×2,
   Vale×2) and gives **no turn numbers** — numbers are synthesized, repeats are
-  grouped via `overrides.json` `complex`.
+  grouped via `complex=` on `lap.corner(...)` calls in `track.py`.
 - British circuits mostly use the colloquial name officially, so `official` and
   `colloquial` largely coincide here.
 

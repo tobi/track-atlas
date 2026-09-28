@@ -3,7 +3,7 @@
 
 Usage: python scripts/probe_relation.py <slug> [<slug>...]
 Prints candidate relation ids + names so a human (or agent) can pick the right
-one and put it into source.json osm.relation.
+one and put it into track.py osm(relation=...).
 """
 import json
 import sys

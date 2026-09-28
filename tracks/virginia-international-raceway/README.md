@@ -4,7 +4,7 @@
 
 - **Layout**: Full Course (5262 m, clockwise)
 - **Series**: imsa
-- **Corners**: 17, curated `replace_corners` in `overrides.json`
+- **Corners**: 17, curated with `lap.corners([...])` in `track.py`
 - **Geometry**: OSM relation [15765486](https://www.openstreetmap.org/relation/15765486) centerline
 - **Corner metadata**: Lovely-Sim-Racing `iracing/virginia-2022-full.json`
 
@@ -43,4 +43,4 @@ places ("Climbing Esses" on two rights, an invented "Spiral"). Replaced with:
 | 17 | Hog Pen | R | 0.8547 | R49, -64 deg (+ R80 0.8801) | "Turn 17" at 0.0835, copied from Lovely's duplicate "Turn 18" (same range as the Horseshoe), no peak |
 
 The reviewed unnamed peaks (0.0838, 0.2448, 0.5139) are second lobes of T1,
-T7 and T13 (`overrides.json` `gp.surface_review`).
+T7 and T13 (`lap.unnamed(...)` in `track.py`).

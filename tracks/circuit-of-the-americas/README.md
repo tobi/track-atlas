@@ -19,7 +19,7 @@ directions.
   0.024 lap past the finish line, so every Lovely marker sat 90-190 m before
   its OSM `Turn N` way. T7 (left) therefore matched the second apex of T6 (a
   right) and verify reported a direction contradiction; t8, t13, t17 and t19
-  found no peak. `source.json` `start_finish` is now the relation's
+  found no peak. `track.py`'s `start_finish` kwarg is now the relation's
   `role=finish` node (13826373967). T7 was never mis-declared: OSM `Turn 7`
   holds a single left peak (R29, +78 deg), so its direction stays left.
 - **Markers** set to the measured peak inside each OSM `Turn N` way (all within

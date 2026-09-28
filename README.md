@@ -102,9 +102,7 @@ track-atlas/
 └── tracks/
     ├── index.json               # GENERATED: the catalog the site reads
     └── <slug>/
-        ├── source.json          # INPUT: declares where this track's base data comes from
-        ├── generation-config.json # INPUT (optional): URLs/files + layer tools for generated range/point layers
-        ├── overrides.json       # INPUT: curated names/fixes (hand- or LLM-authored)
+        ├── track.py             # INPUT: source, layouts, curation and generated-layer config (scripts/lib/dsl.py)
         ├── README.md            # INPUT: state of this track's data (embeds the poster)
         ├── scripts/             # INPUT (optional): per-track import.py / generate.py
         └── raw/                 # GENERATED — everything the build can recreate:
@@ -120,14 +118,13 @@ are the source of truth. Edit them and re-run `build_schema.py`; never hand-edit
 
 **INPUTS are authored (by hand or LLM); everything in `raw/` is GENERATED** and
 never hand-edited — the build recreates it. The test for "input vs generated" is
-reproducibility: the build *consumes* `source.json`/`overrides.json` but cannot
-recreate them, so they're inputs (even when an LLM writes the overrides). The
-flow:
+reproducibility: the build *consumes* `track.py` but cannot recreate it, so it's
+an input (even when an LLM appends the curation calls). The flow:
 
 ```
-source.json ──import.py──> raw/{osm,lovely}.json ──generate.py──> raw/track.json + raw/layers/*.geojson
-overrides.json ──────────────────────────────────────────┘            │   (corner phases computed in)
-generation-config.json ──build_layers.py / layer_tools───────────────┘   (optional timing/microsector/slow-zone layers)
+track.py ──import.py──> raw/{osm,lovely}.json ──generate.py──> raw/track.json + raw/layers/*.geojson
+     │  (source + overrides + generation, scripts/lib/dsl.py)      │   (corner phases computed in)
+     └──────────────────────────────────────build_layers.py / layer_tools──┘   (optional timing/microsector/slow-zone layers)
                                        render.py        ──> raw/render/<slug>.{svg,png}
                                        build_index.py   ──> tracks/index.json
                                        build_jsonl.py   ──> tracks.jsonl   (the dataset)
@@ -210,7 +207,7 @@ inherits the `official` name unless a distinct nickname is set or it's cleared.
 
 ## Surface geometry (edges, crossing lines, apexes)
 
-Where a layout has a measured surface (`source.json` `"surface": {"imagery": "naip"}`,
+Where a layout has a measured surface (`t.surface(imagery="naip")` in `track.py`,
 US tracks), `raw/layers/<id>.surface.geojson` holds the left and right track
 edges (driving direction), the derived midline, the surface polygon, the OSM pit
 lane, and lines across the track for start/finish, pit entry/exit, sector
@@ -238,55 +235,50 @@ the authoritative continuous lap, including public-road sections that aren't
 tagged `highway=raceway` (Le Mans' Mulsanne straight is the D338). Pit-lane
 members and duplicated way refs in the relation are filtered out.
 
-## source.json (base track metadata)
+## track.py (base track metadata, curation and generated layers)
 
-```jsonc
-{
-  "slug": "circuit-de-la-sarthe",
-  "name": "Circuit de la Sarthe",
-  "aka": ["La Sarthe", "Le Mans"],
-  "country": "FR",
-  "wikidata": "Q270760",
-  "series": ["wec"],
-  "external_ids": {"imsa_data": "le-mans"},
-  "location": {"lat": 47.95, "lon": 0.2247, "locality": "Le Mans",
-               "region": "Pays de la Loire", "timezone": "Europe/Paris"},
-  "lovely": {"24h": "lmu/circuit-de-la-sarthe.json"},   // layout key -> file in lovely-track-data
-  "osm": {
-    "bbox": [47.90, 0.15, 47.98, 0.28],                  // south, west, north, east
-    "relation": 2126739                                  // OSM route/circuit relation id
-  },
-  "layouts": [
-    {"id": "24h", "name": "Circuit des 24 Heures", "length_m": 13626,
-     "direction": "clockwise", "active_years": "2018-", "lovely": "24h"}
-  ],
-  "surface": {"imagery": "naip"}   // optional: measure track edges (US only), docs/GEOMETRY.md
-}
+Every track is one Python file, built with the DSL in `scripts/lib/dsl.py`
+(read it, plus `tracks/indianapolis/track.py`, `tracks/sebring/track.py` and
+`tracks/watkins-glen/track.py` as examples):
+
+```python
+from lib.dsl import Track, osm
+
+t = Track(
+    "circuit-de-la-sarthe", "Circuit de la Sarthe",
+    aka=["La Sarthe", "Le Mans"], country="FR", wikidata="Q270760",
+    series=["wec"], external_ids=dict(imsa_data="le-mans"),
+    location=dict(lat=47.95, lon=0.2247, locality="Le Mans",
+                   region="Pays de la Loire", timezone="Europe/Paris"),
+    lovely=dict(**{"24h": "lmu/circuit-de-la-sarthe.json"}),  # layout key -> file in lovely-track-data
+    osm=osm([47.90, 0.15, 47.98, 0.28], relation=2126739),    # bbox (s,w,n,e) + OSM route/circuit relation id
+)
+t.surface(imagery="naip")   # optional: measure track edges (US only), docs/GEOMETRY.md
+
+h24 = t.layout("24h", "Circuit des 24 Heures", length_m=13626,
+               direction="clockwise", active_years="2018-", lovely="24h")
 ```
 
-Optional per-layout keys: `centerline` (`"relation"` or `"stitched"`: pin the
-centerline candidate when the automatic score picks wrong), `start_finish`
-(`{location, note}`: pin the lap origin), `pit` (`{entry, exit}` fractions).
+`t.layout(...)` also takes the optional per-layout keys `centerline` (`"relation"`
+or `"stitched"`: pin the centerline candidate when the automatic score picks
+wrong), `start_finish` (`{location, note}`: pin the lap origin), `pit` (`{entry,
+exit}` fractions).
 
-## generation-config.json (optional generated layers)
+Curate what the sources got wrong on the returned `Layout` (`lap.corner(...)`,
+`lap.corners([...])`, `lap.summary(...)`, `lap.unnamed(...)`,
+`lap.unplaceable(...)`) — see "Curate" below — and declare generated range/point
+layers with `lap.layer(id, tool, resources, params)`, for example IMSA
+microsectors, official timing sectors, WEC slow zones, timing loops, speed
+traps, or curvature-derived apex/corner candidates. The runner downloads/copies
+`resources` into `raw/layer-sources/<config-id>/` before invoking the tool, so
+tools are pure stdin→stdout transforms:
 
-Use this when an external source or deterministic analysis can be transformed into extra layout layers,
-for example IMSA microsectors, official timing sectors, WEC slow zones, timing
-loops, speed traps, or curvature-derived apex/corner candidates. A config names the layout, converter tool, input URLs or
-files, and all parameters the tool needs. The runner downloads/copies resources
-into `raw/layer-sources/<config-id>/` before invoking the tool, so tools are pure
-stdin→stdout transforms.
-
-```jsonc
-{
-  "layers": [{
-    "id": "imsa_microsectors_2026",
-    "layout": "gp",
-    "tool": "imsa_timing_pdf",
-    "resources": {"pdf": {"url": "https://.../03_Timing%20All%20Sections%20Map.pdf"}},
-    "params": {"layer_id": "imsa_microsectors", "count": 11, "item_prefix": "ms"}
-  }]
-}
+```python
+lap.layer(
+    "imsa_microsectors_2026", "imsa_timing_pdf",
+    dict(pdf=dict(url="https://.../03_Timing%20All%20Sections%20Map.pdf")),
+    dict(layer_id="imsa_microsectors", count=11, item_prefix="ms"),
+)
 ```
 
 See `skills/layer-tools/SKILL.md` for the contract and source patterns. Run
@@ -307,12 +299,12 @@ also consume the same curvature candidates.
    Take the relation whose name matches the racing lap (e.g. Silverstone
    `51160 "Silverstone Grand Prix"`, Le Mans `2126739`). No relation? Leave it
    out — the pipeline falls back to stitching named `highway=raceway` ways from
-   the bbox (lower quality; expect to add `overrides.json`).
+   the bbox (lower quality; expect to add curation calls to `track.py`).
 2. **Find the Lovely file**: browse
    [Lovely-Sim-Racing/lovely-track-data](https://github.com/Lovely-Sim-Racing/lovely-track-data)
    `tracks/<sim>/<track>.json`. Pick the richest sim variant (lmu > f12025 >
    iracing > acc, roughly — prefer one with turn numbers AND names).
-3. `mkdir tracks/<slug>` and write `source.json` (template above).
+3. `mkdir tracks/<slug>` and write `track.py` (copy a similar track's, template above).
 4. ```
    uv run python scripts/import.py <slug>      # network: fills raw/
    uv run python scripts/generate.py <slug>    # offline: track.json + layers/
@@ -320,28 +312,26 @@ also consume the same curvature candidates.
    uv run python scripts/verify.py <slug>      # must PASS
    ```
    Watch the `corners matched to OSM geometry: N/M` line from generate.
-5. **Curate** what the sources got wrong in `tracks/<slug>/overrides.json`
-   (keyed by layout id, then corner number — `official`/`driver`/other name
-   layers, `complex` grouping, `code`, direction/scale fixes). A name layer set
-   to `null` clears it (so the display falls back to the number):
-   ```jsonc
-   {"24h": {"corners": {
-     "14": {"official": "Virage Porsche", "driver": "Porsche Curves",
-            "complex": "Porsche Curves"},
-     "8":  {"official": "Sunset Bend", "driver": null}  // drivers say "Turn 8"
-   }}}
+5. **Curate** what the sources got wrong with `lap.corner(number, ...)` calls
+   appended to `tracks/<slug>/track.py` (`official`/`driver`/other name layers,
+   `complex` grouping, `code`, direction/scale fixes). A field set to `None`
+   clears it (so the display falls back to the number):
+   ```python
+   h24 = t["24h"]
+   h24.corner(14, official="Virage Porsche", driver="Porsche Curves", complex="Porsche Curves")
+   h24.corner(8, official="Sunset Bend", driver=None)  # drivers say "Turn 8"
    ```
    `driver` defaults to the `official` name when you don't set it. Re-run
-   generate + render + verify after edits. A `"*"` key applies its corner
-   overrides to **every** layout (curation shared by series variants), with
-   layout-specific keys winning per corner.
+   generate + render + verify after edits. `t.every_layout` (or `t["*"]`)
+   applies its corner curation to **every** layout (curation shared by series
+   variants), with layout-specific calls winning per corner.
 
    **Multiple layouts / series variants.** When one circuit has configs that
-   differ (e.g. Sebring's pit in/out for IMSA vs WEC), add one `layout` per
-   config in `source.json` — same `lovely`/`osm` geometry, distinguished by `id`,
+   differ (e.g. Sebring's pit in/out for IMSA vs WEC), add one `t.layout(...)`
+   call per config — same `lovely`/`osm` geometry, distinguished by `id`,
    `series`, and a `pit` override. This is the "separate full layouts" model:
    each is a complete layout (geometry duplicated), and the site lets you browse
-   between them. Share their corner curation via the `"*"` overrides key.
+   between them. Share their corner curation via `t.every_layout`.
 6. Write a short `tracks/<slug>/README.md` (data state, known gaps, sources)
    and commit everything **including `raw/`** (reproducibility artifacts).
 

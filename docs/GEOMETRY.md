@@ -29,12 +29,12 @@ uv run python scripts/generate.py road-atlanta          # offline: applies it (o
 uv run python scripts/verify.py road-atlanta
 ```
 
-A track opts in with `source.json`:
+A track opts in with `t.surface()` in `track.py`:
 
-```jsonc
-"surface": {}                                        // auto imagery, auto lidar, every layout
-"surface": {"layouts": ["imsa"]}                     // only these layouts
-"surface": {"imagery": "naip", "lidar": ["GA_Statewide_B3_2018"]}   // pinned (debugging only)
+```python
+t.surface()                                                          # auto imagery, auto lidar, every layout
+t.surface(layouts=["imsa"])                                          # only these layouts
+t.surface(imagery="naip", lidar=["GA_Statewide_B3_2018"])            # pinned (debugging only)
 ```
 
 **Auto selection** (the default; pin only to investigate a source):
@@ -228,7 +228,7 @@ cached. RGB-only sources use chroma and brightness (no NDVI).
    `unseen_spans`, never hidden. A curator can force a span unseen where the
    imagery edge is known to follow the wrong surface (a pit lane merging
    without a painted line, an oval continuing past a road-course turn):
-   `source.json` `surface.bridge: [{side, from, to, note}]` (lap fractions on
+   `t.bridge(side, from, to, note)` in `track.py` (lap fractions on
    the seed; recorded as `quality.curated_bridges`).
 7. **Loop removal.** Offsetting a tight inside edge (or a V-shaped kink in the
    seed) can fold it into a swallowtail. `geo.remove_loops` cuts every loop
@@ -332,7 +332,7 @@ crossing line ends on both edges.
    geometric apex is only the fallback (`apex.basis = "curvature"`).
 6. The measured direction is authoritative for `apex.edge`; a disagreeing
    curated direction is recorded in `placement.declared_direction` and warned
-   by `verify.py` (fix it in `overrides.json`).
+   by `verify.py` (fix it with a `lap.corner(...)` call in `track.py`).
 
 Crossing lines are the edge-to-edge segment along the midline normal at the
 station. Pit-lane features are OSM ways named or tagged as pit lane whose ends
@@ -403,13 +403,12 @@ position record. Info: the budget line; absolute accuracy above the 2 m
 racing-line gate.
 
 A curator who has checked an unnamed peak or an unplaceable corner records the
-verdict in `tracks/<slug>/overrides.json` (per layout, or `"*"`):
+verdict with `lap.unnamed(...)` / `lap.unplaceable(...)` calls in
+`tracks/<slug>/track.py` (per layout, or on `t.every_layout`):
 
-```json
-{"gp": {"surface_review": {
-  "unnamed": [{"marker": 0.0515, "direction": "left", "verdict": "artefact",
-               "note": "pit-lane split pulls the midline"}],
-  "corners": {"9": "straight-line kink, R 350 m / 6 deg"}}}}
+```python
+lap.unnamed(0.0515, "left", "artefact", "pit-lane split pulls the midline")
+lap.unplaceable(9, "straight-line kink, R 350 m / 6 deg")
 ```
 
 Review markers are on the output (midline) basis, as `surface.unnamed_corners`

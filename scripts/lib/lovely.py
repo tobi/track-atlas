@@ -15,7 +15,7 @@ def corners_from_lovely(lovely: dict) -> list[dict]:
     source omits them (several sims, e.g. F1 2025 / iRacing, give names but no
     turn numbers). Lovely's free-text 'name' is treated as the 'driver' layer --
     what the data community/drivers call the corner. Official names are layered
-    in later via overrides.json. A per-track default chooses which layer to
+    in later via track.py corner(). A per-track default chooses which layer to
     surface.
     """
     out = []

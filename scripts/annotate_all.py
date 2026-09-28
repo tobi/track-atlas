@@ -26,10 +26,8 @@ def run(cmd, **kw):
 
 
 def slugs():
-    return sorted(
-        p.name for p in TRACKS.iterdir()
-        if p.is_dir() and (p / "source.json").exists()
-    )
+    from lib.config import slugs as all_slugs
+    return all_slugs()
 
 
 def main():

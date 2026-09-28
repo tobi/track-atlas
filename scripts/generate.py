@@ -26,7 +26,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib.config import TRACKS, load_source, track_dir  # noqa: E402
+from lib.config import TRACKS, load_overrides, load_source, slugs as all_slugs, track_dir  # noqa: E402
 from lib.lovely import (  # noqa: E402
     corners_from_lovely, pit_from_lovely, sectors_s1s3,
 )
@@ -197,8 +197,7 @@ def generate_track(slug: str) -> dict:
             if lf.exists():
                 lovely = json.loads(lf.read_text())
 
-        ov_file = tdir / "overrides.json"
-        ov_all = json.loads(ov_file.read_text()) if ov_file.exists() else {}
+        ov_all = load_overrides(slug)
         layout_ov = {**ov_all.get("*", {}), **ov_all.get(lid, {})}
         corners = (_corners_from_override(layout_ov["replace_corners"])
                    if layout_ov.get("replace_corners") else corners_from_lovely(lovely))
@@ -222,7 +221,7 @@ def generate_track(slug: str) -> dict:
                     break
 
         # Curated overrides: name layers + complex group / direction / scale /
-        # code that upstream sources lack. tracks/<slug>/overrides.json, keyed
+        # code that upstream sources lack (tracks/<slug>/track.py), keyed
         # by layout id then corner number:
         #   {"24h": {"corners": {"14": {"official": "Virage Porsche",
         #                               "driver": "Porsche Curves",
@@ -314,7 +313,7 @@ def generate_track(slug: str) -> dict:
         geometry_summary = {"layout": lid, "candidates": []}
         if candidates:
             candidates.sort(key=lambda x: x[0])
-            # source.json may pin the candidate when the score picks wrong (the
+            # track.py may pin the candidate when the score picks wrong (the
             # stitched ways can skip a chicane and still match the declared length)
             forced = layout.get("centerline")
             if forced and any(name == forced for _, name, _, _ in candidates):
@@ -441,7 +440,7 @@ def generate_track(slug: str) -> dict:
                     geometry_summary.setdefault("selected_score", None)
                     outline_coords.append(outline_coords[0])  # close the loop
         geometry_summaries.append(geometry_summary)
-        # Curated apex markers (overrides.json "marker") replace the Lovely lap
+        # Curated apex markers (track.py corner(marker=...)) replace the Lovely lap
         # fraction only AFTER the lap origin/orientation has been learned from
         # the upstream markers, so a marker fix never shifts start/finish.
         for c in corners:
@@ -693,7 +692,7 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.all:
-        slugs = [p.name for p in TRACKS.iterdir() if (p / "source.json").exists()]
+        slugs = all_slugs()
     elif args.slug:
         slugs = [args.slug]
     else:

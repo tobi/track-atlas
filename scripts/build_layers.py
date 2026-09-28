@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run per-track layer configs and merge produced layers into raw/track.json.
 
-This is useful after editing tracks/<slug>/generation-config.json without
+This is useful after editing the layers in tracks/<slug>/track.py without
 re-running the whole source import/generate step. generate.py also calls this automatically for
 each track after it writes the base track.json.
 
@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib.config import TRACKS  # noqa: E402
+from lib.config import load_generation, slugs as all_slugs  # noqa: E402
 from lib.layer_runner import run_layer_configs  # noqa: E402
 
 
@@ -27,13 +27,13 @@ def main() -> None:
     ap.add_argument("--all", action="store_true")
     args = ap.parse_args()
     if args.all:
-        slugs = [p.name for p in TRACKS.iterdir() if (p / "source.json").exists()]
+        slugs = all_slugs()
     elif args.slug:
         slugs = [args.slug]
     else:
         ap.error("give a slug or --all")
     for slug in slugs:
-        if not (TRACKS / slug / "generation-config.json").exists():
+        if not load_generation(slug):
             continue
         track = run_layer_configs(slug, write=True)
         from lib.surface import apply_track

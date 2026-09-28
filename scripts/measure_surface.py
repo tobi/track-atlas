@@ -13,7 +13,7 @@ to the atlas datum (`lib/position.py`), and writes the committed measurement
 generate.py / build_geometry.py consume it offline; nothing downstream needs
 the imagery again.
 
-Only tracks whose source.json has a surface block are measured:
+Only tracks whose track.py calls t.surface() are measured:
 
     "surface": {}                                   // = {"imagery": "auto", "lidar": "auto"}
     "surface": {"imagery": "naip", "lidar": ["GA_Statewide_B3_2018"]}   // pinned
@@ -44,7 +44,7 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import edges, geo, lidar, position  # noqa: E402
-from lib.config import TRACKS, load_source, raw_dir  # noqa: E402
+from lib.config import TRACKS, load_source, raw_dir, slugs as all_slugs  # noqa: E402
 from lib.imagery import SOURCES, covering, fetch_imagery, load_raster  # noqa: E402
 
 EDGE_SIMPLIFY_M = 0.05     # Douglas-Peucker tolerance for the stored edges
@@ -247,7 +247,7 @@ def main() -> None:
                 print(f"{args.slug}/{lo['id']}: {name} covers {frac:.0%} of the lap; {acc[1]}")
         return
     if args.all:
-        slugs = sorted(p.name for p in TRACKS.iterdir() if (p / "source.json").exists())
+        slugs = all_slugs()
     elif args.slug:
         slugs = [args.slug]
     else:
@@ -257,7 +257,7 @@ def main() -> None:
         cfg = src.get("surface") or {}
         if "surface" not in src:
             if args.slug:
-                print(f"[{slug}] source.json has no surface block; nothing to measure")
+                print(f"[{slug}] track.py has no t.surface(); nothing to measure")
             continue
         for lo in src["layouts"]:
             if cfg.get("layouts") and lo["id"] not in cfg["layouts"]:

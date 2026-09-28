@@ -7,7 +7,7 @@
   - `wec` — pit entry/exit 0.9675 / 0.0608
   - `imsa` — pit entry/exit 0.9675 / 0.0608
 - **Series**: imsa, wec
-- **Corners**: 17; shared curation in the `"*"` block of `overrides.json`
+- **Corners**: 17; shared curation on `t.every_layout` in `track.py`
 - **Geometry**: OSM relation [7003292](https://www.openstreetmap.org/relation/7003292) centerline
 - **Pit geometry**: pit-lane endpoints projected from the OSM `Pit Lane` way to
   the lap centerline.
@@ -17,9 +17,9 @@
 ## Curation notes
 
 Evidence: measured midline curvature (`raw/surface-*.json`), the OSM relation
-centerline and its named corner ways. Eleven unnamed peaks are reviewed in
-`overrides.json` `"*".surface_review`, shared by both layouts because they
-use the same geometry:
+centerline and its named corner ways. Eleven unnamed peaks are reviewed with
+`lap.unnamed(...)` calls on `t.every_layout` in `track.py`, shared by both
+layouts because they use the same geometry:
 
 - Extra lobes inside a named OSM corner way, reviewed as `part_of_corner`:
   - Hairpin exit: 0.3488, 0.3594
