@@ -21,6 +21,19 @@ t = Track(
 t.note(
     "Curated naming layers Lovely/OSM lack. official = circuit/ACO naming, colloquial = what drivers say. complex groups multi-corner sections. Keyed by layout id -> corners -> corner number.",
 )
+t.surface()
+# Where the imagery edge follows the wrong line while "seen" (crops over BD ORTHO
+# 2022); each one made a false curvature pair in the midline.
+t.bridge("right", 0.187, 0.195,
+         "Tertre Rouge exit onto the D338: the right edge jumps from the road edge to a lane line")
+t.bridge("right", 0.355, 0.360,
+         "Hunaudières: the right edge jogs into a lay-by (a false L77)")
+t.bridge("left", 0.876, 0.884,
+         "Karting entry: the left edge cuts in where the painted blue run-off begins (a false R72 notch)")
+t.bridge("left", 0.928, 0.937,
+         "after Corvette: the left edge swerves into the service-road junction by the footbridge (a false L37/R47 pair)")
+t.bridge("left", 0.955, 0.961,
+         "before the Ford chicanes: the left edge traces the skid-pad kerb (a false R68/L70 pair)")
 
 # -- 24h -------------------------------------------------------------------
 lap = t.layout(
@@ -35,6 +48,10 @@ lap = t.layout(
 lap.summary(
     "Directions all verified correct against geometry; main issues: T1 coordinate duplicated from T2, T20 coordinate/marker duplicated from T19, chicane partner corners (T3, T5, T19, T21) were previously left unnamed and outside their complexes, the two Mulsanne chicanes must remain separate despite both being on the Hunaudières/Mulsanne straight, and Mulsanne Corner severity was overrated at 2 instead of 1.",
 )
+# Corners in lap order. Lovely's LMU markers are rounded to 0.01 lap (about
+# 136 m), so the apex of every corner that shares a hundredth with a
+# neighbour is pinned with marker= on the OSM centerline, from the measured
+# curvature peaks (scripts/check_apexes.py) and the BD ORTHO imagery.
 lap.corner(
     1,
     driver="Dunlop Curve",
@@ -51,8 +68,21 @@ lap.corner(
     direction="left",
     scale=4,
 )
+# Lovely's 0.07 is 190 m past the chicane; its right-hand apex (R28) is at 0.0579
+lap.corner(
+    3,
+    marker=0.0579,
+    driver="Dunlop Chicane",
+    official="Chicane Dunlop",
+    complex="Dunlop Chicane",
+    direction="right",
+    scale=4,
+    error="T3 is the second element of the Dunlop Chicane but was left unnamed and unassigned to the complex",
+)
+# the Esses open with the left (R62) at 0.0975; Lovely's 0.11 sat on the following right
 lap.corner(
     4,
+    marker=0.0975,
     driver="Esses de la Forêt",
     official="Esses de la Forêt",
     complex="Esses de la Forêt",
@@ -60,17 +90,32 @@ lap.corner(
     scale=4,
     error="T4 carries the Esses name but complex was null — T4 and T5 together are the Esses de la Forêt",
 )
+# the right of the Esses (R62)
+lap.corner(
+    5,
+    marker=0.1088,
+    driver="Esses de la Forêt",
+    official="Esses de la Forêt",
+    complex="Esses de la Forêt",
+    direction="right",
+    scale=4,
+    error="second element of the Esses left unnamed",
+)
 lap.corner(6, driver="Tertre Rouge", official="Virage du Tertre Rouge")
+# right-left chicane: its tight right entry (R38) at 0.2886; the left (R45, 0.2934) and the exit kink are part of it
 lap.corner(
     7,
+    marker=0.2886,
     driver="First Chicane",
     official="Chicane Daytona",
     direction="right",
     scale=2,
     error="Do not group with the second chicane as 'Mulsanne Straight Chicanes' — the two chicanes are ~2 km apart and drivers call them first chicane / second chicane. This right-left chicane is currently represented by a single apex.",
 )
+# left-right chicane: its tight left entry (R35) at 0.4324; the right (R45, 0.4390) is part of it
 lap.corner(
     8,
+    marker=0.4324,
     driver="Second Chicane",
     official="Chicane Michelin",
     direction="left",
@@ -84,6 +129,15 @@ lap.corner(
     direction="right",
     scale=1,
     error="scale 2 is too generous — Mulsanne Corner is the slowest point on the lap (~1st/2nd gear, ~100° tightening right), should be scale 1",
+)
+lap.corner(
+    10,
+    driver="Indianapolis",
+    official="Virage d'Indianapolis",
+    complex="Indianapolis",
+    direction="right",
+    scale=5,
+    error="T10 is the fast right entry kink of Indianapolis — it should be named and grouped with T11, not left as an anonymous corner",
 )
 lap.corner(
     11,
@@ -102,16 +156,20 @@ lap.corner(
     scale=2,
     error="scale 3 too high — Arnage is a slow 1st/2nd-gear right-hander, scale 2",
 )
+# Virage Porsche: the right (R77) at 0.8332, 230 m before Lovely's 0.85
 lap.corner(
     14,
+    marker=0.8332,
     driver="Porsche Curves",
     official="Virage Porsche",
     complex="Porsche Curves",
     direction="right",
     scale=5,
 )
+# the Porsche left: its first and tightest lobe (R79) at 0.8545; Lovely's 0.87 sat on the last one
 lap.corner(
     15,
+    marker=0.8545,
     driver="Porsche Curves",
     official="Virage du Pont",
     complex="Porsche Curves",
@@ -136,8 +194,10 @@ lap.corner(
     scale=4,
     error="official name should be 'Virage Corvette', not 'Virage du Corvette'; scale 4 rather than 5 — it's the slowest part of the Porsche Curves sequence",
 )
+# first Ford chicane, left (R41); Lovely rounds all four Ford markers to 0.97-0.99
 lap.corner(
     18,
+    marker=0.9648,
     driver="Ford Chicane",
     official="Chicane Ford",
     complex="Ford Chicanes",
@@ -145,44 +205,10 @@ lap.corner(
     scale=3,
     error="scale 4 slightly high — first Ford chicane is a 2nd/3rd-gear flick, scale 3",
 )
-lap.corner(
-    20,
-    driver="Ford Chicane",
-    official="Chicane du Raccordement",
-    complex="Ford Chicanes",
-    direction="left",
-    scale=3,
-    error="marker 0.98 duplicates T19's marker and the coordinate (0.20753, 47.948222) is essentially identical to T19's (0.207512, 47.948214) — second Ford chicane apex should be further north, near ~0.2078, 47.9489",
-)
-lap.corner(
-    3,
-    driver="Dunlop Chicane",
-    official="Chicane Dunlop",
-    complex="Dunlop Chicane",
-    direction="right",
-    scale=4,
-    error="T3 is the second element of the Dunlop Chicane but was left unnamed and unassigned to the complex",
-)
-lap.corner(
-    5,
-    driver="Esses de la Forêt",
-    official="Esses de la Forêt",
-    complex="Esses de la Forêt",
-    direction="right",
-    scale=4,
-    error="second element of the Esses left unnamed",
-)
-lap.corner(
-    10,
-    driver="Indianapolis",
-    official="Virage d'Indianapolis",
-    complex="Indianapolis",
-    direction="right",
-    scale=5,
-    error="T10 is the fast right entry kink of Indianapolis — it should be named and grouped with T11, not left as an anonymous corner",
-)
+# first Ford chicane, right (R42)
 lap.corner(
     19,
+    marker=0.9675,
     driver="Ford Chicane",
     official="Chicane Ford",
     complex="Ford Chicanes",
@@ -190,8 +216,21 @@ lap.corner(
     scale=3,
     error="T19 is the exit of the first Ford chicane — should be named and assigned to the Ford Chicanes complex, not left anonymous",
 )
+# second Ford chicane, left (R24)
+lap.corner(
+    20,
+    marker=0.9759,
+    driver="Ford Chicane",
+    official="Chicane du Raccordement",
+    complex="Ford Chicanes",
+    direction="left",
+    scale=3,
+    error="marker 0.98 duplicates T19's marker and the coordinate (0.20753, 47.948222) is essentially identical to T19's (0.207512, 47.948214) — second Ford chicane apex should be further north, near ~0.2078, 47.9489",
+)
+# second Ford chicane, right (R20), onto the pit straight
 lap.corner(
     21,
+    marker=0.9782,
     driver="Ford Chicane",
     official="Virage du Raccordement",
     complex="Ford Chicanes",
@@ -199,6 +238,15 @@ lap.corner(
     scale=3,
     error="T21 is the final right of the second Ford chicane (the Raccordement) — should be named and assigned to the Ford Chicanes complex",
 )
+
+# Measured curvature peaks that belong to a numbered corner (one LMU number
+# per chicane / multi-lobe corner).
+lap.unnamed(0.2933, "left", "part_of_corner", "T7 First Chicane (Daytona): the left, R44, 60 m after the right entry")
+lap.unnamed(0.3029, "right", "part_of_corner", "T7 First Chicane (Daytona): the exit right back onto the D338, R61")
+lap.unnamed(0.4391, "right", "part_of_corner", "T8 Second Chicane (Michelin): the right, R46, 90 m after the left entry")
+lap.unnamed(0.5624, "left", "part_of_corner", "T9 Mulsanne: the exit swing past the roundabout, R78")
+lap.unnamed(0.7135, "left", "part_of_corner", "T11 Indianapolis: first lobe of the banked left (R35), 40 m before the second")
+lap.unnamed(0.9873, "left", "part_of_corner", "T21: the kink out of the second Ford chicane onto the pit straight, R78")
 lap.layer(
     "wec_lm24_slow_zones_2026",
     "hhtiming_cha_microsectors",
