@@ -20,7 +20,7 @@ export const RANGE_COLORS = ["#7dd3fc", "#fbbf24", "#c084fc", "#34d399", "#fb718
 
 /** The orthophoto the edges were measured on, moved by the recorded registration + datum step. */
 const SourceImagery = L.Layer.extend({
-  initialize(service, shift, opts) { this.service = service; this.shift = shift || { east: 0, north: 0 }; L.setOptions(this, opts); },
+  initialize(service, shift, opts, wmsLayer = null) { this.service = service; this.wmsLayer = wmsLayer; this.shift = shift || { east: 0, north: 0 }; L.setOptions(this, opts); },
   onAdd(map) { this._map = map; map.on("moveend", this._update, this); this._update(); },
   onRemove(map) { map.getContainer().classList.remove("img-loading"); map.off("moveend", this._update, this); this._img?.remove(); this._img = null; },
   _update() {
@@ -30,7 +30,7 @@ const SourceImagery = L.Layer.extend({
     const dx = this.shift.east * k, dy = this.shift.north * k;
     // the service frame is where the atlas frame minus the shift is
     const url = exportImageUrl(this.service, [sw.x - dx, sw.y - dy, ne.x - dx, ne.y - dy],
-                               Math.min(size.x * 2, 4000), Math.min(size.y * 2, 4000));
+                               Math.min(size.x * 2, 4000), Math.min(size.y * 2, 4000), this.wmsLayer);
     const next = L.imageOverlay(url, b, { opacity: 1, interactive: false, className: "src-imagery" });
     const box = map.getContainer();
     box.classList.add("img-loading");
@@ -79,10 +79,11 @@ export class TrackMap {
     const s = layout.surface;
     const svc = s?.sources?.imagery?.url;
     this.sourceLayer = svc ? new SourceImagery(svc, s.position?.applied_shift_m,
-      { attribution: `${s.sources.imagery.name} (${s.sources.imagery.license})` }) : null;
+      { attribution: `${s.sources.imagery.name} (${s.sources.imagery.license})` },
+      s.sources.imagery.protocol === "wms" ? s.sources.imagery.layer : null) : null;
     if (this.sourceLayer) this.sourceLayer.getAttribution = () => `${s.sources.imagery.name}`;
     this.map.fitBounds(L.latLngBounds(this.lap.c.map(ll)), { paddingTopLeft: [30, 110], paddingBottomRight: [30, 190] });
-    this.setBase(this.baseId && (this.baseId !== "source" || this.sourceLayer) ? this.baseId : (this.sourceLayer ? "source" : "dark"));
+    this.setBase(this.baseId && (this.baseId !== "source" || this.sourceLayer) ? this.baseId : "dark");
     this.draw();
   }
 

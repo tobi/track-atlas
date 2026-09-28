@@ -96,7 +96,12 @@ export class Lap {
 export const inRange = (f, a, b) => (a <= b ? f >= a && f <= b : f >= a || f <= b);
 
 // --- ArcGIS ImageServer export (the source orthophoto, for viewing) ---------------
-export function exportImageUrl(service, bbox3857, w, h) {
+export function exportImageUrl(service, bbox3857, w, h, wmsLayer = null) {
+  if (wmsLayer) {   // OGC WMS 1.3.0 (IGN Géoplateforme)
+    const q = new URLSearchParams({ SERVICE: "WMS", VERSION: "1.3.0", REQUEST: "GetMap", LAYERS: wmsLayer,
+      STYLES: "", CRS: "EPSG:3857", BBOX: bbox3857.join(","), WIDTH: w, HEIGHT: h, FORMAT: "image/jpeg" });
+    return `${service}?${q}`;
+  }
   const q = new URLSearchParams({ bbox: bbox3857.join(","), bboxSR: "3857", imageSR: "3857",
     size: `${w},${h}`, format: "jpg", bandIds: "0,1,2", f: "image" });
   return `${service}/exportImage?${q}`;
