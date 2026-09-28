@@ -81,7 +81,8 @@ def _window_noise(usable: list[dict]) -> tuple[float, float] | None:
     return tuple(float(v) for v in 1.4826 * np.median(np.abs(d - np.median(d, axis=0)), axis=0) / math.sqrt(2))
 
 
-def _infer_frame(default: str, usable: list[dict], lon: float, lat: float) -> tuple[str, str]:
+def _infer_frame(default: str, usable: list[dict], lon: float, lat: float,
+                 hypotheses=("WGS84-service", "NAD83(2011)")) -> tuple[str, str]:
     """Which frame an imagery service really delivers, from the lidar registrations.
 
     Services convert the producer's NAD83(2011) to Web Mercator either with a
@@ -93,12 +94,11 @@ def _infer_frame(default: str, usable: list[dict], lon: float, lat: float) -> tu
     """
     if not usable:
         return default, "catalog default (no lidar to test it)"
-    l = datum.shift_m(lon, lat, lidar.FRAME)
     res = {}
-    for f in ("WGS84-service", "NAD83(2011)"):
+    for f in hypotheses:
         d = datum.shift_m(lon, lat, f)
-        res[f] = float(np.mean([math.hypot(r["registration"].de + l[0] - d[0], r["registration"].dn + l[1] - d[1])
-                                for r in usable]))
+        res[f] = float(np.mean([math.hypot(r["registration"].de + r["shift"][0] - d[0],
+                                           r["registration"].dn + r["shift"][1] - d[1]) for r in usable]))
     best = min(res, key=res.get)
     txt = ", ".join(f"{k} {v:.2f} m" for k, v in res.items())
     return best, f"inferred from registration to {len(usable)} lidar survey(s): mean residual {txt}"
@@ -123,6 +123,8 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
         refs.append({"name": name, "ce95_m": ce95, "basis": basis, "stated": stated,
                      "ept": meta["ept"], "points": meta["points"], **stats,
                      "year": lidar.PROJECTS.get(name, {}).get("year"),
+                     "frame": lidar.project_frame(name),
+                     "shift": datum.shift_m(lon_c, lat_c, lidar.project_frame(name)),
                      "registration": reg})
 
     usable = [r for r in refs if r["registration"] is not None]
@@ -141,19 +143,19 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
             nr_e = math.sqrt(max(reg.sd_e ** 2 - noise[0] ** 2, 0.0))
             nr_n = math.sqrt(max(reg.sd_n ** 2 - noise[1] ** 2, 0.0))
         reg_ce95 = math.hypot(_ce95(nr_e, nr_n), 2.4477 * reg.se / math.sqrt(2))
-        frame = lidar.FRAME
+        frame = best_lidar["frame"]
     elif img_ce95 is not None:
         shift = (0.0, 0.0)
         reference = {"kind": "imagery", "name": source_id, "ce95_m": img_ce95,
                      "basis": src["accuracy_basis"], "stated": True}
         reg_ce95 = 0.0
-        frame, frame_basis = _infer_frame(src["frame"], usable, lon_c, lat_c)
+        frame, frame_basis = _infer_frame(src["frame"], usable, lon_c, lat_c,
+                                          src.get("frame_hypotheses", ("WGS84-service", "NAD83(2011)")))
     else:
         raise RuntimeError(f"{source_id}: no stated accuracy and no lidar reference registered")
 
     d_e, d_n = datum.shift_m(lon_c, lat_c, frame)
     d_ce95 = datum.step_ce95_m(lon_c, frame, lat_c)
-    l_e, l_n = datum.shift_m(lon_c, lat_c, lidar.FRAME)
     total = math.sqrt(reference["ce95_m"] ** 2 + reg_ce95 ** 2 + d_ce95 ** 2)
 
     checks = []
@@ -167,8 +169,8 @@ def locate(image: Raster, source_id: str, lap_lonlat, lidar_projects: list[str],
             c.update(g.summary())
             # where this reference would put the geometry (its registration plus
             # its own datum step), relative to where it was put
-            c["residual_vs_applied_m"] = round(math.hypot(g.de + l_e - shift[0] - d_e,
-                                                          g.dn + l_n - shift[1] - d_n), 3)
+            c["residual_vs_applied_m"] = round(math.hypot(g.de + r["shift"][0] - shift[0] - d_e,
+                                                          g.dn + r["shift"][1] - shift[1] - d_n), 3)
         checks.append(c)
     if len(usable) >= 2:
         a, b = usable[0]["registration"], usable[1]["registration"]

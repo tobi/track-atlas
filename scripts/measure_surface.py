@@ -200,6 +200,7 @@ def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], se
             "imagery": {
                 "kind": "imagery", "id": source_id, "name": src["name"],
                 "url": src["service"], "license": src["license"],
+                **({"protocol": "wms", "layer": src["rgb"]} if src.get("protocol") == "wms" else {}),
                 "gsd_m": gsd, "sampled_gsd_m": manifest["gsd_m"], "acquisition_dates": dates,
                 "rasters": [c["raster"] for c in manifest.get("catalog", [])],
                 "request": {k: manifest[k] for k in ("crs", "x0", "y0", "px", "width", "height")},
@@ -208,7 +209,7 @@ def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], se
                 "stated_ce95_m": src.get("ce95_m"),
             },
             "reference": [
-                {"kind": "lidar", "name": n, "url": f"{lidar.EPT_BUCKET}/{n}", "license": "public domain (US federal)",
+                {"kind": "lidar", "name": n, "url": lidar.project_url(n), "license": lidar.project_license(n),
                  "year": lidar.PROJECTS.get(n, {}).get("year"), "horizontal_accuracy": lidar.project_accuracy(n)[1]}
                 for n in refs
             ],

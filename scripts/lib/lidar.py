@@ -70,6 +70,29 @@ PROJECTS: dict[str, dict] = {
 }
 
 
+# Non-3DEP references (lib/lidar_ign.py). Accuracy filled from the producer's
+# statement; frame is the delivery frame lib/datum.py steps from.
+PROJECTS["IGN_LiDAR_HD"] = {"year": None, "ql": None, "ce95_m": 0.87,
+                            "basis": "specification: planimetric REMQ (RMSE) <= 0.50 m, taken as radial RMSE (x1.7308);"
+                                     " DC_LiDAR_HD_1-0 (IGN, rev. 2026-07) section 2.3.1.4; not tested per block",
+                            "frame": "RGF93", "license": "Licence Ouverte Etalab 2.0 (IGN)"}
+
+
+def project_frame(name: str) -> str:
+    return PROJECTS.get(name, {}).get("frame", FRAME)
+
+
+def project_url(name: str) -> str:
+    if name == "IGN_LiDAR_HD":
+        from . import lidar_ign
+        return f"{lidar_ign.WFS}?TYPENAMES={lidar_ign.TILE_INDEX}"
+    return f"{EPT_BUCKET}/{name}"
+
+
+def project_license(name: str) -> str:
+    return PROJECTS.get(name, {}).get("license", "public domain (US federal)")
+
+
 def project_accuracy(name: str) -> tuple[float, str, bool]:
     """(CE95 m, basis, stated?) for an EPT project."""
     p = PROJECTS.get(name, {})
@@ -81,6 +104,10 @@ def project_accuracy(name: str) -> tuple[float, str, bool]:
 def find_projects(lonlat_lap) -> list[tuple[str, float]]:
     """EPT projects whose boundary covers the lap: [(name, covered fraction)]."""
     from shapely.geometry import LineString, shape
+    from . import lidar_ign
+    if lidar_ign.covers(lonlat_lap):
+        frac = lidar_ign.coverage(lonlat_lap)
+        return [("IGN_LiDAR_HD", frac)] if frac > 0 else []
     idx = json.loads(_get(RESOURCES_INDEX))["features"]
     line = LineString(np.asarray(lonlat_lap, dtype=float))
     out = []
@@ -190,6 +217,9 @@ def _node_box(bounds, key: str):
 
 def fetch_corridor(name: str, cache_dir: Path, corridor_merc) -> tuple[Points, dict]:
     """Every point of EPT `name` inside the (shapely, EPSG:3857) corridor polygon."""
+    if name == "IGN_LiDAR_HD":
+        from . import lidar_ign
+        return lidar_ign.fetch_corridor(cache_dir, corridor_merc)
     import laspy
     from shapely.geometry import box
     from shapely.prepared import prep

@@ -126,7 +126,7 @@ class AtlasHome extends Light {
           <p class="eyebrow">Open racing-circuit geometry · ODbL</p>
           <h1>Every corner, <em>measured</em>,<br>with its error bar.</h1>
           <p class="lede">${all.length} circuits, ${corners} named corners. ${meas.length} US circuits have measured track edges.
-            They are traced from open orthoimagery and positioned against USGS lidar, down to ${best.toFixed(2)} m absolute accuracy.
+            They are traced from open orthoimagery and positioned against national lidar (USGS 3DEP, IGN LiDAR HD), down to ${best.toFixed(2)} m absolute accuracy.
             Each corner has its turn-in, apex and exit, and every figure states its own accuracy.</p>
           <div class="cta">
             <a class="btn primary" href="tracks.jsonl" download>Download tracks.jsonl</a>
@@ -403,7 +403,7 @@ class TrackPage extends Light {
         <li><a href=${`${raw}/README.md`} target="_blank" rel="noopener">Curation notes</a><span>what was checked and why</span></li>
       </ul>
       <h3 class="h">Licence</h3>
-      <p class="muted small">Open Database License (ODbL). Geometry © OpenStreetMap contributors; measured edges from public-domain / open orthoimagery and USGS 3DEP lidar; corner data from Lovely-Sim-Racing plus curation.</p>`;
+      <p class="muted small">Open Database License (ODbL). Geometry © OpenStreetMap contributors; measured edges from public-domain / open orthoimagery (US state programmes, IGN BD ORTHO) and lidar (USGS 3DEP, IGN LiDAR HD); corner data from Lovely-Sim-Racing plus curation.</p>`;
   }
 }
 
@@ -415,7 +415,7 @@ class QualityPanel extends Light {
     if (!s) return this.unmeasured();
     const pos = s.position || {}, b = pos.budget_ce95_m || {}, ref = pos.reference || {};
     const img = s.sources?.imagery || {}, tier = tierOf({ measured: true, ce95_m: s.absolute_accuracy_ce95_m });
-    const parts = [["Reference", b.reference, ref.kind === "imagery" ? `${ref.name}: the imagery's own tested accuracy` : `USGS lidar ${ref.name}${ref.stated ? "" : " (accuracy not stated, 1 m assumed)"}`],
+    const parts = [["Reference", b.reference, ref.kind === "imagery" ? `${ref.name}: the imagery's own tested accuracy` : `${ref.name.startsWith("IGN") ? "IGN" : "USGS"} lidar ${ref.name}${ref.stated ? "" : " (accuracy not stated, 1 m assumed)"}`],
                    ["Registration", b.registration, pos.registration_model],
                    ["Datum", b.datum, `${pos.source_frame} → ${pos.frame} @ ${pos.epoch}`]];
     const tot2 = parts.reduce((n, p) => n + (p[1] || 0) ** 2, 0) || 1;
@@ -548,7 +548,7 @@ class AtlasMethod extends Light {
       <ol class="steps">
         <li><h3>Trace the edges</h3><p>Open orthoimagery is sampled along the lap: USDA NAIP, or a sharper state programme where one covers the circuit (Connecticut 2023, Indiana 2025, Texas 2021, Florida 2021).
           A self-calibrated asphalt model finds both edges. Where an edge is not visible (shadow, paved run-off, a bridge) it is bridged and flagged, never hidden.</p></li>
-        <li><h3>Position them on lidar</h3><p>The imagery is registered onto USGS 3DEP lidar intensity: grass is bright and asphalt dark in both.
+        <li><h3>Position them on lidar</h3><p>The imagery is registered onto lidar intensity (USGS 3DEP in the US, IGN LiDAR HD in France): grass is bright and asphalt dark in both.
           The lidar is surveyed with GNSS and ground control. Where two independent surveys exist, their agreement is recorded as a check.</p></li>
         <li><h3>Move to today's frame</h3><p>US sources are in NAD83(2011). Each result is moved to WGS 84 (G2139) ≈ ITRF2014 at epoch 2026.0, the frame a GNSS receiver reports today. That step is 0.9–1.6 m, and before this work it was silently ignored.</p></li>
         <li><h3>Place the corners</h3><p>The curvature of the measured midline gives each corner a turn-in line, an apex on the inside edge and an exit line.

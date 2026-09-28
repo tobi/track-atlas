@@ -250,10 +250,10 @@ t = Track(
     series=["wec"], external_ids=dict(imsa_data="le-mans"),
     location=dict(lat=47.95, lon=0.2247, locality="Le Mans",
                    region="Pays de la Loire", timezone="Europe/Paris"),
-    lovely=dict(**{"24h": "lmu/circuit-de-la-sarthe.json"}),  # layout key -> file in lovely-track-data
+    lovely={"24h": "lmu/circuit-de-la-sarthe.json"},  # layout key -> file in lovely-track-data
     osm=osm([47.90, 0.15, 47.98, 0.28], relation=2126739),    # bbox (s,w,n,e) + OSM route/circuit relation id
 )
-t.surface(imagery="naip")   # optional: measure track edges (US only), docs/GEOMETRY.md
+t.surface()   # optional: measure track edges (US, France), docs/GEOMETRY.md
 
 h24 = t.layout("24h", "Circuit des 24 Heures", length_m=13626,
                direction="clockwise", active_years="2018-", lovely="24h")

@@ -104,8 +104,11 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 - Adding an imagery source: an entry in `lib/imagery.SOURCES` with licence,
   stated accuracy, served `frame` and `coverage` box; the frame is then checked
   against lidar on every measurement (`position.imagery_frame_basis`).
-- Coverage: US only today (NAIP, 3DEP). Mosport, Silverstone, Le Mans have no
-  surface; docs/SOURCES.md lists the open European programmes to integrate.
+- Coverage: US (NAIP + state imagery, 3DEP) and France (IGN BD ORTHO, LiDAR HD;
+  RGF93 -> ITRF2014 in lib/datum.py). Mosport and Silverstone have no surface;
+  docs/SOURCES.md lists the open programmes to integrate. The LiDAR HD tile
+  index is fetched on every measurement, so re-measuring needs the network even
+  with every tile cached.
 - Accuracy is stated, never claimed: `layout.surface.absolute_accuracy_ce95_m`
   = hypot(reference, registration, datum). Only a tested source (e.g. CT 2023,
   Indiana 2025 spec) gets below ~1 m; untested lidar is assumed 1.0 m CE95 and
