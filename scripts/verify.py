@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib.config import TRACKS, track_json_path  # noqa: E402
+from lib.config import TRACKS, slugs as all_slugs, track_json_path  # noqa: E402
 from lib.osm import haversine, arc_lengths  # noqa: E402
 from lib.models import Track  # noqa: E402
 from lib.surface_checks import check_layout as check_surface  # noqa: E402
@@ -171,8 +171,8 @@ def kendall_disagreements(markers, fracs):
 def verify_track(slug: str) -> Report:
     r = Report(slug)
     tdir = TRACKS / slug
-    src_f, tj_f = tdir / "source.json", track_json_path(slug)
-    for f, label in ((src_f, "source.json"), (tj_f, "raw/track.json"), (tdir / "README.md", "README.md")):
+    src_f, tj_f = tdir / "track.py", track_json_path(slug)
+    for f, label in ((src_f, "track.py"), (tj_f, "raw/track.json"), (tdir / "README.md", "README.md")):
         if not f.exists():
             r.err(f"missing {label}")
     if r.errors:
@@ -407,7 +407,7 @@ def main():
     ap.add_argument("slug", nargs="?")
     ap.add_argument("--strict", action="store_true", help="warnings count as errors")
     args = ap.parse_args()
-    slugs = [args.slug] if args.slug else sorted(p.name for p in TRACKS.iterdir() if (p / "source.json").exists())
+    slugs = [args.slug] if args.slug else all_slugs()
     reports = [verify_track(s) for s in slugs]
     for r in reports:
         r.dump()

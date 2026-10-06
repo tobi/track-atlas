@@ -10,15 +10,12 @@
 
 ## Curation notes
 
-Evidence: measured midline curvature (`raw/surface-gp.json`), the OSM raceway
-ways (pit exit, "Alternate Corner 1"). Two unnamed peaks before T1 are
-reviewed in `overrides.json` `gp.surface_review`:
-
-- L42 at 0.1493: artefact. The OSM centerline is straight there (R7700) and
-  the left edge is seen on only 10% of it, at the OSM pit-exit merge
-  (0.105-0.164).
-- R36 at 0.1555: the turn-in lobe of T1, 49 m before its R17 apex (the
-  centerline bends there too, R71).
+Front straight / T1 entry (0.10-0.167): the pit-exit lane merges beside the
+straight without a painted line and the oval continues past road-course T1, so
+the imagery edges wandered onto the pit lane (right) and the oval (left) and
+put a false right-left wiggle into the midline. Both edges are bridged there by
+`t.bridge(...)` calls in `track.py` (reported in `unseen_spans`); the midline is now
+straight within 0.5 m to 0.13 and tapers ~2.6 m into the T1 turn-in.
 
 Corner directions are still unset (the Lovely iracing source has none); the
 measured direction is in each corner's `placement.direction`.

@@ -21,5 +21,6 @@ Their corner/straight names are credited upstream to Racing Circuits. Follow the
 upstream repository's terms for reuse.
 
 ## Curated overrides
-`tracks/*/overrides.json` (official names + complex grouping) is hand-maintained
-for this project and offered under the repository's MIT code license.
+The curation calls in `tracks/*/track.py` (official names + complex grouping)
+are hand-maintained for this project and offered under the repository's MIT
+code license.

@@ -1,0 +1,175 @@
+from lib.dsl import Track, osm
+
+t = Track(
+    "mosport",
+    "Canadian Tire Motorsport Park",
+    aka=["Mosport", "Mosport International Raceway", "Mosport Park", "CTMP"],
+    country="CA",
+    series=["imsa"],
+    location=dict(
+        lat=44.0491,
+        lon=-78.6745,
+        locality="Bowmanville, Ontario",
+        region="Ontario",
+        timezone="America/Toronto",
+    ),
+    wikidata="Q171570",
+    external_ids=dict(imsa_data="canadian-tire-motorsport-park"),
+    osm=osm([44.038, -78.695, 44.06, -78.663]),
+)
+
+# -- gp --------------------------------------------------------------------
+lap = t.layout(
+    "gp",
+    "Grand Prix Circuit",
+    length_m=3957,
+    direction="clockwise",
+    start_finish=dict(marker=0.0, location=[-78.6718, 44.0527]),
+    pit=dict(entry=0.852, exit=0.041),
+)
+lap.summary(
+    "No Lovely-Sim-Racing data exists for Mosport/CTMP. Corner list built from the IMSA 2026 Timing All Sections Map (official section lengths, total 3957m) for S/F placement and section structure, the IMSA 04_Track Map.pdf for turn numbering (10 turns with sub-apexes 2/2A, 5/5C, 9A/9B, plus Turn 10), OSM named raceway ways (Clayton Corner, Quebec Corner, Moss Corner, Esses, Whites Corner, Mario Andretti Straight) for named-corner coordinates, and curvature_apexes for apex marker refinement. Turn 10 is an unnamed fast sweeper on the front straight whose apex sits just before the start/finish line. Turns 6 and 7 are gentle kinks on the Mario Andretti Straight. The Esses complex spans Turns 8 and 9A; Whites Corner is 9B.",
+)
+lap.corners([
+    dict(
+        number=1,
+        code="1",
+        driver="Clayton",
+        official="Clayton Corner",
+        marker=0.094,
+        direction="left",
+        scale=3,
+    ),
+    dict(number=2, code="2", marker=0.134, direction="left", scale=3, match_osm=False),
+    dict(
+        number=3,
+        code="2a",
+        driver="Quebec",
+        official="Quebec Corner",
+        marker=0.209,
+        direction="right",
+        scale=2,
+    ),
+    dict(number=4, code="3", marker=0.26, direction="right", scale=3, match_osm=False),
+    dict(number=5, code="4", marker=0.364, direction="left", scale=3, match_osm=False),
+    dict(
+        number=6,
+        code="5",
+        driver="Moss",
+        official="Moss Corner",
+        marker=0.413,
+        direction="right",
+        scale=1,
+        complex="Moss Corner",
+    ),
+    dict(
+        number=7,
+        code="5c",
+        marker=0.432,
+        direction="right",
+        scale=1,
+        complex="Moss Corner",
+        match_osm=False,
+    ),
+    dict(number=8, code="6", marker=0.484, direction="left", scale=5, match_osm=False),
+    dict(number=9, code="7", marker=0.6, direction="right", scale=6, match_osm=False),
+    dict(
+        number=10,
+        code="8",
+        driver="Esses",
+        official="Esses",
+        marker=0.778,
+        direction="right",
+        scale=3,
+        complex="Esses",
+    ),
+    dict(
+        number=11,
+        code="9a",
+        driver="Esses",
+        official="Esses",
+        marker=0.828,
+        direction="left",
+        scale=2,
+        complex="Esses",
+    ),
+    dict(
+        number=12,
+        code="9b",
+        driver="Whites",
+        official="Whites Corner",
+        marker=0.87,
+        direction="right",
+        scale=2,
+    ),
+    dict(number=13, code="10", marker=0.968, direction="right", scale=4, match_osm=False),
+])
+lap.layer(
+    "imsa_timing_sectors_2026",
+    "imsa_timing_pdf",
+    dict(
+        pdf=dict(
+            url="https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%203%20Sector%20Map.pdf",
+            filename="imsa-2026-timing-3-sector-map.pdf",
+        ),
+    ),
+    dict(
+        resource="pdf",
+        layer_id="timing_sectors",
+        kind="timing_sectors",
+        label="Timing Sectors",
+        series=["imsa"],
+        coverage="partition",
+        count=3,
+        item_prefix="s",
+        item_label_prefix="S",
+        source="IMSA / Al Kamel Timing 3 Sector Map",
+        segment_refs=[["FL", "i1"], ["i1", "i2"], ["i2", "FL"]],
+    ),
+)
+lap.layer(
+    "imsa_microsectors_2026",
+    "imsa_timing_pdf",
+    dict(
+        pdf=dict(
+            url="https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/15_Canadian%20Tire%20Motorsport%20Park/03_Timing%20All%20Sections%20Map%20REVISED.pdf",
+            filename="imsa-2026-timing-all-sections-map.pdf",
+        ),
+    ),
+    dict(
+        resource="pdf",
+        layer_id="imsa_microsectors",
+        kind="microsectors",
+        label="IMSA Microsectors",
+        series=["imsa"],
+        coverage="partition",
+        count=8,
+        item_prefix="ms",
+        item_label_prefix="MS",
+        source="IMSA / Al Kamel Timing All Sections Map",
+        segment_refs=[
+            ["T1", "T2"],
+            ["T2", "T3"],
+            ["T3", "T4"],
+            ["T4", "T5"],
+            ["T5", "T6"],
+            ["T6", "T7"],
+            ["T7", "T8"],
+            ["T8", "T1"],
+        ],
+    ),
+)
+lap.layer(
+    "curvature_apexes_gp",
+    "curvature_apexes",
+    dict(centerline=dict(path="raw/layers/gp.geojson")),
+    dict(
+        max_apexes=24,
+        step_m=4,
+        smooth_window_m=60,
+        min_separation_m=60,
+        curvature_percentile=0.7,
+        pre_brake_m=75,
+        post_accel_m=55,
+    ),
+)

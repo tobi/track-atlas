@@ -18,10 +18,12 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 ### Generated layer inputs (timing sectors, microsectors, slow zones)
 - Use the project skill at `skills/layer-tools/SKILL.md` before adding or
   changing generated point/range layers.
-- Per-track generated layer inputs live in `tracks/<slug>/generation-config.json`.
-  The config declares URLs/files, converter tool name, layout id, and all params.
+- Per-track generated layer inputs are `lap.layer(id, tool, resources, params)`
+  calls in `tracks/<slug>/track.py` (the DSL in `scripts/lib/dsl.py`). Each call
+  declares the URLs/files, converter tool name, and all params for one layout.
 - `scripts/generate.py <slug>` writes base `raw/track.json` and then applies the
-  generation config. For config-only edits, use `uv run python scripts/build_layers.py <slug>`.
+  generation config compiled from `track.py`. For config-only edits, use
+  `uv run python scripts/build_layers.py <slug>`.
 - Converter tools live in `scripts/layer_tools/` and must be pure stdin→stdout:
   the runner resolves every URL/path to `raw/layer-sources/<config-id>/` before
   invocation. Do not make tools fetch their own inputs or guess missing data.
@@ -29,8 +31,8 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   start-finish. `generate.py` rotates generated centerlines to that origin; keep
   this invariant or every sector/microsector/slow-zone overlay will be offset.
 - For corner discovery/apex QA, use `scripts/layer_tools/curvature_apexes.py`
-  through `generation-config.json` or the read-only check `uv run python
-  scripts/check_apexes.py <slug>`. It derives a smoothed `κ(s)` profile from the
+  through a `lap.layer(...)` call in `track.py` or the read-only check `uv run
+  python scripts/check_apexes.py <slug>`. It derives a smoothed `κ(s)` profile from the
   centerline and emits both apex candidate points and padded corner ranges;
   apex points and corner ranges are intentionally distinct concepts. Keep layer
   names cohesive: point layer `Corner Apexes`, per-corner range layer `Each
@@ -51,22 +53,22 @@ corner-name→coordinate join is solved at the source. This is the backbone of
   origin/start-finish is wrong, or corner markers are sitting in straights. Fix
   geometry/origin before trusting names/ranges. Barcelona is the pattern: the
   OSM relation included an old connector/chicane path, while the stitched named
-  circuit way was cleaner; then `source.json.start_finish` pinned the true lap
-  origin so Lovely markers landed on apexes.
+  circuit way was cleaner; then a `start_finish` kwarg on `t.layout(...)` pinned
+  the true lap origin so Lovely markers landed on apexes.
 - Treat OSM named ways as strong positional evidence, not an automatic rename.
   Use the way's lap fraction and distance-to-outline to decide which turn it
   names; many OSM ways are facility/infrastructure noise.
-- Put durable fixes in `tracks/<slug>/overrides.json`, never by editing
-  `raw/track.json` directly. Regenerate after each curation pass. Generated
-  `raw/track.json.provenance.geometry[]` records which centerline source won
-  (`relation`, `stitched`, or fallback) and why; inspect it when a track's origin
-  or shape looks suspicious.
+- Put durable fixes as `lap.corner(...)` calls appended to `tracks/<slug>/track.py`,
+  never by editing `raw/track.json` directly. Regenerate after each curation
+  pass. Generated `raw/track.json.provenance.geometry[]` records which
+  centerline source won (`relation`, `stitched`, or fallback) and why; inspect
+  it when a track's origin or shape looks suspicious.
 - Prefer `official` for circuit/OSM names and `driver` for what crews say on
   radio. If drivers just say the number, clear `driver` so display falls back to
   `numbered`.
 - For pit entry/exit, use the actual pit-lane geometry when OSM provides it:
   project the pit-lane endpoints to the lap centerline. Do not leave speculative
-  series-specific fractions in `source.json`.
+  series-specific fractions in `track.py`.
 - After curation run: `uv run python scripts/generate.py <slug>` and
   `uv run python scripts/verify.py <slug>`, then refresh `tracks.jsonl`/site
   artifacts if the local preview is open.
@@ -91,10 +93,10 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 - On a measured layout the **midline replaces the OSM centerline** as geometry
   and lap basis; placed corners take their apex as marker and entry..exit as
   range. Legacy markers are only inputs.
-- Opt in with `source.json` `"surface": {}`: imagery and lidar are chosen
+- Opt in with `t.surface()` in `track.py`: imagery and lidar are chosen
   automatically (every covering imagery source is measured and the best
   `CE95 + 4 m x unseen share` wins; lidar = covering surveys, stated accuracy
-  first, then newest). Pin `imagery`/`lidar` only to investigate a source.
+  first, then newest). Pin `imagery`/`lidar` kwargs only to investigate a source.
 - Workflow: `uv run python scripts/measure_surface.py <slug>` (network; caches
   in the gitignored `raw/imagery/` and `raw/lidar/`, writes the committed
   `raw/surface-<layout>.json`), then `generate.py <slug>` (offline) and
@@ -102,18 +104,25 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 - Adding an imagery source: an entry in `lib/imagery.SOURCES` with licence,
   stated accuracy, served `frame` and `coverage` box; the frame is then checked
   against lidar on every measurement (`position.imagery_frame_basis`).
-- Coverage: US only today (NAIP, 3DEP). Mosport, Silverstone, Le Mans have no
-  surface; docs/SOURCES.md lists the open European programmes to integrate.
+- Coverage: US (NAIP + state imagery, 3DEP) and France (IGN BD ORTHO, LiDAR HD;
+  RGF93 -> ITRF2014 in lib/datum.py). Mosport and Silverstone have no surface;
+  docs/SOURCES.md lists the open programmes to integrate. The LiDAR HD tile
+  index is fetched on every measurement, so re-measuring needs the network even
+  with every tile cached.
 - Accuracy is stated, never claimed: `layout.surface.absolute_accuracy_ce95_m`
   = hypot(reference, registration, datum). Only a tested source (e.g. CT 2023,
   Indiana 2025 spec) gets below ~1 m; untested lidar is assumed 1.0 m CE95 and
   flagged.
 - Inspect visually before committing: edges over the imagery at every corner.
   Paved run-off without a painted line, pit merges, bridges and tree shadow
-  are the usual failure spots; they show up as `unseen_spans`.
+  are the usual failure spots; they show up as `unseen_spans`. Where the edge
+  follows the wrong surface while "seen" (Indy's pit-exit merge before T1),
+  force a bridge with `t.bridge(side, from, to, note)` and re-measure.
+- `measure_surface.py` seeds from `raw/seed-<layout>.geojson` (the OSM
+  centerline, written by `generate.py`), never the previous midline.
 - The measured curvature is authoritative for a corner's direction. `verify.py`
   warns when the curated direction disagrees (`placement.declared_direction`):
-  fix `direction` in `overrides.json`, never in `raw/track.json`.
+  fix `direction` with a `lap.corner(...)` call in `track.py`, never in `raw/track.json`.
   `placement.marker_offset_m` records how far the input marker was from the apex.
 - Corner apex/phases come from a model GT3 lap on the midline
   (`lib/racing.py`, docs/GEOMETRY.md "Racing line and phases"): `apex` is the
@@ -176,8 +185,8 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 ### silverstone (GP)
 - Clean: single area, 18/18 corners geo-matched on first pass.
 - Lovely repeats names across multi-apex complexes (Maggots×2, Becketts×2,
-  Vale×2). Grouped via `overrides.json` `complex`. British circuits mostly use
-  the driver name *as* the official name.
+  Vale×2). Grouped via `complex=` on `lap.corner(...)` calls in `track.py`.
+  British circuits mostly use the driver name *as* the official name.
 
 ## Matching / normalization rules
 
@@ -191,10 +200,10 @@ corner-name→coordinate join is solved at the source. This is the backbone of
 ## Adding a track — checklist
 
 1. `mkdir -p tracks/<slug>/{raw,scripts,layers}`.
-2. Write `tracks/<slug>/source.json` (slug, name, aka, country, wikidata,
-   location centroid, `lovely` map, `osm.bbox`, layouts).
+2. Write `tracks/<slug>/track.py` (copy a similar track's): slug, name, aka,
+   country, wikidata, location centroid, `lovely` map, `osm` bbox, layouts.
 3. `python scripts/import.py <slug>` → fills `raw/`.
 4. `python scripts/generate.py <slug>` → check the "matched N/M" line.
-5. For unmatched / repeated / official names, add `tracks/<slug>/overrides.json`
-   keyed by layout id → corner number, regenerate.
+5. For unmatched / repeated / official names, append `lap.corner(...)` calls
+   (keyed by layout id → corner number) to `track.py`, regenerate.
 6. Validate against `schema/track.schema.json`. Update the track README.

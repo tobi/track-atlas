@@ -6,10 +6,9 @@ Use this skill when adding data-derived point/range layers to Track Atlas: IMSA 
 
 Track Atlas is layout-first:
 
-- `tracks/<slug>/source.json` defines the facility/layout basics and base data imports.
-- `tracks/<slug>/generation-config.json` defines additional generated layer inputs.
-- `scripts/generate.py <slug>` writes the base `raw/track.json`, then automatically runs the generation config.
-- `scripts/build_layers.py <slug>` reruns only `generation-config.json` against an existing `raw/track.json`.
+- `tracks/<slug>/track.py` defines the facility/layout basics, base data imports, curation, and (via `lap.layer(id, tool, resources, params)` calls) additional generated layer inputs. Built with the DSL in `scripts/lib/dsl.py`.
+- `scripts/generate.py <slug>` writes the base `raw/track.json`, then automatically runs the generation config compiled from `track.py`.
+- `scripts/build_layers.py <slug>` reruns only the generation config against an existing `raw/track.json`.
 - Converter tools live in `scripts/layer_tools/*.py`.
 
 Generated layer output is first written under `tracks/<slug>/raw/generated-layers/` and then merged into the target layout:
@@ -21,7 +20,7 @@ Generated layer output is first written under `tracks/<slug>/raw/generated-layer
 
 Resolve everything the tool needs **before** invoking the tool.
 
-The runner (`scripts/lib/layer_runner.py`) reads `generation-config.json`, downloads/copies every declared resource into:
+The runner (`scripts/lib/layer_runner.py`) reads the generation config compiled from `track.py`'s `lap.layer(...)` calls, downloads/copies every declared resource into:
 
 ```text
 tracks/<slug>/raw/layer-sources/<config-id>/
@@ -36,44 +35,39 @@ resolved local files + track/layout context JSON on stdin
 → merged into raw/track.json
 ```
 
-Converter tools must not assume current working directory, fetch URLs themselves, or read arbitrary repo files. If they need data, add it to `generation-config.json` as a resource or param so the runner resolves it first. Generated layer JSON must exist in `raw/generated-layers/` as an inspectable artifact before it is baked into `raw/track.json`.
+Converter tools must not assume current working directory, fetch URLs themselves, or read arbitrary repo files. If they need data, add it to the `lap.layer(...)` call as a resource or param so the runner resolves it first. Generated layer JSON must exist in `raw/generated-layers/` as an inspectable artifact before it is baked into `raw/track.json`.
 
-## generation-config.json format
+## `lap.layer(id, tool, resources, params)`
 
-Example:
+Example, as it appears in `tracks/<slug>/track.py`:
 
-```jsonc
-{
-  "layers": [
-    {
-      "id": "imsa_microsectors_2026",
-      "layout": "gp",
-      "tool": "imsa_timing_pdf",
-      "resources": {
-        "pdf": {
-          "url": "https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/14_Watkins%20Glen%20International/03_Timing%20All%20Sections%20Map.pdf",
-          "filename": "imsa-2026-timing-all-sections-map.pdf"
-        }
-      },
-      "params": {
-        "resource": "pdf",
-        "layer_id": "imsa_microsectors",
-        "kind": "microsectors",
-        "label": "IMSA Microsectors",
-        "series": ["imsa"],
-        "coverage": "partition",
-        "count": 11,
-        "item_prefix": "ms",
-        "item_label_prefix": "MS",
-        "source": "IMSA / Al Kamel Timing All Sections Map",
-        "segment_refs": [["T1", "T2"], ["T2", "T3"]]
-      }
-    }
-  ]
-}
+```python
+lap.layer(
+    "imsa_microsectors_2026",
+    "imsa_timing_pdf",
+    dict(
+        pdf=dict(
+            url="https://imsa.results.alkamelcloud.com/Results_NoticeBoard/26-2026/14_Watkins%20Glen%20International/03_Timing%20All%20Sections%20Map.pdf",
+            filename="imsa-2026-timing-all-sections-map.pdf",
+        ),
+    ),
+    dict(
+        resource="pdf",
+        layer_id="imsa_microsectors",
+        kind="microsectors",
+        label="IMSA Microsectors",
+        series=["imsa"],
+        coverage="partition",
+        count=11,
+        item_prefix="ms",
+        item_label_prefix="MS",
+        source="IMSA / Al Kamel Timing All Sections Map",
+        segment_refs=[["T1", "T2"], ["T2", "T3"]],
+    ),
+)
 ```
 
-`id` is the config/run id. `layer_id` is the actual layer id in `track.json`. Multiple configs may target existing generated layers; later configs replace layers with the same `id`.
+`id` is the config/run id. `layer_id` (in `params`) is the actual layer id in `track.json`. Multiple `lap.layer(...)` calls may target existing generated layers; later calls replace layers with the same `id`.
 
 ## Tool contract
 
@@ -248,7 +242,7 @@ Useful PDFs under `Results_NoticeBoard/<season>/<event>/`:
 - `03_Timing All Sections Map.pdf`
 - `04_Track Map.pdf`
 
-The “Timing All Sections Map” is the preferred IMSA microsector source because it has official section lengths. The Watkins Glen example is implemented in `tracks/watkins-glen/generation-config.json`.
+The “Timing All Sections Map” is the preferred IMSA microsector source because it has official section lengths. The Watkins Glen example is implemented in `tracks/watkins-glen/track.py`.
 
 HH Timing also documents IMSA Al Kamel V2 loop pairs here:
 
@@ -282,14 +276,14 @@ For exact fractions, prefer official lengths when a timing-section table exists.
 
 ## Workflow
 
-1. Find a source and save the URL in `generation-config.json`.
+1. Find a source and save the URL in a `lap.layer(...)` call in `track.py`.
 2. Pick or write a `scripts/layer_tools/<tool>.py` converter.
 3. Put every converter input in `resources` or `params`.
 4. Run:
 
 ```bash
 uv run python scripts/generate.py <slug>
-# or, after only editing generation-config.json:
+# or, after only editing the lap.layer(...) calls in track.py:
 uv run python scripts/build_layers.py <slug>
 ```
 
@@ -316,13 +310,13 @@ uv run python scripts/verify.py <slug>
 - For tracks with many range items (microsectors/slow zones), keep item controls compact (chips/swatches) and use hover to preview individual segments.
 - Avoid competing map popups. The app uses one cursor readout in the side panel plus map highlights.
 - Corners have two related but different shapes: an apex is a point; the corner/range starts before the braking zone and ends after initial acceleration. Use `range_layers[].items[].points[]` for internal landmarks such as `role: "apex"`, usually with `point_ref` back to the corner point item.
-- If an upstream source collapses/misnumbers corners (Watkins Glen iRacing did), use a curated `replace_corners` override rather than trying to patch names one-by-one.
+- If an upstream source collapses/misnumbers corners (Watkins Glen iRacing did), use a curated `lap.corners([...])` replacement in `track.py` rather than trying to patch names one-by-one.
 
 ## Rules for adding new tools
 
 - Tools must be deterministic.
 - Tools must read one JSON object from stdin and print one JSON object to stdout.
-- Do not fetch URLs inside tools; add URLs to `generation-config.json` resources.
+- Do not fetch URLs inside tools; add URLs to the `lap.layer(...)` call's resources.
 - Do not rely on CWD; use `resources.*.local_path`.
 - Include provenance: source name, URL, local path, unit assumptions.
 - For partition layers, output exact `start: 0.0` and `end: 1.0` after rounding.

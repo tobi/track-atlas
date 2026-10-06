@@ -149,12 +149,12 @@ def run_config(slug: str, cfg: dict[str, Any], track: dict[str, Any]) -> dict[st
 
 
 def run_layer_configs(slug: str, *, write: bool = True) -> dict[str, Any]:
-    cfg_path = TRACKS / slug / "generation-config.json"
+    from .config import load_generation
     track_path = track_json_path(slug)
     track = json.loads(track_path.read_text())
-    if not cfg_path.exists():
+    cfg_doc = load_generation(slug)
+    if not cfg_doc:
         return track
-    cfg_doc = json.loads(cfg_path.read_text())
     for cfg in cfg_doc.get("layers", []):
         if cfg.get("enabled", True):
             run_config(slug, cfg, track)

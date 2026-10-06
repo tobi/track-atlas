@@ -18,7 +18,7 @@ Lovely `iracing/longbeach.json` apex markers.
   every Lovely marker sat on the wrong corner (T2 had no peak at all, T1 matched
   a R113 bend). Measured: Lovely T1 0.223 vs the first tight peak at 0.4366,
   Lovely T11 0.882 vs the hairpin peak / OSM Hairpin way at 0.0928; both +0.212.
-  `source.json` `start_finish` now sits on Shoreline Drive 390 m after the
+  `track.py`'s `start_finish` kwarg now sits on Shoreline Drive 390 m after the
   hairpin, and all 11 Lovely markers land within 21 m of a measured peak with
   no per-corner marker overrides.
 - **Directions** re-set from the measured peaks: T1 L (R17, +83 deg), T2 R (R20,
@@ -30,7 +30,7 @@ Lovely `iracing/longbeach.json` apex markers.
   in the old override had no source and "Aquarium" / "Fountain" sat on corners
   nowhere near those landmarks, so `driver` is cleared (display falls back to
   "Turn N"). "The Hairpin" stays on T11 (OSM Hairpin way).
-- **Unnamed peaks reviewed** (`overrides.json` `gp.surface_review`): R73 at
+- **Unnamed peaks reviewed** (`lap.unnamed(...)` in `track.py`): R73 at
   0.2442 and L24.5 at 0.2675 are real bends between T1 and T2 (the OSM
   centerline bends there too) but unnumbered; L78 at 0.7647 is an edge artefact
   (centerline straight); L55 at 0.8693 is the second lobe of T10 before the

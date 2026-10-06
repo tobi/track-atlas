@@ -16,7 +16,7 @@
 
 Evidence: NAIP-measured midline curvature (`raw/surface-gp.json`), the OSM
 relation centerline, NAIP imagery crops. Unnamed-peak verdicts live in
-`overrides.json` `gp.surface_review` (verify reports them as infos).
+`lap.unnamed(...)` calls in `track.py` (verify reports them as infos).
 
 - **T5 West Horseshoe** was declared left. The measured midline turns right:
   R30.8 m, -186 deg total, apex on the right edge; the OSM centerline agrees

@@ -1,0 +1,165 @@
+from lib.dsl import Track, osm
+
+t = Track(
+    "virginia-international-raceway",
+    "Virginia International Raceway",
+    aka=["VIR"],
+    country="US",
+    series=["imsa"],
+    location=dict(
+        lat=36.5618,
+        lon=-79.2046,
+        locality="Alton, Virginia",
+        region="Virginia",
+        timezone="America/New_York",
+    ),
+    external_ids=dict(imsa_data="virginia-international-raceway"),
+    osm=osm([36.5318, -79.2346, 36.5918, -79.1746], relation=15765486),
+    lovely=dict(gp="iracing/virginia-2022-full.json"),
+)
+t.surface()
+
+# -- gp --------------------------------------------------------------------
+lap = t.layout(
+    "gp",
+    "Full Course",
+    length_m=5262,
+    direction="clockwise",
+    lovely="gp",
+    start_finish=dict(
+        location=[-79.206308, 36.56884],
+        note="Pinned at the OSM-alignment origin so the curated replace_corners markers (geometry fractions on this frame) cannot move it; the Lovely Horseshoe/Left Hook/South Bend/Oak Tree/Roller Coaster ranges center on the measured peaks with no systematic shift. Not a surveyed timing line.",
+    ),
+)
+lap.corners([
+    dict(
+        number=1,
+        driver="Horseshoe",
+        official="Horseshoe",
+        marker=0.0735,
+        direction="right",
+        scale=2,
+    ),
+    dict(number=2, marker=0.1311, direction="left", scale=4),
+    dict(
+        number=3,
+        driver="NASCAR",
+        official="NASCAR Bend",
+        marker=0.1556,
+        direction="left",
+        scale=3,
+    ),
+    dict(
+        number=4,
+        driver="Left Hook",
+        official="Left Hook",
+        marker=0.1946,
+        direction="left",
+        scale=2,
+    ),
+    dict(number=5, marker=0.2075, direction="right", scale=3),
+    dict(number=6, marker=0.2332, direction="right", scale=3),
+    dict(number=7, driver="Snake", official="Snake", marker=0.2681, direction="left", scale=4),
+    dict(
+        number=8,
+        driver="Climbing Esses",
+        marker=0.3535,
+        direction="left",
+        scale=5,
+        complex="Climbing Esses",
+    ),
+    dict(
+        number=9,
+        driver="Climbing Esses",
+        marker=0.3786,
+        direction="right",
+        scale=5,
+        complex="Climbing Esses",
+    ),
+    dict(
+        number=10,
+        driver="Climbing Esses",
+        marker=0.3961,
+        direction="left",
+        scale=5,
+        complex="Climbing Esses",
+    ),
+    dict(
+        number=11,
+        driver="Climbing Esses",
+        marker=0.41,
+        direction="right",
+        scale=4,
+        complex="Climbing Esses",
+    ),
+    dict(
+        number=12,
+        driver="South Bend",
+        official="South Bend",
+        marker=0.4551,
+        direction="left",
+        scale=4,
+    ),
+    dict(
+        number=13,
+        driver="Oak Tree",
+        official="Oak Tree Curve",
+        marker=0.5309,
+        direction="right",
+        scale=2,
+    ),
+    dict(
+        number=14,
+        driver="Roller Coaster",
+        official="Roller Coaster",
+        marker=0.7803,
+        direction="right",
+        scale=3,
+        complex="Roller Coaster",
+    ),
+    dict(
+        number=15,
+        driver="Roller Coaster",
+        official="Roller Coaster",
+        marker=0.7964,
+        direction="left",
+        scale=4,
+        complex="Roller Coaster",
+    ),
+    dict(
+        number=16,
+        driver="Hog Pen",
+        official="Hog Pen",
+        marker=0.8392,
+        direction="left",
+        scale=4,
+        complex="Hog Pen",
+    ),
+    dict(
+        number=17,
+        driver="Hog Pen",
+        official="Hog Pen",
+        marker=0.8547,
+        direction="right",
+        scale=4,
+        complex="Hog Pen",
+    ),
+])
+lap.unnamed(
+    0.0838,
+    "right",
+    "part_of_corner",
+    "second apex of T1 Horseshoe (R50, -76 deg; OSM Horseshoe way 0.0614-0.1088)",
+)
+lap.unnamed(
+    0.2449,
+    "left",
+    "part_of_corner",
+    "first lobe of T7 Snake (R75, +29 deg; OSM Snake way 0.2255-0.2703)",
+)
+lap.unnamed(
+    0.5139,
+    "right",
+    "part_of_corner",
+    "first apex of T13 Oak Tree (R47, -63 deg) before its R24 apex at 0.5309",
+)

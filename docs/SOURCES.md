@@ -7,7 +7,7 @@ Mapbox satellite) may be viewed but **never traced**. Accuracies are the
 producer's own statements; "specification" means a design target, "tested" a
 checkpoint report. CE95 = 2.4477 x per-axis RMSE (circular, equal axes).
 
-The producers deliver in **NAD83(2011)**. 3DEP lidar reaches us still in
+US producers deliver in **NAD83(2011)**. 3DEP lidar reaches us still in
 NAD83(2011) (EPT labels it WGS 84 by the identity step); the imagery services
 already converted it to WGS 84 (`WGS84-service`). `lib/datum.py` moves the
 position reference to the atlas frame (WGS 84 (G2139) ~ ITRF2014, epoch
@@ -68,7 +68,37 @@ that register the imagery to the same shift bound each other's errors: that
 agreement is recorded in `position.checks` as empirical support for an
 assumed accuracy.
 
-## Outside the US
+## France: IGN (Géoplateforme), integrated
+
+Le Mans is measured from French open data (Licence Ouverte Etalab 2.0,
+attribution "IGN"), delivered in RGF93 / Lambert-93 (EPSG:2154).
+
+- **Imagery `ign-bdortho-2022`**: BD ORTHO 20 cm, RGB + IRC (false colour,
+  NIR first), WMS `data.geopf.fr/wms-r` layers `ORTHOIMAGERY.ORTHOPHOTOS2022` /
+  `ORTHOIMAGERY.ORTHOPHOTOS.IRC.2022`, requested in EPSG:3857 (the server
+  reprojects; the frame is then measured against lidar). Sarthe (72) was flown
+  in 2016, 2019, 2022 and 2025 (Géoportail now shows 2025, which the yearly
+  WMS layer does not serve yet). Accuracy: IGN states it as an EMQ per
+  département, in a table the product description (DC_BDORTHO_2-0, April 2025,
+  section 5.2) lists as forthcoming: **not stated**. Tiles outside a campaign come
+  back pure white and are skipped.
+- **Lidar `IGN_LiDAR_HD`** (`lib/lidar_ign.py`): LiDAR HD classified point
+  clouds, 1 km COPC tiles (index: WFS `IGNF_LIDAR-HD_METADONNEE:metadata`,
+  Lambert-93 bbox), read by HTTP range requests for the corridor only (~30
+  ground pts/m2 at Le Mans). **Specification** (DC_LiDAR_HD_1-0, rev. July 2026,
+  section 2.3.1.4): planimetric REMQ (RMSE) at most 0.50 m, altimetric 0.10 m; taken as a
+  radial RMSE = **0.87 m CE95**. The worked control example in the same document
+  reaches 0.117 m, but it is not a per-block test.
+- **Datum**: RGF93 is ETRS89 (v1 = ETRF93 at 1993.0, v2/v2b = ETRF2000 at
+  2009.0/2019.0; the products do not say which, the v1/v2 difference is "a few cm").
+  `lib/datum.py` steps ETRF2000 -> ITRF2014 at 2026.0 (0.92 m towards
+  NE at Le Mans), with 4 cm (1 sigma) for the realisation.
+- **Result**: BD ORTHO 2022 sits 0.67 m (E 0.21, N -0.64) from LiDAR HD, and
+  the local shift varies by 0.4-0.5 m across the lap (a mosaic of flights), so
+  the registration term dominates the budget: **1.44 m CE95**. A piecewise
+  registration (per-section shifts) is the way under 1 m.
+
+## Outside the US and France
 
 Desk research only: nothing here has been fetched or tested by the pipeline,
 and each licence must be re-read for the specific product before use.
@@ -77,7 +107,7 @@ and each licence must be re-read for the specific product before use.
 |---|---|---|---|---|---|
 | Canada (Mosport) | Ontario OIPC / SWOOP / COOP | 16-20 cm | Open Government Licence - Ontario for some years; others restricted | ~0.5 m spec | not integrated; licence per year to check |
 | UK (Silverstone) | Environment Agency lidar (DTM/intensity), Aerial Photography for Great Britain | 25 cm / 1 m lidar | OGL v3 (lidar); APGB is **not** open | lidar ~0.4 m | lidar usable as a reference, imagery source missing |
-| France (Le Mans), Spain, Netherlands, Belgium, Germany (some Länder) | IGN BD ORTHO / PNOA / PDOK / Geopunt / state DOPs | 20 cm | Etalab 2.0 / CC BY 4.0 / CC0 / dl-de-by-2.0 | 0.2-0.5 m tested (national specs) | usable; not integrated |
+| Spain, Netherlands, Belgium, Germany (some Länder) | PNOA / PDOK / Geopunt / state DOPs | 20 cm | Etalab 2.0 / CC BY 4.0 / CC0 / dl-de-by-2.0 | 0.2-0.5 m tested (national specs) | usable; not integrated |
 
 National European orthophoto programmes are both open and tested, often better
 than 0.5 m: they would be imagery **and** reference in one.

@@ -22,3 +22,10 @@ tracks/*/raw/imagery/
 # 3DEP lidar EPT node cache (recreatable from the recorded EPT url + corridor)
 tracks/*/raw/lidar/
 site/atlas.json
+
+# Browser simulator build and local-only telemetry
+node_modules/
+site/sim/dist/
+.private/
+test-results/
+playwright-report/

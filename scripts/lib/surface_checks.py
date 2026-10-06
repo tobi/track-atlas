@@ -32,18 +32,16 @@ def _circ(a: float, b: float) -> float:
 
 
 def _review(raw: Path, lid: str | None) -> dict:
-    """Curator verdicts from tracks/<slug>/overrides.json `surface_review`
+    """Curator verdicts from tracks/<slug>/track.py (`unnamed`/`unplaceable`)
     ("*" and the layout block): `unnamed` = [{marker, direction, verdict,
     note}] for curvature peaks that are not atlas corners (artefact, part of
     a corner, unnumbered bend), `corners` = {number: note} for corners the
     geometry cannot place (genuine straight-line kinks). Reviewed items are
     reported as infos instead of warnings; the track README records the
     evidence."""
-    f = raw.parent / "overrides.json"
+    from .config import load_overrides
     out: dict = {"unnamed": [], "corners": {}}
-    if not f.exists():
-        return out
-    ov = json.loads(f.read_text())
+    ov = load_overrides(raw.parent.name)
     for key in ("*", lid):
         rv = (ov.get(key) or {}).get("surface_review") or {}
         out["unnamed"] += rv.get("unnamed", [])

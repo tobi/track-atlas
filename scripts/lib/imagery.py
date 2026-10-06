@@ -1,8 +1,8 @@
-"""Open orthoimagery access (ArcGIS ImageServer exports) and rasters.
+"""Open orthoimagery access (ArcGIS ImageServer exports, WMS) and rasters.
 
 Only openly licensed imagery whose derived geometry can be published under
-the atlas's ODbL is listed in SOURCES (public domain, CC0, or "no
-restrictions"). Commercial basemaps (Esri/Google/Bing) may NOT be traced.
+the atlas's ODbL is listed in SOURCES (public domain, CC0, "no
+restrictions", or an attribution licence such as Etalab 2.0). Commercial basemaps (Esri/Google/Bing) may NOT be traced.
 
 Imagery is fetched once per track as Web-Mercator (EPSG:3857) tiles at a fixed
 ground sample distance and cached under `tracks/<slug>/raw/imagery/<source>/`
@@ -93,6 +93,21 @@ SOURCES: dict[str, dict] = {
         "ce95_m": 0.75, "accuracy_basis": "specification: Florida county orthoimagery standard (Oct 2021), RMSEx/RMSEy <= 1.0 ft for 0.5 ft imagery; no tested report found",
         "acquisition_dates": ["2021"],
     },
+    # France: IGN BD ORTHO (Géoplateforme WMS). One layer per campaign year;
+    # a département is flown every ~3 years, the other years are blank (white)
+    # there and the source is refused. RGB and IRC (NIR, R, G false colour) of
+    # the same campaign come from the same flight.
+    "ign-bdortho-2022": {
+        "coverage": [-5.3, 41.3, 9.7, 51.2],  # metropolitan France; blank outside the 2022 campaign
+        "name": "IGN BD ORTHO 2022 (20 cm, RVB + IRC), Géoplateforme",
+        "service": "https://data.geopf.fr/wms-r/wms", "protocol": "wms",
+        "rgb": "ORTHOIMAGERY.ORTHOPHOTOS2022", "nir": "ORTHOIMAGERY.ORTHOPHOTOS.IRC.2022", "nir_band": 0,
+        "gsd_m": 0.25, "native_gsd_m": 0.2, "frame": "RGF93", "frame_hypotheses": ("RGF93", "WGS84"),
+        "license": "Licence Ouverte Etalab 2.0 (IGN)",
+        "ce95_m": None, "accuracy_basis": "EMQ published per departement in a table IGN lists as forthcoming"
+                                           " (DC_BDORTHO_2-0, 2025-04, section 5.2); not stated",
+        "acquisition_dates": ["2022"],
+    },
 }
 
 
@@ -132,7 +147,19 @@ def covering(lonlat) -> list[str]:
     return sorted(ids, key=lambda k: k == "naip")
 
 
-def _export(service: str, bbox_merc, w: int, h: int, bands: str) -> np.ndarray:
+def _export_wms(service: str, bbox_merc, w: int, h: int, layer: str) -> np.ndarray:
+    params = {"SERVICE": "WMS", "VERSION": "1.3.0", "REQUEST": "GetMap", "LAYERS": layer, "STYLES": "",
+              "CRS": "EPSG:3857", "BBOX": ",".join(f"{v:.3f}" for v in bbox_merc),
+              "WIDTH": w, "HEIGHT": h, "FORMAT": "image/png"}
+    body = _get(f"{service}?{urllib.parse.urlencode(params)}")
+    if body[:4] != b"\x89PNG":
+        raise RuntimeError(f"WMS GetMap did not return a PNG: {body[:200]!r}")
+    return np.asarray(Image.open(io.BytesIO(body)).convert("RGB"))
+
+
+def _export(service: str, bbox_merc, w: int, h: int, bands: str, protocol: str = "arcgis") -> np.ndarray:
+    if protocol == "wms":
+        return _export_wms(service, bbox_merc, w, h, bands)
     params = {
         "bbox": ",".join(f"{v:.3f}" for v in bbox_merc),
         "bboxSR": 3857, "imageSR": 3857, "size": f"{w},{h}",
@@ -250,16 +277,19 @@ def fetch_imagery(cache_dir: Path, lonlat_extent, source: str = "naip", margin_m
             bb = (x0 + tx * px, y0 - (ty + h) * px, x0 + (tx + w) * px, y0 - ty * px)
             if not near.intersects(box(*bb)):
                 continue
-            rgb = _export(src["service"], bb, w, h, src["rgb"])
+            proto = src.get("protocol", "arcgis")
+            rgb = _export(src["service"], bb, w, h, src["rgb"], proto)
             if rgb.ndim == 3 and rgb.shape[2] == 4:
                 rgb = rgb[..., :3]
+            if proto == "wms" and (rgb.min(axis=-1) == 255).mean() > 0.95:
+                continue  # blank: not flown in this campaign (no data, never guessed)
             name = f"tile_{ty:05d}_{tx:05d}"
             Image.fromarray(rgb).save(cache_dir / f"{name}.rgb.png")
             tile = {"row": ty, "col": tx, "w": w, "h": h, "rgb": f"{name}.rgb.png"}
             if src.get("nir"):
-                nir = _export(src["service"], bb, w, h, src["nir"])
+                nir = _export(src["service"], bb, w, h, src["nir"], proto)
                 if nir.ndim == 3:
-                    nir = nir[..., 0]
+                    nir = nir[..., src.get("nir_band", 0)]
                 Image.fromarray(nir).save(cache_dir / f"{name}.nir.png")
                 tile["nir"] = f"{name}.nir.png"
             manifest["tiles"].append(tile)

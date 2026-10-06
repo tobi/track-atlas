@@ -35,6 +35,15 @@ the Pacific plate, which NAD83(2011) models only through its survey epoch
 (2010.0); the plate-fixed step can then be off by several cm per year since
 the source's survey epoch, so DEFORMATION_ZONE_M is added to the error budget
 there.
+
+France (IGN BD ORTHO, LiDAR HD) is delivered in RGF93 (Lambert-93), the
+national realisation of ETRS89 (v1 = ETRF93 at 1993.0; v2/v2b = ETRF2000
+at 2009.0/2019.0; EPSG:2154 does not say which): ETRF2000 coordinates, fixed to the stable
+Eurasian plate, so the ground does not move in it. `shift_m` for "RGF93" is
+the ETRF2000 -> ITRF2014 step at ATLAS_EPOCH (EUREF/IGN Helmert via PROJ,
+~0.9 m NE in 2026, growing ~2.5 cm/yr). RGF93_REALISATION_M covers the
+difference between the RGF93 realisations a product may really be in (v1,
+v2, v2b: a few cm) plus the Helmert parameters' own uncertainty.
 """
 from __future__ import annotations
 
@@ -48,6 +57,7 @@ DEFORMATION_WEST_OF_LON = -116.0  # crude: coastal California
 SERVICE_EPOCH = 2010.0        # assumed epoch of a service's NAD83 -> WGS 84 conversion
 SERVICE_EPOCH_EARLIEST = 2002.0
 SERVICE_TRANSFORM_M = 0.10    # 1 sigma, choice of transformation
+RGF93_REALISATION_M = 0.04    # 1 sigma: RGF93 v1 (ETRF93) vs v2/v2b (ETRF2000) 'a few cm' (IGN), + Helmert
 
 
 def shift_m(lon: float, lat: float, frame: str = "NAD83(2011)", epoch: float = ATLAS_EPOCH) -> tuple[float, float]:
@@ -58,10 +68,11 @@ def shift_m(lon: float, lat: float, frame: str = "NAD83(2011)", epoch: float = A
         a = shift_m(lon, lat, "NAD83(2011)", epoch)
         b = shift_m(lon, lat, "NAD83(2011)", SERVICE_EPOCH)
         return a[0] - b[0], a[1] - b[1]
-    if frame != "NAD83(2011)":
+    if frame not in ("NAD83(2011)", "RGF93"):
         raise ValueError(f"unsupported source frame {frame!r}")
     import pyproj
-    t = pyproj.Transformer.from_crs("EPSG:6318", "EPSG:7912", always_xy=True)
+    src = "EPSG:7931" if frame == "RGF93" else "EPSG:6318"   # ETRF2000 geog3D / NAD83(2011)
+    t = pyproj.Transformer.from_crs(src, "EPSG:7912", always_xy=True)
     x, y, _, _ = t.transform(lon, lat, 0.0, epoch)
     geod = pyproj.Geod(ellps="GRS80")
     az, _, dist = geod.inv(lon, lat, x, y)
@@ -77,6 +88,8 @@ def step_ce95_m(lon: float, frame: str = "NAD83(2011)", lat: float | None = None
         epoch_range = math.hypot(a[0] - b[0], a[1] - b[1])
         base = math.hypot(epoch_range, 2.4477 * SERVICE_TRANSFORM_M)
         return math.hypot(base, DEFORMATION_ZONE_M) if lon < DEFORMATION_WEST_OF_LON else base
+    if frame == "RGF93":
+        return 2.4477 * RGF93_REALISATION_M
     if frame != "NAD83(2011)":
         return 0.0
     if lon < DEFORMATION_WEST_OF_LON:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Global importer: fetch raw source artifacts for one or all tracks.
 
-Reads tracks/<slug>/source.json, downloads every declared source, and writes
+Reads tracks/<slug>/track.py, downloads every declared source, and writes
 the raw payloads verbatim into tracks/<slug>/raw/. Idempotent and re-runnable;
 raw/ is the cache of record. generate.py never touches the network.
 
@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import sources  # noqa: E402
-from lib.config import TRACKS, load_source, track_dir  # noqa: E402
+from lib.config import TRACKS, load_source, slugs as all_slugs, track_dir  # noqa: E402
 from lib.osm import ways_in_bbox, relation_geom  # noqa: E402
 
 
@@ -64,8 +64,7 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.all:
-        slugs = [p.name for p in TRACKS.iterdir()
-                 if (p / "source.json").exists()]
+        slugs = all_slugs()
     elif args.slug:
         slugs = [args.slug]
     else:

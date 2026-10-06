@@ -4,7 +4,7 @@
 
 - **Layout**: Full Course (6514 m, clockwise)
 - **Series**: imsa
-- **Corners**: 14 (official numbering, OSM `ref=1..14`); curated `replace_corners` in `overrides.json`
+- **Corners**: 14 (official numbering, OSM `ref=1..14`); curated with `lap.corners([...])` in `track.py`
 - **Geometry**: stitched from `highway=raceway` ways in the bbox (no OSM route relation found)
 - **Corner metadata**: Lovely-Sim-Racing `iracing/roadamerica-full.json`
 
@@ -30,7 +30,7 @@ centerline (6,438 m) after the start/finish pin.
 - **Start/finish.** The OSM-alignment origin put every Lovely marker 0.0148 lap
   (mean of 10 corners, sd ~13 m, ~95 m) after its curvature peak. A per-corner
   "button lag" would scale with speed; a constant shift is an origin error, so
-  `source.json` pins start/finish 96 m further north on the front straight.
+  `track.py`'s `start_finish` kwarg pins start/finish 96 m further north on the front straight.
 - **Numbering.** Lovely has 13 corners and misses T2, T4 and T9; names were
   shifted ("Turn 3" on T2, "Moraine Sweep"/"Turn 5" on the straight, a "Turn
   14" duplicate). Replaced with the 14 OSM `ref` turns:

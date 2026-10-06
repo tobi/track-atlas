@@ -13,10 +13,12 @@ to the atlas datum (`lib/position.py`), and writes the committed measurement
 generate.py / build_geometry.py consume it offline; nothing downstream needs
 the imagery again.
 
-Only tracks whose source.json has a surface block are measured:
+Only tracks whose track.py calls t.surface() are measured:
 
     "surface": {}                                   // = {"imagery": "auto", "lidar": "auto"}
     "surface": {"imagery": "naip", "lidar": ["GA_Statewide_B3_2018"]}   // pinned
+    "surface": {"bridge": [{"side": "right", "from": 0.10, "to": 0.167,
+                            "note": "pit exit merges without a painted line"}]}
 
 `imagery` "auto" measures with every lib/imagery.SOURCES entry covering the lap
 and keeps the best (absolute CE95 + a charge for bridged edges; the comparison
@@ -42,13 +44,17 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import edges, geo, lidar, position  # noqa: E402
-from lib.config import TRACKS, load_source, raw_dir  # noqa: E402
+from lib.config import TRACKS, load_source, raw_dir, slugs as all_slugs  # noqa: E402
 from lib.imagery import SOURCES, covering, fetch_imagery, load_raster  # noqa: E402
 
 EDGE_SIMPLIFY_M = 0.05     # Douglas-Peucker tolerance for the stored edges
 
 
 def _outline(slug: str, layout_id: str) -> np.ndarray:
+    """The seed: the OSM centerline generate.py kept (never the previous midline)."""
+    seed = raw_dir(slug) / f"seed-{layout_id}.geojson"
+    if seed.exists():
+        return np.asarray(json.loads(seed.read_text())["geometry"]["coordinates"], dtype=float)
     gj = json.loads((raw_dir(slug) / "layers" / f"{layout_id}.geojson").read_text())
     f = next(f for f in gj["features"] if f["properties"].get("role") == "outline")
     return np.asarray(f["geometry"]["coordinates"], dtype=float)
@@ -104,7 +110,7 @@ def measure(slug: str, layout_id: str, cfg: dict) -> dict:
     results, selection = [], []
     for sid in cands:
         try:
-            out = _measure_with(slug, layout_id, sid, refs, seed_ll)
+            out = _measure_with(slug, layout_id, sid, refs, seed_ll, cfg.get("bridge"))
         except Refused as e:
             selection.append({"imagery": sid, "result": f"refused: {e}"})
             print(f"[{slug}/{layout_id}] {sid}: refused: {e}")
@@ -127,13 +133,17 @@ def measure(slug: str, layout_id: str, cfg: dict) -> dict:
     return out
 
 
-def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], seed_ll: np.ndarray) -> dict:
+def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], seed_ll: np.ndarray,
+                  bridge=None) -> dict:
     src = SOURCES[source_id]
     cache = raw_dir(slug) / "imagery" / source_id
     fetch_imagery(cache, seed_ll, source_id)
     R, manifest = load_raster(cache)
     F = geo.Frame.around(seed_ll)
-    res = edges.extract_edges(R, F, geo.open_ring(F.to_xy(seed_ll)))
+    for b in bridge or ():
+        if b.get("side") not in ("left", "right") or not b.get("note"):
+            raise SystemExit(f"[{slug}] surface.bridge needs side left/right and a note: {b}")
+    res = edges.extract_edges(R, F, geo.open_ring(F.to_xy(seed_ll)), bridge=bridge)
     if min(res.seen_left.mean(), res.seen_right.mean()) < MIN_SEEN:
         raise Refused(f"edges seen on only {res.seen_left.mean():.0%}/{res.seen_right.mean():.0%} "
                       "of the lap (no coverage, or unusable imagery)")
@@ -176,6 +186,7 @@ def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], se
             "seen_fraction": {"left": round(float(res.seen_left.mean()), 3),
                               "right": round(float(res.seen_right.mean()), 3),
                               "both": round(float(seen.mean()), 3)},
+            "curated_bridges": bridge or [],
             "unseen_spans": {"left": _spans(res.seen_left, res.total_m),
                              "right": _spans(res.seen_right, res.total_m)},
             "relative_precision_m": round(precision, 2),
@@ -189,6 +200,7 @@ def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], se
             "imagery": {
                 "kind": "imagery", "id": source_id, "name": src["name"],
                 "url": src["service"], "license": src["license"],
+                **({"protocol": "wms", "layer": src["rgb"]} if src.get("protocol") == "wms" else {}),
                 "gsd_m": gsd, "sampled_gsd_m": manifest["gsd_m"], "acquisition_dates": dates,
                 "rasters": [c["raster"] for c in manifest.get("catalog", [])],
                 "request": {k: manifest[k] for k in ("crs", "x0", "y0", "px", "width", "height")},
@@ -197,7 +209,7 @@ def _measure_with(slug: str, layout_id: str, source_id: str, refs: list[str], se
                 "stated_ce95_m": src.get("ce95_m"),
             },
             "reference": [
-                {"kind": "lidar", "name": n, "url": f"{lidar.EPT_BUCKET}/{n}", "license": "public domain (US federal)",
+                {"kind": "lidar", "name": n, "url": lidar.project_url(n), "license": lidar.project_license(n),
                  "year": lidar.PROJECTS.get(n, {}).get("year"), "horizontal_accuracy": lidar.project_accuracy(n)[1]}
                 for n in refs
             ],
@@ -236,7 +248,7 @@ def main() -> None:
                 print(f"{args.slug}/{lo['id']}: {name} covers {frac:.0%} of the lap; {acc[1]}")
         return
     if args.all:
-        slugs = sorted(p.name for p in TRACKS.iterdir() if (p / "source.json").exists())
+        slugs = all_slugs()
     elif args.slug:
         slugs = [args.slug]
     else:
@@ -246,7 +258,7 @@ def main() -> None:
         cfg = src.get("surface") or {}
         if "surface" not in src:
             if args.slug:
-                print(f"[{slug}] source.json has no surface block; nothing to measure")
+                print(f"[{slug}] track.py has no t.surface(); nothing to measure")
             continue
         for lo in src["layouts"]:
             if cfg.get("layouts") and lo["id"] not in cfg["layouts"]:

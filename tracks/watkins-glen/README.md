@@ -4,7 +4,7 @@
 
 - **Layout**: Full Course (Boot) (5435 m, clockwise)
 - **Series**: imsa
-- **Corners**: 11, curated `replace_corners` in `overrides.json`
+- **Corners**: 11, curated with `lap.corners([...])` in `track.py`
 - **Geometry**: OSM relation [4872324](https://www.openstreetmap.org/relation/4872324) centerline
 - **Corner metadata**: Lovely-Sim-Racing `iracing/watkinsglen-2021-fullcourse.json`
 
@@ -17,7 +17,7 @@
 Evidence: NAIP-measured midline curvature (`raw/surface-gp.json`), the OSM
 relation centerline and the named OSM raceway ways (fractions below are lap
 fractions on the emitted centerline). Unnamed-peak verdicts live in
-`overrides.json` `gp.surface_review`.
+`lap.unnamed(...)` calls in `track.py`.
 
 | corner | problem | evidence | fix |
 |---|---|---|---|

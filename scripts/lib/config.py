@@ -1,35 +1,43 @@
 """Per-track config consumed by the global import.py / generate.py.
 
-A track only needs a scripts/import.py and scripts/generate.py of its own when
-it deviates from the standard pipeline. Easy tracks just drop a source.json like:
+Each track is defined by `tracks/<slug>/track.py` (lib/dsl.py): sources,
+layouts, curation and generated layers in one file. It compiles to three
+documents, loaded here:
 
-    {
-      "slug": "circuit-de-la-sarthe",
-      "name": "Circuit de la Sarthe",
-      "aka": ["La Sarthe", "Circuit des 24 Heures du Mans"],
-      "country": "FR",
-      "wikidata": "Q270760",
-      "location": {"lat": 47.95, "lon": 0.224, "locality": "Le Mans"},
-      "lovely": {"24h": "lmu/circuit-de-la-sarthe.json"},
-      "osm": {"bbox": [47.90, 0.15, 47.98, 0.28]},
-      "layouts": [
-        {"id": "24h", "name": "Circuit des 24 Heures", "length_m": 13626,
-         "direction": "clockwise", "lovely": "24h"}
-      ]
-    }
-
-and the global scripts handle the rest.
+- `load_source(slug)`: identity, sources, layouts, surface (was source.json)
+- `load_overrides(slug)`: curated corners and surface review (was overrides.json)
+- `load_generation(slug)`: generated-layer configs (was generation-config.json)
 """
 from __future__ import annotations
 
+import functools
 import json
 from pathlib import Path
 
 TRACKS = Path(__file__).resolve().parents[2] / "tracks"
 
 
+def slugs() -> list[str]:
+    """Every track with a definition."""
+    return sorted(p.name for p in TRACKS.iterdir() if (p / "track.py").exists())
+
+
+@functools.lru_cache(maxsize=None)
+def _track(slug: str):
+    from . import dsl
+    return dsl.load(TRACKS / slug / "track.py")
+
+
 def load_source(slug: str) -> dict:
-    return json.loads((TRACKS / slug / "source.json").read_text())
+    return _track(slug).source()
+
+
+def load_overrides(slug: str) -> dict:
+    return _track(slug).overrides()
+
+
+def load_generation(slug: str) -> dict | None:
+    return _track(slug).generation()
 
 
 def track_dir(slug: str) -> Path:
@@ -38,7 +46,7 @@ def track_dir(slug: str) -> Path:
 
 def raw_dir(slug: str) -> Path:
     """Where every generated file lives (downloads + derived track.json, layers,
-    renders, phases). Inputs (source.json, overrides.json, README.md) stay in
+    renders, phases). Inputs (track.py, README.md) stay in
     track_dir; everything the build can recreate goes here."""
     return TRACKS / slug / "raw"
 
