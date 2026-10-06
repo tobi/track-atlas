@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "WebWorker"],
+    "types": ["bun"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "useDefineForClassFields": false
+  },
+  "include": ["site/sim/**/*.ts", "scripts/sim/**/*.ts", "tests/sim/**/*.ts"]
+}

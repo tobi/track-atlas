@@ -11,6 +11,26 @@ both its official name *and* what drivers actually call it, pinned to a real
 coordinate, with a track outline that matches.** Eventually: every track in the
 world.
 
+## Lap Lab — Road Atlanta / LMP2
+
+The static site's **Lap Lab** compares a grip circle, two axles and four tyres
+on the same atlas racing line. It runs entirely in TypeScript in a browser
+worker: adjustable car settings, force budgets, corner/full-lap playback,
+local reference-lap import and speed/time comparisons. The four-tyre model is
+quasi-steady, not a transient vehicle simulator. See [the model and validation
+notes](docs/LAP_LAB.md) for assumptions and input formats.
+
+```sh
+bun install --frozen-lockfile
+bun run build:sim
+bun run serve:sim                 # http://127.0.0.1:4173/sim/
+bun run check:sim
+bun run test:sim
+```
+
+The Pages workflow builds the simulator at `sim/`. Recorded laps are loaded
+from the browser's file picker; no private reference telemetry is deployed.
+
 ## ⬇ The dataset is [`tracks.jsonl`](tracks.jsonl)
 
 **[`tracks.jsonl`](tracks.jsonl) is the point of this repo** — one JSON object

@@ -1,0 +1,21 @@
+{
+  "name": "track-atlas",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/bun": "^1.4.2",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "lit": "^3.3.3"
+  },
+  "scripts": {
+    "build:sim": "bun scripts/sim/build.ts",
+    "test:sim": "bun test tests/sim/*.test.ts",
+    "check:sim": "tsc --noEmit",
+    "serve:sim": "bun scripts/sim/serve.ts",
+    "test:browser": "playwright test"
+  }
+}

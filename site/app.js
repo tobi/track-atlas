@@ -41,6 +41,7 @@ class AtlasApp extends Light {
         <a href="#/" class="brand"><span class="mark">${svg`<svg viewBox="0 0 24 24"><path d="M4 16c0-6 5-11 11-11 3 0 5 2 5 4s-2 3-4 3-3 1-3 3 1 4-2 5-7 0-7-4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>`}</span>Track Atlas</a>
         <nav>
           <a href="#/" class=${r.page === "home" ? "on" : ""}>Atlas</a>
+          <a href="sim/">Lap Lab</a>
           <a href="#/method" class=${r.page === "method" ? "on" : ""}>Method</a>
           <a href="tracks.jsonl" download>tracks.jsonl</a>
           <a href=${GH} target="_blank" rel="noopener">GitHub</a>
